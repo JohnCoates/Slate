@@ -16,6 +16,7 @@ class CaptureButton: Button {
         super.initialSetup()
         backgroundColor = UIColor.white
         alpha = 0.56
+        accessibilityIdentifier = "CaptureButton"
     }
     
     override func layoutSubviews() {
