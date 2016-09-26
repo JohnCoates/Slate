@@ -21,6 +21,7 @@ class CaptureViewController: UIViewController {
         super.loadView()
         view.backgroundColor = UIColor.black
         captureView = RenderView(frame: view.bounds)
+        captureView.fillMode = .preserveAspectRatioAndFill
         view.addSubview(captureView)
     }
     
@@ -35,7 +36,7 @@ class CaptureViewController: UIViewController {
     
     func cameraSetup() {
         do {
-            videoCamera = try Camera(sessionPreset: AVCaptureSessionPresetPhoto)
+            videoCamera = try Camera(sessionPreset: AVCaptureSessionPresetPhoto, location: .backFacing)
         } catch {
             print("Couldn't initialize camera, error: \(error)")
             
@@ -49,5 +50,13 @@ class CaptureViewController: UIViewController {
         
         videoCamera.addTarget(captureView)
         videoCamera.startCapture()
+    }
+    
+    // MARK: - Status Bar
+    
+    override var prefersStatusBarHidden: Bool {
+        get {
+            return true
+        }
     }
 }
