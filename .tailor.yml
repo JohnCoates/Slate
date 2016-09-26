@@ -1,0 +1,5 @@
+exclude:
+  - Carthage   # Ignore Swift files under "Source/Carthage/"
+  - Pods       # Ignore Swift files under "Source/Pods/"
+except:
+  - trailing-whitespace
