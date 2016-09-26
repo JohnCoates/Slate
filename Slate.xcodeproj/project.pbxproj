@@ -140,7 +140,7 @@
 		FA9F89E41D953C540058C369 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				FA9F89E51D953C540058C369 /* AppDelegate.swift */,
+				FACE21EE1D98B9C500B088C8 /* Application */,
 				FA9F89E71D953C540058C369 /* ViewController.swift */,
 			);
 			path = Source;
@@ -215,6 +215,14 @@
 			);
 			name = Carthage;
 			path = Carthage/Build/iOS;
+			sourceTree = "<group>";
+		};
+		FACE21EE1D98B9C500B088C8 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FA9F89E51D953C540058C369 /* AppDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
