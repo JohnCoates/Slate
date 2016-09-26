@@ -53,19 +53,31 @@ class Button: UIView {
     
     // MARK: - Visualize Touch Response
     
+    var originalAlpha: CGFloat?
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
+        originalAlpha = alpha
         alpha = 0.8
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesCancelled(touches, with: event)
-        alpha = 1
+        restoreAlpha()
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        alpha = 1
+        restoreAlpha()
+    }
+    
+    fileprivate func restoreAlpha() {
+        if let originalAlpha = originalAlpha {
+            alpha = originalAlpha
+            self.originalAlpha = nil
+        } else {
+            alpha = 1
+        }
     }
     
     // MARK: - User Interaction
