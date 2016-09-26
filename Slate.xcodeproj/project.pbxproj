@@ -16,7 +16,6 @@
 		FA9F89FB1D953C540058C369 /* SlateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F89FA1D953C540058C369 /* SlateTests.swift */; };
 		FA9F8A061D953C540058C369 /* SlateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F8A051D953C540058C369 /* SlateUITests.swift */; };
 		FACC8FD41D98A55400589230 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
-		FACC8FD51D98A5AF00589230 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
 		FACC8FD61D98A5AF00589230 /* Cartography.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -78,7 +77,6 @@
 			files = (
 				A5819886DADA712D87F560CE /* Pods_Slate.framework in Frameworks */,
 				FACC8FD41D98A55400589230 /* Cartography.framework in Frameworks */,
-				FACC8FD51D98A5AF00589230 /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +224,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA9F8A0A1D953C540058C369 /* Build configuration list for PBXNativeTarget "Slate" */;
 			buildPhases = (
+				FACC8FD81D98AD4500589230 /* Run Swiftlint */,
 				F3B2A40773BDA305A436EBE6 /* [CP] Check Pods Manifest.lock */,
 				FA9F89DE1D953C540058C369 /* Sources */,
 				FA9F89DF1D953C540058C369 /* Frameworks */,
@@ -401,6 +400,20 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		FACC8FD81D98AD4500589230 /* Run Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swiftlint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -484,6 +497,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -533,6 +547,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
