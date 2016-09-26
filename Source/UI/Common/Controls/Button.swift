@@ -57,7 +57,9 @@ class Button: UIView {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        originalAlpha = alpha
+        if originalAlpha == nil {
+            originalAlpha = alpha
+        }
         alpha = 0.8
     }
     
@@ -72,12 +74,12 @@ class Button: UIView {
     }
     
     fileprivate func restoreAlpha() {
-        if let originalAlpha = originalAlpha {
-            alpha = originalAlpha
-            self.originalAlpha = nil
-        } else {
-            alpha = 1
+        guard let originalAlpha = originalAlpha else {
+            return
         }
+        
+        alpha = originalAlpha
+        self.originalAlpha = nil
     }
     
     // MARK: - User Interaction
