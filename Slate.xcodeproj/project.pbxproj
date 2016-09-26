@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5819886DADA712D87F560CE /* Pods_Slate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E04854F7554529BBF7225F /* Pods_Slate.framework */; };
 		FA9F89E61D953C540058C369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F89E51D953C540058C369 /* AppDelegate.swift */; };
 		FA9F89E81D953C540058C369 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F89E71D953C540058C369 /* ViewController.swift */; };
 		FA9F89EB1D953C540058C369 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9F89E91D953C540058C369 /* Main.storyboard */; };
@@ -14,6 +15,9 @@
 		FA9F89F01D953C540058C369 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9F89EE1D953C540058C369 /* LaunchScreen.storyboard */; };
 		FA9F89FB1D953C540058C369 /* SlateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F89FA1D953C540058C369 /* SlateTests.swift */; };
 		FA9F8A061D953C540058C369 /* SlateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F8A051D953C540058C369 /* SlateUITests.swift */; };
+		FACC8FD41D98A55400589230 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
+		FACC8FD51D98A5AF00589230 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
+		FACC8FD61D98A5AF00589230 /* Cartography.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +37,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FACC8FD71D98A5AF00589230 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FACC8FD61D98A5AF00589230 /* Cartography.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		52E04854F7554529BBF7225F /* Pods_Slate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70C3850DEA8A027656FAC2BE /* Pods-Slate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Slate/Pods-Slate.debug.xcconfig"; sourceTree = "<group>"; };
+		EA840E944B27AE79422AB380 /* Pods-Slate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Slate/Pods-Slate.release.xcconfig"; sourceTree = "<group>"; };
 		FA9F89E21D953C540058C369 /* Slate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9F89E51D953C540058C369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA9F89E71D953C540058C369 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +68,7 @@
 		FA9F8A011D953C540058C369 /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9F8A051D953C540058C369 /* SlateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlateUITests.swift; sourceTree = "<group>"; };
 		FA9F8A071D953C540058C369 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACC8FD31D98A55400589230 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cartography.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +76,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5819886DADA712D87F560CE /* Pods_Slate.framework in Frameworks */,
+				FACC8FD41D98A55400589230 /* Cartography.framework in Frameworks */,
+				FACC8FD51D98A5AF00589230 /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +99,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9EF4533E798C01A4F72A666D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FACC8FD21D98A52500589230 /* Carthage */,
+				52E04854F7554529BBF7225F /* Pods_Slate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D69C6E31C324FE952A894F22 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70C3850DEA8A027656FAC2BE /* Pods-Slate.debug.xcconfig */,
+				EA840E944B27AE79422AB380 /* Pods-Slate.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FA9F89D91D953C540058C369 = {
 			isa = PBXGroup;
 			children = (
 				FA9F89E41D953C540058C369 /* Source */,
 				FA9F8A141D953EFE0058C369 /* Resources */,
 				FA9F8A131D953EDF0058C369 /* Tests */,
+				9EF4533E798C01A4F72A666D /* Frameworks */,
+				D69C6E31C324FE952A894F22 /* Pods */,
 				FA9F89E31D953C540058C369 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -165,6 +210,15 @@
 			path = Required;
 			sourceTree = "<group>";
 		};
+		FACC8FD21D98A52500589230 /* Carthage */ = {
+			isa = PBXGroup;
+			children = (
+				FACC8FD31D98A55400589230 /* Cartography.framework */,
+			);
+			name = Carthage;
+			path = Carthage/Build/iOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -172,9 +226,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA9F8A0A1D953C540058C369 /* Build configuration list for PBXNativeTarget "Slate" */;
 			buildPhases = (
+				F3B2A40773BDA305A436EBE6 /* [CP] Check Pods Manifest.lock */,
 				FA9F89DE1D953C540058C369 /* Sources */,
 				FA9F89DF1D953C540058C369 /* Frameworks */,
 				FA9F89E01D953C540058C369 /* Resources */,
+				D216222D4FFB612C469C86DB /* [CP] Embed Pods Frameworks */,
+				BE785CD1AC6C00A36B4139BC /* [CP] Copy Pods Resources */,
+				FACC8FD71D98A5AF00589230 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -296,6 +354,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BE785CD1AC6C00A36B4139BC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Slate/Pods-Slate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D216222D4FFB612C469C86DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Slate/Pods-Slate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3B2A40773BDA305A436EBE6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FA9F89DE1D953C540058C369 /* Sources */ = {
@@ -453,9 +559,14 @@
 		};
 		FA9F8A0B1D953C540058C369 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70C3850DEA8A027656FAC2BE /* Pods-Slate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Resources/Required/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.Slate;
@@ -466,9 +577,14 @@
 		};
 		FA9F8A0C1D953C540058C369 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA840E944B27AE79422AB380 /* Pods-Slate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Resources/Required/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.Slate;
