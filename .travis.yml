@@ -1,0 +1,14 @@
+language: objective-c
+osx_image: xcode8
+cache:
+  - cocoapods
+  - bundler
+before_install:
+- brew update
+- carthage bootstrap --verbose --platform iOS
+install:
+- gem install xcpretty
+- gem install cocoapods --pre
+script:
+- pod update
+- set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace ./Slate.xcworkspace -scheme Slate -destination 'platform=iOS Simulator,name=iPhone 6s' build test | xcpretty
