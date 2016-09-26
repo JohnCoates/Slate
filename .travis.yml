@@ -9,6 +9,8 @@ before_install:
 install:
 - gem install xcpretty
 - gem install cocoapods --pre
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
 script:
 - pod update
 - set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace ./Slate.xcworkspace -scheme Slate -destination 'platform=iOS Simulator,name=iPhone 6s' build test | xcpretty
