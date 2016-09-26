@@ -13,6 +13,7 @@
 		FA834BDD1D9920010017CCCA /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BDC1D9920010017CCCA /* Platform.swift */; };
 		FA834BE11D9927EB0017CCCA /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BE01D9927EB0017CCCA /* Button.swift */; };
 		FA834BE41D9929710017CCCA /* CaptureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BE31D9929710017CCCA /* CaptureButton.swift */; };
+		FA834BE61D9932BC0017CCCA /* Placeholders.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA834BE51D9932BC0017CCCA /* Placeholders.xcassets */; };
 		FA86BE051D98ED9400BC5FB1 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86BE041D98ED9400BC5FB1 /* CaptureViewController.swift */; };
 		FA9F89E61D953C540058C369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F89E51D953C540058C369 /* AppDelegate.swift */; };
 		FA9F89ED1D953C540058C369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9F89EC1D953C540058C369 /* Assets.xcassets */; };
@@ -63,6 +64,7 @@
 		FA834BDC1D9920010017CCCA /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		FA834BE01D9927EB0017CCCA /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		FA834BE31D9929710017CCCA /* CaptureButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureButton.swift; sourceTree = "<group>"; };
+		FA834BE51D9932BC0017CCCA /* Placeholders.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Placeholders.xcassets; sourceTree = "<group>"; };
 		FA86BE041D98ED9400BC5FB1 /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		FA9F89E21D953C540058C369 /* Slate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9F89E51D953C540058C369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				FA9F89EC1D953C540058C369 /* Assets.xcassets */,
+				FA834BE51D9932BC0017CCCA /* Placeholders.xcassets */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9F89F01D953C540058C369 /* LaunchScreen.storyboard in Resources */,
+				FA834BE61D9932BC0017CCCA /* Placeholders.xcassets in Resources */,
 				FA9F89ED1D953C540058C369 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
