@@ -28,8 +28,10 @@ class CaptureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cameraSetup()
-        cameraCaptureViewSetup()
+        if !Platform.isSimulator {
+            cameraSetup()
+            cameraCaptureViewSetup()
+        }
     }
     
     // MARK: - Camera Setup
