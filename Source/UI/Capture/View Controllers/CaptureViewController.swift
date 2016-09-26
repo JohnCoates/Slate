@@ -18,6 +18,7 @@ final class CaptureViewController: UIViewController {
     private var videoCamera: Camera?
     override func loadView() {
         super.loadView()
+        view.accessibilityIdentifier = "CaptureView"
         view.backgroundColor = UIColor.black
         
         renderViewSetup()
@@ -62,6 +63,8 @@ final class CaptureViewController: UIViewController {
     
     private lazy var captureButton: CaptureButton = CaptureButton()
     fileprivate func controlsSetup() {
+        captureButton.setTappedCallback(instance: self,
+                                        method: Method.captureTapped)
         view.addSubview(captureButton)
         
         constrain(captureButton) {
@@ -73,6 +76,12 @@ final class CaptureViewController: UIViewController {
         }
     }
     
+    // MARK: - Capturing
+    
+    fileprivate func captureTapped() {
+        print("capture tapped")
+    }
+    
     // MARK: - Status Bar
     
     override var prefersStatusBarHidden: Bool {
@@ -80,4 +89,11 @@ final class CaptureViewController: UIViewController {
             return true
         }
     }
+}
+
+// MARK: - Callbacks
+
+fileprivate struct Method {
+    static let captureTapped = CaptureViewController.captureTapped
+    
 }
