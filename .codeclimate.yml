@@ -9,4 +9,3 @@ ratings:
 exclude_paths:
 - "Pods/**/*"
 - "Carthage/**/*"
-- "Tests/**/*"
