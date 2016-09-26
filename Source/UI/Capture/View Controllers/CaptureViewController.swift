@@ -11,18 +11,17 @@ import AVFoundation
 import Cartography
 import GPUImage
 
-class CaptureViewController: UIViewController {
+final class CaptureViewController: UIViewController {
     
     // MARK: - View Lifecycle
     
-    var videoCamera: Camera?
-    var captureView: RenderView!
+    private var videoCamera: Camera?
     override func loadView() {
         super.loadView()
         view.backgroundColor = UIColor.black
-        captureView = RenderView(frame: view.bounds)
-        captureView.fillMode = .preserveAspectRatioAndFill
-        view.addSubview(captureView)
+        
+        renderViewSetup()
+        controlsSetup()
     }
     
     override func viewDidLoad() {
@@ -30,28 +29,48 @@ class CaptureViewController: UIViewController {
         
         if !Platform.isSimulator {
             cameraSetup()
-            cameraCaptureViewSetup()
         }
+    }
+    
+    // MARK: - Render
+    
+    private var renderView: RenderView!
+    fileprivate func renderViewSetup() {
+        renderView = RenderView(frame: view.bounds)
+        renderView.fillMode = .preserveAspectRatioAndFill
+        view.addSubview(renderView)
     }
     
     // MARK: - Camera Setup
     
-    func cameraSetup() {
+    fileprivate func cameraSetup() {
         do {
             videoCamera = try Camera(sessionPreset: AVCaptureSessionPresetPhoto, location: .backFacing)
         } catch {
             print("Couldn't initialize camera, error: \(error)")
-            
         }
-    }
-    
-    func cameraCaptureViewSetup() {
+        
         guard let videoCamera = videoCamera else {
             return
         }
         
-        videoCamera.addTarget(captureView)
+        videoCamera.addTarget(renderView)
         videoCamera.startCapture()
+    }
+    
+    // MARK: - Controls Setup
+    
+    private lazy var captureButton: CaptureButton = CaptureButton()
+    fileprivate func controlsSetup() {
+        view.addSubview(captureButton)
+        
+        constrain(captureButton) {
+            let superview = $0.superview!
+            $0.width == 75
+            $0.height == $0.width
+            $0.centerX == superview.centerX
+            $0.bottom == superview.bottom - 15
+        }
     }
     
     // MARK: - Status Bar
