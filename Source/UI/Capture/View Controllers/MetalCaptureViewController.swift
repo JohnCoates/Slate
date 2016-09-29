@@ -19,4 +19,12 @@ final class MetalCaptureViewController: UIViewController {
         
         renderer = Renderer(metalView: metalView)
     }
+    
+    // MARK: - Status Bar
+    
+    override var prefersStatusBarHidden: Bool {
+        get {
+            return true
+        }
+    }
 }
