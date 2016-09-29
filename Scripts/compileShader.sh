@@ -1,4 +1,3 @@
-
 if [[ "$SDK_NAME" =~ ([A-Za-z]+) ]]; then
   SDK_BASE_NAME=${BASH_REMATCH[1]}
 else
