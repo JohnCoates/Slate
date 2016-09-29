@@ -79,19 +79,25 @@ struct Vertex {
         #endif
     }
     
+    // developer.apple.com/library/content/documentation/Miscellaneous/
+    // Conceptual/MetalProgrammingGuide/Render-Ctx/Render-Ctx.html
+    
+    // Metal defines its Normalized Device Coordinate (NDC) system as a 2x2x1 cube with its center a
+    // (0, 0, 0.5). The left and bottom for x and y, respectively, of the NDC system are specified as -1.
+    // The right and top for x and y, respectively, of the NDC system are specified as +1.
     class func generateQuad(forDevice device: MTLDevice, inArray vertices: inout [Vertex]) -> MTLBuffer {
-        vertices.append(Vertex(position: float4(-1, -1, 0, 1),
-                               textureCoordinates: float2(0, 0)))
-        vertices.append(Vertex(position: float4(1, -1, 0, 1),
+        vertices.append(Vertex(position: float4(-1, -1, 0, 1), // left bottom
                                textureCoordinates: float2(1, 0)))
-        vertices.append(Vertex(position: float4(-1, 1, 0, 1),
-                               textureCoordinates: float2(0, 1)))
-        vertices.append(Vertex(position: float4(1, -1, 0, 1),
-                               textureCoordinates: float2(1, 0)))
-        vertices.append(Vertex(position: float4(-1, 1, 0, 1),
-                               textureCoordinates: float2(0, 1)))
-        vertices.append(Vertex(position: float4(1, 1, 0, 1),
+        vertices.append(Vertex(position: float4(1, -1, 0, 1), // right bottom
                                textureCoordinates: float2(1, 1)))
+        vertices.append(Vertex(position: float4(-1, 1, 0, 1), // left top
+                               textureCoordinates: float2(0, 0)))
+        vertices.append(Vertex(position: float4(1, -1, 0, 1), // right bottom
+                               textureCoordinates: float2(1, 1)))
+        vertices.append(Vertex(position: float4(-1, 1, 0, 1), // left top
+                               textureCoordinates: float2(0, 0)))
+        vertices.append(Vertex(position: float4(1, 1, 0, 1), // right top
+                               textureCoordinates: float2(0, 1)))
         
         return device.makeBuffer(bytes: vertices,
                                  length: MemoryLayout<Vertex>.stride * vertices.count,
@@ -190,7 +196,7 @@ struct Vertex {
         session = AVCaptureSession()
         session.beginConfiguration()
         
-        session.sessionPreset = AVCaptureSessionPresetLow
+        session.sessionPreset = AVCaptureSessionPresetHigh
         let camera = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         do {
             let input = try AVCaptureDeviceInput(device: camera)
