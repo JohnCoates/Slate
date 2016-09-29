@@ -28,6 +28,20 @@
 		FACC8FD61D98A5AF00589230 /* Cartography.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		FAADE0D41D9D142E00AA5729 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = sourcecode.metal;
+			isEditable = 1;
+			name = "Compile Metal Source Files";
+			outputFiles = (
+				"${TARGET_TEMP_DIR}/Metal/${FILE_BASE}.air",
+			);
+			script = "# metal\n${PROJECT_DIR}/Scripts/compileShader.sh";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXContainerItemProxy section */
 		FA9F89F71D953C540058C369 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -371,8 +385,10 @@
 				D216222D4FFB612C469C86DB /* [CP] Embed Pods Frameworks */,
 				BE785CD1AC6C00A36B4139BC /* [CP] Copy Pods Resources */,
 				FACC8FD71D98A5AF00589230 /* Embed Frameworks */,
+				FAADE0D51D9D1CB200AA5729 /* Build Metal Shader Library */,
 			);
 			buildRules = (
+				FAADE0D41D9D142E00AA5729 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -538,6 +554,20 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		FAADE0D51D9D1CB200AA5729 /* Build Metal Shader Library */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Metal Shader Library";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PROJECT_DIR}/Scripts/buildShaderLibrary.sh";
 		};
 		FACC8FD81D98AD4500589230 /* Run Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
