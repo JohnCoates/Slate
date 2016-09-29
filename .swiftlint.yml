@@ -14,3 +14,4 @@ variable_name:
 line_length:
   warning: 120
 vertical_whitespace: 3
+type_body_length: 300
