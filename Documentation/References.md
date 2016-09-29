@@ -8,3 +8,13 @@ WWDC Videos
 
 Rendering a screen covering triangle
 https://rauwendaal.net/2014/06/14/rendering-a-screen-covering-triangle-in-opengl/
+
+Great introduction to Metal
+https://www.objc.io/issues/18-games/metal/
+
+Getting started with shaders
+https://gamedevelopment.tutsplus.com/tutorials/a-beginners-guide-to-coding-graphics-shaders--cms-23313
+http://www.shaderific.com/glsl-functions/
+
+Shader Toy
+https://www.shadertoy.com/results?query=tag%3Dpostprocessing
