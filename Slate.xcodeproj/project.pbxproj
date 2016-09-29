@@ -10,6 +10,11 @@
 		A5819886DADA712D87F560CE /* Pods_Slate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E04854F7554529BBF7225F /* Pods_Slate.framework */; };
 		FA2426CE1D9A67E000AEE60C /* CameraRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */; };
 		FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */; };
+		FA4DFED11D9DBD1A0068706F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4DFED01D9DBD1A0068706F /* AppDelegate.swift */; };
+		FA4DFED31D9DBD1A0068706F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4DFED21D9DBD1A0068706F /* Assets.xcassets */; };
+		FA4DFED61D9DBD1A0068706F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4DFED41D9DBD1A0068706F /* MainMenu.xib */; };
+		FA4DFEDB1D9DBD5F0068706F /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */; };
+		FA4DFEDC1D9DBD620068706F /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0D21D9D0C4300AA5729 /* Shaders.metal */; };
 		FA834BD41D9916710017CCCA /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA834BD31D9916710017CCCA /* GPUImage.framework */; };
 		FA834BD51D9916710017CCCA /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA834BD31D9916710017CCCA /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA834BDD1D9920010017CCCA /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BDC1D9920010017CCCA /* Platform.swift */; };
@@ -80,6 +85,11 @@
 		EA840E944B27AE79422AB380 /* Pods-Slate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Slate/Pods-Slate.release.xcconfig"; sourceTree = "<group>"; };
 		FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRenderView.swift; sourceTree = "<group>"; };
 		FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalCaptureViewController.swift; sourceTree = "<group>"; };
+		FA4DFECE1D9DBD1A0068706F /* macSlate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macSlate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA4DFED01D9DBD1A0068706F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA4DFED21D9DBD1A0068706F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA4DFED51D9DBD1A0068706F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		FA4DFED71D9DBD1A0068706F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA834BD31D9916710017CCCA /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
 		FA834BDC1D9920010017CCCA /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		FA834BE01D9927EB0017CCCA /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -103,6 +113,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FA4DFECB1D9DBD1A0068706F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA9F89DF1D953C540058C369 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -170,6 +187,17 @@
 				FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FA4DFECF1D9DBD1A0068706F /* macSlate */ = {
+			isa = PBXGroup;
+			children = (
+				FA4DFED01D9DBD1A0068706F /* AppDelegate.swift */,
+				FA4DFED21D9DBD1A0068706F /* Assets.xcassets */,
+				FA4DFED41D9DBD1A0068706F /* MainMenu.xib */,
+				FA4DFED71D9DBD1A0068706F /* Info.plist */,
+			);
+			path = macSlate;
 			sourceTree = "<group>";
 		};
 		FA834BDA1D991FDC0017CCCA /* Models */ = {
@@ -246,6 +274,7 @@
 				FA9F89E41D953C540058C369 /* Source */,
 				FA9F8A141D953EFE0058C369 /* Resources */,
 				FA9F8A131D953EDF0058C369 /* Tests */,
+				FA4DFECF1D9DBD1A0068706F /* macSlate */,
 				9EF4533E798C01A4F72A666D /* Frameworks */,
 				D69C6E31C324FE952A894F22 /* Pods */,
 				FA9F89E31D953C540058C369 /* Products */,
@@ -258,6 +287,7 @@
 				FA9F89E21D953C540058C369 /* Slate.app */,
 				FA9F89F61D953C540058C369 /* UnitTests.xctest */,
 				FA9F8A011D953C540058C369 /* UITests.xctest */,
+				FA4DFECE1D9DBD1A0068706F /* macSlate.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -373,6 +403,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FA4DFECD1D9DBD1A0068706F /* macSlate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA4DFEDA1D9DBD1A0068706F /* Build configuration list for PBXNativeTarget "macSlate" */;
+			buildPhases = (
+				FA4DFECA1D9DBD1A0068706F /* Sources */,
+				FA4DFECB1D9DBD1A0068706F /* Frameworks */,
+				FA4DFECC1D9DBD1A0068706F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = macSlate;
+			productName = macSlate;
+			productReference = FA4DFECE1D9DBD1A0068706F /* macSlate.app */;
+			productType = "com.apple.product-type.application";
+		};
 		FA9F89E11D953C540058C369 /* Slate */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA9F8A0A1D953C540058C369 /* Build configuration list for PBXNativeTarget "Slate" */;
@@ -443,6 +490,11 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "John Coates";
 				TargetAttributes = {
+					FA4DFECD1D9DBD1A0068706F = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = E6QK4MU6LM;
+						ProvisioningStyle = Automatic;
+					};
 					FA9F89E11D953C540058C369 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = E6QK4MU6LM;
@@ -478,11 +530,21 @@
 				FA9F89E11D953C540058C369 /* Slate */,
 				FA9F89F51D953C540058C369 /* UnitTests */,
 				FA9F8A001D953C540058C369 /* UITests */,
+				FA4DFECD1D9DBD1A0068706F /* macSlate */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FA4DFECC1D9DBD1A0068706F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA4DFED31D9DBD1A0068706F /* Assets.xcassets in Resources */,
+				FA4DFED61D9DBD1A0068706F /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA9F89E01D953C540058C369 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -586,6 +648,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FA4DFECA1D9DBD1A0068706F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA4DFEDC1D9DBD620068706F /* Shaders.metal in Sources */,
+				FA4DFEDB1D9DBD5F0068706F /* Renderer.swift in Sources */,
+				FA4DFED11D9DBD1A0068706F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA9F89DE1D953C540058C369 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -634,6 +706,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		FA4DFED41D9DBD1A0068706F /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA4DFED51D9DBD1A0068706F /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
 		FA9F89EE1D953C540058C369 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -646,6 +726,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FA4DFED81D9DBD1A0068706F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				INFOPLIST_FILE = macSlate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.macSlate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FA4DFED91D9DBD1A0068706F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				INFOPLIST_FILE = macSlate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.macSlate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		FA9F8A081D953C540058C369 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -691,8 +805,9 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "";
-				"OTHER_SWIFT_FLAGS[sdk=iphoneos*]" = "-DIOS_DEVICE";
+				"OTHER_SWIFT_FLAGS[sdk=iphoneos*]" = "-DMETAL_DEVICE";
 				"OTHER_SWIFT_FLAGS[sdk=iphonesimulator*]" = "-DIOS_SIMULATOR";
+				"OTHER_SWIFT_FLAGS[sdk=macosx*]" = "-DMETAL_DEVICE";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -737,8 +852,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "";
-				"OTHER_SWIFT_FLAGS[sdk=iphoneos*]" = "-DIOS_DEVICE";
+				"OTHER_SWIFT_FLAGS[sdk=iphoneos*]" = "-DMETAL_DEVICE";
 				"OTHER_SWIFT_FLAGS[sdk=iphonesimulator*]" = "-DIOS_SIMULATOR";
+				"OTHER_SWIFT_FLAGS[sdk=macosx*]" = "-DMETAL_DEVICE";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -842,6 +958,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FA4DFEDA1D9DBD1A0068706F /* Build configuration list for PBXNativeTarget "macSlate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA4DFED81D9DBD1A0068706F /* Debug */,
+				FA4DFED91D9DBD1A0068706F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		FA9F89DD1D953C540058C369 /* Build configuration list for PBXProject "Slate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

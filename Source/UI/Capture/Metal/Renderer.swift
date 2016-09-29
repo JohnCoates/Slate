@@ -123,6 +123,7 @@ struct Vertex {
         pipelineDescriptor.colorAttachments[0].pixelFormat = view.colorPixelFormat
         pipelineDescriptor.depthAttachmentPixelFormat = view.depthStencilPixelFormat
         
+        // compile intermediate shaders into hardward-optimized code
         return try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
     }
     
@@ -142,7 +143,7 @@ struct Vertex {
         renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(1, 1, 1, 1)
         renderPassDescriptor.colorAttachments[0].loadAction = .clear
         renderPassDescriptor.colorAttachments[0].storeAction = .dontCare
-        #if IOS_DEVICE
+        #if METAL_DEVICE
             renderPassDescriptor.colorAttachments[0].texture = currentDrawable.texture
         #endif
         
@@ -164,7 +165,7 @@ struct Vertex {
     // MARK: - Texture
     
     func setUpVideoQuadTexture() {
-        #if IOS_DEVICE
+        #if METAL_DEVICE
         guard CVMetalTextureCacheCreate(kCFAllocatorDefault,
                                         nil, // cache attributes
             device,
@@ -188,7 +189,7 @@ struct Vertex {
     var texture: MTLTexture?
     var sampler: MTLSamplerState!
     
-    #if IOS_DEVICE
+    #if METAL_DEVICE
     var textureCache: CVMetalTextureCache?
     #endif
     
@@ -264,7 +265,7 @@ struct Vertex {
     func captureOutput(_ captureOutput: AVCaptureOutput!,
                        didOutputSampleBuffer sampleBuffer: CMSampleBuffer!,
                        from connection: AVCaptureConnection!) {
-        #if IOS_DEVICE
+        #if METAL_DEVICE
         guard let textureCache = textureCache else {
             print("Missing texture cache!")
             return
