@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.backgroundColor = UIColor.white
         window.makeKeyAndVisible()
-        window.rootViewController = CaptureViewController()
+        window.rootViewController = MetalCaptureViewController()
         self.window = window
         return true
     }
