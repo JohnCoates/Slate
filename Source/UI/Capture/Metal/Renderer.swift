@@ -356,7 +356,7 @@ struct Vertex {
     }
     
     // MARK: - Buffer Updates
-    
+    #if os(macOS)
     func invalidateVertexBuffer() {
         let contents = vertexBuffer.contents()
         memcpy(contents, vertices, MemoryLayout<Vertex>.stride * vertices.count)
@@ -364,6 +364,7 @@ struct Vertex {
         let range = NSRange(location: 0, length: length)
         vertexBuffer.didModifyRange(range)
     }
+    #endif
     
     // MARK: - Metal View Delegate
     
