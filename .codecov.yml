@@ -8,6 +8,6 @@ notify:
   gitter:
     default:                        # -> see "sections" below
       url: "https://webhooks.gitter.im/e/2867d697d7d5cdf40dc0"  #*S unique Gitter notifications url
-      branches: null                # -> see "branch patterns" below
-      threshold: null               # -> see "threshold" below
-      message: "template string"    # [advanced] -> see "customized message" below
+      branches:
+        - master
+      threshold: 1.25
