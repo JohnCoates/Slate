@@ -18,3 +18,6 @@ http://www.shaderific.com/glsl-functions/
 
 Shader Toy
 https://www.shadertoy.com/results?query=tag%3Dpostprocessing
+
+Working on the macOS target
+https://www.objc.io/issues/14-mac/appkit-for-uikit-developers/
