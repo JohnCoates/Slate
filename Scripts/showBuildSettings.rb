@@ -7,6 +7,6 @@ Dir.chdir(projectDirectory) do
   # iOS Device
   # ret = `xcodebuild -project "#{projectPath}" -target Slate -showBuildSettings`
   # simulator
-  ret = `xcodebuild -project "#{projectPath}" -target Slate -destination 'platform=iOS Simulator,name=iPhone 6s' -showBuildSettings`
+  ret = `xcodebuild -project "#{projectPath}" -scheme Slate -destination 'platform=iOS Simulator,name=iPhone 6s' -showBuildSettings test`
   puts ret
 end

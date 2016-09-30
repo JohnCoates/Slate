@@ -99,9 +99,36 @@ struct Vertex {
         vertices.append(Vertex(position: float4(1, 1, 0, 1), // right top
                                textureCoordinates: float2(0, 1)))
         
+        var options: MTLResourceOptions = []
+        #if os(macOS)
+            options = [.storageModeManaged]
+        #endif
+        
         return device.makeBuffer(bytes: vertices,
                                  length: MemoryLayout<Vertex>.stride * vertices.count,
-                                 options: [])
+                                 options: options)
+    }
+    
+    func macFlipped() -> [float2] {
+        var coordinates = [float2]()
+        coordinates.append(float2(0, 1))
+        coordinates.append(float2(1, 1))
+        coordinates.append(float2(0, 0))
+        coordinates.append(float2(1, 1))
+        coordinates.append(float2(0, 0))
+        coordinates.append(float2(1, 0))
+        return coordinates
+    }
+    
+    func macHorizontalFlipped() -> [float2] {
+        var coordinates = [float2]()
+        coordinates.append(float2(1, 1))
+        coordinates.append(float2(0, 1))
+        coordinates.append(float2(1, 0))
+        coordinates.append(float2(0, 1))
+        coordinates.append(float2(1, 0))
+        coordinates.append(float2(0, 0))
+        return coordinates
     }
     
     class func buildRenderPipeline(device: MTLDevice, view: MTKView) throws -> MTLRenderPipelineState {
@@ -302,7 +329,7 @@ struct Vertex {
         frame += 1
         
         if frame % 10 == 0 {
-            print("new frame: \(frame)")
+//            print("new frame: \(frame)")
         }
         #endif
     }
@@ -326,6 +353,16 @@ struct Vertex {
                                      vertexCount: 6,
                                      instanceCount: 1)
         renderEncoder.popDebugGroup()
+    }
+    
+    // MARK: - Buffer Updates
+    
+    func invalidateVertexBuffer() {
+        let contents = vertexBuffer.contents()
+        memcpy(contents, vertices, MemoryLayout<Vertex>.stride * vertices.count)
+        let length = vertexBuffer.length
+        let range = NSRange(location: 0, length: length)
+        vertexBuffer.didModifyRange(range)
     }
     
     // MARK: - Metal View Delegate

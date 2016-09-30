@@ -15,6 +15,7 @@
 		FA4DFED61D9DBD1A0068706F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4DFED41D9DBD1A0068706F /* MainMenu.xib */; };
 		FA4DFEDB1D9DBD5F0068706F /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */; };
 		FA4DFEDC1D9DBD620068706F /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0D21D9D0C4300AA5729 /* Shaders.metal */; };
+		FA4DFEE01D9DC15E0068706F /* HUDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4DFEDF1D9DC15E0068706F /* HUDController.swift */; };
 		FA834BD41D9916710017CCCA /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA834BD31D9916710017CCCA /* GPUImage.framework */; };
 		FA834BD51D9916710017CCCA /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA834BD31D9916710017CCCA /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA834BDD1D9920010017CCCA /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BDC1D9920010017CCCA /* Platform.swift */; };
@@ -29,6 +30,8 @@
 		FA9F8A061D953C540058C369 /* SlateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F8A051D953C540058C369 /* SlateUITests.swift */; };
 		FAADE0D01D9D0AC200AA5729 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */; };
 		FAADE0D31D9D0C4300AA5729 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0D21D9D0C4300AA5729 /* Shaders.metal */; };
+		FABB16911D9E258D00A8AC6C /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABB16901D9E258D00A8AC6C /* Cartography.framework */; };
+		FABB16931D9E259900A8AC6C /* Cartography.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FABB16901D9E258D00A8AC6C /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FACC8FD41D98A55400589230 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
 		FACC8FD61D98A5AF00589230 /* Cartography.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -65,6 +68,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		FABB16941D9E259900A8AC6C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FABB16931D9E259900A8AC6C /* Cartography.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FACC8FD71D98A5AF00589230 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -90,6 +104,7 @@
 		FA4DFED21D9DBD1A0068706F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA4DFED51D9DBD1A0068706F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FA4DFED71D9DBD1A0068706F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA4DFEDF1D9DC15E0068706F /* HUDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDController.swift; sourceTree = "<group>"; };
 		FA834BD31D9916710017CCCA /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
 		FA834BDC1D9920010017CCCA /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		FA834BE01D9927EB0017CCCA /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -109,6 +124,7 @@
 		FA9F8A071D953C540058C369 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		FAADE0D21D9D0C4300AA5729 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		FABB16901D9E258D00A8AC6C /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cartography.framework; sourceTree = "<group>"; };
 		FACC8FD31D98A55400589230 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cartography.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABB16911D9E258D00A8AC6C /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,12 +209,21 @@
 		FA4DFECF1D9DBD1A0068706F /* macSlate */ = {
 			isa = PBXGroup;
 			children = (
+				FA4DFEDE1D9DC1460068706F /* HUD */,
 				FA4DFED01D9DBD1A0068706F /* AppDelegate.swift */,
 				FA4DFED21D9DBD1A0068706F /* Assets.xcassets */,
 				FA4DFED41D9DBD1A0068706F /* MainMenu.xib */,
 				FA4DFED71D9DBD1A0068706F /* Info.plist */,
 			);
 			path = macSlate;
+			sourceTree = "<group>";
+		};
+		FA4DFEDE1D9DC1460068706F /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				FA4DFEDF1D9DC15E0068706F /* HUDController.swift */,
+			);
+			path = HUD;
 			sourceTree = "<group>";
 		};
 		FA834BDA1D991FDC0017CCCA /* Models */ = {
@@ -382,9 +408,19 @@
 			path = Shaders;
 			sourceTree = "<group>";
 		};
+		FABB168F1D9E257000A8AC6C /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				FABB16901D9E258D00A8AC6C /* Cartography.framework */,
+			);
+			name = Mac;
+			path = ../Mac;
+			sourceTree = "<group>";
+		};
 		FACC8FD21D98A52500589230 /* Carthage */ = {
 			isa = PBXGroup;
 			children = (
+				FABB168F1D9E257000A8AC6C /* Mac */,
 				FA834BD31D9916710017CCCA /* GPUImage.framework */,
 				FACC8FD31D98A55400589230 /* Cartography.framework */,
 			);
@@ -407,9 +443,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA4DFEDA1D9DBD1A0068706F /* Build configuration list for PBXNativeTarget "macSlate" */;
 			buildPhases = (
+				FABB16951D9E25D700A8AC6C /* Run Swiftlint */,
 				FA4DFECA1D9DBD1A0068706F /* Sources */,
 				FA4DFECB1D9DBD1A0068706F /* Frameworks */,
 				FA4DFECC1D9DBD1A0068706F /* Resources */,
+				FABB16941D9E259900A8AC6C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -631,6 +669,20 @@
 			shellPath = /bin/sh;
 			shellScript = "${PROJECT_DIR}/Scripts/buildShaderLibrary.sh";
 		};
+		FABB16951D9E25D700A8AC6C /* Run Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swiftlint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		FACC8FD81D98AD4500589230 /* Run Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -655,6 +707,7 @@
 				FA4DFEDC1D9DBD620068706F /* Shaders.metal in Sources */,
 				FA4DFEDB1D9DBD5F0068706F /* Renderer.swift in Sources */,
 				FA4DFED11D9DBD1A0068706F /* AppDelegate.swift in Sources */,
+				FA4DFEE01D9DC15E0068706F /* HUDController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,6 +786,10 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = macSlate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -750,6 +807,10 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = macSlate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -965,6 +1026,7 @@
 				FA4DFED91D9DBD1A0068706F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA9F89DD1D953C540058C369 /* Build configuration list for PBXProject "Slate" */ = {
 			isa = XCConfigurationList;
