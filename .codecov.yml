@@ -1,0 +1,13 @@
+codecov:
+  branch: master
+coverage:
+  precision: 2         # how many decimal places to display in the UI: 0 <= value <= 4
+  round: down          # how coverage is rounded: down/up/nearest
+  range: 50...100      # custom range of coverage colors from red -> yellow -> green
+notify:
+  gitter:
+    default:                        # -> see "sections" below
+      url: "https://webhooks.gitter.im/e/2867d697d7d5cdf40dc0"  #*S unique Gitter notifications url
+      branches: null                # -> see "branch patterns" below
+      threshold: null               # -> see "threshold" below
+      message: "template string"    # [advanced] -> see "customized message" below
