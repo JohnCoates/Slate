@@ -13,7 +13,6 @@ import AVFoundation
 
 struct Vertex {
     var position: float4
-    var textureCoordinates: float2
 }
 
 @objc class Renderer: NSObject, MTKViewDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
@@ -25,6 +24,7 @@ struct Vertex {
     var vertices = [Vertex]()
     var textureCoordinates = [float2]()
     var vertexBuffer: MTLBuffer
+    var textureCoordinatesBuffer: MTLBuffer
     
     init?(metalView: MTKView) {
         view = metalView
@@ -45,7 +45,7 @@ struct Vertex {
         }
         
         vertexBuffer = Renderer.generateQuad(forDevice: device, inArray: &vertices)
-        
+        textureCoordinatesBuffer = Renderer.generate(textureCoordinates: &textureCoordinates, forDevice: device)
         super.init()
         setUpVideoQuadTexture()
         startCapturingVideo()
@@ -86,18 +86,12 @@ struct Vertex {
     // (0, 0, 0.5). The left and bottom for x and y, respectively, of the NDC system are specified as -1.
     // The right and top for x and y, respectively, of the NDC system are specified as +1.
     class func generateQuad(forDevice device: MTLDevice, inArray vertices: inout [Vertex]) -> MTLBuffer {
-        vertices.append(Vertex(position: float4(-1, -1, 0, 1), // left bottom
-                               textureCoordinates: float2(1, 0)))
-        vertices.append(Vertex(position: float4(1, -1, 0, 1), // right bottom
-                               textureCoordinates: float2(1, 1)))
-        vertices.append(Vertex(position: float4(-1, 1, 0, 1), // left top
-                               textureCoordinates: float2(0, 0)))
-        vertices.append(Vertex(position: float4(1, -1, 0, 1), // right bottom
-                               textureCoordinates: float2(1, 1)))
-        vertices.append(Vertex(position: float4(-1, 1, 0, 1), // left top
-                               textureCoordinates: float2(0, 0)))
-        vertices.append(Vertex(position: float4(1, 1, 0, 1), // right top
-                               textureCoordinates: float2(0, 1)))
+        vertices.append(Vertex(position: float4(-1, -1, 0, 1))) // left bottom
+        vertices.append(Vertex(position: float4(1, -1, 0, 1))) // right bottom
+        vertices.append(Vertex(position: float4(-1, 1, 0, 1))) // left top
+        vertices.append(Vertex(position: float4(1, -1, 0, 1))) // right bottom
+        vertices.append(Vertex(position: float4(-1, 1, 0, 1))) // left top
+        vertices.append(Vertex(position: float4(1, 1, 0, 1))) // right top
         
         var options: MTLResourceOptions = []
         #if os(macOS)
@@ -109,7 +103,34 @@ struct Vertex {
                                  options: options)
     }
     
-    func macFlipped() -> [float2] {
+    class func generate(textureCoordinates coordinates: inout[float2], forDevice device: MTLDevice) -> MTLBuffer {
+        
+        var options: MTLResourceOptions = []
+        #if os(macOS)
+            coordinates += macHorizontalFlipped()
+            options = [.storageModeManaged]
+        #endif
+        
+        #if os(iOS)
+            coordinates += iOSCoordinates()
+        #endif
+        
+        return device.makeBuffer(bytes: coordinates,
+                                 length: MemoryLayout<float2>.stride * coordinates.count,
+                                 options: options)
+    }
+    
+    class func iOSCoordinates() -> [float2] {
+        return [
+            float2(1, 0),
+            float2(1, 1),
+            float2(0, 0),
+            float2(1, 1),
+            float2(0, 0),
+            float2(0, 1)
+        ]
+    }
+    class func macFlipped() -> [float2] {
         var coordinates = [float2]()
         coordinates.append(float2(0, 1))
         coordinates.append(float2(1, 1))
@@ -120,7 +141,7 @@ struct Vertex {
         return coordinates
     }
     
-    func macHorizontalFlipped() -> [float2] {
+    class func macHorizontalFlipped() -> [float2] {
         var coordinates = [float2]()
         coordinates.append(float2(1, 1))
         coordinates.append(float2(0, 1))
@@ -304,7 +325,6 @@ struct Vertex {
         }
         
         var optionalTextureRef: CVMetalTexture? = nil
-        
         let width = CVPixelBufferGetWidth(imageBuffer)
         let height = CVPixelBufferGetHeight(imageBuffer)
         let returnValue = CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault,
@@ -346,6 +366,7 @@ struct Vertex {
         // Bind the buffer containing the array of vertex structures so we can
         // read it in our vertex shader.
         renderEncoder.setVertexBuffer(vertexBuffer, offset:0, at:0)
+        renderEncoder.setVertexBuffer(textureCoordinatesBuffer, offset: 0, at: 1)
         renderEncoder.setFragmentTexture(texture, at: 0)
         renderEncoder.setFragmentSamplerState(sampler, at: 0)
         renderEncoder.drawPrimitives(type: .triangle,
@@ -356,6 +377,7 @@ struct Vertex {
     }
     
     // MARK: - Buffer Updates
+    
     #if os(macOS)
     func invalidateVertexBuffer() {
         let contents = vertexBuffer.contents()
@@ -363,6 +385,14 @@ struct Vertex {
         let length = vertexBuffer.length
         let range = NSRange(location: 0, length: length)
         vertexBuffer.didModifyRange(range)
+    }
+    
+    func invalidateTextureCoordinatesBuffer() {
+        let contents = textureCoordinatesBuffer.contents()
+        memcpy(contents, textureCoordinates, MemoryLayout<float2>.stride * textureCoordinates.count)
+        let length = textureCoordinatesBuffer.length
+        let range = NSRange(location: 0, length: length)
+        textureCoordinatesBuffer.didModifyRange(range)
     }
     #endif
     

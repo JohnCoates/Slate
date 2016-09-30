@@ -3,6 +3,9 @@ using namespace metal;
 
 struct VertexIn {
     float4 position;
+};
+
+struct TextureCoordinatesIn {
     float2 textureCoordinates [[user(texturecoord)]];
 };
 
@@ -14,10 +17,12 @@ struct VertexOut {
 // passthrough
 
 vertex VertexOut vertexPassthrough(device VertexIn *vertices [[ buffer(0) ]],
-                                    uint vertexId [[ vertex_id ]]) {
+                                   device float2 *textureCoordinates [[ buffer(1) ]],
+                                    uint vertexID [[ vertex_id ]]) {
     VertexOut out;
-    out.position = vertices[vertexId].position;
-    out.textureCoordinates = vertices[vertexId].textureCoordinates;
+    out.position = vertices[vertexID].position;
+//    out.textureCoordinates = vertices[vertexId].textureCoordinates;
+    out.textureCoordinates = textureCoordinates[vertexID];
     return out;
 }
 

@@ -61,16 +61,10 @@ class HUDContentController: NSViewController, NSTextFieldDelegate {
     func createVertexField(index: Int,
                            previousField: NSTextField?) -> NSTextField {
         let field = NSTextField()
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        numberFormatter.allowsFloats = true
-        numberFormatter.usesGroupingSeparator = false
-        let vertex = renderer.vertices[index]
-        let x = vertex.textureCoordinates.x
-        let y = vertex.textureCoordinates.y
+        let textureCoordinates = renderer.textureCoordinates[index]
+        let x = textureCoordinates.x
+        let y = textureCoordinates.y
         field.stringValue = "\(x),\(y)"
-//        field.floatValue = Float(vertex.textureCoordinates.x)
-//        field.formatter = numberFormatter
         field.formatter = TexturePairFormatter()
         field.delegate = self
         vertexFields.append(field)
@@ -143,9 +137,9 @@ class HUDContentController: NSViewController, NSTextFieldDelegate {
                 return
         }
         
-        renderer.vertices[index].textureCoordinates.x = x
-        renderer.vertices[index].textureCoordinates.y = y
-        renderer.invalidateVertexBuffer()
+        renderer.textureCoordinates[index].x = x
+        renderer.textureCoordinates[index].y = y
+        renderer.invalidateTextureCoordinatesBuffer()
     }
 }
 
