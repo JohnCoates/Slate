@@ -16,8 +16,6 @@
 		FA4DFEDB1D9DBD5F0068706F /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */; };
 		FA4DFEDC1D9DBD620068706F /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */; };
 		FA4DFEE01D9DC15E0068706F /* HUDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4DFEDF1D9DC15E0068706F /* HUDController.swift */; };
-		FA834BD41D9916710017CCCA /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA834BD31D9916710017CCCA /* GPUImage.framework */; };
-		FA834BD51D9916710017CCCA /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA834BD31D9916710017CCCA /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA834BDD1D9920010017CCCA /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BDC1D9920010017CCCA /* Platform.swift */; };
 		FA834BE11D9927EB0017CCCA /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BE01D9927EB0017CCCA /* Button.swift */; };
 		FA834BE41D9929710017CCCA /* CaptureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BE31D9929710017CCCA /* CaptureButton.swift */; };
@@ -111,7 +109,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				FACC8FD61D98A5AF00589230 /* Cartography.framework in Embed Frameworks */,
-				FA834BD51D9916710017CCCA /* GPUImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,7 +127,6 @@
 		FA4DFED51D9DBD1A0068706F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FA4DFED71D9DBD1A0068706F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA4DFEDF1D9DC15E0068706F /* HUDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDController.swift; sourceTree = "<group>"; };
-		FA834BD31D9916710017CCCA /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
 		FA834BDC1D9920010017CCCA /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		FA834BE01D9927EB0017CCCA /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		FA834BE31D9929710017CCCA /* CaptureButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureButton.swift; sourceTree = "<group>"; };
@@ -177,7 +173,6 @@
 			files = (
 				A5819886DADA712D87F560CE /* Pods_Slate.framework in Frameworks */,
 				FACC8FD41D98A55400589230 /* Cartography.framework in Frameworks */,
-				FA834BD41D9916710017CCCA /* GPUImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,7 +499,6 @@
 			isa = PBXGroup;
 			children = (
 				FABB168F1D9E257000A8AC6C /* Mac */,
-				FA834BD31D9916710017CCCA /* GPUImage.framework */,
 				FACC8FD31D98A55400589230 /* Cartography.framework */,
 			);
 			name = Carthage;
