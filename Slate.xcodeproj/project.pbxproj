@@ -22,7 +22,7 @@
 		FA834BE11D9927EB0017CCCA /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BE01D9927EB0017CCCA /* Button.swift */; };
 		FA834BE41D9929710017CCCA /* CaptureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BE31D9929710017CCCA /* CaptureButton.swift */; };
 		FA834BE61D9932BC0017CCCA /* Placeholders.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA834BE51D9932BC0017CCCA /* Placeholders.xcassets */; };
-		FA86BE051D98ED9400BC5FB1 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86BE041D98ED9400BC5FB1 /* CaptureViewController.swift */; };
+		FA86BE051D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86BE041D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift */; };
 		FA9F89E61D953C540058C369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F89E51D953C540058C369 /* AppDelegate.swift */; };
 		FA9F89ED1D953C540058C369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9F89EC1D953C540058C369 /* Assets.xcassets */; };
 		FA9F89F01D953C540058C369 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9F89EE1D953C540058C369 /* LaunchScreen.storyboard */; };
@@ -45,6 +45,8 @@
 		FABB16B11D9F822800A8AC6C /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B01D9F822800A8AC6C /* CameraController.swift */; };
 		FABB16B21D9F822800A8AC6C /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B01D9F822800A8AC6C /* CameraController.swift */; };
 		FABB16B31D9F858800A8AC6C /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BDC1D9920010017CCCA /* Platform.swift */; };
+		FABB16B51D9F886300A8AC6C /* BaseCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */; };
+		FABB16B61D9F886300A8AC6C /* BaseCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */; };
 		FACC8FD41D98A55400589230 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
 		FACC8FD61D98A5AF00589230 /* Cartography.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -133,7 +135,7 @@
 		FA834BE01D9927EB0017CCCA /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		FA834BE31D9929710017CCCA /* CaptureButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureButton.swift; sourceTree = "<group>"; };
 		FA834BE51D9932BC0017CCCA /* Placeholders.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Placeholders.xcassets; sourceTree = "<group>"; };
-		FA86BE041D98ED9400BC5FB1 /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
+		FA86BE041D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulatorCaptureViewController.swift; sourceTree = "<group>"; };
 		FA9F89E21D953C540058C369 /* Slate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9F89E51D953C540058C369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA9F89EC1D953C540058C369 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		FABB16A81D9F492D00A8AC6C /* HUDShader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = HUDShader.metal; sourceTree = "<group>"; };
 		FABB16AC1D9F6DAB00A8AC6C /* ChromaticAberration.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ChromaticAberration.metal; sourceTree = "<group>"; };
 		FABB16B01D9F822800A8AC6C /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCaptureViewController.swift; sourceTree = "<group>"; };
 		FACC8FD31D98A55400589230 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cartography.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -322,8 +325,9 @@
 		FA86BE031D98ED6C00BC5FB1 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA86BE041D98ED9400BC5FB1 /* CaptureViewController.swift */,
+				FA86BE041D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift */,
 				FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */,
+				FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -784,6 +788,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABB16B61D9F886300A8AC6C /* BaseCaptureViewController.swift in Sources */,
 				FA4DFEDC1D9DBD620068706F /* Passthrough.metal in Sources */,
 				FABB16A61D9F471000A8AC6C /* HUDShaderViewController.swift in Sources */,
 				FA4DFEDB1D9DBD5F0068706F /* Renderer.swift in Sources */,
@@ -809,8 +814,9 @@
 				FABB16AD1D9F6DAB00A8AC6C /* ChromaticAberration.metal in Sources */,
 				FA834BE41D9929710017CCCA /* CaptureButton.swift in Sources */,
 				FABB169E1D9F308C00A8AC6C /* Vertices.swift in Sources */,
+				FABB16B51D9F886300A8AC6C /* BaseCaptureViewController.swift in Sources */,
 				FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */,
-				FA86BE051D98ED9400BC5FB1 /* CaptureViewController.swift in Sources */,
+				FA86BE051D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift in Sources */,
 				FA9F89E61D953C540058C369 /* AppDelegate.swift in Sources */,
 				FAADE0D31D9D0C4300AA5729 /* Passthrough.metal in Sources */,
 				FA834BE11D9927EB0017CCCA /* Button.swift in Sources */,

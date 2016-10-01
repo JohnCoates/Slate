@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.backgroundColor = UIColor.white
         window.makeKeyAndVisible()
         if Platform.isSimulator {
-            window.rootViewController = CaptureViewController()
+            window.rootViewController = SimulatorCaptureViewController()
         } else {
             window.rootViewController = MetalCaptureViewController()
         }

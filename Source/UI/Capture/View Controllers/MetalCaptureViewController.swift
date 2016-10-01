@@ -9,15 +9,26 @@
 import UIKit
 import MetalKit
 
-final class MetalCaptureViewController: UIViewController {
+final class MetalCaptureViewController: BaseCaptureViewController {
+    
+    // MARK: - View Lifecycle
+    
+    lazy var metalView = MTKView()
+    override func loadView() {
+        view = metalView
+    }
+    
+    // MARK: - Setup
     
     var renderer: Renderer!
-    
-    override func loadView() {
-        let metalView = MTKView()
-        view = metalView
-        
+    override func cameraSetup() {
         renderer = Renderer(metalView: metalView)
+    }
+    
+    // MARK: - Capturing
+    
+    override func captureTapped() {
+        print("metal capture")
     }
     
     // MARK: - Status Bar
