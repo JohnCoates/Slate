@@ -174,6 +174,9 @@ import AVFoundation
     // MARK: - Render
     
     func render(_ view: MTKView) {
+        guard dirtyTexture else {
+            return
+        }
         // Our command buffer is a container for the work we want to perform with the GPU.
         let commandBuffer = commandQueue.makeCommandBuffer()
         
@@ -339,7 +342,7 @@ import AVFoundation
     }
     
     // MARK: - Camera Controller Handlers
-    
+    fileprivate var dirtyTexture = true
     func captureHandler(imageBuffer: CVImageBuffer) {
         #if METAL_DEVICE
         guard let textureCache = textureCache else {
@@ -368,6 +371,7 @@ import AVFoundation
         }
         
         self.texture = texture
+        dirtyTexture = true
         #endif
     }
     
