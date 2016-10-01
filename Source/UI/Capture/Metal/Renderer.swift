@@ -11,10 +11,6 @@ import MetalKit
 import CoreVideo
 import AVFoundation
 
-struct Vertex {
-    var position: float4
-}
-
 @objc class Renderer: NSObject, MTKViewDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     weak var view: MTKView!
@@ -86,12 +82,7 @@ struct Vertex {
     // (0, 0, 0.5). The left and bottom for x and y, respectively, of the NDC system are specified as -1.
     // The right and top for x and y, respectively, of the NDC system are specified as +1.
     class func generateQuad(forDevice device: MTLDevice, inArray vertices: inout [Vertex]) -> MTLBuffer {
-        vertices.append(Vertex(position: float4(-1, -1, 0, 1))) // left bottom
-        vertices.append(Vertex(position: float4(1, -1, 0, 1))) // right bottom
-        vertices.append(Vertex(position: float4(-1, 1, 0, 1))) // left top
-        vertices.append(Vertex(position: float4(1, -1, 0, 1))) // right bottom
-        vertices.append(Vertex(position: float4(-1, 1, 0, 1))) // left top
-        vertices.append(Vertex(position: float4(1, 1, 0, 1))) // right top
+        vertices += Vertices.quad()
         
         var options: MTLResourceOptions = []
         #if os(macOS)
@@ -107,50 +98,18 @@ struct Vertex {
         
         var options: MTLResourceOptions = []
         #if os(macOS)
-            coordinates += macHorizontalFlipped()
+            coordinates += TextureCoordinates.macHorizontalFlipped()
             options = [.storageModeManaged]
         #endif
         
         #if os(iOS)
-            coordinates += iOSCoordinates()
+            coordinates += TextureCoordinates.devicePortrait()()
         #endif
         
         return device.makeBuffer(bytes: coordinates,
                                  length: MemoryLayout<float2>.stride * coordinates.count,
                                  options: options)
-    }
-    
-    class func iOSCoordinates() -> [float2] {
-        return [
-            float2(1, 0),
-            float2(1, 1),
-            float2(0, 0),
-            float2(1, 1),
-            float2(0, 0),
-            float2(0, 1)
-        ]
-    }
-    class func macFlipped() -> [float2] {
-        var coordinates = [float2]()
-        coordinates.append(float2(0, 1))
-        coordinates.append(float2(1, 1))
-        coordinates.append(float2(0, 0))
-        coordinates.append(float2(1, 1))
-        coordinates.append(float2(0, 0))
-        coordinates.append(float2(1, 0))
-        return coordinates
-    }
-    
-    class func macHorizontalFlipped() -> [float2] {
-        var coordinates = [float2]()
-        coordinates.append(float2(1, 1))
-        coordinates.append(float2(0, 1))
-        coordinates.append(float2(1, 0))
-        coordinates.append(float2(0, 1))
-        coordinates.append(float2(1, 0))
-        coordinates.append(float2(0, 0))
-        return coordinates
-    }
+    }    
     
     class func buildRenderPipeline(device: MTLDevice, view: MTKView) throws -> MTLRenderPipelineState {
         // The default library contains all of the shader functions that were compiled into our app bundle
