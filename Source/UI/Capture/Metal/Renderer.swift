@@ -16,11 +16,14 @@ import AVFoundation
     weak var view: MTKView!
     let device: MTLDevice
     let commandQueue: MTLCommandQueue
-    let renderPipelineState: MTLRenderPipelineState
+    var renderPipelineState: MTLRenderPipelineState!
     var vertices = [Vertex]()
     var textureCoordinates = [float2]()
     var vertexBuffer: MTLBuffer
     var textureCoordinatesBuffer: MTLBuffer
+    
+    var defaultVertexFunction: MTLFunction
+    var defaultFragmentFunction: MTLFunction
     
     init?(metalView: MTKView) {
         view = metalView
@@ -32,17 +35,24 @@ import AVFoundation
         // Create the command queue to submit work to the GPU
         commandQueue = device.makeCommandQueue()
         
+        guard let shaders = Renderer.getDefaultLibrary(withDevice: device) else {
+            print("Unable to build shaders")
+            return nil
+        }
+        defaultVertexFunction = shaders.vertexFunction
+        defaultFragmentFunction = shaders.fragmentFunction
+        
+        vertexBuffer = Renderer.generateQuad(forDevice: device, inArray: &vertices)
+        textureCoordinatesBuffer = Renderer.generate(textureCoordinates: &textureCoordinates, forDevice: device)
+        super.init()
+        
         do {
-            renderPipelineState = try Renderer.buildRenderPipeline(device: device,
-                                                                   view: metalView)
+            renderPipelineState = try buildRenderPipeline()
         } catch {
             print("Unable to compile render pipeline state")
             return nil
         }
         
-        vertexBuffer = Renderer.generateQuad(forDevice: device, inArray: &vertices)
-        textureCoordinatesBuffer = Renderer.generate(textureCoordinates: &textureCoordinates, forDevice: device)
-        super.init()
         setUpVideoQuadTexture()
         startCapturingVideo()
         view.delegate = self
@@ -103,29 +113,53 @@ import AVFoundation
         #endif
         
         #if os(iOS)
-            coordinates += TextureCoordinates.devicePortrait()()
+            coordinates += TextureCoordinates.devicePortrait()
         #endif
         
         return device.makeBuffer(bytes: coordinates,
                                  length: MemoryLayout<float2>.stride * coordinates.count,
                                  options: options)
-    }    
+    }
     
-    class func buildRenderPipeline(device: MTLDevice, view: MTKView) throws -> MTLRenderPipelineState {
-        // The default library contains all of the shader functions that were compiled into our app bundle
+    class func getDefaultLibrary(withDevice device: MTLDevice)
+        -> (library: MTLLibrary,
+        vertexFunction: MTLFunction,
+        fragmentFunction: MTLFunction)? {
+        
         guard let library = device.newDefaultLibrary() else {
             fatalError("Couldn't find shader libary")
         }
         
         // Retrieve the functions that will comprise our pipeline
-        let vertexFunction = library.makeFunction(name: "vertexPassthrough")
-        let fragmentFunction = library.makeFunction(name: "fragmentPassthrough")
+        guard let vertexFunction = library.makeFunction(name: "vertexPassthrough"),
+            let fragmentFunction = library.makeFunction(name: "fragmentPassthrough") else {
+                print("Couldn't get shader functions")
+                return nil
+            }
         
+        return (
+            library: library,
+            vertexFunction: vertexFunction,
+            fragmentFunction: fragmentFunction
+            )
+        
+    }
+    
+    func buildRenderPipeline(withFragmentFunction
+        passedFragmentFunction: MTLFunction? = nil) throws
+        -> MTLRenderPipelineState {
+        
+        let fragmentFunction: MTLFunction
+        if let passedFragmentFunction = passedFragmentFunction {
+            fragmentFunction = passedFragmentFunction
+        } else {
+            fragmentFunction = defaultFragmentFunction
+        }
         // A render pipeline descriptor describes the configuration of our programmable pipeline
         let pipelineDescriptor = MTLRenderPipelineDescriptor()
         pipelineDescriptor.label = "Render Pipeline"
         pipelineDescriptor.sampleCount = view.sampleCount
-        pipelineDescriptor.vertexFunction = vertexFunction
+        pipelineDescriptor.vertexFunction = defaultVertexFunction
         pipelineDescriptor.fragmentFunction = fragmentFunction
         pipelineDescriptor.colorAttachments[0].pixelFormat = view.colorPixelFormat
         pipelineDescriptor.depthAttachmentPixelFormat = view.depthStencilPixelFormat
@@ -354,6 +388,25 @@ import AVFoundation
         textureCoordinatesBuffer.didModifyRange(range)
     }
     #endif
+    
+    // MARK: - Shader Updates
+
+    func updateShader(withLibrary library: MTLLibrary,
+                      shaderFunction functionName: String) {
+        guard let fragmentFunction = library.makeFunction(name: functionName) else {
+            print("Failed to make fragment function: \(functionName)")
+            return
+        }
+        
+        do {
+            let pipeline = try buildRenderPipeline(withFragmentFunction: fragmentFunction)
+            renderPipelineState = pipeline
+            
+        } catch {
+            print("Error updating shader: \(error)")
+        }
+        
+    }
     
     // MARK: - Metal View Delegate
     

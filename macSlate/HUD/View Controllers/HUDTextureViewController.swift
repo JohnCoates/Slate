@@ -12,23 +12,28 @@ import Cartography
 
 class HUDTextureViewController: NSViewController, NSTextFieldDelegate {
     
+    // MARK: - Init
+    
     weak var renderer: Renderer!
     convenience init(renderer: Renderer) {
         self.init()
         self.renderer = renderer
     }
     
+    // MARK: - View Lifecycle
+    
     override func loadView() {
         view = NSView(frame: NSRect(x: 0, y:0, width: 600, height: 300))
         interfaceSetup()
     }
+    
+    // MARK: - Setup
     
     func interfaceSetup() {
         vertexFieldsSetup()
     }
     
     var vertexFields = [NSTextField]()
-    
     func vertexFieldsSetup() {
         var previousField: NSTextField?
         let count = renderer.vertices.count
@@ -80,6 +85,8 @@ class HUDTextureViewController: NSViewController, NSTextFieldDelegate {
         return field
     }
     
+    // MARK: - Text Field Delegate
+    
     @objc func control(_ control: NSControl,
                        textShouldEndEditing fieldEditor: NSText) -> Bool {
         guard
@@ -101,7 +108,9 @@ class HUDTextureViewController: NSViewController, NSTextFieldDelegate {
         }
         let string = field.stringValue
         update(vertexIndex: index, withText: string)
-    }
+    }    
+    
+    // MARK: - Vertex Updating
     
     func update(vertexIndex index: Int, withText string: String) {
         print("update \(index): \(string)")

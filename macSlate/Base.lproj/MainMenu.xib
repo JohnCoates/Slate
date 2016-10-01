@@ -20,9 +20,9 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
-                <menuItem title="macSlate" id="1Xt-HY-uBw">
+                <menuItem title="Slate" id="1Xt-HY-uBw">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="macSlate" systemMenu="apple" id="uQy-DD-JDr">
+                    <menu key="submenu" title="Slate" systemMenu="apple" id="uQy-DD-JDr">
                         <items>
                             <menuItem title="About macSlate" id="5kV-Vb-QxS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -131,6 +131,14 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Edit" id="W48-6f-4Dl">
                         <items>
+                            <menuItem title="Compile Shader" id="VoH-jg-pX6" userLabel="Compile Shader">
+                                <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                <connections>
+                                    <action selector="compileShader:" target="-1" id="3Tp-o2-vt8"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Undo" keyEquivalent="z" id="dRJ-4n-Yzg">
                                 <connections>
                                     <action selector="undo:" target="-1" id="M6e-cu-g7V"/>
