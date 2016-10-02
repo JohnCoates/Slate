@@ -10,6 +10,7 @@ import Metal
 import MetalKit
 import CoreVideo
 import AVFoundation
+import MetalPerformanceShaders
 
 @objc class Renderer: NSObject, MTKViewDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     
@@ -25,6 +26,7 @@ import AVFoundation
     var defaultVertexFunction: MTLFunction
     var defaultFragmentFunction: MTLFunction
     let cameraController = CameraController()
+    var metalPerformanceShaders = false
     
     init?(metalView: MTKView) {
         view = metalView
@@ -58,11 +60,26 @@ import AVFoundation
         cameraController.setCaptureHandler(instance: self,
                                            method: Method.captureHandler)
         cameraController.startCapturingVideo()
-        view.delegate = self
-        view.device = device
+        setUpMetal()
     }
     
     // MARK: - Startup
+    
+    func setUpMetal() {
+        // MetalPerformanceShaders are a compute framework
+        // Drawable texture is written to, not rendered to
+        view.framebufferOnly = false
+        // Draw loop is managed manually whenever new frame is received
+        view.isPaused = true
+        view.delegate = self
+        view.device = device
+        
+        let metalPerformanceShadersSupported = MPSSupportsMTLDevice(device)
+        if metalPerformanceShadersSupported {
+            metalPerformanceShaders = true
+        }
+        print("metal performance shaders supported? \(metalPerformanceShadersSupported)")
+    }
     
     class func getDevice() -> MTLDevice {
         #if os(iOS)
@@ -174,24 +191,63 @@ import AVFoundation
     // MARK: - Render
     
     func render(_ view: MTKView) {
-        guard dirtyTexture else {
-            return
-        }
         // Our command buffer is a container for the work we want to perform with the GPU.
         let commandBuffer = commandQueue.makeCommandBuffer()
+        
+        guard let texture = self.texture else {
+            print("no texture!")
+            return
+        }
         
         // Ask the view for a configured render pass descriptor. It will have a loadAction of
         // MTLLoadActionClear and have the clear color of the drawable set to our desired clear color.
         guard let currentDrawable = view.currentDrawable else {
             fatalError("no drawable!")
         }
-        //        let renderPassDescriptor = view.currentRenderPassDescriptor
+//        print("drawing")
+        
+        if metalPerformanceShaders {
+            blurTexture(withCommandBuffer: commandBuffer, textureIn: texture, textureOut: currentDrawable.texture)
+        } else {
+            renderFullScreen(commandBuffer: commandBuffer, drawable: currentDrawable)
+        }
+//
+//        passthrough(withCommandBuffer: commandBuffer,
+//                    sourceTexture: texture,
+//                    destinationTexture: currentDrawable.texture)
+        
+        // Tell the system to present the cleared drawable to the screen.
+        commandBuffer.present(currentDrawable)
+        
+        // Now that we're done issuing commands, we commit our buffer so the GPU can get to work.
+        commandBuffer.commit()
+    }
+    
+    func passthrough(withCommandBuffer commandBuffer: MTLCommandBuffer,
+                     sourceTexture: MTLTexture,
+                     destinationTexture: MTLTexture) {
+        let blitCommandEncoder = commandBuffer.makeBlitCommandEncoder()
+//        print("source texture width, height: \(sourceTexture.width), \(sourceTexture.height)")
+//        print("destination texture width, height: \(destinationTexture.width), \(destinationTexture.height)")
+        blitCommandEncoder.copy(from: sourceTexture,
+                                sourceSlice: 0,
+                                sourceLevel: 0,
+                                sourceOrigin: MTLOriginMake(0, 0, 0),
+                                sourceSize: MTLSizeMake(sourceTexture.width, sourceTexture.height, 1),
+                                to: destinationTexture,
+                                destinationSlice: 0,
+                                destinationLevel: 0,
+                                destinationOrigin: MTLOriginMake(0, 0, 0))
+        blitCommandEncoder.endEncoding()
+    }
+    
+    func renderFullScreen(commandBuffer: MTLCommandBuffer, drawable: CAMetalDrawable) {
         let renderPassDescriptor = MTLRenderPassDescriptor()
         renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(1, 1, 1, 1)
         renderPassDescriptor.colorAttachments[0].loadAction = .clear
         renderPassDescriptor.colorAttachments[0].storeAction = .dontCare
         #if METAL_DEVICE
-            renderPassDescriptor.colorAttachments[0].texture = currentDrawable.texture
+            renderPassDescriptor.colorAttachments[0].texture = drawable.texture
         #endif
         
         // Create a render encoder to clear the screen and draw our objects
@@ -201,12 +257,6 @@ import AVFoundation
         
         // We are finished with this render command encoder, so end it.
         renderEncoder.endEncoding()
-        
-        // Tell the system to present the cleared drawable to the screen.
-        commandBuffer.present(currentDrawable)
-        
-        // Now that we're done issuing commands, we commit our buffer so the GPU can get to work.
-        commandBuffer.commit()
     }
     
     // MARK: - Texture
@@ -342,7 +392,7 @@ import AVFoundation
     }
     
     // MARK: - Camera Controller Handlers
-    fileprivate var dirtyTexture = true
+    
     func captureHandler(imageBuffer: CVImageBuffer) {
         #if METAL_DEVICE
         guard let textureCache = textureCache else {
@@ -371,7 +421,7 @@ import AVFoundation
         }
         
         self.texture = texture
-        dirtyTexture = true
+        view.draw()
         #endif
     }
     
@@ -385,11 +435,35 @@ import AVFoundation
     func draw(in metalView: MTKView) {
         render(metalView)
     }
+    
+    // MARK: - Metal Performance Shaders
+    
+    
+    func blurTexture(withCommandBuffer commandBuffer: MTLCommandBuffer, textureIn: MTLTexture, textureOut: MTLTexture) {
+        let blurEncoder = MPSImageGaussianBlur(device: commandBuffer.device, sigma: 5.0)
+        blurEncoder.encode(commandBuffer: commandBuffer, sourceTexture: textureIn, destinationTexture: textureOut)
+    }
+    
+    func blurTextureInPlace(withCommandBuffer commandBuffer: MTLCommandBuffer, texture: inout MTLTexture) {
+        let copyAllocator: MPSCopyAllocator = { kernel, commandBuffer, sourceTexture -> MTLTexture in
+            let format = sourceTexture.pixelFormat
+            let descriptor = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: format,
+                                                                      width: sourceTexture.width,
+                                                                      height: sourceTexture.height, mipmapped: false)
+            let newTexture = commandBuffer.device.makeTexture(descriptor: descriptor)
+            print("copy allocator!")
+            return newTexture
+        }
+        
+        let blurEncoder = MPSImageGaussianBlur(device: commandBuffer.device, sigma: 5.0)
+        blurEncoder.encode(commandBuffer: commandBuffer,
+                           inPlaceTexture: &texture,
+                           fallbackCopyAllocator: copyAllocator)
+    }
 }
 
 // MARK: - Callbacks
 
 fileprivate struct Method {
     static let captureHandler = Renderer.captureHandler
-    
 }
