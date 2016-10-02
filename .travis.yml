@@ -1,19 +1,13 @@
 language: objective-c
 osx_image: xcode8
 cache:
-  - cocoapods
   - bundler
 before_install:
-- brew update
 - carthage bootstrap --verbose --platform iOS
-install:
-- gem install xcpretty
-- gem install cocoapods --pre
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J 'Slate'
 script:
-- pod update
-- set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace ./Slate.xcworkspace -scheme Slate -destination 'platform=iOS Simulator,name=iPhone 6s' build test | xcpretty
+- env NSUnbufferedIO=YES xcodebuild -project ./Slate.xcodeproj -scheme Slate -destination 'platform=iOS Simulator,name=iPhone 6s' build test
 notifications:
   webhooks:
     urls:

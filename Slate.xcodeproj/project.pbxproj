@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A5819886DADA712D87F560CE /* Pods_Slate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E04854F7554529BBF7225F /* Pods_Slate.framework */; };
 		FA2426CE1D9A67E000AEE60C /* CameraRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */; };
 		FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */; };
 		FA4021C61DA0AEE800752F3B /* MetalCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4021C51DA0AEE800752F3B /* MetalCameraController.swift */; };
@@ -117,9 +116,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		52E04854F7554529BBF7225F /* Pods_Slate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		70C3850DEA8A027656FAC2BE /* Pods-Slate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Slate/Pods-Slate.debug.xcconfig"; sourceTree = "<group>"; };
-		EA840E944B27AE79422AB380 /* Pods-Slate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Slate/Pods-Slate.release.xcconfig"; sourceTree = "<group>"; };
 		FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRenderView.swift; sourceTree = "<group>"; };
 		FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalCaptureViewController.swift; sourceTree = "<group>"; };
 		FA4021C51DA0AEE800752F3B /* MetalCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalCameraController.swift; sourceTree = "<group>"; };
@@ -173,7 +169,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5819886DADA712D87F560CE /* Pods_Slate.framework in Frameworks */,
 				FACC8FD41D98A55400589230 /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,18 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				FACC8FD21D98A52500589230 /* Carthage */,
-				52E04854F7554529BBF7225F /* Pods_Slate.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D69C6E31C324FE952A894F22 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				70C3850DEA8A027656FAC2BE /* Pods-Slate.debug.xcconfig */,
-				EA840E944B27AE79422AB380 /* Pods-Slate.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		FA2426CA1D9A677800AEE60C /* Camera */ = {
@@ -337,7 +322,6 @@
 				FA9F8A131D953EDF0058C369 /* Tests */,
 				FA4DFECF1D9DBD1A0068706F /* macSlate */,
 				9EF4533E798C01A4F72A666D /* Frameworks */,
-				D69C6E31C324FE952A894F22 /* Pods */,
 				FA9F89E31D953C540058C369 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -544,12 +528,9 @@
 			buildConfigurationList = FA9F8A0A1D953C540058C369 /* Build configuration list for PBXNativeTarget "Slate" */;
 			buildPhases = (
 				FACC8FD81D98AD4500589230 /* Run Swiftlint */,
-				F3B2A40773BDA305A436EBE6 /* [CP] Check Pods Manifest.lock */,
 				FA9F89DE1D953C540058C369 /* Sources */,
 				FA9F89DF1D953C540058C369 /* Frameworks */,
 				FA9F89E01D953C540058C369 /* Resources */,
-				D216222D4FFB612C469C86DB /* [CP] Embed Pods Frameworks */,
-				BE785CD1AC6C00A36B4139BC /* [CP] Copy Pods Resources */,
 				FACC8FD71D98A5AF00589230 /* Embed Frameworks */,
 				FAADE0D51D9D1CB200AA5729 /* Build Metal Shader Library */,
 			);
@@ -688,51 +669,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BE785CD1AC6C00A36B4139BC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Slate/Pods-Slate-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D216222D4FFB612C469C86DB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Slate/Pods-Slate-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F3B2A40773BDA305A436EBE6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		FAADE0D51D9D1CB200AA5729 /* Build Metal Shader Library */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1015,7 +951,6 @@
 		};
 		FA9F8A0B1D953C540058C369 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 70C3850DEA8A027656FAC2BE /* Pods-Slate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
@@ -1033,7 +968,6 @@
 		};
 		FA9F8A0C1D953C540058C369 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA840E944B27AE79422AB380 /* Pods-Slate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
