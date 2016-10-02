@@ -24,7 +24,7 @@ import AVFoundation
     
     var defaultVertexFunction: MTLFunction
     var defaultFragmentFunction: MTLFunction
-    let cameraController = CameraController()
+    let cameraController: MetalCameraController
     
     init?(metalView: MTKView) {
         view = metalView
@@ -42,6 +42,11 @@ import AVFoundation
         
         vertexBuffer = Renderer.generateQuad(forDevice: device, inArray: &vertices)
         textureCoordinatesBuffer = Renderer.generate(textureCoordinates: &textureCoordinates, forDevice: device)
+        guard let cameraController = MetalCameraController(device: device) else {
+            print("Camera controller initialization failed")
+            return nil
+        }
+        self.cameraController = cameraController
         super.init()
         
         do {
@@ -51,9 +56,8 @@ import AVFoundation
             return nil
         }
         
-        setUpVideoQuadTexture()
-        cameraController.setCaptureHandler(instance: self,
-                                           method: Method.captureHandler)
+        cameraController.setTextureHandler(instance: self,
+                                           method: Method.textureHandler)
         cameraController.startCapturingVideo()
         setUpMetalView()
     }
@@ -148,12 +152,9 @@ import AVFoundation
                 return nil
             }
         
-        return (
-            library: library,
-            vertexFunction: vertexFunction,
-            fragmentFunction: fragmentFunction
-            )
-        
+        return (library: library,
+                vertexFunction: vertexFunction,
+                fragmentFunction: fragmentFunction)
     }
     
     func buildRenderPipeline(withFragmentFunction
@@ -216,77 +217,9 @@ import AVFoundation
         renderEncoder.endEncoding()
     }
     
-    // MARK: - Texture
-    
-    func setUpVideoQuadTexture() {
-        #if METAL_DEVICE
-        guard CVMetalTextureCacheCreate(kCFAllocatorDefault,
-                                        nil, // cache attributes
-            device,
-            nil, // texture attributes
-            &textureCache) == kCVReturnSuccess else {
-                fatalError("Couldn't create a texture cache")
-        }
-        #endif
-        
-        let samplerDescriptor = MTLSamplerDescriptor()
-        samplerDescriptor.label = "video texture sampler"
-        sampler = device.makeSamplerState(descriptor: samplerDescriptor)
-        guard sampler != nil else {
-            fatalError("Couldn't create a texture sampler")
-        }
-    }
-    
-    // MARK: - Video
+    // MARK: - Video Rendering
     
     var texture: MTLTexture?
-    var sampler: MTLSamplerState!
-    
-    #if METAL_DEVICE
-    var textureCache: CVMetalTextureCache?
-    #endif
-    
-    // MARK: - Video Delegate
-    
-    func captureOutput(_ captureOutput: AVCaptureOutput!,
-                       didOutputSampleBuffer sampleBuffer: CMSampleBuffer!,
-                       from connection: AVCaptureConnection!) {
-        #if METAL_DEVICE
-        guard let textureCache = textureCache else {
-            print("Missing texture cache!")
-            return
-        }
-            
-        guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
-            print("Couldn't get image buffer")
-            return
-        }
-        
-        var optionalTextureRef: CVMetalTexture? = nil
-        let width = CVPixelBufferGetWidth(imageBuffer)
-        let height = CVPixelBufferGetHeight(imageBuffer)
-        let returnValue = CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault,
-                                                                    textureCache,
-                                                                    imageBuffer,
-                                                                    nil,
-                                                                    .bgra8Unorm,
-                                                                    width, height, 0,
-                                                                    &optionalTextureRef)
-        
-        guard returnValue == kCVReturnSuccess, let textureRef = optionalTextureRef else {
-            print("Error, couldn't create texture from image, error: \(returnValue), \(optionalTextureRef)")
-            return
-        }
-        
-        guard let texture = CVMetalTextureGetTexture(textureRef) else {
-            print("Error, Couldn't get texture")
-            return
-        }
-        
-        self.texture = texture
-        #endif
-    }
-    
     func renderTextureQuad(renderEncoder: MTLRenderCommandEncoder, view: MTKView, identifier: String) {
         guard let texture = texture else {
             return
@@ -301,7 +234,6 @@ import AVFoundation
         renderEncoder.setVertexBuffer(vertexBuffer, offset:0, at:0)
         renderEncoder.setVertexBuffer(textureCoordinatesBuffer, offset: 0, at: 1)
         renderEncoder.setFragmentTexture(texture, at: 0)
-        renderEncoder.setFragmentSamplerState(sampler, at: 0)
         renderEncoder.drawPrimitives(type: .triangle,
                                      vertexStart: 0,
                                      vertexCount: 6,
@@ -348,38 +280,11 @@ import AVFoundation
         
     }
     
-    // MARK: - Camera Controller Handlers
+    // MARK: - Camera Controller Handler
     
-    func captureHandler(imageBuffer: CVImageBuffer) {
-        #if METAL_DEVICE
-        guard let textureCache = textureCache else {
-            print("Missing texture cache!")
-            return
-        }
-        var optionalTextureRef: CVMetalTexture? = nil
-        let width = CVPixelBufferGetWidth(imageBuffer)
-        let height = CVPixelBufferGetHeight(imageBuffer)
-        let returnValue = CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault,
-                                                                    textureCache,
-                                                                    imageBuffer,
-                                                                    nil,
-                                                                    .bgra8Unorm,
-                                                                    width, height, 0,
-                                                                    &optionalTextureRef)
-        
-        guard returnValue == kCVReturnSuccess, let textureRef = optionalTextureRef else {
-            print("Error, couldn't create texture from image, error: \(returnValue), \(optionalTextureRef)")
-            return
-        }
-        
-        guard let texture = CVMetalTextureGetTexture(textureRef) else {
-            print("Error, Couldn't get texture")
-            return
-        }
-        
+    func textureHandler(texture: MTLTexture) {
         self.texture = texture
         view.draw()
-        #endif
     }
     
     // MARK: - Metal View Delegate
@@ -397,5 +302,5 @@ import AVFoundation
 // MARK: - Callbacks
 
 fileprivate struct Method {
-    static let captureHandler = Renderer.captureHandler
+    static let textureHandler = Renderer.textureHandler
 }
