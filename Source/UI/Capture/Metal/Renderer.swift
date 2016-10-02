@@ -189,8 +189,9 @@ import AVFoundation
         guard let currentDrawable = view.currentDrawable else {
             fatalError("no drawable!")
         }
-        
+        #if METAL_DEVICE
         renderFullScreen(commandBuffer: commandBuffer, drawable: currentDrawable)
+        #endif
         
         // Tell the system to present the cleared drawable to the screen.
         commandBuffer.present(currentDrawable)
@@ -199,15 +200,14 @@ import AVFoundation
         commandBuffer.commit()
     }
     
+    #if METAL_DEVICE
     func renderFullScreen(commandBuffer: MTLCommandBuffer, drawable: CAMetalDrawable) {
         let renderPassDescriptor = MTLRenderPassDescriptor()
         renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(1, 1, 1, 1)
         renderPassDescriptor.colorAttachments[0].loadAction = .clear
         renderPassDescriptor.colorAttachments[0].storeAction = .dontCare
-        #if METAL_DEVICE
-            renderPassDescriptor.colorAttachments[0].texture = drawable.texture
-        #endif
-        
+        renderPassDescriptor.colorAttachments[0].texture = drawable.texture
+    
         // Create a render encoder to clear the screen and draw our objects
         let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
         
@@ -216,6 +216,7 @@ import AVFoundation
         // We are finished with this render command encoder, so end it.
         renderEncoder.endEncoding()
     }
+    #endif
     
     // MARK: - Video Rendering
     

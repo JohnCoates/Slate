@@ -29,8 +29,11 @@ class MetalCameraController: CameraController {
     
     // MARK: - Init
     
+    #if METAL_DEVICE
     let textureCache: CVMetalTextureCache
+    #endif
     init?(device: MTLDevice) {
+        #if METAL_DEVICE
         var optionalTextureCache: CVMetalTextureCache?
         guard CVMetalTextureCacheCreate(kCFAllocatorDefault,
                                         nil, // cache attributes
@@ -43,7 +46,8 @@ class MetalCameraController: CameraController {
         }
         
         self.textureCache = textureCache
-    }
+        #endif
+    }    
     
     // MARK: - Video Delegate
     
