@@ -4,7 +4,7 @@ cache:
   - bundler
 before_install:
 - carthage bootstrap --verbose --platform iOS
-install:
+install: true
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J 'Slate'
 script:
