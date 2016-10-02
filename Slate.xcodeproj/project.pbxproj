@@ -611,7 +611,6 @@
 				TargetAttributes = {
 					FA4DFECD1D9DBD1A0068706F = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = E6QK4MU6LM;
 						ProvisioningStyle = Automatic;
 					};
 					FA9F89E11D953C540058C369 = {
@@ -621,13 +620,11 @@
 					};
 					FA9F89F51D953C540058C369 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = E6QK4MU6LM;
 						ProvisioningStyle = Automatic;
 						TestTargetID = FA9F89E11D953C540058C369;
 					};
 					FA9F8A001D953C540058C369 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = E6QK4MU6LM;
 						ProvisioningStyle = Automatic;
 						TestTargetID = FA9F89E11D953C540058C369;
 					};
@@ -881,7 +878,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
@@ -902,7 +898,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
@@ -1023,7 +1018,7 @@
 			baseConfigurationReference = 70C3850DEA8A027656FAC2BE /* Pods-Slate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1041,7 +1036,7 @@
 			baseConfigurationReference = EA840E944B27AE79422AB380 /* Pods-Slate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1059,7 +1054,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				INFOPLIST_FILE = Tests/Unit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateTests;
@@ -1074,7 +1068,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				INFOPLIST_FILE = Tests/Unit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateTests;
@@ -1088,7 +1081,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				INFOPLIST_FILE = Tests/UI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateUITests;
@@ -1102,7 +1094,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				INFOPLIST_FILE = Tests/UI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateUITests;
