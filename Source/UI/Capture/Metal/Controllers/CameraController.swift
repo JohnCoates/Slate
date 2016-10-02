@@ -38,7 +38,7 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     func startCapturingVideo() {
         session.beginConfiguration()
         
-        session.sessionPreset = AVCaptureSessionPresetHigh
+        session.sessionPreset = AVCaptureSessionPresetiFrame960x540
         let camera = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         do {
             let input = try AVCaptureDeviceInput(device: camera)
@@ -64,16 +64,16 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         session.startRunning()
     }
     
-    fileprivate var captureVideoSettings: [AnyHashable: AnyObject] {
+    fileprivate var captureVideoSettings: [AnyHashable: Any] {
         get {
             let pixelFormatKey = String(kCVPixelBufferPixelFormatTypeKey)
-            let pixelFormat = kCVPixelFormatType_32BGRA
+            let pixelFormat = Int(kCVPixelFormatType_32BGRA)
             let metalCompatibilityKey = String(kCVPixelBufferMetalCompatibilityKey)
             
-            var videoSettings = [AnyHashable: AnyObject]()
-            videoSettings[pixelFormatKey] = NSNumber(value: pixelFormat)
+            var videoSettings = [AnyHashable: Any]()
+            videoSettings[pixelFormatKey] = pixelFormat
             #if os(macOS)
-                videoSettings[metalCompatibilityKey] = NSNumber(value: true)
+                videoSettings[metalCompatibilityKey] = true
             #endif
             
             return videoSettings
