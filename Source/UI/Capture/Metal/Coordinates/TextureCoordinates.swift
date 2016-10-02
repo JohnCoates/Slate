@@ -14,12 +14,12 @@ struct TextureCoordinates {
     // iOS
     static func devicePortrait() -> [float2] {
         return [
-            float2(1, 0),
+            float2(0, 1),
             float2(1, 1),
             float2(0, 0),
             float2(1, 1),
             float2(0, 0),
-            float2(0, 1)
+            float2(1, 0)
         ]
     }
     

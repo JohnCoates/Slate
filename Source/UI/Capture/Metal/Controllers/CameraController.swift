@@ -8,6 +8,9 @@
 
 import Foundation
 import AVFoundation
+#if os(iOS)
+    import UIKit
+#endif
 
 class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     
@@ -83,6 +86,10 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
                        didOutputSampleBuffer sampleBuffer: CMSampleBuffer!,
                        from connection: AVCaptureConnection!) {
         #if METAL_DEVICE
+            #if os(iOS)
+            let orientation = UIApplication.shared.statusBarOrientation.rawValue
+            connection.videoOrientation = AVCaptureVideoOrientation(rawValue: orientation)!
+            #endif
             guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
                 print("Couldn't get image buffer")
                 return
