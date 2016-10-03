@@ -5,6 +5,9 @@
 //  Created by John Coates on 10/2/16.
 //  Copyright © 2016 John Coates. All rights reserved.
 //
+// reference
+// https://developer.apple.com/library/content/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/
+// Compute-Ctx/Compute-Ctx.html
 
 import Foundation
 import MetalKit
@@ -20,9 +23,6 @@ class ChromaticAberrationFilter: AbstractFilter {
     
     var pipelineState: MTLComputePipelineState!
     func buildPipeline() {
-//        let pixelFormat = MTLPixelFormat.depth32Float
-//        let stencilFormat = MTLPixelFormat.invalid
-//        let sampleCount = 1
         let shaderName = "chromaticAberrationCompute"
         guard let library = device.newDefaultLibrary() else {
             return
@@ -58,23 +58,23 @@ class ChromaticAberrationFilter: AbstractFilter {
         return texture
     }
     
-    lazy var threadGroupSize: MTLSize = MTLSize(width: 16, height: 16, depth: 1)
-    var threadGroupCount: MTLSize?
+    lazy var threadsPerGroup: MTLSize = MTLSize(width: 16, height: 16, depth: 1)
+    var threadGroups: MTLSize?
     var threadTextureSize: MTLSize?
-    func threadGroupCount(forInputTexture inputTexture: MTLTexture) -> MTLSize {
-        if let threadGroupCount = threadGroupCount, let threadTextureSize = threadTextureSize {
+    func threadGroups(forInputTexture inputTexture: MTLTexture) -> MTLSize {
+        if let threadGroups = threadGroups, let threadTextureSize = threadTextureSize {
             if threadTextureSize.width == inputTexture.width, threadTextureSize.height == inputTexture.height {
-                return threadGroupCount
+                return threadGroups
             }
         }
-        let widthSteps = (inputTexture.width + threadGroupSize.width - 1) / threadGroupSize.width
-        let heightSteps = (inputTexture.height + threadGroupSize.height - 1) / threadGroupSize.height
-        let count = MTLSizeMake(widthSteps, heightSteps, 1)
-        threadGroupCount = count
+        let widthSteps = inputTexture.width / threadsPerGroup.width
+        let heightSteps = inputTexture.height / threadsPerGroup.height
+        let groups = MTLSizeMake(widthSteps, heightSteps, 1)
+        threadGroups = groups
         threadTextureSize = MTLSize(width: inputTexture.width,
                                     height: inputTexture.height,
                                     depth: inputTexture.depth)
-        return count
+        return groups
     }
     
     func filter(withCommandBuffer commandBuffer: MTLCommandBuffer,
@@ -85,9 +85,8 @@ class ChromaticAberrationFilter: AbstractFilter {
         computeEncoder.setTexture(inputTexture, at: 0)
         computeEncoder.setTexture(outputTexture, at: 1)
         
-        let threadGroupCount = self.threadGroupCount(forInputTexture: inputTexture)
-        let threads = threadGroupSize
-        computeEncoder.dispatchThreadgroups(threadGroupCount, threadsPerThreadgroup: threads)
+        let threadGroups = self.threadGroups(forInputTexture: inputTexture)
+        computeEncoder.dispatchThreadgroups(threadGroups, threadsPerThreadgroup: threadsPerGroup)
         computeEncoder.endEncoding()
         return outputTexture
     }
