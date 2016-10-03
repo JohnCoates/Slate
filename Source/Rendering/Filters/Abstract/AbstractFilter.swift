@@ -43,7 +43,8 @@ class AbstractFilter {
     
     // MARK: - Thread Groups
     
-    lazy var threadsPerGroup: MTLSize = MTLSize(width: 16, height: 16, depth: 1)
+    // TODO: check device.maxThreadsPerThreadgroup
+    lazy var threadsPerGroup: MTLSize = MTLSize(width: 22, height: 22, depth: 1)
     fileprivate var threadGroups: MTLSize?
     fileprivate var threadTextureSize: MTLSize?
     func threadGroups(forInputTexture inputTexture: MTLTexture) -> MTLSize {
@@ -61,5 +62,12 @@ class AbstractFilter {
                                     height: inputTexture.height,
                                     depth: inputTexture.depth)
         return groups
+    }
+    
+    // MARK: - Filtering
+    
+    func filter(withCommandBuffer commandBuffer: MTLCommandBuffer,
+                inputTexture: MTLTexture) -> MTLTexture {
+        fatalError("Filter \(self) must implement filter(withCommandBuffer:inputTexture:)")
     }
 }

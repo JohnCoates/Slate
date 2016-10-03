@@ -12,7 +12,7 @@
 import Foundation
 import MetalKit
 
-class ChromaticAberrationFilter: AbstractFilter {
+final class ChromaticAberrationFilter: AbstractFilter {
     
     var pipelineState: MTLComputePipelineState!
     override func buildPipeline() {
@@ -34,8 +34,8 @@ class ChromaticAberrationFilter: AbstractFilter {
         
     }
     
-    func filter(withCommandBuffer commandBuffer: MTLCommandBuffer,
-                inputTexture: MTLTexture) -> MTLTexture {
+    override func filter(withCommandBuffer commandBuffer: MTLCommandBuffer,
+                         inputTexture: MTLTexture) -> MTLTexture {
         let outputTexture = self.outputTexture(forInputTexture: inputTexture)
         let computeEncoder = commandBuffer.makeComputeCommandEncoder()
         computeEncoder.setComputePipelineState(pipelineState)

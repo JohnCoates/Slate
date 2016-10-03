@@ -69,7 +69,7 @@ import AVFoundation
         // Drawable texture is written to, not rendered to
         view.framebufferOnly = false
         // Draw loop is managed manually whenever new frame is received
-        view.isPaused = true
+        view.isPaused = false
         view.delegate = self
         view.device = device
         view.clearColor = MTLClearColorMake(1, 1, 1, 1)
@@ -183,6 +183,12 @@ import AVFoundation
     // MARK: - Render
     
     func render(_ view: MTKView) {
+        if !dirtyTexture {
+            return
+        } else {
+            dirtyTexture = false
+        }
+        
         guard let texture = self.texture else {
             return
         }
@@ -193,10 +199,10 @@ import AVFoundation
             fatalError("no drawable!")
         }
         #if METAL_DEVICE
-        let newTexture = filterTexture(texture, withCommandBuffer: commandBuffer)
+        let filteredTexture = filterTexture(texture, withCommandBuffer: commandBuffer)
         renderFullScreen(commandBuffer: commandBuffer,
                          drawable: currentDrawable,
-                         inputTexture: newTexture)
+                         inputTexture: filteredTexture)
         #endif
         
         // Tell the system to present the cleared drawable to the screen.
@@ -210,9 +216,15 @@ import AVFoundation
        return ChromaticAberrationFilter(device: self.device)
     }()
     
+    lazy var filters: [AbstractFilter] = {
+        return [self.filter]
+    }()
+    
     func filterTexture(_ texture: MTLTexture,
                        withCommandBuffer commandBuffer: MTLCommandBuffer) -> MTLTexture {
-        return filter.filter(withCommandBuffer: commandBuffer, inputTexture: texture)
+        return filters.reduce(texture) { currentTexture, filter in
+            filter.filter(withCommandBuffer: commandBuffer, inputTexture: currentTexture)
+        }
     }
     
     #if METAL_DEVICE
@@ -303,9 +315,11 @@ import AVFoundation
     
     // MARK: - Camera Controller Handler
     
+    var dirtyTexture = false
     func textureHandler(texture: MTLTexture) {
         self.texture = texture
-        view.draw()
+//        view.draw()
+        dirtyTexture = true
     }
     
     // MARK: - Metal View Delegate
