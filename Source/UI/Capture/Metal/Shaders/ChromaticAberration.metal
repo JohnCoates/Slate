@@ -34,3 +34,31 @@ fragment float4 fragmentShader(VertexOut fragmentIn [[ stage_in ]],
     adjusted.a = color.a;
     return adjusted;
 }
+
+// MARK: - Compute
+
+kernel void chromaticAberrationCompute(texture2d<float, access::sample> inTexture [[texture(0)]],
+                                       texture2d<float, access::write> outTexture [[texture(1)]],
+                                       uint2 gid [[thread_position_in_grid]]) {
+    int width = inTexture.get_width();
+    int height = inTexture.get_height();
+    float2 coordinates = float2(gid) / float2(width, height);
+    
+    constexpr sampler textureSampler(coord::normalized,
+                                     address::clamp_to_edge);
+    float4 color = inTexture.sample(textureSampler, coordinates);
+    float2 offset = (coordinates - 0.4) * 2.0;
+    float offsetDot = dot(offset, offset);
+    
+    const float strength = 5.0;
+    float2 multiplier = strength * offset * offsetDot;
+    float2 redCoordinate = coordinates - 0.003 * multiplier;
+    float2 blueCoordinate = coordinates + 0.01 * multiplier;
+    float4 adjusted;
+    adjusted.r = inTexture.sample(textureSampler, redCoordinate).r;
+    adjusted.g = color.g;
+    adjusted.b = inTexture.sample(textureSampler, blueCoordinate).b;
+    adjusted.a = color.a;
+    
+    outTexture.write(adjusted, gid);
+}

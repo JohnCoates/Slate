@@ -46,3 +46,31 @@ fragment float4 fragmentPassthroughWithExistingSampler(VertexOut fragmentIn [[ s
                                     texture2d<float, access::sample> texture [[texture(0)]]) {
     return texture.sample(qsampler, fragmentIn.textureCoordinates);
 }
+
+// MARK: - Compute
+
+kernel void passthroughComputePixel(texture2d<float, access::read> texture [[texture(0)]],
+                               texture2d<float, access::write> outTexture [[texture(1)]],
+                               uint2 gid [[thread_position_in_grid]]
+                               ) {
+    const float4 color = texture.read(gid);
+    const float4 outColor = color;
+    outTexture.write(outColor, gid);
+}
+
+
+kernel void passthroughComputeNormalized(texture2d<float, access::sample> texture [[texture(0)]],
+                                    texture2d<float, access::write> outTexture [[texture(1)]],
+                                    uint2 gid [[thread_position_in_grid]]
+                                    ) {
+    int width = texture.get_width();
+    int height = texture.get_height();
+    float2 coordinates = float2(gid) / float2(width, height);
+    
+    constexpr sampler textureSampler(coord::normalized,
+                                     address::clamp_to_edge);
+    float4 color = texture.sample(textureSampler, coordinates);
+    float4 outColor = color;
+    outTexture.write(outColor, gid);
+}
+

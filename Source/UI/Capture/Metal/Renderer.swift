@@ -183,6 +183,9 @@ import AVFoundation
     // MARK: - Render
     
     func render(_ view: MTKView) {
+        guard let texture = self.texture else {
+            return
+        }
         // Our command buffer is a container for the work we want to perform with the GPU.
         let commandBuffer = commandQueue.makeCommandBuffer()
         
@@ -190,7 +193,10 @@ import AVFoundation
             fatalError("no drawable!")
         }
         #if METAL_DEVICE
-        renderFullScreen(commandBuffer: commandBuffer, drawable: currentDrawable)
+        let newTexture = filterTexture(texture, withCommandBuffer: commandBuffer)
+        renderFullScreen(commandBuffer: commandBuffer,
+                         drawable: currentDrawable,
+                         inputTexture: newTexture)
         #endif
         
         // Tell the system to present the cleared drawable to the screen.
@@ -200,8 +206,19 @@ import AVFoundation
         commandBuffer.commit()
     }
     
+    lazy var filter: ChromaticAberrationFilter = {
+       return ChromaticAberrationFilter(device: self.device)
+    }()
+    
+    func filterTexture(_ texture: MTLTexture,
+                       withCommandBuffer commandBuffer: MTLCommandBuffer) -> MTLTexture {
+        return filter.filter(withCommandBuffer: commandBuffer, inputTexture: texture)
+    }
+    
     #if METAL_DEVICE
-    func renderFullScreen(commandBuffer: MTLCommandBuffer, drawable: CAMetalDrawable) {
+    func renderFullScreen(commandBuffer: MTLCommandBuffer,
+                          drawable: CAMetalDrawable,
+                          inputTexture texture: MTLTexture) {
         let renderPassDescriptor = MTLRenderPassDescriptor()
         renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(1, 1, 1, 1)
         renderPassDescriptor.colorAttachments[0].loadAction = .clear
@@ -211,7 +228,10 @@ import AVFoundation
         // Create a render encoder to clear the screen and draw our objects
         let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
         
-        renderTextureQuad(renderEncoder: renderEncoder, view: view, identifier: "video texture")
+        renderTextureQuad(renderEncoder: renderEncoder,
+                          view: view,
+                          identifier: "video texture",
+                          inputTexture: texture)
         
         // We are finished with this render command encoder, so end it.
         renderEncoder.endEncoding()
@@ -221,10 +241,10 @@ import AVFoundation
     // MARK: - Video Rendering
     
     var texture: MTLTexture?
-    func renderTextureQuad(renderEncoder: MTLRenderCommandEncoder, view: MTKView, identifier: String) {
-        guard let texture = texture else {
-            return
-        }
+    func renderTextureQuad(renderEncoder: MTLRenderCommandEncoder,
+                           view: MTKView,
+                           identifier: String,
+                           inputTexture texture: MTLTexture) {
         renderEncoder.pushDebugGroup(identifier)
         // Set the pipeline state so the GPU knows which vertex and fragment function to invoke.
         renderEncoder.setRenderPipelineState(renderPipelineState)
