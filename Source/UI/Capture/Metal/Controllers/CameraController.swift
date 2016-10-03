@@ -35,11 +35,34 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     // MARK: - Starting Up
     
     lazy var session = AVCaptureSession()
+    
+    var bestCamera: AVCaptureDevice {
+        get {
+            guard let devices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo) else {
+                fatalError("No video devices")
+            }
+            for potentialDevice in devices {
+                guard let device = potentialDevice as? AVCaptureDevice else {
+                    continue
+                }
+                
+                // prefer my logitech camera
+                if device.localizedName == "HD Pro Webcam C920" {
+                    return device
+                }
+            }
+            return AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        }
+    }
     func startCapturingVideo() {
         session.beginConfiguration()
         
-        session.sessionPreset = AVCaptureSessionPresetiFrame960x540
-        let camera = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        if Platform.isMacOS {
+            session.sessionPreset = AVCaptureSessionPreset1280x720
+        } else {
+            session.sessionPreset = AVCaptureSessionPresetiFrame960x540
+        }
+        let camera = bestCamera
         do {
             let input = try AVCaptureDeviceInput(device: camera)
             session.addInput(input)

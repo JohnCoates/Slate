@@ -123,7 +123,7 @@ import AVFoundation
         
         var options: MTLResourceOptions = []
         #if os(macOS)
-            coordinates += TextureCoordinates.macHorizontalFlipped()
+            coordinates += TextureCoordinates.macFlipped()
             options = [.storageModeManaged]
         #endif
         

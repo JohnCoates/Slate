@@ -10,6 +10,13 @@ import Foundation
 
 class Platform {
     
+    static var isMacOS: Bool {
+        #if os(macOS)
+            return true
+        #else
+            return false
+        #endif
+    }
     static var isSimulator: Bool {
         return TARGET_OS_SIMULATOR != 0
     }
