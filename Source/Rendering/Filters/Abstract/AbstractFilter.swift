@@ -26,6 +26,7 @@ class AbstractFilter {
             }
             
         }
+        print("texture width: \(inputTexture.width)")
         let descriptor = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: .bgra8Unorm,
                                                                   width: inputTexture.width,
                                                                   height: inputTexture.height,

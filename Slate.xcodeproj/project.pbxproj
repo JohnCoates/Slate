@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */; };
+		FA13FCA81DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */; };
 		FA2426CE1D9A67E000AEE60C /* CameraRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */; };
 		FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */; };
 		FA2F8E471DA2293000993949 /* AbstractFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E461DA2293000993949 /* AbstractFilter.swift */; };
@@ -128,6 +130,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = GaussianBlur.metal; sourceTree = "<group>"; };
 		FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRenderView.swift; sourceTree = "<group>"; };
 		FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalCaptureViewController.swift; sourceTree = "<group>"; };
 		FA2F8E461DA2293000993949 /* AbstractFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractFilter.swift; sourceTree = "<group>"; };
@@ -279,6 +282,7 @@
 		FA2F8E431DA228FA00993949 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";
@@ -841,6 +845,7 @@
 				FA4D541A1DB055BB0091184D /* ComputeFilter.swift in Sources */,
 				FABB169F1D9F308C00A8AC6C /* Vertices.swift in Sources */,
 				FA4D54171DB055A00091184D /* FragmentFilter.swift in Sources */,
+				FA13FCA81DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */,
 				FABB16B31D9F858800A8AC6C /* Platform.swift in Sources */,
 				FABB16B21D9F822800A8AC6C /* CameraController.swift in Sources */,
 				FA2F8E4B1DA2296E00993949 /* GaussianBlurFilter.swift in Sources */,
@@ -859,6 +864,7 @@
 				FA4D54191DB055BB0091184D /* ComputeFilter.swift in Sources */,
 				FABB16A21D9F402C00A8AC6C /* TextureCoordinates.swift in Sources */,
 				FA2F8E4E1DA22AD700993949 /* ChromaticAberrationFilter.swift in Sources */,
+				FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */,
 				FAADE0D01D9D0AC200AA5729 /* Renderer.swift in Sources */,
 				FA834BDD1D9920010017CCCA /* Platform.swift in Sources */,
 				FABB16AD1D9F6DAB00A8AC6C /* ChromaticAberration.metal in Sources */,

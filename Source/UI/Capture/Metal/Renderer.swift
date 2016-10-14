@@ -214,7 +214,8 @@ import AVFoundation
     
     lazy var filter: AbstractFilter = {
 //       return ChromaticAberrationFilter(device: self.device)
-        return ChromaticAberrationFragmentFilter(device: self.device)
+//        return ChromaticAberrationFragmentFilter(device: self.device)
+        return GaussianBlurFilter(device: self.device)
     }()
     
     lazy var filters: [AbstractFilter] = {
