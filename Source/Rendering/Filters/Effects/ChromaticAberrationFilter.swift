@@ -12,7 +12,7 @@
 import Foundation
 import MetalKit
 
-final class ChromaticAberrationFilter: AbstractFilter {
+final class ChromaticAberrationFilter: ComputeFilter {
     
     var pipelineState: MTLComputePipelineState!
     override func buildPipeline() {

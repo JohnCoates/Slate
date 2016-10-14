@@ -15,8 +15,8 @@ struct VertexOut {
     float2 textureCoordinates [[user(texturecoord)]];
 };
 
-fragment float4 fragmentShader(VertexOut fragmentIn [[ stage_in ]],
-                               texture2d<float, access::sample> texture [[texture(0)]]) {
+fragment float4 chromaticAberrationFragment(VertexOut fragmentIn [[ stage_in ]],
+                                            texture2d<float, access::sample> texture [[texture(0)]]) {
     float2 coordinates = fragmentIn.textureCoordinates;
     constexpr sampler qsampler;
     float4 color = texture.sample(qsampler, coordinates);

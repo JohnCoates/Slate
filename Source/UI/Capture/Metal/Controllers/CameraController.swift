@@ -54,6 +54,7 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
             return AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         }
     }
+    
     func startCapturingVideo() {
         session.beginConfiguration()
         
