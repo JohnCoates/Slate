@@ -19,26 +19,6 @@ class ComputeFilter: AbstractFilter {
         fatalError("Filter \(self) must implement buildPipeline()")
     }
     
-    // MARK: - Textures
-    
-    fileprivate var outputTexture: MTLTexture?
-    func outputTexture(forInputTexture inputTexture: MTLTexture) -> MTLTexture {
-        if let outputTexture = outputTexture {
-            if outputTexture.width == inputTexture.width, outputTexture.height == inputTexture.height {
-                return outputTexture
-            }
-            
-        }
-        let descriptor = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: .bgra8Unorm,
-                                                                  width: inputTexture.width,
-                                                                  height: inputTexture.height,
-                                                                  mipmapped: false)
-        descriptor.usage = [.shaderRead, .shaderWrite, .renderTarget]
-        let texture = device.makeTexture(descriptor: descriptor)
-        outputTexture = texture
-        return texture
-    }
-    
     // MARK: - Thread Groups
     
     // TODO: check device.maxThreadsPerThreadgroup

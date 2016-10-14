@@ -12,78 +12,19 @@
 import Foundation
 import MetalKit
 
-final class ChromaticAberrationFragmentFilter: FragmentFilter {
-    
-    var vertexBuffer: MTLBuffer
-    var textureCoordinatesBuffer: MTLBuffer
-    var vertices = [Vertex]()
-    var textureCoordinates = [float2]()
-    
-    override init(device: MTLDevice) {
-        vertexBuffer = Renderer.generateQuad(forDevice: device, inArray: &vertices)
-        textureCoordinatesBuffer = Renderer.generate(textureCoordinates: &textureCoordinates,
-                                                     forDevice: device)
-        super.init(device: device)
-    }
-    var renderPipelineState: MTLRenderPipelineState!
-    func buildRenderPipeline() {
-        guard let library = device.newDefaultLibrary() else {
-            fatalError("Couldn't find shader libary")
-        }
-        
-        // Retrieve the functions that will comprise our pipeline
-        guard let vertexFunction = library.makeFunction(name: "vertexPassthrough"),
-            let fragmentFunction = library.makeFunction(name: "chromaticAberrationFragment") else {
-            fatalError("Couldn't get shader functions")
-        }
-        
-        // A render pipeline descriptor describes the configuration of our programmable pipeline
-        let pipelineDescriptor = MTLRenderPipelineDescriptor()
-        pipelineDescriptor.label = "Chromatic Aberration Pipeline"
-        pipelineDescriptor.sampleCount = 1
-        pipelineDescriptor.vertexFunction = vertexFunction
-        pipelineDescriptor.fragmentFunction = fragmentFunction
-        pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
-//      pipelineDescriptor.depthAttachmentPixelFormat = view.depthStencilPixelFormat
-    
-        // compile intermediate shaders into hardward-optimized code
-        do {
-            renderPipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
-        } catch {
-            fatalError("Couldn't build render pipeline state: \(error)")
-        }
-    }
-    
-    // MARK: - Textures
-    
-    fileprivate var outputTexture: MTLTexture?
-    func outputTexture(forInputTexture inputTexture: MTLTexture) -> MTLTexture {
-        if let outputTexture = outputTexture {
-            if outputTexture.width == inputTexture.width, outputTexture.height == inputTexture.height {
-                return outputTexture
-            }
-            
-        }
-        let descriptor = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: .bgra8Unorm,
-                                                                  width: inputTexture.width,
-                                                                  height: inputTexture.height,
-                                                                  mipmapped: false)
-        descriptor.usage = [.shaderRead, .shaderWrite, .renderTarget]
-        let texture = device.makeTexture(descriptor: descriptor)
-        outputTexture = texture
-        return texture
-    }
-    
+final class ChromaticAberrationFragmentFilter: FragmentFilter {    
     override func filter(withCommandBuffer commandBuffer: MTLCommandBuffer,
                          inputTexture: MTLTexture) -> MTLTexture {
         if renderPipelineState == nil {
-            buildRenderPipeline()
+            buildRenderPipeline(label: "Chromatic Aberration",
+                                vertexFunction: "vertexPassthrough",
+                                fragmentFunction: "chromaticAberrationFragment")
         }
         let outputTexture = self.outputTexture(forInputTexture: inputTexture)
         
         let renderPassDescriptor = MTLRenderPassDescriptor()
         renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(1, 1, 1, 1)
-        renderPassDescriptor.colorAttachments[0].loadAction = .clear
+        renderPassDescriptor.colorAttachments[0].loadAction = .load
         renderPassDescriptor.colorAttachments[0].storeAction = .dontCare
         renderPassDescriptor.colorAttachments[0].texture = outputTexture
         
