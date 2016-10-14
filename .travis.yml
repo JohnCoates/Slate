@@ -3,12 +3,14 @@ osx_image: xcode8
 cache:
   - bundler
 before_install:
+- brew update
 - carthage bootstrap --verbose --platform iOS
-install: true
+install:
+- gem install xcpretty
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J 'Slate'
 script:
-- env NSUnbufferedIO=YES xcodebuild -project ./Slate.xcodeproj -scheme Slate -destination 'platform=iOS Simulator,name=iPhone 6s' build test
+- set -o pipefail && env NSUnbufferedIO=YES xcodebuild -project ./Slate.xcodeproj -scheme Slate -destination 'platform=iOS Simulator,name=iPhone 6s' build test | xcpretty
 notifications:
   webhooks:
     urls:
