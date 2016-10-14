@@ -212,8 +212,9 @@ import AVFoundation
         commandBuffer.commit()
     }
     
-    lazy var filter: ChromaticAberrationFilter = {
-       return ChromaticAberrationFilter(device: self.device)
+    lazy var filter: AbstractFilter = {
+//       return ChromaticAberrationFilter(device: self.device)
+        return ChromaticAberrationFragmentFilter(device: self.device)
     }()
     
     lazy var filters: [AbstractFilter] = {
