@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */; };
 		FA13FCA81DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */; };
+		FA20FA511E12624C00032AF3 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA20FA501E12624C00032AF3 /* MetalKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FA2426CE1D9A67E000AEE60C /* CameraRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */; };
 		FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */; };
 		FA2F8E471DA2293000993949 /* AbstractFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E461DA2293000993949 /* AbstractFilter.swift */; };
@@ -131,6 +132,7 @@
 
 /* Begin PBXFileReference section */
 		FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = GaussianBlur.metal; sourceTree = "<group>"; };
+		FA20FA501E12624C00032AF3 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRenderView.swift; sourceTree = "<group>"; };
 		FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalCaptureViewController.swift; sourceTree = "<group>"; };
 		FA2F8E461DA2293000993949 /* AbstractFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractFilter.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA20FA511E12624C00032AF3 /* MetalKit.framework in Frameworks */,
 				FACC8FD41D98A55400589230 /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +217,7 @@
 		9EF4533E798C01A4F72A666D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA20FA501E12624C00032AF3 /* MetalKit.framework */,
 				FACC8FD21D98A52500589230 /* Carthage */,
 			);
 			name = Frameworks;
