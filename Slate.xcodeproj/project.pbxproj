@@ -219,6 +219,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FA20FA4F1E1261D600032AF3 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				FACC8FD31D98A55400589230 /* Cartography.framework */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
 		FA2426CA1D9A677800AEE60C /* Camera */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,8 +559,7 @@
 			children = (
 				FABB16901D9E258D00A8AC6C /* Cartography.framework */,
 			);
-			name = Mac;
-			path = ../Mac;
+			path = Mac;
 			sourceTree = "<group>";
 		};
 		FABB16961D9F148500A8AC6C /* View Controllers */ = {
@@ -601,11 +608,11 @@
 		FACC8FD21D98A52500589230 /* Carthage */ = {
 			isa = PBXGroup;
 			children = (
+				FA20FA4F1E1261D600032AF3 /* iOS */,
 				FABB168F1D9E257000A8AC6C /* Mac */,
-				FACC8FD31D98A55400589230 /* Cartography.framework */,
 			);
 			name = Carthage;
-			path = Carthage/Build/iOS;
+			path = Carthage/Build;
 			sourceTree = "<group>";
 		};
 		FACE21EE1D98B9C500B088C8 /* Application */ = {
