@@ -133,6 +133,8 @@
 /* Begin PBXFileReference section */
 		FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = GaussianBlur.metal; sourceTree = "<group>"; };
 		FA20FA501E12624C00032AF3 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		FA20FA551E128CE200032AF3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		FA20FA581E128D1700032AF3 /* Animation-Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Animation-Private.h"; sourceTree = "<group>"; };
 		FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRenderView.swift; sourceTree = "<group>"; };
 		FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalCaptureViewController.swift; sourceTree = "<group>"; };
 		FA2F8E461DA2293000993949 /* AbstractFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractFilter.swift; sourceTree = "<group>"; };
@@ -229,6 +231,39 @@
 				FACC8FD31D98A55400589230 /* Cartography.framework */,
 			);
 			path = iOS;
+			sourceTree = "<group>";
+		};
+		FA20FA521E128B9400032AF3 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				FA20FA541E128CBB00032AF3 /* Bridging */,
+				FA20FA531E128BA000032AF3 /* Private */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		FA20FA531E128BA000032AF3 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				FA20FA571E128D0500032AF3 /* Animation */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		FA20FA541E128CBB00032AF3 /* Bridging */ = {
+			isa = PBXGroup;
+			children = (
+				FA20FA551E128CE200032AF3 /* Bridging-Header.h */,
+			);
+			path = Bridging;
+			sourceTree = "<group>";
+		};
+		FA20FA571E128D0500032AF3 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				FA20FA581E128D1700032AF3 /* Animation-Private.h */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		FA2426CA1D9A677800AEE60C /* Camera */ = {
@@ -469,6 +504,7 @@
 		FA9F89E41D953C540058C369 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				FA20FA521E128B9400032AF3 /* Headers */,
 				FA2F8E3E1DA2286F00993949 /* Rendering */,
 				FA2426CA1D9A677800AEE60C /* Camera */,
 				FA86BE011D98ED4500BC5FB1 /* UI */,
@@ -1103,6 +1139,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.Slate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Headers/Bridging/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1120,6 +1157,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.Slate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Headers/Bridging/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
