@@ -17,7 +17,6 @@ class CaptureButton: Button {
         backgroundColor = UIColor.white
         alpha = 0.56
         accessibilityIdentifier = "CaptureButton"
-        startJitter()
     }
     
     override func layoutSubviews() {
@@ -27,12 +26,42 @@ class CaptureButton: Button {
         layer.cornerRadius = 8
     }
     
-    func startJitter() {
+    enum Animation: String {
+        case position = "positionAnimation"
+        case transform = "transformAnimation"
+    }    
+    
+    func startKeyTimesJitter() {
+        removeOldAnimations()
+        
         let position = jitterPositionAnimation()
-        layer.add(position, forKey: "positionAnimation")
+        layer.add(position,
+                  forKey: Animation.position.rawValue)
         
         let transform = jitterTransformAnimationKeyTimes()
-        layer.add(transform, forKey: "transformAnimation")
+        layer.add(transform,
+                  forKey: Animation.transform.rawValue)
+    }
+    
+    func startFrameIntervalJitter() {
+        removeOldAnimations()
+        
+        let position = jitterPositionAnimation()
+        layer.add(position,
+                  forKey: Animation.position.rawValue)
+        
+        let transform = jitterTransformAnimationFrameInterval()
+        layer.add(transform,
+                  forKey: Animation.transform.rawValue)
+    }
+    
+    func stopJittter() {
+        removeOldAnimations()
+    }
+    
+    private func removeOldAnimations() {
+        layer.removeAnimation(forKey: Animation.position.rawValue)
+        layer.removeAnimation(forKey: Animation.transform.rawValue)
     }
     
     func jitterPositionAnimation() -> CAKeyframeAnimation {
@@ -55,7 +84,7 @@ class CaptureButton: Button {
         return animation
     }
     
-    private func jitterTransformAnimationSpringBoard() -> CAKeyframeAnimation {
+    private func jitterTransformAnimationFrameInterval() -> CAKeyframeAnimation {
         let animation = CAKeyframeAnimation()
         animation.keyPath = "transform"
         let function = CAValueFunction(name: kCAValueFunctionRotateZ)
@@ -78,14 +107,6 @@ class CaptureButton: Button {
     }
     
     private func jitterTransformAnimationKeyTimes() -> CAKeyframeAnimation {
-        let interval = 0.0
-        let duration = 0.5
-        let frames = 6.0
-        
-        let totalDuration = interval + duration
-        let frameDuration = duration / frames
-        let frameTime = frameDuration / totalDuration
-        
         let animation = CAKeyframeAnimation()
         animation.keyPath = "transform"
         let function = CAValueFunction(name: kCAValueFunctionRotateZ)
@@ -94,7 +115,7 @@ class CaptureButton: Button {
         animation.isAdditive = true
         animation.repeatCount = Float.infinity
         animation.isRemovedOnCompletion = false
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         
         var values = [Any]()
         values.append(NSNumber(value: -0.0352556))
@@ -104,11 +125,11 @@ class CaptureButton: Button {
         
         var keyTimes = [NSNumber]()
         keyTimes.append(NSNumber(value: 0))
-        keyTimes.append(NSNumber(value: frameTime * 3))
-        keyTimes.append(NSNumber(value: frameTime * 5))
+        keyTimes.append(NSNumber(value: 0.5))
+        keyTimes.append(NSNumber(value: 1))
         animation.keyTimes = keyTimes
-//        animation.frameInterval = 0.05
         animation.beginTime = 0
+        animation.duration = 0.25
         
         return animation
     }

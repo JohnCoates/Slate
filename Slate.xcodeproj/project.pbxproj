@@ -32,6 +32,12 @@
 		FA4DFEDB1D9DBD5F0068706F /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */; };
 		FA4DFEDC1D9DBD620068706F /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */; };
 		FA4DFEE01D9DC15E0068706F /* HUDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4DFEDF1D9DC15E0068706F /* HUDController.swift */; };
+		FA78F28E1E144C0E00D34947 /* DebugBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F28D1E144C0E00D34947 /* DebugBarController.swift */; };
+		FA78F2921E144E4600D34947 /* DebugBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */; };
+		FA78F2941E144E4E00D34947 /* DebugBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2931E144E4E00D34947 /* DebugBarItem.swift */; };
+		FA78F2971E14520700D34947 /* DebugWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2961E14520700D34947 /* DebugWindow.swift */; };
+		FA78F29A1E15662B00D34947 /* DebugBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2991E15662B00D34947 /* DebugBarView.swift */; };
+		FA78F29C1E15686C00D34947 /* DebugBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F29B1E15686C00D34947 /* DebugBarItemView.swift */; };
 		FA834BDD1D9920010017CCCA /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BDC1D9920010017CCCA /* Platform.swift */; };
 		FA834BE11D9927EB0017CCCA /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BE01D9927EB0017CCCA /* Button.swift */; };
 		FA834BE41D9929710017CCCA /* CaptureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BE31D9929710017CCCA /* CaptureButton.swift */; };
@@ -150,6 +156,12 @@
 		FA4DFED51D9DBD1A0068706F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FA4DFED71D9DBD1A0068706F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA4DFEDF1D9DC15E0068706F /* HUDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDController.swift; sourceTree = "<group>"; };
+		FA78F28D1E144C0E00D34947 /* DebugBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarController.swift; sourceTree = "<group>"; };
+		FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarDelegate.swift; sourceTree = "<group>"; };
+		FA78F2931E144E4E00D34947 /* DebugBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarItem.swift; sourceTree = "<group>"; };
+		FA78F2961E14520700D34947 /* DebugWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DebugWindow.swift; path = ../Window/DebugWindow.swift; sourceTree = "<group>"; };
+		FA78F2991E15662B00D34947 /* DebugBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarView.swift; sourceTree = "<group>"; };
+		FA78F29B1E15686C00D34947 /* DebugBarItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarItemView.swift; sourceTree = "<group>"; };
 		FA834BDC1D9920010017CCCA /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		FA834BE01D9927EB0017CCCA /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		FA834BE31D9929710017CCCA /* CaptureButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureButton.swift; sourceTree = "<group>"; };
@@ -409,6 +421,43 @@
 			path = HUD;
 			sourceTree = "<group>";
 		};
+		FA78F28B1E144AC600D34947 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				FA78F2981E15660E00D34947 /* Views */,
+				FA78F2901E144C2000D34947 /* Delegate */,
+				FA78F28F1E144C1200D34947 /* Items */,
+				FA78F28D1E144C0E00D34947 /* DebugBarController.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		FA78F28F1E144C1200D34947 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				FA78F2931E144E4E00D34947 /* DebugBarItem.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		FA78F2901E144C2000D34947 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		FA78F2981E15660E00D34947 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA78F2961E14520700D34947 /* DebugWindow.swift */,
+				FA78F2991E15662B00D34947 /* DebugBarView.swift */,
+				FA78F29B1E15686C00D34947 /* DebugBarItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FA834BDA1D991FDC0017CCCA /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,6 +501,7 @@
 		FA86BE011D98ED4500BC5FB1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FA78F28B1E144AC600D34947 /* Debug */,
 				FA834BDE1D9927B60017CCCA /* Common */,
 				FA86BE021D98ED5600BC5FB1 /* Capture */,
 			);
@@ -908,11 +958,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA78F2921E144E4600D34947 /* DebugBarDelegate.swift in Sources */,
 				FA4D54191DB055BB0091184D /* ComputeFilter.swift in Sources */,
 				FABB16A21D9F402C00A8AC6C /* TextureCoordinates.swift in Sources */,
+				FA78F29A1E15662B00D34947 /* DebugBarView.swift in Sources */,
 				FA2F8E4E1DA22AD700993949 /* ChromaticAberrationFilter.swift in Sources */,
 				FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */,
+				FA78F28E1E144C0E00D34947 /* DebugBarController.swift in Sources */,
 				FAADE0D01D9D0AC200AA5729 /* Renderer.swift in Sources */,
+				FA78F2941E144E4E00D34947 /* DebugBarItem.swift in Sources */,
 				FA834BDD1D9920010017CCCA /* Platform.swift in Sources */,
 				FABB16AD1D9F6DAB00A8AC6C /* ChromaticAberration.metal in Sources */,
 				FA4D54161DB055A00091184D /* FragmentFilter.swift in Sources */,
@@ -922,6 +976,7 @@
 				FABB169E1D9F308C00A8AC6C /* Vertices.swift in Sources */,
 				FABB16B51D9F886300A8AC6C /* BaseCaptureViewController.swift in Sources */,
 				FA2F8E4A1DA2296E00993949 /* GaussianBlurFilter.swift in Sources */,
+				FA78F2971E14520700D34947 /* DebugWindow.swift in Sources */,
 				FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */,
 				FA4021C61DA0AEE800752F3B /* MetalCameraController.swift in Sources */,
 				FA86BE051D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift in Sources */,
@@ -930,6 +985,7 @@
 				FA834BE11D9927EB0017CCCA /* Button.swift in Sources */,
 				FABB16B11D9F822800A8AC6C /* CameraController.swift in Sources */,
 				FA2426CE1D9A67E000AEE60C /* CameraRenderView.swift in Sources */,
+				FA78F29C1E15686C00D34947 /* DebugBarItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

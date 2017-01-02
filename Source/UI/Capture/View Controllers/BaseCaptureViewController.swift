@@ -9,7 +9,7 @@
 import UIKit
 import Cartography
 
-class BaseCaptureViewController: UIViewController {
+class BaseCaptureViewController: UIViewController, DebugBarDelegate {
     
     // MARK: - View Lifecycle
     
@@ -144,11 +144,30 @@ class BaseCaptureViewController: UIViewController {
             return true
         }
     }
+    
+    // MARK: - Debug Bar
+    
+    var barItems: [DebugBarItem] {
+        let jitterKey = DebugBarItem(title: "Jitter keyTimes")
+        jitterKey.tapClosure = {
+            self.captureButton.startKeyTimesJitter()
+        }
+        let jitterFrame = DebugBarItem(title: "Jitter frameInterval")
+        jitterFrame.tapClosure = {
+            self.captureButton.startFrameIntervalJitter()
+        }
+        
+        let stopJitter = DebugBarItem(title: "Stop Jittter")
+        stopJitter.tapClosure = {
+            self.captureButton.stopJittter()
+        }
+        return [jitterKey, jitterFrame, stopJitter]
+    }
 }
 
 // MARK: - Callbacks
 
-fileprivate struct Method {
+private struct Method {
     static let captureTapped = BaseCaptureViewController.captureTapped
     
 }
