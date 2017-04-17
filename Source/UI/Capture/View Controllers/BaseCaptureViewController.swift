@@ -55,6 +55,7 @@ class BaseCaptureViewController: UIViewController, DebugBarDelegate {
     fileprivate func captureButtonSetup() {
         captureButton.setTappedCallback(instance: self,
                                         method: Method.captureTapped)
+        addLongPressGesture(toControl: captureButton)
         view.addSubview(captureButton)
         
         constrain(captureButton) {
@@ -145,6 +146,29 @@ class BaseCaptureViewController: UIViewController, DebugBarDelegate {
         }
     }
     
+    // MARK: - Editable Controls
+    
+    var editingControls = false {
+        didSet {
+            if editingControls {
+                self.captureButton.startFrameIntervalJitter()
+            } else {
+                self.captureButton.stopJittter()
+            }
+        }
+    }
+    
+    func addLongPressGesture(toControl control: UIView) {
+        let longPress = UILongPressGestureRecognizer(target: self, action: .controlWasLongPressed)
+        control.addGestureRecognizer(longPress)
+    }
+    
+    func controlWasLongPressed(gesture: UITapGestureRecognizer) {
+        if gesture.state == .began {
+            editingControls = !editingControls
+        }
+    }
+    
     // MARK: - Debug Bar
     
     var barItems: [DebugBarItem] {
@@ -176,4 +200,5 @@ private struct Method {
 
 private extension Selector {
     static let menuDragged = #selector(BaseCaptureViewController.menuDragged)
+    static let controlWasLongPressed = #selector(BaseCaptureViewController.controlWasLongPressed(gesture:))
 }
