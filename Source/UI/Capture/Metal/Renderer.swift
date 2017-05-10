@@ -199,10 +199,16 @@ import AVFoundation
             fatalError("no drawable!")
         }
         #if METAL_DEVICE
-        let filteredTexture = filterTexture(texture, withCommandBuffer: commandBuffer)
-        renderFullScreen(commandBuffer: commandBuffer,
-                         drawable: currentDrawable,
-                         inputTexture: filteredTexture)
+            if useFilters {
+                let filteredTexture = filterTexture(texture, withCommandBuffer: commandBuffer)
+                renderFullScreen(commandBuffer: commandBuffer,
+                                 drawable: currentDrawable,
+                                 inputTexture: filteredTexture)
+            } else {
+                renderFullScreen(commandBuffer: commandBuffer,
+                                 drawable: currentDrawable,
+                                 inputTexture: texture)
+            }
         #endif
         
         // Tell the system to present the cleared drawable to the screen.
@@ -212,6 +218,7 @@ import AVFoundation
         commandBuffer.commit()
     }
     
+    var useFilters = false
     lazy var filter: AbstractFilter = {
 //       return ChromaticAberrationFilter(device: self.device)
 //        return ChromaticAberrationFragmentFilter(device: self.device)
