@@ -9,7 +9,8 @@
 import UIKit
 import Cartography
 
-class BaseCaptureViewController: UIViewController, DebugBarDelegate {
+class BaseCaptureViewController: UIViewController,
+DebugBarDelegate, UIGestureRecognizerDelegate {
     
     // MARK: - View Lifecycle
     
@@ -69,7 +70,7 @@ class BaseCaptureViewController: UIViewController, DebugBarDelegate {
     
     // MARK: - Control Menu Setup
     
-    fileprivate lazy var menuView = UIView()
+    fileprivate lazy var menuView = ControlsMenuBar()
     fileprivate var menuVerticalConstraint: NSLayoutConstraint?
     fileprivate func controlMenuSetup() {
         let blurEffect = UIBlurEffect(style: .light)
@@ -98,10 +99,32 @@ class BaseCaptureViewController: UIViewController, DebugBarDelegate {
         menuDraggableSetup()
     }
     
-    fileprivate func menuDraggableSetup() {
+    lazy var dragGesture: UIPanGestureRecognizer = {
         let dragGesture = UIPanGestureRecognizer(target: self,
                                                  action: .menuDragged)
+        dragGesture.delegate = self
+        return dragGesture
+    }()
+    
+    fileprivate func menuDraggableSetup() {
         menuView.addGestureRecognizer(dragGesture)
+    }
+    
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if gestureRecognizer == dragGesture {
+            return menuIsBeingDraggedVertically()
+        }
+        
+        return false
+    }
+    
+    func menuIsBeingDraggedVertically() -> Bool {
+        let velocity = dragGesture.velocity(in: menuView)
+        if abs(velocity.y) > abs(velocity.x) {
+            return true
+        } else {
+            return false
+        }
     }
     
     fileprivate var menuLastTranslationY: CGFloat?
