@@ -324,13 +324,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		FA29FB461EA49B0400EB1081 /* Controls */ = {
+		FA29FB461EA49B0400EB1081 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				FA0462B11EC3C9F9007B74A0 /* Toggles */,
 				FA29FB471EA49B0F00EB1081 /* Bar */,
 			);
-			path = Controls;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		FA29FB471EA49B0F00EB1081 /* Bar */ = {
@@ -551,7 +551,7 @@
 		FA86BE021D98ED5600BC5FB1 /* Capture */ = {
 			isa = PBXGroup;
 			children = (
-				FA29FB461EA49B0400EB1081 /* Controls */,
+				FA29FB461EA49B0400EB1081 /* Components */,
 				FAADE0CE1D9D0AAE00AA5729 /* Metal */,
 				FA834BE21D99294D0017CCCA /* Views */,
 				FA86BE031D98ED6C00BC5FB1 /* View Controllers */,
