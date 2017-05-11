@@ -8,6 +8,7 @@
 
 import UIKit
 import Cartography
+import RealmSwift
 
 class BaseCaptureViewController: UIViewController,
 DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
@@ -28,6 +29,8 @@ DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
         } else {
             cameraSetup()
         }
+        
+        loadComponents()
     }
     
     // MARK: - Setup
@@ -221,9 +224,43 @@ DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
         let componentView = component.createView()
         componentView.frame = view.convert(frame, to: self.view)
         self.view.insertSubview(componentView, belowSubview: menuView)
+        
+        let componentInstance = component.createInstance()
+        componentInstance.frame = componentView.frame
+        
+        KitManager.currentKit.addComponent(component: componentInstance)
+        KitManager.currentKit.saveKit()
+    }
+    
+    // MARK: - Load Kit
+    
+    func loadComponents() {
+        guard let realm = try? Realm() else {
+            return
+        }
+        let allComponents = realm.filter(parentType: ComponentRealm.self,
+                                         subclasses: [CameraPositionComponentRealm.self],
+                                         predicate: NSPredicate(value: true))
+        
+        for component in allComponents {
+            let instance = component.instance()
+            let view = instance.view
+            view.frame = instance.frame
+            self.view.insertSubview(instance.view, belowSubview: menuView)
+            
+        }
+        print("all components: \(allComponents)")
     }
 }
 
+extension Realm {
+    func filter<ParentType: Object>(parentType: ParentType.Type,
+                subclasses: [ParentType.Type], predicate: NSPredicate) -> [ParentType] {
+        return ([parentType] + subclasses).flatMap { classType in
+            return Array(self.objects(classType).filter(predicate))
+        }
+    }
+}
 // MARK: - Callbacks
 
 private struct Method {

@@ -9,5 +9,5 @@
 import Foundation
 
 class KitManager {
-    let currentKit = Kit()
+    static let currentKit = Kit()
 }

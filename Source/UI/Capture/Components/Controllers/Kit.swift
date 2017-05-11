@@ -7,7 +7,27 @@
 //
 
 import Foundation
+import RealmSwift
 
 class Kit {
+    var name: String = "Default Kit"
+    var components = [Component]()
     
+    func addComponent(component: Component) {
+        components.append(component)
+    }
+    
+    func saveKit() {
+        guard let realm = try? Realm() else {
+            print("Failed to create realm")
+            return
+        }
+        try? realm.write {
+            for component in components {
+                let object = component.createRealmObject()
+                realm.add(object)
+            }
+            
+        }
+    }
 }

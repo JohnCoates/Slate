@@ -7,10 +7,13 @@
 //
 
 import Foundation
+import RealmSwift
 
-protocol Component {
+protocol Component: class {
     var frame: CGRect { get set }
     var view: UIView { get }
+    
+    func createRealmObject() -> Object
     
     static func createInstance() -> Component
     static func createView() -> UIView
