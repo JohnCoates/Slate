@@ -9,12 +9,18 @@
 /* Begin PBXBuildFile section */
 		FA0462B31EC3CC76007B74A0 /* FrontBackCameraToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462B21EC3CC76007B74A0 /* FrontBackCameraToggle.swift */; };
 		FA0462B61EC3CDFA007B74A0 /* ControlBarItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462B51EC3CDFA007B74A0 /* ControlBarItemCell.swift */; };
+		FA0462B91EC3DF81007B74A0 /* KitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462B81EC3DF81007B74A0 /* KitManager.swift */; };
+		FA0462BB1EC3DF88007B74A0 /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462BA1EC3DF88007B74A0 /* Kit.swift */; };
+		FA0462BF1EC3DFE1007B74A0 /* CameraPositionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462BE1EC3DFE1007B74A0 /* CameraPositionComponent.swift */; };
+		FA0462C21EC3E002007B74A0 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C11EC3E002007B74A0 /* Component.swift */; };
+		FA0462C51EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C41EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift */; };
+		FA0462C71EC4252D007B74A0 /* ComponentItemCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */; };
 		FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */; };
 		FA13FCA81DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */; };
 		FA20FA511E12624C00032AF3 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA20FA501E12624C00032AF3 /* MetalKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FA2426CE1D9A67E000AEE60C /* CameraRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */; };
 		FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */; };
-		FA29FB491EA49B1F00EB1081 /* ControlsMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29FB481EA49B1F00EB1081 /* ControlsMenuBar.swift */; };
+		FA29FB491EA49B1F00EB1081 /* ComponentMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29FB481EA49B1F00EB1081 /* ComponentMenuBar.swift */; };
 		FA2F8E471DA2293000993949 /* AbstractFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E461DA2293000993949 /* AbstractFilter.swift */; };
 		FA2F8E481DA2293000993949 /* AbstractFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E461DA2293000993949 /* AbstractFilter.swift */; };
 		FA2F8E4A1DA2296E00993949 /* GaussianBlurFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E491DA2296E00993949 /* GaussianBlurFilter.swift */; };
@@ -142,13 +148,19 @@
 /* Begin PBXFileReference section */
 		FA0462B21EC3CC76007B74A0 /* FrontBackCameraToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontBackCameraToggle.swift; sourceTree = "<group>"; };
 		FA0462B51EC3CDFA007B74A0 /* ControlBarItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlBarItemCell.swift; sourceTree = "<group>"; };
+		FA0462B81EC3DF81007B74A0 /* KitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitManager.swift; sourceTree = "<group>"; };
+		FA0462BA1EC3DF88007B74A0 /* Kit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
+		FA0462BE1EC3DFE1007B74A0 /* CameraPositionComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPositionComponent.swift; sourceTree = "<group>"; };
+		FA0462C11EC3E002007B74A0 /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		FA0462C41EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentMenuBarDelegate.swift; sourceTree = "<group>"; };
+		FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentItemCellDelegate.swift; sourceTree = "<group>"; };
 		FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = GaussianBlur.metal; sourceTree = "<group>"; };
 		FA20FA501E12624C00032AF3 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		FA20FA551E128CE200032AF3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		FA20FA581E128D1700032AF3 /* Animation-Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Animation-Private.h"; sourceTree = "<group>"; };
 		FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRenderView.swift; sourceTree = "<group>"; };
 		FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalCaptureViewController.swift; sourceTree = "<group>"; };
-		FA29FB481EA49B1F00EB1081 /* ControlsMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsMenuBar.swift; sourceTree = "<group>"; };
+		FA29FB481EA49B1F00EB1081 /* ComponentMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentMenuBar.swift; sourceTree = "<group>"; };
 		FA2F8E461DA2293000993949 /* AbstractFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractFilter.swift; sourceTree = "<group>"; };
 		FA2F8E491DA2296E00993949 /* GaussianBlurFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaussianBlurFilter.swift; sourceTree = "<group>"; };
 		FA2F8E4D1DA22AD700993949 /* ChromaticAberrationFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaticAberrationFilter.swift; sourceTree = "<group>"; };
@@ -259,6 +271,49 @@
 			path = "Collection View";
 			sourceTree = "<group>";
 		};
+		FA0462B71EC3DE8C007B74A0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA0462B81EC3DF81007B74A0 /* KitManager.swift */,
+				FA0462BA1EC3DF88007B74A0 /* Kit.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FA0462BC1EC3DFAB007B74A0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA0462C01EC3DFEC007B74A0 /* Protocol */,
+				FA0462BD1EC3DFC1007B74A0 /* Toggles */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FA0462BD1EC3DFC1007B74A0 /* Toggles */ = {
+			isa = PBXGroup;
+			children = (
+				FA0462BE1EC3DFE1007B74A0 /* CameraPositionComponent.swift */,
+			);
+			path = Toggles;
+			sourceTree = "<group>";
+		};
+		FA0462C01EC3DFEC007B74A0 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				FA0462C11EC3E002007B74A0 /* Component.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		FA0462C31EC3E3D3007B74A0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FA0462C41EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift */,
+				FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		FA20FA4F1E1261D600032AF3 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +382,8 @@
 		FA29FB461EA49B0400EB1081 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FA0462BC1EC3DFAB007B74A0 /* Models */,
+				FA0462B71EC3DE8C007B74A0 /* Controllers */,
 				FA0462B11EC3C9F9007B74A0 /* Toggles */,
 				FA29FB471EA49B0F00EB1081 /* Bar */,
 			);
@@ -336,8 +393,9 @@
 		FA29FB471EA49B0F00EB1081 /* Bar */ = {
 			isa = PBXGroup;
 			children = (
+				FA0462C31EC3E3D3007B74A0 /* Protocols */,
 				FA0462B41EC3CDDE007B74A0 /* Collection View */,
-				FA29FB481EA49B1F00EB1081 /* ControlsMenuBar.swift */,
+				FA29FB481EA49B1F00EB1081 /* ComponentMenuBar.swift */,
 			);
 			path = Bar;
 			sourceTree = "<group>";
@@ -1001,6 +1059,7 @@
 			files = (
 				FA78F2921E144E4600D34947 /* DebugBarDelegate.swift in Sources */,
 				FA4D54191DB055BB0091184D /* ComputeFilter.swift in Sources */,
+				FA0462BB1EC3DF88007B74A0 /* Kit.swift in Sources */,
 				FABB16A21D9F402C00A8AC6C /* TextureCoordinates.swift in Sources */,
 				FA78F29A1E15662B00D34947 /* DebugBarView.swift in Sources */,
 				FA2F8E4E1DA22AD700993949 /* ChromaticAberrationFilter.swift in Sources */,
@@ -1013,18 +1072,23 @@
 				FA4D54161DB055A00091184D /* FragmentFilter.swift in Sources */,
 				FA2F8E531DA23E5500993949 /* PassthroughFilter.swift in Sources */,
 				FA834BE41D9929710017CCCA /* CaptureButton.swift in Sources */,
+				FA0462B91EC3DF81007B74A0 /* KitManager.swift in Sources */,
 				FA2F8E471DA2293000993949 /* AbstractFilter.swift in Sources */,
+				FA0462C51EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift in Sources */,
+				FA0462BF1EC3DFE1007B74A0 /* CameraPositionComponent.swift in Sources */,
 				FABB169E1D9F308C00A8AC6C /* Vertices.swift in Sources */,
 				FABB16B51D9F886300A8AC6C /* BaseCaptureViewController.swift in Sources */,
+				FA0462C71EC4252D007B74A0 /* ComponentItemCellDelegate.swift in Sources */,
 				FA2F8E4A1DA2296E00993949 /* GaussianBlurFilter.swift in Sources */,
 				FA0462B61EC3CDFA007B74A0 /* ControlBarItemCell.swift in Sources */,
 				FA78F2971E14520700D34947 /* DebugWindow.swift in Sources */,
 				FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */,
-				FA29FB491EA49B1F00EB1081 /* ControlsMenuBar.swift in Sources */,
+				FA29FB491EA49B1F00EB1081 /* ComponentMenuBar.swift in Sources */,
 				FA4021C61DA0AEE800752F3B /* MetalCameraController.swift in Sources */,
 				FA0462B31EC3CC76007B74A0 /* FrontBackCameraToggle.swift in Sources */,
 				FA86BE051D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift in Sources */,
 				FA9F89E61D953C540058C369 /* AppDelegate.swift in Sources */,
+				FA0462C21EC3E002007B74A0 /* Component.swift in Sources */,
 				FAADE0D31D9D0C4300AA5729 /* Passthrough.metal in Sources */,
 				FA834BE11D9927EB0017CCCA /* Button.swift in Sources */,
 				FABB16B11D9F822800A8AC6C /* CameraController.swift in Sources */,

@@ -9,7 +9,10 @@
 import Foundation
 import Cartography
 
-final class ControlsMenuBar: UIView, UICollectionViewDataSource {
+final class ComponentMenuBar: UIView,
+    UICollectionViewDataSource, ComponentItemCellDelegate {
+    
+    weak var delegate: ComponentMenuBarDelegate?
     
     // MARK: - Init
     
@@ -56,9 +59,9 @@ final class ControlsMenuBar: UIView, UICollectionViewDataSource {
     
     // MARK: - Controls
     
-    var controls: [UIView] = {
+    var components: [Component.Type] = {
         return [
-            FrontBackCameraToggle()
+            CameraPositionComponent.self
         ]
     }()
     
@@ -66,12 +69,21 @@ final class ControlsMenuBar: UIView, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: ControlBarItemCell.reuseIdentifier,
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ControlBarItemCell.reuseIdentifier,
                                                   for: indexPath)
+        
+        let component = components[indexPath.row]
+        if let itemCell = cell as? ControlBarItemCell {
+            itemCell.collectionView = collectionView
+            itemCell.control = component.createView()
+            itemCell.delegate = self
+            itemCell.component = component
+        }
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return controls.count
+        return components.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -81,5 +93,10 @@ final class ControlsMenuBar: UIView, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
         return false
     }
-
+    
+    // MARK: - Component Item Cell Delegate
+    
+    func add(component: Component.Type, atFrame frame: CGRect, fromView view: UIView) {
+        self.delegate?.add(component: component, atFrame: frame, fromView: view)
+    }
 }

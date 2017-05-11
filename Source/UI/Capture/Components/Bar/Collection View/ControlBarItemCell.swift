@@ -12,7 +12,9 @@ import Cartography
 final class ControlBarItemCell: UICollectionViewCell {
     
     static let reuseIdentifier = "ControlBarItemCell"
-    
+    weak var collectionView: UICollectionView?
+    weak var delegate: ComponentItemCellDelegate?
+    var component: Component.Type?
     // MARK: - Init
     
     convenience init() {
@@ -30,10 +32,22 @@ final class ControlBarItemCell: UICollectionViewCell {
     
     // MARK: - Setup
     
-    let control = FrontBackCameraToggle()
+    var control: UIView? {
+        didSet(oldControl) {
+            if let oldControl = oldControl {
+                oldControl.removeFromSuperview()
+            }
+            setUpControl()
+        }
+    }
     private func initialSetup() {
         backgroundColor = UIColor.green.withAlphaComponent(0.1)
-        
+    }
+    
+    func setUpControl() {
+        guard let control = control else {
+            return
+        }
         contentView.addSubview(control)
         constrain(control) {
             let superview = $0.superview!
@@ -47,16 +61,35 @@ final class ControlBarItemCell: UICollectionViewCell {
     // MARK: - Drag & Drop
     
     func setUpTapAndHoldGesture() {
+        guard let control = control else {
+            return
+        }
+        
         let gesture = UILongPressGestureRecognizer(target: self, action: .longPressed)
         gesture.minimumPressDuration = 0.2
         control.addGestureRecognizer(gesture)
     }
     
     fileprivate var lastLocation: CGPoint?
+    fileprivate var startFrame: CGRect?
     func longPressed(gesture: UILongPressGestureRecognizer) {
-        
+        guard let control = control else {
+            return
+        }
         if gesture.state == .began || gesture.state == .ended || gesture.state == .cancelled {
             lastLocation = nil
+        }
+        if gesture.state == .ended {
+            if didLongPressEndOutsideOfMenuBar() {
+                notifyDelegateOfAddedComponent()
+                animateControlPoppingIntoMenuBar()
+            } else {
+                animateControlReturningToMenuBar()
+            }
+            
+            self.startFrame = nil
+            
+            return
         }
         
         let location = gesture.location(in: self)
@@ -70,13 +103,14 @@ final class ControlBarItemCell: UICollectionViewCell {
         
         if gesture.state == .began {
             var frame = control.frame
+            startFrame = frame
             frame.size.width *= 1.3
             frame.size.height *= 1.3
             control.frame = frame
             return
         }
         
-        let minimumChange: CGFloat = 1
+        let minimumChange: CGFloat = 0.2
         let xMeetsMinimum = abs(difference.x) > minimumChange
         let yMeetsMinimum = abs(difference.y) > minimumChange
         let bothMeetMinimum = abs(difference.x) + abs(difference.y) > minimumChange
@@ -90,6 +124,70 @@ final class ControlBarItemCell: UICollectionViewCell {
         frame.origin.x += difference.x
         frame.origin.y += difference.y
         control.frame = frame
+    }
+    
+    func animateControlReturningToMenuBar() {
+        guard let startFrame = startFrame,
+            let control = control else {
+            return
+        }
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            control.frame = startFrame
+            control.layer.cornerRadius = startFrame.width / 2
+        })
+    }
+    
+    func animateControlPoppingIntoMenuBar() {
+        guard let startFrame = startFrame,
+            let control = control else {
+            return
+        }
+        control.frame = startFrame
+        control.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+        UIView.animate(withDuration: 0.3,
+                       delay: 0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 3,
+                       options: UIViewAnimationOptions.curveEaseOut, animations: {
+            control.transform = CGAffineTransform(scaleX: 1, y: 1)
+        })
+    }
+    
+    func didLongPressEndOutsideOfMenuBar() -> Bool {
+        guard let collectionView = collectionView,
+            let control = control else {
+            return false
+        }
+        let localFrame = control.frame
+        let externalFrame = contentView.convert(localFrame, to: collectionView)
+        let collectionViewFrame = collectionView.bounds
+        let intersection = collectionViewFrame.intersection(externalFrame)
+        
+        if intersection.isNull || intersection.height < 1 {
+            return true
+        }
+        
+        let yPercentageInsideOfMenuBar = (intersection.height / localFrame.height) * 100
+        let percentageToAllowInside: CGFloat = 30
+        print("intersection %: \(yPercentageInsideOfMenuBar)")
+        if yPercentageInsideOfMenuBar < percentageToAllowInside {
+            return true
+        }
+        
+        return false
+    }
+    
+    // MARK: - Call Delegate
+    
+    func notifyDelegateOfAddedComponent() {
+        guard let control = control,
+            let component = component else {
+            return
+        }
+        delegate?.add(component: component,
+                      atFrame: control.bounds,
+                      fromView: control)
     }
 }
 

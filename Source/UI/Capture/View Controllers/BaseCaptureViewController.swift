@@ -10,7 +10,9 @@ import UIKit
 import Cartography
 
 class BaseCaptureViewController: UIViewController,
-DebugBarDelegate, UIGestureRecognizerDelegate {
+DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
+    
+    var kit: Kit = Kit()
     
     // MARK: - View Lifecycle
     
@@ -70,9 +72,10 @@ DebugBarDelegate, UIGestureRecognizerDelegate {
     
     // MARK: - Control Menu Setup
     
-    fileprivate lazy var menuView = ControlsMenuBar()
+    fileprivate lazy var menuView = ComponentMenuBar()
     fileprivate var menuVerticalConstraint: NSLayoutConstraint?
     fileprivate func controlMenuSetup() {
+        menuView.delegate = self
         let blurEffect = UIBlurEffect(style: .light)
         let visualEffectView = UIVisualEffectView(effect: blurEffect)
         menuView.addSubview(visualEffectView)
@@ -210,13 +213,21 @@ DebugBarDelegate, UIGestureRecognizerDelegate {
         }
         return [jitterKey, jitterFrame, stopJitter]
     }
+    
+    // MARK: - Component Menu Bar Delegate
+    
+    func add(component: Component.Type,
+             atFrame frame: CGRect, fromView view: UIView) {
+        let componentView = component.createView()
+        componentView.frame = view.convert(frame, to: self.view)
+        self.view.insertSubview(componentView, belowSubview: menuView)
+    }
 }
 
 // MARK: - Callbacks
 
 private struct Method {
     static let captureTapped = BaseCaptureViewController.captureTapped
-    
 }
 
 // MARK: - Selector Extension
