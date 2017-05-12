@@ -13,8 +13,12 @@ protocol Component: class {
     var frame: CGRect { get set }
     var view: UIView { get }
     
-    func createRealmObject() -> Object
+    func createRealmObject() -> ComponentRealm
     
     static func createInstance() -> Component
     static func createView() -> UIView
+}
+
+protocol ComponentDelegate: class {
+    func modified(component: Component)
 }

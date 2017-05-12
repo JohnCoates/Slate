@@ -13,7 +13,7 @@ import RealmSwift
 class BaseCaptureViewController: UIViewController,
 DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
     
-    var kit: Kit = Kit()
+    lazy var kit: Kit = { KitManager.currentKit }()
     
     // MARK: - View Lifecycle
     
@@ -228,28 +228,19 @@ DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
         let componentInstance = component.createInstance()
         componentInstance.frame = componentView.frame
         
-        KitManager.currentKit.addComponent(component: componentInstance)
-        KitManager.currentKit.saveKit()
+        kit.addComponent(component: componentInstance)
+        kit.saveKit()
     }
     
     // MARK: - Load Kit
     
     func loadComponents() {
-        guard let realm = try? Realm() else {
-            return
+        for component in kit.components {
+            print("frame: \(component.frame)")
+            component.view.frame = component.frame
+            self.view.insertSubview(component.view, belowSubview: menuView)
         }
-        let allComponents = realm.filter(parentType: ComponentRealm.self,
-                                         subclasses: [CameraPositionComponentRealm.self],
-                                         predicate: NSPredicate(value: true))
-        
-        for component in allComponents {
-            let instance = component.instance()
-            let view = instance.view
-            view.frame = instance.frame
-            self.view.insertSubview(instance.view, belowSubview: menuView)
-            
-        }
-        print("all components: \(allComponents)")
+        print("all components: \(kit.components)")
     }
 }
 

@@ -21,6 +21,7 @@
 		FA18058C1EC46FAE004351B7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; };
 		FA18058D1EC47398004351B7 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA1805891EC46FAE004351B7 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA18058E1EC47398004351B7 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA1805911EC5477A004351B7 /* ComponentRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805901EC5477A004351B7 /* ComponentRealm.swift */; };
 		FA20FA511E12624C00032AF3 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA20FA501E12624C00032AF3 /* MetalKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FA2426CE1D9A67E000AEE60C /* CameraRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */; };
 		FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */; };
@@ -163,6 +164,7 @@
 		FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = GaussianBlur.metal; sourceTree = "<group>"; };
 		FA1805891EC46FAE004351B7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		FA18058A1EC46FAE004351B7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		FA1805901EC5477A004351B7 /* ComponentRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentRealm.swift; sourceTree = "<group>"; };
 		FA20FA501E12624C00032AF3 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		FA20FA551E128CE200032AF3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		FA20FA581E128D1700032AF3 /* Animation-Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Animation-Private.h"; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 		FA0462BC1EC3DFAB007B74A0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA18058F1EC54755004351B7 /* Realm */,
 				FA0462C01EC3DFEC007B74A0 /* Protocol */,
 				FA0462BD1EC3DFC1007B74A0 /* Toggles */,
 			);
@@ -322,6 +325,14 @@
 				FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FA18058F1EC54755004351B7 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				FA1805901EC5477A004351B7 /* ComponentRealm.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		FA20FA4F1E1261D600032AF3 /* iOS */ = {
@@ -1096,6 +1107,7 @@
 				FA78F2971E14520700D34947 /* DebugWindow.swift in Sources */,
 				FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */,
 				FA29FB491EA49B1F00EB1081 /* ComponentMenuBar.swift in Sources */,
+				FA1805911EC5477A004351B7 /* ComponentRealm.swift in Sources */,
 				FA4021C61DA0AEE800752F3B /* MetalCameraController.swift in Sources */,
 				FA0462B31EC3CC76007B74A0 /* FrontBackCameraToggle.swift in Sources */,
 				FA86BE051D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift in Sources */,

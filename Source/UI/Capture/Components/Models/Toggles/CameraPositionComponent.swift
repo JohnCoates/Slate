@@ -27,7 +27,7 @@ class CameraPositionComponent: Component {
         return FrontBackCameraToggle()
     }
     
-    func createRealmObject() -> Object {
+    func createRealmObject() -> ComponentRealm {
         let object = CameraPositionComponentRealm()
         object.frame = self.frame
         object.rawPosition = self.position.rawValue
@@ -36,34 +36,6 @@ class CameraPositionComponent: Component {
 }
 
 // MARK: - Realm Object
-// https://github.com/realm/realm-cocoa/issues/1109
-
-class ComponentRealm: Object {
-    var frame: CGRect {
-        get {
-            return CGRect(x: originX, y: originY, width: width, height: height)
-        }
-        set (frame) {
-            originX = frame.origin.x
-            originY = frame.origin.y
-            width = frame.size.width
-            height = frame.size.height
-        }
-    }
-    
-    dynamic var originX: CGFloat = 0.0
-    dynamic var originY: CGFloat = 0.0
-    dynamic var width: CGFloat = 0.0
-    dynamic var height: CGFloat = 0.0
-    
-    override class func ignoredProperties() -> [String] {
-        return ["frame"]
-    }
-    
-    func instance() -> Component {
-        fatalError("instance() has not been implemented")
-    }
-}
 
 class CameraPositionComponentRealm: ComponentRealm {
     dynamic var rawPosition: Int = CameraPositionComponent.Position.front.rawValue
