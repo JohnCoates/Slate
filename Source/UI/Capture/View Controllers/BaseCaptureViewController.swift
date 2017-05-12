@@ -10,6 +10,7 @@ import UIKit
 import Cartography
 import RealmSwift
 
+fileprivate typealias localVC = BaseCaptureViewController
 class BaseCaptureViewController: UIViewController,
 DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
     
@@ -53,6 +54,7 @@ DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
     fileprivate func controlsSetup() {
         captureButtonSetup()
         controlMenuSetup()
+        componentEditBarSetup()
     }
     
     // MARK: - Capture Button Setup
@@ -73,7 +75,7 @@ DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
         }
     }
     
-    // MARK: - Control Menu Setup
+    // MARK: - Component Menu Setup
     
     fileprivate lazy var menuView = ComponentMenuBar()
     fileprivate var menuVerticalConstraint: NSLayoutConstraint?
@@ -93,6 +95,7 @@ DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
         var verticalConstraint: NSLayoutConstraint!
         constrain(menuView) {
             let superview = $0.superview!
+            $0.left == superview.left
             $0.height == 55
             $0.width == superview.width
             $0.top >= superview.top ~ 1000
@@ -118,14 +121,17 @@ DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer == dragGesture {
-            return menuIsBeingDraggedVertically()
+            return isVerticalDrag(gesture: dragGesture, targetView: menuView)
+        } else if gestureRecognizer == editBarDragGesture {
+            return isVerticalDrag(gesture: editBarDragGesture, targetView: editBar)
         }
         
         return false
     }
     
-    func menuIsBeingDraggedVertically() -> Bool {
-        let velocity = dragGesture.velocity(in: menuView)
+    func isVerticalDrag(gesture: UIPanGestureRecognizer,
+                        targetView: UIView) -> Bool {
+        let velocity = gesture.velocity(in: targetView)
         if abs(velocity.y) > abs(velocity.x) {
             return true
         } else {
@@ -180,9 +186,10 @@ DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
     var editingControls = false {
         didSet {
             if editingControls {
-                self.captureButton.startFrameIntervalJitter()
+                captureButton.startFrameIntervalJitter()
+                configureEditBarWithTargetComponent()
             } else {
-                self.captureButton.stopJittter()
+                captureButton.stopJittter()
             }
         }
     }
@@ -242,6 +249,89 @@ DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
         }
         print("all components: \(kit.components)")
     }
+    
+    // MARK: - Edit Components
+    
+    private lazy var editBar = ComponentEditBar()
+    fileprivate var editBarVerticalConstraint: NSLayoutConstraint?
+    fileprivate func componentEditBarSetup() {
+        view.addSubview(editBar)
+        var verticalConstraint: NSLayoutConstraint!
+        constrain(editBar) {
+            let superview = $0.superview!
+            $0.left == superview.left
+            $0.height == 100
+            $0.width == superview.width
+            $0.top >= superview.top ~ 1000
+            $0.bottom <= superview.bottom ~ 1000
+            verticalConstraint = $0.top == superview.top + 300
+            verticalConstraint ~ 400
+        }
+        
+        editBarVerticalConstraint = verticalConstraint
+        editBarDraggableSetup()
+    }
+    
+    fileprivate lazy var editBarDragGesture: UIPanGestureRecognizer = {
+        let dragGesture = UIPanGestureRecognizer(target: self,
+                                                 action: .editBarDragged)
+        dragGesture.delegate = self
+        return dragGesture
+    }()
+    
+    fileprivate func editBarDraggableSetup() {
+        editBar.addGestureRecognizer(editBarDragGesture)
+    }
+    
+    fileprivate var editBarLastTranslationY: CGFloat?
+    func editBarDragged(gesture: UIPanGestureRecognizer) {
+        if gesture.state == .began || gesture.state == .ended || gesture.state == .cancelled {
+            editBarLastTranslationY = nil
+        }
+        guard gesture.state == .changed else {
+            return
+        }
+        
+        let translation = gesture.translation(in: editBar)
+        var translationY = translation.y
+        
+        if let editBarLastTranslationY = editBarLastTranslationY {
+            translationY -= editBarLastTranslationY
+        }
+        
+        let minimumOffsetChange: CGFloat = 1
+        guard abs(translationY) > minimumOffsetChange,
+            let editBarVerticalConstraint = editBarVerticalConstraint else {
+                return
+        }
+        
+        editBarLastTranslationY = translation.y
+        
+        editBarVerticalConstraint.constant += translationY
+        editBar.setNeedsLayout()
+    }
+    
+    fileprivate func loadComponentEditBar() {
+        let editControl = ProgressCircleView()
+        self.view.addSubview(editControl)
+        
+        constrain(editControl) {
+            let superview = $0.superview!
+            $0.center == superview.center
+            $0.width == 50
+            $0.height == $0.width
+        }
+    }
+    
+    fileprivate func configureEditBarWithTargetComponent() {
+        let components = kit.components
+        guard components.count > 0 else {
+            print("Couldn't find any targets to edit!")
+            return
+        }
+        let target = components[0]
+        editBar.set(target: target)
+    }
 }
 
 extension Realm {
@@ -261,6 +351,7 @@ private struct Method {
 // MARK: - Selector Extension
 
 private extension Selector {
-    static let menuDragged = #selector(BaseCaptureViewController.menuDragged)
-    static let controlWasLongPressed = #selector(BaseCaptureViewController.controlWasLongPressed(gesture:))
+    static let menuDragged = #selector(localVC.menuDragged)
+    static let editBarDragged = #selector(localVC.editBarDragged)
+    static let controlWasLongPressed = #selector(localVC.controlWasLongPressed)
 }

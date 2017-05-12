@@ -22,6 +22,10 @@
 		FA18058D1EC47398004351B7 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA1805891EC46FAE004351B7 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA18058E1EC47398004351B7 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA1805911EC5477A004351B7 /* ComponentRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805901EC5477A004351B7 /* ComponentRealm.swift */; };
+		FA1805931EC54A0F004351B7 /* ComponentEditBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805921EC54A0F004351B7 /* ComponentEditBar.swift */; };
+		FA1805961EC54B82004351B7 /* CircleEditControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805951EC54B82004351B7 /* CircleEditControl.swift */; };
+		FA1805981EC54F38004351B7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805971EC54F38004351B7 /* CircleView.swift */; };
+		FA18059A1EC55466004351B7 /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805991EC55466004351B7 /* ProgressCircleView.swift */; };
 		FA20FA511E12624C00032AF3 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA20FA501E12624C00032AF3 /* MetalKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FA2426CE1D9A67E000AEE60C /* CameraRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */; };
 		FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */; };
@@ -165,6 +169,10 @@
 		FA1805891EC46FAE004351B7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		FA18058A1EC46FAE004351B7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		FA1805901EC5477A004351B7 /* ComponentRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentRealm.swift; sourceTree = "<group>"; };
+		FA1805921EC54A0F004351B7 /* ComponentEditBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentEditBar.swift; sourceTree = "<group>"; };
+		FA1805951EC54B82004351B7 /* CircleEditControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleEditControl.swift; sourceTree = "<group>"; };
+		FA1805971EC54F38004351B7 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		FA1805991EC55466004351B7 /* ProgressCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
 		FA20FA501E12624C00032AF3 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		FA20FA551E128CE200032AF3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		FA20FA581E128D1700032AF3 /* Animation-Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Animation-Private.h"; sourceTree = "<group>"; };
@@ -335,6 +343,23 @@
 			path = Realm;
 			sourceTree = "<group>";
 		};
+		FA1805941EC54A71004351B7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA1805951EC54B82004351B7 /* CircleEditControl.swift */,
+				FA1805971EC54F38004351B7 /* CircleView.swift */,
+				FA1805991EC55466004351B7 /* ProgressCircleView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA18059B1EC59427004351B7 /* Edit Bars */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Edit Bars";
+			sourceTree = "<group>";
+		};
 		FA20FA4F1E1261D600032AF3 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,9 +441,12 @@
 		FA29FB471EA49B0F00EB1081 /* Bar */ = {
 			isa = PBXGroup;
 			children = (
+				FA18059B1EC59427004351B7 /* Edit Bars */,
+				FA1805941EC54A71004351B7 /* Views */,
 				FA0462C31EC3E3D3007B74A0 /* Protocols */,
 				FA0462B41EC3CDDE007B74A0 /* Collection View */,
 				FA29FB481EA49B1F00EB1081 /* ComponentMenuBar.swift */,
+				FA1805921EC54A0F004351B7 /* ComponentEditBar.swift */,
 			);
 			path = Bar;
 			sourceTree = "<group>";
@@ -1083,6 +1111,7 @@
 				FA78F2921E144E4600D34947 /* DebugBarDelegate.swift in Sources */,
 				FA4D54191DB055BB0091184D /* ComputeFilter.swift in Sources */,
 				FA0462BB1EC3DF88007B74A0 /* Kit.swift in Sources */,
+				FA1805981EC54F38004351B7 /* CircleView.swift in Sources */,
 				FABB16A21D9F402C00A8AC6C /* TextureCoordinates.swift in Sources */,
 				FA78F29A1E15662B00D34947 /* DebugBarView.swift in Sources */,
 				FA2F8E4E1DA22AD700993949 /* ChromaticAberrationFilter.swift in Sources */,
@@ -1105,6 +1134,7 @@
 				FA2F8E4A1DA2296E00993949 /* GaussianBlurFilter.swift in Sources */,
 				FA0462B61EC3CDFA007B74A0 /* ControlBarItemCell.swift in Sources */,
 				FA78F2971E14520700D34947 /* DebugWindow.swift in Sources */,
+				FA1805931EC54A0F004351B7 /* ComponentEditBar.swift in Sources */,
 				FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */,
 				FA29FB491EA49B1F00EB1081 /* ComponentMenuBar.swift in Sources */,
 				FA1805911EC5477A004351B7 /* ComponentRealm.swift in Sources */,
@@ -1114,6 +1144,8 @@
 				FA9F89E61D953C540058C369 /* AppDelegate.swift in Sources */,
 				FA0462C21EC3E002007B74A0 /* Component.swift in Sources */,
 				FAADE0D31D9D0C4300AA5729 /* Passthrough.metal in Sources */,
+				FA1805961EC54B82004351B7 /* CircleEditControl.swift in Sources */,
+				FA18059A1EC55466004351B7 /* ProgressCircleView.swift in Sources */,
 				FA834BE11D9927EB0017CCCA /* Button.swift in Sources */,
 				FABB16B11D9F822800A8AC6C /* CameraController.swift in Sources */,
 				FA2426CE1D9A67E000AEE60C /* CameraRenderView.swift in Sources */,

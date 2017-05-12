@@ -19,11 +19,18 @@ class CaptureButton: Button {
         accessibilityIdentifier = "CaptureButton"
     }
     
+    var roundingPercentage: Float = 0.5 {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
 //        layer.cornerRadius = frame.width / 2
 //        layer.cornerRadius = frame.width / 1.05
-        layer.cornerRadius = 8
+//        layer.cornerRadius = 8
+        layer.cornerRadius = (frame.width / 2) * CGFloat(roundingPercentage)
     }
     
     enum Animation: String {

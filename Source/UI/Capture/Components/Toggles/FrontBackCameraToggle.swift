@@ -9,7 +9,7 @@
 import Foundation
 import Cartography
 
-final class FrontBackCameraToggle: UIView {
+final class FrontBackCameraToggle: CircleView {
     
     // MARK: - Init
     
@@ -30,10 +30,5 @@ final class FrontBackCameraToggle: UIView {
     
     private func initialSetup() {
         backgroundColor = UIColor.blue.withAlphaComponent(0.8)
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        layer.cornerRadius = frame.width / 2
     }
 }
