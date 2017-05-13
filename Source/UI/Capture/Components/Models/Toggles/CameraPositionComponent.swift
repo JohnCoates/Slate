@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class CameraPositionComponent: Component {
+class CameraPositionComponent: Component, EditRounding {
     enum Position: Int {
         case front = 0
         case back = 1
@@ -17,7 +17,13 @@ class CameraPositionComponent: Component {
     
     var position: Position = .front
     var frame: CGRect = .zero
-    var view: UIView = FrontBackCameraToggle()
+    var internalView = FrontBackCameraToggle()
+    var view: UIView { return internalView }
+    var rounding: Float = 1 {
+        didSet {
+            internalView.roundingPercentage = rounding
+        }
+    }
     
     static func createInstance() -> Component {
         return CameraPositionComponent()

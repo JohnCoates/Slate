@@ -26,6 +26,7 @@
 		FA1805961EC54B82004351B7 /* CircleEditControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805951EC54B82004351B7 /* CircleEditControl.swift */; };
 		FA1805981EC54F38004351B7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805971EC54F38004351B7 /* CircleView.swift */; };
 		FA18059A1EC55466004351B7 /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805991EC55466004351B7 /* ProgressCircleView.swift */; };
+		FA18059F1EC688D9004351B7 /* EditRounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18059E1EC688D9004351B7 /* EditRounding.swift */; };
 		FA20FA511E12624C00032AF3 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA20FA501E12624C00032AF3 /* MetalKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FA2426CE1D9A67E000AEE60C /* CameraRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */; };
 		FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */; };
@@ -173,6 +174,7 @@
 		FA1805951EC54B82004351B7 /* CircleEditControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleEditControl.swift; sourceTree = "<group>"; };
 		FA1805971EC54F38004351B7 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		FA1805991EC55466004351B7 /* ProgressCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
+		FA18059E1EC688D9004351B7 /* EditRounding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRounding.swift; sourceTree = "<group>"; };
 		FA20FA501E12624C00032AF3 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		FA20FA551E128CE200032AF3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		FA20FA581E128D1700032AF3 /* Animation-Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Animation-Private.h"; sourceTree = "<group>"; };
@@ -360,6 +362,22 @@
 			name = "Edit Bars";
 			sourceTree = "<group>";
 		};
+		FA18059C1EC688BD004351B7 /* Editing */ = {
+			isa = PBXGroup;
+			children = (
+				FA18059D1EC688CB004351B7 /* Protocols */,
+			);
+			path = Editing;
+			sourceTree = "<group>";
+		};
+		FA18059D1EC688CB004351B7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FA18059E1EC688D9004351B7 /* EditRounding.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		FA20FA4F1E1261D600032AF3 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,6 +448,7 @@
 		FA29FB461EA49B0400EB1081 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FA18059C1EC688BD004351B7 /* Editing */,
 				FA0462BC1EC3DFAB007B74A0 /* Models */,
 				FA0462B71EC3DE8C007B74A0 /* Controllers */,
 				FA0462B11EC3C9F9007B74A0 /* Toggles */,
@@ -1145,6 +1164,7 @@
 				FA0462C21EC3E002007B74A0 /* Component.swift in Sources */,
 				FAADE0D31D9D0C4300AA5729 /* Passthrough.metal in Sources */,
 				FA1805961EC54B82004351B7 /* CircleEditControl.swift in Sources */,
+				FA18059F1EC688D9004351B7 /* EditRounding.swift in Sources */,
 				FA18059A1EC55466004351B7 /* ProgressCircleView.swift in Sources */,
 				FA834BE11D9927EB0017CCCA /* Button.swift in Sources */,
 				FABB16B11D9F822800A8AC6C /* CameraController.swift in Sources */,

@@ -131,8 +131,8 @@ final class ComponentEditBar: UIView {
     
     func roundingValueHandler() -> ProgressCircleView.ValueChangedCallback {
         return { value in
-            if let circleView = self.targetView as? CircleView {
-                circleView.roundingPercentage = value / 100
+            if let component = self.component as? EditRounding {
+                component.rounding = value / 100
             }
         }
     }
@@ -164,6 +164,7 @@ final class ComponentEditBar: UIView {
     }
     
     var targetView: UIView?
+    var component: Component?
     func set(target: Component) {
         for control in controls {
             control.removeFromSuperview()
@@ -174,12 +175,15 @@ final class ComponentEditBar: UIView {
             oldTarget.layer.borderWidth = 0
         }
         
+        component = target
         targetView = target.view
         targetView?.layer.borderColor = UIColor(red:0.13, green:0.55, blue:0.78, alpha:1.00).cgColor
         targetView?.layer.borderWidth = 3
         lastEditControl = nil
         
         addProgressControl(type: .size(range: 12..<200))
-        addProgressControl(type: .rounding)
+        if component is EditRounding {
+            addProgressControl(type: .rounding)
+        }
     }
 }
