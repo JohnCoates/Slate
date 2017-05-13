@@ -110,6 +110,7 @@ final class ProgressCircleView: UIView {
         valueLabel.textColor = UIColor.white
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         valueLabel.numberOfLines = 2
+        valueLabel.textAlignment = .center
         innerCircle.addSubview(valueLabel)
         
         constrain(valueLabel) {

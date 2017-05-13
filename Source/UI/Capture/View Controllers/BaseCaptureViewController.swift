@@ -187,7 +187,6 @@ DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
         didSet {
             if editingControls {
                 captureButton.startFrameIntervalJitter()
-                configureEditBarWithTargetComponent()
             } else {
                 captureButton.stopJittter()
             }
@@ -246,8 +245,27 @@ DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
             print("frame: \(component.frame)")
             component.view.frame = component.frame
             self.view.insertSubview(component.view, belowSubview: menuView)
+            addEditGestureToComponent(component: component)
         }
         print("all components: \(kit.components)")
+    }
+    
+    func addEditGestureToComponent(component: Component) {
+        let gesture = UILongPressGestureRecognizer(target: self, action: .componentEditGesture)
+        component.view.addGestureRecognizer(gesture)
+    }
+    
+    func componentEditGesture(gesture: UILongPressGestureRecognizer) {
+        guard let targetView = gesture.view else {
+            fatalError("No view associated with gesture!")
+        }
+        
+        for component in kit.components {
+            if targetView == component.view {
+                configureEditBar(withTargetComponent: component)
+                break
+            }
+        }
     }
     
     // MARK: - Edit Components
@@ -267,7 +285,7 @@ DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
             verticalConstraint = $0.top == superview.top + 300
             verticalConstraint ~ 400
         }
-        
+        editBar.isHidden = true
         editBarVerticalConstraint = verticalConstraint
         editBarDraggableSetup()
     }
@@ -323,13 +341,8 @@ DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
         }
     }
     
-    fileprivate func configureEditBarWithTargetComponent() {
-        let components = kit.components
-        guard components.count > 0 else {
-            print("Couldn't find any targets to edit!")
-            return
-        }
-        let target = components[0]
+    fileprivate func configureEditBar(withTargetComponent target: Component) {
+        editBar.isHidden = false
         editBar.set(target: target)
     }
 }
@@ -354,4 +367,5 @@ private extension Selector {
     static let menuDragged = #selector(localVC.menuDragged)
     static let editBarDragged = #selector(localVC.editBarDragged)
     static let controlWasLongPressed = #selector(localVC.controlWasLongPressed)
+    static let componentEditGesture = #selector(localVC.componentEditGesture)
 }

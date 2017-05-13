@@ -40,29 +40,42 @@ final class ComponentEditBar: UIView {
     
     var lastEditControl: UIView?
     var controls = [UIView]()
+    
+    func progressVariables(forType type: ProgressType) -> (
+        minimumValue: Float, maximiumValue: Float, units: String?, name: String) {
+            let minimumValue: Float
+            let maximumValue: Float
+            var units: String?
+            let name: String
+            
+            switch type {
+            case .size(let range):
+                name = "Size"
+                minimumValue = range.lowerBound
+                maximumValue = range.upperBound
+                units = "pt"
+            case .rounding:
+                name = "Rounding"
+                minimumValue = 0
+                maximumValue = 100
+                units = "%"
+            }
+            return (minimumValue: minimumValue, maximiumValue: maximumValue, units: units, name: name)
+    }
+    
     func addProgressControl(type: ProgressType) {
-        let minimumValue: Float
-        let maximumValue: Float
-        var units: String?
-        let name: String
-        
-        switch type {
-        case .size(let range):
-            name = "Size"
-            minimumValue = range.lowerBound
-            maximumValue = range.upperBound
-            units = "pt"
-        case .rounding:
-            name = "Rounding"
-            minimumValue = 0
-            maximumValue = 100
-        }
-        
+        let variables = progressVariables(forType: type)
+        let minimumValue = variables.minimumValue
+        let maximumValue = variables.maximiumValue
+        let units = variables.units
+        let name = variables.name
+
         let control = ProgressCircleView()
         control.translatesAutoresizingMaskIntoConstraints = false
         control.minimumValue = minimumValue
         control.maximumValue = maximumValue
         control.units = units
+        control.value = currentProgressValue(forType: type)
         control.valueChangedHandler = valueHandler(forType: type)
 
         addSubview(control)
@@ -98,6 +111,15 @@ final class ComponentEditBar: UIView {
         lastEditControl = control
     }
     
+    func currentProgressValue(forType type: ProgressType) -> Float {
+        switch type {
+        case .rounding:
+            return roundingValue()
+        case .size(_):
+            return sizeValue()
+        }
+    }
+    
     func valueHandler(forType type: ProgressType) -> ProgressCircleView.ValueChangedCallback {
         switch type {
         case .rounding:
@@ -126,15 +148,38 @@ final class ComponentEditBar: UIView {
         }
     }
     
+    func roundingValue() -> Float {
+        if let circleView = self.targetView as? CircleView {
+            return circleView.roundingPercentage * 100
+        }
+        return 0
+    }
+    
+    func sizeValue() -> Float {
+        guard let view = self.targetView else {
+            return 0
+        }
+        
+        return Float(view.frame.width)
+    }
+    
     var targetView: UIView?
     func set(target: Component) {
-//        for control in controls {
-//            control.removeFromSuperview()
-//        }
+        for control in controls {
+            control.removeFromSuperview()
+        }
+        
+        if let oldTarget = targetView {
+            oldTarget.layer.borderColor = nil
+            oldTarget.layer.borderWidth = 0
+        }
+        
         targetView = target.view
+        targetView?.layer.borderColor = UIColor(red:0.13, green:0.55, blue:0.78, alpha:1.00).cgColor
+        targetView?.layer.borderWidth = 3
         lastEditControl = nil
         
-        addProgressControl(type: .size(range: 12..<80))
+        addProgressControl(type: .size(range: 12..<200))
         addProgressControl(type: .rounding)
     }
 }
