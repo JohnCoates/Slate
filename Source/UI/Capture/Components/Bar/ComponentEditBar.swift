@@ -70,50 +70,27 @@ final class ComponentEditBar: UIView {
         }
     }
     
-    enum ProgressType {
-        case size(range: Range<Float>)
-        case rounding
-    }
+    // MARK: - Progress Controls
     
+    struct ProgressSettings {
+        let name: String
+        let minimumValue: Float
+        let maximumValue: Float
+        let units: String?
+    }
     var lastEditControl: UIView?
     var controls = [UIView]()
     
-    func progressVariables(forType type: ProgressType) -> (
-        minimumValue: Float, maximiumValue: Float, units: String?, name: String) {
-            let minimumValue: Float
-            let maximumValue: Float
-            var units: String?
-            let name: String
-            
-            switch type {
-            case .size(let range):
-                name = "Size"
-                minimumValue = range.lowerBound
-                maximumValue = range.upperBound
-                units = "pt"
-            case .rounding:
-                name = "Rounding"
-                minimumValue = 0
-                maximumValue = 100
-                units = "%"
-            }
-            return (minimumValue: minimumValue, maximiumValue: maximumValue, units: units, name: name)
-    }
-    
-    func addProgressControl(type: ProgressType) {
-        let variables = progressVariables(forType: type)
-        let minimumValue = variables.minimumValue
-        let maximumValue = variables.maximiumValue
-        let units = variables.units
-        let name = variables.name
-
+    func addProgressControl(settings: ProgressSettings,
+                            initialValue: Float,
+                            valueHandler: @escaping CircleSlider.ValueChangedCallback) {
         let control = CircleSlider()
         control.translatesAutoresizingMaskIntoConstraints = false
-        control.minimumValue = minimumValue
-        control.maximumValue = maximumValue
-        control.units = units
-        control.value = currentProgressValue(forType: type)
-        control.valueChangedHandler = valueHandler(forType: type)
+        control.minimumValue = settings.minimumValue
+        control.maximumValue = settings.maximumValue
+        control.units = settings.units
+        control.value = initialValue
+        control.valueChangedHandler = valueHandler
 
         addSubview(control)
         controls.append(control)
@@ -136,7 +113,7 @@ final class ComponentEditBar: UIView {
         let label = UILabel(frame: .zero)
         label.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightMedium)
         label.textColor = UIColor.white
-        label.text = name
+        label.text = settings.name
         addSubview(label)
         controls.append(label)
         
@@ -148,57 +125,29 @@ final class ComponentEditBar: UIView {
         lastEditControl = control
     }
     
-    // MARK: - Values
+    // MARK: - Progress Control Overloads
     
-    func currentProgressValue(forType type: ProgressType) -> Float {
-        switch type {
-        case .rounding:
-            return roundingValue()
-        case .size(_):
-            return sizeValue()
-        }
+    func addProgressControl(forSize editSize: EditSize) {
+        let settings = ProgressSettings(name: "Size",
+                                        minimumValue: editSize.minimumSize,
+                                        maximumValue: editSize.maximumSize,
+                                        units: "pt")
+        addProgressControl(settings: settings,
+                           initialValue: editSize.size,
+                           valueHandler: { editSize.size = $0 })
     }
     
-    func valueHandler(forType type: ProgressType) -> CircleSlider.ValueChangedCallback {
-        switch type {
-        case .rounding:
-            return roundingValueHandler()
-        case .size(_):
-            return sizeValueHandler()
-        }
+    func addProgressControl(forRounding editRounding: EditRounding) {
+        let settings = ProgressSettings(name: "Rounding",
+                                        minimumValue: 0,
+                                        maximumValue: 100,
+                                        units: "%")
+        addProgressControl(settings: settings,
+                           initialValue: editRounding.rounding * 100,
+                           valueHandler: { editRounding.rounding = $0 / 100 })
     }
     
-    func roundingValueHandler() -> CircleSlider.ValueChangedCallback {
-        return { value in
-            if let component = self.component as? EditRounding {
-                component.rounding = value / 100
-            }
-        }
-    }
-    
-    func sizeValueHandler() -> CircleSlider.ValueChangedCallback {
-        return { value in
-            guard let component = self.component as? EditSize else {
-                fatalError("Component doesn't conform to EditSize")
-            }
-            component.size = value
-        }
-    }
-    
-    func roundingValue() -> Float {
-        if let circleView = self.targetView as? CircleView {
-            return circleView.roundingPercentage * 100
-        }
-        return 0
-    }
-    
-    func sizeValue() -> Float {
-        guard let component = self.component as? EditSize else {
-            fatalError("Component doesn't conform to EditSize")
-        }
-        
-        return component.size
-    }
+    // MARK: - Setting Component
     
     var targetView: UIView?
     var component: Component?
@@ -220,11 +169,10 @@ final class ComponentEditBar: UIView {
         lastEditControl = nil
         
         if let editSize = component as? EditSize {
-            let sizeRange = editSize.minimumSize..<editSize.maximumSize
-            addProgressControl(type: .size(range: sizeRange))
+            addProgressControl(forSize: editSize)
         }
-        if component is EditRounding {
-            addProgressControl(type: .rounding)
+        if let editRounding = component as? EditRounding {
+            addProgressControl(forRounding: editRounding)
         }
     }
     

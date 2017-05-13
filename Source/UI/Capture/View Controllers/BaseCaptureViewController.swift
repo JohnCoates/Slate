@@ -228,7 +228,6 @@ ComponentEditBarDelegate {
     
     func add(component: Component.Type,
              atFrame frame: CGRect, fromView view: UIView) {
-        
         let componentInstance = component.createInstance()
         let componentView = componentInstance.view
         componentInstance.frame = view.convert(frame, to: self.view)
