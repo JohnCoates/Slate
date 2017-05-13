@@ -330,7 +330,7 @@ DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
     }
     
     fileprivate func loadComponentEditBar() {
-        let editControl = ProgressCircleView()
+        let editControl = CircleSlider()
         self.view.addSubview(editControl)
         
         constrain(editControl) {

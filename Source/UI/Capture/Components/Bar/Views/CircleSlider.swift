@@ -1,5 +1,5 @@
 //
-//  ProgressCircleView.swift
+//  CircleSlider.swift
 //  Slate
 //
 //  Created by John Coates on 5/11/17.
@@ -9,7 +9,7 @@
 import Foundation
 import Cartography
 
-final class ProgressCircleView: UIView {
+final class CircleSlider: UIView {
     
     // MARK: - Properties
     
@@ -201,5 +201,5 @@ final class ProgressCircleView: UIView {
 // MARK: - Selector Extension
 
 private extension Selector {
-    static let pan = #selector(ProgressCircleView.pan)
+    static let pan = #selector(CircleSlider.pan)
 }

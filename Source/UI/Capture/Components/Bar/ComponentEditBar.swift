@@ -70,7 +70,7 @@ final class ComponentEditBar: UIView {
         let units = variables.units
         let name = variables.name
 
-        let control = ProgressCircleView()
+        let control = CircleSlider()
         control.translatesAutoresizingMaskIntoConstraints = false
         control.minimumValue = minimumValue
         control.maximumValue = maximumValue
@@ -120,7 +120,7 @@ final class ComponentEditBar: UIView {
         }
     }
     
-    func valueHandler(forType type: ProgressType) -> ProgressCircleView.ValueChangedCallback {
+    func valueHandler(forType type: ProgressType) -> CircleSlider.ValueChangedCallback {
         switch type {
         case .rounding:
             return roundingValueHandler()
@@ -129,7 +129,7 @@ final class ComponentEditBar: UIView {
         }
     }
     
-    func roundingValueHandler() -> ProgressCircleView.ValueChangedCallback {
+    func roundingValueHandler() -> CircleSlider.ValueChangedCallback {
         return { value in
             if let component = self.component as? EditRounding {
                 component.rounding = value / 100
@@ -137,7 +137,7 @@ final class ComponentEditBar: UIView {
         }
     }
     
-    func sizeValueHandler() -> ProgressCircleView.ValueChangedCallback {
+    func sizeValueHandler() -> CircleSlider.ValueChangedCallback {
         return { value in
             guard let view = self.targetView else {
                 return
