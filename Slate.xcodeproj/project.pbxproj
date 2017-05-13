@@ -26,6 +26,7 @@
 		FA1805981EC54F38004351B7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805971EC54F38004351B7 /* CircleView.swift */; };
 		FA18059A1EC55466004351B7 /* CircleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805991EC55466004351B7 /* CircleSlider.swift */; };
 		FA18059F1EC688D9004351B7 /* EditRounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18059E1EC688D9004351B7 /* EditRounding.swift */; };
+		FA1805A31EC699A4004351B7 /* EditSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805A21EC699A4004351B7 /* EditSize.swift */; };
 		FA20FA511E12624C00032AF3 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA20FA501E12624C00032AF3 /* MetalKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FA2426CE1D9A67E000AEE60C /* CameraRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */; };
 		FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */; };
@@ -173,6 +174,7 @@
 		FA1805971EC54F38004351B7 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleView.swift; path = ../../Views/CircleView.swift; sourceTree = "<group>"; };
 		FA1805991EC55466004351B7 /* CircleSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleSlider.swift; path = ../Views/CircleSlider.swift; sourceTree = "<group>"; };
 		FA18059E1EC688D9004351B7 /* EditRounding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRounding.swift; sourceTree = "<group>"; };
+		FA1805A21EC699A4004351B7 /* EditSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSize.swift; sourceTree = "<group>"; };
 		FA20FA501E12624C00032AF3 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		FA20FA551E128CE200032AF3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		FA20FA581E128D1700032AF3 /* Animation-Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Animation-Private.h"; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				FA18059E1EC688D9004351B7 /* EditRounding.swift */,
+				FA1805A21EC699A4004351B7 /* EditSize.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1167,6 +1170,7 @@
 				FA0462B61EC3CDFA007B74A0 /* ControlBarItemCell.swift in Sources */,
 				FA78F2971E14520700D34947 /* DebugWindow.swift in Sources */,
 				FA1805931EC54A0F004351B7 /* ComponentEditBar.swift in Sources */,
+				FA1805A31EC699A4004351B7 /* EditSize.swift in Sources */,
 				FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */,
 				FA29FB491EA49B1F00EB1081 /* ComponentMenuBar.swift in Sources */,
 				FA1805911EC5477A004351B7 /* ComponentRealm.swift in Sources */,

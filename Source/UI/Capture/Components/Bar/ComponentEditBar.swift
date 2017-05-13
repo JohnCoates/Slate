@@ -139,12 +139,10 @@ final class ComponentEditBar: UIView {
     
     func sizeValueHandler() -> CircleSlider.ValueChangedCallback {
         return { value in
-            guard let view = self.targetView else {
-                return
+            guard let component = self.component as? EditSize else {
+                fatalError("Component doesn't conform to EditSize")
             }
-            
-            view.frame.size.width = CGFloat(value)
-            view.frame.size.height = CGFloat(value)
+            component.size = value
         }
     }
     
@@ -156,11 +154,11 @@ final class ComponentEditBar: UIView {
     }
     
     func sizeValue() -> Float {
-        guard let view = self.targetView else {
-            return 0
+        guard let component = self.component as? EditSize else {
+            fatalError("Component doesn't conform to EditSize")
         }
         
-        return Float(view.frame.width)
+        return component.size
     }
     
     var targetView: UIView?
@@ -181,7 +179,9 @@ final class ComponentEditBar: UIView {
         targetView?.layer.borderWidth = 3
         lastEditControl = nil
         
-        addProgressControl(type: .size(range: 12..<200))
+        if component is EditSize {
+            addProgressControl(type: .size(range: 12..<200))
+        }
         if component is EditRounding {
             addProgressControl(type: .rounding)
         }
