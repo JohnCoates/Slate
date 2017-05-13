@@ -17,27 +17,18 @@ EditRounding, EditSize, EditPosition {
     }
     
     var parentKit: Kit?
-    
     var position: Position = .front
-    var internalFrame: CGRect = .zero
-    var frame: CGRect {
-        get {
-            return internalFrame
-        }
-        set {
-            internalFrame = newValue
-//            let center = view.center
-            view.frame = newValue
-//            view.center = center
+    var frame: CGRect = .zero {
+        didSet {
+            view.frame = frame
         }
     }
     var origin: CGPoint {
         get {
-            return internalFrame.origin
+            return frame.origin
         }
         set {
             frame.origin = newValue
-            internalFrame.origin = newValue
         }
     }
     var size: Float {
@@ -48,6 +39,7 @@ EditRounding, EditSize, EditPosition {
             var frame = self.frame
             let difference: CGFloat
             difference = CGFloat(newValue) - frame.size.width
+            // center
             frame.origin.x -= (difference / 2)
             frame.origin.y -= (difference / 2)
             
@@ -57,11 +49,11 @@ EditRounding, EditSize, EditPosition {
         }
     }
     var maximumSize: Float = 300
-    var internalView = FrontBackCameraToggle()
-    var view: UIView { return internalView }
+    var typedView = FrontBackCameraToggle()
+    var view: UIView { return typedView }
     var rounding: Float = 1 {
         didSet {
-            internalView.roundingPercentage = rounding
+            typedView.roundingPercentage = rounding
         }
     }
     
@@ -97,6 +89,8 @@ class CameraPositionComponentRealm: ComponentRealm {
         instance.rounding = rounding
         if let position = CameraPositionComponent.Position(rawValue: rawPosition) {
             instance.position = position
+        } else {
+            fatalError("couldn't cast position: \(rawPosition) to enum")
         }
         
         return instance
