@@ -144,10 +144,13 @@ final class CircleSlider: UIView {
         let center = CGPoint (x: innerFrame.width / 2,
                               y: innerFrame.height / 2)
         let circleRadius = (innerFrame.width / 2) + (progressStrokeWidth / 2)
-        let endAngle: Float = 1 + (2 * percentageValue)
+        let startAngleFactor: Float = 1.5
+        let startAngle: Float = Float.pi * startAngleFactor
+        let endAngle: Float = startAngleFactor + (2 * percentageValue)
+        
         let circlePath = UIBezierPath(arcCenter: center,
                                       radius: circleRadius,
-                                      startAngle: CGFloat(Float.pi),
+                                      startAngle: CGFloat(startAngle),
                                       endAngle: CGFloat(Float.pi * endAngle),
                                       clockwise: true)
         progressCircle.path = circlePath.cgPath

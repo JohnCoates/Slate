@@ -23,7 +23,6 @@
 		FA18058E1EC47398004351B7 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA1805911EC5477A004351B7 /* ComponentRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805901EC5477A004351B7 /* ComponentRealm.swift */; };
 		FA1805931EC54A0F004351B7 /* ComponentEditBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805921EC54A0F004351B7 /* ComponentEditBar.swift */; };
-		FA1805961EC54B82004351B7 /* CircleEditControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805951EC54B82004351B7 /* CircleEditControl.swift */; };
 		FA1805981EC54F38004351B7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805971EC54F38004351B7 /* CircleView.swift */; };
 		FA18059A1EC55466004351B7 /* CircleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805991EC55466004351B7 /* CircleSlider.swift */; };
 		FA18059F1EC688D9004351B7 /* EditRounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18059E1EC688D9004351B7 /* EditRounding.swift */; };
@@ -171,7 +170,6 @@
 		FA18058A1EC46FAE004351B7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		FA1805901EC5477A004351B7 /* ComponentRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentRealm.swift; sourceTree = "<group>"; };
 		FA1805921EC54A0F004351B7 /* ComponentEditBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentEditBar.swift; sourceTree = "<group>"; };
-		FA1805951EC54B82004351B7 /* CircleEditControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleEditControl.swift; path = ../../Views/CircleEditControl.swift; sourceTree = "<group>"; };
 		FA1805971EC54F38004351B7 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleView.swift; path = ../../Views/CircleView.swift; sourceTree = "<group>"; };
 		FA1805991EC55466004351B7 /* CircleSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleSlider.swift; path = ../Views/CircleSlider.swift; sourceTree = "<group>"; };
 		FA18059E1EC688D9004351B7 /* EditRounding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRounding.swift; sourceTree = "<group>"; };
@@ -387,7 +385,6 @@
 		FA1805A11EC69775004351B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FA1805951EC54B82004351B7 /* CircleEditControl.swift */,
 				FA1805971EC54F38004351B7 /* CircleView.swift */,
 			);
 			path = Views;
@@ -1179,7 +1176,6 @@
 				FA9F89E61D953C540058C369 /* AppDelegate.swift in Sources */,
 				FA0462C21EC3E002007B74A0 /* Component.swift in Sources */,
 				FAADE0D31D9D0C4300AA5729 /* Passthrough.metal in Sources */,
-				FA1805961EC54B82004351B7 /* CircleEditControl.swift in Sources */,
 				FA18059F1EC688D9004351B7 /* EditRounding.swift in Sources */,
 				FA18059A1EC55466004351B7 /* CircleSlider.swift in Sources */,
 				FA834BE11D9927EB0017CCCA /* Button.swift in Sources */,
