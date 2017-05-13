@@ -69,6 +69,9 @@
 		FA9F8A061D953C540058C369 /* SlateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F8A051D953C540058C369 /* SlateUITests.swift */; };
 		FAADE0D01D9D0AC200AA5729 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */; };
 		FAADE0D31D9D0C4300AA5729 /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */; };
+		FAB0AA5E1EC6A095008DCD23 /* EditPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0AA5D1EC6A095008DCD23 /* EditPosition.swift */; };
+		FAB0AA621EC6A1B8008DCD23 /* DragGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0AA611EC6A1B8008DCD23 /* DragGesture.swift */; };
+		FAB0AA641EC6C84D008DCD23 /* ComponentEditBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0AA631EC6C84D008DCD23 /* ComponentEditBarDelegate.swift */; };
 		FABB16911D9E258D00A8AC6C /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABB16901D9E258D00A8AC6C /* Cartography.framework */; };
 		FABB16931D9E259900A8AC6C /* Cartography.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FABB16901D9E258D00A8AC6C /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FABB16981D9F14A100A8AC6C /* HUDTextureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16971D9F14A100A8AC6C /* HUDTextureViewController.swift */; };
@@ -218,6 +221,9 @@
 		FA9F8A071D953C540058C369 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = Passthrough.metal; path = ../../../../UI/Capture/Metal/Shaders/Passthrough.metal; sourceTree = "<group>"; };
+		FAB0AA5D1EC6A095008DCD23 /* EditPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPosition.swift; sourceTree = "<group>"; };
+		FAB0AA611EC6A1B8008DCD23 /* DragGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragGesture.swift; sourceTree = "<group>"; };
+		FAB0AA631EC6C84D008DCD23 /* ComponentEditBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentEditBarDelegate.swift; sourceTree = "<group>"; };
 		FABB16901D9E258D00A8AC6C /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cartography.framework; sourceTree = "<group>"; };
 		FABB16971D9F14A100A8AC6C /* HUDTextureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDTextureViewController.swift; sourceTree = "<group>"; };
 		FABB169A1D9F14FD00A8AC6C /* FloatPairFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatPairFormatter.swift; sourceTree = "<group>"; };
@@ -333,6 +339,7 @@
 			children = (
 				FA0462C41EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift */,
 				FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */,
+				FAB0AA631EC6C84D008DCD23 /* ComponentEditBarDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -372,6 +379,7 @@
 			children = (
 				FA18059E1EC688D9004351B7 /* EditRounding.swift */,
 				FA1805A21EC699A4004351B7 /* EditSize.swift */,
+				FAB0AA5D1EC6A095008DCD23 /* EditPosition.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -685,6 +693,7 @@
 		FA86BE011D98ED4500BC5FB1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FAB0AA601EC6A18A008DCD23 /* Gestures */,
 				FA78F28B1E144AC600D34947 /* Debug */,
 				FA834BDE1D9927B60017CCCA /* Common */,
 				FA86BE021D98ED5600BC5FB1 /* Capture */,
@@ -827,6 +836,14 @@
 			children = (
 			);
 			path = Shaders;
+			sourceTree = "<group>";
+		};
+		FAB0AA601EC6A18A008DCD23 /* Gestures */ = {
+			isa = PBXGroup;
+			children = (
+				FAB0AA611EC6A1B8008DCD23 /* DragGesture.swift */,
+			);
+			path = Gestures;
 			sourceTree = "<group>";
 		};
 		FABB168F1D9E257000A8AC6C /* Mac */ = {
@@ -1151,6 +1168,7 @@
 				FA78F29A1E15662B00D34947 /* DebugBarView.swift in Sources */,
 				FA2F8E4E1DA22AD700993949 /* ChromaticAberrationFilter.swift in Sources */,
 				FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */,
+				FAB0AA621EC6A1B8008DCD23 /* DragGesture.swift in Sources */,
 				FA78F28E1E144C0E00D34947 /* DebugBarController.swift in Sources */,
 				FAADE0D01D9D0AC200AA5729 /* Renderer.swift in Sources */,
 				FA78F2941E144E4E00D34947 /* DebugBarItem.swift in Sources */,
@@ -1174,7 +1192,9 @@
 				FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */,
 				FA29FB491EA49B1F00EB1081 /* ComponentMenuBar.swift in Sources */,
 				FA1805911EC5477A004351B7 /* ComponentRealm.swift in Sources */,
+				FAB0AA641EC6C84D008DCD23 /* ComponentEditBarDelegate.swift in Sources */,
 				FA4021C61DA0AEE800752F3B /* MetalCameraController.swift in Sources */,
+				FAB0AA5E1EC6A095008DCD23 /* EditPosition.swift in Sources */,
 				FA0462B31EC3CC76007B74A0 /* FrontBackCameraToggle.swift in Sources */,
 				FA86BE051D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift in Sources */,
 				FA9F89E61D953C540058C369 /* AppDelegate.swift in Sources */,

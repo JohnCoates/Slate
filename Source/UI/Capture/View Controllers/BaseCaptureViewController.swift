@@ -12,7 +12,8 @@ import RealmSwift
 
 fileprivate typealias localVC = BaseCaptureViewController
 class BaseCaptureViewController: UIViewController,
-DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
+DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate,
+ComponentEditBarDelegate {
     
     lazy var kit: Kit = { KitManager.currentKit }()
     
@@ -227,30 +228,31 @@ DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
     
     func add(component: Component.Type,
              atFrame frame: CGRect, fromView view: UIView) {
-        let componentView = component.createView()
-        componentView.frame = view.convert(frame, to: self.view)
-        self.view.insertSubview(componentView, belowSubview: menuView)
         
         let componentInstance = component.createInstance()
-        componentInstance.frame = componentView.frame
+        let componentView = componentInstance.view
+        componentInstance.frame = view.convert(frame, to: self.view)
+        
+        self.view.insertSubview(componentView, belowSubview: menuView)
         
         kit.addComponent(component: componentInstance)
         kit.saveKit()
+        
+        addEditGesture(toComponent: componentInstance)
     }
     
     // MARK: - Load Kit
     
     func loadComponents() {
         for component in kit.components {
-            print("frame: \(component.frame)")
             component.view.frame = component.frame
             self.view.insertSubview(component.view, belowSubview: menuView)
-            addEditGestureToComponent(component: component)
+            addEditGesture(toComponent: component)
         }
         print("all components: \(kit.components)")
     }
     
-    func addEditGestureToComponent(component: Component) {
+    func addEditGesture(toComponent component: Component) {
         let gesture = UILongPressGestureRecognizer(target: self, action: .componentEditGesture)
         component.view.addGestureRecognizer(gesture)
     }
@@ -260,12 +262,20 @@ DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
             fatalError("No view associated with gesture!")
         }
         
+        guard gesture.state == .began else {
+            return
+        }
+        
         for component in kit.components {
             if targetView == component.view {
                 configureEditBar(withTargetComponent: component)
-                break
+                // remove hold to edit gesture
+                targetView.removeGestureRecognizer(gesture)
+                return
             }
         }
+        
+        fatalError("Edit gesture failed")
     }
     
     // MARK: - Edit Components
@@ -285,6 +295,7 @@ DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
             verticalConstraint = $0.top == superview.top + 300
             verticalConstraint ~ 400
         }
+        editBar.delegate = self
         editBar.isHidden = true
         editBarVerticalConstraint = verticalConstraint
         editBarDraggableSetup()
@@ -344,6 +355,42 @@ DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate {
     fileprivate func configureEditBar(withTargetComponent target: Component) {
         editBar.isHidden = false
         editBar.set(target: target)
+        
+        editGestures.removeAll()
+        if target is EditPosition {
+            addPositionEditGesture(toComponent: target)
+        }
+    }
+    
+    // MARK: - Edit Position
+    
+    var editGestures = [DragGesture]()
+    func addPositionEditGesture(toComponent targetComponent: Component) {
+        guard let component = targetComponent as? EditPosition else {
+            return
+        }
+        
+        let gesture = DragGesture(withView: targetComponent.view)
+        editGestures.append(gesture)
+        gesture.dragHandler = { difference in
+            var origin = component.origin
+            origin.x += difference.x
+            origin.y += difference.y
+            component.origin = origin
+        }
+    }
+    
+    // MARK: - Component Edit Bar Delegate
+    
+    func cancel(editingComponent: Component) {
+        editGestures.removeAll()
+        addEditGesture(toComponent: editingComponent)
+    }
+    
+    func save(component: Component) {
+        editGestures.removeAll()
+        addEditGesture(toComponent: component)
+        kit.saveKit()
     }
 }
 
@@ -363,7 +410,7 @@ private struct Method {
 
 // MARK: - Selector Extension
 
-private extension Selector {
+fileprivate extension Selector {
     static let menuDragged = #selector(localVC.menuDragged)
     static let editBarDragged = #selector(localVC.editBarDragged)
     static let controlWasLongPressed = #selector(localVC.controlWasLongPressed)

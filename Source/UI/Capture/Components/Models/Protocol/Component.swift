@@ -12,6 +12,7 @@ import RealmSwift
 protocol Component: class {
     var frame: CGRect { get set }
     var view: UIView { get }
+    var parentKit: Kit? { get set }
     
     func createRealmObject() -> ComponentRealm
     
