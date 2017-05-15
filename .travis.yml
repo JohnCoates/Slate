@@ -2,6 +2,7 @@ language: objective-c
 osx_image: xcode8
 cache:
   - bundler
+  - Carthage
 before_install:
 - brew update
 - carthage bootstrap --platform iOS --no-use-binaries #--verbose
