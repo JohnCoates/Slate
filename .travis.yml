@@ -5,7 +5,7 @@ cache:
   - Carthage
 before_install:
 - brew update
-- carthage bootstrap --platform iOS --no-use-binaries #--verbose
+- travis_wait 30 carthage bootstrap --platform iOS --no-use-binaries #--verbose
 install:
 - gem install xcpretty
 after_success:
