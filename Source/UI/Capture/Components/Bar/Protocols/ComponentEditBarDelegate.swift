@@ -9,7 +9,10 @@
 import Foundation
 
 protocol ComponentEditBarDelegate: class {
+    typealias UserConfirmedDeleteBlock = (_ deleted: Bool) -> Void
+    
     func cancel(editingComponent: Component)
     func save(component: Component)
-    func delete(component: Component)
+    func askUserForDeleteConfirmation(component: Component,
+                                      userConfirmedBlock: @escaping UserConfirmedDeleteBlock)
 }

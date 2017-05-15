@@ -78,6 +78,7 @@ final class ComponentEditBar: UIView {
     var lastEditControl: UIView?
     var controls = [UIView]()
     
+    static let progressControlWidth: CGFloat = 50
     func addProgressControl(settings: ProgressSettings,
                             initialValue: Float,
                             valueHandler: @escaping CircleSlider.ValueChangedCallback) {
@@ -93,32 +94,16 @@ final class ComponentEditBar: UIView {
         
         constrain(control) {
             let superview = $0.superview!
-            $0.width == 50
+            $0.width == localClass.progressControlWidth
             $0.height == $0.width
             
             $0.left >= superview.leftMargin
             $0.centerY == superview.centerY
         }
         
-        if let lastEditControl = lastEditControl {
-            constrain(control, lastEditControl) { control, lastEditControl in
-                control.left == lastEditControl.right + 20
-            }
-        }
+        setLeftConstraint(forControl: control)
+        addTitleLabel(withText: settings.name, forControl: control)
         
-        let label = UILabel(frame: .zero)
-        label.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightMedium)
-        label.textColor = UIColor.white
-        label.text = settings.name
-        addSubview(label)
-        controls.append(label)
-        
-        constrain(control, label) { control, label in
-            label.centerX == control.centerX
-            label.top == control.bottom + 2
-        }
-        
-        lastEditControl = control
     }
 
     // MARK: - Progress Control Overloads
@@ -143,47 +128,55 @@ final class ComponentEditBar: UIView {
                            valueHandler: { editRounding.rounding = $0 / 100 })
     }
     
-    
     // MARK: - Delete Control
     
     func addDeleteControl() {
         let control = CodeIconButton(icon: DeleteLineIcon())
         control.rounding = 1
         control.backgroundColor = UIColor(red:0.16, green:0.14, blue:0.17, alpha:1.00)
-        
+        control.setTappedCallback(instance: self, method: Method.deleteTapped)
         addSubview(control)
         controls.append(control)
         
+        let innerCircleWidth = CircleSlider.defaultInnerWidth(withOuterWidth: localClass.progressControlWidth)
         constrain(control) {
             let superview = $0.superview!
-            $0.width == 50
+            $0.width == innerCircleWidth
             $0.height == $0.width
             
             $0.left >= superview.leftMargin
             $0.centerY == superview.centerY
         }
         
+        setLeftConstraint(forControl: control)
+        addTitleLabel(withText: "Delete", forControl: control)
+    }
+    
+    // MARK: - Control Utilities
+    
+    func setLeftConstraint(forControl control: UIView) {
         if let lastEditControl = lastEditControl {
             constrain(control, lastEditControl) { control, lastEditControl in
                 control.left == lastEditControl.right + 20
             }
         }
-        
+        lastEditControl = control
+    }
+    
+    func addTitleLabel(withText text: String, forControl control: UIView) {
         let label = UILabel(frame: .zero)
         label.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightMedium)
         label.textColor = UIColor.white
-        label.text = "Delete"
+        label.text = text
         addSubview(label)
         controls.append(label)
         
         constrain(control, label) { control, label in
+            let superview = label.superview!
             label.centerX == control.centerX
-            label.top == control.bottom + 2
+            label.bottom == superview.bottom - 9
         }
-        
-        lastEditControl = control
     }
-    
     
     // MARK: - Setting Component
     
@@ -220,6 +213,9 @@ final class ComponentEditBar: UIView {
             initialRounding = editRounding.rounding
             addProgressControl(forRounding: editRounding)
         }
+        if let editPosition = component as? EditPosition {
+            initialPosition = editPosition.origin
+        }
         
         addDeleteControl()
     }
@@ -228,6 +224,7 @@ final class ComponentEditBar: UIView {
     
     var initialSize: Float?
     var initialRounding: Float?
+    var initialPosition: CGPoint?
     
     func resetToInitialState(component: Component) {
         if let editSize = component as? EditSize {
@@ -242,33 +239,48 @@ final class ComponentEditBar: UIView {
             }
             editRounding.rounding = initialRounding
         }
+        if let editPosition = component as? EditPosition {
+            guard let initialPosition = initialPosition else {
+                fatalError("Didn't record initial position for component: \(component)")
+            }
+            editPosition.origin = initialPosition
+        }
     }
     
     func clearInitialState() {
         initialSize = nil
         initialRounding = nil
+        initialPosition = nil
     }
     
     // MARK: - Save, Cancel
     
     func saveTapped() {
-        guard let component = component else {
-            fatalError("Not editing a component!")
-        }
+        let component = requiredComponent(forFunction: #function)
+        let delegate = requiredDelegate(forFunction: #function)
         stopEditing()
-        delegate?.save(component: component)
+        delegate.save(component: component)
     }
     
     func cancelTapped() {
-        guard let component = component else {
-            fatalError("Not editing a component!")
-        }
+        let component = requiredComponent(forFunction: #function)
+        let delegate = requiredDelegate(forFunction: #function)
         resetToInitialState(component: component)
         stopEditing()
-        delegate?.cancel(editingComponent: component)
+        delegate.cancel(editingComponent: component)
     }
     
-    func stopEditing() {
+    func deleteTapped() {
+        let component = requiredComponent(forFunction: #function)
+        let delegate = requiredDelegate(forFunction: #function)
+        delegate.askUserForDeleteConfirmation(component: component) { didDelete in
+            if didDelete {
+                self.stopEditing()
+            }
+        }
+    }
+    
+    private func stopEditing() {
         isHidden = true
         if let targetView = targetView {
             targetView.layer.borderColor = nil
@@ -277,6 +289,24 @@ final class ComponentEditBar: UIView {
         }
         clearInitialState()
     }
+    
+    // MARK: - Guaranteed properties
+    
+    func requiredDelegate(forFunction function: String) -> ComponentEditBarDelegate {
+        guard let delegate = delegate else {
+            fatalError("Missing delegate required for function: \(function)")
+        }
+        
+        return delegate
+    }
+    func requiredComponent(forFunction function: String) -> Component {
+        guard let component = component else {
+            fatalError("Missing component required for function: \(function)")
+        }
+        
+        return component
+    }
+    
 }
 
 // MARK: - Selector Extension
@@ -284,4 +314,11 @@ final class ComponentEditBar: UIView {
 fileprivate extension Selector {
     static let saveTapped = #selector(localClass.saveTapped)
     static let cancelTapped = #selector(localClass.cancelTapped)
+}
+
+// MARK: - Callbacks
+
+fileprivate struct Method {
+    static let deleteTapped = localClass.deleteTapped
+    
 }

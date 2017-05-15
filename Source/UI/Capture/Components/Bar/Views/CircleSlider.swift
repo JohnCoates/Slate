@@ -70,6 +70,7 @@ final class CircleSlider: UIView {
     }
     
     let progressCircle = CAShapeLayer()
+    static let defaultProgressStrokeWith: CGFloat = 4
     var progressStrokeWidth: CGFloat = 4 {
         didSet {
             progressCircle.lineWidth = progressStrokeWidth
@@ -154,6 +155,10 @@ final class CircleSlider: UIView {
                                       endAngle: CGFloat(Float.pi * endAngle),
                                       clockwise: true)
         progressCircle.path = circlePath.cgPath
+    }
+    
+    static func defaultInnerWidth(withOuterWidth outerWidth: CGFloat) -> CGFloat {
+        return outerWidth - defaultProgressStrokeWith * 2
     }
     
     // MARK: - Adjust Gesture

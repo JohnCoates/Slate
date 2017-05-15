@@ -244,7 +244,6 @@ ComponentEditBarDelegate {
             self.view.insertSubview(component.view, belowSubview: menuView)
             addEditGesture(toComponent: component)
         }
-        print("all components: \(kit.components)")
     }
     
     func addEditGesture(toComponent component: Component) {
@@ -388,13 +387,28 @@ ComponentEditBarDelegate {
         kit.saveKit()
     }
     
-    func delete(component: Component) {
-        editGestures.removeAll()
-        guard let index = kit.components.index(where: {$0 === component}) else {
-            fatalError("Couldn't find component to delete: \(component)")
+    func askUserForDeleteConfirmation(component: Component,
+                                      userConfirmedBlock: @escaping UserConfirmedDeleteBlock) {
+        let alertController = UIAlertController(title: "Delete Component",
+                                                message: "Aare you sure you want to delete this component?",
+                                                preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        alertController.addAction(cancel)
+        
+        let kit = self.kit
+        let delete = UIAlertAction(title: "Delete", style: .destructive) { action in
+            userConfirmedBlock(true)
+            self.editGestures.removeAll()
+            component.view.removeFromSuperview()
+            guard let index = kit.components.index(where: {$0 === component}) else {
+                fatalError("Couldn't find component to delete: \(component)")
+            }
+            kit.components.remove(at: index)
+            kit.saveKit()
         }
-        kit.components.remove(at: index)
-        kit.saveKit()
+        alertController.addAction(delete)
+        
+        present(alertController, animated: true, completion: nil)
     }
 }
 
