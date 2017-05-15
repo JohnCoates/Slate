@@ -19,7 +19,7 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     typealias CaptureHandler = (CVImageBuffer) -> Void
     private var captureHandler: CaptureHandler?
     func setCaptureHandler<T: AnyObject>(instance: T,
-                           method: @escaping (T) -> CaptureHandler) {
+                                         method: @escaping (T) -> CaptureHandler) {
         captureHandler = {
             [unowned instance] imageBuffer in
             method(instance)(imageBuffer)
@@ -37,22 +37,20 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     lazy var session = AVCaptureSession()
     
     var bestCamera: AVCaptureDevice {
-        get {
-            guard let devices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo) else {
-                fatalError("No video devices")
-            }
-            for potentialDevice in devices {
-                guard let device = potentialDevice as? AVCaptureDevice else {
-                    continue
-                }
-                
-                // prefer my logitech camera
-                if device.localizedName == "HD Pro Webcam C920" {
-                    return device
-                }
-            }
-            return AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        guard let devices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo) else {
+            fatalError("No video devices")
         }
+        for potentialDevice in devices {
+            guard let device = potentialDevice as? AVCaptureDevice else {
+                continue
+            }
+            
+            // prefer my logitech camera
+            if device.localizedName == "HD Pro Webcam C920" {
+                return device
+            }
+        }
+        return AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
     }
     
     func startCapturingVideo() {
@@ -89,19 +87,17 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     }
     
     fileprivate var captureVideoSettings: [AnyHashable: Any] {
-        get {
-            let pixelFormatKey = String(kCVPixelBufferPixelFormatTypeKey)
-            let pixelFormat = Int(kCVPixelFormatType_32BGRA)
-            let metalCompatibilityKey = String(kCVPixelBufferMetalCompatibilityKey)
-            
-            var videoSettings = [AnyHashable: Any]()
-            videoSettings[pixelFormatKey] = pixelFormat
-            #if os(macOS)
-                videoSettings[metalCompatibilityKey] = true
-            #endif
-            
-            return videoSettings
-        }
+        let pixelFormatKey = String(kCVPixelBufferPixelFormatTypeKey)
+        let pixelFormat = Int(kCVPixelFormatType_32BGRA)
+        let metalCompatibilityKey = String(kCVPixelBufferMetalCompatibilityKey)
+        
+        var videoSettings = [AnyHashable: Any]()
+        videoSettings[pixelFormatKey] = pixelFormat
+        #if os(macOS)
+            videoSettings[metalCompatibilityKey] = true
+        #endif
+        
+        return videoSettings
     }
     
     // MARK: - Video Delegate

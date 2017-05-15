@@ -8,7 +8,7 @@
 
 import UIKit
 
-fileprivate typealias localVC = DragGesture
+fileprivate typealias LocalClass = DragGesture
 
 @objc class DragGesture: NSObject {
     fileprivate let gesture = UIPanGestureRecognizer.init()
@@ -59,6 +59,5 @@ fileprivate typealias localVC = DragGesture
 // MARK: - Selector Extension
 
 fileprivate extension Selector {
-    static let dragged = #selector(localVC.dragged)
-    
+    static let dragged = #selector(LocalClass.dragged)
 }

@@ -10,7 +10,7 @@ import UIKit
 import Cartography
 import RealmSwift
 
-fileprivate typealias localVC = BaseCaptureViewController
+fileprivate typealias LocalClass = BaseCaptureViewController
 class BaseCaptureViewController: UIViewController,
 DebugBarDelegate, UIGestureRecognizerDelegate, ComponentMenuBarDelegate,
 ComponentEditBarDelegate {
@@ -177,9 +177,7 @@ ComponentEditBarDelegate {
     // MARK: - Status Bar
     
     override var prefersStatusBarHidden: Bool {
-        get {
-            return true
-        }
+        return true
     }
     
     // MARK: - Editable Controls
@@ -260,13 +258,11 @@ ComponentEditBarDelegate {
             return
         }
         
-        for component in kit.components {
-            if targetView == component.view {
-                configureEditBar(withTargetComponent: component)
-                // remove hold to edit gesture
-                targetView.removeGestureRecognizer(gesture)
-                return
-            }
+        for component in kit.components where targetView == component.view {
+            configureEditBar(withTargetComponent: component)
+            // remove hold to edit gesture
+            targetView.removeGestureRecognizer(gesture)
+            return
         }
         
         fatalError("Edit gesture failed")
@@ -414,7 +410,8 @@ ComponentEditBarDelegate {
 
 extension Realm {
     func filter<ParentType: Object>(parentType: ParentType.Type,
-                subclasses: [ParentType.Type], predicate: NSPredicate) -> [ParentType] {
+                                    subclasses: [ParentType.Type],
+                                    predicate: NSPredicate) -> [ParentType] {
         return ([parentType] + subclasses).flatMap { classType in
             return Array(self.objects(classType).filter(predicate))
         }
@@ -429,8 +426,8 @@ private struct Method {
 // MARK: - Selector Extension
 
 fileprivate extension Selector {
-    static let menuDragged = #selector(localVC.menuDragged)
-    static let editBarDragged = #selector(localVC.editBarDragged)
-    static let controlWasLongPressed = #selector(localVC.controlWasLongPressed)
-    static let componentEditGesture = #selector(localVC.componentEditGesture)
+    static let menuDragged = #selector(LocalClass.menuDragged)
+    static let editBarDragged = #selector(LocalClass.editBarDragged)
+    static let controlWasLongPressed = #selector(LocalClass.controlWasLongPressed)
+    static let componentEditGesture = #selector(LocalClass.componentEditGesture)
 }

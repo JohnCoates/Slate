@@ -34,8 +34,6 @@ final class MetalCaptureViewController: BaseCaptureViewController {
     // MARK: - Status Bar
     
     override var prefersStatusBarHidden: Bool {
-        get {
-            return true
-        }
+        return true
     }
 }

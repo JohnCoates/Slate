@@ -20,7 +20,7 @@ class MetalCameraController: CameraController {
     typealias TextureHandler = (MTLTexture) -> Void
     private var textureHandler: TextureHandler?
     func setTextureHandler<T: AnyObject>(instance: T,
-                           method: @escaping (T) -> TextureHandler) {
+                                         method: @escaping (T) -> TextureHandler) {
         textureHandler = {
             [unowned instance] texture in
             method(instance)(texture)
@@ -52,8 +52,8 @@ class MetalCameraController: CameraController {
     // MARK: - Video Delegate
     
     override func captureOutput(_ captureOutput: AVCaptureOutput!,
-                       didOutputSampleBuffer sampleBuffer: CMSampleBuffer!,
-                       from connection: AVCaptureConnection!) {
+                                didOutputSampleBuffer sampleBuffer: CMSampleBuffer!,
+                                from connection: AVCaptureConnection!) {
         #if METAL_DEVICE
             #if os(iOS)
                 let orientation = UIApplication.shared.statusBarOrientation.rawValue

@@ -18,7 +18,6 @@ enum FixedLayoutPriority {
     case required
     
     fileprivate var rawValue: UILayoutPriority {
-        get {
             switch self {
             case .ultraLow:
                 return UILayoutPriorityDefaultLow - 1
@@ -31,7 +30,6 @@ enum FixedLayoutPriority {
             case .required:
                 return UILayoutPriorityRequired
             }
-        }
     }
 }
 
@@ -85,7 +83,7 @@ extension UIView {
     }
     
     func constraintInvolvingView(_ view: UIView,
-                                  attribute: NSLayoutAttribute) -> NSLayoutConstraint? {
+                                 attribute: NSLayoutAttribute) -> NSLayoutConstraint? {
         let allConstraints = self.constraints
         
         for constraint in allConstraints {

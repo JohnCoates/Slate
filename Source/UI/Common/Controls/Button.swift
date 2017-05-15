@@ -16,7 +16,7 @@ class Button: RoundableView {
     
     /// setCallback(self, class.method)
     func setTappedCallback<T: AnyObject>(instance: T,
-                           method: @escaping (T) -> () -> Void) {
+                                         method: @escaping (T) -> () -> Void) {
         tapCallback = {
             [unowned instance] in
             method(instance)()

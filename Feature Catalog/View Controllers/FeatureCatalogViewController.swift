@@ -89,10 +89,8 @@ class FeatureCatalogViewController: UITableViewController {
         }
         
         for section in sections {
-            for item in section.items {
-                if item.name == feature {
-                    return item
-                }
+            for item in section.items where item.name == feature {
+                return item
             }
         }
         
@@ -114,7 +112,7 @@ class FeatureCatalogViewController: UITableViewController {
     lazy var sections: [Section] = {
         return [
             self.captureScreen(),
-            self.buttons(),
+            self.buttons()
         ]
     }()
     
@@ -129,9 +127,9 @@ class FeatureCatalogViewController: UITableViewController {
                                creationBlock: {
                                 let vc = SimulatorCaptureViewController()
                                 // trigger view load
-                                let _ = vc.view
+                                _ = vc.view
                                 vc.editBar.isHidden = false
-                                return vc }),
+                                return vc })
             ]
         
         return Section(title: "Capture Screen", items: items)
@@ -140,7 +138,7 @@ class FeatureCatalogViewController: UITableViewController {
     func buttons() -> Section {
         let items: [FeatureCatalogItem] = [
             FeatureCatalogItem(name: "Punch-Through Button",
-                               creationBlock: { PunchThroughButtonViewController() }),
+                               creationBlock: { PunchThroughButtonViewController() })
             
         ]
         

@@ -157,8 +157,7 @@ import AVFoundation
                 fragmentFunction: fragmentFunction)
     }
     
-    func buildRenderPipeline(withFragmentFunction
-        passedFragmentFunction: MTLFunction? = nil) throws
+    func buildRenderPipeline(withFragmentFunction passedFragmentFunction: MTLFunction? = nil) throws
         -> MTLRenderPipelineState {
         
         let fragmentFunction: MTLFunction

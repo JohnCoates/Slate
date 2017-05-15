@@ -9,11 +9,10 @@
 import Foundation
 import Cartography
 
-fileprivate typealias localClass = ComponentEditBar
+fileprivate typealias LocalClass = ComponentEditBar
 
 final class ComponentEditBar: UIView {
-    
-    var delegate: ComponentEditBarDelegate?
+    weak var delegate: ComponentEditBarDelegate?
     
     // MARK: - Init
     
@@ -94,7 +93,7 @@ final class ComponentEditBar: UIView {
         
         constrain(control) {
             let superview = $0.superview!
-            $0.width == localClass.progressControlWidth
+            $0.width == LocalClass.progressControlWidth
             $0.height == $0.width
             
             $0.left >= superview.leftMargin
@@ -138,7 +137,7 @@ final class ComponentEditBar: UIView {
         addSubview(control)
         controls.append(control)
         
-        let innerCircleWidth = CircleSlider.defaultInnerWidth(withOuterWidth: localClass.progressControlWidth)
+        let innerCircleWidth = CircleSlider.defaultInnerWidth(withOuterWidth: LocalClass.progressControlWidth)
         constrain(control) {
             let superview = $0.superview!
             $0.width == innerCircleWidth
@@ -312,13 +311,13 @@ final class ComponentEditBar: UIView {
 // MARK: - Selector Extension
 
 fileprivate extension Selector {
-    static let saveTapped = #selector(localClass.saveTapped)
-    static let cancelTapped = #selector(localClass.cancelTapped)
+    static let saveTapped = #selector(LocalClass.saveTapped)
+    static let cancelTapped = #selector(LocalClass.cancelTapped)
 }
 
 // MARK: - Callbacks
 
 fileprivate struct Method {
-    static let deleteTapped = localClass.deleteTapped
+    static let deleteTapped = LocalClass.deleteTapped
     
 }

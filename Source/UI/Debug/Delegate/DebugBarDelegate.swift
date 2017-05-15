@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol DebugBarDelegate {
+protocol DebugBarDelegate: class {
     var barItems: [DebugBarItem] { get }
 }

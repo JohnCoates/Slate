@@ -30,18 +30,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func migrateRealm() {
-        let config = Realm.Configuration(schemaVersion: 1, migrationBlock: {
-            migration, oldVersion in
+        let config = Realm.Configuration(schemaVersion: 1, migrationBlock: { migration, oldVersion in
             if oldVersion < 1 {
-                migration.enumerateObjects(ofType: CameraPositionComponentRealm.className(), {
-                    oldObject, newObject in
+                migration.enumerateObjects(ofType: CameraPositionComponentRealm.className(), { oldObject, newObject in
                     newObject?["rounding"] = CameraPositionComponentRealm.defaultRounding
                 })
             }
         })
         Realm.Configuration.defaultConfiguration = config
         do {
-            let _ = try Realm()
+            _ = try Realm()
         } catch let error as NSError {
             print("Error opening realm: \(error)")
         }

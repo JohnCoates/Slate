@@ -1,5 +1,6 @@
 disabled_rules:
    - trailing_whitespace
+   - unused_closure_parameter
 #    - force_cast
 #    - function_body_length
 #    - type_body_length
@@ -14,4 +15,7 @@ variable_name:
     error: 2
 line_length:
   warning: 120
+large_tuple:
+  warning: 3
+  error: 5
 type_body_length: 300

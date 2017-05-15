@@ -35,7 +35,7 @@ final class CircleSlider: UIView {
     var valueChangedHandler: ValueChangedCallback?
     /// setCallback(self, class.method)
     func setValueChangedHandler<T: AnyObject>(instance: T,
-                                method: @escaping (T) -> ValueChangedCallback) {
+                                              method: @escaping (T) -> ValueChangedCallback) {
         valueChangedHandler = {
             [unowned instance] (_ value: Float) in
             method(instance)(value)
