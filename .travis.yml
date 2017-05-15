@@ -4,7 +4,7 @@ cache:
   - bundler
 before_install:
 - brew update
-- carthage bootstrap --verbose --platform iOS
+- carthage bootstrap --platform iOS #--verbose
 install:
 - gem install xcpretty
 after_success:
