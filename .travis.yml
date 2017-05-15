@@ -5,7 +5,8 @@ cache:
   directories:
     - Carthage
     - $HOME/Library/Caches/carthage_cache
-# before_install:
+before_install:
+- xcrun swift -version
 #- brew update
 install:
 - bundle
