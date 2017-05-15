@@ -187,7 +187,7 @@ ComponentEditBarDelegate {
     var editingControls = false {
         didSet {
             if editingControls {
-                captureButton.startFrameIntervalJitter()
+                captureButton.startKeyTimesJitter()
             } else {
                 captureButton.stopJittter()
             }
@@ -208,20 +208,16 @@ ComponentEditBarDelegate {
     // MARK: - Debug Bar
     
     var barItems: [DebugBarItem] {
-        let jitterKey = DebugBarItem(title: "Jitter keyTimes")
+        let jitterKey = DebugBarItem(title: "Jitter")
         jitterKey.tapClosure = {
             self.captureButton.startKeyTimesJitter()
-        }
-        let jitterFrame = DebugBarItem(title: "Jitter frameInterval")
-        jitterFrame.tapClosure = {
-            self.captureButton.startFrameIntervalJitter()
         }
         
         let stopJitter = DebugBarItem(title: "Stop Jittter")
         stopJitter.tapClosure = {
             self.captureButton.stopJittter()
         }
-        return [jitterKey, jitterFrame, stopJitter]
+        return [jitterKey, stopJitter]
     }
     
     // MARK: - Component Menu Bar Delegate
@@ -279,7 +275,7 @@ ComponentEditBarDelegate {
     
     // MARK: - Edit Components
     
-    private lazy var editBar = ComponentEditBar()
+    lazy var editBar = ComponentEditBar()
     fileprivate var editBarVerticalConstraint: NSLayoutConstraint?
     fileprivate func componentEditBarSetup() {
         view.addSubview(editBar)

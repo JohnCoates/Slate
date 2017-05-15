@@ -31,7 +31,7 @@ class PunchThroughButtonViewController: UIViewController {
     func setUpViews() {
         view.backgroundColor = UIColor.black
         
-        let punchOut = PunchOutView()
+        let punchOut = InverseMaskButton(icon: CheckmarkIcon())
         
         view.addSubview(punchOut)
         constrain(punchOut) {

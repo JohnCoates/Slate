@@ -6,7 +6,7 @@
 //  Copyright © 2017 John Coates. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol ComponentItemCellDelegate: class {
     func add(component: Component.Type, atFrame frame: CGRect, fromView view: UIView)

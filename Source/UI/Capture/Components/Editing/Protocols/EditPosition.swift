@@ -6,7 +6,7 @@
 //  Copyright © 2017 John Coates. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol EditPosition: class {
     var origin: CGPoint { get set }

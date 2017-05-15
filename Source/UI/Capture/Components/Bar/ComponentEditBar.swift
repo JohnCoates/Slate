@@ -40,10 +40,8 @@ final class ComponentEditBar: UIView {
         setUpCancelButton()
     }
     
-    let saveButton = UIButton(type: .custom)
+    let saveButton = InverseMaskButton(icon: CheckmarkIcon())
     fileprivate func setUpSaveButton() {
-        saveButton.backgroundColor = UIColor(red:0.27, green:0.77, blue:0.08, alpha:1.00)
-        saveButton.layer.cornerRadius = 6
         saveButton.addTarget(self, action: .saveTapped, for: .touchUpInside)
         addSubview(saveButton)
         
@@ -56,10 +54,8 @@ final class ComponentEditBar: UIView {
         }
     }
     
-    let cancelButton = UIButton(type: .custom)
+    let cancelButton = InverseMaskButton(icon: XIcon())
     fileprivate func setUpCancelButton() {
-        cancelButton.backgroundColor = UIColor(red:0.86, green:0.25, blue:0.25, alpha:1.00)
-        cancelButton.layer.cornerRadius = saveButton.layer.cornerRadius
         cancelButton.addTarget(self, action: .cancelTapped, for: .touchUpInside)
         addSubview(cancelButton)
         

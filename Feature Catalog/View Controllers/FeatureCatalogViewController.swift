@@ -113,6 +113,7 @@ class FeatureCatalogViewController: UITableViewController {
     
     lazy var sections: [Section] = {
         return [
+            self.captureScreen(),
             self.buttons(),
         ]
     }()
@@ -120,6 +121,20 @@ class FeatureCatalogViewController: UITableViewController {
     struct Section {
         let title: String
         let items: [FeatureCatalogItem]
+    }
+    
+    func captureScreen() -> Section {
+        let items: [FeatureCatalogItem] = [
+            FeatureCatalogItem(name: "Edit Bar",
+                               creationBlock: {
+                                let vc = SimulatorCaptureViewController()
+                                // trigger view load
+                                let _ = vc.view
+                                vc.editBar.isHidden = false
+                                return vc }),
+            ]
+        
+        return Section(title: "Capture Screen", items: items)
     }
     
     func buttons() -> Section {

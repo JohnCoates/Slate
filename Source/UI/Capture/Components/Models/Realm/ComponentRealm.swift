@@ -8,7 +8,7 @@
 
 // https://github.com/realm/realm-cocoa/issues/1109
 
-import Foundation
+import UIKit
 import RealmSwift
 
 // MARK: - Base Class

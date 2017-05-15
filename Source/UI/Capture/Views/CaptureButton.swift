@@ -27,9 +27,6 @@ class CaptureButton: Button {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-//        layer.cornerRadius = frame.width / 2
-//        layer.cornerRadius = frame.width / 1.05
-//        layer.cornerRadius = 8
         layer.cornerRadius = (frame.width / 2) * CGFloat(roundingPercentage)
     }
     
@@ -41,7 +38,7 @@ class CaptureButton: Button {
     func startKeyTimesJitter() {
         removeOldAnimations()
         
-        let position = jitterPositionAnimation()
+        let position = jitterPositionAnimationKeyTimes()
         layer.add(position,
                   forKey: Animation.position.rawValue)
         
@@ -50,28 +47,16 @@ class CaptureButton: Button {
                   forKey: Animation.transform.rawValue)
     }
     
-    func startFrameIntervalJitter() {
-        removeOldAnimations()
-        
-        let position = jitterPositionAnimation()
-        layer.add(position,
-                  forKey: Animation.position.rawValue)
-        
-        let transform = jitterTransformAnimationFrameInterval()
-        layer.add(transform,
-                  forKey: Animation.transform.rawValue)
-    }
-    
     func stopJittter() {
         removeOldAnimations()
     }
     
-    private func removeOldAnimations() {
+    fileprivate func removeOldAnimations() {
         layer.removeAnimation(forKey: Animation.position.rawValue)
         layer.removeAnimation(forKey: Animation.transform.rawValue)
     }
     
-    func jitterPositionAnimation() -> CAKeyframeAnimation {
+    fileprivate func jitterPositionAnimationKeyTimes() -> CAKeyframeAnimation {
         let animation = CAKeyframeAnimation()
         animation.keyPath = "position"
         animation.duration = 0.25
@@ -85,35 +70,20 @@ class CaptureButton: Button {
         values.append(NSValue(cgPoint: CGPoint(x: -1, y: -1)))
         values.append(NSValue(cgPoint: CGPoint(x: -1, y: -1)))
         animation.values = values
-        animation.beginTime = 5
-        animation.frameInterval = 0.05
         
-        return animation
-    }
-    
-    private func jitterTransformAnimationFrameInterval() -> CAKeyframeAnimation {
-        let animation = CAKeyframeAnimation()
-        animation.keyPath = "transform"
-        let function = CAValueFunction(name: kCAValueFunctionRotateZ)
-        animation.valueFunction = function
-        
-        animation.isAdditive = true
-        animation.repeatCount = Float.infinity
-        animation.isRemovedOnCompletion = false
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
-        
-        var values = [Any]()
-        values.append(NSNumber(value: -0.0352556))
-        values.append(NSNumber(value: 0.0352556))
-        values.append(NSNumber(value: -0.0352556))
-        animation.values = values
-        animation.frameInterval = 0.05
+        var keyTimes = [NSNumber]()
+        keyTimes.append(NSNumber(value: 0))
+        keyTimes.append(NSNumber(value: 0.5))
+        keyTimes.append(NSNumber(value: 1))
+        keyTimes.append(NSNumber(value: 1.5))
+        animation.keyTimes = keyTimes
         animation.beginTime = 0
+        animation.duration = 0.3
         
         return animation
     }
     
-    private func jitterTransformAnimationKeyTimes() -> CAKeyframeAnimation {
+    fileprivate func jitterTransformAnimationKeyTimes() -> CAKeyframeAnimation {
         let animation = CAKeyframeAnimation()
         animation.keyPath = "transform"
         let function = CAValueFunction(name: kCAValueFunctionRotateZ)
