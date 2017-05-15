@@ -109,6 +109,9 @@
 		FA2B1EBE1EC9A2B600E44613 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; };
 		FA2B1EBF1EC9A2BA00E44613 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
 		FA2B1EC01EC9A2BB00E44613 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
+		FA2B1EC21EC9B78F00E44613 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA1805891EC46FAE004351B7 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA2B1EC31EC9B78F00E44613 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA2B1EC41EC9B78F00E44613 /* Cartography.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA2F8E471DA2293000993949 /* AbstractFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E461DA2293000993949 /* AbstractFilter.swift */; };
 		FA2F8E481DA2293000993949 /* AbstractFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E461DA2293000993949 /* AbstractFilter.swift */; };
 		FA2F8E4A1DA2296E00993949 /* GaussianBlurFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E491DA2296E00993949 /* GaussianBlurFilter.swift */; };
@@ -224,6 +227,19 @@
 				FA2B1EA71EC92DC600E44613 /* Realm.framework in Embed Frameworks */,
 				FA2B1EA81EC92DC600E44613 /* RealmSwift.framework in Embed Frameworks */,
 				FA2B1E631EC817E700E44613 /* Cartography.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA2B1EC11EC9B77F00E44613 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FA2B1EC21EC9B78F00E44613 /* Realm.framework in Embed Frameworks */,
+				FA2B1EC31EC9B78F00E44613 /* RealmSwift.framework in Embed Frameworks */,
+				FA2B1EC41EC9B78F00E44613 /* Cartography.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1215,6 +1231,7 @@
 				FA9F89FD1D953C540058C369 /* Sources */,
 				FA9F89FE1D953C540058C369 /* Frameworks */,
 				FA9F89FF1D953C540058C369 /* Resources */,
+				FA2B1EC11EC9B77F00E44613 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
