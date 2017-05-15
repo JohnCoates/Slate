@@ -1,13 +1,13 @@
 language: objective-c
 osx_image: xcode8
 cache:
-  - bundler
+  bundler: true
   directories:
     - Carthage
     - $HOME/Library/Caches/carthage_cache
 before_install:
-#- brew update
 - travis_wait 30 (carthage_cache install -b slate-cache || (carthage bootstrap --platform iOS --no-use-binaries && carthage_cache publish -b slate-cache)) #--verbose
+#- brew update
 install:
 - bundle
 after_success:
