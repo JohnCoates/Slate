@@ -1,5 +1,6 @@
+# https://docs.travis-ci.com/user/languages/objective-c/#Supported-OS-X-iOS-SDK-versions
 language: objective-c
-osx_image: xcode8
+osx_image: xcode8.3
 cache:
   bundler: true
   directories:
