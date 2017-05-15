@@ -38,6 +38,7 @@ final class ComponentEditBar: UIView {
         
         setUpSaveButton()
         setUpCancelButton()
+        addDeleteControl()
     }
     
     let saveButton = InverseMaskButton(icon: CheckmarkIcon())
@@ -81,7 +82,6 @@ final class ComponentEditBar: UIView {
                             initialValue: Float,
                             valueHandler: @escaping CircleSlider.ValueChangedCallback) {
         let control = CircleSlider()
-        control.translatesAutoresizingMaskIntoConstraints = false
         control.minimumValue = settings.minimumValue
         control.maximumValue = settings.maximumValue
         control.units = settings.units
@@ -120,7 +120,7 @@ final class ComponentEditBar: UIView {
         
         lastEditControl = control
     }
-    
+
     // MARK: - Progress Control Overloads
     
     func addProgressControl(forSize editSize: EditSize) {
@@ -143,11 +143,55 @@ final class ComponentEditBar: UIView {
                            valueHandler: { editRounding.rounding = $0 / 100 })
     }
     
+    
+    // MARK: - Delete Control
+    
+    func addDeleteControl() {
+        let control = CodeIconButton(icon: DeleteLineIcon())
+        control.rounding = 1
+        control.backgroundColor = UIColor(red:0.16, green:0.14, blue:0.17, alpha:1.00)
+        
+        addSubview(control)
+        controls.append(control)
+        
+        constrain(control) {
+            let superview = $0.superview!
+            $0.width == 50
+            $0.height == $0.width
+            
+            $0.left >= superview.leftMargin
+            $0.centerY == superview.centerY
+        }
+        
+        if let lastEditControl = lastEditControl {
+            constrain(control, lastEditControl) { control, lastEditControl in
+                control.left == lastEditControl.right + 20
+            }
+        }
+        
+        let label = UILabel(frame: .zero)
+        label.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightMedium)
+        label.textColor = UIColor.white
+        label.text = "Delete"
+        addSubview(label)
+        controls.append(label)
+        
+        constrain(control, label) { control, label in
+            label.centerX == control.centerX
+            label.top == control.bottom + 2
+        }
+        
+        lastEditControl = control
+    }
+    
+    
     // MARK: - Setting Component
     
     var targetView: UIView?
     var component: Component?
     func set(target: Component) {
+        clearInitialState()
+        
         for control in controls {
             control.removeFromSuperview()
         }
@@ -164,29 +208,63 @@ final class ComponentEditBar: UIView {
         targetView?.layer.borderWidth = 3
         lastEditControl = nil
         
+        addEditControls(forComponent: target)
+    }
+    
+    func addEditControls(forComponent component: Component) {
         if let editSize = component as? EditSize {
+            initialSize = editSize.size
             addProgressControl(forSize: editSize)
         }
         if let editRounding = component as? EditRounding {
+            initialRounding = editRounding.rounding
             addProgressControl(forRounding: editRounding)
         }
+        
+        addDeleteControl()
+    }
+    
+    // MARK: - Initial State
+    
+    var initialSize: Float?
+    var initialRounding: Float?
+    
+    func resetToInitialState(component: Component) {
+        if let editSize = component as? EditSize {
+            guard let initialSize = initialSize else {
+                fatalError("Didn't record initial size for component: \(component)")
+            }
+            editSize.size = initialSize
+        }
+        if let editRounding = component as? EditRounding {
+            guard let initialRounding = initialRounding else {
+                fatalError("Didn't record initial rounding for component: \(component)")
+            }
+            editRounding.rounding = initialRounding
+        }
+    }
+    
+    func clearInitialState() {
+        initialSize = nil
+        initialRounding = nil
     }
     
     // MARK: - Save, Cancel
     
     func saveTapped() {
-        stopEditing()
         guard let component = component else {
             fatalError("Not editing a component!")
         }
+        stopEditing()
         delegate?.save(component: component)
     }
     
     func cancelTapped() {
-        stopEditing()
         guard let component = component else {
             fatalError("Not editing a component!")
         }
+        resetToInitialState(component: component)
+        stopEditing()
         delegate?.cancel(editingComponent: component)
     }
     
@@ -196,7 +274,8 @@ final class ComponentEditBar: UIView {
             targetView.layer.borderColor = nil
             targetView.layer.borderWidth = 0
             self.targetView = nil
-        }   
+        }
+        clearInitialState()
     }
 }
 

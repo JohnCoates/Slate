@@ -8,15 +8,23 @@
 
 import UIKit
 
-class CircleView: UIView {
-    var roundingPercentage: Float = 1 {
-        didSet {
-            setNeedsLayout()
+class CircleView: RoundableView {
+    
+    var roundingPercentage: Float {
+        set {
+            rounding = newValue
+        }
+        get {
+            return rounding
         }
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        layer.cornerRadius = (frame.width / 2) * CGFloat(roundingPercentage)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        rounding = 1
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

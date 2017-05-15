@@ -11,4 +11,5 @@ import Foundation
 protocol ComponentEditBarDelegate: class {
     func cancel(editingComponent: Component)
     func save(component: Component)
+    func delete(component: Component)
 }

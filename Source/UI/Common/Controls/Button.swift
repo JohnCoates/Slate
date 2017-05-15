@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Button: UIView {
+class Button: RoundableView {
     
     // MARK: - Configuration
     

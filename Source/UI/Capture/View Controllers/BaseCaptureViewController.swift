@@ -387,6 +387,15 @@ ComponentEditBarDelegate {
         addEditGesture(toComponent: component)
         kit.saveKit()
     }
+    
+    func delete(component: Component) {
+        editGestures.removeAll()
+        guard let index = kit.components.index(where: {$0 === component}) else {
+            fatalError("Couldn't find component to delete: \(component)")
+        }
+        kit.components.remove(at: index)
+        kit.saveKit()
+    }
 }
 
 extension Realm {
