@@ -5,9 +5,9 @@ cache:
   - Carthage
 before_install:
 - brew update
-- travis_wait 30 carthage bootstrap --platform iOS --no-use-binaries #--verbose
+- travis_wait 30 (carthage_cache install -b slate-cache || (carthage bootstrap --platform iOS --no-use-binaries && carthage_cache publish -b slate-cache)) #--verbose
 install:
-- gem install xcpretty
+- bundle
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J 'Slate'
 script:
