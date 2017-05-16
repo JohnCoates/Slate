@@ -215,7 +215,21 @@ ComponentEditBarDelegate {
         stopJitter.tapClosure = {
             self.captureButton.stopJittter()
         }
-        return [jitterKey, stopJitter]
+        
+        let clearComponents = DebugBarItem(title: "Clear Components")
+        clearComponents.tapClosure = { [unowned self] in
+            self.removeAllComponents()
+        }
+        return [jitterKey, stopJitter, clearComponents]
+    }
+    
+    func removeAllComponents() {
+        for component in kit.components {
+            component.view.removeFromSuperview()
+        }
+        
+        kit.components.removeAll()
+        kit.saveKit()
     }
     
     // MARK: - Component Menu Bar Delegate

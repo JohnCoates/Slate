@@ -53,7 +53,7 @@ EditRounding, EditSize, EditPosition {
     var view: UIView { return typedView }
     var rounding: Float = 1 {
         didSet {
-            typedView.roundingPercentage = rounding
+            typedView.rounding = rounding
         }
     }
     

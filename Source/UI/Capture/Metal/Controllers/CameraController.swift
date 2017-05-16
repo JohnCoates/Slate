@@ -49,6 +49,8 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
             if device.localizedName == "HD Pro Webcam C920" {
                 return device
             }
+            
+            print("Device: \(device), \(device.localizedName)")
         }
         return AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
     }

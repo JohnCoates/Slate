@@ -9,7 +9,7 @@
 import UIKit
 import Cartography
 
-final class InverseMaskGroupedPathButton: GroupedPathButton {
+class InverseMaskGroupedPathButton: GroupedPathButton {
     
     // MARK: - Setup
     
@@ -46,4 +46,3 @@ final class InverseMaskGroupedPathButton: GroupedPathButton {
         updateMask(withFrame: frame)
     }
 }
-

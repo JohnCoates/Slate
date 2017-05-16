@@ -9,26 +9,20 @@
 import Foundation
 import Cartography
 
-final class FrontBackCameraToggle: CircleView {
+final class FrontBackCameraToggle: InverseMaskGroupedPathButton {
     
     // MARK: - Init
     
     convenience init() {
-        self.init(frame: CGRect.zero)
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        initialSetup()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        self.init(icon: FlippedCameraIcon())
     }
     
     // MARK: - Setup
     
-    private func initialSetup() {
-        backgroundColor = UIColor.blue.withAlphaComponent(0.8)
+    override func initialSetup() {
+        iconWidthRatio = 0.65
+        super.initialSetup()
+        backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        rounding = 1
     }
 }

@@ -41,7 +41,6 @@ final class ControlBarItemCell: UICollectionViewCell {
         }
     }
     private func initialSetup() {
-        backgroundColor = UIColor.green.withAlphaComponent(0.1)
     }
     
     func setUpControl() {
@@ -53,6 +52,7 @@ final class ControlBarItemCell: UICollectionViewCell {
             let superview = $0.superview!
             $0.width == superview.width
             $0.height == superview.height
+            $0.center == superview.center
         }
         
         setUpTapAndHoldGesture()
@@ -102,11 +102,8 @@ final class ControlBarItemCell: UICollectionViewCell {
         lastLocation = location
         
         if gesture.state == .began {
-            var frame = control.frame
-            startFrame = frame
-            frame.size.width *= 1.3
-            frame.size.height *= 1.3
-            control.frame = frame
+            startFrame = control.frame
+            control.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
             return
         }
         
@@ -133,8 +130,8 @@ final class ControlBarItemCell: UICollectionViewCell {
         }
         
         UIView.animate(withDuration: 0.2, animations: {
+            control.transform = CGAffineTransform(scaleX: 1, y: 1)
             control.frame = startFrame
-            control.layer.cornerRadius = startFrame.width / 2
         })
     }
     
@@ -151,6 +148,7 @@ final class ControlBarItemCell: UICollectionViewCell {
                        initialSpringVelocity: 3,
                        options: UIViewAnimationOptions.curveEaseOut, animations: {
             control.transform = CGAffineTransform(scaleX: 1, y: 1)
+            control.frame = startFrame
         })
     }
     

@@ -40,8 +40,9 @@ final class ComponentMenuBar: UIView,
         view.alwaysBounceHorizontal = true
         view.dataSource = self
         view.clipsToBounds = false
+        view.contentInset = UIEdgeInsets(top: 2, left: 10, bottom: 0, right: 0)
 //        view.backgroundColor = UIColor.clear
-        view.backgroundColor = UIColor.orange.withAlphaComponent(0.2)
+        view.backgroundColor = UIColor.orange.withAlphaComponent(0.15)
         return view
     }()
     
@@ -82,7 +83,8 @@ final class ComponentMenuBar: UIView,
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         return components.count
     }
     
@@ -90,7 +92,8 @@ final class ComponentMenuBar: UIView,
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+    func collectionView(_ collectionView: UICollectionView,
+                        canMoveItemAt indexPath: IndexPath) -> Bool {
         return false
     }
     

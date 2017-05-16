@@ -18,7 +18,6 @@ class GroupedPathButton: Button {
     init(icon: GroupedPathIcon) {
         self.icon = icon
         super.init(frame: .zero)
-        initialSetup()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -44,16 +43,34 @@ class GroupedPathButton: Button {
         }
     }
     
+    // ratio of width to superview
+    var iconWidthRatio: CGFloat? {
+        didSet {
+            if let widthRatio = iconWidthRatio,
+                let widthConstraint = iconProxy.constraintWithAttribute(.width) {
+                NSLayoutConstraint.deactivate([widthConstraint])
+                constrain(iconProxy) {
+                    let superview = $0.superview!
+                    $0.width == superview.width * widthRatio
+                }
+            }
+        }
+    }
     let iconProxy = UIView(frame: .zero)
     func setUpIconProxy() {
         iconProxy.isHidden = true
         addSubview(iconProxy)
         
         let heightRatio = icon.height / icon.width
+        
         constrain(iconProxy) {
             let superview = $0.superview!
             $0.center == superview.center
-            $0.width == 19
+            if let iconWidthRatio = self.iconWidthRatio {
+                $0.width == superview.width * iconWidthRatio
+            } else {
+                $0.width == 19
+            }
             $0.height == $0.width * heightRatio
         }
     }
