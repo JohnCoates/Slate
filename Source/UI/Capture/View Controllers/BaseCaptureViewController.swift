@@ -220,7 +220,13 @@ ComponentEditBarDelegate {
         clearComponents.tapClosure = { [unowned self] in
             self.removeAllComponents()
         }
-        return [jitterKey, stopJitter, clearComponents]
+        
+        let switchCamera = DebugBarItem(title: "Switch Camera")
+        switchCamera.tapClosure = { [unowned self] in
+            self.switchCamera()
+        }
+        
+        return [jitterKey, stopJitter, clearComponents, switchCamera]
     }
     
     func removeAllComponents() {
@@ -230,6 +236,10 @@ ComponentEditBarDelegate {
         
         kit.components.removeAll()
         kit.saveKit()
+    }
+        
+    func switchCamera() {
+        print("Switch camera!")
     }
     
     // MARK: - Component Menu Bar Delegate
@@ -245,7 +255,7 @@ ComponentEditBarDelegate {
         kit.addComponent(component: componentInstance)
         kit.saveKit()
         
-        addEditGesture(toComponent: componentInstance)
+        configureAdded(component: componentInstance)
     }
     
     // MARK: - Load Kit
@@ -254,7 +264,7 @@ ComponentEditBarDelegate {
         for component in kit.components {
             component.view.frame = component.frame
             self.view.insertSubview(component.view, belowSubview: menuView)
-            addEditGesture(toComponent: component)
+            configureAdded(component: component)
         }
     }
     
@@ -280,6 +290,16 @@ ComponentEditBarDelegate {
         }
         
         fatalError("Edit gesture failed")
+    }
+    
+    // MARK: - Component Configuring
+    
+    func configureAdded(component: Component) {
+        addEditGesture(toComponent: component)
+        
+        if let componentView = component.view as? FrontBackCameraToggle {
+            componentView.setTappedCallback(instance: self, method: Method.switchCamera)
+        }
     }
     
     // MARK: - Edit Components
@@ -434,7 +454,8 @@ extension Realm {
 // MARK: - Callbacks
 
 private struct Method {
-    static let captureTapped = BaseCaptureViewController.captureTapped
+    static let captureTapped = LocalClass.captureTapped
+    static let switchCamera = LocalClass.switchCamera
 }
 
 // MARK: - Selector Extension
