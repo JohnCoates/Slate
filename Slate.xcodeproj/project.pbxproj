@@ -127,7 +127,7 @@
 		FA4D54191DB055BB0091184D /* ComputeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D54181DB055BB0091184D /* ComputeFilter.swift */; };
 		FA4D541A1DB055BB0091184D /* ComputeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D54181DB055BB0091184D /* ComputeFilter.swift */; };
 		FA4DFED11D9DBD1A0068706F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4DFED01D9DBD1A0068706F /* AppDelegate.swift */; };
-		FA4DFED31D9DBD1A0068706F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4DFED21D9DBD1A0068706F /* Assets.xcassets */; };
+		FA4DFED31D9DBD1A0068706F /* MacAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4DFED21D9DBD1A0068706F /* MacAssets.xcassets */; };
 		FA4DFED61D9DBD1A0068706F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4DFED41D9DBD1A0068706F /* MainMenu.xib */; };
 		FA4DFEDB1D9DBD5F0068706F /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */; };
 		FA4DFEDC1D9DBD620068706F /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */; };
@@ -340,7 +340,7 @@
 		FA4D54181DB055BB0091184D /* ComputeFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComputeFilter.swift; sourceTree = "<group>"; };
 		FA4DFECE1D9DBD1A0068706F /* macSlate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macSlate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA4DFED01D9DBD1A0068706F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FA4DFED21D9DBD1A0068706F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA4DFED21D9DBD1A0068706F /* MacAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MacAssets.xcassets; sourceTree = "<group>"; };
 		FA4DFED51D9DBD1A0068706F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FA4DFED71D9DBD1A0068706F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA4DFEDF1D9DC15E0068706F /* HUDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDController.swift; sourceTree = "<group>"; };
@@ -825,7 +825,7 @@
 			children = (
 				FA4DFEDE1D9DC1460068706F /* HUD */,
 				FA4DFED01D9DBD1A0068706F /* AppDelegate.swift */,
-				FA4DFED21D9DBD1A0068706F /* Assets.xcassets */,
+				FA4DFED21D9DBD1A0068706F /* MacAssets.xcassets */,
 				FA4DFED41D9DBD1A0068706F /* MainMenu.xib */,
 				FA4DFED71D9DBD1A0068706F /* Info.plist */,
 			);
@@ -1397,7 +1397,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA4DFED31D9DBD1A0068706F /* Assets.xcassets in Resources */,
+				FA4DFED31D9DBD1A0068706F /* MacAssets.xcassets in Resources */,
 				FA4DFED61D9DBD1A0068706F /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1734,7 +1734,7 @@
 		FA4DFED81D9DBD1A0068706F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = MacAppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1754,7 +1754,7 @@
 		FA4DFED91D9DBD1A0068706F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = MacAppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1981,7 +1981,7 @@
 		FAB0AA791EC8083D008DCD23 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = FeatureCatalogAppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2000,7 +2000,7 @@
 		FAB0AA7A1EC8083D008DCD23 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = FeatureCatalogAppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				FRAMEWORK_SEARCH_PATHS = (

@@ -125,7 +125,7 @@ class FeatureCatalogViewController: UITableViewController {
         let items: [FeatureCatalogItem] = [
             FeatureCatalogItem(name: "Edit Bar",
                                creationBlock: {
-                                let vc = SimulatorCaptureViewController()
+                                let vc = CaptureViewController()
                                 // trigger view load
                                 _ = vc.view
                                 vc.editBar.isHidden = false
@@ -140,7 +140,7 @@ class FeatureCatalogViewController: UITableViewController {
             FeatureCatalogItem(name: "Inverted Mask Button",
                                creationBlock: { InvertedMaskButtonViewController(kind: .checkmark) }),
             FeatureCatalogItem(name: "Flip Camera Button",
-                               creationBlock: { InvertedMaskButtonViewController(kind: .flipCamera) }),
+                               creationBlock: { InvertedMaskButtonViewController(kind: .flipCamera) })
             
         ]
         

@@ -10,6 +10,12 @@ import UIKit
 import Cartography
 import RealmSwift
 
+#if (arch(i386) || arch(x86_64)) && os(iOS)
+    typealias CaptureViewController = SimulatorCaptureViewController
+#else
+    typealias CaptureViewController = MetalCaptureViewController
+#endif
+
 fileprivate typealias LocalClass = BaseCaptureViewController
 class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate {
     

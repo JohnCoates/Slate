@@ -20,11 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = DebugWindow(frame: UIScreen.main.bounds)
         window.backgroundColor = UIColor.white
         window.makeKeyAndVisible()
-        if Platform.isSimulator {
-            window.rootViewController = SimulatorCaptureViewController()
-        } else {
-            window.rootViewController = MetalCaptureViewController()
-        }
+        window.rootViewController = CaptureViewController()
         self.window = window
         return true
     }
