@@ -174,6 +174,8 @@
 		FABB16B51D9F886300A8AC6C /* BaseCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */; };
 		FACC8FD41D98A55400589230 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
 		FACC8FD61D98A5AF00589230 /* Cartography.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FACFE4931ECB056E0052B3FB /* CameraRollPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFE4921ECB056E0052B3FB /* CameraRollPermissionsViewController.swift */; };
+		FACFE4941ECB056E0052B3FB /* CameraRollPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFE4921ECB056E0052B3FB /* CameraRollPermissionsViewController.swift */; };
 		FAF10CFA1ECAA8230008690E /* GroupedPathIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */; };
 		FAF10CFB1ECAA8230008690E /* GroupedPathIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */; };
 		FAF10CFE1ECAA87C0008690E /* FlipCameraIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CFD1ECAA87C0008690E /* FlipCameraIcon.swift */; };
@@ -190,6 +192,8 @@
 		FAF10D0F1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D0D1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift */; };
 		FAF10D141ECAD30D0008690E /* Ream+Filtering.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D131ECAD30D0008690E /* Ream+Filtering.swift */; };
 		FAF10D151ECAD30D0008690E /* Ream+Filtering.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D131ECAD30D0008690E /* Ream+Filtering.swift */; };
+		FAF10D181ECAFF1D0008690E /* PermissionsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D171ECAFF1D0008690E /* PermissionsWindow.swift */; };
+		FAF10D191ECAFF1D0008690E /* PermissionsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D171ECAFF1D0008690E /* PermissionsWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -387,6 +391,7 @@
 		FABB16B01D9F822800A8AC6C /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCaptureViewController.swift; sourceTree = "<group>"; };
 		FACC8FD31D98A55400589230 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cartography.framework; sourceTree = "<group>"; };
+		FACFE4921ECB056E0052B3FB /* CameraRollPermissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRollPermissionsViewController.swift; sourceTree = "<group>"; };
 		FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupedPathIcon.swift; sourceTree = "<group>"; };
 		FAF10CFD1ECAA87C0008690E /* FlipCameraIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipCameraIcon.swift; sourceTree = "<group>"; };
 		FAF10D001ECAA9170008690E /* GroupedPathButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupedPathButton.swift; sourceTree = "<group>"; };
@@ -395,6 +400,7 @@
 		FAF10D0A1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseCaptureViewController+ComponentEditing.swift"; sourceTree = "<group>"; };
 		FAF10D0D1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseCaptureViewController+ComponentMenu.swift"; sourceTree = "<group>"; };
 		FAF10D131ECAD30D0008690E /* Ream+Filtering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ream+Filtering.swift"; sourceTree = "<group>"; };
+		FAF10D171ECAFF1D0008690E /* PermissionsWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -937,6 +943,7 @@
 		FA86BE021D98ED5600BC5FB1 /* Capture */ = {
 			isa = PBXGroup;
 			children = (
+				FAF10D161ECAFEFC0008690E /* Permissions */,
 				FA2B1E6F1EC9238900E44613 /* Code Icons */,
 				FA29FB461EA49B0400EB1081 /* Components */,
 				FAADE0CE1D9D0AAE00AA5729 /* Metal */,
@@ -1192,6 +1199,14 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		FACFE4911ECB05420052B3FB /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FACFE4921ECB056E0052B3FB /* CameraRollPermissionsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		FAF10CFC1ECAA8630008690E /* Toggles */ = {
 			isa = PBXGroup;
 			children = (
@@ -1231,6 +1246,15 @@
 				FAF10D131ECAD30D0008690E /* Ream+Filtering.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		FAF10D161ECAFEFC0008690E /* Permissions */ = {
+			isa = PBXGroup;
+			children = (
+				FACFE4911ECB05420052B3FB /* View Controllers */,
+				FAF10D171ECAFF1D0008690E /* PermissionsWindow.swift */,
+			);
+			path = Permissions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1536,6 +1560,7 @@
 				FAF10D0E1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
 				FA1805981EC54F38004351B7 /* CircleView.swift in Sources */,
 				FA2B1E711EC9239F00E44613 /* CheckmarkIcon.swift in Sources */,
+				FAF10D181ECAFF1D0008690E /* PermissionsWindow.swift in Sources */,
 				FABB16A21D9F402C00A8AC6C /* TextureCoordinates.swift in Sources */,
 				FA78F29A1E15662B00D34947 /* DebugBarView.swift in Sources */,
 				FA2F8E4E1DA22AD700993949 /* ChromaticAberrationFilter.swift in Sources */,
@@ -1556,6 +1581,7 @@
 				FA4D54161DB055A00091184D /* FragmentFilter.swift in Sources */,
 				FA2F8E531DA23E5500993949 /* PassthroughFilter.swift in Sources */,
 				FAF10D011ECAA9170008690E /* GroupedPathButton.swift in Sources */,
+				FACFE4931ECB056E0052B3FB /* CameraRollPermissionsViewController.swift in Sources */,
 				FA834BE41D9929710017CCCA /* CaptureButton.swift in Sources */,
 				FA0462B91EC3DF81007B74A0 /* KitManager.swift in Sources */,
 				FA2F8E471DA2293000993949 /* AbstractFilter.swift in Sources */,
@@ -1645,6 +1671,7 @@
 				FA2B1E8D1EC92B5B00E44613 /* AbstractFilter.swift in Sources */,
 				FA2B1E991EC92B5B00E44613 /* ComponentRealm.swift in Sources */,
 				FA2B1E581EC80E8500E44613 /* FeatureCatalogViewController.swift in Sources */,
+				FACFE4941ECB056E0052B3FB /* CameraRollPermissionsViewController.swift in Sources */,
 				FA2B1E961EC92B5B00E44613 /* EditSize.swift in Sources */,
 				FA2B1EB01EC97CE000E44613 /* DeleteLineIcon.swift in Sources */,
 				FA2B1EA51EC92B5B00E44613 /* CameraRenderView.swift in Sources */,
@@ -1678,6 +1705,7 @@
 				FA2B1E911EC92B5B00E44613 /* ComponentItemCellDelegate.swift in Sources */,
 				FA2B1E7C1EC92B5B00E44613 /* ComputeFilter.swift in Sources */,
 				FAF10D0C1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift in Sources */,
+				FAF10D191ECAFF1D0008690E /* PermissionsWindow.swift in Sources */,
 				FA2B1E9A1EC92B5B00E44613 /* ComponentEditBarDelegate.swift in Sources */,
 				FAF10D021ECAA9170008690E /* GroupedPathButton.swift in Sources */,
 				FA2B1E891EC92B5B00E44613 /* FragmentFilter.swift in Sources */,

@@ -129,7 +129,9 @@ class FeatureCatalogViewController: UITableViewController {
                                 // trigger view load
                                 _ = vc.view
                                 vc.editBar.isHidden = false
-                                return vc })
+                                return vc }),
+            FeatureCatalogItem(name: "Permissions Window",
+                               actionBlock: { PermissionsWindow.show(animated: true) })
             ]
         
         return Section(title: "Capture Screen", items: items)
@@ -140,8 +142,7 @@ class FeatureCatalogViewController: UITableViewController {
             FeatureCatalogItem(name: "Inverted Mask Button",
                                creationBlock: { InvertedMaskButtonViewController(kind: .checkmark) }),
             FeatureCatalogItem(name: "Flip Camera Button",
-                               creationBlock: { InvertedMaskButtonViewController(kind: .flipCamera) })
-            
+                               creationBlock: { InvertedMaskButtonViewController(kind: .flipCamera) })   
         ]
         
         return Section(title: "Buttons", items: items)
