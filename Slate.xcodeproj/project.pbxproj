@@ -33,7 +33,7 @@
 		FA29FB491EA49B1F00EB1081 /* ComponentMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29FB481EA49B1F00EB1081 /* ComponentMenuBar.swift */; };
 		FA2B1E581EC80E8500E44613 /* FeatureCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E561EC80E8500E44613 /* FeatureCatalogViewController.swift */; };
 		FA2B1E591EC80E8500E44613 /* FeatureCatalogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E571EC80E8500E44613 /* FeatureCatalogItem.swift */; };
-		FA2B1E5C1EC80EE100E44613 /* PunchThroughButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E5B1EC80EE100E44613 /* PunchThroughButtonViewController.swift */; };
+		FA2B1E5C1EC80EE100E44613 /* InvertedMaskButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E5B1EC80EE100E44613 /* InvertedMaskButtonViewController.swift */; };
 		FA2B1E5F1EC817C000E44613 /* InverseMaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E5E1EC817C000E44613 /* InverseMaskButton.swift */; };
 		FA2B1E601EC817C000E44613 /* InverseMaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E5E1EC817C000E44613 /* InverseMaskButton.swift */; };
 		FA2B1E611EC817D200E44613 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
@@ -174,6 +174,14 @@
 		FABB16B51D9F886300A8AC6C /* BaseCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */; };
 		FACC8FD41D98A55400589230 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
 		FACC8FD61D98A5AF00589230 /* Cartography.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FAF10CFA1ECAA8230008690E /* GroupedPathIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */; };
+		FAF10CFB1ECAA8230008690E /* GroupedPathIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */; };
+		FAF10CFE1ECAA87C0008690E /* FlipCameraIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CFD1ECAA87C0008690E /* FlipCameraIcon.swift */; };
+		FAF10CFF1ECAA87C0008690E /* FlipCameraIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CFD1ECAA87C0008690E /* FlipCameraIcon.swift */; };
+		FAF10D011ECAA9170008690E /* GroupedPathButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D001ECAA9170008690E /* GroupedPathButton.swift */; };
+		FAF10D021ECAA9170008690E /* GroupedPathButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D001ECAA9170008690E /* GroupedPathButton.swift */; };
+		FAF10D041ECAAB190008690E /* InverseMaskGroupedPathButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D031ECAAB190008690E /* InverseMaskGroupedPathButton.swift */; };
+		FAF10D051ECAAB190008690E /* InverseMaskGroupedPathButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D031ECAAB190008690E /* InverseMaskGroupedPathButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -294,8 +302,8 @@
 		FA18058A1EC46FAE004351B7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		FA1805901EC5477A004351B7 /* ComponentRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentRealm.swift; sourceTree = "<group>"; };
 		FA1805921EC54A0F004351B7 /* ComponentEditBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentEditBar.swift; sourceTree = "<group>"; };
-		FA1805971EC54F38004351B7 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleView.swift; path = CircleView.swift; sourceTree = "<group>"; };
-		FA1805991EC55466004351B7 /* CircleSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleSlider.swift; path = CircleSlider.swift; sourceTree = "<group>"; };
+		FA1805971EC54F38004351B7 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		FA1805991EC55466004351B7 /* CircleSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleSlider.swift; sourceTree = "<group>"; };
 		FA18059E1EC688D9004351B7 /* EditRounding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRounding.swift; sourceTree = "<group>"; };
 		FA1805A21EC699A4004351B7 /* EditSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSize.swift; sourceTree = "<group>"; };
 		FA20FA501E12624C00032AF3 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
@@ -305,7 +313,7 @@
 		FA29FB481EA49B1F00EB1081 /* ComponentMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentMenuBar.swift; sourceTree = "<group>"; };
 		FA2B1E561EC80E8500E44613 /* FeatureCatalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureCatalogViewController.swift; sourceTree = "<group>"; };
 		FA2B1E571EC80E8500E44613 /* FeatureCatalogItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureCatalogItem.swift; sourceTree = "<group>"; };
-		FA2B1E5B1EC80EE100E44613 /* PunchThroughButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchThroughButtonViewController.swift; sourceTree = "<group>"; };
+		FA2B1E5B1EC80EE100E44613 /* InvertedMaskButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvertedMaskButtonViewController.swift; sourceTree = "<group>"; };
 		FA2B1E5E1EC817C000E44613 /* InverseMaskButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InverseMaskButton.swift; sourceTree = "<group>"; };
 		FA2B1E671EC922FD00E44613 /* LayoutConstraint+Modifying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LayoutConstraint+Modifying.swift"; sourceTree = "<group>"; };
 		FA2B1E6C1EC9235700E44613 /* PathIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathIcon.swift; sourceTree = "<group>"; };
@@ -331,7 +339,7 @@
 		FA78F28D1E144C0E00D34947 /* DebugBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarController.swift; sourceTree = "<group>"; };
 		FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarDelegate.swift; sourceTree = "<group>"; };
 		FA78F2931E144E4E00D34947 /* DebugBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarItem.swift; sourceTree = "<group>"; };
-		FA78F2961E14520700D34947 /* DebugWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DebugWindow.swift; path = DebugWindow.swift; sourceTree = "<group>"; };
+		FA78F2961E14520700D34947 /* DebugWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugWindow.swift; sourceTree = "<group>"; };
 		FA78F2991E15662B00D34947 /* DebugBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarView.swift; sourceTree = "<group>"; };
 		FA78F29B1E15686C00D34947 /* DebugBarItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarItemView.swift; sourceTree = "<group>"; };
 		FA834BDC1D9920010017CCCA /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
@@ -351,7 +359,7 @@
 		FA9F8A051D953C540058C369 /* SlateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlateUITests.swift; sourceTree = "<group>"; };
 		FA9F8A071D953C540058C369 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
-		FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = Passthrough.metal; path = Passthrough.metal; sourceTree = "<group>"; };
+		FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Passthrough.metal; sourceTree = "<group>"; };
 		FAB0AA5D1EC6A095008DCD23 /* EditPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPosition.swift; sourceTree = "<group>"; };
 		FAB0AA611EC6A1B8008DCD23 /* DragGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragGesture.swift; sourceTree = "<group>"; };
 		FAB0AA631EC6C84D008DCD23 /* ComponentEditBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentEditBarDelegate.swift; sourceTree = "<group>"; };
@@ -367,10 +375,14 @@
 		FABB16A11D9F402C00A8AC6C /* TextureCoordinates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureCoordinates.swift; sourceTree = "<group>"; };
 		FABB16A41D9F471000A8AC6C /* HUDShaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDShaderViewController.swift; sourceTree = "<group>"; };
 		FABB16A81D9F492D00A8AC6C /* HUDShader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = HUDShader.metal; sourceTree = "<group>"; };
-		FABB16AC1D9F6DAB00A8AC6C /* ChromaticAberration.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = ChromaticAberration.metal; path = ChromaticAberration.metal; sourceTree = "<group>"; };
+		FABB16AC1D9F6DAB00A8AC6C /* ChromaticAberration.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ChromaticAberration.metal; sourceTree = "<group>"; };
 		FABB16B01D9F822800A8AC6C /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCaptureViewController.swift; sourceTree = "<group>"; };
 		FACC8FD31D98A55400589230 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cartography.framework; sourceTree = "<group>"; };
+		FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupedPathIcon.swift; sourceTree = "<group>"; };
+		FAF10CFD1ECAA87C0008690E /* FlipCameraIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipCameraIcon.swift; sourceTree = "<group>"; };
+		FAF10D001ECAA9170008690E /* GroupedPathButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupedPathButton.swift; sourceTree = "<group>"; };
+		FAF10D031ECAAB190008690E /* InverseMaskGroupedPathButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InverseMaskGroupedPathButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -513,7 +525,6 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = "Edit Bars";
 			path = "Edit Bars";
 			sourceTree = "<group>";
 		};
@@ -640,7 +651,7 @@
 		FA2B1E5A1EC80EC800E44613 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				FA2B1E5B1EC80EE100E44613 /* PunchThroughButtonViewController.swift */,
+				FA2B1E5B1EC80EE100E44613 /* InvertedMaskButtonViewController.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -650,6 +661,8 @@
 			children = (
 				FA2B1E5E1EC817C000E44613 /* InverseMaskButton.swift */,
 				FA2B1EB41EC9824E00E44613 /* RoundableView.swift */,
+				FAF10D001ECAA9170008690E /* GroupedPathButton.swift */,
+				FAF10D031ECAAB190008690E /* InverseMaskGroupedPathButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -683,6 +696,7 @@
 			isa = PBXGroup;
 			children = (
 				FA2B1E6C1EC9235700E44613 /* PathIcon.swift */,
+				FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */,
 			);
 			path = "Code Icons";
 			sourceTree = "<group>";
@@ -690,11 +704,11 @@
 		FA2B1E6F1EC9238900E44613 /* Code Icons */ = {
 			isa = PBXGroup;
 			children = (
+				FAF10CFC1ECAA8630008690E /* Toggles */,
 				FA2B1E701EC9239F00E44613 /* CheckmarkIcon.swift */,
 				FA2B1E761EC928A300E44613 /* XIcon.swift */,
 				FA2B1EAE1EC97CE000E44613 /* DeleteLineIcon.swift */,
 			);
-			name = "Code Icons";
 			path = "Code Icons";
 			sourceTree = "<group>";
 		};
@@ -1163,6 +1177,14 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		FAF10CFC1ECAA8630008690E /* Toggles */ = {
+			isa = PBXGroup;
+			children = (
+				FAF10CFD1ECAA87C0008690E /* FlipCameraIcon.swift */,
+			);
+			path = Toggles;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1469,18 +1491,21 @@
 				FA78F29A1E15662B00D34947 /* DebugBarView.swift in Sources */,
 				FA2F8E4E1DA22AD700993949 /* ChromaticAberrationFilter.swift in Sources */,
 				FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */,
+				FAF10D041ECAAB190008690E /* InverseMaskGroupedPathButton.swift in Sources */,
 				FAB0AA621EC6A1B8008DCD23 /* DragGesture.swift in Sources */,
 				FA78F28E1E144C0E00D34947 /* DebugBarController.swift in Sources */,
 				FA2B1E771EC928A300E44613 /* XIcon.swift in Sources */,
 				FAADE0D01D9D0AC200AA5729 /* Renderer.swift in Sources */,
 				FA78F2941E144E4E00D34947 /* DebugBarItem.swift in Sources */,
 				FA2B1E6D1EC9235700E44613 /* PathIcon.swift in Sources */,
+				FAF10CFE1ECAA87C0008690E /* FlipCameraIcon.swift in Sources */,
 				FA834BDD1D9920010017CCCA /* Platform.swift in Sources */,
 				FABB16AD1D9F6DAB00A8AC6C /* ChromaticAberration.metal in Sources */,
 				FA2B1E681EC922FD00E44613 /* LayoutConstraint+Modifying.swift in Sources */,
 				FA2B1E5F1EC817C000E44613 /* InverseMaskButton.swift in Sources */,
 				FA4D54161DB055A00091184D /* FragmentFilter.swift in Sources */,
 				FA2F8E531DA23E5500993949 /* PassthroughFilter.swift in Sources */,
+				FAF10D011ECAA9170008690E /* GroupedPathButton.swift in Sources */,
 				FA834BE41D9929710017CCCA /* CaptureButton.swift in Sources */,
 				FA0462B91EC3DF81007B74A0 /* KitManager.swift in Sources */,
 				FA2F8E471DA2293000993949 /* AbstractFilter.swift in Sources */,
@@ -1504,6 +1529,7 @@
 				FA2B1E741EC927FB00E44613 /* Views+AutoLayout.swift in Sources */,
 				FAB0AA5E1EC6A095008DCD23 /* EditPosition.swift in Sources */,
 				FA0462B31EC3CC76007B74A0 /* FrontBackCameraToggle.swift in Sources */,
+				FAF10CFA1ECAA8230008690E /* GroupedPathIcon.swift in Sources */,
 				FA86BE051D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift in Sources */,
 				FA9F89E61D953C540058C369 /* AppDelegate.swift in Sources */,
 				FA0462C21EC3E002007B74A0 /* Component.swift in Sources */,
@@ -1538,6 +1564,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF10D051ECAAB190008690E /* InverseMaskGroupedPathButton.swift in Sources */,
+				FAF10CFF1ECAA87C0008690E /* FlipCameraIcon.swift in Sources */,
 				FA2B1EA41EC92B5B00E44613 /* CameraController.swift in Sources */,
 				FA2B1E721EC9239F00E44613 /* CheckmarkIcon.swift in Sources */,
 				FA2B1E811EC92B5B00E44613 /* ChromaticAberrationFilter.swift in Sources */,
@@ -1590,10 +1618,12 @@
 				FA2B1E601EC817C000E44613 /* InverseMaskButton.swift in Sources */,
 				FA2B1E7D1EC92B5B00E44613 /* Kit.swift in Sources */,
 				FA2B1E6E1EC9235700E44613 /* PathIcon.swift in Sources */,
-				FA2B1E5C1EC80EE100E44613 /* PunchThroughButtonViewController.swift in Sources */,
+				FA2B1E5C1EC80EE100E44613 /* InvertedMaskButtonViewController.swift in Sources */,
+				FAF10CFB1ECAA8230008690E /* GroupedPathIcon.swift in Sources */,
 				FA2B1E911EC92B5B00E44613 /* ComponentItemCellDelegate.swift in Sources */,
 				FA2B1E7C1EC92B5B00E44613 /* ComputeFilter.swift in Sources */,
 				FA2B1E9A1EC92B5B00E44613 /* ComponentEditBarDelegate.swift in Sources */,
+				FAF10D021ECAA9170008690E /* GroupedPathButton.swift in Sources */,
 				FA2B1E891EC92B5B00E44613 /* FragmentFilter.swift in Sources */,
 				FA2B1EA61EC92B5B00E44613 /* DebugBarItemView.swift in Sources */,
 			);

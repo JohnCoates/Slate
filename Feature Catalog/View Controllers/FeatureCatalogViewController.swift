@@ -137,8 +137,10 @@ class FeatureCatalogViewController: UITableViewController {
     
     func buttons() -> Section {
         let items: [FeatureCatalogItem] = [
-            FeatureCatalogItem(name: "Punch-Through Button",
-                               creationBlock: { PunchThroughButtonViewController() })
+            FeatureCatalogItem(name: "Inverted Mask Button",
+                               creationBlock: { InvertedMaskButtonViewController(kind: .checkmark) }),
+            FeatureCatalogItem(name: "Flip Camera Button",
+                               creationBlock: { InvertedMaskButtonViewController(kind: .flipCamera) }),
             
         ]
         

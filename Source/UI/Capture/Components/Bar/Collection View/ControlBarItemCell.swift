@@ -170,7 +170,6 @@ final class ControlBarItemCell: UICollectionViewCell {
         
         let yPercentageInsideOfMenuBar = (intersection.height / localFrame.height) * 100
         let percentageToAllowInside: CGFloat = 30
-        print("intersection %: \(yPercentageInsideOfMenuBar)")
         if yPercentageInsideOfMenuBar < percentageToAllowInside {
             return true
         }
