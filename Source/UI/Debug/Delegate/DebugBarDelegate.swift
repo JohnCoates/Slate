@@ -9,5 +9,5 @@
 import Foundation
 
 protocol DebugBarDelegate: class {
-    var barItems: [DebugBarItem] { get }
+    var debugBarItems: [DebugBarItem] { get }
 }

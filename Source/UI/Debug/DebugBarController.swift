@@ -44,7 +44,7 @@ class DebugBarController: NSObject {
             return
         }
         
-        barView.items = barDelegate.barItems
+        barView.items = barDelegate.debugBarItems
     }
     
     // MARK: - Bar

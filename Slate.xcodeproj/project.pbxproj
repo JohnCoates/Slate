@@ -182,6 +182,14 @@
 		FAF10D021ECAA9170008690E /* GroupedPathButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D001ECAA9170008690E /* GroupedPathButton.swift */; };
 		FAF10D041ECAAB190008690E /* InverseMaskGroupedPathButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D031ECAAB190008690E /* InverseMaskGroupedPathButton.swift */; };
 		FAF10D051ECAAB190008690E /* InverseMaskGroupedPathButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D031ECAAB190008690E /* InverseMaskGroupedPathButton.swift */; };
+		FAF10D081ECAD03A0008690E /* BaseCaptureViewController+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D071ECAD03A0008690E /* BaseCaptureViewController+Debug.swift */; };
+		FAF10D091ECAD03A0008690E /* BaseCaptureViewController+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D071ECAD03A0008690E /* BaseCaptureViewController+Debug.swift */; };
+		FAF10D0B1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D0A1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift */; };
+		FAF10D0C1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D0A1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift */; };
+		FAF10D0E1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D0D1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift */; };
+		FAF10D0F1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D0D1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift */; };
+		FAF10D141ECAD30D0008690E /* Ream+Filtering.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D131ECAD30D0008690E /* Ream+Filtering.swift */; };
+		FAF10D151ECAD30D0008690E /* Ream+Filtering.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D131ECAD30D0008690E /* Ream+Filtering.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -383,6 +391,10 @@
 		FAF10CFD1ECAA87C0008690E /* FlipCameraIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipCameraIcon.swift; sourceTree = "<group>"; };
 		FAF10D001ECAA9170008690E /* GroupedPathButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupedPathButton.swift; sourceTree = "<group>"; };
 		FAF10D031ECAAB190008690E /* InverseMaskGroupedPathButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InverseMaskGroupedPathButton.swift; sourceTree = "<group>"; };
+		FAF10D071ECAD03A0008690E /* BaseCaptureViewController+Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseCaptureViewController+Debug.swift"; sourceTree = "<group>"; };
+		FAF10D0A1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseCaptureViewController+ComponentEditing.swift"; sourceTree = "<group>"; };
+		FAF10D0D1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseCaptureViewController+ComponentMenu.swift"; sourceTree = "<group>"; };
+		FAF10D131ECAD30D0008690E /* Ream+Filtering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ream+Filtering.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -937,6 +949,7 @@
 		FA86BE031D98ED6C00BC5FB1 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FAF10D061ECAD0230008690E /* Extensions */,
 				FA86BE041D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift */,
 				FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */,
 				FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */,
@@ -972,11 +985,13 @@
 		FA9F89E41D953C540058C369 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				FA86BE011D98ED4500BC5FB1 /* UI */,
+				FAF10D111ECAD2E70008690E /* Extensions */,
+				FAF10D101ECAD2DA0008690E /* Controllers */,
+				FA834BDA1D991FDC0017CCCA /* Models */,
 				FA20FA521E128B9400032AF3 /* Headers */,
 				FA2F8E3E1DA2286F00993949 /* Rendering */,
 				FA2426CA1D9A677800AEE60C /* Camera */,
-				FA86BE011D98ED4500BC5FB1 /* UI */,
-				FA834BDA1D991FDC0017CCCA /* Models */,
 				FACE21EE1D98B9C500B088C8 /* Application */,
 			);
 			path = Source;
@@ -1183,6 +1198,39 @@
 				FAF10CFD1ECAA87C0008690E /* FlipCameraIcon.swift */,
 			);
 			path = Toggles;
+			sourceTree = "<group>";
+		};
+		FAF10D061ECAD0230008690E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FAF10D071ECAD03A0008690E /* BaseCaptureViewController+Debug.swift */,
+				FAF10D0A1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift */,
+				FAF10D0D1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FAF10D101ECAD2DA0008690E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FAF10D111ECAD2E70008690E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FAF10D121ECAD2F90008690E /* Realm */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FAF10D121ECAD2F90008690E /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				FAF10D131ECAD30D0008690E /* Ream+Filtering.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1485,6 +1533,7 @@
 				FA78F2921E144E4600D34947 /* DebugBarDelegate.swift in Sources */,
 				FA4D54191DB055BB0091184D /* ComputeFilter.swift in Sources */,
 				FA0462BB1EC3DF88007B74A0 /* Kit.swift in Sources */,
+				FAF10D0E1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
 				FA1805981EC54F38004351B7 /* CircleView.swift in Sources */,
 				FA2B1E711EC9239F00E44613 /* CheckmarkIcon.swift in Sources */,
 				FABB16A21D9F402C00A8AC6C /* TextureCoordinates.swift in Sources */,
@@ -1501,6 +1550,7 @@
 				FAF10CFE1ECAA87C0008690E /* FlipCameraIcon.swift in Sources */,
 				FA834BDD1D9920010017CCCA /* Platform.swift in Sources */,
 				FABB16AD1D9F6DAB00A8AC6C /* ChromaticAberration.metal in Sources */,
+				FAF10D141ECAD30D0008690E /* Ream+Filtering.swift in Sources */,
 				FA2B1E681EC922FD00E44613 /* LayoutConstraint+Modifying.swift in Sources */,
 				FA2B1E5F1EC817C000E44613 /* InverseMaskButton.swift in Sources */,
 				FA4D54161DB055A00091184D /* FragmentFilter.swift in Sources */,
@@ -1514,6 +1564,7 @@
 				FA0462BF1EC3DFE1007B74A0 /* CameraPositionComponent.swift in Sources */,
 				FABB169E1D9F308C00A8AC6C /* Vertices.swift in Sources */,
 				FABB16B51D9F886300A8AC6C /* BaseCaptureViewController.swift in Sources */,
+				FAF10D081ECAD03A0008690E /* BaseCaptureViewController+Debug.swift in Sources */,
 				FA0462C71EC4252D007B74A0 /* ComponentItemCellDelegate.swift in Sources */,
 				FA2F8E4A1DA2296E00993949 /* GaussianBlurFilter.swift in Sources */,
 				FA0462B61EC3CDFA007B74A0 /* ControlBarItemCell.swift in Sources */,
@@ -1530,6 +1581,7 @@
 				FAB0AA5E1EC6A095008DCD23 /* EditPosition.swift in Sources */,
 				FA0462B31EC3CC76007B74A0 /* FrontBackCameraToggle.swift in Sources */,
 				FAF10CFA1ECAA8230008690E /* GroupedPathIcon.swift in Sources */,
+				FAF10D0B1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift in Sources */,
 				FA86BE051D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift in Sources */,
 				FA9F89E61D953C540058C369 /* AppDelegate.swift in Sources */,
 				FA0462C21EC3E002007B74A0 /* Component.swift in Sources */,
@@ -1587,6 +1639,7 @@
 				FA2B1E791EC92AEF00E44613 /* BaseCaptureViewController.swift in Sources */,
 				FA2B1EA31EC92B5B00E44613 /* Button.swift in Sources */,
 				FA2B1E591EC80E8500E44613 /* FeatureCatalogItem.swift in Sources */,
+				FAF10D0F1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
 				FA2B1E881EC92B5B00E44613 /* ChromaticAberration.metal in Sources */,
 				FA2B1E691EC922FD00E44613 /* LayoutConstraint+Modifying.swift in Sources */,
 				FA2B1E8D1EC92B5B00E44613 /* AbstractFilter.swift in Sources */,
@@ -1604,10 +1657,12 @@
 				FA2B1E781EC928A300E44613 /* XIcon.swift in Sources */,
 				FA2B1E901EC92B5B00E44613 /* Vertices.swift in Sources */,
 				FA2B1EA11EC92B5B00E44613 /* EditRounding.swift in Sources */,
+				FAF10D151ECAD30D0008690E /* Ream+Filtering.swift in Sources */,
 				FA2B1E951EC92B5B00E44613 /* ComponentEditBar.swift in Sources */,
 				FA2B1E941EC92B5B00E44613 /* DebugWindow.swift in Sources */,
 				FA2B1E751EC927FB00E44613 /* Views+AutoLayout.swift in Sources */,
 				FA2B1EB61EC9824E00E44613 /* RoundableView.swift in Sources */,
+				FAF10D091ECAD03A0008690E /* BaseCaptureViewController+Debug.swift in Sources */,
 				FA2B1E861EC92B5B00E44613 /* DebugBarItem.swift in Sources */,
 				FA2B1E831EC92B5B00E44613 /* DragGesture.swift in Sources */,
 				FA2B1EB31EC97E7300E44613 /* CodeIconButton.swift in Sources */,
@@ -1622,6 +1677,7 @@
 				FAF10CFB1ECAA8230008690E /* GroupedPathIcon.swift in Sources */,
 				FA2B1E911EC92B5B00E44613 /* ComponentItemCellDelegate.swift in Sources */,
 				FA2B1E7C1EC92B5B00E44613 /* ComputeFilter.swift in Sources */,
+				FAF10D0C1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift in Sources */,
 				FA2B1E9A1EC92B5B00E44613 /* ComponentEditBarDelegate.swift in Sources */,
 				FAF10D021ECAA9170008690E /* GroupedPathButton.swift in Sources */,
 				FA2B1E891EC92B5B00E44613 /* FragmentFilter.swift in Sources */,
