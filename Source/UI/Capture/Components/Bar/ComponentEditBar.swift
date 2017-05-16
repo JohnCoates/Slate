@@ -38,6 +38,7 @@ final class ComponentEditBar: UIView {
         setUpSaveButton()
         setUpCancelButton()
         addDeleteControl()
+        setUpTitleLabel()
     }
     
     let saveButton = InverseMaskButton(icon: CheckmarkIcon())
@@ -66,6 +67,19 @@ final class ComponentEditBar: UIView {
         }
     }
     
+    let titleLabel: UILabel = UILabel(frame: .zero)
+    fileprivate func setUpTitleLabel() {
+        titleLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightRegular)
+        titleLabel.textColor = UIColor.white
+        addSubview(titleLabel)
+        
+        constrain(titleLabel) {
+            let superview = $0.superview!
+            $0.centerX == superview.centerX
+            $0.top == superview.top + 6
+        }
+        
+    }
     // MARK: - Progress Controls
     
     struct ProgressSettings {
@@ -193,6 +207,7 @@ final class ComponentEditBar: UIView {
             oldTarget.layer.borderWidth = 0
         }
         
+        titleLabel.text = target.editTitle
         component = target
         targetView = target.view
         targetView?.layer.borderColor = UIColor(red:0.13, green:0.55,

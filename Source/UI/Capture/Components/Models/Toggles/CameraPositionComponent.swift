@@ -11,6 +11,8 @@ import RealmSwift
 
 class CameraPositionComponent: Component,
 EditRounding, EditSize, EditPosition {
+    var editTitle = "Switch Camera"
+    
     enum Position: Int {
         case front = 0
         case back = 1

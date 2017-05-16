@@ -10,6 +10,8 @@ import UIKit
 import RealmSwift
 
 protocol Component: class {
+    /// Title used for editing panel
+    var editTitle: String { get }
     var frame: CGRect { get set }
     var view: UIView { get }
     var parentKit: Kit? { get set }

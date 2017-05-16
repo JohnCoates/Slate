@@ -420,7 +420,7 @@ ComponentEditBarDelegate {
     func askUserForDeleteConfirmation(component: Component,
                                       userConfirmedBlock: @escaping ComponentEditBarDelegate.UserConfirmedDeleteBlock) {
         let alertController = UIAlertController(title: "Delete Component",
-                                                message: "Aare you sure you want to delete this component?",
+                                                message: "Are you sure you want to delete this component?",
                                                 preferredStyle: .alert)
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         alertController.addAction(cancel)
