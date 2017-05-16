@@ -42,7 +42,7 @@ final class ComponentEditBar: UIView {
     
     let saveButton = InverseMaskButton(icon: CheckmarkIcon())
     fileprivate func setUpSaveButton() {
-        saveButton.addTarget(self, action: .saveTapped, for: .touchUpInside)
+        saveButton.setTappedCallback(instance: self, method: Method.saveTapped)
         addSubview(saveButton)
         
         constrain(saveButton) {
@@ -56,7 +56,7 @@ final class ComponentEditBar: UIView {
     
     let cancelButton = InverseMaskButton(icon: XIcon())
     fileprivate func setUpCancelButton() {
-        cancelButton.addTarget(self, action: .cancelTapped, for: .touchUpInside)
+        cancelButton.setTappedCallback(instance: self, method: Method.cancelTapped)
         addSubview(cancelButton)
         
         constrain(cancelButton, saveButton) { cancelButton, saveButton in
@@ -308,16 +308,11 @@ final class ComponentEditBar: UIView {
     
 }
 
-// MARK: - Selector Extension
-
-fileprivate extension Selector {
-    static let saveTapped = #selector(LocalClass.saveTapped)
-    static let cancelTapped = #selector(LocalClass.cancelTapped)
-}
-
 // MARK: - Callbacks
 
 fileprivate struct Method {
+    static let saveTapped = LocalClass.saveTapped
+    static let cancelTapped = LocalClass.cancelTapped
     static let deleteTapped = LocalClass.deleteTapped
     
 }

@@ -31,9 +31,13 @@ class CodeIconButton: Button {
         super.initialSetup()
         backgroundColor = UIColor(red:0.93, green:0.93,
                                   blue:0.93, alpha:0.59)
+        setUpIconProxy()
+        setUpShape()
+    }
+    
+    func setUpShape() {
         layer.addSublayer(shape)
         shape.fillColor = UIColor.white.cgColor
-        setUpIconProxy()
     }
     
     let iconProxy = UIView(frame: .zero)
@@ -55,6 +59,10 @@ class CodeIconButton: Button {
     let shape = CAShapeLayer()
     
     func updatePath(withFrame frame: CGRect) {
+        shape.path = transformedPath(forFrame: frame)
+    }
+    
+    func transformedPath(forFrame frame: CGRect) -> CGPath {
         let scale = frame.size.width / icon.width
         let translationFactor = icon.width / frame.size.width
         
@@ -65,14 +73,17 @@ class CodeIconButton: Button {
         guard let transformedPath = icon.path.copy(using: &affineTransform) else {
             fatalError("Couldn't make path mutable!")
         }
-        
-        shape.path = transformedPath
+        return transformedPath
     }
     
     // MARK: - Layout
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        updatePath(withFrame: iconProxy.frame)
+        handlePathLayout(forFrame: iconProxy.frame)
+    }
+    
+    func handlePathLayout(forFrame frame: CGRect) {
+        updatePath(withFrame: frame)
     }
 }
