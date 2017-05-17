@@ -60,16 +60,25 @@ class PermissionsButtonIndicatorViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        animate = true
         startAnimating()
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        animate = false
     }
     
     // MARK: - Animation
+    
+    var animate: Bool = false
     
     func startAnimating() {
         self.animatePullback(delay: 1)
     }
     
     func animatePullback(delay: TimeInterval) {
+        guard animate else {
+            return
+        }
         guard let indicatorTopConstraint = indicatorTopConstraint else {
             fatalError("Missing indicator top constraint!")
         }
@@ -86,6 +95,9 @@ class PermissionsButtonIndicatorViewController: UIViewController {
     }
     
     func animateBounce() {
+        guard animate else {
+            return
+        }
         guard let indicatorTopConstraint = indicatorTopConstraint else {
             fatalError("Missing indicator top constraint!")
         }
