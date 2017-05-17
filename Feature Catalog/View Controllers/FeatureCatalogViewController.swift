@@ -131,7 +131,11 @@ class FeatureCatalogViewController: UITableViewController {
                                 vc.editBar.isHidden = false
                                 return vc }),
             FeatureCatalogItem(name: "Permissions Window",
-                               actionBlock: { PermissionsWindow.show(animated: true) })
+                               actionBlock: { PermissionsWindow.show(animated: true) }),
+            FeatureCatalogItem(name: "Permissions Button Indicator",
+                               creationBlock: {
+                                let frame = CGRect(x: 160.5, y: 321.5, width: 134.5, height: 44)
+                                return PermissionsButtonIndicatorViewController(buttonFrame: frame) })
             ]
         
         return Section(title: "Capture Screen", items: items)

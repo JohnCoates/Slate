@@ -165,8 +165,7 @@ class CameraRollPermissionsViewController: UIViewController {
     }
     
     func showOkayButtonIndicator(withOkayButtonFrame buttonFrame: CGRect, after: @escaping ()->Void) {
-        let indicator = PermissionsButtonIndicatorViewController()
-        indicator.okayButtonPlaceholder.frame = buttonFrame
+        let indicator = PermissionsButtonIndicatorViewController(buttonFrame: buttonFrame)
         present(indicator, animated: false, completion: {
             after()
         })
@@ -213,9 +212,7 @@ class CameraRollPermissionsViewController: UIViewController {
     
     func findConfirmationButton(inAlertController alertController: UIAlertController) -> UIView? {
         if let label = findChildLabel(inView: alertController.view, withText: proxyAlertOkayText) {
-            print("found label: \(label)")
             if let button = findButtonSuperview(forLabel: label) {
-                print("found button: \(button)")
                 return button
             }
         }
@@ -259,13 +256,48 @@ class CameraRollPermissionsViewController: UIViewController {
     func requestAccessFromSystem() {
         AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { result in
             print("result: \(result)")
+            if self.presentedViewController != nil {
+                self.dismiss(animated: false, completion: nil)
+            }
             PermissionsWindow.dismiss()
         }
+    }
+    
+    func showDeniedCameraRollScreen() {
+        guard let appSettingsURL = URL(string: UIApplicationOpenSettingsURLString) else {
+            fatalError("Couldn't get deep link to app settings")
+        }
+        let controller = UIAlertController(title: "\(appName) Needs Camera Access",
+                                                message: "Please enable Camera access in Settings to continue.",
+                                                preferredStyle: .alert)
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        controller.addAction(cancel)
+        
+        let openSettings = UIAlertAction(title: "Settings", style: .default) { alertAction in
+            UIApplication.shared.openURL(appSettingsURL)
+        }
+        controller.addAction(openSettings)
+        controller.preferredAction = openSettings
+        
+        present(controller, animated: true, completion: nil)
     }
     
     // MARK: - User Interaction
     
     func tappedCameraRoll() {
+        let status = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
+        switch status {
+        case .notDetermined:
+            break
+        case .authorized:
+            PermissionsWindow.dismiss()
+            return
+        case .denied, .restricted:
+            showDeniedCameraRollScreen()
+            return
+        }
+        
         retrieveButtonFrameFromAlertProxy { buttonFrame in
             if let buttonFrame = buttonFrame {
                 self.showOkayButtonIndicator(withOkayButtonFrame: buttonFrame) {
@@ -276,6 +308,7 @@ class CameraRollPermissionsViewController: UIViewController {
             }
         }
     }
+    
     
     func tappedThisAppOnly() {
         PermissionsWindow.dismiss()
