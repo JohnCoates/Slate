@@ -27,6 +27,8 @@
 		FA18059A1EC55466004351B7 /* CircleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805991EC55466004351B7 /* CircleSlider.swift */; };
 		FA18059F1EC688D9004351B7 /* EditRounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18059E1EC688D9004351B7 /* EditRounding.swift */; };
 		FA1805A31EC699A4004351B7 /* EditSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805A21EC699A4004351B7 /* EditSize.swift */; };
+		FA1A2C9D1ECC57C60075FA0B /* PermissionsEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A2C9C1ECC57C60075FA0B /* PermissionsEducationViewController.swift */; };
+		FA1A2C9E1ECC57C60075FA0B /* PermissionsEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A2C9C1ECC57C60075FA0B /* PermissionsEducationViewController.swift */; };
 		FA1C23801ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C237F1ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift */; };
 		FA1C23811ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C237F1ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift */; };
 		FA20FA511E12624C00032AF3 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA20FA501E12624C00032AF3 /* MetalKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -134,6 +136,10 @@
 		FA4DFEDB1D9DBD5F0068706F /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */; };
 		FA4DFEDC1D9DBD620068706F /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */; };
 		FA4DFEE01D9DC15E0068706F /* HUDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4DFEDF1D9DC15E0068706F /* HUDController.swift */; };
+		FA57099E1ECC5E4D000362C8 /* CameraRollEducationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA57099D1ECC5E4D000362C8 /* CameraRollEducationImage.swift */; };
+		FA57099F1ECC5F80000362C8 /* CameraRollEducationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA57099D1ECC5E4D000362C8 /* CameraRollEducationImage.swift */; };
+		FA5709A21ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5709A11ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift */; };
+		FA5709A31ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5709A11ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift */; };
 		FA78F28E1E144C0E00D34947 /* DebugBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F28D1E144C0E00D34947 /* DebugBarController.swift */; };
 		FA78F2921E144E4600D34947 /* DebugBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */; };
 		FA78F2941E144E4E00D34947 /* DebugBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2931E144E4E00D34947 /* DebugBarItem.swift */; };
@@ -326,6 +332,7 @@
 		FA1805991EC55466004351B7 /* CircleSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleSlider.swift; sourceTree = "<group>"; };
 		FA18059E1EC688D9004351B7 /* EditRounding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRounding.swift; sourceTree = "<group>"; };
 		FA1805A21EC699A4004351B7 /* EditSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSize.swift; sourceTree = "<group>"; };
+		FA1A2C9C1ECC57C60075FA0B /* PermissionsEducationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsEducationViewController.swift; sourceTree = "<group>"; };
 		FA1C237F1ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsButtonIndicatorViewController.swift; sourceTree = "<group>"; };
 		FA20FA501E12624C00032AF3 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		FA20FA551E128CE200032AF3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
@@ -357,6 +364,8 @@
 		FA4DFED51D9DBD1A0068706F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FA4DFED71D9DBD1A0068706F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA4DFEDF1D9DC15E0068706F /* HUDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDController.swift; sourceTree = "<group>"; };
+		FA57099D1ECC5E4D000362C8 /* CameraRollEducationImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRollEducationImage.swift; sourceTree = "<group>"; };
+		FA5709A11ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsPreferredButtonIndicatorController.swift; sourceTree = "<group>"; };
 		FA78F28D1E144C0E00D34947 /* DebugBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarController.swift; sourceTree = "<group>"; };
 		FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarDelegate.swift; sourceTree = "<group>"; };
 		FA78F2931E144E4E00D34947 /* DebugBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarItem.swift; sourceTree = "<group>"; };
@@ -863,6 +872,14 @@
 			path = HUD;
 			sourceTree = "<group>";
 		};
+		FA5709A01ECC62BC000362C8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA5709A11ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		FA78F28B1E144AC600D34947 /* Debug */ = {
 			isa = PBXGroup;
 			children = (
@@ -982,6 +999,7 @@
 			isa = PBXGroup;
 			children = (
 				FA8AA5401ECC107F0093D317 /* ButtonIndicatorIcon.swift */,
+				FA57099D1ECC5E4D000362C8 /* CameraRollEducationImage.swift */,
 			);
 			path = "Code Icons";
 			sourceTree = "<group>";
@@ -1233,6 +1251,7 @@
 			isa = PBXGroup;
 			children = (
 				FACFE4921ECB056E0052B3FB /* CameraRollPermissionsViewController.swift */,
+				FA1A2C9C1ECC57C60075FA0B /* PermissionsEducationViewController.swift */,
 				FA1C237F1ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift */,
 			);
 			path = "View Controllers";
@@ -1282,6 +1301,7 @@
 		FAF10D161ECAFEFC0008690E /* Permissions */ = {
 			isa = PBXGroup;
 			children = (
+				FA5709A01ECC62BC000362C8 /* Controllers */,
 				FA8AA53F1ECC105B0093D317 /* Code Icons */,
 				FACFE4911ECB05420052B3FB /* View Controllers */,
 				FAF10D171ECAFF1D0008690E /* PermissionsWindow.swift */,
@@ -1379,6 +1399,7 @@
 				FAB0AA671EC8083D008DCD23 /* Resources */,
 				FA2B1E641EC817E700E44613 /* Embed Frameworks */,
 				FA2B1EAD1EC932DC00E44613 /* Build Metal Shader Library */,
+				FA5709A41ECC6D37000362C8 /* Clear Simulator Permissions */,
 			);
 			buildRules = (
 				FA2B1EAC1EC9328700E44613 /* PBXBuildRule */,
@@ -1510,6 +1531,20 @@
 			shellPath = /bin/sh;
 			shellScript = "${PROJECT_DIR}/Scripts/buildShaderLibrary.sh";
 		};
+		FA5709A41ECC6D37000362C8 /* Clear Simulator Permissions */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Clear Simulator Permissions";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/bash -l";
+			shellScript = "ruby ${PROJECT_DIR}/Scripts/resetAppPermisionsForSimulators.rb";
+		};
 		FAADE0D51D9D1CB200AA5729 /* Build Metal Shader Library */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1592,12 +1627,14 @@
 				FAF10D0E1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
 				FA1805981EC54F38004351B7 /* CircleView.swift in Sources */,
 				FA2B1E711EC9239F00E44613 /* CheckmarkIcon.swift in Sources */,
+				FA5709A21ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift in Sources */,
 				FAF10D181ECAFF1D0008690E /* PermissionsWindow.swift in Sources */,
 				FABB16A21D9F402C00A8AC6C /* TextureCoordinates.swift in Sources */,
 				FA78F29A1E15662B00D34947 /* DebugBarView.swift in Sources */,
 				FA2F8E4E1DA22AD700993949 /* ChromaticAberrationFilter.swift in Sources */,
 				FA8AA5411ECC107F0093D317 /* ButtonIndicatorIcon.swift in Sources */,
 				FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */,
+				FA1A2C9D1ECC57C60075FA0B /* PermissionsEducationViewController.swift in Sources */,
 				FAF10D041ECAAB190008690E /* InverseMaskGroupedPathButton.swift in Sources */,
 				FAB0AA621EC6A1B8008DCD23 /* DragGesture.swift in Sources */,
 				FA78F28E1E144C0E00D34947 /* DebugBarController.swift in Sources */,
@@ -1651,6 +1688,7 @@
 				FA18059F1EC688D9004351B7 /* EditRounding.swift in Sources */,
 				FA18059A1EC55466004351B7 /* CircleSlider.swift in Sources */,
 				FA834BE11D9927EB0017CCCA /* Button.swift in Sources */,
+				FA57099E1ECC5E4D000362C8 /* CameraRollEducationImage.swift in Sources */,
 				FA2B1EB51EC9824E00E44613 /* RoundableView.swift in Sources */,
 				FABB16B11D9F822800A8AC6C /* CameraController.swift in Sources */,
 				FA2426CE1D9A67E000AEE60C /* CameraRenderView.swift in Sources */,
@@ -1705,6 +1743,7 @@
 				FA2B1E591EC80E8500E44613 /* FeatureCatalogItem.swift in Sources */,
 				FAF10D0F1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
 				FA2B1E881EC92B5B00E44613 /* ChromaticAberration.metal in Sources */,
+				FA5709A31ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift in Sources */,
 				FA2B1E691EC922FD00E44613 /* LayoutConstraint+Modifying.swift in Sources */,
 				FA2B1E8D1EC92B5B00E44613 /* AbstractFilter.swift in Sources */,
 				FA2B1E991EC92B5B00E44613 /* ComponentRealm.swift in Sources */,
@@ -1720,6 +1759,7 @@
 				FA2B1E821EC92B5B00E44613 /* GaussianBlur.metal in Sources */,
 				FA2B1E931EC92B5B00E44613 /* ControlBarItemCell.swift in Sources */,
 				FA2B1E781EC928A300E44613 /* XIcon.swift in Sources */,
+				FA57099F1ECC5F80000362C8 /* CameraRollEducationImage.swift in Sources */,
 				FA2B1E901EC92B5B00E44613 /* Vertices.swift in Sources */,
 				FA2B1EA11EC92B5B00E44613 /* EditRounding.swift in Sources */,
 				FAF10D151ECAD30D0008690E /* Ream+Filtering.swift in Sources */,
@@ -1733,6 +1773,7 @@
 				FA2B1E831EC92B5B00E44613 /* DragGesture.swift in Sources */,
 				FA8AA5461ECC13140093D317 /* CanvasIconView.swift in Sources */,
 				FA2B1EB31EC97E7300E44613 /* CodeIconButton.swift in Sources */,
+				FA1A2C9E1ECC57C60075FA0B /* PermissionsEducationViewController.swift in Sources */,
 				FA2B1EA01EC92B5B00E44613 /* Passthrough.metal in Sources */,
 				FA2B1E8A1EC92B5B00E44613 /* PassthroughFilter.swift in Sources */,
 				FA2B1E9C1EC92B5B00E44613 /* EditPosition.swift in Sources */,

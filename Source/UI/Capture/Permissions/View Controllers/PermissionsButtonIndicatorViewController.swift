@@ -98,7 +98,7 @@ class PermissionsButtonIndicatorViewController: UIViewController {
             indicatorTopConstraint.constant = self.indicatorDistance
             self.view.layoutIfNeeded()
         }) { completed in
-            self.animatePullback(delay: 2)
+            self.animatePullback(delay: 1)
         }
     }
 }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Cartography
 
 fileprivate typealias LocalClass = PermissionsWindow
 class PermissionsWindow: UIWindow {
@@ -29,15 +28,8 @@ class PermissionsWindow: UIWindow {
             window.alpha = 1
         }
         
-        let completion = { (completed: Bool) -> Void in
-//            DispatchQueue.main.asyncAfter(deadline: .now() + length) {
-//                dismiss()
-//            }
-        }
-        
         if !animated {
             animations()
-            completion(true)
             return
         }
         
@@ -46,7 +38,7 @@ class PermissionsWindow: UIWindow {
         UIView.animate(withDuration: 0.3, delay: 0,
                        options: animationOptions,
                        animations: animations,
-                       completion: completion)
+                       completion: nil)
     }
     
     class func dismiss() {
@@ -54,21 +46,8 @@ class PermissionsWindow: UIWindow {
             return
         }
         
-        let animationOptions: UIViewAnimationOptions = [.curveLinear]
-        let animations = {
-            window.alpha = 0
-        }
-        let completion = { (completed: Bool) in
-            window.isHidden = true
-            if window == currentWindow {
-                currentWindow = nil
-            }
-        }
-        
-        UIView.animate(withDuration: 0.45, delay: 0,
-                       options: animationOptions,
-                       animations: animations,
-                       completion: completion)
+        window.isHidden = true
+        currentWindow = nil
     }
     
     // MARK: - Init
