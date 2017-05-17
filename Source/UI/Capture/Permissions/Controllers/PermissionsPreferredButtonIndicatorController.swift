@@ -15,11 +15,9 @@ class PermissionsPreferredButtonIndicatorController {
     
     // MARK: - Entry Points
     
-    typealias Block = ()->Void
-    
     // Returns tear down block that must be called after permissions return
     static func attemptToPresentPreferredButtonIndicator(onViewController viewController: UIViewController,
-                                               permissionsRequest: @escaping Block) {
+                                                         permissionsRequest: @escaping () -> Void) {
         let indicatorController = LocalClass()
         
         guard let view = viewController.view else {

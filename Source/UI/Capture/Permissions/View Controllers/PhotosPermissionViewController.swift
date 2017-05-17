@@ -23,7 +23,10 @@ class PhotosPermissionViewController: PermissionsEducationViewController {
         educationImage = PhotosEducationImage()
         educationImageSize = CGSize(width: 118, height: 102)
         
-        explanation = "Would you like your photos saved to the Camera Roll, or would you like them saved in this app only?"
+        var explanation: String
+        explanation =  "Would you like your photos saved to the Camera Roll, "
+        explanation += "or would you like them saved in this app only?"
+        self.explanation = explanation
     }
     
     func configureButtons() {
@@ -44,7 +47,6 @@ class PhotosPermissionViewController: PermissionsEducationViewController {
         appOnly.tappedHandler = {[unowned self] in self.tappedThisAppOnly()}
         buttons.append(appOnly)
     }
-    
     
     // MARK: - Photos Access
     
@@ -79,8 +81,7 @@ class PhotosPermissionViewController: PermissionsEducationViewController {
         controller.preferredAction = openSettings
         
         present(controller, animated: true, completion: nil)
-    }
-    
+    }    
     
     // MARK: - User Interaction
     

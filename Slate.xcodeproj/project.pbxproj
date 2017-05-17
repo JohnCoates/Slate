@@ -1324,7 +1324,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA4DFEDA1D9DBD1A0068706F /* Build configuration list for PBXNativeTarget "macSlate" */;
 			buildPhases = (
-				FABB16951D9E25D700A8AC6C /* Run Swiftlint */,
+				FABB16951D9E25D700A8AC6C /* Swiftlint */,
 				FA4DFECA1D9DBD1A0068706F /* Sources */,
 				FA4DFECB1D9DBD1A0068706F /* Frameworks */,
 				FA4DFECC1D9DBD1A0068706F /* Resources */,
@@ -1344,7 +1344,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA9F8A0A1D953C540058C369 /* Build configuration list for PBXNativeTarget "Slate" */;
 			buildPhases = (
-				FACC8FD81D98AD4500589230 /* Run Swiftlint */,
+				FACC8FD81D98AD4500589230 /* Swiftlint */,
 				FA9F89DE1D953C540058C369 /* Sources */,
 				FA9F89DF1D953C540058C369 /* Frameworks */,
 				FA9F89E01D953C540058C369 /* Resources */,
@@ -1402,6 +1402,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAB0AA781EC8083D008DCD23 /* Build configuration list for PBXNativeTarget "Feature Catalog" */;
 			buildPhases = (
+				FA5709AB1ECC7B2F000362C8 /* Swiftlint */,
 				FAB0AA651EC8083D008DCD23 /* Sources */,
 				FAB0AA661EC8083D008DCD23 /* Frameworks */,
 				FAB0AA671EC8083D008DCD23 /* Resources */,
@@ -1553,6 +1554,20 @@
 			shellPath = "/bin/bash -l";
 			shellScript = "ruby ${PROJECT_DIR}/Scripts/resetAppPermisionsForSimulators.rb";
 		};
+		FA5709AB1ECC7B2F000362C8 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		FAADE0D51D9D1CB200AA5729 /* Build Metal Shader Library */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1567,33 +1582,33 @@
 			shellPath = /bin/sh;
 			shellScript = "${PROJECT_DIR}/Scripts/buildShaderLibrary.sh";
 		};
-		FABB16951D9E25D700A8AC6C /* Run Swiftlint */ = {
+		FABB16951D9E25D700A8AC6C /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Run Swiftlint";
+			name = Swiftlint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
-		FACC8FD81D98AD4500589230 /* Run Swiftlint */ = {
+		FACC8FD81D98AD4500589230 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Run Swiftlint";
+			name = Swiftlint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 

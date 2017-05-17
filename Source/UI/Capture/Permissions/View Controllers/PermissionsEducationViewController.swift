@@ -194,7 +194,7 @@ class PermissionsEducationViewController: UIViewController {
         })
     }
     
-    func showOkayButtonIndicator(withOkayButtonFrame buttonFrame: CGRect, after: @escaping ()->Void) {
+    func showOkayButtonIndicator(withOkayButtonFrame buttonFrame: CGRect, after: @escaping () -> Void) {
         let indicator = PermissionsButtonIndicatorViewController(buttonFrame: buttonFrame)
         present(indicator, animated: false, completion: {
             after()

@@ -41,7 +41,6 @@ class CameraPermissionViewController: PermissionsEducationViewController {
         buttons.append(appOnly)
     }
     
-    
     // MARK: - Camera Access
     
     func requestAccessFromSystem() {
@@ -75,7 +74,6 @@ class CameraPermissionViewController: PermissionsEducationViewController {
         
         present(controller, animated: true, completion: nil)
     }
-
     
     // MARK: - User Interaction
     
