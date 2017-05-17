@@ -33,7 +33,9 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSCameraUsageDescription</key>
-	<string>Allow to be able to take photos and videos.</string>
+	<string>To be able to take photos, you must give Slate access.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To save photos to your Camera Roll, you must give Slate access.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -13,12 +13,17 @@ class PermissionsWindow: UIWindow {
     
     fileprivate static var currentWindow: LocalClass?
     
-    class func show(animated: Bool, length: Double = 1) {
+    enum Kind {
+        case camera
+        case photos
+    }
+    
+    class func show(kind: Kind, animated: Bool) {
         let window: LocalClass
         if let currentWindow = currentWindow {
             window = currentWindow
         } else {
-            window = LocalClass()
+            window = LocalClass(kind: kind)
         }
         
         currentWindow = window
@@ -35,7 +40,7 @@ class PermissionsWindow: UIWindow {
         
         let animationOptions: UIViewAnimationOptions = [.curveLinear]
         
-        UIView.animate(withDuration: 0.3, delay: 0,
+        UIView.animate(withDuration: 0.25, delay: 0,
                        options: animationOptions,
                        animations: animations,
                        completion: nil)
@@ -52,18 +57,15 @@ class PermissionsWindow: UIWindow {
     
     // MARK: - Init
     
-    convenience init() {
-        self.init(frame: UIScreen.main.bounds)
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    let kind: Kind
+    init(kind: Kind) {
+        self.kind = kind
+        super.init(frame: UIScreen.main.bounds)
         initialSetup()
     }
     
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
-        initialSetup()
+        fatalError("coder: not implemented")
     }
     
     // MARK: - Setup
@@ -72,7 +74,16 @@ class PermissionsWindow: UIWindow {
     func initialSetup() {
         windowLevel = UIWindowLevelAlert + 1
         backgroundColor = UIColor.black.withAlphaComponent(0.5)
-        rootViewController = CameraRollPermissionsViewController()
+        rootViewController = createViewController()
+    }
+    
+    func createViewController() -> UIViewController {
+        switch kind {
+        case .camera:
+            return CameraPermissionViewController()
+        case .photos:
+            return PhotosPermissionViewController()
+        }
     }
 
 }

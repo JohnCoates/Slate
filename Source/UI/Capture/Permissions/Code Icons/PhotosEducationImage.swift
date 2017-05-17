@@ -1,5 +1,5 @@
 //
-//  CameraRollEducationImage.swift
+//  PhotosEducationImage.swift
 //  Slate
 //
 //  Created by John Coates on 5/17/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct CameraRollEducationImage: CanvasIcon {
+struct PhotosEducationImage: CanvasIcon {
     let width: CGFloat = 240
     let height: CGFloat = 205
     

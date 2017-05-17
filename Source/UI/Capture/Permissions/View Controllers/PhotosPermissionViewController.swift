@@ -1,17 +1,18 @@
 //
-//  CameraRollPermissionsViewController.swift
+//  PhotosPermissionViewController.swift
 //  Slate
 //
-//  Created by John Coates on 5/16/17.
+//  Created by John Coates on 5/17/17.
 //  Copyright © 2017 John Coates. All rights reserved.
 //
 
 import UIKit
 import Cartography
 import AVFoundation
+import Photos
 
-fileprivate typealias LocalClass = CameraRollPermissionsViewController
-class CameraRollPermissionsViewController: PermissionsEducationViewController {
+fileprivate typealias LocalClass = PhotosPermissionViewController
+class PhotosPermissionViewController: PermissionsEducationViewController {
     
     // MARK: - Configuration
     
@@ -19,7 +20,7 @@ class CameraRollPermissionsViewController: PermissionsEducationViewController {
         super.configureEducation()
         configureButtons()
         
-        educationImage = CameraRollEducationImage()
+        educationImage = PhotosEducationImage()
         educationImageSize = CGSize(width: 118, height: 102)
         
         explanation = "Would you like your photos saved to the Camera Roll, or would you like them saved in this app only?"
@@ -45,11 +46,12 @@ class CameraRollPermissionsViewController: PermissionsEducationViewController {
     }
     
     
-    // MARK: - Camera Access
+    // MARK: - Photos Access
     
     func requestAccessFromSystem() {
         // Doesn't return on main queue!
-        AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { result in
+        PHPhotoLibrary.requestAuthorization { result in
+            print("photos result: \(result)")
             DispatchQueue.main.async {
                 if self.presentedViewController != nil {
                     self.dismiss(animated: false, completion: nil)
@@ -63,8 +65,8 @@ class CameraRollPermissionsViewController: PermissionsEducationViewController {
         guard let appSettingsURL = URL(string: UIApplicationOpenSettingsURLString) else {
             fatalError("Couldn't get deep link to app settings")
         }
-        let controller = UIAlertController(title: "\(appName) Needs Camera Access",
-            message: "Please enable Camera access in Settings to continue.",
+        let controller = UIAlertController(title: "\(appName) Needs Photos Access",
+            message: "Enable Photos access in Settings to be able to save photos to your Camera Roll.",
             preferredStyle: .alert)
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -78,12 +80,12 @@ class CameraRollPermissionsViewController: PermissionsEducationViewController {
         
         present(controller, animated: true, completion: nil)
     }
-
+    
     
     // MARK: - User Interaction
     
     func tappedCameraRoll() {
-        let status = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
+        let status = PHPhotoLibrary.authorizationStatus()
         switch status {
         case .notDetermined:
             print("not determined")

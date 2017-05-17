@@ -130,8 +130,12 @@ class FeatureCatalogViewController: UITableViewController {
                                 _ = vc.view
                                 vc.editBar.isHidden = false
                                 return vc }),
-            FeatureCatalogItem(name: "Permissions Window",
-                               actionBlock: { PermissionsWindow.show(animated: true) }),
+            FeatureCatalogItem(name: "Camera Permissions",
+                               actionBlock: { PermissionsWindow.show(kind: .camera,
+                                                                     animated: true) }),
+            FeatureCatalogItem(name: "Photos Permissions",
+                               actionBlock: { PermissionsWindow.show(kind: .photos,
+                                                                     animated: true) }),
             FeatureCatalogItem(name: "Permissions Button Indicator",
                                creationBlock: {
                                 let frame = CGRect(x: 160.5, y: 321.5, width: 134.5, height: 44)
