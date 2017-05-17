@@ -8,6 +8,7 @@
 
 import UIKit
 import Cartography
+import AVFoundation
 
 fileprivate typealias LocalClass = CameraRollPermissionsViewController
 class CameraRollPermissionsViewController: UIViewController {
@@ -136,10 +137,144 @@ class CameraRollPermissionsViewController: UIViewController {
         return button
     }
     
+    // MARK: - Alert Proxy
+    
+    let proxyAlertOkayText = "OK"
+    var proxyWindow: UIWindow?
+    
+    typealias ButtonFrameCompletionBlock = (_ buttonFrame: CGRect?) -> Void
+    
+    func retrieveButtonFrameFromAlertProxy(completion: @escaping ButtonFrameCompletionBlock) {
+        let presentingController = UIViewController()
+        proxyWindow = createProxyWindow(withViewController: presentingController)
+        
+        let alertController = proxyAlertController()
+        
+        presentingController.present(alertController, animated: false, completion: {
+            guard let confirmationButton = self.findConfirmationButton(inAlertController: alertController) else {
+                self.tearDownAlertProxy()
+                completion(nil)
+                return
+            }
+            let buttonFrame = confirmationButton.convert(confirmationButton.frame, to: self.view)
+            presentingController.dismiss(animated: false, completion: {
+                self.tearDownAlertProxy()
+                completion(buttonFrame)
+            })
+        })
+    }
+    
+    func showOkayButtonIndicator(withOkayButtonFrame buttonFrame: CGRect, after: @escaping ()->Void) {
+        let indicator = PermissionsButtonIndicatorViewController()
+        indicator.okayButtonPlaceholder.frame = buttonFrame
+        present(indicator, animated: false, completion: {
+            after()
+        })
+    }
+    
+    func createProxyWindow(withViewController viewController: UIViewController) -> UIWindow {
+        let window = UIWindow()
+        window.rootViewController = viewController
+        window.isHidden = false
+        window.windowLevel = UIWindowLevelNormal - 1
+        return window
+    }
+    
+    func tearDownAlertProxy() {
+        proxyWindow?.isHidden = true
+        proxyWindow = nil
+    }
+    
+    var appName: String {
+        if let appName = Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String {
+            return appName
+        }
+        
+        guard let appName = Bundle.main.infoDictionary?["CFBundleName"] as? String else {
+            fatalError("Missing app name in Info.plist!")
+        }
+        
+        return appName
+    }
+    
+    func proxyAlertController() -> UIAlertController {
+        let controller = UIAlertController(title: "“\(appName)“ Would Like to Access the Camera",
+            message: "Allow to be able to take photos and videos.",
+            preferredStyle: .alert)
+        
+        let dontAllow = UIAlertAction(title: "Don‘t Allow", style: .default, handler: nil)
+        let okay = UIAlertAction(title: proxyAlertOkayText, style: .default, handler: nil)
+        
+        controller.addAction(dontAllow)
+        controller.addAction(okay)
+        controller.preferredAction = okay
+        return controller
+    }
+    
+    func findConfirmationButton(inAlertController alertController: UIAlertController) -> UIView? {
+        if let label = findChildLabel(inView: alertController.view, withText: proxyAlertOkayText) {
+            print("found label: \(label)")
+            if let button = findButtonSuperview(forLabel: label) {
+                print("found button: \(button)")
+                return button
+            }
+        }
+        return nil
+    }
+    
+    func findChildLabel(inView view: UIView, withText text: String) -> UILabel? {
+        let subviews = view.subviews
+        
+        for subview in subviews {
+            if let label = subview as? UILabel {
+                if label.text == text {
+                    return label
+                }
+            }
+            
+            if let label = findChildLabel(inView: subview, withText: text) {
+                return label
+            }
+        }
+        
+        return nil
+    }
+    
+    func findButtonSuperview(forLabel label: UILabel) -> UIView? {
+        let minimumWidth: CGFloat = 90
+        var superViewMaybe = label.superview
+        while let superview = superViewMaybe {
+            if superview.frame.width >= minimumWidth {
+                return superview
+            }
+            
+            superViewMaybe = superview.superview
+        }
+        
+        return nil
+    }
+    
+    // MARK: - Camera Access
+    
+    func requestAccessFromSystem() {
+        AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { result in
+            print("result: \(result)")
+            PermissionsWindow.dismiss()
+        }
+    }
+    
     // MARK: - User Interaction
     
     func tappedCameraRoll() {
-        PermissionsWindow.dismiss()
+        retrieveButtonFrameFromAlertProxy { buttonFrame in
+            if let buttonFrame = buttonFrame {
+                self.showOkayButtonIndicator(withOkayButtonFrame: buttonFrame) {
+                    self.requestAccessFromSystem()
+                }
+            } else {
+                self.requestAccessFromSystem()
+            }
+        }
     }
     
     func tappedThisAppOnly() {

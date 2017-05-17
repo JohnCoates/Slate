@@ -16,6 +16,7 @@ class InvertedMaskButtonViewController: UIViewController {
     enum Kind {
         case checkmark
         case flipCamera
+        case buttonIndicatr
     }
     
     let kind: Kind
@@ -51,6 +52,14 @@ class InvertedMaskButtonViewController: UIViewController {
             button = InverseMaskGroupedPathButton(icon: FlippedCameraIcon())
             width = 36
             heightRatio = 0.9429
+        case .buttonIndicatr:
+            view.backgroundColor = UIColor.white
+            let icon = ButtonIndicatorIcon()
+            let iconView = CanvasIconView(icon: icon)
+            button = iconView
+            button.backgroundColor = UIColor.clear
+            width = 30
+            heightRatio = icon.height / icon.width
         }
         
         view.addSubview(button)

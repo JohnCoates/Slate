@@ -142,7 +142,9 @@ class FeatureCatalogViewController: UITableViewController {
             FeatureCatalogItem(name: "Inverted Mask Button",
                                creationBlock: { InvertedMaskButtonViewController(kind: .checkmark) }),
             FeatureCatalogItem(name: "Flip Camera Button",
-                               creationBlock: { InvertedMaskButtonViewController(kind: .flipCamera) })   
+                               creationBlock: { InvertedMaskButtonViewController(kind: .flipCamera) }),
+            FeatureCatalogItem(name: "Button Indicator",
+                               creationBlock: { InvertedMaskButtonViewController(kind: .buttonIndicatr) }),
         ]
         
         return Section(title: "Buttons", items: items)
