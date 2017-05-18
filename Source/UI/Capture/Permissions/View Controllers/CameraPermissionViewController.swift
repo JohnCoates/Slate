@@ -16,7 +16,6 @@ class CameraPermissionViewController: PermissionsEducationViewController {
     // MARK: - Configuration
     
     override func configureEducation() {
-        super.configureEducation()
         configureButtons()
         
         educationImage = CameraEducationImage()
@@ -56,23 +55,7 @@ class CameraPermissionViewController: PermissionsEducationViewController {
     }
     
     func showDeniedCameraScreen() {
-        guard let appSettingsURL = URL(string: UIApplicationOpenSettingsURLString) else {
-            fatalError("Couldn't get deep link to app settings")
-        }
-        let controller = UIAlertController(title: "\(appName) Needs Camera Access",
-            message: "Please enable Camera access in Settings to continue.",
-            preferredStyle: .alert)
-        
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        controller.addAction(cancel)
-        
-        let openSettings = UIAlertAction(title: "Settings", style: .default) { alertAction in
-            UIApplication.shared.openURL(appSettingsURL)
-        }
-        controller.addAction(openSettings)
-        controller.preferredAction = openSettings
-        
-        present(controller, animated: true, completion: nil)
+        present(CameraDeniedPermisionViewController(), animated: true, completion: nil)
     }
     
     // MARK: - User Interaction
@@ -81,10 +64,8 @@ class CameraPermissionViewController: PermissionsEducationViewController {
         let status = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
         switch status {
         case .notDetermined:
-            print("not determined")
             break
         case .authorized:
-            print("authorized")
             PermissionsWindow.dismiss()
             return
         case .denied, .restricted:

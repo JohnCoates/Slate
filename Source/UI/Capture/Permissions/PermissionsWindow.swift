@@ -15,7 +15,9 @@ class PermissionsWindow: UIWindow {
     
     enum Kind {
         case camera
+        case cameraDenied
         case photos
+        case photosDenied
     }
     
     class func show(kind: Kind, animated: Bool) {
@@ -81,8 +83,12 @@ class PermissionsWindow: UIWindow {
         switch kind {
         case .camera:
             return CameraPermissionViewController()
+        case .cameraDenied:
+            return CameraDeniedPermisionViewController()
         case .photos:
             return PhotosPermissionViewController()
+        case .photosDenied:
+            return PhotosDeniedPermisionViewController()
         }
     }
 

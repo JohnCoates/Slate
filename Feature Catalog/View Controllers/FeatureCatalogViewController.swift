@@ -57,6 +57,7 @@ class FeatureCatalogViewController: UITableViewController {
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        cell.selectionStyle = .none
         let item = sections[indexPath.section].items[indexPath.row]
         cell.textLabel?.text = item.name
         return cell
@@ -130,11 +131,17 @@ class FeatureCatalogViewController: UITableViewController {
                                 _ = vc.view
                                 vc.editBar.isHidden = false
                                 return vc }),
-            FeatureCatalogItem(name: "Camera Permissions",
+            FeatureCatalogItem(name: "Camera Permission",
                                actionBlock: { PermissionsWindow.show(kind: .camera,
                                                                      animated: true) }),
-            FeatureCatalogItem(name: "Photos Permissions",
+            FeatureCatalogItem(name: "Camera Denied Permission",
+                               actionBlock: { PermissionsWindow.show(kind: .cameraDenied,
+                                                                     animated: true) }),
+            FeatureCatalogItem(name: "Photos Permission",
                                actionBlock: { PermissionsWindow.show(kind: .photos,
+                                                                     animated: true) }),
+            FeatureCatalogItem(name: "Photos Denied Permission",
+                               actionBlock: { PermissionsWindow.show(kind: .photosDenied,
                                                                      animated: true) }),
             FeatureCatalogItem(name: "Permissions Button Indicator",
                                creationBlock: {

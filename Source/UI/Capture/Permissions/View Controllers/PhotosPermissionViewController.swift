@@ -17,16 +17,13 @@ class PhotosPermissionViewController: PermissionsEducationViewController {
     // MARK: - Configuration
     
     override func configureEducation() {
-        super.configureEducation()
         configureButtons()
         
         educationImage = PhotosEducationImage()
         educationImageSize = CGSize(width: 118, height: 102)
         
-        var explanation: String
-        explanation =  "Would you like your photos saved to the Camera Roll, "
-        explanation += "or would you like them saved in this app only?"
-        self.explanation = explanation
+        explanation =  "Would you like your photos saved to the Camera Roll, " +
+        "or would you like them saved in this app only?"
     }
     
     func configureButtons() {
@@ -63,24 +60,8 @@ class PhotosPermissionViewController: PermissionsEducationViewController {
         }
     }
     
-    func showDeniedCameraRollScreen() {
-        guard let appSettingsURL = URL(string: UIApplicationOpenSettingsURLString) else {
-            fatalError("Couldn't get deep link to app settings")
-        }
-        let controller = UIAlertController(title: "\(appName) Needs Photos Access",
-            message: "Enable Photos access in Settings to be able to save photos to your Camera Roll.",
-            preferredStyle: .alert)
-        
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        controller.addAction(cancel)
-        
-        let openSettings = UIAlertAction(title: "Settings", style: .default) { alertAction in
-            UIApplication.shared.openURL(appSettingsURL)
-        }
-        controller.addAction(openSettings)
-        controller.preferredAction = openSettings
-        
-        present(controller, animated: true, completion: nil)
+    func showDeniedPhotosScreen() {
+        present(PhotosDeniedPermisionViewController(), animated: true, completion: nil)
     }    
     
     // MARK: - User Interaction
@@ -97,7 +78,7 @@ class PhotosPermissionViewController: PermissionsEducationViewController {
             return
         case .denied, .restricted:
             print("denied")
-            showDeniedCameraRollScreen()
+            showDeniedPhotosScreen()
             return
         }
         

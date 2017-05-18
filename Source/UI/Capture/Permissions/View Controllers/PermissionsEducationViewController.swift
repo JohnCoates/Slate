@@ -35,13 +35,14 @@ class PermissionsEducationViewController: UIViewController {
     
     /// Used by subclasses
     func configureEducation() {
-        
+        fatalError("configureEducation not implemented")
     }
     
     func setUpViews() {
         setUpDialog()
         setUpImageView()
         setUpExplanation()
+        setUpPreviewView()
         setUpButtons()
     }
     
@@ -108,6 +109,76 @@ class PermissionsEducationViewController: UIViewController {
         }
     }
     
+    var previewView: UIView?
+    func setUpPreviewView() {
+    }
+    
+    func privacyCellPreview(withText text: String) -> UIView {
+        let separatorHeight = 1.pixelsAsPoints
+        var cellHeight = UITableViewCell(style: .default, reuseIdentifier: nil).frame.height
+        cellHeight += separatorHeight * 2
+        
+        let label = UILabel(frame: .zero)
+        label.text = text
+        label.font = UIFont.systemFont(ofSize: 17, weight: UIFontWeightRegular)
+        label.textColor = .black
+        
+        let toggle = UISwitch(frame: .zero)
+        toggle.isUserInteractionEnabled = false
+        toggle.isOn = true
+        
+        let preview = UIView(frame: .zero)
+        preview.backgroundColor = UIColor.white
+        
+        dialog.addSubview(preview)
+        constrain(preview, explanationLabel) { preview, explanationLabel in
+            let superview = preview.superview!
+            preview.height == cellHeight
+            preview.left == superview.left
+            preview.right == superview.right
+            preview.top == explanationLabel.bottom + 16
+        }
+        
+        addCellSeparator(kind: .top, toCellView: preview)
+        addCellSeparator(kind: .bottom, toCellView: preview)
+        
+        preview.add(subviews: [label, toggle])
+        constrain(label, toggle) {
+            let superview = $0.superview!
+            $0.centerY == superview.centerY
+            $1.centerY == $0.centerY
+            
+            $0.left == superview.left + 15
+            $1.right == superview.right - 15
+        }
+        
+        return preview
+    }
+    
+    enum CellSeparatorKind {
+        case top
+        case bottom
+    }
+    
+    func addCellSeparator(kind: CellSeparatorKind, toCellView cellView: UIView) {
+        let separator = UIView(frame: .zero)
+        separator.backgroundColor = UIColor(red:0.78, green:0.78, blue:0.80, alpha:1.00)
+        cellView.addSubview(separator)
+        
+        constrain(separator) {
+            let superview = $0.superview!
+            $0.height == 1.pixelsAsPoints
+            $0.left == superview.left
+            $0.right == superview.right
+            switch kind {
+            case .top:
+                $0.top == superview.top
+            case .bottom:
+                $0.bottom == superview.bottom
+            }
+        }
+    }
+    
     func setUpButtons() {
         var lastButton: Button?
         
@@ -118,6 +189,9 @@ class PermissionsEducationViewController: UIViewController {
             if let lastButtonReal = lastButton {
                 aboveView = lastButtonReal
                 distanceFromAboveView = 13
+            } else if let previewView = previewView {
+                aboveView = previewView
+                distanceFromAboveView = 19
             } else {
                 aboveView = explanationLabel
                 distanceFromAboveView = 16

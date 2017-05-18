@@ -144,6 +144,8 @@
 		FA5709A71ECC7172000362C8 /* PhotosPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5709A51ECC7172000362C8 /* PhotosPermissionViewController.swift */; };
 		FA5709A91ECC732A000362C8 /* CameraEducationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5709A81ECC732A000362C8 /* CameraEducationImage.swift */; };
 		FA5709AA1ECC732A000362C8 /* CameraEducationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5709A81ECC732A000362C8 /* CameraEducationImage.swift */; };
+		FA5709AD1ECD4A36000362C8 /* CameraDeniedPermisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5709AC1ECD4A36000362C8 /* CameraDeniedPermisionViewController.swift */; };
+		FA5709AE1ECD4A36000362C8 /* CameraDeniedPermisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5709AC1ECD4A36000362C8 /* CameraDeniedPermisionViewController.swift */; };
 		FA78F28E1E144C0E00D34947 /* DebugBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F28D1E144C0E00D34947 /* DebugBarController.swift */; };
 		FA78F2921E144E4600D34947 /* DebugBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */; };
 		FA78F2941E144E4E00D34947 /* DebugBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2931E144E4E00D34947 /* DebugBarItem.swift */; };
@@ -161,6 +163,14 @@
 		FA8AA5461ECC13140093D317 /* CanvasIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AA5441ECC13140093D317 /* CanvasIconView.swift */; };
 		FA8AA5481ECC13970093D317 /* CanvasIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AA5471ECC13970093D317 /* CanvasIcon.swift */; };
 		FA8AA5491ECC13970093D317 /* CanvasIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AA5471ECC13970093D317 /* CanvasIcon.swift */; };
+		FA8CE4221ECD7E5A00788026 /* Int+Pixels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CE4211ECD7E5A00788026 /* Int+Pixels.swift */; };
+		FA8CE4231ECD7E5A00788026 /* Int+Pixels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CE4211ECD7E5A00788026 /* Int+Pixels.swift */; };
+		FA8CE4251ECD7FA700788026 /* UIView+subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CE4241ECD7FA700788026 /* UIView+subviews.swift */; };
+		FA8CE4261ECD7FA700788026 /* UIView+subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CE4241ECD7FA700788026 /* UIView+subviews.swift */; };
+		FA8CE4281ECD8AE700788026 /* UIGestureRecognizer+Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CE4271ECD8AE700788026 /* UIGestureRecognizer+Closure.swift */; };
+		FA8CE4291ECD8AE700788026 /* UIGestureRecognizer+Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CE4271ECD8AE700788026 /* UIGestureRecognizer+Closure.swift */; };
+		FA8CE42B1ECDA16A00788026 /* PhotosDeniedPermisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CE42A1ECDA16A00788026 /* PhotosDeniedPermisionViewController.swift */; };
+		FA8CE42C1ECDA16A00788026 /* PhotosDeniedPermisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CE42A1ECDA16A00788026 /* PhotosDeniedPermisionViewController.swift */; };
 		FA9F89E61D953C540058C369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F89E51D953C540058C369 /* AppDelegate.swift */; };
 		FA9F89ED1D953C540058C369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9F89EC1D953C540058C369 /* Assets.xcassets */; };
 		FA9F89F01D953C540058C369 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9F89EE1D953C540058C369 /* LaunchScreen.storyboard */; };
@@ -372,6 +382,7 @@
 		FA5709A11ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsPreferredButtonIndicatorController.swift; sourceTree = "<group>"; };
 		FA5709A51ECC7172000362C8 /* PhotosPermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosPermissionViewController.swift; sourceTree = "<group>"; };
 		FA5709A81ECC732A000362C8 /* CameraEducationImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraEducationImage.swift; sourceTree = "<group>"; };
+		FA5709AC1ECD4A36000362C8 /* CameraDeniedPermisionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraDeniedPermisionViewController.swift; sourceTree = "<group>"; };
 		FA78F28D1E144C0E00D34947 /* DebugBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarController.swift; sourceTree = "<group>"; };
 		FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarDelegate.swift; sourceTree = "<group>"; };
 		FA78F2931E144E4E00D34947 /* DebugBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarItem.swift; sourceTree = "<group>"; };
@@ -386,6 +397,10 @@
 		FA8AA5401ECC107F0093D317 /* ButtonIndicatorIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonIndicatorIcon.swift; sourceTree = "<group>"; };
 		FA8AA5441ECC13140093D317 /* CanvasIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasIconView.swift; sourceTree = "<group>"; };
 		FA8AA5471ECC13970093D317 /* CanvasIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasIcon.swift; sourceTree = "<group>"; };
+		FA8CE4211ECD7E5A00788026 /* Int+Pixels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Pixels.swift"; sourceTree = "<group>"; };
+		FA8CE4241ECD7FA700788026 /* UIView+subviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+subviews.swift"; sourceTree = "<group>"; };
+		FA8CE4271ECD8AE700788026 /* UIGestureRecognizer+Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Closure.swift"; sourceTree = "<group>"; };
+		FA8CE42A1ECDA16A00788026 /* PhotosDeniedPermisionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosDeniedPermisionViewController.swift; sourceTree = "<group>"; };
 		FA9F89E21D953C540058C369 /* Slate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9F89E51D953C540058C369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA9F89EC1D953C540058C369 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1019,6 +1034,16 @@
 			path = "Code Icon Views";
 			sourceTree = "<group>";
 		};
+		FA8CE4201ECD7E4600788026 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FA8CE4211ECD7E5A00788026 /* Int+Pixels.swift */,
+				FA8CE4241ECD7FA700788026 /* UIView+subviews.swift */,
+				FA8CE4271ECD8AE700788026 /* UIGestureRecognizer+Closure.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		FA9F89D91D953C540058C369 = {
 			isa = PBXGroup;
 			children = (
@@ -1258,7 +1283,9 @@
 			isa = PBXGroup;
 			children = (
 				FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */,
+				FA5709AC1ECD4A36000362C8 /* CameraDeniedPermisionViewController.swift */,
 				FA5709A51ECC7172000362C8 /* PhotosPermissionViewController.swift */,
+				FA8CE42A1ECDA16A00788026 /* PhotosDeniedPermisionViewController.swift */,
 				FA1A2C9C1ECC57C60075FA0B /* PermissionsEducationViewController.swift */,
 				FA1C237F1ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift */,
 			);
@@ -1293,6 +1320,7 @@
 		FAF10D111ECAD2E70008690E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FA8CE4201ECD7E4600788026 /* UI */,
 				FAF10D121ECAD2F90008690E /* Realm */,
 			);
 			path = Extensions;
@@ -1649,6 +1677,7 @@
 				FA0462BB1EC3DF88007B74A0 /* Kit.swift in Sources */,
 				FAF10D0E1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
 				FA5709A61ECC7172000362C8 /* PhotosPermissionViewController.swift in Sources */,
+				FA8CE4281ECD8AE700788026 /* UIGestureRecognizer+Closure.swift in Sources */,
 				FA1805981EC54F38004351B7 /* CircleView.swift in Sources */,
 				FA2B1E711EC9239F00E44613 /* CheckmarkIcon.swift in Sources */,
 				FA5709A21ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift in Sources */,
@@ -1674,6 +1703,8 @@
 				FA2B1E681EC922FD00E44613 /* LayoutConstraint+Modifying.swift in Sources */,
 				FA2B1E5F1EC817C000E44613 /* InverseMaskButton.swift in Sources */,
 				FA4D54161DB055A00091184D /* FragmentFilter.swift in Sources */,
+				FA8CE4221ECD7E5A00788026 /* Int+Pixels.swift in Sources */,
+				FA8CE42B1ECDA16A00788026 /* PhotosDeniedPermisionViewController.swift in Sources */,
 				FA1C23801ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift in Sources */,
 				FA2F8E531DA23E5500993949 /* PassthroughFilter.swift in Sources */,
 				FAF10D011ECAA9170008690E /* GroupedPathButton.swift in Sources */,
@@ -1681,10 +1712,12 @@
 				FA834BE41D9929710017CCCA /* CaptureButton.swift in Sources */,
 				FA0462B91EC3DF81007B74A0 /* KitManager.swift in Sources */,
 				FA2F8E471DA2293000993949 /* AbstractFilter.swift in Sources */,
+				FA8CE4251ECD7FA700788026 /* UIView+subviews.swift in Sources */,
 				FA0462C51EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift in Sources */,
 				FA2B1EB21EC97E7300E44613 /* CodeIconButton.swift in Sources */,
 				FA0462BF1EC3DFE1007B74A0 /* CameraPositionComponent.swift in Sources */,
 				FABB169E1D9F308C00A8AC6C /* Vertices.swift in Sources */,
+				FA5709AD1ECD4A36000362C8 /* CameraDeniedPermisionViewController.swift in Sources */,
 				FABB16B51D9F886300A8AC6C /* BaseCaptureViewController.swift in Sources */,
 				FAF10D081ECAD03A0008690E /* BaseCaptureViewController+Debug.swift in Sources */,
 				FA0462C71EC4252D007B74A0 /* ComponentItemCellDelegate.swift in Sources */,
@@ -1769,6 +1802,7 @@
 				FA5709A71ECC7172000362C8 /* PhotosPermissionViewController.swift in Sources */,
 				FA2B1E591EC80E8500E44613 /* FeatureCatalogItem.swift in Sources */,
 				FAF10D0F1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
+				FA8CE4261ECD7FA700788026 /* UIView+subviews.swift in Sources */,
 				FA2B1E881EC92B5B00E44613 /* ChromaticAberration.metal in Sources */,
 				FA5709A31ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift in Sources */,
 				FA2B1E691EC922FD00E44613 /* LayoutConstraint+Modifying.swift in Sources */,
@@ -1784,6 +1818,7 @@
 				FA2B1E981EC92B5B00E44613 /* ComponentMenuBar.swift in Sources */,
 				FA2B1E8C1EC92B5B00E44613 /* KitManager.swift in Sources */,
 				FA2B1E821EC92B5B00E44613 /* GaussianBlur.metal in Sources */,
+				FA8CE4291ECD8AE700788026 /* UIGestureRecognizer+Closure.swift in Sources */,
 				FA2B1E931EC92B5B00E44613 /* ControlBarItemCell.swift in Sources */,
 				FA2B1E781EC928A300E44613 /* XIcon.swift in Sources */,
 				FA57099F1ECC5F80000362C8 /* PhotosEducationImage.swift in Sources */,
@@ -1800,9 +1835,11 @@
 				FA2B1E831EC92B5B00E44613 /* DragGesture.swift in Sources */,
 				FA8AA5461ECC13140093D317 /* CanvasIconView.swift in Sources */,
 				FA2B1EB31EC97E7300E44613 /* CodeIconButton.swift in Sources */,
+				FA5709AE1ECD4A36000362C8 /* CameraDeniedPermisionViewController.swift in Sources */,
 				FA1A2C9E1ECC57C60075FA0B /* PermissionsEducationViewController.swift in Sources */,
 				FA2B1EA01EC92B5B00E44613 /* Passthrough.metal in Sources */,
 				FA2B1E8A1EC92B5B00E44613 /* PassthroughFilter.swift in Sources */,
+				FA8CE42C1ECDA16A00788026 /* PhotosDeniedPermisionViewController.swift in Sources */,
 				FA2B1E9C1EC92B5B00E44613 /* EditPosition.swift in Sources */,
 				FA2B1E801EC92B5B00E44613 /* DebugBarView.swift in Sources */,
 				FA2B1E601EC817C000E44613 /* InverseMaskButton.swift in Sources */,
@@ -1814,6 +1851,7 @@
 				FA2B1E7C1EC92B5B00E44613 /* ComputeFilter.swift in Sources */,
 				FAF10D0C1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift in Sources */,
 				FAF10D191ECAFF1D0008690E /* PermissionsWindow.swift in Sources */,
+				FA8CE4231ECD7E5A00788026 /* Int+Pixels.swift in Sources */,
 				FA2B1E9A1EC92B5B00E44613 /* ComponentEditBarDelegate.swift in Sources */,
 				FAF10D021ECAA9170008690E /* GroupedPathButton.swift in Sources */,
 				FA2B1E891EC92B5B00E44613 /* FragmentFilter.swift in Sources */,
