@@ -33,6 +33,7 @@ EditRounding, EditSize, EditPosition {
             frame.origin = newValue
         }
     }
+    
     var size: Float {
         get {
             return Float(frame.size.width)

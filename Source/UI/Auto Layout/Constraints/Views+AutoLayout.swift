@@ -101,6 +101,28 @@ extension UIView {
         return nil
     }
     
+    func constraintInvolvingView(_ view: UIView,
+                                 attribute: NSLayoutAttribute,
+                                 relation: NSLayoutRelation) -> NSLayoutConstraint? {
+        let allConstraints = self.constraints
+        
+        for constraint in allConstraints {
+            if let firstItem = constraint.firstItem as? UIView, firstItem == view {
+                if constraint.firstAttribute == attribute &&
+                    constraint.relation == relation {
+                    return constraint
+                }
+            } else if let secondItem = constraint.secondItem as? UIView, secondItem == view {
+                if constraint.secondAttribute == attribute &&
+                    constraint.relation == relation {
+                    return constraint
+                }
+            }
+        }
+        
+        return nil
+    }
+    
     func constraintWithAttribute(_ attribute: NSLayoutAttribute) -> NSLayoutConstraint? {
         let allConstraints = self.constraints
         let index = allConstraints.index { $0.firstAttribute == attribute || $0.secondAttribute == attribute }
@@ -108,7 +130,11 @@ extension UIView {
         if let index = index {
             return allConstraints[index]
         } else {
-            return nil
+            if let superview = superview {
+                return superview.constraintInvolvingView(self, attribute: attribute)
+            } else {
+                return nil
+            }
         }
     }
     

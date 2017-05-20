@@ -39,6 +39,33 @@ class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate {
         loadComponents()
     }
     
+    // MARK: - View Rotation
+    
+    var keepUpright = [UIView]()
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .all
+    }
+    
+    override func viewWillTransition(to size: CGSize,
+                                     with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        let oldBounds = view.bounds
+        coordinator.animate(alongsideTransition: { context in
+            self.rootViewUpdateBounds(oldBounds: oldBounds, targetSize: size)
+            self.rootViewApplyRotationCorrectingTransform(targetTransform: context.targetTransform)
+            self.applyUprightTransformToSubscribedViews()
+            
+            let orientation = UIScreen.orientation
+            self.transitionKit(to: size, orientation: orientation)
+            
+            self.view.layoutIfNeeded()
+        }) { context in
+            self.rootViewRoundTransformNowThatAnimationFinished()
+        }
+    }
+    
     // MARK: - Setup
     
     func cameraSetup() {
@@ -47,11 +74,7 @@ class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - Placeholder
     
-    fileprivate func placeholderSetup() {
-        let imageView = UIImageView(image: #imageLiteral(resourceName: "HannahDeathValley"))
-        imageView.contentMode = .scaleAspectFill
-        imageView.frame = view.bounds
-        view.insertSubview(imageView, at: 0)
+    func placeholderSetup() {
     }
     
     // MARK: - Controls Setup
