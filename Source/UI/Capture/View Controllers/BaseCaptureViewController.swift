@@ -80,27 +80,8 @@ class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate {
     // MARK: - Controls Setup
     
     fileprivate func controlsSetup() {
-        captureButtonSetup()
         controlMenuSetup()
         componentEditBarSetup()
-    }
-    
-    // MARK: - Capture Button Setup
-    
-    lazy var captureButton: CaptureButton = CaptureButton()
-    fileprivate func captureButtonSetup() {
-        captureButton.setTappedCallback(instance: self,
-                                        method: Method.captureTapped)
-        addLongPressGesture(toControl: captureButton)
-        view.addSubview(captureButton)
-        
-        constrain(captureButton) {
-            let superview = $0.superview!
-            $0.width == 75
-            $0.height == $0.width
-            $0.centerX == superview.centerX
-            $0.bottom == superview.bottom - 15
-        }
     }
     
     // MARK: - Component Menu Setup
@@ -143,29 +124,6 @@ class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate {
         return true
     }
     
-    // MARK: - Editable Controls
-    
-    var editingControls = false {
-        didSet {
-            if editingControls {
-                captureButton.startKeyTimesJitter()
-            } else {
-                captureButton.stopJittter()
-            }
-        }
-    }
-    
-    func addLongPressGesture(toControl control: UIView) {
-        let longPress = UILongPressGestureRecognizer(target: self, action: .controlWasLongPressed)
-        control.addGestureRecognizer(longPress)
-    }
-    
-    func controlWasLongPressed(gesture: UITapGestureRecognizer) {
-        if gesture.state == .began {
-            editingControls = !editingControls
-        }
-    }
-    
     // MARK: - Load Kit
     
     func loadComponents() {
@@ -182,7 +140,11 @@ class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate {
         addEditGesture(toComponent: component)
         
         if let componentView = component.view as? FrontBackCameraToggle {
-            componentView.setTappedCallback(instance: self, method: Method.switchCamera)
+            componentView.setTappedCallback(instance: self,
+                                            method: Method.switchCamera)
+        } else if let componentView = component.view as? CaptureButton {
+            componentView.setTappedCallback(instance: self,
+                                            method: Method.capture)
         }
     }
     
@@ -206,20 +168,20 @@ class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - Camera Actions
     
-    func switchCamera() {
-        print("Switch camera!")
+    func capture() {
+        print("capture tapped")
     }
     
-    func captureTapped() {
-        print("capture tapped")
+    func switchCamera() {
+        print("Switch camera!")
     }
 }
 
 // MARK: - Callbacks
 
 private struct Method {
-    static let captureTapped = LocalClass.captureTapped
     static let switchCamera = LocalClass.switchCamera
+    static let capture = LocalClass.capture
 }
 
 // MARK: - Selector Extension
@@ -227,6 +189,5 @@ private struct Method {
 fileprivate extension Selector {
     static let menuDragged = #selector(LocalClass.menuDragged)
     static let editBarDragged = #selector(LocalClass.editBarDragged)
-    static let controlWasLongPressed = #selector(LocalClass.controlWasLongPressed)
     static let componentEditGesture = #selector(LocalClass.componentEditGesture)
 }

@@ -30,7 +30,7 @@ final class SimulatorCaptureViewController: BaseCaptureViewController {
 
     // MARK: - Capturing
 
-    override func captureTapped() {
+    override func capture() {
         print("simulator capture tapped")
     }
 }

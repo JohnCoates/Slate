@@ -27,7 +27,7 @@ final class MetalCaptureViewController: BaseCaptureViewController {
     
     // MARK: - Capturing
     
-    override func captureTapped() {
+    override func capture() {
         print("metal capture")
     }
     

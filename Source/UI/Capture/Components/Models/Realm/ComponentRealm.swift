@@ -47,12 +47,17 @@ class ComponentUnionRealm: Object {
     
     enum Kind: Int {
         case cameraPosition = 0
+        case capture = 1
     }
     
     dynamic var cameraPosition: CameraPositionComponentRealm?
+    dynamic var capture: CaptureComponentRealm?
+    
     func configure(withComponent component: Component) {
         if let cameraPosition = component as? CameraPositionComponent {
             configure(withCameraPosition: cameraPosition)
+        } else if let capture = component as? CaptureComponent {
+            configure(withCapture: capture)
         } else {
             fatalError("Missing component case for: \(component)")
         }
@@ -63,6 +68,11 @@ class ComponentUnionRealm: Object {
         self.cameraPosition = cameraPosition.createRealmObject() as? CameraPositionComponentRealm
     }
     
+    func configure(withCapture capture: CaptureComponent) {
+        kind = Kind.capture.rawValue
+        self.capture = capture.createRealmObject() as? CaptureComponentRealm
+    }
+    
     func instance() -> Component {
         guard let kind = Kind(rawValue: self.kind) else {
             fatalError("Unsupported kind: \(self.kind)")
@@ -70,10 +80,15 @@ class ComponentUnionRealm: Object {
         
         switch kind {
         case .cameraPosition:
-            guard let cameraPosition = self.cameraPosition else {
+            guard let typed = self.cameraPosition else {
                 fatalError("Missing cameraPosition variable")
             }
-            return cameraPosition.instance()
+            return typed.instance()
+        case .capture:
+            guard let typed = self.capture else {
+                fatalError("Missing capture variable")
+            }
+            return typed.instance()
         }
     }
 }

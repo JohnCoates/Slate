@@ -172,6 +172,5 @@ extension BaseCaptureViewController: ComponentEditBarDelegate {
 fileprivate extension Selector {
     static let menuDragged = #selector(LocalClass.menuDragged)
     static let editBarDragged = #selector(LocalClass.editBarDragged)
-    static let controlWasLongPressed = #selector(LocalClass.controlWasLongPressed)
     static let componentEditGesture = #selector(LocalClass.componentEditGesture)
 }
