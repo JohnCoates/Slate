@@ -152,6 +152,8 @@
 		FA5F8CA01ECFF81400921A61 /* UIScreen+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8C9E1ECFF81400921A61 /* UIScreen+Layout.swift */; };
 		FA5F8CA21ED05B7B00921A61 /* BaseCaptureViewController+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CA11ED05B7B00921A61 /* BaseCaptureViewController+Rotation.swift */; };
 		FA5F8CA31ED05B7B00921A61 /* BaseCaptureViewController+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CA11ED05B7B00921A61 /* BaseCaptureViewController+Rotation.swift */; };
+		FA5F8CA61ED0649200921A61 /* Font+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CA51ED0649200921A61 /* Font+Convenience.swift */; };
+		FA5F8CA71ED0649200921A61 /* Font+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CA51ED0649200921A61 /* Font+Convenience.swift */; };
 		FA78F28E1E144C0E00D34947 /* DebugBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F28D1E144C0E00D34947 /* DebugBarController.swift */; };
 		FA78F2921E144E4600D34947 /* DebugBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */; };
 		FA78F2941E144E4E00D34947 /* DebugBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2931E144E4E00D34947 /* DebugBarItem.swift */; };
@@ -392,6 +394,7 @@
 		FA5F8C961ECFE7D000921A61 /* BaseCaptureViewController+Kit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseCaptureViewController+Kit.swift"; sourceTree = "<group>"; };
 		FA5F8C9E1ECFF81400921A61 /* UIScreen+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Layout.swift"; sourceTree = "<group>"; };
 		FA5F8CA11ED05B7B00921A61 /* BaseCaptureViewController+Rotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseCaptureViewController+Rotation.swift"; sourceTree = "<group>"; };
+		FA5F8CA51ED0649200921A61 /* Font+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+Convenience.swift"; sourceTree = "<group>"; };
 		FA78F28D1E144C0E00D34947 /* DebugBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarController.swift; sourceTree = "<group>"; };
 		FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarDelegate.swift; sourceTree = "<group>"; };
 		FA78F2931E144E4E00D34947 /* DebugBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarItem.swift; sourceTree = "<group>"; };
@@ -918,6 +921,14 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
+		FA5F8CA41ED0647600921A61 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FA5F8CA51ED0649200921A61 /* Font+Convenience.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		FA78F28B1E144AC600D34947 /* Debug */ = {
 			isa = PBXGroup;
 			children = (
@@ -1054,6 +1065,7 @@
 		FA8CE4201ECD7E4600788026 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FA5F8CA41ED0647600921A61 /* Fonts */,
 				FA5F8C9D1ECFF7EC00921A61 /* Screen */,
 				FA8CE4211ECD7E5A00788026 /* Int+Pixels.swift */,
 				FA8CE4241ECD7FA700788026 /* UIView+subviews.swift */,
@@ -1733,6 +1745,7 @@
 				FACFE4931ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */,
 				FA834BE41D9929710017CCCA /* CaptureButton.swift in Sources */,
 				FA0462B91EC3DF81007B74A0 /* KitManager.swift in Sources */,
+				FA5F8CA61ED0649200921A61 /* Font+Convenience.swift in Sources */,
 				FA2F8E471DA2293000993949 /* AbstractFilter.swift in Sources */,
 				FA8CE4251ECD7FA700788026 /* UIView+subviews.swift in Sources */,
 				FA0462C51EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift in Sources */,
@@ -1873,6 +1886,7 @@
 				FAF10CFB1ECAA8230008690E /* GroupedPathIcon.swift in Sources */,
 				FA2B1E911EC92B5B00E44613 /* ComponentItemCellDelegate.swift in Sources */,
 				FA2B1E7C1EC92B5B00E44613 /* ComputeFilter.swift in Sources */,
+				FA5F8CA71ED0649200921A61 /* Font+Convenience.swift in Sources */,
 				FA5F8C981ECFE7D000921A61 /* BaseCaptureViewController+Kit.swift in Sources */,
 				FAF10D0C1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift in Sources */,
 				FAF10D191ECAFF1D0008690E /* PermissionsWindow.swift in Sources */,
