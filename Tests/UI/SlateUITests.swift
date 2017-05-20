@@ -30,8 +30,4 @@ class SlateUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testCaptureButton() {
-        XCUIApplication().otherElements["CaptureButton"].tap()
-    }
-    
 }
