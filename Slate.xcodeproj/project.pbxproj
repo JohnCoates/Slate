@@ -409,7 +409,7 @@
 		FA78F29B1E15686C00D34947 /* DebugBarItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarItemView.swift; sourceTree = "<group>"; };
 		FA834BDC1D9920010017CCCA /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		FA834BE01D9927EB0017CCCA /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		FA834BE31D9929710017CCCA /* CaptureButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CaptureButton.swift; path = ../../../Views/CaptureButton.swift; sourceTree = "<group>"; };
+		FA834BE31D9929710017CCCA /* CaptureButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CaptureButton.swift; path = CaptureButton.swift; sourceTree = "<group>"; };
 		FA834BE51D9932BC0017CCCA /* Placeholders.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Placeholders.xcassets; sourceTree = "<group>"; };
 		FA86BE041D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulatorCaptureViewController.swift; sourceTree = "<group>"; };
 		FA8AA5401ECC107F0093D317 /* ButtonIndicatorIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonIndicatorIcon.swift; sourceTree = "<group>"; };
@@ -574,7 +574,7 @@
 				FA5F8CB21ED0958100921A61 /* KeepUpright.swift */,
 			);
 			name = Protocols;
-			path = Protocol;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		FA0462C31EC3E3D3007B74A0 /* Protocols */ = {

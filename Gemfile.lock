@@ -32,7 +32,6 @@ GEM
       clamp (~> 0.6)
       colorize (~> 0.7)
       xcodeproj (~> 1.0)
-    sys-proctable (1.1.4-universal-aix-5)
     sys-proctable (1.1.4-universal-darwin)
       ffi
     tty-color (0.4.2)
