@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let config = Realm.Configuration(schemaVersion: 2, migrationBlock: { migration, oldVersion in
             if oldVersion < 1 {
                 migration.enumerateObjects(ofType: CameraPositionComponentRealm.className(), { oldObject, newObject in
-                    newObject?["rounding"] = CameraPositionComponentRealm.defaultRounding
+                    newObject?["rounding"] = CameraPositionComponent.defaultRounding
                 })
             }
             if oldVersion < 2 {

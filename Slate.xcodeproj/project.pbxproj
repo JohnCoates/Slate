@@ -156,6 +156,8 @@
 		FA5F8CA71ED0649200921A61 /* Font+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CA51ED0649200921A61 /* Font+Convenience.swift */; };
 		FA5F8CB01ED06A5F00921A61 /* CaptureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CAF1ED06A5F00921A61 /* CaptureComponent.swift */; };
 		FA5F8CB11ED06A5F00921A61 /* CaptureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CAF1ED06A5F00921A61 /* CaptureComponent.swift */; };
+		FA5F8CB31ED0958100921A61 /* KeepUpright.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CB21ED0958100921A61 /* KeepUpright.swift */; };
+		FA5F8CB41ED0958100921A61 /* KeepUpright.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CB21ED0958100921A61 /* KeepUpright.swift */; };
 		FA78F28E1E144C0E00D34947 /* DebugBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F28D1E144C0E00D34947 /* DebugBarController.swift */; };
 		FA78F2921E144E4600D34947 /* DebugBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */; };
 		FA78F2941E144E4E00D34947 /* DebugBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2931E144E4E00D34947 /* DebugBarItem.swift */; };
@@ -398,6 +400,7 @@
 		FA5F8CA11ED05B7B00921A61 /* BaseCaptureViewController+Rotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseCaptureViewController+Rotation.swift"; sourceTree = "<group>"; };
 		FA5F8CA51ED0649200921A61 /* Font+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+Convenience.swift"; sourceTree = "<group>"; };
 		FA5F8CAF1ED06A5F00921A61 /* CaptureComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureComponent.swift; sourceTree = "<group>"; };
+		FA5F8CB21ED0958100921A61 /* KeepUpright.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeepUpright.swift; sourceTree = "<group>"; };
 		FA78F28D1E144C0E00D34947 /* DebugBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarController.swift; sourceTree = "<group>"; };
 		FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarDelegate.swift; sourceTree = "<group>"; };
 		FA78F2931E144E4E00D34947 /* DebugBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarItem.swift; sourceTree = "<group>"; };
@@ -549,7 +552,7 @@
 			isa = PBXGroup;
 			children = (
 				FA18058F1EC54755004351B7 /* Realm */,
-				FA0462C01EC3DFEC007B74A0 /* Protocol */,
+				FA0462C01EC3DFEC007B74A0 /* Protocols */,
 				FA0462BD1EC3DFC1007B74A0 /* Toggles */,
 				FA5F8CAE1ED06A4100921A61 /* Capture */,
 			);
@@ -564,11 +567,13 @@
 			path = Toggles;
 			sourceTree = "<group>";
 		};
-		FA0462C01EC3DFEC007B74A0 /* Protocol */ = {
+		FA0462C01EC3DFEC007B74A0 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				FA0462C11EC3E002007B74A0 /* Component.swift */,
+				FA5F8CB21ED0958100921A61 /* KeepUpright.swift */,
 			);
+			name = Protocols;
 			path = Protocol;
 			sourceTree = "<group>";
 		};
@@ -1774,6 +1779,7 @@
 				FA834BE41D9929710017CCCA /* CaptureButton.swift in Sources */,
 				FA0462B91EC3DF81007B74A0 /* KitManager.swift in Sources */,
 				FA5F8CA61ED0649200921A61 /* Font+Convenience.swift in Sources */,
+				FA5F8CB31ED0958100921A61 /* KeepUpright.swift in Sources */,
 				FA2F8E471DA2293000993949 /* AbstractFilter.swift in Sources */,
 				FA8CE4251ECD7FA700788026 /* UIView+subviews.swift in Sources */,
 				FA0462C51EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift in Sources */,
@@ -1891,6 +1897,7 @@
 				FA57099F1ECC5F80000362C8 /* PhotosEducationImage.swift in Sources */,
 				FA2B1E901EC92B5B00E44613 /* Vertices.swift in Sources */,
 				FA2B1EA11EC92B5B00E44613 /* EditRounding.swift in Sources */,
+				FA5F8CB41ED0958100921A61 /* KeepUpright.swift in Sources */,
 				FAF10D151ECAD30D0008690E /* Ream+Filtering.swift in Sources */,
 				FA2B1E951EC92B5B00E44613 /* ComponentEditBar.swift in Sources */,
 				FA2B1E941EC92B5B00E44613 /* DebugWindow.swift in Sources */,

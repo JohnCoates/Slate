@@ -11,3 +11,14 @@ import UIKit
 protocol EditPosition: class {
     var origin: CGPoint { get set }
 }
+
+extension EditPosition where Self: Component {
+    var origin: CGPoint {
+        get {
+            return frame.origin
+        }
+        set {
+            frame.origin = newValue
+        }
+    }
+}

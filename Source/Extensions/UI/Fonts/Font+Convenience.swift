@@ -20,27 +20,25 @@ internal enum FontWeight {
     case black
     
     var rawValue: CGFloat {
-        get {
-            switch self {
-            case .ultraLight:
-                return UIFontWeightUltraLight
-            case .thin:
-                return UIFontWeightThin
-            case .light:
-                return UIFontWeightLight
-            case .regular:
-                return UIFontWeightRegular
-            case .medium:
-                return UIFontWeightMedium
-            case .semibold:
-                return UIFontWeightSemibold
-            case .bold:
-                return UIFontWeightBold
-            case .heavy:
-                return UIFontWeightHeavy
-            case .black:
-                return UIFontWeightBlack
-            }
+        switch self {
+        case .ultraLight:
+            return UIFontWeightUltraLight
+        case .thin:
+            return UIFontWeightThin
+        case .light:
+            return UIFontWeightLight
+        case .regular:
+            return UIFontWeightRegular
+        case .medium:
+            return UIFontWeightMedium
+        case .semibold:
+            return UIFontWeightSemibold
+        case .bold:
+            return UIFontWeightBold
+        case .heavy:
+            return UIFontWeightHeavy
+        case .black:
+            return UIFontWeightBlack
         }
     } // rawValue
 }

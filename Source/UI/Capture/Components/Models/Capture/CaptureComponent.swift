@@ -6,7 +6,6 @@
 //  Copyright © 2017 John Coates. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import RealmSwift
 
@@ -15,49 +14,23 @@ fileprivate typealias LocalView = CaptureButton
 class CaptureComponent: Component, EditRounding, EditSize, EditPosition {
     var editTitle = "Capture"
     
-    var parentKit: Kit?
     var frame: CGRect = .zero {
         didSet {
             view.frame = frame
         }
     }
-    var origin: CGPoint {
-        get {
-            return frame.origin
-        }
-        set {
-            frame.origin = newValue
-        }
-    }
-    
-    var size: Float {
-        get {
-            return Float(frame.size.width)
-        }
-        set {
-            var frame = self.frame
-            let difference: CGFloat
-            difference = CGFloat(newValue) - frame.size.width
-            // center
-            frame.origin.x -= (difference / 2)
-            frame.origin.y -= (difference / 2)
-            
-            frame.size.width = CGFloat(newValue)
-            frame.size.height = CGFloat(newValue)
-            self.frame = frame
-        }
-    }
+
     var maximumSize: Float = 300
     var typedView = CaptureButton()
     var view: UIView { return typedView }
-    var rounding: Float = 0.5 {
+    static let defaultRounding: Float = 0.5
+    var rounding: Float = LocalClass.defaultRounding {
         didSet {
             typedView.rounding = rounding
         }
     }
     
-    static func createInstance() -> Component {
-        return LocalClass()
+    required init() {
     }
     
     static func createView() -> UIView {
@@ -66,8 +39,7 @@ class CaptureComponent: Component, EditRounding, EditSize, EditPosition {
     
     func createRealmObject() -> ComponentRealm {
         let object = RealmObject()
-        object.frame = frame
-        object.rounding = rounding
+        configureWithStandardProperties(realmObject: object)
         return object
     }
 }
@@ -75,10 +47,9 @@ class CaptureComponent: Component, EditRounding, EditSize, EditPosition {
 // MARK: - Realm Object
 
 fileprivate typealias RealmObject = CaptureComponentRealm
-class CaptureComponentRealm: ComponentRealm {
+class CaptureComponentRealm: ComponentRealm, EditRounding {
     
-    static let defaultRounding: Float = 1
-    dynamic var rounding: Float = RealmObject.defaultRounding
+    dynamic var rounding: Float = LocalClass.defaultRounding
     
     override func instance() -> Component {
         let instance = LocalClass()

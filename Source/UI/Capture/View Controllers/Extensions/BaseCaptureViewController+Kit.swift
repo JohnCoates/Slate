@@ -16,7 +16,7 @@ extension BaseCaptureViewController {
     
     func transitionKit(to size: CGSize, orientation: UIInterfaceOrientation) {
         let orientation = UIApplication.shared.statusBarOrientation
-        for component in kit.components {
+        for component in kit.components where component is KeepUpright {
             applyUprightTransform(forOrientation: orientation,
                                   toView: component.view)
             

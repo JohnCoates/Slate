@@ -6,7 +6,7 @@
 //  Copyright © 2017 John Coates. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol EditSize: class {
     var size: Float { get set }
@@ -23,5 +23,25 @@ extension EditSize {
     
     var maximumSize: Float {
         return 200
+    }
+}
+
+extension EditSize where Self: Component {
+    var size: Float {
+        get {
+            return Float(frame.size.width)
+        }
+        set {
+            var frame = self.frame
+            let difference: CGFloat
+            difference = CGFloat(newValue) - frame.size.width
+            // center
+            frame.origin.x -= (difference / 2)
+            frame.origin.y -= (difference / 2)
+            
+            frame.size.width = CGFloat(newValue)
+            frame.size.height = CGFloat(newValue)
+            self.frame = frame
+        }
     }
 }

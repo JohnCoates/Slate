@@ -9,8 +9,10 @@
 import UIKit
 import RealmSwift
 
+fileprivate typealias LocalClass = CameraPositionComponent
+fileprivate typealias LocalView = FrontBackCameraToggle
 class CameraPositionComponent: Component,
-EditRounding, EditSize, EditPosition {
+EditRounding, EditSize, EditPosition, KeepUpright {
     var editTitle = "Switch Camera"
     
     enum Position: Int {
@@ -18,61 +20,34 @@ EditRounding, EditSize, EditPosition {
         case back = 1
     }
     
-    var parentKit: Kit?
     var position: Position = .front
     var frame: CGRect = .zero {
         didSet {
             view.frame = frame
         }
     }
-    var origin: CGPoint {
-        get {
-            return frame.origin
-        }
-        set {
-            frame.origin = newValue
-        }
-    }
     
-    var size: Float {
-        get {
-            return Float(frame.size.width)
-        }
-        set {
-            var frame = self.frame
-            let difference: CGFloat
-            difference = CGFloat(newValue) - frame.size.width
-            // center
-            frame.origin.x -= (difference / 2)
-            frame.origin.y -= (difference / 2)
-            
-            frame.size.width = CGFloat(newValue)
-            frame.size.height = CGFloat(newValue)
-            self.frame = frame
-        }
-    }
     var maximumSize: Float = 300
     var typedView = FrontBackCameraToggle()
     var view: UIView { return typedView }
-    var rounding: Float = 1 {
+    static let defaultRounding: Float = 0.5
+    var rounding: Float = LocalClass.defaultRounding {
         didSet {
             typedView.rounding = rounding
         }
     }
     
-    static func createInstance() -> Component {
-        return CameraPositionComponent()
+    required init() {
     }
     
     static func createView() -> UIView {
-        return FrontBackCameraToggle()
+        return LocalView()
     }
     
     func createRealmObject() -> ComponentRealm {
-        let object = CameraPositionComponentRealm()
-        object.frame = frame
+        let object = RealmObject()
+        configureWithStandardProperties(realmObject: object)
         object.rawPosition = position.rawValue
-        object.rounding = rounding
         return object
     }
 }
@@ -80,16 +55,14 @@ EditRounding, EditSize, EditPosition {
 // MARK: - Realm Object
 
 fileprivate typealias RealmObject = CameraPositionComponentRealm
-class CameraPositionComponentRealm: ComponentRealm {
+class CameraPositionComponentRealm: ComponentRealm, EditRounding {
     dynamic var rawPosition: Int = CameraPositionComponent.Position.front.rawValue
     
-    static let defaultRounding: Float = 1
-    dynamic var rounding: Float = RealmObject.defaultRounding
+    dynamic var rounding: Float = LocalClass.defaultRounding
     
     override func instance() -> Component {
-        let instance = CameraPositionComponent()
-        instance.frame = frame
-        instance.rounding = rounding
+        let instance = LocalClass()
+        configureWithStandardProperies(instance: instance)
         if let position = CameraPositionComponent.Position(rawValue: rawPosition) {
             instance.position = position
         } else {

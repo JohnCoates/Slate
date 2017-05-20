@@ -38,6 +38,15 @@ class ComponentRealm: Object {
     func instance() -> Component {
         fatalError("instance() has not been implemented")
     }
+    
+    func configureWithStandardProperies(instance: Component) {
+        if let realm = self as? EditRounding,
+            let component = instance as? EditRounding {
+            component.rounding = realm.rounding
+        }
+        
+        instance.frame = frame
+    }
 }
 
 // MARK: - Union Class
