@@ -123,6 +123,10 @@ extension BaseCaptureViewController: ComponentEditBarDelegate {
         present(alertController, animated: true, completion: nil)
     }
 
+    func showEditModeAlert(controller: UIAlertController) {
+        present(controller, animated: true, completion: nil)
+    }
+    
     // MARK: - Edit Position
     
     func addPositionEditGesture(toComponent targetComponent: Component) {

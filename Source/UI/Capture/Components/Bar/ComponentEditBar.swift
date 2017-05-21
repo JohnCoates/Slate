@@ -38,7 +38,7 @@ final class ComponentEditBar: UIView {
         setUpSaveButton()
         setUpCancelButton()
         addDeleteControl()
-        setUpTitleLabel()
+        setUpTitleButton()
     }
     
     let saveButton = InverseMaskButton(icon: CheckmarkIcon())
@@ -67,19 +67,51 @@ final class ComponentEditBar: UIView {
         }
     }
     
+    let titleButton = Button()
+    func setUpTitleButton() {
+        setUpTitleLabel()
+        setUpTitleInteractivityIndicator()
+        
+        titleButton.setTappedCallback(instance: self, method: Method.titleTapped)
+        addSubview(titleButton)
+        constrain(titleButton, titleLabel, titleInteractivityIndicator) {
+            titleButton, titleLabel, titleInteractivityIndicator in
+            let superview = titleButton.superview!
+            
+            titleButton.right >= titleInteractivityIndicator.right
+            titleButton.left == titleLabel.left
+            titleButton.top == superview.top + 6
+            titleButton.height == titleLabel.height
+            titleButton.centerX == superview.centerX
+        }
+    }
+    
     let titleLabel: UILabel = UILabel(frame: .zero)
     fileprivate func setUpTitleLabel() {
         titleLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightRegular)
         titleLabel.textColor = UIColor.white
-        addSubview(titleLabel)
+        titleButton.addSubview(titleLabel)
         
         constrain(titleLabel) {
             let superview = $0.superview!
-            $0.centerX == superview.centerX
-            $0.top == superview.top + 6
+            $0.top == superview.top
+            $0.left == superview.left
         }
-        
+        setUpTitleInteractivityIndicator()
     }
+    
+    var titleInteractivityIndicator = CanvasIconView(icon: InteractivityIndicatorIcon())
+    private func setUpTitleInteractivityIndicator() {
+        titleButton.addSubview(titleInteractivityIndicator)
+        
+        constrain(titleInteractivityIndicator, titleLabel) { titleInteractivityIndicator, titleLabel in
+            titleInteractivityIndicator.left == titleLabel.right + 4
+            titleInteractivityIndicator.centerY == titleLabel.centerY + 1
+            titleInteractivityIndicator.width == 11.5
+            titleInteractivityIndicator.height == 3.5
+        }
+    }
+    
     // MARK: - Progress Controls
     
     struct ProgressSettings {
@@ -341,6 +373,34 @@ final class ComponentEditBar: UIView {
         }
     }
     
+    func titleTapped() {
+        print("title tapped")
+        
+        let alertController = UIAlertController(title: nil,
+                                                message: nil,
+                                                preferredStyle: .actionSheet)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancel)
+        let appearance = UIAlertAction(title: "Appearance", style: .default) { action in
+            self.changedMode()
+        }
+        alertController.addAction(appearance)
+        let interaction = UIAlertAction(title: "Interaction", style: .default) { action in
+            self.changedMode()
+        }
+        alertController.addAction(interaction)
+        
+        let gestured = UIAlertAction(title: "Gestured", style: .default) { action in
+            self.changedMode()
+        }
+        alertController.addAction(gestured)
+        delegate?.showEditModeAlert(controller: alertController)
+    }
+    
+    func changedMode() {
+        print("new edit mode")
+    }
+    
     private func stopEditing() {
         isHidden = true
         if let targetView = targetView {
@@ -375,5 +435,5 @@ fileprivate struct Method {
     static let saveTapped = LocalClass.saveTapped
     static let cancelTapped = LocalClass.cancelTapped
     static let deleteTapped = LocalClass.deleteTapped
-    
+    static let titleTapped = LocalClass.titleTapped
 }

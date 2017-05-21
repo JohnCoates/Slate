@@ -19,8 +19,6 @@
 		FA13FCA81DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */; };
 		FA18058B1EC46FAE004351B7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1805891EC46FAE004351B7 /* Realm.framework */; };
 		FA18058C1EC46FAE004351B7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; };
-		FA18058D1EC47398004351B7 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA1805891EC46FAE004351B7 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FA18058E1EC47398004351B7 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA1805911EC5477A004351B7 /* ComponentRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805901EC5477A004351B7 /* ComponentRealm.swift */; };
 		FA1805931EC54A0F004351B7 /* ComponentEditBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805921EC54A0F004351B7 /* ComponentEditBar.swift */; };
 		FA1805981EC54F38004351B7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805971EC54F38004351B7 /* CircleView.swift */; };
@@ -162,6 +160,8 @@
 		FA5F8CB31ED0958100921A61 /* KeepUpright.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CB21ED0958100921A61 /* KeepUpright.swift */; };
 		FA5F8CB41ED0958100921A61 /* KeepUpright.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CB21ED0958100921A61 /* KeepUpright.swift */; };
 		FA7724CD1ED1A25F00C5C227 /* EditOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BD7A41ED18D0C00D1761C /* EditOpacity.swift */; };
+		FA7724D31ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7724D21ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift */; };
+		FA7724D41ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7724D21ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift */; };
 		FA78F28E1E144C0E00D34947 /* DebugBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F28D1E144C0E00D34947 /* DebugBarController.swift */; };
 		FA78F2921E144E4600D34947 /* DebugBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */; };
 		FA78F2941E144E4E00D34947 /* DebugBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2931E144E4E00D34947 /* DebugBarItem.swift */; };
@@ -217,7 +217,6 @@
 		FABB16B31D9F858800A8AC6C /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BDC1D9920010017CCCA /* Platform.swift */; };
 		FABB16B51D9F886300A8AC6C /* BaseCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */; };
 		FACC8FD41D98A55400589230 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
-		FACC8FD61D98A5AF00589230 /* Cartography.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FACFE4931ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */; };
 		FACFE4941ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */; };
 		FAF10CFA1ECAA8230008690E /* GroupedPathIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */; };
@@ -335,9 +334,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FA18058D1EC47398004351B7 /* Realm.framework in Embed Frameworks */,
-				FA18058E1EC47398004351B7 /* RealmSwift.framework in Embed Frameworks */,
-				FACC8FD61D98A5AF00589230 /* Cartography.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,8 +347,8 @@
 		FA0462BA1EC3DF88007B74A0 /* Kit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
 		FA0462BE1EC3DFE1007B74A0 /* CameraPositionComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPositionComponent.swift; sourceTree = "<group>"; };
 		FA0462C11EC3E002007B74A0 /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
-		FA0462C41EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentMenuBarDelegate.swift; sourceTree = "<group>"; };
-		FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentItemCellDelegate.swift; sourceTree = "<group>"; };
+		FA0462C41EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComponentMenuBarDelegate.swift; path = ../Bar/Protocols/ComponentMenuBarDelegate.swift; sourceTree = "<group>"; };
+		FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComponentItemCellDelegate.swift; path = ../Bar/Protocols/ComponentItemCellDelegate.swift; sourceTree = "<group>"; };
 		FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = GaussianBlur.metal; sourceTree = "<group>"; };
 		FA1805891EC46FAE004351B7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		FA18058A1EC46FAE004351B7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
@@ -368,7 +364,7 @@
 		FA20FA551E128CE200032AF3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRenderView.swift; sourceTree = "<group>"; };
 		FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalCaptureViewController.swift; sourceTree = "<group>"; };
-		FA29FB481EA49B1F00EB1081 /* ComponentMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentMenuBar.swift; sourceTree = "<group>"; };
+		FA29FB481EA49B1F00EB1081 /* ComponentMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComponentMenuBar.swift; path = Bar/ComponentMenuBar.swift; sourceTree = "<group>"; };
 		FA2B1E561EC80E8500E44613 /* FeatureCatalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureCatalogViewController.swift; sourceTree = "<group>"; };
 		FA2B1E571EC80E8500E44613 /* FeatureCatalogItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureCatalogItem.swift; sourceTree = "<group>"; };
 		FA2B1E5B1EC80EE100E44613 /* InvertedMaskButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvertedMaskButtonViewController.swift; sourceTree = "<group>"; };
@@ -407,6 +403,7 @@
 		FA5F8CA51ED0649200921A61 /* Font+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+Convenience.swift"; sourceTree = "<group>"; };
 		FA5F8CAF1ED06A5F00921A61 /* CaptureComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureComponent.swift; sourceTree = "<group>"; };
 		FA5F8CB21ED0958100921A61 /* KeepUpright.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeepUpright.swift; sourceTree = "<group>"; };
+		FA7724D21ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractivityIndicatorIcon.swift; sourceTree = "<group>"; };
 		FA78F28D1E144C0E00D34947 /* DebugBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarController.swift; sourceTree = "<group>"; };
 		FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarDelegate.swift; sourceTree = "<group>"; };
 		FA78F2931E144E4E00D34947 /* DebugBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarItem.swift; sourceTree = "<group>"; };
@@ -542,7 +539,8 @@
 			children = (
 				FA0462B51EC3CDFA007B74A0 /* ControlBarItemCell.swift */,
 			);
-			path = "Collection View";
+			name = "Collection View";
+			path = "Bar/Collection View";
 			sourceTree = "<group>";
 		};
 		FA0462B71EC3DE8C007B74A0 /* Controllers */ = {
@@ -585,8 +583,6 @@
 		FA0462C31EC3E3D3007B74A0 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				FA0462C41EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift */,
-				FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */,
 				FAB0AA631EC6C84D008DCD23 /* ComponentEditBarDelegate.swift */,
 			);
 			path = Protocols;
@@ -598,20 +594,6 @@
 				FA1805901EC5477A004351B7 /* ComponentRealm.swift */,
 			);
 			path = Realm;
-			sourceTree = "<group>";
-		};
-		FA1805941EC54A71004351B7 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		FA18059B1EC59427004351B7 /* Edit Bars */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Edit Bars";
 			sourceTree = "<group>";
 		};
 		FA18059C1EC688BD004351B7 /* Editing */ = {
@@ -716,22 +698,21 @@
 				FA18059C1EC688BD004351B7 /* Editing */,
 				FA0462BC1EC3DFAB007B74A0 /* Models */,
 				FA0462B71EC3DE8C007B74A0 /* Controllers */,
-				FA29FB471EA49B0F00EB1081 /* Bar */,
+				FA7724CE1ED1BDF500C5C227 /* Menu Bar */,
+				FA29FB471EA49B0F00EB1081 /* Edit Bar */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		FA29FB471EA49B0F00EB1081 /* Bar */ = {
+		FA29FB471EA49B0F00EB1081 /* Edit Bar */ = {
 			isa = PBXGroup;
 			children = (
+				FA7724D11ED1BEA300C5C227 /* Code Icons */,
 				FA1805A01EC69740004351B7 /* Controls */,
-				FA18059B1EC59427004351B7 /* Edit Bars */,
-				FA1805941EC54A71004351B7 /* Views */,
 				FA0462C31EC3E3D3007B74A0 /* Protocols */,
-				FA0462B41EC3CDDE007B74A0 /* Collection View */,
-				FA29FB481EA49B1F00EB1081 /* ComponentMenuBar.swift */,
 				FA1805921EC54A0F004351B7 /* ComponentEditBar.swift */,
 			);
+			name = "Edit Bar";
 			path = Bar;
 			sourceTree = "<group>";
 		};
@@ -975,6 +956,33 @@
 				FA5F8CAF1ED06A5F00921A61 /* CaptureComponent.swift */,
 			);
 			path = Capture;
+			sourceTree = "<group>";
+		};
+		FA7724CE1ED1BDF500C5C227 /* Menu Bar */ = {
+			isa = PBXGroup;
+			children = (
+				FA0462B41EC3CDDE007B74A0 /* Collection View */,
+				FA7724CF1ED1BE1300C5C227 /* Protocols */,
+				FA29FB481EA49B1F00EB1081 /* ComponentMenuBar.swift */,
+			);
+			name = "Menu Bar";
+			sourceTree = "<group>";
+		};
+		FA7724CF1ED1BE1300C5C227 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FA0462C41EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift */,
+				FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FA7724D11ED1BEA300C5C227 /* Code Icons */ = {
+			isa = PBXGroup;
+			children = (
+				FA7724D21ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift */,
+			);
+			path = "Code Icons";
 			sourceTree = "<group>";
 		};
 		FA78F28B1E144AC600D34947 /* Debug */ = {
@@ -1458,6 +1466,7 @@
 				FA9F89E01D953C540058C369 /* Resources */,
 				FACC8FD71D98A5AF00589230 /* Embed Frameworks */,
 				FAADE0D51D9D1CB200AA5729 /* Build Metal Shader Library */,
+				FA7724D51ED1E35200C5C227 /* Copy Carthage Frameworks (fix x86_64 binaries in App Store builds) */,
 			);
 			buildRules = (
 				FAADE0D41D9D142E00AA5729 /* PBXBuildRule */,
@@ -1545,7 +1554,7 @@
 					FA9F89E11D953C540058C369 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = E6QK4MU6LM;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					FA9F89F51D953C540058C369 = {
 						CreatedOnToolsVersion = 8.0;
@@ -1676,6 +1685,23 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
+		FA7724D51ED1E35200C5C227 /* Copy Carthage Frameworks (fix x86_64 binaries in App Store builds) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
+			);
+			name = "Copy Carthage Frameworks (fix x86_64 binaries in App Store builds)";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		FAADE0D51D9D1CB200AA5729 /* Build Metal Shader Library */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1792,6 +1818,7 @@
 				FA2F8E531DA23E5500993949 /* PassthroughFilter.swift in Sources */,
 				FAF10D011ECAA9170008690E /* GroupedPathButton.swift in Sources */,
 				FACFE4931ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */,
+				FA7724D31ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift in Sources */,
 				FA834BE41D9929710017CCCA /* CaptureButton.swift in Sources */,
 				FA0462B91EC3DF81007B74A0 /* KitManager.swift in Sources */,
 				FA5F8CA61ED0649200921A61 /* Font+Convenience.swift in Sources */,
@@ -1949,6 +1976,7 @@
 				FA8CE4231ECD7E5A00788026 /* Int+Pixels.swift in Sources */,
 				FA2B1E9A1EC92B5B00E44613 /* ComponentEditBarDelegate.swift in Sources */,
 				FAF10D021ECAA9170008690E /* GroupedPathButton.swift in Sources */,
+				FA7724D41ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift in Sources */,
 				FA2B1E891EC92B5B00E44613 /* FragmentFilter.swift in Sources */,
 				FA2B1EA61EC92B5B00E44613 /* DebugBarItemView.swift in Sources */,
 				FA5F8CA01ECFF81400921A61 /* UIScreen+Layout.swift in Sources */,
@@ -2146,15 +2174,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Resources/Required/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.Slate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "de89b573-53e0-415c-a189-673fa592867a";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS: com.johncoates.camera";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Headers/Bridging/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
@@ -2164,15 +2195,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Resources/Required/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.Slate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "de89b573-53e0-415c-a189-673fa592867a";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS: com.johncoates.camera";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Headers/Bridging/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
