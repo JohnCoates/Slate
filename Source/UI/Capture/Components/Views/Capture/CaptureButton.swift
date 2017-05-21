@@ -14,9 +14,7 @@ class CaptureButton: Button {
     
     override func initialSetup() {
         super.initialSetup()
-        backgroundColor = UIColor.white
-        alpha = 0.56
+        contentView.backgroundColor = UIColor.white
         accessibilityIdentifier = "CaptureButton"
-        rounding = 0.5
     }
 }

@@ -45,6 +45,11 @@ class ComponentRealm: Object {
             component.rounding = realm.rounding
         }
         
+        if let realm = self as? EditOpacity,
+            let component = instance as? EditOpacity {
+            component.opacity = realm.opacity
+        }
+        
         instance.frame = frame
     }
 }

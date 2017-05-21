@@ -17,6 +17,7 @@ class RoundableView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         if transform.a != 1 {
             let transformX = transform.a
             layer.cornerRadius = ((frame.width / transformX) / 2) * CGFloat(rounding)

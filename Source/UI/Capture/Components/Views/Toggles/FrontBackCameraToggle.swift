@@ -22,7 +22,7 @@ final class FrontBackCameraToggle: InverseMaskGroupedPathButton {
     override func initialSetup() {
         iconWidthRatio = 0.65
         super.initialSetup()
-        backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        contentView.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         rounding = 1
     }
 }

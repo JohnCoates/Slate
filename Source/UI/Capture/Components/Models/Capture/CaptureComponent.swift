@@ -11,7 +11,7 @@ import RealmSwift
 
 fileprivate typealias LocalClass = CaptureComponent
 fileprivate typealias LocalView = CaptureButton
-class CaptureComponent: Component, EditRounding, EditSize, EditPosition {
+class CaptureComponent: Component, EditRounding, EditSize, EditPosition, EditOpacity {
     var editTitle = "Capture"
     
     var frame: CGRect = .zero {
@@ -21,8 +21,9 @@ class CaptureComponent: Component, EditRounding, EditSize, EditPosition {
     }
 
     var maximumSize: Float = 300
-    var typedView = CaptureButton()
+    private lazy var typedView = LocalClass.createTypedView()
     var view: UIView { return typedView }
+    
     static let defaultRounding: Float = 0.5
     var rounding: Float = LocalClass.defaultRounding {
         didSet {
@@ -30,11 +31,24 @@ class CaptureComponent: Component, EditRounding, EditSize, EditPosition {
         }
     }
     
+    static let defaultOpacity: Float = 0.56
+    var opacity: Float = LocalClass.defaultOpacity {
+        didSet {
+            typedView.opacity = CGFloat(opacity)
+        }
+    }
+    
     required init() {
     }
     
+    private static func createTypedView() -> LocalView {
+        let view = LocalView()
+        view.alpha = CGFloat(defaultOpacity)
+        view.rounding = defaultRounding
+        return view
+    }
     static func createView() -> UIView {
-        return LocalView()
+        return createTypedView()
     }
     
     func createRealmObject() -> ComponentRealm {
@@ -47,14 +61,14 @@ class CaptureComponent: Component, EditRounding, EditSize, EditPosition {
 // MARK: - Realm Object
 
 fileprivate typealias RealmObject = CaptureComponentRealm
-class CaptureComponentRealm: ComponentRealm, EditRounding {
+class CaptureComponentRealm: ComponentRealm, EditRounding, EditOpacity {
     
     dynamic var rounding: Float = LocalClass.defaultRounding
+    dynamic var opacity: Float = LocalClass.defaultOpacity
     
     override func instance() -> Component {
         let instance = LocalClass()
-        instance.frame = frame
-        instance.rounding = rounding
+        configureWithStandardProperies(instance: instance)
         
         return instance
     }

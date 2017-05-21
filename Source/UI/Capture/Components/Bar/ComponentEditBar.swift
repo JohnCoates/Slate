@@ -121,24 +121,34 @@ final class ComponentEditBar: UIView {
 
     // MARK: - Progress Control Overloads
     
-    func addProgressControl(forSize editSize: EditSize) {
+    func addProgressControl(forEditProtocol target: EditSize) {
         let settings = ProgressSettings(name: "Size",
-                                        minimumValue: editSize.minimumSize,
-                                        maximumValue: editSize.maximumSize,
+                                        minimumValue: target.minimumSize,
+                                        maximumValue: target.maximumSize,
                                         units: "pt")
         addProgressControl(settings: settings,
-                           initialValue: editSize.size,
-                           valueHandler: { editSize.size = $0 })
+                           initialValue: target.size,
+                           valueHandler: { target.size = $0 })
     }
     
-    func addProgressControl(forRounding editRounding: EditRounding) {
+    func addProgressControl(forEditProtocol target: EditRounding) {
         let settings = ProgressSettings(name: "Rounding",
                                         minimumValue: 0,
                                         maximumValue: 100,
                                         units: "%")
         addProgressControl(settings: settings,
-                           initialValue: editRounding.rounding * 100,
-                           valueHandler: { editRounding.rounding = $0 / 100 })
+                           initialValue: target.rounding * 100,
+                           valueHandler: { target.rounding = $0 / 100 })
+    }
+    
+    func addProgressControl(forEditProtocol target: EditOpacity) {
+        let settings = ProgressSettings(name: "Opacity",
+                                        minimumValue: target.minimumOpacity * 100,
+                                        maximumValue: target.maximumOpacity * 100,
+                                        units: "%")
+        addProgressControl(settings: settings,
+                           initialValue: target.opacity * 100,
+                           valueHandler: { target.opacity = $0 / 100 })
     }
     
     // MARK: - Delete Control
@@ -146,7 +156,7 @@ final class ComponentEditBar: UIView {
     func addDeleteControl() {
         let control = CodeIconButton(icon: DeleteLineIcon())
         control.rounding = 1
-        control.backgroundColor = UIColor(red:0.16, green:0.14, blue:0.17, alpha:1.00)
+        control.contentView.backgroundColor = UIColor(red:0.16, green:0.14, blue:0.17, alpha:1.00)
         control.setTappedCallback(instance: self, method: Method.deleteTapped)
         addSubview(control)
         controls.append(control)
@@ -203,68 +213,105 @@ final class ComponentEditBar: UIView {
         }
         
         if let oldTarget = targetView {
-            oldTarget.layer.borderColor = nil
-            oldTarget.layer.borderWidth = 0
+            resetEditBorder(forView: oldTarget)
         }
         
         titleLabel.text = target.editTitle
         component = target
-        targetView = target.view
-        targetView?.layer.borderColor = UIColor(red:0.13, green:0.55,
-                                                blue:0.78, alpha:1.00).cgColor
-        targetView?.layer.borderWidth = 3
+        let view = target.view
+        addEditBorder(forView: view)
+        targetView = view
+        
         lastEditControl = nil
         
         addEditControls(forComponent: target)
     }
     
     func addEditControls(forComponent component: Component) {
-        if let editSize = component as? EditSize {
-            initialSize = editSize.size
-            addProgressControl(forSize: editSize)
+        if let target = component as? EditPosition {
+            initialValues[.position] = target.origin
         }
-        if let editRounding = component as? EditRounding {
-            initialRounding = editRounding.rounding
-            addProgressControl(forRounding: editRounding)
+        if let target = component as? EditSize {
+            initialValues[.size] = target.size
+            addProgressControl(forEditProtocol: target)
         }
-        if let editPosition = component as? EditPosition {
-            initialPosition = editPosition.origin
+        if let target = component as? EditRounding {
+            initialValues[.rounding] = target.rounding
+            addProgressControl(forEditProtocol: target)
+        }
+        if let target = component as? EditOpacity {
+            initialValues[.opacity] = target.opacity
+            addProgressControl(forEditProtocol: target)
         }
         
         addDeleteControl()
     }
     
+    // MARK: - Edit Border
+    
+    func addEditBorder(forView view: UIView) {
+        let target = borderView(forView: view)
+        target.layer.borderColor = UIColor(red:0.13, green:0.55,
+                                           blue:0.78, alpha:1.00).cgColor
+        target.layer.borderWidth = 3
+    }
+    
+    func resetEditBorder(forView view: UIView) {
+        let target = borderView(forView: view)
+        target.layer.borderColor = nil
+        target.layer.borderWidth = 0
+    }
+    
+    func borderView(forView view: UIView) -> UIView {
+        let target: UIView
+        if let button = view as? Button {
+            target = button.contentView
+        } else {
+            target = view
+        }
+        return target
+    }
+    
     // MARK: - Initial State
     
-    var initialSize: Float?
-    var initialRounding: Float?
-    var initialPosition: CGPoint?
+    enum SupportedProperty {
+        case position
+        case size
+        case rounding
+        case opacity
+    }
+    
+    var initialValues = [SupportedProperty: Any]()
     
     func resetToInitialState(component: Component) {
-        if let editSize = component as? EditSize {
-            guard let initialSize = initialSize else {
-                fatalError("Didn't record initial size for component: \(component)")
-            }
-            editSize.size = initialSize
-        }
-        if let editRounding = component as? EditRounding {
-            guard let initialRounding = initialRounding else {
-                fatalError("Didn't record initial rounding for component: \(component)")
-            }
-            editRounding.rounding = initialRounding
-        }
-        if let editPosition = component as? EditPosition {
-            guard let initialPosition = initialPosition else {
+        if let target = component as? EditPosition {
+            guard let value = initialValues[.position] as? CGPoint else {
                 fatalError("Didn't record initial position for component: \(component)")
             }
-            editPosition.origin = initialPosition
+            target.origin = value
+        }
+        if let target = component as? EditSize {
+            guard let value = initialValues[.size] as? Float else {
+                fatalError("Didn't record initial size for component: \(component)")
+            }
+            target.size = value
+        }
+        if let target = component as? EditRounding {
+            guard let value = initialValues[.rounding] as? Float else {
+                fatalError("Didn't record initial rounding for component: \(component)")
+            }
+            target.rounding = value
+        }
+        if let target = component as? EditOpacity {
+            guard let value = initialValues[.opacity] as? Float else {
+                fatalError("Didn't record initial opacity for component: \(component)")
+            }
+            target.opacity = value
         }
     }
     
     func clearInitialState() {
-        initialSize = nil
-        initialRounding = nil
-        initialPosition = nil
+        initialValues.removeAll()
     }
     
     // MARK: - Save, Cancel
@@ -297,8 +344,7 @@ final class ComponentEditBar: UIView {
     private func stopEditing() {
         isHidden = true
         if let targetView = targetView {
-            targetView.layer.borderColor = nil
-            targetView.layer.borderWidth = 0
+            resetEditBorder(forView: targetView)
             self.targetView = nil
         }
         clearInitialState()

@@ -29,21 +29,21 @@ class CodeIconButton: Button {
     
     override func initialSetup() {
         super.initialSetup()
-        backgroundColor = UIColor(red:0.93, green:0.93,
-                                  blue:0.93, alpha:0.59)
+        contentView.backgroundColor = UIColor(red:0.93, green:0.93,
+                                              blue:0.93, alpha:0.59)
         setUpIconProxy()
         setUpShape()
     }
     
     func setUpShape() {
-        layer.addSublayer(shape)
+        contentView.layer.addSublayer(shape)
         shape.fillColor = UIColor.white.cgColor
     }
     
     let iconProxy = UIView(frame: .zero)
     func setUpIconProxy() {
         iconProxy.isHidden = true
-        addSubview(iconProxy)
+        contentView.addSubview(iconProxy)
         
         let heightRatio = icon.height / icon.width
         constrain(iconProxy) {

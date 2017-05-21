@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        migrateRealm()
+        RealmMigrator.migrate()
         
         let window = DebugWindow(frame: UIScreen.main.bounds)
         window.backgroundColor = UIColor.white
@@ -23,25 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = CaptureViewController()
         self.window = window
         return true
-    }
-    
-    func migrateRealm() {
-        let config = Realm.Configuration(schemaVersion: 2, migrationBlock: { migration, oldVersion in
-            if oldVersion < 1 {
-                migration.enumerateObjects(ofType: CameraPositionComponentRealm.className(), { oldObject, newObject in
-                    newObject?["rounding"] = CameraPositionComponent.defaultRounding
-                })
-            }
-            if oldVersion < 2 {
-                // added capture component
-            }
-        })
-        Realm.Configuration.defaultConfiguration = config
-        do {
-            _ = try Realm()
-        } catch let error as NSError {
-            print("Error opening realm: \(error)")
-        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

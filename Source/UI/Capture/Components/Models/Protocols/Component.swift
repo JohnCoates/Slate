@@ -41,6 +41,11 @@ extension Component {
             realm.rounding = component.rounding
         }
         
+        if let component = self as? EditOpacity,
+            let realm = realmObject as? EditOpacity {
+            realm.opacity = component.opacity
+        }
+        
         realmObject.frame = self.frame
     }
 }
