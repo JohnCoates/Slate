@@ -53,14 +53,33 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         return AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
     }
     
+    var suitablePresets: [String] {
+        if Platform.isMacOS {
+            return [AVCaptureSessionPreset1280x720]
+        }
+        return [
+            AVCaptureSessionPresetiFrame960x540,
+            AVCaptureSessionPresetLow
+        ]
+    }
+    
     func startCapturingVideo() {
         session.beginConfiguration()
         
-        if Platform.isMacOS {
-            session.sessionPreset = AVCaptureSessionPreset1280x720
-        } else {
-            session.sessionPreset = AVCaptureSessionPresetiFrame960x540
+        var presetMaybe: String?
+        for suitablePreset in suitablePresets {
+            if session.canSetSessionPreset(suitablePreset) {
+                presetMaybe = suitablePreset
+                break
+            }
         }
+        
+        guard let preset = presetMaybe else {
+            fatalError("Couldn't find settable video preset!")
+        }
+        
+        session.sessionPreset = preset
+        
         let camera = bestCamera
         do {
             let input = try AVCaptureDeviceInput(device: camera)
