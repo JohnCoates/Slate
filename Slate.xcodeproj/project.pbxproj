@@ -216,6 +216,101 @@
 		FABB16B21D9F822800A8AC6C /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B01D9F822800A8AC6C /* CameraController.swift */; };
 		FABB16B31D9F858800A8AC6C /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BDC1D9920010017CCCA /* Platform.swift */; };
 		FABB16B51D9F886300A8AC6C /* BaseCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */; };
+		FAC962DA1ED3983D00D4DC33 /* DebugBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */; };
+		FAC962DB1ED3983D00D4DC33 /* ComputeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D54181DB055BB0091184D /* ComputeFilter.swift */; };
+		FAC962DC1ED3983D00D4DC33 /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462BA1EC3DF88007B74A0 /* Kit.swift */; };
+		FAC962DD1ED3983D00D4DC33 /* BaseCaptureViewController+ComponentMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D0D1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift */; };
+		FAC962DE1ED3983D00D4DC33 /* PhotosPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5709A51ECC7172000362C8 /* PhotosPermissionViewController.swift */; };
+		FAC962DF1ED3983D00D4DC33 /* UIGestureRecognizer+Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CE4271ECD8AE700788026 /* UIGestureRecognizer+Closure.swift */; };
+		FAC962E01ED3983D00D4DC33 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805971EC54F38004351B7 /* CircleView.swift */; };
+		FAC962E11ED3983D00D4DC33 /* BaseCaptureViewController+Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8C961ECFE7D000921A61 /* BaseCaptureViewController+Kit.swift */; };
+		FAC962E21ED3983D00D4DC33 /* CheckmarkIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E701EC9239F00E44613 /* CheckmarkIcon.swift */; };
+		FAC962E31ED3983D00D4DC33 /* PermissionsPreferredButtonIndicatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5709A11ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift */; };
+		FAC962E41ED3983D00D4DC33 /* PermissionsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D171ECAFF1D0008690E /* PermissionsWindow.swift */; };
+		FAC962E51ED3983D00D4DC33 /* RealmMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BD7A81ED18F6900D1761C /* RealmMigrator.swift */; };
+		FAC962E61ED3983D00D4DC33 /* TextureCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16A11D9F402C00A8AC6C /* TextureCoordinates.swift */; };
+		FAC962E71ED3983D00D4DC33 /* DebugBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2991E15662B00D34947 /* DebugBarView.swift */; };
+		FAC962E81ED3983D00D4DC33 /* ChromaticAberrationFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E4D1DA22AD700993949 /* ChromaticAberrationFilter.swift */; };
+		FAC962E91ED3983D00D4DC33 /* ButtonIndicatorIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AA5401ECC107F0093D317 /* ButtonIndicatorIcon.swift */; };
+		FAC962EA1ED3983D00D4DC33 /* GaussianBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */; };
+		FAC962EB1ED3983D00D4DC33 /* PermissionsEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A2C9C1ECC57C60075FA0B /* PermissionsEducationViewController.swift */; };
+		FAC962EC1ED3983D00D4DC33 /* InverseMaskGroupedPathButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D031ECAAB190008690E /* InverseMaskGroupedPathButton.swift */; };
+		FAC962ED1ED3983D00D4DC33 /* DragGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0AA611EC6A1B8008DCD23 /* DragGesture.swift */; };
+		FAC962EE1ED3983D00D4DC33 /* DebugBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F28D1E144C0E00D34947 /* DebugBarController.swift */; };
+		FAC962EF1ED3983D00D4DC33 /* XIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E761EC928A300E44613 /* XIcon.swift */; };
+		FAC962F01ED3983D00D4DC33 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */; };
+		FAC962F11ED3983D00D4DC33 /* CanvasIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AA5471ECC13970093D317 /* CanvasIcon.swift */; };
+		FAC962F21ED3983D00D4DC33 /* DebugBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2931E144E4E00D34947 /* DebugBarItem.swift */; };
+		FAC962F31ED3983D00D4DC33 /* PathIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E6C1EC9235700E44613 /* PathIcon.swift */; };
+		FAC962F41ED3983D00D4DC33 /* FlipCameraIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CFD1ECAA87C0008690E /* FlipCameraIcon.swift */; };
+		FAC962F51ED3983D00D4DC33 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BDC1D9920010017CCCA /* Platform.swift */; };
+		FAC962F61ED3983D00D4DC33 /* UIScreen+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8C9E1ECFF81400921A61 /* UIScreen+Layout.swift */; };
+		FAC962F71ED3983D00D4DC33 /* ChromaticAberration.metal in Sources */ = {isa = PBXBuildFile; fileRef = FABB16AC1D9F6DAB00A8AC6C /* ChromaticAberration.metal */; };
+		FAC962F81ED3983D00D4DC33 /* Ream+Filtering.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D131ECAD30D0008690E /* Ream+Filtering.swift */; };
+		FAC962F91ED3983D00D4DC33 /* LayoutConstraint+Modifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E671EC922FD00E44613 /* LayoutConstraint+Modifying.swift */; };
+		FAC962FA1ED3983D00D4DC33 /* InverseMaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E5E1EC817C000E44613 /* InverseMaskButton.swift */; };
+		FAC962FB1ED3983D00D4DC33 /* FragmentFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D54151DB055A00091184D /* FragmentFilter.swift */; };
+		FAC962FC1ED3983D00D4DC33 /* Int+Pixels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CE4211ECD7E5A00788026 /* Int+Pixels.swift */; };
+		FAC962FD1ED3983D00D4DC33 /* PhotosDeniedPermisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CE42A1ECDA16A00788026 /* PhotosDeniedPermisionViewController.swift */; };
+		FAC962FE1ED3983D00D4DC33 /* PermissionsButtonIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C237F1ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift */; };
+		FAC962FF1ED3983D00D4DC33 /* PassthroughFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E521DA23E5500993949 /* PassthroughFilter.swift */; };
+		FAC963001ED3983D00D4DC33 /* GroupedPathButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D001ECAA9170008690E /* GroupedPathButton.swift */; };
+		FAC963011ED3983D00D4DC33 /* CameraPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */; };
+		FAC963021ED3983D00D4DC33 /* InteractivityIndicatorIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7724D21ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift */; };
+		FAC963031ED3983D00D4DC33 /* CaptureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BE31D9929710017CCCA /* CaptureButton.swift */; };
+		FAC963041ED3983D00D4DC33 /* KitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462B81EC3DF81007B74A0 /* KitManager.swift */; };
+		FAC963051ED3983D00D4DC33 /* Font+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CA51ED0649200921A61 /* Font+Convenience.swift */; };
+		FAC963061ED3983D00D4DC33 /* KeepUpright.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CB21ED0958100921A61 /* KeepUpright.swift */; };
+		FAC963071ED3983D00D4DC33 /* AbstractFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E461DA2293000993949 /* AbstractFilter.swift */; };
+		FAC963081ED3983D00D4DC33 /* UIView+subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CE4241ECD7FA700788026 /* UIView+subviews.swift */; };
+		FAC963091ED3983D00D4DC33 /* ComponentMenuBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C41EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift */; };
+		FAC9630A1ED3983D00D4DC33 /* BaseCaptureViewController+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CA11ED05B7B00921A61 /* BaseCaptureViewController+Rotation.swift */; };
+		FAC9630B1ED3983D00D4DC33 /* CodeIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1EB11EC97E7300E44613 /* CodeIconButton.swift */; };
+		FAC9630C1ED3983D00D4DC33 /* CameraPositionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462BE1EC3DFE1007B74A0 /* CameraPositionComponent.swift */; };
+		FAC9630D1ED3983D00D4DC33 /* Vertices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB169D1D9F308C00A8AC6C /* Vertices.swift */; };
+		FAC9630E1ED3983D00D4DC33 /* CameraDeniedPermisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5709AC1ECD4A36000362C8 /* CameraDeniedPermisionViewController.swift */; };
+		FAC9630F1ED3983D00D4DC33 /* BaseCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */; };
+		FAC963101ED3983D00D4DC33 /* BaseCaptureViewController+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D071ECAD03A0008690E /* BaseCaptureViewController+Debug.swift */; };
+		FAC963111ED3983D00D4DC33 /* ComponentItemCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */; };
+		FAC963121ED3983D00D4DC33 /* GaussianBlurFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E491DA2296E00993949 /* GaussianBlurFilter.swift */; };
+		FAC963131ED3983D00D4DC33 /* ControlBarItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462B51EC3CDFA007B74A0 /* ControlBarItemCell.swift */; };
+		FAC963141ED3983D00D4DC33 /* DebugWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2961E14520700D34947 /* DebugWindow.swift */; };
+		FAC963151ED3983D00D4DC33 /* DeleteLineIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1EAE1EC97CE000E44613 /* DeleteLineIcon.swift */; };
+		FAC963161ED3983D00D4DC33 /* ComponentEditBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805921EC54A0F004351B7 /* ComponentEditBar.swift */; };
+		FAC963171ED3983D00D4DC33 /* CameraEducationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5709A81ECC732A000362C8 /* CameraEducationImage.swift */; };
+		FAC963181ED3983D00D4DC33 /* EditSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805A21EC699A4004351B7 /* EditSize.swift */; };
+		FAC963191ED3983D00D4DC33 /* MetalCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */; };
+		FAC9631A1ED3983D00D4DC33 /* ComponentMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29FB481EA49B1F00EB1081 /* ComponentMenuBar.swift */; };
+		FAC9631B1ED3983D00D4DC33 /* EditOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BD7A41ED18D0C00D1761C /* EditOpacity.swift */; };
+		FAC9631C1ED3983D00D4DC33 /* ComponentRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805901EC5477A004351B7 /* ComponentRealm.swift */; };
+		FAC9631D1ED3983D00D4DC33 /* ComponentEditBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0AA631EC6C84D008DCD23 /* ComponentEditBarDelegate.swift */; };
+		FAC9631E1ED3983D00D4DC33 /* MetalCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4021C51DA0AEE800752F3B /* MetalCameraController.swift */; };
+		FAC9631F1ED3983D00D4DC33 /* Views+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E731EC927FB00E44613 /* Views+AutoLayout.swift */; };
+		FAC963201ED3983D00D4DC33 /* EditPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0AA5D1EC6A095008DCD23 /* EditPosition.swift */; };
+		FAC963211ED3983D00D4DC33 /* FrontBackCameraToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462B21EC3CC76007B74A0 /* FrontBackCameraToggle.swift */; };
+		FAC963221ED3983D00D4DC33 /* GroupedPathIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */; };
+		FAC963231ED3983D00D4DC33 /* BaseCaptureViewController+ComponentEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D0A1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift */; };
+		FAC963241ED3983D00D4DC33 /* SimulatorCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86BE041D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift */; };
+		FAC963251ED3983D00D4DC33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F89E51D953C540058C369 /* AppDelegate.swift */; };
+		FAC963261ED3983D00D4DC33 /* CanvasIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AA5441ECC13140093D317 /* CanvasIconView.swift */; };
+		FAC963271ED3983D00D4DC33 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C11EC3E002007B74A0 /* Component.swift */; };
+		FAC963281ED3983D00D4DC33 /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */; };
+		FAC963291ED3983D00D4DC33 /* EditRounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18059E1EC688D9004351B7 /* EditRounding.swift */; };
+		FAC9632A1ED3983D00D4DC33 /* CaptureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CAF1ED06A5F00921A61 /* CaptureComponent.swift */; };
+		FAC9632B1ED3983D00D4DC33 /* CircleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805991EC55466004351B7 /* CircleSlider.swift */; };
+		FAC9632C1ED3983D00D4DC33 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BE01D9927EB0017CCCA /* Button.swift */; };
+		FAC9632D1ED3983D00D4DC33 /* PhotosEducationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA57099D1ECC5E4D000362C8 /* PhotosEducationImage.swift */; };
+		FAC9632E1ED3983D00D4DC33 /* RoundableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1EB41EC9824E00E44613 /* RoundableView.swift */; };
+		FAC9632F1ED3983D00D4DC33 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B01D9F822800A8AC6C /* CameraController.swift */; };
+		FAC963301ED3983D00D4DC33 /* CameraRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */; };
+		FAC963311ED3983D00D4DC33 /* DebugBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F29B1E15686C00D34947 /* DebugBarItemView.swift */; };
+		FAC963331ED3983D00D4DC33 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1805891EC46FAE004351B7 /* Realm.framework */; };
+		FAC963341ED3983D00D4DC33 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA20FA501E12624C00032AF3 /* MetalKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		FAC963351ED3983D00D4DC33 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; };
+		FAC963361ED3983D00D4DC33 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
+		FAC963381ED3983D00D4DC33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9F89EE1D953C540058C369 /* LaunchScreen.storyboard */; };
+		FAC963391ED3983D00D4DC33 /* Placeholders.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA834BE51D9932BC0017CCCA /* Placeholders.xcassets */; };
+		FAC9633A1ED3983D00D4DC33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9F89EC1D953C540058C369 /* Assets.xcassets */; };
 		FACC8FD41D98A55400589230 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
 		FACFE4931ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */; };
 		FACFE4941ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */; };
@@ -251,6 +346,17 @@
 			script = "# metal\n${PROJECT_DIR}/Scripts/compileShader.sh";
 		};
 		FAADE0D41D9D142E00AA5729 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = sourcecode.metal;
+			isEditable = 1;
+			name = "Compile Metal Source Files";
+			outputFiles = (
+				"${TARGET_TEMP_DIR}/Metal/${FILE_BASE}.air",
+			);
+			script = "# metal\n${PROJECT_DIR}/Scripts/compileShader.sh";
+		};
+		FAC9633E1ED3983D00D4DC33 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.proxy.script;
 			fileType = sourcecode.metal;
@@ -326,6 +432,16 @@
 			files = (
 				FABB16AB1D9F4BF600A8AC6C /* HUDShader.metal in CopyFiles */,
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAC9633B1ED3983D00D4DC33 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FACC8FD71D98A5AF00589230 /* Embed Frameworks */ = {
@@ -453,6 +569,7 @@
 		FABB16AC1D9F6DAB00A8AC6C /* ChromaticAberration.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ChromaticAberration.metal; sourceTree = "<group>"; };
 		FABB16B01D9F822800A8AC6C /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCaptureViewController.swift; sourceTree = "<group>"; };
+		FAC963421ED3983D00D4DC33 /* Slate Local.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slate Local.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACC8FD31D98A55400589230 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cartography.framework; sourceTree = "<group>"; };
 		FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPermissionViewController.swift; sourceTree = "<group>"; };
 		FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupedPathIcon.swift; sourceTree = "<group>"; };
@@ -511,6 +628,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2B1E611EC817D200E44613 /* Cartography.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAC963321ED3983D00D4DC33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAC963331ED3983D00D4DC33 /* Realm.framework in Frameworks */,
+				FAC963341ED3983D00D4DC33 /* MetalKit.framework in Frameworks */,
+				FAC963351ED3983D00D4DC33 /* RealmSwift.framework in Frameworks */,
+				FAC963361ED3983D00D4DC33 /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1150,6 +1278,7 @@
 				FA9F8A011D953C540058C369 /* UITests.xctest */,
 				FA4DFECE1D9DBD1A0068706F /* macSlate.app */,
 				FAB0AA691EC8083D008DCD23 /* Feature Catalog.app */,
+				FAC963421ED3983D00D4DC33 /* Slate Local.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1537,6 +1666,29 @@
 			productReference = FAB0AA691EC8083D008DCD23 /* Feature Catalog.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FAC962D71ED3983D00D4DC33 /* Slate Local */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAC9633F1ED3983D00D4DC33 /* Build configuration list for PBXNativeTarget "Slate Local" */;
+			buildPhases = (
+				FAC962D81ED3983D00D4DC33 /* Swiftlint */,
+				FAC962D91ED3983D00D4DC33 /* Sources */,
+				FAC963321ED3983D00D4DC33 /* Frameworks */,
+				FAC963371ED3983D00D4DC33 /* Resources */,
+				FAC9633B1ED3983D00D4DC33 /* Embed Frameworks */,
+				FAC9633C1ED3983D00D4DC33 /* Build Metal Shader Library */,
+				FAC9633D1ED3983D00D4DC33 /* Copy Carthage Frameworks (fix x86_64 binaries in App Store builds) */,
+				FAC9634A1ED39DD800D4DC33 /* Integrate Reveal */,
+			);
+			buildRules = (
+				FAC9633E1ED3983D00D4DC33 /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = "Slate Local";
+			productName = Slate;
+			productReference = FAC963421ED3983D00D4DC33 /* Slate Local.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1571,6 +1723,10 @@
 						DevelopmentTeam = E6QK4MU6LM;
 						ProvisioningStyle = Automatic;
 					};
+					FAC962D71ED3983D00D4DC33 = {
+						DevelopmentTeam = E6QK4MU6LM;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = FA9F89DD1D953C540058C369 /* Build configuration list for PBXProject "Slate" */;
@@ -1587,6 +1743,7 @@
 			projectRoot = "";
 			targets = (
 				FA9F89E11D953C540058C369 /* Slate */,
+				FAC962D71ED3983D00D4DC33 /* Slate Local */,
 				FA9F89F51D953C540058C369 /* UnitTests */,
 				FA9F8A001D953C540058C369 /* UITests */,
 				FA4DFECD1D9DBD1A0068706F /* macSlate */,
@@ -1637,6 +1794,16 @@
 				FA2B1EAA1EC92DED00E44613 /* Assets.xcassets in Resources */,
 				FAB0AA731EC8083D008DCD23 /* FeatureCatalog.xcassets in Resources */,
 				FA2B1EAB1EC92DF000E44613 /* Placeholders.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAC963371ED3983D00D4DC33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAC963381ED3983D00D4DC33 /* LaunchScreen.storyboard in Resources */,
+				FAC963391ED3983D00D4DC33 /* Placeholders.xcassets in Resources */,
+				FAC9633A1ED3983D00D4DC33 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1729,6 +1896,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		FAC962D81ED3983D00D4DC33 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		FAC9633C1ED3983D00D4DC33 /* Build Metal Shader Library */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Metal Shader Library";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PROJECT_DIR}/Scripts/buildShaderLibrary.sh";
+		};
+		FAC9633D1ED3983D00D4DC33 /* Copy Carthage Frameworks (fix x86_64 binaries in App Store builds) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
+			);
+			name = "Copy Carthage Frameworks (fix x86_64 binaries in App Store builds)";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		FAC9634A1ED39DD800D4DC33 /* Integrate Reveal */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Integrate Reveal";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "REVEAL_APP_PATH=$(mdfind kMDItemCFBundleIdentifier=\"com.ittybittyapps.Reveal2\" | head -n 1)\nBUILD_SCRIPT_PATH=\"${REVEAL_APP_PATH}/Contents/SharedSupport/Scripts/reveal_server_build_phase.sh\"\nif [ \"${REVEAL_APP_PATH}\" -a -e \"${BUILD_SCRIPT_PATH}\" ]; then\n\"${BUILD_SCRIPT_PATH}\"\nelse\necho \"Reveal Server not loaded: Cannot find a compatible Reveal app.\"\nfi";
 		};
 		FACC8FD81D98AD4500589230 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1983,6 +2209,101 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAC962D91ED3983D00D4DC33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAC962DA1ED3983D00D4DC33 /* DebugBarDelegate.swift in Sources */,
+				FAC962DB1ED3983D00D4DC33 /* ComputeFilter.swift in Sources */,
+				FAC962DC1ED3983D00D4DC33 /* Kit.swift in Sources */,
+				FAC962DD1ED3983D00D4DC33 /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
+				FAC962DE1ED3983D00D4DC33 /* PhotosPermissionViewController.swift in Sources */,
+				FAC962DF1ED3983D00D4DC33 /* UIGestureRecognizer+Closure.swift in Sources */,
+				FAC962E01ED3983D00D4DC33 /* CircleView.swift in Sources */,
+				FAC962E11ED3983D00D4DC33 /* BaseCaptureViewController+Kit.swift in Sources */,
+				FAC962E21ED3983D00D4DC33 /* CheckmarkIcon.swift in Sources */,
+				FAC962E31ED3983D00D4DC33 /* PermissionsPreferredButtonIndicatorController.swift in Sources */,
+				FAC962E41ED3983D00D4DC33 /* PermissionsWindow.swift in Sources */,
+				FAC962E51ED3983D00D4DC33 /* RealmMigrator.swift in Sources */,
+				FAC962E61ED3983D00D4DC33 /* TextureCoordinates.swift in Sources */,
+				FAC962E71ED3983D00D4DC33 /* DebugBarView.swift in Sources */,
+				FAC962E81ED3983D00D4DC33 /* ChromaticAberrationFilter.swift in Sources */,
+				FAC962E91ED3983D00D4DC33 /* ButtonIndicatorIcon.swift in Sources */,
+				FAC962EA1ED3983D00D4DC33 /* GaussianBlur.metal in Sources */,
+				FAC962EB1ED3983D00D4DC33 /* PermissionsEducationViewController.swift in Sources */,
+				FAC962EC1ED3983D00D4DC33 /* InverseMaskGroupedPathButton.swift in Sources */,
+				FAC962ED1ED3983D00D4DC33 /* DragGesture.swift in Sources */,
+				FAC962EE1ED3983D00D4DC33 /* DebugBarController.swift in Sources */,
+				FAC962EF1ED3983D00D4DC33 /* XIcon.swift in Sources */,
+				FAC962F01ED3983D00D4DC33 /* Renderer.swift in Sources */,
+				FAC962F11ED3983D00D4DC33 /* CanvasIcon.swift in Sources */,
+				FAC962F21ED3983D00D4DC33 /* DebugBarItem.swift in Sources */,
+				FAC962F31ED3983D00D4DC33 /* PathIcon.swift in Sources */,
+				FAC962F41ED3983D00D4DC33 /* FlipCameraIcon.swift in Sources */,
+				FAC962F51ED3983D00D4DC33 /* Platform.swift in Sources */,
+				FAC962F61ED3983D00D4DC33 /* UIScreen+Layout.swift in Sources */,
+				FAC962F71ED3983D00D4DC33 /* ChromaticAberration.metal in Sources */,
+				FAC962F81ED3983D00D4DC33 /* Ream+Filtering.swift in Sources */,
+				FAC962F91ED3983D00D4DC33 /* LayoutConstraint+Modifying.swift in Sources */,
+				FAC962FA1ED3983D00D4DC33 /* InverseMaskButton.swift in Sources */,
+				FAC962FB1ED3983D00D4DC33 /* FragmentFilter.swift in Sources */,
+				FAC962FC1ED3983D00D4DC33 /* Int+Pixels.swift in Sources */,
+				FAC962FD1ED3983D00D4DC33 /* PhotosDeniedPermisionViewController.swift in Sources */,
+				FAC962FE1ED3983D00D4DC33 /* PermissionsButtonIndicatorViewController.swift in Sources */,
+				FAC962FF1ED3983D00D4DC33 /* PassthroughFilter.swift in Sources */,
+				FAC963001ED3983D00D4DC33 /* GroupedPathButton.swift in Sources */,
+				FAC963011ED3983D00D4DC33 /* CameraPermissionViewController.swift in Sources */,
+				FAC963021ED3983D00D4DC33 /* InteractivityIndicatorIcon.swift in Sources */,
+				FAC963031ED3983D00D4DC33 /* CaptureButton.swift in Sources */,
+				FAC963041ED3983D00D4DC33 /* KitManager.swift in Sources */,
+				FAC963051ED3983D00D4DC33 /* Font+Convenience.swift in Sources */,
+				FAC963061ED3983D00D4DC33 /* KeepUpright.swift in Sources */,
+				FAC963071ED3983D00D4DC33 /* AbstractFilter.swift in Sources */,
+				FAC963081ED3983D00D4DC33 /* UIView+subviews.swift in Sources */,
+				FAC963091ED3983D00D4DC33 /* ComponentMenuBarDelegate.swift in Sources */,
+				FAC9630A1ED3983D00D4DC33 /* BaseCaptureViewController+Rotation.swift in Sources */,
+				FAC9630B1ED3983D00D4DC33 /* CodeIconButton.swift in Sources */,
+				FAC9630C1ED3983D00D4DC33 /* CameraPositionComponent.swift in Sources */,
+				FAC9630D1ED3983D00D4DC33 /* Vertices.swift in Sources */,
+				FAC9630E1ED3983D00D4DC33 /* CameraDeniedPermisionViewController.swift in Sources */,
+				FAC9630F1ED3983D00D4DC33 /* BaseCaptureViewController.swift in Sources */,
+				FAC963101ED3983D00D4DC33 /* BaseCaptureViewController+Debug.swift in Sources */,
+				FAC963111ED3983D00D4DC33 /* ComponentItemCellDelegate.swift in Sources */,
+				FAC963121ED3983D00D4DC33 /* GaussianBlurFilter.swift in Sources */,
+				FAC963131ED3983D00D4DC33 /* ControlBarItemCell.swift in Sources */,
+				FAC963141ED3983D00D4DC33 /* DebugWindow.swift in Sources */,
+				FAC963151ED3983D00D4DC33 /* DeleteLineIcon.swift in Sources */,
+				FAC963161ED3983D00D4DC33 /* ComponentEditBar.swift in Sources */,
+				FAC963171ED3983D00D4DC33 /* CameraEducationImage.swift in Sources */,
+				FAC963181ED3983D00D4DC33 /* EditSize.swift in Sources */,
+				FAC963191ED3983D00D4DC33 /* MetalCaptureViewController.swift in Sources */,
+				FAC9631A1ED3983D00D4DC33 /* ComponentMenuBar.swift in Sources */,
+				FAC9631B1ED3983D00D4DC33 /* EditOpacity.swift in Sources */,
+				FAC9631C1ED3983D00D4DC33 /* ComponentRealm.swift in Sources */,
+				FAC9631D1ED3983D00D4DC33 /* ComponentEditBarDelegate.swift in Sources */,
+				FAC9631E1ED3983D00D4DC33 /* MetalCameraController.swift in Sources */,
+				FAC9631F1ED3983D00D4DC33 /* Views+AutoLayout.swift in Sources */,
+				FAC963201ED3983D00D4DC33 /* EditPosition.swift in Sources */,
+				FAC963211ED3983D00D4DC33 /* FrontBackCameraToggle.swift in Sources */,
+				FAC963221ED3983D00D4DC33 /* GroupedPathIcon.swift in Sources */,
+				FAC963231ED3983D00D4DC33 /* BaseCaptureViewController+ComponentEditing.swift in Sources */,
+				FAC963241ED3983D00D4DC33 /* SimulatorCaptureViewController.swift in Sources */,
+				FAC963251ED3983D00D4DC33 /* AppDelegate.swift in Sources */,
+				FAC963261ED3983D00D4DC33 /* CanvasIconView.swift in Sources */,
+				FAC963271ED3983D00D4DC33 /* Component.swift in Sources */,
+				FAC963281ED3983D00D4DC33 /* Passthrough.metal in Sources */,
+				FAC963291ED3983D00D4DC33 /* EditRounding.swift in Sources */,
+				FAC9632A1ED3983D00D4DC33 /* CaptureComponent.swift in Sources */,
+				FAC9632B1ED3983D00D4DC33 /* CircleSlider.swift in Sources */,
+				FAC9632C1ED3983D00D4DC33 /* Button.swift in Sources */,
+				FAC9632D1ED3983D00D4DC33 /* PhotosEducationImage.swift in Sources */,
+				FAC9632E1ED3983D00D4DC33 /* RoundableView.swift in Sources */,
+				FAC9632F1ED3983D00D4DC33 /* CameraController.swift in Sources */,
+				FAC963301ED3983D00D4DC33 /* CameraRenderView.swift in Sources */,
+				FAC963311ED3983D00D4DC33 /* DebugBarItemView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -2173,6 +2494,7 @@
 		FA9F8A0B1D953C540058C369 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
@@ -2194,6 +2516,7 @@
 		FA9F8A0C1D953C540058C369 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
@@ -2320,6 +2643,50 @@
 			};
 			name = Release;
 		};
+		FAC963401ED3983D00D4DC33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Resources/Required/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.camera.local;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Headers/Bridging/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FAC963411ED3983D00D4DC33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Resources/Required/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.camera.local;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Headers/Bridging/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2373,6 +2740,15 @@
 			buildConfigurations = (
 				FAB0AA791EC8083D008DCD23 /* Debug */,
 				FAB0AA7A1EC8083D008DCD23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAC9633F1ED3983D00D4DC33 /* Build configuration list for PBXNativeTarget "Slate Local" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAC963401ED3983D00D4DC33 /* Debug */,
+				FAC963411ED3983D00D4DC33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
