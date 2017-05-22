@@ -242,7 +242,7 @@ import AVFoundation
         let renderPassDescriptor = MTLRenderPassDescriptor()
         renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(1, 1, 1, 1)
         renderPassDescriptor.colorAttachments[0].loadAction = .clear
-        renderPassDescriptor.colorAttachments[0].storeAction = .dontCare
+        renderPassDescriptor.colorAttachments[0].storeAction = .store
         renderPassDescriptor.colorAttachments[0].texture = drawable.texture
     
         // Create a render encoder to clear the screen and draw our objects
@@ -252,7 +252,6 @@ import AVFoundation
                           view: view,
                           identifier: "video texture",
                           inputTexture: texture)
-        
         // We are finished with this render command encoder, so end it.
         renderEncoder.endEncoding()
     }

@@ -58,7 +58,7 @@ class FragmentFilter: AbstractFilter {
         let renderPassDescriptor = MTLRenderPassDescriptor()
         renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(1, 1, 1, 1)
         renderPassDescriptor.colorAttachments[0].loadAction = .load
-        renderPassDescriptor.colorAttachments[0].storeAction = .dontCare
+        renderPassDescriptor.colorAttachments[0].storeAction = .store
         renderPassDescriptor.colorAttachments[0].texture = outputTexture
         
         // Create a render encoder to clear the screen and draw our objects
