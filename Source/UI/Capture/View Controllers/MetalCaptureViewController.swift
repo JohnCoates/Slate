@@ -27,15 +27,19 @@ final class MetalCaptureViewController: BaseCaptureViewController {
     
     // MARK: - Capturing
     
-    override func captureTapped() {
+    override func capture() {
         print("metal capture")
+    }
+    
+    // MARK: - Camera Switching
+    
+    override func switchCamera() {
+        renderer.cameraController.switchToNextCamera()
     }
     
     // MARK: - Status Bar
     
     override var prefersStatusBarHidden: Bool {
-        get {
-            return true
-        }
+        return true
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Cartography
 
 class Button: UIView {
     
@@ -16,7 +17,7 @@ class Button: UIView {
     
     /// setCallback(self, class.method)
     func setTappedCallback<T: AnyObject>(instance: T,
-                           method: @escaping (T) -> () -> Void) {
+                                         method: @escaping (T) -> () -> Void) {
         tapCallback = {
             [unowned instance] in
             method(instance)()
@@ -42,13 +43,30 @@ class Button: UIView {
     
     /// When overriding this, make sure to call super!
     func initialSetup() {
+        self.accessibilityIdentifier = "Button"
+        backgroundColor = .clear
         setUpTapGesture()
+        setUpContentView()
     }
     
     private var tapGesture: UITapGestureRecognizer!
     private func setUpTapGesture() {
         tapGesture = UITapGestureRecognizer(target: self, action: .tapped)
         addGestureRecognizer(tapGesture)
+    }
+    
+    // Content view means we can have 0 opacity but still be tappable
+    var contentView = RoundableView()
+    
+    private func setUpContentView() {
+        contentView.backgroundColor = .clear
+        contentView.accessibilityIdentifier = "Button:ContentView"
+        addSubview(contentView)
+        
+        constrain(contentView) {
+            let superview = $0.superview!
+            $0.edges == superview.edges
+        }
     }
     
     // MARK: - Visualize Touch Response
@@ -82,6 +100,28 @@ class Button: UIView {
         self.originalAlpha = nil
     }
     
+    // MARK: - Tappable While Invisible
+    
+    var opacity: CGFloat {
+        set {
+            contentView.alpha = newValue
+        }
+        get {
+            return contentView.alpha
+        }
+    }
+    
+    // MARK: - Roundable
+    
+    var rounding: Float {
+        get {
+            return contentView.rounding
+        }
+        set {
+            contentView.rounding = newValue
+        }
+    }
+    
     // MARK: - User Interaction
     
     func tapped(gesture: UITapGestureRecognizer) {
@@ -89,6 +129,13 @@ class Button: UIView {
             return
         }
         tapCallback()
+    }
+    
+    // MARK: - Layout
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contentView.layoutIfNeeded()
     }
 }
 

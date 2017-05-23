@@ -1,5 +1,7 @@
 disabled_rules:
    - trailing_whitespace
+   - unused_closure_parameter
+   - closure_parameter_position
 #    - force_cast
 #    - function_body_length
 #    - type_body_length
@@ -7,10 +9,20 @@ disabled_rules:
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Carthage
   - Pods
+  - Source/UI/Capture/Code Icons
+  - Source/UI/Capture/Permissions/Code Icons
 variable_name:
   min_length:
     warning: 2
     error: 2
+type_name:
+    min_length: 2
+    max_length:
+        warning: 45
+        error: 50
 line_length:
   warning: 120
+large_tuple:
+  warning: 3
+  error: 5
 type_body_length: 300

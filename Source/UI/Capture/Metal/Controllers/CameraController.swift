@@ -19,7 +19,7 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     typealias CaptureHandler = (CVImageBuffer) -> Void
     private var captureHandler: CaptureHandler?
     func setCaptureHandler<T: AnyObject>(instance: T,
-                           method: @escaping (T) -> CaptureHandler) {
+                                         method: @escaping (T) -> CaptureHandler) {
         captureHandler = {
             [unowned instance] imageBuffer in
             method(instance)(imageBuffer)
@@ -37,32 +37,49 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     lazy var session = AVCaptureSession()
     
     var bestCamera: AVCaptureDevice {
-        get {
-            guard let devices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo) else {
-                fatalError("No video devices")
-            }
-            for potentialDevice in devices {
-                guard let device = potentialDevice as? AVCaptureDevice else {
-                    continue
-                }
-                
-                // prefer my logitech camera
-                if device.localizedName == "HD Pro Webcam C920" {
-                    return device
-                }
-            }
-            return AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        guard let devices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo) else {
+            fatalError("No video devices")
         }
+        for potentialDevice in devices {
+            guard let device = potentialDevice as? AVCaptureDevice else {
+                continue
+            }
+            
+            // prefer my logitech camera
+            if device.localizedName == "HD Pro Webcam C920" {
+                return device
+            }
+        }
+        return AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+    }
+    
+    var suitablePresets: [String] {
+        if Platform.isMacOS {
+            return [AVCaptureSessionPreset1280x720]
+        }
+        return [
+            AVCaptureSessionPresetiFrame960x540,
+            AVCaptureSessionPresetLow
+        ]
     }
     
     func startCapturingVideo() {
         session.beginConfiguration()
         
-        if Platform.isMacOS {
-            session.sessionPreset = AVCaptureSessionPreset1280x720
-        } else {
-            session.sessionPreset = AVCaptureSessionPresetiFrame960x540
+        var presetMaybe: String?
+        for suitablePreset in suitablePresets {
+            if session.canSetSessionPreset(suitablePreset) {
+                presetMaybe = suitablePreset
+                break
+            }
         }
+        
+        guard let preset = presetMaybe else {
+            fatalError("Couldn't find settable video preset!")
+        }
+        
+        session.sessionPreset = preset
+        
         let camera = bestCamera
         do {
             let input = try AVCaptureDeviceInput(device: camera)
@@ -89,19 +106,61 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     }
     
     fileprivate var captureVideoSettings: [AnyHashable: Any] {
-        get {
-            let pixelFormatKey = String(kCVPixelBufferPixelFormatTypeKey)
-            let pixelFormat = Int(kCVPixelFormatType_32BGRA)
-            let metalCompatibilityKey = String(kCVPixelBufferMetalCompatibilityKey)
-            
-            var videoSettings = [AnyHashable: Any]()
-            videoSettings[pixelFormatKey] = pixelFormat
-            #if os(macOS)
-                videoSettings[metalCompatibilityKey] = true
-            #endif
-            
-            return videoSettings
+        let pixelFormatKey = String(kCVPixelBufferPixelFormatTypeKey)
+        let pixelFormat = Int(kCVPixelFormatType_32BGRA)
+        let metalCompatibilityKey = String(kCVPixelBufferMetalCompatibilityKey)
+        
+        var videoSettings = [AnyHashable: Any]()
+        videoSettings[pixelFormatKey] = pixelFormat
+        #if os(macOS)
+            videoSettings[metalCompatibilityKey] = true
+        #endif
+        
+        return videoSettings
+    }
+    
+    // MARK: - Cameras
+    
+    func switchToNextCamera() {
+        guard var devices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo) as? [AVCaptureDevice] else {
+            fatalError("No video devices")
         }
+        if devices.count < 2 {
+            print("Can't switch to next camera, only \(devices.count) cameras available")
+            return
+        }
+        
+        session.stopRunning()
+        var currentDeviceMaybe: AVCaptureDevice?
+        for input in session.inputs {
+            guard let captureInput = input as? AVCaptureDeviceInput else {
+                continue
+            }
+            currentDeviceMaybe = captureInput.device
+            session.removeInput(captureInput)
+        }
+        
+        guard let currentDevice = currentDeviceMaybe else {
+            print("Can't switch to next camera, couldn't find current device as input")
+            return
+        }
+        guard let currentDeviceIndex = devices.index(of: currentDevice) else {
+            print("Can't switch to next camera, couldn't find current device in list")
+            return
+        }
+        
+        devices.remove(at: currentDeviceIndex)
+        let device = devices[0]
+        do {
+            let input = try AVCaptureDeviceInput(device: device)
+            session.addInput(input)
+        } catch {
+            print("Couldn't instantiate device input")
+            return
+        }
+        
+        session.commitConfiguration()
+        session.startRunning()
     }
     
     // MARK: - Video Delegate
@@ -146,5 +205,4 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
             }
         #endif
     }
-    
 }

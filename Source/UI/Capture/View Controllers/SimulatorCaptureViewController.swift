@@ -18,16 +18,19 @@ final class SimulatorCaptureViewController: BaseCaptureViewController {
         placeholderSetup()
     }
 
-    fileprivate func placeholderSetup() {
+    override func placeholderSetup() {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "HannahDeathValley"))
         imageView.contentMode = .scaleAspectFill
-        imageView.frame = view.bounds
         view.insertSubview(imageView, at: 0)
+        constrain(imageView) {
+            let superview = $0.superview!
+            $0.edges == superview.edges
+        }
     }
 
     // MARK: - Capturing
 
-    override func captureTapped() {
+    override func capture() {
         print("simulator capture tapped")
     }
 }

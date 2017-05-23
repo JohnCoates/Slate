@@ -8,8 +8,18 @@
 
 import UIKit
 import Cartography
+import RealmSwift
 
-class BaseCaptureViewController: UIViewController {
+#if (arch(i386) || arch(x86_64)) && os(iOS)
+    typealias CaptureViewController = SimulatorCaptureViewController
+#else
+    typealias CaptureViewController = MetalCaptureViewController
+#endif
+
+fileprivate typealias LocalClass = BaseCaptureViewController
+class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate {
+    
+    lazy var kit: Kit = { KitManager.currentKit }()
     
     // MARK: - View Lifecycle
     
@@ -25,6 +35,35 @@ class BaseCaptureViewController: UIViewController {
         } else {
             cameraSetup()
         }
+        
+        loadComponents()
+    }
+    
+    // MARK: - View Rotation
+    
+    var keepUpright = [UIView]()
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .all
+    }
+    
+    override func viewWillTransition(to size: CGSize,
+                                     with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        let oldBounds = view.bounds
+        coordinator.animate(alongsideTransition: { context in
+            self.rootViewUpdateBounds(oldBounds: oldBounds, targetSize: size)
+            self.rootViewApplyRotationCorrectingTransform(targetTransform: context.targetTransform)
+            self.applyUprightTransformToSubscribedViews()
+            
+            let orientation = UIScreen.orientation
+            self.transitionKit(to: size, orientation: orientation)
+            
+            self.view.layoutIfNeeded()
+        }) { context in
+            self.rootViewRoundTransformNowThatAnimationFinished()
+        }
     }
     
     // MARK: - Setup
@@ -35,126 +74,120 @@ class BaseCaptureViewController: UIViewController {
     
     // MARK: - Placeholder
     
-    fileprivate func placeholderSetup() {
-        let imageView = UIImageView(image: #imageLiteral(resourceName: "HannahDeathValley"))
-        imageView.contentMode = .scaleAspectFill
-        imageView.frame = view.bounds
-        view.insertSubview(imageView, at: 0)
+    func placeholderSetup() {
     }
     
     // MARK: - Controls Setup
     
     fileprivate func controlsSetup() {
-        captureButtonSetup()
         controlMenuSetup()
+        componentEditBarSetup()
     }
     
-    // MARK: - Capture Button Setup
+    // MARK: - Component Menu Setup
     
-    private lazy var captureButton: CaptureButton = CaptureButton()
-    fileprivate func captureButtonSetup() {
-        captureButton.setTappedCallback(instance: self,
-                                        method: Method.captureTapped)
-        view.addSubview(captureButton)
-        
-        constrain(captureButton) {
-            let superview = $0.superview!
-            $0.width == 75
-            $0.height == $0.width
-            $0.centerX == superview.centerX
-            $0.bottom == superview.bottom - 15
-        }
-    }
+    lazy var menuView = ComponentMenuBar()
+    var menuVerticalConstraint: NSLayoutConstraint?
     
-    // MARK: - Control Menu Setup
-    
-    fileprivate lazy var menuView = UIView()
-    fileprivate var menuVerticalConstraint: NSLayoutConstraint?
-    fileprivate func controlMenuSetup() {
-        let blurEffect = UIBlurEffect(style: .light)
-        let visualEffectView = UIVisualEffectView(effect: blurEffect)
-        menuView.addSubview(visualEffectView)
-        constrain(visualEffectView) {
-            let superview = $0.superview!
-            $0.edges == superview.edges
-        }
-        
-        menuView.backgroundColor = UIColor.clear
-        view.addSubview(menuView)
-        
-        var verticalConstraint: NSLayoutConstraint!
-        constrain(menuView) {
-            let superview = $0.superview!
-            $0.height == 55
-            $0.width == superview.width
-            $0.top >= superview.top ~ 1000
-            $0.bottom <= superview.bottom ~ 1000
-            verticalConstraint = $0.top == superview.top + 100
-            verticalConstraint ~ 400
-        }
-        
-        menuVerticalConstraint = verticalConstraint
-        menuDraggableSetup()
-    }
-    
-    fileprivate func menuDraggableSetup() {
+    lazy var dragGesture: UIPanGestureRecognizer = {
         let dragGesture = UIPanGestureRecognizer(target: self,
                                                  action: .menuDragged)
-        menuView.addGestureRecognizer(dragGesture)
+        dragGesture.delegate = self
+        return dragGesture
+    }()
+    
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if gestureRecognizer == dragGesture {
+            return isVerticalDrag(gesture: dragGesture, targetView: menuView)
+        } else if gestureRecognizer == editBarDragGesture {
+            return isVerticalDrag(gesture: editBarDragGesture, targetView: editBar)
+        }
+        
+        return false
     }
     
-    fileprivate var menuLastTranslationY: CGFloat?
-    func menuDragged(gesture: UIPanGestureRecognizer) {
-        if gesture.state == .began || gesture.state == .ended || gesture.state == .cancelled {
-            menuLastTranslationY = nil
+    func isVerticalDrag(gesture: UIPanGestureRecognizer,
+                        targetView: UIView) -> Bool {
+        let velocity = gesture.velocity(in: targetView)
+        if abs(velocity.y) > abs(velocity.x) {
+            return true
+        } else {
+            return false
         }
-        guard gesture.state == .changed else {
-            return
-        }
-        
-        let translation = gesture.translation(in: menuView)
-        var translationY = translation.y
-        
-        if let menuLastTranslationY = menuLastTranslationY {
-            translationY -= menuLastTranslationY
-        }
-        
-        let minimumOffsetChange: CGFloat = 1
-        guard abs(translationY) > minimumOffsetChange,
-        let menuVerticalConstraint = menuVerticalConstraint else {
-            return
-        }
-        
-        menuLastTranslationY = translation.y
-        
-        menuVerticalConstraint.constant += translationY
-        menuView.setNeedsLayout()
     }
     
-    // MARK: - Capturing
-    
-    func captureTapped() {
-        print("capture tapped")
-    }
+    var menuLastTranslationY: CGFloat?
     
     // MARK: - Status Bar
     
     override var prefersStatusBarHidden: Bool {
-        get {
-            return true
+        return true
+    }
+    
+    // MARK: - Load Kit
+    
+    func loadComponents() {
+        for component in kit.components {
+            component.view.frame = component.frame
+            self.view.insertSubview(component.view, belowSubview: menuView)
+            configureAdded(component: component)
         }
+    }
+    
+    // MARK: - Component Configuring
+    
+    func configureAdded(component: Component) {
+        addEditGesture(toComponent: component)
+        
+        if let componentView = component.view as? FrontBackCameraToggle {
+            componentView.setTappedCallback(instance: self,
+                                            method: Method.switchCamera)
+        } else if let componentView = component.view as? CaptureButton {
+            componentView.setTappedCallback(instance: self,
+                                            method: Method.capture)
+        }
+    }
+    
+    // MARK: - Edit Components
+    
+    lazy var editBar = ComponentEditBar()
+    var editBarVerticalConstraint: NSLayoutConstraint?
+    
+    lazy var editBarDragGesture: UIPanGestureRecognizer = {
+        let dragGesture = UIPanGestureRecognizer(target: self,
+                                                 action: .editBarDragged)
+        dragGesture.delegate = self
+        return dragGesture
+    }()
+    
+    var editBarLastTranslationY: CGFloat?
+    
+    // MARK: - Edit Position
+    
+    var editGestures = [DragGesture]()
+    
+    // MARK: - Camera Actions
+    
+    func capture() {
+        print("capture tapped")
+    }
+    
+    func switchCamera() {
+        print("Switch camera!")
     }
 }
 
 // MARK: - Callbacks
 
-fileprivate struct Method {
-    static let captureTapped = BaseCaptureViewController.captureTapped
-    
+private struct Method {
+    static let switchCamera = LocalClass.switchCamera
+    static let capture = LocalClass.capture
 }
 
 // MARK: - Selector Extension
 
-private extension Selector {
-    static let menuDragged = #selector(BaseCaptureViewController.menuDragged)
+fileprivate extension Selector {
+    static let menuDragged = #selector(LocalClass.menuDragged)
+    static let editBarDragged = #selector(LocalClass.editBarDragged)
+    static let componentEditGesture = #selector(LocalClass.componentEditGesture)
 }
