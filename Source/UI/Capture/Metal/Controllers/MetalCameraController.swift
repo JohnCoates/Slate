@@ -57,8 +57,7 @@ class MetalCameraController: CameraController {
                                 from connection: AVCaptureConnection!) {
         #if METAL_DEVICE
             #if os(iOS)
-                let orientation = UIApplication.shared.statusBarOrientation.rawValue
-                connection.videoOrientation = AVCaptureVideoOrientation(rawValue: orientation)!
+                connection.videoOrientation = .portrait
             #endif
             guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
                 print("Couldn't get image buffer")
