@@ -37,6 +37,7 @@ final class ComponentMenuBar: UIView,
         view.register(ControlBarItemCell.self,
                       forCellWithReuseIdentifier: ControlBarItemCell.reuseIdentifier)
         view.isScrollEnabled = true
+        view.showsVerticalScrollIndicator = false
         view.alwaysBounceHorizontal = true
         view.dataSource = self
         view.clipsToBounds = false
