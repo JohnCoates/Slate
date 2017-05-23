@@ -72,7 +72,6 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         }
         
         session.sessionPreset = preset
-        print("preset: \(preset)")
         
         let camera = bestCamera
         do {

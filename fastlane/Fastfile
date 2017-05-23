@@ -1,0 +1,28 @@
+# https://docs.fastlane.tools
+fastlane_version "1.109.0"
+
+default_platform :ios
+
+# Fastfile actions accept additional configuration, but
+# don't worry, fastlane will prompt you for required
+# info which you can add here later
+lane :beta do
+  gym(
+    scheme: "Slate",
+    configuration: "AppStore",
+    export_method: "app-store"
+  )
+
+ # match
+ testflight(
+ app_identifier: "com.johncoates.camera",
+ skip_submission: true,
+ skip_waiting_for_build_processing: true,
+ team_name: "John Coates",
+ username: "acapulco1988@gmail.com"
+ )
+ 
+ Dir.chdir("..") do
+   sh("agvtool next-version")
+ end
+end
