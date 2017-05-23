@@ -8,7 +8,6 @@
 
 import UIKit
 import Cartography
-import AVFoundation
 import Photos
 
 fileprivate typealias LocalClass = PhotosPermissionViewController
@@ -49,13 +48,17 @@ class PhotosPermissionViewController: PermissionsEducationViewController {
     
     func requestAccessFromSystem() {
         // Doesn't return on main queue!
-        PHPhotoLibrary.requestAuthorization { result in
-            print("photos result: \(result)")
+        PHPhotoLibrary.requestAuthorization { authorizationStatus in
             DispatchQueue.main.async {
                 if self.presentedViewController != nil {
                     self.dismiss(animated: false, completion: nil)
                 }
                 PermissionsWindow.dismiss()
+                if authorizationStatus == .authorized {
+                    self.delegate?.enabled(permission: .photos)
+                } else if authorizationStatus == .denied {
+                    self.delegate?.denied(permission: .photos)
+                }
             }
         }
     }
@@ -70,14 +73,11 @@ class PhotosPermissionViewController: PermissionsEducationViewController {
         let status = PHPhotoLibrary.authorizationStatus()
         switch status {
         case .notDetermined:
-            print("not determined")
             break
         case .authorized:
-            print("authorized")
             PermissionsWindow.dismiss()
             return
         case .denied, .restricted:
-            print("denied")
             showDeniedPhotosScreen()
             return
         }

@@ -43,7 +43,7 @@ final class ComponentMenuBar: UIView,
         view.clipsToBounds = false
         view.contentInset = UIEdgeInsets(top: 2, left: 10, bottom: 0, right: 0)
 //        view.backgroundColor = UIColor.clear
-        view.backgroundColor = UIColor.orange.withAlphaComponent(0.15)
+        view.backgroundColor = UIColor.orange.withAlphaComponent(0.05)
         return view
     }()
     

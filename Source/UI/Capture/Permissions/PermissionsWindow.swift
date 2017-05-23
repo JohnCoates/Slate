@@ -20,12 +20,15 @@ class PermissionsWindow: UIWindow {
         case photosDenied
     }
     
-    class func show(kind: Kind, animated: Bool) {
+    class func show(kind: Kind, animated: Bool, delegate: PermissionsManagerDelegate? = nil) {
         let window: LocalClass
         if let currentWindow = currentWindow {
             window = currentWindow
+            if let delegate = delegate {
+                window.delegate = delegate
+            }
         } else {
-            window = LocalClass(kind: kind)
+            window = LocalClass(kind: kind, delegate: delegate)
         }
         
         currentWindow = window
@@ -60,8 +63,10 @@ class PermissionsWindow: UIWindow {
     // MARK: - Init
     
     let kind: Kind
-    init(kind: Kind) {
+    weak var delegate: PermissionsManagerDelegate?
+    init(kind: Kind, delegate: PermissionsManagerDelegate? = nil) {
         self.kind = kind
+        self.delegate = delegate
         super.init(frame: UIScreen.main.bounds)
         initialSetup()
     }
@@ -82,11 +87,11 @@ class PermissionsWindow: UIWindow {
     func createViewController() -> UIViewController {
         switch kind {
         case .camera:
-            return CameraPermissionViewController()
+            return CameraPermissionViewController(delegate: delegate)
         case .cameraDenied:
             return CameraDeniedPermisionViewController()
         case .photos:
-            return PhotosPermissionViewController()
+            return PhotosPermissionViewController(delegate: delegate)
         case .photosDenied:
             return PhotosDeniedPermisionViewController()
         }
