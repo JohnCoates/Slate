@@ -17,26 +17,42 @@ import RealmSwift
 #endif
 
 fileprivate typealias LocalClass = BaseCaptureViewController
-class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate {
+class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate, PermissionsManagerDelegate {
     
     lazy var kit: Kit = { KitManager.currentKit }()
+    
+    var permissionsManager: PermissionsManager?
     
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // prevents UICollectionView insets from being increased
+        automaticallyAdjustsScrollViewInsets = false
         view.accessibilityIdentifier = "CaptureView"
-        view.backgroundColor = UIColor.black
+        view.backgroundColor = .black
         controlsSetup()
         
-        if Platform.isSimulator {
-            placeholderSetup()
-        } else {
+        let permissionsManager = PermissionsManager()
+        if permissionsManager.hasPermission(for: .camera) {
             cameraSetup()
+            loadComponents()
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        loadComponents()
+        let permissionsManager = PermissionsManager()
+        if permissionsManager.hasPermission(for: .camera) == false {
+            if permissionsManager.hasAvailableRequest(for: .camera) {
+                self.permissionsManager = permissionsManager
+                permissionsManager.delegate = self
+                permissionsManager.requestPermission(for: .camera)
+            } else {
+                PermissionsWindow.show(kind: .cameraDenied, animated: true)
+            }
+        }
     }
     
     // MARK: - View Rotation
@@ -70,11 +86,6 @@ class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func cameraSetup() {
         fatalError("\(#file) cameraSetup() must be subclassed")
-    }
-    
-    // MARK: - Placeholder
-    
-    func placeholderSetup() {
     }
     
     // MARK: - Controls Setup
@@ -174,6 +185,18 @@ class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func switchCamera() {
         print("Switch camera!")
+    }
+    
+    // MARK: - Permissions Manager Delegate
+    
+    func enabled(permission: Permission) {
+        if permission == .camera {
+            cameraSetup()
+            loadComponents()
+        }
+    }
+    func denied(permission: Permission) {
+        
     }
 }
 

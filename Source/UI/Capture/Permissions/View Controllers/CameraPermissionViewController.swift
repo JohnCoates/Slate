@@ -44,12 +44,17 @@ class CameraPermissionViewController: PermissionsEducationViewController {
     
     func requestAccessFromSystem() {
         // Doesn't return on main queue!
-        AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { result in
+        AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { authorized in
             DispatchQueue.main.async {
                 if self.presentedViewController != nil {
                     self.dismiss(animated: false, completion: nil)
                 }
                 PermissionsWindow.dismiss()
+                if authorized {
+                    self.delegate?.enabled(permission: .camera)
+                } else {
+                    self.delegate?.denied(permission: .camera)
+                }
             }
         }
     }

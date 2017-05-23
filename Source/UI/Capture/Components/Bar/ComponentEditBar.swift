@@ -390,7 +390,7 @@ final class ComponentEditBar: UIView {
         }
         alertController.addAction(interaction)
         
-        let gestured = UIAlertAction(title: "Gestured", style: .default) { action in
+        let gestured = UIAlertAction(title: "Gestures", style: .default) { action in
             self.changedMode()
         }
         alertController.addAction(gestured)

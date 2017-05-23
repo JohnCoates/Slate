@@ -159,6 +159,10 @@
 		FA5F8CB11ED06A5F00921A61 /* CaptureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CAF1ED06A5F00921A61 /* CaptureComponent.swift */; };
 		FA5F8CB31ED0958100921A61 /* KeepUpright.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CB21ED0958100921A61 /* KeepUpright.swift */; };
 		FA5F8CB41ED0958100921A61 /* KeepUpright.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CB21ED0958100921A61 /* KeepUpright.swift */; };
+		FA76F5421ED3C32D00059906 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */; };
+		FA76F5461ED48FFC00059906 /* ImageCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76F5451ED48FFC00059906 /* ImageCaptureManager.swift */; };
+		FA76F5471ED48FFC00059906 /* ImageCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76F5451ED48FFC00059906 /* ImageCaptureManager.swift */; };
+		FA76F5481ED48FFC00059906 /* ImageCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76F5451ED48FFC00059906 /* ImageCaptureManager.swift */; };
 		FA7724CD1ED1A25F00C5C227 /* EditOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BD7A41ED18D0C00D1761C /* EditOpacity.swift */; };
 		FA7724D31ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7724D21ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift */; };
 		FA7724D41ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7724D21ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift */; };
@@ -311,6 +315,9 @@
 		FAC963381ED3983D00D4DC33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9F89EE1D953C540058C369 /* LaunchScreen.storyboard */; };
 		FAC963391ED3983D00D4DC33 /* Placeholders.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA834BE51D9932BC0017CCCA /* Placeholders.xcassets */; };
 		FAC9633A1ED3983D00D4DC33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9F89EC1D953C540058C369 /* Assets.xcassets */; };
+		FAC9634C1ED3B68700D4DC33 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */; };
+		FAC9634D1ED3B68700D4DC33 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */; };
+		FAC9634E1ED3B68700D4DC33 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */; };
 		FACC8FD41D98A55400589230 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
 		FACFE4931ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */; };
 		FACFE4941ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */; };
@@ -519,6 +526,7 @@
 		FA5F8CA51ED0649200921A61 /* Font+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+Convenience.swift"; sourceTree = "<group>"; };
 		FA5F8CAF1ED06A5F00921A61 /* CaptureComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureComponent.swift; sourceTree = "<group>"; };
 		FA5F8CB21ED0958100921A61 /* KeepUpright.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeepUpright.swift; sourceTree = "<group>"; };
+		FA76F5451ED48FFC00059906 /* ImageCaptureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCaptureManager.swift; sourceTree = "<group>"; };
 		FA7724D21ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractivityIndicatorIcon.swift; sourceTree = "<group>"; };
 		FA78F28D1E144C0E00D34947 /* DebugBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarController.swift; sourceTree = "<group>"; };
 		FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarDelegate.swift; sourceTree = "<group>"; };
@@ -570,6 +578,7 @@
 		FABB16B01D9F822800A8AC6C /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCaptureViewController.swift; sourceTree = "<group>"; };
 		FAC963421ED3983D00D4DC33 /* Slate Local.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slate Local.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		FACC8FD31D98A55400589230 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cartography.framework; sourceTree = "<group>"; };
 		FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPermissionViewController.swift; sourceTree = "<group>"; };
 		FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupedPathIcon.swift; sourceTree = "<group>"; };
@@ -1041,6 +1050,7 @@
 			isa = PBXGroup;
 			children = (
 				FA5709A11ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift */,
+				FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1084,6 +1094,14 @@
 				FA5F8CAF1ED06A5F00921A61 /* CaptureComponent.swift */,
 			);
 			path = Capture;
+			sourceTree = "<group>";
+		};
+		FA76F5441ED48FCB00059906 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA76F5451ED48FFC00059906 /* ImageCaptureManager.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		FA7724CE1ED1BDF500C5C227 /* Menu Bar */ = {
@@ -1206,6 +1224,7 @@
 		FA86BE021D98ED5600BC5FB1 /* Capture */ = {
 			isa = PBXGroup;
 			children = (
+				FA76F5441ED48FCB00059906 /* Controllers */,
 				FAF10D161ECAFEFC0008690E /* Permissions */,
 				FA2B1E6F1EC9238900E44613 /* Code Icons */,
 				FA29FB461EA49B0400EB1081 /* Components */,
@@ -1655,6 +1674,7 @@
 				FA2B1E641EC817E700E44613 /* Embed Frameworks */,
 				FA2B1EAD1EC932DC00E44613 /* Build Metal Shader Library */,
 				FA5709A41ECC6D37000362C8 /* Clear Simulator Permissions */,
+				FA76F5431ED3C93800059906 /* Integrate Reveal */,
 			);
 			buildRules = (
 				FA2B1EAC1EC9328700E44613 /* PBXBuildRule */,
@@ -1852,6 +1872,20 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
+		FA76F5431ED3C93800059906 /* Integrate Reveal */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Integrate Reveal";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "REVEAL_APP_PATH=$(mdfind kMDItemCFBundleIdentifier=\"com.ittybittyapps.Reveal2\" | head -n 1)\nBUILD_SCRIPT_PATH=\"${REVEAL_APP_PATH}/Contents/SharedSupport/Scripts/reveal_server_build_phase.sh\"\nif [ \"${REVEAL_APP_PATH}\" -a -e \"${BUILD_SCRIPT_PATH}\" ]; then\n\"${BUILD_SCRIPT_PATH}\"\nelse\necho \"Reveal Server not loaded: Cannot find a compatible Reveal app.\"\nfi";
+		};
 		FA7724D51ED1E35200C5C227 /* Copy Carthage Frameworks (fix x86_64 binaries in App Store builds) */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1983,8 +2017,10 @@
 				FABB16A61D9F471000A8AC6C /* HUDShaderViewController.swift in Sources */,
 				FA4DFEDB1D9DBD5F0068706F /* Renderer.swift in Sources */,
 				FABB16AE1D9F6DAB00A8AC6C /* ChromaticAberration.metal in Sources */,
+				FA76F5481ED48FFC00059906 /* ImageCaptureManager.swift in Sources */,
 				FA4DFED11D9DBD1A0068706F /* AppDelegate.swift in Sources */,
 				FA4021C71DA0AEE800752F3B /* MetalCameraController.swift in Sources */,
+				FAC9634E1ED3B68700D4DC33 /* PermissionsManager.swift in Sources */,
 				FA4D541A1DB055BB0091184D /* ComputeFilter.swift in Sources */,
 				FABB169F1D9F308C00A8AC6C /* Vertices.swift in Sources */,
 				FA4D54171DB055A00091184D /* FragmentFilter.swift in Sources */,
@@ -2014,6 +2050,7 @@
 				FA5F8C971ECFE7D000921A61 /* BaseCaptureViewController+Kit.swift in Sources */,
 				FA2B1E711EC9239F00E44613 /* CheckmarkIcon.swift in Sources */,
 				FA5709A21ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift in Sources */,
+				FA76F5461ED48FFC00059906 /* ImageCaptureManager.swift in Sources */,
 				FAF10D181ECAFF1D0008690E /* PermissionsWindow.swift in Sources */,
 				FA4BD7A91ED18F6900D1761C /* RealmMigrator.swift in Sources */,
 				FABB16A21D9F402C00A8AC6C /* TextureCoordinates.swift in Sources */,
@@ -2089,6 +2126,7 @@
 				FA834BE11D9927EB0017CCCA /* Button.swift in Sources */,
 				FA57099E1ECC5E4D000362C8 /* PhotosEducationImage.swift in Sources */,
 				FA2B1EB51EC9824E00E44613 /* RoundableView.swift in Sources */,
+				FAC9634C1ED3B68700D4DC33 /* PermissionsManager.swift in Sources */,
 				FABB16B11D9F822800A8AC6C /* CameraController.swift in Sources */,
 				FA2426CE1D9A67E000AEE60C /* CameraRenderView.swift in Sources */,
 				FA78F29C1E15686C00D34947 /* DebugBarItemView.swift in Sources */,
@@ -2201,6 +2239,7 @@
 				FAF10D191ECAFF1D0008690E /* PermissionsWindow.swift in Sources */,
 				FA8CE4231ECD7E5A00788026 /* Int+Pixels.swift in Sources */,
 				FA2B1E9A1EC92B5B00E44613 /* ComponentEditBarDelegate.swift in Sources */,
+				FA76F5421ED3C32D00059906 /* PermissionsManager.swift in Sources */,
 				FAF10D021ECAA9170008690E /* GroupedPathButton.swift in Sources */,
 				FA7724D41ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift in Sources */,
 				FA2B1E891EC92B5B00E44613 /* FragmentFilter.swift in Sources */,
@@ -2223,6 +2262,7 @@
 				FAC962E11ED3983D00D4DC33 /* BaseCaptureViewController+Kit.swift in Sources */,
 				FAC962E21ED3983D00D4DC33 /* CheckmarkIcon.swift in Sources */,
 				FAC962E31ED3983D00D4DC33 /* PermissionsPreferredButtonIndicatorController.swift in Sources */,
+				FA76F5471ED48FFC00059906 /* ImageCaptureManager.swift in Sources */,
 				FAC962E41ED3983D00D4DC33 /* PermissionsWindow.swift in Sources */,
 				FAC962E51ED3983D00D4DC33 /* RealmMigrator.swift in Sources */,
 				FAC962E61ED3983D00D4DC33 /* TextureCoordinates.swift in Sources */,
@@ -2298,6 +2338,7 @@
 				FAC9632C1ED3983D00D4DC33 /* Button.swift in Sources */,
 				FAC9632D1ED3983D00D4DC33 /* PhotosEducationImage.swift in Sources */,
 				FAC9632E1ED3983D00D4DC33 /* RoundableView.swift in Sources */,
+				FAC9634D1ED3B68700D4DC33 /* PermissionsManager.swift in Sources */,
 				FAC9632F1ED3983D00D4DC33 /* CameraController.swift in Sources */,
 				FAC963301ED3983D00D4DC33 /* CameraRenderView.swift in Sources */,
 				FAC963311ED3983D00D4DC33 /* DebugBarItemView.swift in Sources */,

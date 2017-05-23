@@ -53,32 +53,26 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         return AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
     }
     
-    var suitablePresets: [String] {
-        if Platform.isMacOS {
-            return [AVCaptureSessionPreset1280x720]
-        }
-        return [
-            AVCaptureSessionPresetiFrame960x540,
-            AVCaptureSessionPresetLow
+    lazy var stillOutput: AVCaptureStillImageOutput = {
+        let capture = AVCaptureStillImageOutput()
+        // same format as the preview video, stops the internal conversion
+        // from dropping in FPS
+        let format: [String: Any] = [
+            String(kCVPixelBufferPixelFormatTypeKey): kCVPixelFormatType_32BGRA as NSNumber
         ]
-    }
+        capture.outputSettings = format
+        return capture
+    }()
     
     func startCapturingVideo() {
         session.beginConfiguration()
         
-        var presetMaybe: String?
-        for suitablePreset in suitablePresets {
-            if session.canSetSessionPreset(suitablePreset) {
-                presetMaybe = suitablePreset
-                break
-            }
-        }
-        
-        guard let preset = presetMaybe else {
+        guard let preset = bestSessionPreset() else {
             fatalError("Couldn't find settable video preset!")
         }
         
         session.sessionPreset = preset
+        print("preset: \(preset)")
         
         let camera = bestCamera
         do {
@@ -89,6 +83,34 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
             return
         }
         
+        attachPreviewOutput(toSession: session)
+        attachStillPhotoOutput(toSession: session)
+//        setBestPreviewFormat(forDevice: camera)
+        session.commitConfiguration()
+        
+        session.startRunning()
+    }
+    func bestSessionPreset() -> String? {
+        let suitablePresets: [String]
+        if Platform.isMacOS {
+            suitablePresets = [AVCaptureSessionPreset1280x720]
+        } else {
+            suitablePresets = [
+                AVCaptureSessionPresetiFrame960x540,
+                AVCaptureSessionPreset1280x720,
+                AVCaptureSessionPresetPhoto
+                
+            ]
+        }
+        for preset in suitablePresets {
+            if session.canSetSessionPreset(preset) {
+                return preset
+            }
+        }
+        return nil
+    }
+    
+    func attachPreviewOutput(toSession session: AVCaptureSession) {
         let dataOutput = AVCaptureVideoDataOutput()
         dataOutput.alwaysDiscardsLateVideoFrames = true
         if !Platform.isProduction {
@@ -101,8 +123,61 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue.main)
         
         session.addOutput(dataOutput)
-        session.commitConfiguration()
-        session.startRunning()
+    }
+    
+    func attachStillPhotoOutput(toSession session: AVCaptureSession) {
+        if session.canAddOutput(stillOutput) {
+            session.addOutput(stillOutput)
+        } else {
+            print("Error: Couldn't add still output!")
+        }
+    }
+    
+    func setBestPreviewFormat(forDevice device: AVCaptureDevice) {
+        
+        guard let formats = device.formats as? [AVCaptureDeviceFormat] else {
+            print("Couldn't get formats for device: \(device)")
+            return
+        }
+        
+        var bestFormat: AVCaptureDeviceFormat?
+        var frameRateRange: AVFrameRateRange?
+        var bestWidth: Int32 = 0
+        let targetFrameRate: Float64 = 30
+        let targetWidth: Int32 = 1280
+        
+        for format in formats {
+            guard let formatDescription = format.formatDescription,
+            let ranges = format.videoSupportedFrameRateRanges as? [AVFrameRateRange] else {
+                continue
+            }
+            let dimensions = CMVideoFormatDescriptionGetDimensions(formatDescription)
+            let width = dimensions.width
+            for range in ranges {
+                if width > targetWidth {
+                    continue
+                }
+                if width >= bestWidth && range.maxFrameRate >= targetFrameRate {
+                    bestWidth = width
+                    bestFormat = format
+                    frameRateRange = range
+                }
+            }
+        }
+        
+        guard let format = bestFormat, let range = frameRateRange else {
+            print("Couldn't find best preview format for device")
+            return
+        }
+        do {
+            try device.lockForConfiguration()
+            device.activeFormat = format
+            device.activeVideoMinFrameDuration = range.minFrameDuration
+            device.activeVideoMaxFrameDuration = range.maxFrameDuration
+            device.unlockForConfiguration()
+        } catch let error {
+            print("error locking camera for configuration: \(error)")
+        }
     }
     
     fileprivate var captureVideoSettings: [AnyHashable: Any] {

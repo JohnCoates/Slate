@@ -15,6 +15,7 @@ final class ControlBarItemCell: UICollectionViewCell {
     weak var collectionView: UICollectionView?
     weak var delegate: ComponentItemCellDelegate?
     var component: Component.Type?
+    
     // MARK: - Init
     
     convenience init() {

@@ -37,12 +37,13 @@ final class ComponentMenuBar: UIView,
         view.register(ControlBarItemCell.self,
                       forCellWithReuseIdentifier: ControlBarItemCell.reuseIdentifier)
         view.isScrollEnabled = true
+        view.showsVerticalScrollIndicator = false
         view.alwaysBounceHorizontal = true
         view.dataSource = self
         view.clipsToBounds = false
         view.contentInset = UIEdgeInsets(top: 2, left: 10, bottom: 0, right: 0)
 //        view.backgroundColor = UIColor.clear
-        view.backgroundColor = UIColor.orange.withAlphaComponent(0.15)
+        view.backgroundColor = UIColor.orange.withAlphaComponent(0.05)
         return view
     }()
     

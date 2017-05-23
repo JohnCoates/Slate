@@ -15,10 +15,6 @@ final class SimulatorCaptureViewController: BaseCaptureViewController {
     // MARK: - Camera Setup
 
     override func cameraSetup() {
-        placeholderSetup()
-    }
-
-    override func placeholderSetup() {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "HannahDeathValley"))
         imageView.contentMode = .scaleAspectFill
         view.insertSubview(imageView, at: 0)

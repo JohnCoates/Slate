@@ -13,6 +13,16 @@ import AVFoundation
 fileprivate typealias LocalClass = PermissionsEducationViewController
 class PermissionsEducationViewController: UIViewController {
     
+    weak var delegate: PermissionsManagerDelegate?
+    init(delegate: PermissionsManagerDelegate? = nil) {
+        self.delegate = delegate
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init(coder: NSCoder) {
+        fatalError("Doesn't implement NSCoder")
+    }
+    
     // MARK: - View Management
     
     override func viewDidLoad() {

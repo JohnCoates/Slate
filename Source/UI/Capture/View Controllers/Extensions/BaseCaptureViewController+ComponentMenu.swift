@@ -14,15 +14,15 @@ extension BaseCaptureViewController: ComponentMenuBarDelegate {
     
     func controlMenuSetup() {
         menuView.delegate = self
-        let blurEffect = UIBlurEffect(style: .light)
-        let visualEffectView = UIVisualEffectView(effect: blurEffect)
-        menuView.addSubview(visualEffectView)
-        constrain(visualEffectView) {
-            let superview = $0.superview!
-            $0.edges == superview.edges
-        }
+//        let blurEffect = UIBlurEffect(style: .light)
+//        let visualEffectView = UIVisualEffectView(effect: blurEffect)
+//        menuView.addSubview(visualEffectView)
+//        constrain(visualEffectView) {
+//            let superview = $0.superview!
+//            $0.edges == superview.edges
+//        }
         
-        menuView.backgroundColor = UIColor.clear
+        menuView.backgroundColor = UIColor.white.withAlphaComponent(0.7)
         view.addSubview(menuView)
         
         var verticalConstraint: NSLayoutConstraint!

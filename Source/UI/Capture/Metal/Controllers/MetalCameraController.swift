@@ -51,6 +51,7 @@ class MetalCameraController: CameraController {
     
     // MARK: - Video Delegate
     
+    weak var captureConnection: AVCaptureConnection?
     override func captureOutput(_ captureOutput: AVCaptureOutput!,
                                 didOutputSampleBuffer sampleBuffer: CMSampleBuffer!,
                                 from connection: AVCaptureConnection!) {
@@ -86,6 +87,7 @@ class MetalCameraController: CameraController {
             }
             
             textureHandler?(texture)
+            captureConnection = connection
         #endif
     }
 }
