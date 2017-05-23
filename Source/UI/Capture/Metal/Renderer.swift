@@ -182,21 +182,18 @@ import AVFoundation
     // MARK: - Render
     
     func render(_ view: MTKView) {
-        if !dirtyTexture {
+        guard let currentDrawable = view.currentDrawable, dirtyTexture else {
             return
-        } else {
-            dirtyTexture = false
         }
+        
+        dirtyTexture = false
         
         guard let texture = self.texture else {
             return
         }
         // Our command buffer is a container for the work we want to perform with the GPU.
         let commandBuffer = commandQueue.makeCommandBuffer()
-        
-        guard let currentDrawable = view.currentDrawable else {
-            fatalError("no drawable!")
-        }
+
         #if METAL_DEVICE
             if useFilters {
                 let filteredTexture = filterTexture(texture, withCommandBuffer: commandBuffer)
