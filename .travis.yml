@@ -3,6 +3,7 @@ language: objective-c
 osx_image: xcode8.3
 cache:
   bundler: true
+  cocoapods: true
   directories:
     - Carthage
     - $HOME/Library/Caches/carthage_cache
@@ -15,7 +16,7 @@ install:
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J 'Slate'
 script:
-- set -o pipefail && env NSUnbufferedIO=YES xcodebuild -project ./Slate.xcodeproj -scheme Slate  -sdk iphonesimulator -destination 'name=iPhone SE' build test | xcpretty
+- set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace Slate.xcworkspace -scheme Slate  -sdk iphonesimulator -destination 'name=iPhone SE' build test | xcpretty
 notifications:
   webhooks:
     urls:
