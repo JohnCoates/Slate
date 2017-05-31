@@ -170,7 +170,9 @@ import AVFoundation
         sampler.normalizedCoordinates = true
         sampler.lodMinClamp = 0
         sampler.lodMaxClamp = 2
+        #if os(iOS)
         sampler.lodAverage = false
+        #endif
         sampler.label = "slateSampler"
         return device.makeSamplerState(descriptor: sampler)
     }
