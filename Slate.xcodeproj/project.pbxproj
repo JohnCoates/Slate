@@ -143,6 +143,10 @@
 		FA4DFEDB1D9DBD5F0068706F /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */; };
 		FA4DFEDC1D9DBD620068706F /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */; };
 		FA4DFEE01D9DC15E0068706F /* HUDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4DFEDF1D9DC15E0068706F /* HUDController.swift */; };
+		FA5651AC1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5651AB1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift */; };
+		FA5651AD1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5651AB1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift */; };
+		FA5651AE1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5651AB1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift */; };
+		FA5651AF1EDE4C44006B5A19 /* ImageCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76F5451ED48FFC00059906 /* ImageCaptureManager.swift */; };
 		FA57099E1ECC5E4D000362C8 /* PhotosEducationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA57099D1ECC5E4D000362C8 /* PhotosEducationImage.swift */; };
 		FA57099F1ECC5F80000362C8 /* PhotosEducationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA57099D1ECC5E4D000362C8 /* PhotosEducationImage.swift */; };
 		FA5709A21ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5709A11ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift */; };
@@ -542,6 +546,7 @@
 		FA4DFED51D9DBD1A0068706F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FA4DFED71D9DBD1A0068706F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA4DFEDF1D9DC15E0068706F /* HUDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDController.swift; sourceTree = "<group>"; };
+		FA5651AB1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AVPreviewCaptureViewController.swift; path = Extensions/AVPreviewCaptureViewController.swift; sourceTree = "<group>"; };
 		FA57099D1ECC5E4D000362C8 /* PhotosEducationImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosEducationImage.swift; sourceTree = "<group>"; };
 		FA5709A11ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsPreferredButtonIndicatorController.swift; sourceTree = "<group>"; };
 		FA5709A51ECC7172000362C8 /* PhotosPermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosPermissionViewController.swift; sourceTree = "<group>"; };
@@ -1310,6 +1315,7 @@
 				FAF10D061ECAD0230008690E /* Extensions */,
 				FA86BE041D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift */,
 				FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */,
+				FA5651AB1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift */,
 				FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */,
 			);
 			path = "View Controllers";
@@ -2092,8 +2098,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = "/bin/bash -l";
-			shellScript = "ruby ${PROJECT_DIR}/Scripts/resetAppPermisionsForSimulators.rb";
+			shellPath = /bin/bash;
+			shellScript = "if [ \"${ARCHS}\" == \"x86_64\" ]; then\n    echo \"Clearing simulator permissions\"\n    ruby ${PROJECT_DIR}/Scripts/resetAppPermisionsForSimulators.rb\nfi";
 		};
 		FA5709AB1ECC7B2F000362C8 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2120,8 +2126,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "REVEAL_APP_PATH=$(mdfind kMDItemCFBundleIdentifier=\"com.ittybittyapps.Reveal2\" | head -n 1)\nBUILD_SCRIPT_PATH=\"${REVEAL_APP_PATH}/Contents/SharedSupport/Scripts/reveal_server_build_phase.sh\"\nif [ \"${REVEAL_APP_PATH}\" -a -e \"${BUILD_SCRIPT_PATH}\" ]; then\n\"${BUILD_SCRIPT_PATH}\"\nelse\necho \"Reveal Server not loaded: Cannot find a compatible Reveal app.\"\nfi";
+			shellPath = /bin/bash;
+			shellScript = "if [ \"${ARCHS}\" != \"x86_64\" ]; then\n    REVEAL_APP_PATH=$(mdfind kMDItemCFBundleIdentifier=\"com.ittybittyapps.Reveal2\" | head -n 1)\n    BUILD_SCRIPT_PATH=\"${REVEAL_APP_PATH}/Contents/SharedSupport/Scripts/reveal_server_build_phase.sh\"\n    if [ \"${REVEAL_APP_PATH}\" -a -e \"${BUILD_SCRIPT_PATH}\" ]; then\n        \"${BUILD_SCRIPT_PATH}\"\n    else\n        echo \"Reveal Server not loaded: Cannot find a compatible Reveal app.\"\n    fi\nfi";
 		};
 		FA76F5491ED4A29100059906 /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2238,7 +2244,7 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
+			shellPath = /bin/bash;
 			shellScript = "REVEAL_APP_PATH=$(mdfind kMDItemCFBundleIdentifier=\"com.ittybittyapps.Reveal2\" | head -n 1)\nBUILD_SCRIPT_PATH=\"${REVEAL_APP_PATH}/Contents/SharedSupport/Scripts/reveal_server_build_phase.sh\"\nif [ \"${REVEAL_APP_PATH}\" -a -e \"${BUILD_SCRIPT_PATH}\" ]; then\n\"${BUILD_SCRIPT_PATH}\"\nelse\necho \"Reveal Server not loaded: Cannot find a compatible Reveal app.\"\nfi";
 		};
 		FACC8FD81D98AD4500589230 /* Swiftlint */ = {
@@ -2311,6 +2317,7 @@
 				FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */,
 				FA1A2C9D1ECC57C60075FA0B /* PermissionsEducationViewController.swift in Sources */,
 				FAF10D041ECAAB190008690E /* InverseMaskGroupedPathButton.swift in Sources */,
+				FA5651AC1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift in Sources */,
 				FAB0AA621EC6A1B8008DCD23 /* DragGesture.swift in Sources */,
 				FA78F28E1E144C0E00D34947 /* DebugBarController.swift in Sources */,
 				FA2B1E771EC928A300E44613 /* XIcon.swift in Sources */,
@@ -2476,10 +2483,12 @@
 				FA2B1E8A1EC92B5B00E44613 /* PassthroughFilter.swift in Sources */,
 				FA8CE42C1ECDA16A00788026 /* PhotosDeniedPermisionViewController.swift in Sources */,
 				FA2B1E9C1EC92B5B00E44613 /* EditPosition.swift in Sources */,
+				FA5651AF1EDE4C44006B5A19 /* ImageCaptureManager.swift in Sources */,
 				FA2B1E801EC92B5B00E44613 /* DebugBarView.swift in Sources */,
 				FA2B1E601EC817C000E44613 /* InverseMaskButton.swift in Sources */,
 				FA2B1E7D1EC92B5B00E44613 /* Kit.swift in Sources */,
 				FA2B1E6E1EC9235700E44613 /* PathIcon.swift in Sources */,
+				FA5651AE1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift in Sources */,
 				FA2B1E5C1EC80EE100E44613 /* InvertedMaskButtonViewController.swift in Sources */,
 				FAF10CFB1ECAA8230008690E /* GroupedPathIcon.swift in Sources */,
 				FA2B1E911EC92B5B00E44613 /* ComponentItemCellDelegate.swift in Sources */,
@@ -2523,6 +2532,7 @@
 				FAC962EA1ED3983D00D4DC33 /* GaussianBlur.metal in Sources */,
 				FAC962EB1ED3983D00D4DC33 /* PermissionsEducationViewController.swift in Sources */,
 				FAC962EC1ED3983D00D4DC33 /* InverseMaskGroupedPathButton.swift in Sources */,
+				FA5651AD1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift in Sources */,
 				FAC962ED1ED3983D00D4DC33 /* DragGesture.swift in Sources */,
 				FAC962EE1ED3983D00D4DC33 /* DebugBarController.swift in Sources */,
 				FAC962EF1ED3983D00D4DC33 /* XIcon.swift in Sources */,
