@@ -10,24 +10,42 @@ import Cocoa
 import MetalKit
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
-
-    @IBOutlet weak var window: NSWindow!
-    var renderer: Renderer!
+class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     
-    var hudController: HUDController!
+    let mainWindow: NSWindow = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 1280 / 2, height: 720 / 2),
+                                        styleMask: [.titled, .closable, .miniaturizable,
+                                                    .resizable],
+                                        backing: .buffered, defer: true)
+    lazy var viewController: NSViewController = {
+        guard let viewController = CameraPreviewViewController(nibName: nil, bundle: nil) else {
+        fatalError("Couldn't instantiate camera preview VC")
+        }
+        return viewController
+    }()
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let view = MTKView()
-        window.contentView = view
-        
-        renderer = Renderer(metalView: view)
-        
-        hudController = HUDController(renderer: renderer)
-        hudController.showWindow(nil)
+        mainWindow.delegate = self
+        mainWindow.identifier = "previewWindow"
+        mainWindow.isRestorable = true
+        mainWindow.isMovableByWindowBackground = true
+        mainWindow.center()
+        mainWindow.setFrameAutosaveName("previewWindow")
+        mainWindow.title = "Preview"
+        mainWindow.contentView = viewController.view
+        mainWindow.makeKeyAndOrderFront(nil)
+        mainWindow.collectionBehavior = [.fullScreenNone]
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+    }
+    
+    // MARK: - Window Delegate
+    
+    func windowWillUseStandardFrame(_ window: NSWindow, defaultFrame newFrame: NSRect) -> NSRect {
+        var rect = NSRect(x: 0, y: 0, width: 1280 / 1.5, height: 720 / 1.5)
+        rect.origin.x = window.frame.minX
+        rect.origin.y = window.frame.maxY - rect.height
+        return rect
     }
 
 }

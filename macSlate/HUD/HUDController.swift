@@ -23,8 +23,13 @@ class HUDController: NSWindowController {
         window.hidesOnDeactivate = false
         window.titleVisibility = .visible
         window.hasShadow = true
+        window.isRestorable = true
+        window.identifier = "metalHUD"
         
         self.init(window: window)
+        self.shouldCascadeWindows = false
+        window.setFrameAutosaveName("metalHUD")
+        window.setFrameUsingName("metalHUD")
         
         self.contentController = contentController
     }

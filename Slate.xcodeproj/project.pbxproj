@@ -335,6 +335,7 @@
 		FACC8FD41D98A55400589230 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
 		FACFE4931ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */; };
 		FACFE4941ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */; };
+		FAE385491EDE996B006FD2ED /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE385481EDE996B006FD2ED /* CameraPreviewViewController.swift */; };
 		FAF10CFA1ECAA8230008690E /* GroupedPathIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */; };
 		FAF10CFB1ECAA8230008690E /* GroupedPathIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */; };
 		FAF10CFE1ECAA87C0008690E /* FlipCameraIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CFD1ECAA87C0008690E /* FlipCameraIcon.swift */; };
@@ -613,6 +614,7 @@
 		FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		FACC8FD31D98A55400589230 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cartography.framework; sourceTree = "<group>"; };
 		FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPermissionViewController.swift; sourceTree = "<group>"; };
+		FAE385481EDE996B006FD2ED /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
 		FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupedPathIcon.swift; sourceTree = "<group>"; };
 		FAF10CFD1ECAA87C0008690E /* FlipCameraIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipCameraIcon.swift; sourceTree = "<group>"; };
 		FAF10D001ECAA9170008690E /* GroupedPathButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupedPathButton.swift; sourceTree = "<group>"; };
@@ -795,6 +797,13 @@
 				FA0634961ED4B1C300C8FC90 /* AppStore.xcconfig */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		FA0810851EDEA7F700FD8DB5 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Windows;
 			sourceTree = "<group>";
 		};
 		FA18058F1EC54755004351B7 /* Realm */ = {
@@ -1098,6 +1107,7 @@
 		FA4DFECF1D9DBD1A0068706F /* macSlate */ = {
 			isa = PBXGroup;
 			children = (
+				FAE385461EDE9937006FD2ED /* Camera */,
 				FA4DFEDE1D9DC1460068706F /* HUD */,
 				FA4DFED01D9DBD1A0068706F /* AppDelegate.swift */,
 				FA4DFED21D9DBD1A0068706F /* MacAssets.xcassets */,
@@ -1596,6 +1606,23 @@
 				FA8CE42A1ECDA16A00788026 /* PhotosDeniedPermisionViewController.swift */,
 				FA1A2C9C1ECC57C60075FA0B /* PermissionsEducationViewController.swift */,
 				FA1C237F1ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FAE385461EDE9937006FD2ED /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				FA0810851EDEA7F700FD8DB5 /* Windows */,
+				FAE385471EDE994C006FD2ED /* View Controllers */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		FAE385471EDE994C006FD2ED /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAE385481EDE996B006FD2ED /* CameraPreviewViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -2270,6 +2297,7 @@
 				FA4DFEDC1D9DBD620068706F /* Passthrough.metal in Sources */,
 				FA2F8E4F1DA22AD700993949 /* ChromaticAberrationFilter.swift in Sources */,
 				FABB16A61D9F471000A8AC6C /* HUDShaderViewController.swift in Sources */,
+				FAE385491EDE996B006FD2ED /* CameraPreviewViewController.swift in Sources */,
 				FA4DFEDB1D9DBD5F0068706F /* Renderer.swift in Sources */,
 				FABB16AE1D9F6DAB00A8AC6C /* ChromaticAberration.metal in Sources */,
 				FA4DFED11D9DBD1A0068706F /* AppDelegate.swift in Sources */,

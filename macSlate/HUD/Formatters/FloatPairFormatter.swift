@@ -15,7 +15,7 @@ class FloatPairFormatter: Formatter {
             return nil
         }
         guard let string = obj as? String else {
-            fatalError("Invalid object: \(obj)")
+            fatalError("Invalid object: \(String(describing: obj))")
         }
         
         return string
