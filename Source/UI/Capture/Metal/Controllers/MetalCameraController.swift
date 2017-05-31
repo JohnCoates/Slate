@@ -35,11 +35,14 @@ class MetalCameraController: CameraController {
     init?(device: MTLDevice) {
         #if METAL_DEVICE
         var optionalTextureCache: CVMetalTextureCache?
+            // https://developer.apple.com/reference/corevideo/cvmetaltexturecache/cache_attributes
+            let cacheAttributes = [AnyHashable: Any]()
+            let textureAttributes: CFDictionary? = nil
         guard CVMetalTextureCacheCreate(kCFAllocatorDefault,
-                                        nil, // cache attributes
-            device,
-            nil, // texture attributes
-            &optionalTextureCache) == kCVReturnSuccess,
+                                        cacheAttributes as CFDictionary,
+                                        device,
+                                        textureAttributes,
+                                        &optionalTextureCache) == kCVReturnSuccess,
         let textureCache = optionalTextureCache else {
                 print("Couldn't create a texture cache")
                 return nil
@@ -67,16 +70,17 @@ class MetalCameraController: CameraController {
             var optionalTextureRef: CVMetalTexture? = nil
             let width = CVPixelBufferGetWidth(imageBuffer)
             let height = CVPixelBufferGetHeight(imageBuffer)
+            let textureAttributes: CFDictionary? = nil
             let returnValue = CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault,
                                                                         textureCache,
                                                                         imageBuffer,
-                                                                        nil,
+                                                                        textureAttributes,
                                                                         .bgra8Unorm,
                                                                         width, height, 0,
                                                                         &optionalTextureRef)
             
             guard returnValue == kCVReturnSuccess, let textureRef = optionalTextureRef else {
-                print("Error, couldn't create texture from image, error: \(returnValue), \(optionalTextureRef)")
+                print("Error, couldn't create texture from image, error: \(returnValue)")
                 return
             }
             
