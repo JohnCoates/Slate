@@ -10,5 +10,5 @@
 // IF INCLUDED, RESET BUILD SECRET AT
 // https://fabric.io/settings/organizations
 
-FABRIC_API_KEY = ""
-FABRIC_BUILD_SECRET = ""
+FABRIC_API_KEY =
+FABRIC_BUILD_SECRET =

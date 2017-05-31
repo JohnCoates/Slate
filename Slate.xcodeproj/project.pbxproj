@@ -2139,7 +2139,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ ! -z \"${FABRIC_API_KEY}\" ]\nthen\n\"${PODS_ROOT}/Fabric/run\" ${FABRIC_API_KEY} ${FABRIC_BUILD_SECRET}\nfi";
+			shellScript = "if [ ! -z \"${FABRIC_API_KEY}\" ]\nthen\n\"${PODS_ROOT}/Fabric/run\" ${FABRIC_API_KEY} ${FABRIC_BUILD_SECRET}\nelse\necho \"Skipping Fabric\"\nfi";
 		};
 		FA7724D51ED1E35200C5C227 /* Copy Carthage Frameworks (fix x86_64 binaries in App Store builds) */ = {
 			isa = PBXShellScriptBuildPhase;
