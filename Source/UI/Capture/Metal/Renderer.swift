@@ -147,7 +147,7 @@ import AVFoundation
         
         // Retrieve the functions that will comprise our pipeline
         guard let vertexFunction = library.makeFunction(name: "vertexPassthrough"),
-            let fragmentFunction = library.makeFunction(name: "fragmentPassthrough") else {
+            let fragmentFunction = library.makeFunction(name: "fragmentPassthroughWithExistingSampler") else {
                 print("Couldn't get shader functions")
                 return nil
             }
@@ -155,6 +155,24 @@ import AVFoundation
         return (library: library,
                 vertexFunction: vertexFunction,
                 fragmentFunction: fragmentFunction)
+    }
+    
+    lazy var sampler: MTLSamplerState = Renderer.makeSampler(withDevice: self.device)
+    class func makeSampler(withDevice device: MTLDevice) -> MTLSamplerState {
+        let sampler = MTLSamplerDescriptor()
+        sampler.minFilter = .nearest
+        sampler.magFilter = .nearest
+        sampler.mipFilter = .nearest
+        sampler.maxAnisotropy = 1
+        sampler.sAddressMode = .clampToEdge
+        sampler.tAddressMode = .clampToEdge
+        sampler.rAddressMode = .clampToEdge
+        sampler.normalizedCoordinates = true
+        sampler.lodMinClamp = 0
+        sampler.lodMaxClamp = 2
+        sampler.lodAverage = false
+        sampler.label = "slateSampler"
+        return device.makeSamplerState(descriptor: sampler)
     }
     
     func buildRenderPipeline(withFragmentFunction passedFragmentFunction: MTLFunction? = nil) throws
@@ -244,6 +262,7 @@ import AVFoundation
     
         // Create a render encoder to clear the screen and draw our objects
         let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
+        renderEncoder.setFragmentSamplerState(sampler, at: 0)
         
         renderTextureQuad(renderEncoder: renderEncoder,
                           view: view,
