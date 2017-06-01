@@ -14,6 +14,7 @@ extension RuntimeShader {
         let type: ShaderPrimitive.Type
         var qualifier: Type.Qualifier?
         var declaration: String {
+            // float2 textureCoordinates [[ user(texturecoord) ]];
             var contents = "\(type.name) \(name)"
             if let qualifier = qualifier?.declaration {
                 contents += " \(qualifier)"

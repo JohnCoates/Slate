@@ -20,7 +20,7 @@ class RuntimeShader: CustomStringConvertible {
     // MARK: - Properties
     
     var structs = [Struct]()
-    lazy var function = [FragmentFunction]()
+    lazy var functions = [FragmentFunction]()
     
     // MARK: - String Conversion
     
@@ -35,6 +35,12 @@ class RuntimeShader: CustomStringConvertible {
         }
         for composite in structs {
             contents += composite.declaration + "\n"
+        }
+        if functions.count > 0 {
+            contents += "\n// Functions\n"
+        }
+        for function in functions {
+            contents += "\(function)\n"
         }
         
         return contents

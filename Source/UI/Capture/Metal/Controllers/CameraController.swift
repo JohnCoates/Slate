@@ -44,9 +44,8 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
             guard let device = potentialDevice as? AVCaptureDevice else {
                 continue
             }
-            
             // prefer my logitech camera
-            if device.localizedName == "HD Pro Webcam C920" {
+            if device.localizedName.hasPrefix("HD Pro Webcam C920") {
                 return device
             }
         }
@@ -113,7 +112,7 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         let dataOutput = AVCaptureVideoDataOutput()
         dataOutput.alwaysDiscardsLateVideoFrames = true
         if !Platform.isProduction {
-            printAvailableFormatTypes(forDataOutput: dataOutput)
+//            printAvailableFormatTypes(forDataOutput: dataOutput)
         }
         dataOutput.videoSettings = captureVideoSettings
         
@@ -275,7 +274,7 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
                 }
                 let intType = UInt32(type)
                 let osType = UTCreateStringForOSType(intType).takeRetainedValue() as String
-//                print("available pixel format type: \(osType)")
+                print("available pixel format type: \(osType)")
             }
         #endif
     }

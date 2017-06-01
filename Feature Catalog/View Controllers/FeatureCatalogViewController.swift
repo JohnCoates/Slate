@@ -124,6 +124,8 @@ class FeatureCatalogViewController: UITableViewController {
     
     func captureScreen() -> Section {
         let items: [FeatureCatalogItem] = [
+            FeatureCatalogItem(name: "Capture Screen",
+                               creationBlock: {CaptureViewController()}),
             FeatureCatalogItem(name: "Edit Bar",
                                creationBlock: {
                                 let vc = CaptureViewController()

@@ -11,25 +11,22 @@ import Foundation
 extension RuntimeShader {
     static func testRuntimeShaderBuild() {
         let shader = buildRuntimeShader(identifier: "fragmentPassthrough") { shader in
-            let VertexInType: Struct = shader.defineStruct(name: "VertexIn")
-            VertexInType.addMember(name: "position", type: Float4.self)
+//            let VertexInType = shader.VertexInType()
+//            let VertexOutType = shader.VertexOutType()
             
-            let VertexOutType: Struct = shader.defineStruct(name: "VertextOut")
-            VertexOutType.addMember(name: "position", type: Float4.self, qualifier: .position)
-            VertexOutType.addMember(name: "textureCoordinates", type: Float2.self, qualifier: .user(name: "texturecoord"))
-            
-            shader.buildFragmentFunction(name: "fragmentPassthrough") { function in
-                let arguments = function.arguments
-                let texture: Texture2D = arguments.texture(name: "texture")
-                texture.configure(access: .sample, type: Float.self, index: 0)
-                let sampler = function.sampler
-                let fragmentIn = arguments.type(name: "fragmentIn", type: VertexOutType, qualifier: .stageIn)
-                let coordinates: Float4 = fragmentIn["textureCoordinates"]
-                let color = texture.sample(sampler: sampler, coordinates: coordinates)
+            shader.buildFragmentFunction(name: "fragmentPassthrough", returnType: Float4.self) { function in
+//                let arguments = function.arguments
+                let variables = function.variables
+//                let texture: Texture2D = arguments.texture(name: "texture")
+//                texture.configure(access: .sample, type: Float.self, index: 0)
+//                let sampler = function.sampler
+//                let fragmentIn = arguments.type(name: "fragmentIn", type: VertexOutType, qualifier: .stageIn)
+//                let coordinates: Float4 = fragmentIn["textureCoordinates"]
+                let color: Float4 = variables["color"]
+//                color == texture.sample(sampler: sampler, coordinates: coordinates)
                 
                 function.returnValue = color
             }
-            
         }
         
         print("runtime shader: \(shader)")

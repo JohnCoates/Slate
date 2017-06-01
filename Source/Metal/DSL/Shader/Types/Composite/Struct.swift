@@ -11,7 +11,9 @@ import Foundation
 // MARK: - Class
 
 extension RuntimeShader {
-    class Struct {
+    class Struct: ShaderType {
+        static var name: String = "Struct"
+        
         let name: String
         init(name: String) {
             self.name = name
@@ -36,12 +38,12 @@ extension RuntimeShader {
     }
 }
 
-// MARK: - Accesors
+// MARK: - Accessors
 
 extension RuntimeShader.Struct {
     subscript (name: String) -> RuntimeShader.Float4 {
         get {
-            return RuntimeShader.Float4()
+            return RuntimeShader.Float4(name: name, type: .float4)
         }
     }
 }

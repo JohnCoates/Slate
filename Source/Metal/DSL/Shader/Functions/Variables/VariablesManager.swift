@@ -1,5 +1,5 @@
 //
-//  ArgumentsManager.swift
+//  VariablesManager.swift
 //  Slate
 //
 //  Created by John Coates on 5/31/17.
@@ -9,7 +9,7 @@
 import Foundation
 
 extension RuntimeShader {
-    class ArgumentsManager: CustomStringConvertible {
+    class VariablesManager: CustomStringConvertible {
         
         // MARK: - Init
         
@@ -33,8 +33,31 @@ extension RuntimeShader {
             return variable
         }
         
+        func addTypeDeclaration(variable: Variable) {
+            guard let name = variable.name else {
+                fatalError("Variable missing name")
+            }
+            let statement = Statement(declare: variable)
+            function?.statements.append(statement)
+        }
+        
         var description: String {
             return "arguments here"
         }
     }
 }
+
+
+// MARK: - Subscripting
+
+extension RuntimeShader.VariablesManager {
+    subscript (name: String) -> RuntimeShader.Float4 {
+        get {
+            let variable = RuntimeShader.Float4(name: name, type: .float4)
+            addTypeDeclaration(variable: variable)
+            return RuntimeShader.Float4(name: name, type: .float4)
+        }
+    }
+}
+
+

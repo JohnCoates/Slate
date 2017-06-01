@@ -10,9 +10,13 @@
 import Foundation
 
 extension RuntimeShader {
-    class Sampler {
+    class Sampler: Variable {
         init(name: String) {
-            
+            super.init(name: name, type: .sampler)
+        }
+        
+        var declaration: Statement {
+            return Statement(declare: self)
         }
     }
 }

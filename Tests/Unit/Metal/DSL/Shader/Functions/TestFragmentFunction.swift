@@ -1,19 +1,19 @@
 //
-//  SlateTests.swift
-//  SlateTests
+//  TestFragmentFunction.swift
+//  Slate
 //
-//  Created by John Coates on 9/23/16.
-//  Copyright © 2016 John Coates. All rights reserved.
+//  Created by John Coates on 6/1/17.
+//  Copyright © 2017 John Coates. All rights reserved.
 //
 
 import XCTest
 #if os(iOS)
-    @testable import Slate
+@testable import Slate
 #else
-    @testable import macSlate
+@testable import macSlate
 #endif
 
-class SlateTests: XCTestCase {
+class TestFragmentFunction: XCTestCase {
     
     override func setUp() {
         super.setUp()
