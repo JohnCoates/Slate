@@ -34,9 +34,6 @@ extension RuntimeShader {
         }
         
         func addTypeDeclaration(variable: Variable) {
-            guard let name = variable.name else {
-                fatalError("Variable missing name")
-            }
             let statement = Statement(declare: variable)
             function?.statements.append(statement)
         }

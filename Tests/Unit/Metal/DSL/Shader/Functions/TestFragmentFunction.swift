@@ -17,24 +17,48 @@ class TestFragmentFunction: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testFunctionType() {
+        let function = RuntimeShader.testFunction().description
+        XCTAssert(function.hasPrefix("fragment float4"), "Has correct type")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testArguments() {
+    }
+    
+    func testVariableDeclarations() {
+        let function = RuntimeShader.testFunction().description
+        XCTAssert(function.contains("float4 color"), "Has color variable declaration")
+    }
+    
+    
+}
+
+private extension RuntimeShader {
+    static func testFunction() -> FragmentFunction {
+        var functionMaybe: RuntimeShader.FragmentFunction?
+        let _ = buildRuntimeShader(identifier: "fragmentPassthrough") { shader in
+            functionMaybe = shader.buildFragmentFunction(name: "fragmentPassthrough", returnType: RuntimeShader.Float4.self) { function in
+                let variables = function.variables
+                let color: RuntimeShader.Float4 = variables["color"]
+                function.returnValue = color
+            }
         }
+        
+        XCTAssertNotNil(functionMaybe, "Function set")
+        guard let function = functionMaybe else {
+            fatalError("Fragment function couldn't be created")
+        }
+        
+        return function
     }
-    
+}
+
+private func testFunction() -> RuntimeShader.FragmentFunction {
+    return RuntimeShader.testFunction()
 }

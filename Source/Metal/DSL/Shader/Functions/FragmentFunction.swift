@@ -62,10 +62,11 @@ extension RuntimeShader {
 
 extension RuntimeShader {
     typealias FragmentClosure = (FragmentFunction) -> Void
-    func buildFragmentFunction(name: String, returnType: ShaderPrimitive.Type,
-                               build: FragmentClosure) {
+    @discardableResult func buildFragmentFunction(name: String, returnType: ShaderPrimitive.Type,
+                                                  build: FragmentClosure) -> FragmentFunction {
         let function = FragmentFunction(name: name, returnType: returnType, shader: self)
         functions.append(function)
         build(function)
+        return function
     }
 }

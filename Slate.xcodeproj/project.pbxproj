@@ -199,8 +199,8 @@
 		FA850EF71EDFC45800B1CDDB /* VariablesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850EF61EDFC45800B1CDDB /* VariablesManager.swift */; };
 		FA850EFB1EDFC83A00B1CDDB /* VertexStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850EFA1EDFC83A00B1CDDB /* VertexStructs.swift */; };
 		FA850EFD1EDFD0BB00B1CDDB /* CallStatement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850EFC1EDFD0BB00B1CDDB /* CallStatement.swift */; };
-		FA850F041EE0D9E200B1CDDB /* TestFragmentFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850F021EE0D9CF00B1CDDB /* TestFragmentFunction.swift */; };
 		FA850F271EE0DB8900B1CDDB /* macTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850F261EE0DB8700B1CDDB /* macTests.swift */; };
+		FA850F281EE0DE0C00B1CDDB /* TestFragmentFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850F021EE0D9CF00B1CDDB /* TestFragmentFunction.swift */; };
 		FA86BE051D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86BE041D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift */; };
 		FA89D1391EDF60360012F2F0 /* RuntimeShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA89D1381EDF60360012F2F0 /* RuntimeShader.swift */; };
 		FA89D13C1EDF610D0012F2F0 /* TestShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA89D13B1EDF610D0012F2F0 /* TestShader.swift */; };
@@ -1428,13 +1428,6 @@
 			path = Functions;
 			sourceTree = "<group>";
 		};
-		FA850F1A1EE0DB2300B1CDDB /* macTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = macTests;
-			sourceTree = "<group>";
-		};
 		FA850F241EE0DB4400B1CDDB /* Mac */ = {
 			isa = PBXGroup;
 			children = (
@@ -1631,7 +1624,6 @@
 				FA9F8A131D953EDF0058C369 /* Tests */,
 				FA4DFECF1D9DBD1A0068706F /* macSlate */,
 				FAB0AA6A1EC8083D008DCD23 /* Feature Catalog */,
-				FA850F1A1EE0DB2300B1CDDB /* macTests */,
 				9EF4533E798C01A4F72A666D /* Frameworks */,
 				FA9F89E31D953C540058C369 /* Products */,
 				611A72466D3A5951857E5D13 /* Pods */,
@@ -2625,6 +2617,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA850F271EE0DB8900B1CDDB /* macTests.swift in Sources */,
+				FA850F281EE0DE0C00B1CDDB /* TestFragmentFunction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2731,7 +2724,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9F89FB1D953C540058C369 /* SlateTests.swift in Sources */,
-				FA850F041EE0D9E200B1CDDB /* TestFragmentFunction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
