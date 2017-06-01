@@ -275,7 +275,7 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
                 }
                 let intType = UInt32(type)
                 let osType = UTCreateStringForOSType(intType).takeRetainedValue() as String
-                print("available pixel format type: \(osType)")
+//                print("available pixel format type: \(osType)")
             }
         #endif
     }

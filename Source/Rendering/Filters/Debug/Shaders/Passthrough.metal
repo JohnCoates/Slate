@@ -42,8 +42,8 @@ fragment half4 fragmentPassthroughHalf(VertexOut fragmentIn [[ stage_in ]],
 
 
 fragment float4 fragmentPassthroughWithExistingSampler(VertexOut fragmentIn [[ stage_in ]],
-                                                       sampler qsampler [[sampler(0)]],
-                                    texture2d<float, access::sample> texture [[texture(0)]]) {
+                                                       sampler qsampler [[ sampler(0) ]],
+                                    texture2d<float, access::sample> texture [[ texture(0) ]]) {
     return texture.sample(qsampler, fragmentIn.textureCoordinates);
 }
 

@@ -24,6 +24,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     }()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        testRuntimeShaderBuild()
+        
         mainWindow.delegate = self
         mainWindow.identifier = "previewWindow"
         mainWindow.isRestorable = true
