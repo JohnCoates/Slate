@@ -31,9 +31,24 @@ extension RuntimeShader {
             return variable
         }
         
-        func type(name: String, type: Struct, qualifier: Type.Qualifier) -> Variable {
-            let variable = Variable(name: name, type: .`struct`)
-            let argument = Argument(name: name, type: type, qualifier: qualifier)
+        func type(name: String, type: CompositeVariable.Type, qualifier: Type.Qualifier) -> Variable {
+            guard let shader = function?.shader else {
+                fatalError("Missing shader")
+            }
+            let shaderType = type.add(toShader: shader)
+            let variable = type.init(name: name)
+            let argument = Argument(name: name, type: shaderType, qualifier: qualifier)
+            arguments.append(argument)
+            return variable
+        }
+        
+        func typed<T: CompositeVariable>(name: String, type: T.Type, qualifier: Type.Qualifier) -> T {
+            guard let shader = function?.shader else {
+                fatalError("Missing shader")
+            }
+            let shaderType = T.add(toShader: shader)
+            let variable = T.init(name: name)
+            let argument = Argument(name: name, type: shaderType, qualifier: qualifier)
             arguments.append(argument)
             return variable
         }

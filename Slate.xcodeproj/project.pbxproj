@@ -206,6 +206,8 @@
 		FA850F301EE11E7B00B1CDDB /* TypedVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850F2F1EE11E7B00B1CDDB /* TypedVariable.swift */; };
 		FA850F331EE1244100B1CDDB /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850F321EE1244100B1CDDB /* String+Extensions.swift */; };
 		FA850F351EE1245200B1CDDB /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850F341EE1245200B1CDDB /* Array+Extensions.swift */; };
+		FA850F3B1EE1F4CB00B1CDDB /* TestCustomStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850F381EE1F41B00B1CDDB /* TestCustomStruct.swift */; };
+		FA850F3F1EE1FBD400B1CDDB /* CompositeVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850F3E1EE1FBD400B1CDDB /* CompositeVariable.swift */; };
 		FA86BE051D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86BE041D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift */; };
 		FA89D1391EDF60360012F2F0 /* RuntimeShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA89D1381EDF60360012F2F0 /* RuntimeShader.swift */; };
 		FA89D13C1EDF610D0012F2F0 /* TestShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA89D13B1EDF610D0012F2F0 /* TestShader.swift */; };
@@ -620,6 +622,8 @@
 		FA850F2F1EE11E7B00B1CDDB /* TypedVariable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypedVariable.swift; sourceTree = "<group>"; };
 		FA850F321EE1244100B1CDDB /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		FA850F341EE1245200B1CDDB /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		FA850F381EE1F41B00B1CDDB /* TestCustomStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCustomStruct.swift; sourceTree = "<group>"; };
+		FA850F3E1EE1FBD400B1CDDB /* CompositeVariable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositeVariable.swift; sourceTree = "<group>"; };
 		FA86BE041D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulatorCaptureViewController.swift; sourceTree = "<group>"; };
 		FA89D1381EDF60360012F2F0 /* RuntimeShader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuntimeShader.swift; sourceTree = "<group>"; };
 		FA89D13B1EDF610D0012F2F0 /* TestShader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestShader.swift; sourceTree = "<group>"; };
@@ -1388,8 +1392,9 @@
 				FA850EF21EDFB28300B1CDDB /* Variable.swift */,
 				FA850EF61EDFC45800B1CDDB /* VariablesManager.swift */,
 				FA850F291EE110B300B1CDDB /* VariableOperators.swift */,
-				FA850F2D1EE11B7600B1CDDB /* CompositeMemberVariable.swift */,
 				FA850F2F1EE11E7B00B1CDDB /* TypedVariable.swift */,
+				FA850F3E1EE1FBD400B1CDDB /* CompositeVariable.swift */,
+				FA850F2D1EE11B7600B1CDDB /* CompositeMemberVariable.swift */,
 			);
 			path = Variables;
 			sourceTree = "<group>";
@@ -1429,6 +1434,7 @@
 		FA850F001EE0D9A900B1CDDB /* Shader */ = {
 			isa = PBXGroup;
 			children = (
+				FA850F371EE1F3F400B1CDDB /* Structures */,
 				FA850F011EE0D9BC00B1CDDB /* Functions */,
 			);
 			path = Shader;
@@ -1457,6 +1463,14 @@
 				FA850F341EE1245200B1CDDB /* Array+Extensions.swift */,
 			);
 			path = "Standard Library";
+			sourceTree = "<group>";
+		};
+		FA850F371EE1F3F400B1CDDB /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				FA850F381EE1F41B00B1CDDB /* TestCustomStruct.swift */,
+			);
+			path = Structures;
 			sourceTree = "<group>";
 		};
 		FA86BE011D98ED4500BC5FB1 /* UI */ = {
@@ -2605,6 +2619,7 @@
 				FA2F8E4F1DA22AD700993949 /* ChromaticAberrationFilter.swift in Sources */,
 				FABB16A61D9F471000A8AC6C /* HUDShaderViewController.swift in Sources */,
 				FAE385491EDE996B006FD2ED /* CameraPreviewViewController.swift in Sources */,
+				FA850F3F1EE1FBD400B1CDDB /* CompositeVariable.swift in Sources */,
 				FA850F2C1EE111AD00B1CDDB /* AssignStatement.swift in Sources */,
 				FA89D13C1EDF610D0012F2F0 /* TestShader.swift in Sources */,
 				FA850EF01EDF921900B1CDDB /* Member.swift in Sources */,
@@ -2646,6 +2661,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA850F281EE0DE0C00B1CDDB /* TestFragmentFunction.swift in Sources */,
+				FA850F3B1EE1F4CB00B1CDDB /* TestCustomStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,10 +15,8 @@ extension RuntimeShader {
         var type: DataType
         var typeReference: String {
             switch type {
-            case .float4:
-                return "float4"
-            case .sampler:
-                return "sampler"
+            case .float, .float2, .float4, .sampler:
+                return type.rawValue
             case .`struct`:
                 fatalError("Missing struct name")
             }
@@ -53,7 +51,9 @@ extension RuntimeShader {
 // MARK: - Types
 
 extension RuntimeShader {
-    enum DataType {
+    enum DataType: String {
+        case float
+        case float2
         case float4
         case `struct`
         case sampler
@@ -62,16 +62,16 @@ extension RuntimeShader {
 
 // MARK: - Subscripting
 
-extension RuntimeShader.Variable {
-    subscript (name: String) -> RuntimeShader.Float4 {
-        get {
-            guard type == .struct else {
-                fatalError("Only structs are subscriptable")
-            }
-            let variable = RuntimeShader.CompositeMemberVariable(composite: self,
-                                                                 member: name,
-                                                                 type: .float4)
-            return RuntimeShader.Float4(inner: variable)
-        }
-    }
-}
+//extension RuntimeShader.Variable {
+//    subscript (name: String) -> RuntimeShader.Float4 {
+//        get {
+//            guard type == .struct else {
+//                fatalError("Only structs are subscriptable")
+//            }
+//            let variable = RuntimeShader.CompositeMemberVariable(composite: self,
+//                                                                 member: name,
+//                                                                 type: .float4)
+//            return RuntimeShader.Float4(inner: variable)
+//        }
+//    }
+//}

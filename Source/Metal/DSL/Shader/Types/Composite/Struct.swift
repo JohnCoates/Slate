@@ -37,12 +37,18 @@ extension RuntimeShader {
     }
 }
 
-// MARK: - Accessors
+// MARK: - Subscripting
 
 extension RuntimeShader.Struct {
     subscript (name: String) -> RuntimeShader.Float4 {
         get {
             return RuntimeShader.Float4(name: name, type: .float4)
+        }
+    }
+    
+    subscript (name: String) -> RuntimeShader.Float2 {
+        get {
+            return RuntimeShader.Float2(name: name, type: .float2)
         }
     }
 }
@@ -54,5 +60,9 @@ extension RuntimeShader {
         let item = Struct(name: name)
         structs.append(item)
         return item
+    }
+    
+    func add(struct item: Struct) {
+        structs.append(item)
     }
 }
