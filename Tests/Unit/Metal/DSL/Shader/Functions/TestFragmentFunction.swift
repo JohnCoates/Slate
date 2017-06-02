@@ -29,6 +29,11 @@ class TestFragmentFunction: XCTestCase {
     }
     
     func testArguments() {
+        let function = RuntimeShader.testFunction().description
+        let declaration = "(VertextOut fragmentIn [[ stage_in ]], " +
+                          "texture2d<float, access::sample> texture [[ texture(0) ]]) {"
+        
+        XCTAssert(function.contains(declaration), "Has arguments declaration")
     }
     
     func testVariableDeclarations() {
@@ -88,12 +93,13 @@ private extension RuntimeShader {
         let VertexOutType = shader.VertexOutType()
     
         let arguments = function.arguments
-        let texture: Texture2D = arguments.texture(name: "texture")
         let variables = function.variables
         let color: RuntimeShader.Float4 = variables["color"]
         let sampler = function.defaultSampler
-        let fragmentIn = arguments.type(name: Constant.fragmentInName, type: VertexOutType, qualifier: .stageIn)
+        let fragmentIn = arguments.type(name: Constant.fragmentInName,
+                                        type: VertexOutType, qualifier: .stageIn)
         let coordinates: Float4 = fragmentIn[Constant.vertexOutTextureCoordinates]
+        let texture: Texture2D = arguments.texture(name: "texture")
         color == texture.sample(sampler: sampler, coordinates: coordinates)
         function.returnValue = color
     }

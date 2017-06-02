@@ -9,7 +9,7 @@
 import Foundation
 
 extension RuntimeShader {
-    class Float4: Variable, ShaderPrimitive {
+    class Float4: TypedVariable, ShaderPrimitive {
         static var name: String = "float4"
     }
     class Float2: ShaderPrimitive {

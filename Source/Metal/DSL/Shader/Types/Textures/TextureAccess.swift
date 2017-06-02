@@ -11,7 +11,7 @@ import Foundation
 
 extension RuntimeShader {
     class Texture {
-        enum Access {
+        enum Access: String {
             case sample
             case read
             case write

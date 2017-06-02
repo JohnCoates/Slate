@@ -20,21 +20,26 @@ extension RuntimeShader {
         
         // MARK: - Arguments
         
-        lazy var arguments = [Variable]()
+        lazy var arguments = [Argument]()
         
         // MARK: - Accessors
         
         func texture(name: String) -> Texture2D {
-            return Texture2D(name: name)
+            let variable = Texture2D(name: name)
+            let argument = Argument(name: name, type: variable, qualifier: .texture)
+            arguments.append(argument)
+            return variable
         }
         
         func type(name: String, type: Struct, qualifier: Type.Qualifier) -> Variable {
             let variable = Variable(name: name, type: .`struct`)
+            let argument = Argument(name: name, type: type, qualifier: qualifier)
+            arguments.append(argument)
             return variable
         }
         
         var description: String {
-            return "arguments here"
+            return self.arguments.customJoined(separator: ", ")
         }
     }
 }

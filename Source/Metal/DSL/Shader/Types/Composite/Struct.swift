@@ -12,7 +12,7 @@ import Foundation
 
 extension RuntimeShader {
     class Struct: ShaderType {
-        static var name: String = "Struct"
+        static var name: String = "struct"
         
         let name: String
         init(name: String) {
@@ -35,6 +35,7 @@ extension RuntimeShader {
                 return contents
             }
         }
+        
     }
 }
 

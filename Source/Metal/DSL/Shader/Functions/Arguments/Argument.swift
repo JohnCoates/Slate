@@ -9,7 +9,7 @@
 import Foundation
 
 extension RuntimeShader {
-    class Argument {
+    class Argument: CustomStringConvertible {
         
         // MARK: - Init
         
@@ -20,6 +20,22 @@ extension RuntimeShader {
             self.name = name
             self.type = type
             self.qualifier = qualifier
+        }
+        
+        // MARK: - String Convertible
+        
+        var description: String {
+            var typeReference: String
+            if let structType = type as? Struct {
+                typeReference = structType.name
+            }
+            else if let texture = type as? Texture2D {
+                return texture.argumentDeclaration
+            } else {
+                typeReference = type(of: type).name
+            }
+            
+            return typeReference + " \(name) " + qualifier.declaration
         }
     }
 }

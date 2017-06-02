@@ -9,7 +9,8 @@
 import Foundation
 
 extension RuntimeShader {
-    class Texture2D {
+    class Texture2D: ShaderType {
+        static var name: String = "texture2d"
         
         // MARK: - Init
         
@@ -36,6 +37,14 @@ extension RuntimeShader {
         func sample(sampler: Sampler, coordinates: Float4) -> Float4 {
             let statement = CallStatement(object: sampler, name: "sample", arguments: [coordinates])
             return Float4(statement: statement, type: .float4)
+        }
+        
+        // MARK: - Declaration
+        
+        var argumentDeclaration: String {
+            let access = self.access.rawValue
+            let type = self.type.name
+            return Texture2D.name + "<\(type), access::\(access)> \(name) [[ texture(\(index)) ]]"
         }
     }
 }

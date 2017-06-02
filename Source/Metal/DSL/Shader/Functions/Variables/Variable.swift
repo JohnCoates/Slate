@@ -52,7 +52,7 @@ extension RuntimeShader {
 
 // MARK: - Types
 
-extension RuntimeShader.Variable {
+extension RuntimeShader {
     enum DataType {
         case float4
         case `struct`
@@ -65,7 +65,13 @@ extension RuntimeShader.Variable {
 extension RuntimeShader.Variable {
     subscript (name: String) -> RuntimeShader.Float4 {
         get {
-            return RuntimeShader.Float4(name: name, type: .float4)
+            guard type == .struct else {
+                fatalError("Only structs are subscriptable")
+            }
+            let variable = RuntimeShader.CompositeMemberVariable(composite: self,
+                                                                 member: name,
+                                                                 type: .float4)
+            return RuntimeShader.Float4(inner: variable)
         }
     }
 }

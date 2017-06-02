@@ -202,6 +202,10 @@
 		FA850F281EE0DE0C00B1CDDB /* TestFragmentFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850F021EE0D9CF00B1CDDB /* TestFragmentFunction.swift */; };
 		FA850F2A1EE110B300B1CDDB /* VariableOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850F291EE110B300B1CDDB /* VariableOperators.swift */; };
 		FA850F2C1EE111AD00B1CDDB /* AssignStatement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850F2B1EE111AD00B1CDDB /* AssignStatement.swift */; };
+		FA850F2E1EE11B7600B1CDDB /* CompositeMemberVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850F2D1EE11B7600B1CDDB /* CompositeMemberVariable.swift */; };
+		FA850F301EE11E7B00B1CDDB /* TypedVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850F2F1EE11E7B00B1CDDB /* TypedVariable.swift */; };
+		FA850F331EE1244100B1CDDB /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850F321EE1244100B1CDDB /* String+Extensions.swift */; };
+		FA850F351EE1245200B1CDDB /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850F341EE1245200B1CDDB /* Array+Extensions.swift */; };
 		FA86BE051D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86BE041D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift */; };
 		FA89D1391EDF60360012F2F0 /* RuntimeShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA89D1381EDF60360012F2F0 /* RuntimeShader.swift */; };
 		FA89D13C1EDF610D0012F2F0 /* TestShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA89D13B1EDF610D0012F2F0 /* TestShader.swift */; };
@@ -612,6 +616,10 @@
 		FA850F251EE0DB8700B1CDDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA850F291EE110B300B1CDDB /* VariableOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariableOperators.swift; sourceTree = "<group>"; };
 		FA850F2B1EE111AD00B1CDDB /* AssignStatement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignStatement.swift; sourceTree = "<group>"; };
+		FA850F2D1EE11B7600B1CDDB /* CompositeMemberVariable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositeMemberVariable.swift; sourceTree = "<group>"; };
+		FA850F2F1EE11E7B00B1CDDB /* TypedVariable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypedVariable.swift; sourceTree = "<group>"; };
+		FA850F321EE1244100B1CDDB /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		FA850F341EE1245200B1CDDB /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		FA86BE041D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulatorCaptureViewController.swift; sourceTree = "<group>"; };
 		FA89D1381EDF60360012F2F0 /* RuntimeShader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuntimeShader.swift; sourceTree = "<group>"; };
 		FA89D13B1EDF610D0012F2F0 /* TestShader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestShader.swift; sourceTree = "<group>"; };
@@ -1380,6 +1388,8 @@
 				FA850EF21EDFB28300B1CDDB /* Variable.swift */,
 				FA850EF61EDFC45800B1CDDB /* VariablesManager.swift */,
 				FA850F291EE110B300B1CDDB /* VariableOperators.swift */,
+				FA850F2D1EE11B7600B1CDDB /* CompositeMemberVariable.swift */,
+				FA850F2F1EE11E7B00B1CDDB /* TypedVariable.swift */,
 			);
 			path = Variables;
 			sourceTree = "<group>";
@@ -1438,6 +1448,15 @@
 				FA850F251EE0DB8700B1CDDB /* Info.plist */,
 			);
 			path = Mac;
+			sourceTree = "<group>";
+		};
+		FA850F311EE1242100B1CDDB /* Standard Library */ = {
+			isa = PBXGroup;
+			children = (
+				FA850F321EE1244100B1CDDB /* String+Extensions.swift */,
+				FA850F341EE1245200B1CDDB /* Array+Extensions.swift */,
+			);
+			path = "Standard Library";
 			sourceTree = "<group>";
 		};
 		FA86BE011D98ED4500BC5FB1 /* UI */ = {
@@ -1922,6 +1941,7 @@
 		FAF10D111ECAD2E70008690E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FA850F311EE1242100B1CDDB /* Standard Library */,
 				FA8CE4201ECD7E4600788026 /* UI */,
 				FAF10D121ECAD2F90008690E /* Realm */,
 			);
@@ -2577,6 +2597,7 @@
 				FA89D1461EDF67C40012F2F0 /* ShaderType.swift in Sources */,
 				FA2F8E541DA23E5500993949 /* PassthroughFilter.swift in Sources */,
 				FA4DFEDC1D9DBD620068706F /* Passthrough.metal in Sources */,
+				FA850F351EE1245200B1CDDB /* Array+Extensions.swift in Sources */,
 				FA89D1491EDF688A0012F2F0 /* FragmentFunction.swift in Sources */,
 				FA850EEA1EDF76F400B1CDDB /* Sampler.swift in Sources */,
 				FA850EF31EDFB28300B1CDDB /* Variable.swift in Sources */,
@@ -2591,6 +2612,7 @@
 				FA4DFEDB1D9DBD5F0068706F /* Renderer.swift in Sources */,
 				FA4DFED11D9DBD1A0068706F /* AppDelegate.swift in Sources */,
 				FA850EFB1EDFC83A00B1CDDB /* VertexStructs.swift in Sources */,
+				FA850F331EE1244100B1CDDB /* String+Extensions.swift in Sources */,
 				FA4021C71DA0AEE800752F3B /* MetalCameraController.swift in Sources */,
 				FA850EFD1EDFD0BB00B1CDDB /* CallStatement.swift in Sources */,
 				FA4D541A1DB055BB0091184D /* ComputeFilter.swift in Sources */,
@@ -2603,6 +2625,7 @@
 				FABB16B21D9F822800A8AC6C /* CameraController.swift in Sources */,
 				FA89D1391EDF60360012F2F0 /* RuntimeShader.swift in Sources */,
 				FA850EF71EDFC45800B1CDDB /* VariablesManager.swift in Sources */,
+				FA850F2E1EE11B7600B1CDDB /* CompositeMemberVariable.swift in Sources */,
 				FA2F8E4B1DA2296E00993949 /* GaussianBlurFilter.swift in Sources */,
 				FA2F8E481DA2293000993949 /* AbstractFilter.swift in Sources */,
 				FA89D1401EDF639E0012F2F0 /* Struct.swift in Sources */,
@@ -2610,6 +2633,7 @@
 				FA4DFEE01D9DC15E0068706F /* HUDController.swift in Sources */,
 				FA89D1441EDF64450012F2F0 /* Floats.swift in Sources */,
 				FABB16981D9F14A100A8AC6C /* HUDTextureViewController.swift in Sources */,
+				FA850F301EE11E7B00B1CDDB /* TypedVariable.swift in Sources */,
 				FA850F2A1EE110B300B1CDDB /* VariableOperators.swift in Sources */,
 				FABB169B1D9F14FD00A8AC6C /* FloatPairFormatter.swift in Sources */,
 				FABB16A31D9F402C00A8AC6C /* TextureCoordinates.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ShaderType {
+protocol ShaderType: class {
     static var name: String { get }
 }
 
@@ -17,6 +17,7 @@ extension RuntimeShader {
         enum Qualifier {
             case stageIn
             case position
+            case texture
             case user(name: String)
             
             var declaration: String {
@@ -28,6 +29,8 @@ extension RuntimeShader {
                     inner = "position"
                 case .user(let name):
                     inner = "user(\(name))"
+                case .texture:
+                    inner = "texture"
                 }
                 
                 return "[[ \(inner) ]]"
