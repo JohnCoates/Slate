@@ -208,6 +208,8 @@
 		FA850F351EE1245200B1CDDB /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850F341EE1245200B1CDDB /* Array+Extensions.swift */; };
 		FA850F3B1EE1F4CB00B1CDDB /* TestCustomStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850F381EE1F41B00B1CDDB /* TestCustomStruct.swift */; };
 		FA850F3F1EE1FBD400B1CDDB /* CompositeVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850F3E1EE1FBD400B1CDDB /* CompositeVariable.swift */; };
+		FA850F441EE208D000B1CDDB /* VertexIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850F431EE208D000B1CDDB /* VertexIn.swift */; };
+		FA850F461EE208DB00B1CDDB /* VertexOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA850F451EE208DB00B1CDDB /* VertexOut.swift */; };
 		FA86BE051D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86BE041D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift */; };
 		FA89D1391EDF60360012F2F0 /* RuntimeShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA89D1381EDF60360012F2F0 /* RuntimeShader.swift */; };
 		FA89D13C1EDF610D0012F2F0 /* TestShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA89D13B1EDF610D0012F2F0 /* TestShader.swift */; };
@@ -624,6 +626,8 @@
 		FA850F341EE1245200B1CDDB /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		FA850F381EE1F41B00B1CDDB /* TestCustomStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCustomStruct.swift; sourceTree = "<group>"; };
 		FA850F3E1EE1FBD400B1CDDB /* CompositeVariable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositeVariable.swift; sourceTree = "<group>"; };
+		FA850F431EE208D000B1CDDB /* VertexIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VertexIn.swift; sourceTree = "<group>"; };
+		FA850F451EE208DB00B1CDDB /* VertexOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VertexOut.swift; sourceTree = "<group>"; };
 		FA86BE041D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulatorCaptureViewController.swift; sourceTree = "<group>"; };
 		FA89D1381EDF60360012F2F0 /* RuntimeShader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuntimeShader.swift; sourceTree = "<group>"; };
 		FA89D13B1EDF610D0012F2F0 /* TestShader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestShader.swift; sourceTree = "<group>"; };
@@ -1071,6 +1075,7 @@
 		FA2F8E3E1DA2286F00993949 /* Rendering */ = {
 			isa = PBXGroup;
 			children = (
+				FA850F401EE2086300B1CDDB /* Shaders */,
 				FA2F8E411DA228E000993949 /* Filters */,
 				FA2F8E3F1DA2287F00993949 /* Pipeline */,
 			);
@@ -1471,6 +1476,31 @@
 				FA850F381EE1F41B00B1CDDB /* TestCustomStruct.swift */,
 			);
 			path = Structures;
+			sourceTree = "<group>";
+		};
+		FA850F401EE2086300B1CDDB /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				FA850F411EE208A100B1CDDB /* Passthrough */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		FA850F411EE208A100B1CDDB /* Passthrough */ = {
+			isa = PBXGroup;
+			children = (
+				FA850F421EE208BF00B1CDDB /* DSL */,
+			);
+			path = Passthrough;
+			sourceTree = "<group>";
+		};
+		FA850F421EE208BF00B1CDDB /* DSL */ = {
+			isa = PBXGroup;
+			children = (
+				FA850F431EE208D000B1CDDB /* VertexIn.swift */,
+				FA850F451EE208DB00B1CDDB /* VertexOut.swift */,
+			);
+			path = DSL;
 			sourceTree = "<group>";
 		};
 		FA86BE011D98ED4500BC5FB1 /* UI */ = {
@@ -2622,11 +2652,13 @@
 				FA850F3F1EE1FBD400B1CDDB /* CompositeVariable.swift in Sources */,
 				FA850F2C1EE111AD00B1CDDB /* AssignStatement.swift in Sources */,
 				FA89D13C1EDF610D0012F2F0 /* TestShader.swift in Sources */,
+				FA850F441EE208D000B1CDDB /* VertexIn.swift in Sources */,
 				FA850EF01EDF921900B1CDDB /* Member.swift in Sources */,
 				FA89D13E1EDF626A0012F2F0 /* BuildRuntimeShader.swift in Sources */,
 				FA4DFEDB1D9DBD5F0068706F /* Renderer.swift in Sources */,
 				FA4DFED11D9DBD1A0068706F /* AppDelegate.swift in Sources */,
 				FA850EFB1EDFC83A00B1CDDB /* VertexStructs.swift in Sources */,
+				FA850F461EE208DB00B1CDDB /* VertexOut.swift in Sources */,
 				FA850F331EE1244100B1CDDB /* String+Extensions.swift in Sources */,
 				FA4021C71DA0AEE800752F3B /* MetalCameraController.swift in Sources */,
 				FA850EFD1EDFD0BB00B1CDDB /* CallStatement.swift in Sources */,

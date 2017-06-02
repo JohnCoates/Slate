@@ -69,6 +69,8 @@ private class Constant {
     static let vertexOutTextureCoordinates = "textureCoordinates"
 }
 
+// MARK: - Shader
+
 private extension RuntimeShader {
     static func testFunction() -> FragmentFunction {
         var functionMaybe: RuntimeShader.FragmentFunction?
@@ -103,36 +105,4 @@ private extension RuntimeShader {
 
 private func testFunction() -> RuntimeShader.FragmentFunction {
     return RuntimeShader.testFunction()
-}
-
-
-// MARK: - Structs
-
-private extension RuntimeShader {
-    class VertexOut: CompositeVariable {
-        
-        override class func add(toShader shader: RuntimeShader) -> ShaderType {
-            let item = shader.defineStruct(name: "VertexOut")
-            item.addMember(name: "position",
-                           type: Float4.self, qualifier: .position)
-            item.addMember(name: "textureCoordinates",
-                           type: Float2.self, qualifier: .user(name: "texturecoord"))
-            
-            return item
-        }
-        
-        // MARK: - Init
-        
-        required init(name: String) {
-            super.init(name: name)
-        }
-        
-        var position: Float4 {
-            return self["position"]
-        }
-        
-        var textureCoordinates: Float2 {
-            return self["textureCoordinates"]
-        }
-    }
 }

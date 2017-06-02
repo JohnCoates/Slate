@@ -13,7 +13,6 @@ import XCTest
     @testable import macSlate
 #endif
 
-
 class TestCustomStruct: XCTestCase {
     
     override func setUp() {
