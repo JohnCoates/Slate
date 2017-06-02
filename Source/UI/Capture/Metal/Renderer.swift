@@ -107,6 +107,7 @@ import AVFoundation
     // (0, 0, 0.5). The left and bottom for x and y, respectively, of the NDC system are specified as -1.
     // The right and top for x and y, respectively, of the NDC system are specified as +1.
     class func generateQuad(forDevice device: MTLDevice, inArray vertices: inout [Vertex]) -> MTLBuffer {
+        vertices.removeAll()
         vertices += Vertices.quad()
         
         var options: MTLResourceOptions = []
@@ -357,6 +358,17 @@ import AVFoundation
     func draw(in metalView: MTKView) {
         render(metalView)
     }
+    
+    // MARK: - Resizing
+    
+    #if os(macOS)
+    func setAspectRatio(width: Float, height: Float) {
+        vertices.removeAll()
+        vertices += Vertices.quadForAspectRatio(width: width, height: height)
+        
+        invalidateVertexBuffer()
+    }
+    #endif
 }
 
 // MARK: - Callbacks

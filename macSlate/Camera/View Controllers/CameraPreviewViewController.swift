@@ -11,21 +11,17 @@ import MetalKit
 
 class CameraPreviewViewController: NSViewController {
 
-    let metalView = MTKView()
-    lazy var renderer: Renderer = Renderer(metalView: self.metalView)!
+    lazy var contentView: PreviewContentView = PreviewContentView()
+    lazy var renderer: Renderer = self.contentView.renderer
     lazy var hudController: HUDController = HUDController(renderer: self.renderer)
     
     override func loadView() {
-        view = NSView()
-        view.autoresizingMask = [.viewWidthSizable, .viewHeightSizable]
+        view = contentView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        metalView.autoresizingMask = [.viewWidthSizable, .viewHeightSizable]
-        metalView.frame = view.bounds
-        view.addSubview(metalView)
+        
         hudController.showWindow(nil)
     }
-    
 }
