@@ -18,7 +18,6 @@
 		FA0462C51EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C41EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift */; };
 		FA0462C71EC4252D007B74A0 /* ComponentItemCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */; };
 		FA06348A1ED4A8F100C8FC90 /* OpenSource.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FA0634891ED4A8F100C8FC90 /* OpenSource.xcconfig */; };
-		FA06348B1ED4A8F100C8FC90 /* OpenSource.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FA0634891ED4A8F100C8FC90 /* OpenSource.xcconfig */; };
 		FA06348C1ED4A8F100C8FC90 /* OpenSource.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FA0634891ED4A8F100C8FC90 /* OpenSource.xcconfig */; };
 		FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */; };
 		FA18058B1EC46FAE004351B7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1805891EC46FAE004351B7 /* Realm.framework */; };
@@ -31,7 +30,6 @@
 		FA1805A31EC699A4004351B7 /* EditSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805A21EC699A4004351B7 /* EditSize.swift */; };
 		FA1A2C9D1ECC57C60075FA0B /* PermissionsEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A2C9C1ECC57C60075FA0B /* PermissionsEducationViewController.swift */; };
 		FA1A2C9E1ECC57C60075FA0B /* PermissionsEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A2C9C1ECC57C60075FA0B /* PermissionsEducationViewController.swift */; };
-		FA1B593B1D638BF4F38A419A /* Pods_Slate_Local.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD8757BC3527BD9562DA2A7 /* Pods_Slate_Local.framework */; };
 		FA1C23801ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C237F1ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift */; };
 		FA1C23811ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C237F1ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift */; };
 		FA20FA511E12624C00032AF3 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA20FA501E12624C00032AF3 /* MetalKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -143,7 +141,6 @@
 		FA4DFEDC1D9DBD620068706F /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */; };
 		FA4DFEE01D9DC15E0068706F /* HUDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4DFEDF1D9DC15E0068706F /* HUDController.swift */; };
 		FA5651AC1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5651AB1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift */; };
-		FA5651AD1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5651AB1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift */; };
 		FA5651AE1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5651AB1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift */; };
 		FA5651AF1EDE4C44006B5A19 /* ImageCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76F5451ED48FFC00059906 /* ImageCaptureManager.swift */; };
 		FA57099E1ECC5E4D000362C8 /* PhotosEducationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA57099D1ECC5E4D000362C8 /* PhotosEducationImage.swift */; };
@@ -170,12 +167,9 @@
 		FA5F8CB41ED0958100921A61 /* KeepUpright.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CB21ED0958100921A61 /* KeepUpright.swift */; };
 		FA76F5421ED3C32D00059906 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */; };
 		FA76F5461ED48FFC00059906 /* ImageCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76F5451ED48FFC00059906 /* ImageCaptureManager.swift */; };
-		FA76F5471ED48FFC00059906 /* ImageCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76F5451ED48FFC00059906 /* ImageCaptureManager.swift */; };
 		FA76F54C1ED4A2C100059906 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA76F54A1ED4A2C100059906 /* Fabric.framework */; };
-		FA76F54D1ED4A2C100059906 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA76F54A1ED4A2C100059906 /* Fabric.framework */; };
 		FA76F54E1ED4A2C100059906 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA76F54A1ED4A2C100059906 /* Fabric.framework */; };
 		FA76F54F1ED4A2C100059906 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA76F54B1ED4A2C100059906 /* Crashlytics.framework */; };
-		FA76F5501ED4A2C100059906 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA76F54B1ED4A2C100059906 /* Crashlytics.framework */; };
 		FA76F5511ED4A2C100059906 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA76F54B1ED4A2C100059906 /* Crashlytics.framework */; };
 		FA7724CD1ED1A25F00C5C227 /* EditOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BD7A41ED18D0C00D1761C /* EditOpacity.swift */; };
 		FA7724D31ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7724D21ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift */; };
@@ -263,103 +257,7 @@
 		FABB16B21D9F822800A8AC6C /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B01D9F822800A8AC6C /* CameraController.swift */; };
 		FABB16B31D9F858800A8AC6C /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BDC1D9920010017CCCA /* Platform.swift */; };
 		FABB16B51D9F886300A8AC6C /* BaseCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */; };
-		FAC962DA1ED3983D00D4DC33 /* DebugBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */; };
-		FAC962DB1ED3983D00D4DC33 /* ComputeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D54181DB055BB0091184D /* ComputeFilter.swift */; };
-		FAC962DC1ED3983D00D4DC33 /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462BA1EC3DF88007B74A0 /* Kit.swift */; };
-		FAC962DD1ED3983D00D4DC33 /* BaseCaptureViewController+ComponentMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D0D1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift */; };
-		FAC962DE1ED3983D00D4DC33 /* PhotosPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5709A51ECC7172000362C8 /* PhotosPermissionViewController.swift */; };
-		FAC962DF1ED3983D00D4DC33 /* UIGestureRecognizer+Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CE4271ECD8AE700788026 /* UIGestureRecognizer+Closure.swift */; };
-		FAC962E01ED3983D00D4DC33 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805971EC54F38004351B7 /* CircleView.swift */; };
-		FAC962E11ED3983D00D4DC33 /* BaseCaptureViewController+Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8C961ECFE7D000921A61 /* BaseCaptureViewController+Kit.swift */; };
-		FAC962E21ED3983D00D4DC33 /* CheckmarkIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E701EC9239F00E44613 /* CheckmarkIcon.swift */; };
-		FAC962E31ED3983D00D4DC33 /* PermissionsPreferredButtonIndicatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5709A11ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift */; };
-		FAC962E41ED3983D00D4DC33 /* PermissionsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D171ECAFF1D0008690E /* PermissionsWindow.swift */; };
-		FAC962E51ED3983D00D4DC33 /* RealmMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BD7A81ED18F6900D1761C /* RealmMigrator.swift */; };
-		FAC962E61ED3983D00D4DC33 /* TextureCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16A11D9F402C00A8AC6C /* TextureCoordinates.swift */; };
-		FAC962E71ED3983D00D4DC33 /* DebugBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2991E15662B00D34947 /* DebugBarView.swift */; };
-		FAC962E81ED3983D00D4DC33 /* ChromaticAberrationFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E4D1DA22AD700993949 /* ChromaticAberrationFilter.swift */; };
-		FAC962E91ED3983D00D4DC33 /* ButtonIndicatorIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AA5401ECC107F0093D317 /* ButtonIndicatorIcon.swift */; };
-		FAC962EA1ED3983D00D4DC33 /* GaussianBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */; };
-		FAC962EB1ED3983D00D4DC33 /* PermissionsEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A2C9C1ECC57C60075FA0B /* PermissionsEducationViewController.swift */; };
-		FAC962EC1ED3983D00D4DC33 /* InverseMaskGroupedPathButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D031ECAAB190008690E /* InverseMaskGroupedPathButton.swift */; };
-		FAC962ED1ED3983D00D4DC33 /* DragGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0AA611EC6A1B8008DCD23 /* DragGesture.swift */; };
-		FAC962EE1ED3983D00D4DC33 /* DebugBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F28D1E144C0E00D34947 /* DebugBarController.swift */; };
-		FAC962EF1ED3983D00D4DC33 /* XIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E761EC928A300E44613 /* XIcon.swift */; };
-		FAC962F01ED3983D00D4DC33 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */; };
-		FAC962F11ED3983D00D4DC33 /* CanvasIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AA5471ECC13970093D317 /* CanvasIcon.swift */; };
-		FAC962F21ED3983D00D4DC33 /* DebugBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2931E144E4E00D34947 /* DebugBarItem.swift */; };
-		FAC962F31ED3983D00D4DC33 /* PathIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E6C1EC9235700E44613 /* PathIcon.swift */; };
-		FAC962F41ED3983D00D4DC33 /* FlipCameraIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CFD1ECAA87C0008690E /* FlipCameraIcon.swift */; };
-		FAC962F51ED3983D00D4DC33 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BDC1D9920010017CCCA /* Platform.swift */; };
-		FAC962F61ED3983D00D4DC33 /* UIScreen+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8C9E1ECFF81400921A61 /* UIScreen+Layout.swift */; };
-		FAC962F71ED3983D00D4DC33 /* ChromaticAberration.metal in Sources */ = {isa = PBXBuildFile; fileRef = FABB16AC1D9F6DAB00A8AC6C /* ChromaticAberration.metal */; };
-		FAC962F81ED3983D00D4DC33 /* Ream+Filtering.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D131ECAD30D0008690E /* Ream+Filtering.swift */; };
-		FAC962F91ED3983D00D4DC33 /* LayoutConstraint+Modifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E671EC922FD00E44613 /* LayoutConstraint+Modifying.swift */; };
-		FAC962FA1ED3983D00D4DC33 /* InverseMaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E5E1EC817C000E44613 /* InverseMaskButton.swift */; };
-		FAC962FB1ED3983D00D4DC33 /* FragmentFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D54151DB055A00091184D /* FragmentFilter.swift */; };
-		FAC962FC1ED3983D00D4DC33 /* Int+Pixels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CE4211ECD7E5A00788026 /* Int+Pixels.swift */; };
-		FAC962FD1ED3983D00D4DC33 /* PhotosDeniedPermisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CE42A1ECDA16A00788026 /* PhotosDeniedPermisionViewController.swift */; };
-		FAC962FE1ED3983D00D4DC33 /* PermissionsButtonIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C237F1ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift */; };
-		FAC962FF1ED3983D00D4DC33 /* PassthroughFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E521DA23E5500993949 /* PassthroughFilter.swift */; };
-		FAC963001ED3983D00D4DC33 /* GroupedPathButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D001ECAA9170008690E /* GroupedPathButton.swift */; };
-		FAC963011ED3983D00D4DC33 /* CameraPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */; };
-		FAC963021ED3983D00D4DC33 /* InteractivityIndicatorIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7724D21ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift */; };
-		FAC963031ED3983D00D4DC33 /* CaptureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BE31D9929710017CCCA /* CaptureButton.swift */; };
-		FAC963041ED3983D00D4DC33 /* KitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462B81EC3DF81007B74A0 /* KitManager.swift */; };
-		FAC963051ED3983D00D4DC33 /* Font+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CA51ED0649200921A61 /* Font+Convenience.swift */; };
-		FAC963061ED3983D00D4DC33 /* KeepUpright.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CB21ED0958100921A61 /* KeepUpright.swift */; };
-		FAC963071ED3983D00D4DC33 /* AbstractFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E461DA2293000993949 /* AbstractFilter.swift */; };
-		FAC963081ED3983D00D4DC33 /* UIView+subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CE4241ECD7FA700788026 /* UIView+subviews.swift */; };
-		FAC963091ED3983D00D4DC33 /* ComponentMenuBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C41EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift */; };
-		FAC9630A1ED3983D00D4DC33 /* BaseCaptureViewController+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CA11ED05B7B00921A61 /* BaseCaptureViewController+Rotation.swift */; };
-		FAC9630B1ED3983D00D4DC33 /* CodeIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1EB11EC97E7300E44613 /* CodeIconButton.swift */; };
-		FAC9630C1ED3983D00D4DC33 /* CameraPositionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462BE1EC3DFE1007B74A0 /* CameraPositionComponent.swift */; };
-		FAC9630D1ED3983D00D4DC33 /* Vertices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB169D1D9F308C00A8AC6C /* Vertices.swift */; };
-		FAC9630E1ED3983D00D4DC33 /* CameraDeniedPermisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5709AC1ECD4A36000362C8 /* CameraDeniedPermisionViewController.swift */; };
-		FAC9630F1ED3983D00D4DC33 /* BaseCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */; };
-		FAC963101ED3983D00D4DC33 /* BaseCaptureViewController+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D071ECAD03A0008690E /* BaseCaptureViewController+Debug.swift */; };
-		FAC963111ED3983D00D4DC33 /* ComponentItemCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */; };
-		FAC963121ED3983D00D4DC33 /* GaussianBlurFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E491DA2296E00993949 /* GaussianBlurFilter.swift */; };
-		FAC963131ED3983D00D4DC33 /* ControlBarItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462B51EC3CDFA007B74A0 /* ControlBarItemCell.swift */; };
-		FAC963141ED3983D00D4DC33 /* DebugWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2961E14520700D34947 /* DebugWindow.swift */; };
-		FAC963151ED3983D00D4DC33 /* DeleteLineIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1EAE1EC97CE000E44613 /* DeleteLineIcon.swift */; };
-		FAC963161ED3983D00D4DC33 /* ComponentEditBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805921EC54A0F004351B7 /* ComponentEditBar.swift */; };
-		FAC963171ED3983D00D4DC33 /* CameraEducationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5709A81ECC732A000362C8 /* CameraEducationImage.swift */; };
-		FAC963181ED3983D00D4DC33 /* EditSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805A21EC699A4004351B7 /* EditSize.swift */; };
-		FAC963191ED3983D00D4DC33 /* MetalCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */; };
-		FAC9631A1ED3983D00D4DC33 /* ComponentMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29FB481EA49B1F00EB1081 /* ComponentMenuBar.swift */; };
-		FAC9631B1ED3983D00D4DC33 /* EditOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BD7A41ED18D0C00D1761C /* EditOpacity.swift */; };
-		FAC9631C1ED3983D00D4DC33 /* ComponentRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805901EC5477A004351B7 /* ComponentRealm.swift */; };
-		FAC9631D1ED3983D00D4DC33 /* ComponentEditBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0AA631EC6C84D008DCD23 /* ComponentEditBarDelegate.swift */; };
-		FAC9631E1ED3983D00D4DC33 /* MetalCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4021C51DA0AEE800752F3B /* MetalCameraController.swift */; };
-		FAC9631F1ED3983D00D4DC33 /* Views+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E731EC927FB00E44613 /* Views+AutoLayout.swift */; };
-		FAC963201ED3983D00D4DC33 /* EditPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0AA5D1EC6A095008DCD23 /* EditPosition.swift */; };
-		FAC963211ED3983D00D4DC33 /* FrontBackCameraToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462B21EC3CC76007B74A0 /* FrontBackCameraToggle.swift */; };
-		FAC963221ED3983D00D4DC33 /* GroupedPathIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */; };
-		FAC963231ED3983D00D4DC33 /* BaseCaptureViewController+ComponentEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D0A1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift */; };
-		FAC963241ED3983D00D4DC33 /* SimulatorCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86BE041D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift */; };
-		FAC963251ED3983D00D4DC33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F89E51D953C540058C369 /* AppDelegate.swift */; };
-		FAC963261ED3983D00D4DC33 /* CanvasIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AA5441ECC13140093D317 /* CanvasIconView.swift */; };
-		FAC963271ED3983D00D4DC33 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C11EC3E002007B74A0 /* Component.swift */; };
-		FAC963281ED3983D00D4DC33 /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */; };
-		FAC963291ED3983D00D4DC33 /* EditRounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18059E1EC688D9004351B7 /* EditRounding.swift */; };
-		FAC9632A1ED3983D00D4DC33 /* CaptureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CAF1ED06A5F00921A61 /* CaptureComponent.swift */; };
-		FAC9632B1ED3983D00D4DC33 /* CircleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805991EC55466004351B7 /* CircleSlider.swift */; };
-		FAC9632C1ED3983D00D4DC33 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BE01D9927EB0017CCCA /* Button.swift */; };
-		FAC9632D1ED3983D00D4DC33 /* PhotosEducationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA57099D1ECC5E4D000362C8 /* PhotosEducationImage.swift */; };
-		FAC9632E1ED3983D00D4DC33 /* RoundableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1EB41EC9824E00E44613 /* RoundableView.swift */; };
-		FAC9632F1ED3983D00D4DC33 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B01D9F822800A8AC6C /* CameraController.swift */; };
-		FAC963301ED3983D00D4DC33 /* CameraRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */; };
-		FAC963311ED3983D00D4DC33 /* DebugBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F29B1E15686C00D34947 /* DebugBarItemView.swift */; };
-		FAC963331ED3983D00D4DC33 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1805891EC46FAE004351B7 /* Realm.framework */; };
-		FAC963341ED3983D00D4DC33 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA20FA501E12624C00032AF3 /* MetalKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		FAC963351ED3983D00D4DC33 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; };
-		FAC963361ED3983D00D4DC33 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
-		FAC963381ED3983D00D4DC33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9F89EE1D953C540058C369 /* LaunchScreen.storyboard */; };
-		FAC963391ED3983D00D4DC33 /* Placeholders.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA834BE51D9932BC0017CCCA /* Placeholders.xcassets */; };
-		FAC9633A1ED3983D00D4DC33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9F89EC1D953C540058C369 /* Assets.xcassets */; };
 		FAC9634C1ED3B68700D4DC33 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */; };
-		FAC9634D1ED3B68700D4DC33 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */; };
 		FACC8FD41D98A55400589230 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
 		FACFE4931ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */; };
 		FACFE4941ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */; };
@@ -396,17 +294,6 @@
 			script = "# metal\n${PROJECT_DIR}/Scripts/compileShader.sh";
 		};
 		FAADE0D41D9D142E00AA5729 /* PBXBuildRule */ = {
-			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.proxy.script;
-			fileType = sourcecode.metal;
-			isEditable = 1;
-			name = "Compile Metal Source Files";
-			outputFiles = (
-				"${TARGET_TEMP_DIR}/Metal/${FILE_BASE}.air",
-			);
-			script = "# metal\n${PROJECT_DIR}/Scripts/compileShader.sh";
-		};
-		FAC9633E1ED3983D00D4DC33 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.proxy.script;
 			fileType = sourcecode.metal;
@@ -491,16 +378,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FAC9633B1ED3983D00D4DC33 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FACC8FD71D98A5AF00589230 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -515,10 +392,13 @@
 
 /* Begin PBXFileReference section */
 		02961120925EFB47073F137E /* Pods-Slate Local.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate Local.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Slate Local/Pods-Slate Local.debug.xcconfig"; sourceTree = "<group>"; };
+		085C8EBAC1B8561F45FE5DB9 /* Pods-Feature Catalog.fastdebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feature Catalog.fastdebug.xcconfig"; path = "Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog.fastdebug.xcconfig"; sourceTree = "<group>"; };
 		1329C1F06936529741A52443 /* Pods-Slate Local.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate Local.release.xcconfig"; path = "Pods/Target Support Files/Pods-Slate Local/Pods-Slate Local.release.xcconfig"; sourceTree = "<group>"; };
 		1BD8757BC3527BD9562DA2A7 /* Pods_Slate_Local.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slate_Local.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B2A3C8F82002625FA872283 /* Pods-Slate Local.fastdebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate Local.fastdebug.xcconfig"; path = "Pods/Target Support Files/Pods-Slate Local/Pods-Slate Local.fastdebug.xcconfig"; sourceTree = "<group>"; };
 		2C9932AFAAA473C517DC6392 /* Pods-Slate.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Slate/Pods-Slate.appstore.xcconfig"; sourceTree = "<group>"; };
 		2D4649AF9B4CD5DE77617208 /* Pods-Feature Catalog.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feature Catalog.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog.appstore.xcconfig"; sourceTree = "<group>"; };
+		60F4904F4767BF970E0F9859 /* Pods-Slate.fastdebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate.fastdebug.xcconfig"; path = "Pods/Target Support Files/Pods-Slate/Pods-Slate.fastdebug.xcconfig"; sourceTree = "<group>"; };
 		688C078884E306285B5F2E27 /* Pods_Feature_Catalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Feature_Catalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		866CB97E0921FF46013F02E3 /* Pods_Slate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F964C72096AB2255F99FA63 /* Pods-Feature Catalog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feature Catalog.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog.release.xcconfig"; sourceTree = "<group>"; };
@@ -628,6 +508,7 @@
 		FA850F3E1EE1FBD400B1CDDB /* CompositeVariable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositeVariable.swift; sourceTree = "<group>"; };
 		FA850F431EE208D000B1CDDB /* VertexIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VertexIn.swift; sourceTree = "<group>"; };
 		FA850F451EE208DB00B1CDDB /* VertexOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VertexOut.swift; sourceTree = "<group>"; };
+		FA850F501EE20C7800B1CDDB /* FastDebug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FastDebug.xcconfig; sourceTree = "<group>"; };
 		FA86BE041D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulatorCaptureViewController.swift; sourceTree = "<group>"; };
 		FA89D1381EDF60360012F2F0 /* RuntimeShader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuntimeShader.swift; sourceTree = "<group>"; };
 		FA89D13B1EDF610D0012F2F0 /* TestShader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestShader.swift; sourceTree = "<group>"; };
@@ -677,7 +558,6 @@
 		FABB16AC1D9F6DAB00A8AC6C /* ChromaticAberration.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ChromaticAberration.metal; sourceTree = "<group>"; };
 		FABB16B01D9F822800A8AC6C /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCaptureViewController.swift; sourceTree = "<group>"; };
-		FAC963421ED3983D00D4DC33 /* Slate Local.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slate Local.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		FACC8FD31D98A55400589230 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cartography.framework; sourceTree = "<group>"; };
 		FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPermissionViewController.swift; sourceTree = "<group>"; };
@@ -754,20 +634,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FAC963321ED3983D00D4DC33 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FAC963331ED3983D00D4DC33 /* Realm.framework in Frameworks */,
-				FA76F54D1ED4A2C100059906 /* Fabric.framework in Frameworks */,
-				FAC963341ED3983D00D4DC33 /* MetalKit.framework in Frameworks */,
-				FAC963351ED3983D00D4DC33 /* RealmSwift.framework in Frameworks */,
-				FA76F5501ED4A2C100059906 /* Crashlytics.framework in Frameworks */,
-				FAC963361ED3983D00D4DC33 /* Cartography.framework in Frameworks */,
-				FA1B593B1D638BF4F38A419A /* Pods_Slate_Local.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -783,6 +649,9 @@
 				2D4649AF9B4CD5DE77617208 /* Pods-Feature Catalog.appstore.xcconfig */,
 				2C9932AFAAA473C517DC6392 /* Pods-Slate.appstore.xcconfig */,
 				E2BE2BA921BB886A12F73219 /* Pods-Slate Local.appstore.xcconfig */,
+				085C8EBAC1B8561F45FE5DB9 /* Pods-Feature Catalog.fastdebug.xcconfig */,
+				60F4904F4767BF970E0F9859 /* Pods-Slate.fastdebug.xcconfig */,
+				2B2A3C8F82002625FA872283 /* Pods-Slate Local.fastdebug.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -868,6 +737,7 @@
 				FA0634891ED4A8F100C8FC90 /* OpenSource.xcconfig */,
 				FA06348D1ED4ACA800C8FC90 /* Private.xcconfig */,
 				FA0634961ED4B1C300C8FC90 /* AppStore.xcconfig */,
+				FA850F501EE20C7800B1CDDB /* FastDebug.xcconfig */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -1704,7 +1574,6 @@
 				FA9F8A011D953C540058C369 /* UITests.xctest */,
 				FA4DFECE1D9DBD1A0068706F /* macSlate.app */,
 				FAB0AA691EC8083D008DCD23 /* Feature Catalog.app */,
-				FAC963421ED3983D00D4DC33 /* Slate Local.app */,
 				FA850F191EE0DB2300B1CDDB /* macTests.xctest */,
 			);
 			name = Products;
@@ -2065,6 +1934,7 @@
 				FA7724D51ED1E35200C5C227 /* Copy Carthage Frameworks (fix x86_64 binaries in App Store builds) */,
 				3878ED78F93436AB1BAD504E /* [CP] Embed Pods Frameworks */,
 				30A43601DB775A1683E45B04 /* [CP] Copy Pods Resources */,
+				FA850F471EE20BA000B1CDDB /* Integrate Reveal */,
 				FA76F5491ED4A29100059906 /* Fabric */,
 			);
 			buildRules = (
@@ -2140,33 +2010,6 @@
 			productReference = FAB0AA691EC8083D008DCD23 /* Feature Catalog.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FAC962D71ED3983D00D4DC33 /* Slate Local */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FAC9633F1ED3983D00D4DC33 /* Build configuration list for PBXNativeTarget "Slate Local" */;
-			buildPhases = (
-				DD58285CEB9811A2491DF1C3 /* [CP] Check Pods Manifest.lock */,
-				FAC962D81ED3983D00D4DC33 /* Swiftlint */,
-				FAC962D91ED3983D00D4DC33 /* Sources */,
-				FAC963321ED3983D00D4DC33 /* Frameworks */,
-				FAC963371ED3983D00D4DC33 /* Resources */,
-				FAC9633B1ED3983D00D4DC33 /* Embed Frameworks */,
-				FAC9633C1ED3983D00D4DC33 /* Build Metal Shader Library */,
-				FAC9633D1ED3983D00D4DC33 /* Copy Carthage Frameworks (fix x86_64 binaries in App Store builds) */,
-				79E0EA2454CDBDF051F1C159 /* [CP] Embed Pods Frameworks */,
-				27BB52B1C227D9EA0751F8DF /* [CP] Copy Pods Resources */,
-				FAC9634A1ED39DD800D4DC33 /* Integrate Reveal */,
-				FA06348E1ED4AF2F00C8FC90 /* Fabric */,
-			);
-			buildRules = (
-				FAC9633E1ED3983D00D4DC33 /* PBXBuildRule */,
-			);
-			dependencies = (
-			);
-			name = "Slate Local";
-			productName = Slate;
-			productReference = FAC963421ED3983D00D4DC33 /* Slate Local.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -2210,10 +2053,6 @@
 						DevelopmentTeam = E6QK4MU6LM;
 						ProvisioningStyle = Automatic;
 					};
-					FAC962D71ED3983D00D4DC33 = {
-						DevelopmentTeam = E6QK4MU6LM;
-						ProvisioningStyle = Automatic;
-					};
 				};
 			};
 			buildConfigurationList = FA9F89DD1D953C540058C369 /* Build configuration list for PBXProject "Slate" */;
@@ -2230,7 +2069,6 @@
 			projectRoot = "";
 			targets = (
 				FA9F89E11D953C540058C369 /* Slate */,
-				FAC962D71ED3983D00D4DC33 /* Slate Local */,
 				FA9F89F51D953C540058C369 /* UnitTests */,
 				FA9F8A001D953C540058C369 /* UITests */,
 				FA4DFECD1D9DBD1A0068706F /* macSlate */,
@@ -2294,17 +2132,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FAC963371ED3983D00D4DC33 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FAC963381ED3983D00D4DC33 /* LaunchScreen.storyboard in Resources */,
-				FA06348B1ED4A8F100C8FC90 /* OpenSource.xcconfig in Resources */,
-				FAC963391ED3983D00D4DC33 /* Placeholders.xcassets in Resources */,
-				FAC9633A1ED3983D00D4DC33 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -2323,21 +2150,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		27BB52B1C227D9EA0751F8DF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Slate Local/Pods-Slate Local-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		30A43601DB775A1683E45B04 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2349,8 +2161,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Slate/Pods-Slate-resources.sh\"\n";
+			shellPath = /bin/bash;
+			shellScript = "if [ ! -z \"${SKIP_PODS}\" ]\nthen\necho \"Skipping Copy Pods\"\nelse\n\"${SRCROOT}/Pods/Target Support Files/Pods-Slate/Pods-Slate-resources.sh\"\nfi";
 			showEnvVarsInLog = 0;
 		};
 		3878ED78F93436AB1BAD504E /* [CP] Embed Pods Frameworks */ = {
@@ -2364,23 +2176,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Slate/Pods-Slate-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		79E0EA2454CDBDF051F1C159 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Slate Local/Pods-Slate Local-frameworks.sh\"\n";
+			shellPath = /bin/bash;
+			shellScript = "if [ ! -z \"${SKIP_PODS}\" ]\nthen\necho \"Skipping Embed Pods\"\nelse\n\"${SRCROOT}/Pods/Target Support Files/Pods-Slate/Pods-Slate-frameworks.sh\"\nfi";
 			showEnvVarsInLog = 0;
 		};
 		AF267DBC92C6F6E6E0A71DE9 /* [CP] Check Pods Manifest.lock */ = {
@@ -2413,21 +2210,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		DD58285CEB9811A2491DF1C3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		F06FD0C2036AEF6649093ED3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2442,20 +2224,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog-resources.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		FA06348E1ED4AF2F00C8FC90 /* Fabric */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Fabric;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ ! -z \"${FABRIC_API_KEY}\" ]\nthen\n\"${PODS_ROOT}/Fabric/run\" ${FABRIC_API_KEY} ${FABRIC_BUILD_SECRET}\nfi";
 		};
 		FA2B1EAD1EC932DC00E44613 /* Build Metal Shader Library */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2544,6 +2312,20 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		FA850F471EE20BA000B1CDDB /* Integrate Reveal */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Integrate Reveal";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ ! -z \"${BUILD_LAYOUT}\" ]\nthen\necho \"Integrating Reveal\"\n    REVEAL_APP_PATH=$(mdfind kMDItemCFBundleIdentifier=\"com.ittybittyapps.Reveal2\" | head -n 1)\n    BUILD_SCRIPT_PATH=\"${REVEAL_APP_PATH}/Contents/SharedSupport/Scripts/reveal_server_build_phase.sh\"\nif [ \"${REVEAL_APP_PATH}\" -a -e \"${BUILD_SCRIPT_PATH}\" ]; then\n\"${BUILD_SCRIPT_PATH}\"\nelse\necho \"Reveal Server not loaded: Cannot find a compatible Reveal app.\"\nfi\nfi";
+		};
 		FAADE0D51D9D1CB200AA5729 /* Build Metal Shader Library */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2558,65 +2340,6 @@
 			shellPath = /bin/sh;
 			shellScript = "${PROJECT_DIR}/Scripts/buildShaderLibrary.sh";
 		};
-		FAC962D81ED3983D00D4DC33 /* Swiftlint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Swiftlint;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-		FAC9633C1ED3983D00D4DC33 /* Build Metal Shader Library */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Build Metal Shader Library";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${PROJECT_DIR}/Scripts/buildShaderLibrary.sh";
-		};
-		FAC9633D1ED3983D00D4DC33 /* Copy Carthage Frameworks (fix x86_64 binaries in App Store builds) */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
-			);
-			name = "Copy Carthage Frameworks (fix x86_64 binaries in App Store builds)";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		FAC9634A1ED39DD800D4DC33 /* Integrate Reveal */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Integrate Reveal";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "REVEAL_APP_PATH=$(mdfind kMDItemCFBundleIdentifier=\"com.ittybittyapps.Reveal2\" | head -n 1)\nBUILD_SCRIPT_PATH=\"${REVEAL_APP_PATH}/Contents/SharedSupport/Scripts/reveal_server_build_phase.sh\"\nif [ \"${REVEAL_APP_PATH}\" -a -e \"${BUILD_SCRIPT_PATH}\" ]; then\n\"${BUILD_SCRIPT_PATH}\"\nelse\necho \"Reveal Server not loaded: Cannot find a compatible Reveal app.\"\nfi";
-		};
 		FACC8FD81D98AD4500589230 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2628,8 +2351,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellPath = /bin/bash;
+			shellScript = "if [ ! -z \"${SKIP_LINT}\" ]\nthen\necho \"Skipping Lint\"\nelse\nif which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2912,104 +2635,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FAC962D91ED3983D00D4DC33 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FAC962DA1ED3983D00D4DC33 /* DebugBarDelegate.swift in Sources */,
-				FAC962DB1ED3983D00D4DC33 /* ComputeFilter.swift in Sources */,
-				FAC962DC1ED3983D00D4DC33 /* Kit.swift in Sources */,
-				FAC962DD1ED3983D00D4DC33 /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
-				FAC962DE1ED3983D00D4DC33 /* PhotosPermissionViewController.swift in Sources */,
-				FAC962DF1ED3983D00D4DC33 /* UIGestureRecognizer+Closure.swift in Sources */,
-				FAC962E01ED3983D00D4DC33 /* CircleView.swift in Sources */,
-				FAC962E11ED3983D00D4DC33 /* BaseCaptureViewController+Kit.swift in Sources */,
-				FAC962E21ED3983D00D4DC33 /* CheckmarkIcon.swift in Sources */,
-				FAC962E31ED3983D00D4DC33 /* PermissionsPreferredButtonIndicatorController.swift in Sources */,
-				FA76F5471ED48FFC00059906 /* ImageCaptureManager.swift in Sources */,
-				FAC962E41ED3983D00D4DC33 /* PermissionsWindow.swift in Sources */,
-				FAC962E51ED3983D00D4DC33 /* RealmMigrator.swift in Sources */,
-				FAC962E61ED3983D00D4DC33 /* TextureCoordinates.swift in Sources */,
-				FAC962E71ED3983D00D4DC33 /* DebugBarView.swift in Sources */,
-				FAC962E81ED3983D00D4DC33 /* ChromaticAberrationFilter.swift in Sources */,
-				FAC962E91ED3983D00D4DC33 /* ButtonIndicatorIcon.swift in Sources */,
-				FAC962EA1ED3983D00D4DC33 /* GaussianBlur.metal in Sources */,
-				FAC962EB1ED3983D00D4DC33 /* PermissionsEducationViewController.swift in Sources */,
-				FAC962EC1ED3983D00D4DC33 /* InverseMaskGroupedPathButton.swift in Sources */,
-				FA5651AD1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift in Sources */,
-				FAC962ED1ED3983D00D4DC33 /* DragGesture.swift in Sources */,
-				FAC962EE1ED3983D00D4DC33 /* DebugBarController.swift in Sources */,
-				FAC962EF1ED3983D00D4DC33 /* XIcon.swift in Sources */,
-				FAC962F01ED3983D00D4DC33 /* Renderer.swift in Sources */,
-				FAC962F11ED3983D00D4DC33 /* CanvasIcon.swift in Sources */,
-				FAC962F21ED3983D00D4DC33 /* DebugBarItem.swift in Sources */,
-				FAC962F31ED3983D00D4DC33 /* PathIcon.swift in Sources */,
-				FAC962F41ED3983D00D4DC33 /* FlipCameraIcon.swift in Sources */,
-				FAC962F51ED3983D00D4DC33 /* Platform.swift in Sources */,
-				FAC962F61ED3983D00D4DC33 /* UIScreen+Layout.swift in Sources */,
-				FAC962F71ED3983D00D4DC33 /* ChromaticAberration.metal in Sources */,
-				FAC962F81ED3983D00D4DC33 /* Ream+Filtering.swift in Sources */,
-				FAC962F91ED3983D00D4DC33 /* LayoutConstraint+Modifying.swift in Sources */,
-				FAC962FA1ED3983D00D4DC33 /* InverseMaskButton.swift in Sources */,
-				FAC962FB1ED3983D00D4DC33 /* FragmentFilter.swift in Sources */,
-				FAC962FC1ED3983D00D4DC33 /* Int+Pixels.swift in Sources */,
-				FAC962FD1ED3983D00D4DC33 /* PhotosDeniedPermisionViewController.swift in Sources */,
-				FAC962FE1ED3983D00D4DC33 /* PermissionsButtonIndicatorViewController.swift in Sources */,
-				FAC962FF1ED3983D00D4DC33 /* PassthroughFilter.swift in Sources */,
-				FAC963001ED3983D00D4DC33 /* GroupedPathButton.swift in Sources */,
-				FAC963011ED3983D00D4DC33 /* CameraPermissionViewController.swift in Sources */,
-				FAC963021ED3983D00D4DC33 /* InteractivityIndicatorIcon.swift in Sources */,
-				FAC963031ED3983D00D4DC33 /* CaptureButton.swift in Sources */,
-				FAC963041ED3983D00D4DC33 /* KitManager.swift in Sources */,
-				FAC963051ED3983D00D4DC33 /* Font+Convenience.swift in Sources */,
-				FAC963061ED3983D00D4DC33 /* KeepUpright.swift in Sources */,
-				FAC963071ED3983D00D4DC33 /* AbstractFilter.swift in Sources */,
-				FAC963081ED3983D00D4DC33 /* UIView+subviews.swift in Sources */,
-				FAC963091ED3983D00D4DC33 /* ComponentMenuBarDelegate.swift in Sources */,
-				FAC9630A1ED3983D00D4DC33 /* BaseCaptureViewController+Rotation.swift in Sources */,
-				FAC9630B1ED3983D00D4DC33 /* CodeIconButton.swift in Sources */,
-				FAC9630C1ED3983D00D4DC33 /* CameraPositionComponent.swift in Sources */,
-				FAC9630D1ED3983D00D4DC33 /* Vertices.swift in Sources */,
-				FAC9630E1ED3983D00D4DC33 /* CameraDeniedPermisionViewController.swift in Sources */,
-				FAC9630F1ED3983D00D4DC33 /* BaseCaptureViewController.swift in Sources */,
-				FAC963101ED3983D00D4DC33 /* BaseCaptureViewController+Debug.swift in Sources */,
-				FAC963111ED3983D00D4DC33 /* ComponentItemCellDelegate.swift in Sources */,
-				FAC963121ED3983D00D4DC33 /* GaussianBlurFilter.swift in Sources */,
-				FAC963131ED3983D00D4DC33 /* ControlBarItemCell.swift in Sources */,
-				FAC963141ED3983D00D4DC33 /* DebugWindow.swift in Sources */,
-				FAC963151ED3983D00D4DC33 /* DeleteLineIcon.swift in Sources */,
-				FAC963161ED3983D00D4DC33 /* ComponentEditBar.swift in Sources */,
-				FAC963171ED3983D00D4DC33 /* CameraEducationImage.swift in Sources */,
-				FAC963181ED3983D00D4DC33 /* EditSize.swift in Sources */,
-				FAC963191ED3983D00D4DC33 /* MetalCaptureViewController.swift in Sources */,
-				FAC9631A1ED3983D00D4DC33 /* ComponentMenuBar.swift in Sources */,
-				FAC9631B1ED3983D00D4DC33 /* EditOpacity.swift in Sources */,
-				FAC9631C1ED3983D00D4DC33 /* ComponentRealm.swift in Sources */,
-				FAC9631D1ED3983D00D4DC33 /* ComponentEditBarDelegate.swift in Sources */,
-				FAC9631E1ED3983D00D4DC33 /* MetalCameraController.swift in Sources */,
-				FAC9631F1ED3983D00D4DC33 /* Views+AutoLayout.swift in Sources */,
-				FAC963201ED3983D00D4DC33 /* EditPosition.swift in Sources */,
-				FAC963211ED3983D00D4DC33 /* FrontBackCameraToggle.swift in Sources */,
-				FAC963221ED3983D00D4DC33 /* GroupedPathIcon.swift in Sources */,
-				FAC963231ED3983D00D4DC33 /* BaseCaptureViewController+ComponentEditing.swift in Sources */,
-				FAC963241ED3983D00D4DC33 /* SimulatorCaptureViewController.swift in Sources */,
-				FAC963251ED3983D00D4DC33 /* AppDelegate.swift in Sources */,
-				FAC963261ED3983D00D4DC33 /* CanvasIconView.swift in Sources */,
-				FAC963271ED3983D00D4DC33 /* Component.swift in Sources */,
-				FAC963281ED3983D00D4DC33 /* Passthrough.metal in Sources */,
-				FAC963291ED3983D00D4DC33 /* EditRounding.swift in Sources */,
-				FAC9632A1ED3983D00D4DC33 /* CaptureComponent.swift in Sources */,
-				FAC9632B1ED3983D00D4DC33 /* CircleSlider.swift in Sources */,
-				FAC9632C1ED3983D00D4DC33 /* Button.swift in Sources */,
-				FAC9632D1ED3983D00D4DC33 /* PhotosEducationImage.swift in Sources */,
-				FAC9632E1ED3983D00D4DC33 /* RoundableView.swift in Sources */,
-				FAC9634D1ED3B68700D4DC33 /* PermissionsManager.swift in Sources */,
-				FAC9632F1ED3983D00D4DC33 /* CameraController.swift in Sources */,
-				FAC963301ED3983D00D4DC33 /* CameraRenderView.swift in Sources */,
-				FAC963311ED3983D00D4DC33 /* DebugBarItemView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -3132,30 +2757,6 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Headers/Bridging/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = AppStore;
-		};
-		FA0634911ED4B19500C8FC90 /* AppStore */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2BE2BA921BB886A12F73219 /* Pods-Slate Local.appstore.xcconfig */;
-			buildSettings = {
-				ARCHS = arm64;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = E6QK4MU6LM;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = Resources/Required/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.camera.local;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Source/Headers/Bridging/Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
 			};
 			name = AppStore;
 		};
@@ -3332,6 +2933,183 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/macSlate.app/Contents/MacOS/macSlate";
 			};
 			name = AppStore;
+		};
+		FA850F481EE20C5200B1CDDB /* FastDebug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA850F501EE20C7800B1CDDB /* FastDebug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				"OTHER_SWIFT_FLAGS[sdk=iphoneos*]" = "$(inherited) -DMETAL_DEVICE";
+				"OTHER_SWIFT_FLAGS[sdk=iphonesimulator*]" = "$(inherited) -DIOS_SIMULATOR";
+				"OTHER_SWIFT_FLAGS[sdk=macosx*]" = "-DMETAL_DEVICE";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = FastDebug;
+		};
+		FA850F491EE20C5200B1CDDB /* FastDebug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60F4904F4767BF970E0F9859 /* Pods-Slate.fastdebug.xcconfig */;
+			buildSettings = {
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Resources/Required/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.camera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Headers/Bridging/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = FastDebug;
+		};
+		FA850F4B1EE20C5200B1CDDB /* FastDebug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Tests/Unit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Slate.app/Slate";
+			};
+			name = FastDebug;
+		};
+		FA850F4C1EE20C5200B1CDDB /* FastDebug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Tests/UI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Slate;
+			};
+			name = FastDebug;
+		};
+		FA850F4D1EE20C5200B1CDDB /* FastDebug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = MacAppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = macSlate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.macSlate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = FastDebug;
+		};
+		FA850F4E1EE20C5200B1CDDB /* FastDebug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				INFOPLIST_FILE = Tests/Unit/Mac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.slate.macTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/macSlate.app/Contents/MacOS/macSlate";
+			};
+			name = FastDebug;
+		};
+		FA850F4F1EE20C5200B1CDDB /* FastDebug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 085C8EBAC1B8561F45FE5DB9 /* Pods-Feature Catalog.fastdebug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = FeatureCatalogAppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "Feature Catalog/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.johncoates.slate.Feature-Catalog";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = FastDebug;
 		};
 		FA9F8A081D953C540058C369 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3600,54 +3378,6 @@
 			};
 			name = Release;
 		};
-		FAC963401ED3983D00D4DC33 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02961120925EFB47073F137E /* Pods-Slate Local.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = arm64;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = E6QK4MU6LM;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = Resources/Required/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.camera.local;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Source/Headers/Bridging/Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		FAC963411ED3983D00D4DC33 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1329C1F06936529741A52443 /* Pods-Slate Local.release.xcconfig */;
-			buildSettings = {
-				ARCHS = arm64;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = E6QK4MU6LM;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = Resources/Required/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.camera.local;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Source/Headers/Bridging/Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -3655,6 +3385,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA4DFED81D9DBD1A0068706F /* Debug */,
+				FA850F4D1EE20C5200B1CDDB /* FastDebug */,
 				FA4DFED91D9DBD1A0068706F /* Release */,
 				FA0634941ED4B19500C8FC90 /* AppStore */,
 			);
@@ -3665,15 +3396,18 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA850F211EE0DB2300B1CDDB /* Debug */,
+				FA850F4E1EE20C5200B1CDDB /* FastDebug */,
 				FA850F221EE0DB2300B1CDDB /* Release */,
 				FA850F231EE0DB2300B1CDDB /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA9F89DD1D953C540058C369 /* Build configuration list for PBXProject "Slate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA9F8A081D953C540058C369 /* Debug */,
+				FA850F481EE20C5200B1CDDB /* FastDebug */,
 				FA9F8A091D953C540058C369 /* Release */,
 				FA06348F1ED4B19500C8FC90 /* AppStore */,
 			);
@@ -3684,6 +3418,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA9F8A0B1D953C540058C369 /* Debug */,
+				FA850F491EE20C5200B1CDDB /* FastDebug */,
 				FA9F8A0C1D953C540058C369 /* Release */,
 				FA0634901ED4B19500C8FC90 /* AppStore */,
 			);
@@ -3694,6 +3429,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA9F8A0E1D953C540058C369 /* Debug */,
+				FA850F4B1EE20C5200B1CDDB /* FastDebug */,
 				FA9F8A0F1D953C540058C369 /* Release */,
 				FA0634921ED4B19500C8FC90 /* AppStore */,
 			);
@@ -3704,6 +3440,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA9F8A111D953C540058C369 /* Debug */,
+				FA850F4C1EE20C5200B1CDDB /* FastDebug */,
 				FA9F8A121D953C540058C369 /* Release */,
 				FA0634931ED4B19500C8FC90 /* AppStore */,
 			);
@@ -3714,18 +3451,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FAB0AA791EC8083D008DCD23 /* Debug */,
+				FA850F4F1EE20C5200B1CDDB /* FastDebug */,
 				FAB0AA7A1EC8083D008DCD23 /* Release */,
 				FA0634951ED4B19500C8FC90 /* AppStore */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FAC9633F1ED3983D00D4DC33 /* Build configuration list for PBXNativeTarget "Slate Local" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FAC963401ED3983D00D4DC33 /* Debug */,
-				FAC963411ED3983D00D4DC33 /* Release */,
-				FA0634911ED4B19500C8FC90 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

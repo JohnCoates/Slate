@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FA9F89E11D953C540058C369"
+               BuildableName = "Slate.app"
+               BlueprintName = "Slate"
+               ReferencedContainer = "container:Slate.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,23 +28,13 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FA850F181EE0DB2300B1CDDB"
-               BuildableName = "macTests.xctest"
-               BlueprintName = "macTests"
-               ReferencedContainer = "container:Slate.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FA4DFECD1D9DBD1A0068706F"
-            BuildableName = "macSlate.app"
-            BlueprintName = "macSlate"
+            BlueprintIdentifier = "FA9F89E11D953C540058C369"
+            BuildableName = "Slate.app"
+            BlueprintName = "Slate"
             ReferencedContainer = "container:Slate.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -36,7 +42,7 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "FastDebug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -49,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FA4DFECD1D9DBD1A0068706F"
-            BuildableName = "macSlate.app"
-            BlueprintName = "macSlate"
+            BlueprintIdentifier = "FA9F89E11D953C540058C369"
+            BuildableName = "Slate.app"
+            BlueprintName = "Slate"
             ReferencedContainer = "container:Slate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -64,15 +70,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FA4DFECD1D9DBD1A0068706F"
-            BuildableName = "macSlate.app"
-            BlueprintName = "macSlate"
+            BlueprintIdentifier = "FA9F89E11D953C540058C369"
+            BuildableName = "Slate.app"
+            BlueprintName = "Slate"
             ReferencedContainer = "container:Slate.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
