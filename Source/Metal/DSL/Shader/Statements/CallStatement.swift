@@ -19,5 +19,22 @@ extension RuntimeShader {
             self.arguments = arguments
             super.init(type: .functionCall)
         }
+        
+        override var description: String {
+            guard type == .functionCall else {
+                fatalError("Wrong type")
+            }
+            
+            var functionPrefix = ""
+            if let object = object {
+                functionPrefix = object.referenceValue + "."
+            }
+            var argumentsSeparatedByCommas = ""
+            if let arguments = arguments {
+                let referenceValues = arguments.map({$0.referenceValue})
+                argumentsSeparatedByCommas = referenceValues.joined(separator: ", ")
+            }
+            return "\(functionPrefix)\(name)(\(argumentsSeparatedByCommas))"
+        }
     }
 }

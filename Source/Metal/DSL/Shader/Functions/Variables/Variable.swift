@@ -10,6 +10,7 @@ import Foundation
 
 extension RuntimeShader {
     class Variable {
+        var function: FragmentFunction?
         var name: String?
         var type: DataType
         var typeReference: String {
@@ -22,6 +23,17 @@ extension RuntimeShader {
                 fatalError("Missing struct name")
             }
         }
+        
+        var referenceValue: String {
+            if let name = name {
+                return name
+            } else if let statement = statement {
+                return statement.description
+            } else {
+                fatalError("Missing reference value")
+            }
+        }
+        
         var assignable = true
         
         init(name: String, type: DataType) {
@@ -47,7 +59,6 @@ extension RuntimeShader.Variable {
         case sampler
     }
 }
-
 
 // MARK: - Subscripting
 

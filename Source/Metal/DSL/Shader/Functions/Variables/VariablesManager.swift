@@ -30,6 +30,7 @@ extension RuntimeShader {
         
         func type(name: String, type: Struct, qualifier: Type.Qualifier) -> Variable {
             let variable = Variable(name: name, type: .`struct`)
+            variable.function = function
             return variable
         }
         
@@ -51,8 +52,9 @@ extension RuntimeShader.VariablesManager {
     subscript (name: String) -> RuntimeShader.Float4 {
         get {
             let variable = RuntimeShader.Float4(name: name, type: .float4)
+            variable.function = function
             addTypeDeclaration(variable: variable)
-            return RuntimeShader.Float4(name: name, type: .float4)
+            return variable
         }
     }
 }

@@ -11,6 +11,7 @@ import Foundation
 // MARK: - Class
 
 extension RuntimeShader {
+    private typealias LocalClass = FragmentFunction
     class FragmentFunction: CustomStringConvertible {
         let name: String
         let returnType: ShaderPrimitive.Type
@@ -22,14 +23,14 @@ extension RuntimeShader {
             self.shader = shader
         }
         
-        lazy var sampler: Sampler = {
-            let sampler = Sampler(name: "constantSampler")
+        static let defaultSamplerName = "defaultSampler"
+        lazy var defaultSampler: Sampler = {
+            let sampler = Sampler(name: LocalClass.defaultSamplerName)
             self.statements.append(sampler.declaration)
             return sampler
         }()
         
         lazy var arguments: ArgumentsManager = ArgumentsManager(function: self)
-        
         lazy var variables: VariablesManager = VariablesManager(function: self)
         
         var textures = [String : Any]()
@@ -37,6 +38,9 @@ extension RuntimeShader {
         var returnValue: Variable?
         
         lazy var statements = [Statement]()
+        func add(statement: Statement) {
+            statements.append(statement)
+        }
         
         var description: String {
             var contents = "fragment \(returnType.name) \(name)" +
