@@ -33,7 +33,7 @@ extension RuntimeShader {
         lazy var arguments: ArgumentsManager = ArgumentsManager(function: self)
         lazy var variables: VariablesManager = VariablesManager(function: self)
         
-        var textures = [String : Any]()
+        var textures = [String: Any]()
         
         var returnValue: Variable?
         

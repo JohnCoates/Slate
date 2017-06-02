@@ -57,7 +57,8 @@ class TestFragmentFunction: XCTestCase {
         print("function: \(function)")
         let samplerName = Constant.samplerName
         let textureCoordinates = Constant.vertexOutTextureCoordinates
-        XCTAssert(function.contains("\(samplerName).sample(fragmentIn.\(textureCoordinates))"), "Has sampler function call")
+        XCTAssert(function.contains("\(samplerName).sample(fragmentIn.\(textureCoordinates))"),
+                  "Has sampler function call")
     }
 }
 
@@ -71,7 +72,7 @@ private class Constant {
 private extension RuntimeShader {
     static func testFunction() -> FragmentFunction {
         var functionMaybe: RuntimeShader.FragmentFunction?
-        let _ = buildRuntimeShader(identifier: "fragmentPassthrough") { shader in
+        _ = buildRuntimeShader(identifier: "fragmentPassthrough") { shader in
             functionMaybe = shader.buildFragmentFunction(name: Constant.functionName,
                                                          returnType: RuntimeShader.Float4.self,
                                                          build: build)

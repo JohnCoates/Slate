@@ -33,7 +33,6 @@ extension RuntimeShader {
     }
 }
 
-
 func testRuntimeShaderBuild() {
     RuntimeShader.testRuntimeShaderBuild()
 }

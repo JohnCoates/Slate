@@ -28,8 +28,7 @@ extension RuntimeShader {
             var typeReference: String
             if let structType = type as? Struct {
                 typeReference = structType.name
-            }
-            else if let texture = type as? Texture2D {
+            } else if let texture = type as? Texture2D {
                 return texture.argumentDeclaration
             } else {
                 typeReference = type(of: type).name

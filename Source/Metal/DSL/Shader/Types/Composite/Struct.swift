@@ -26,14 +26,12 @@ extension RuntimeShader {
         }
         
         var declaration: String {
-            get {
-                var contents = "struct \(name) {\n"
-                for member in members {
-                    contents += "\t" + member.declaration + "\n"
-                }
-                contents += "};\n"
-                return contents
+            var contents = "struct \(name) {\n"
+            for member in members {
+                contents += "\t" + member.declaration + "\n"
             }
+            contents += "};\n"
+            return contents
         }
         
     }

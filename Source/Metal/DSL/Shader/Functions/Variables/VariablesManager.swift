@@ -45,7 +45,6 @@ extension RuntimeShader {
     }
 }
 
-
 // MARK: - Subscripting
 
 extension RuntimeShader.VariablesManager {
@@ -58,5 +57,3 @@ extension RuntimeShader.VariablesManager {
         }
     }
 }
-
-
