@@ -10,7 +10,9 @@ import Foundation
 import AVFoundation
 
 extension CameraController {
-    func setBestFormat(forDevice device: AVCaptureDevice) {
+    
+    func setBestFormat(forDevice device: AVCaptureDevice,
+                       callAfterSessionRunning: inout (() -> Void)? ) {
         guard let formats = device.formats as? [AVCaptureDeviceFormat] else {
             print("Couldn't get formats for device: \(device)")
             return
@@ -46,13 +48,25 @@ extension CameraController {
         }
         inputSize = Size(width: Float(dimensions.width),
                          height: Float(dimensions.height))
-        print("Found format with size: \(dimensions.width)x\(dimensions.height), frame rate: \(range)")
+        if !Platform.isProduction {
+            print("Found format with size: \(dimensions.width)x\(dimensions.height), frame rate: \(range)")
+        }
         do {
+            /* 
+             https://developer.apple.com/reference/avfoundation/avcapturedevice/1387810-lockforconfiguration
+             To prevent automatic changes to the capture format in macOS, follow these steps:
+             - Lock the device with the lockForConfiguration() method.
+             - Change the device’s activeFormat property.
+             - Begin capture with the session’s startRunning() method.
+             - Unlock the device with the unlockForConfiguration() method.
+            */
             try device.lockForConfiguration()
             device.activeFormat = format
             device.activeVideoMinFrameDuration = range.minFrameDuration
             device.activeVideoMaxFrameDuration = range.maxFrameDuration
-            device.unlockForConfiguration()
+            callAfterSessionRunning = {
+                device.unlockForConfiguration()
+            }
         } catch let error {
             print("error locking camera for configuration: \(error)")
         }
