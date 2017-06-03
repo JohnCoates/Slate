@@ -125,6 +125,24 @@
 		FA2F8E4F1DA22AD700993949 /* ChromaticAberrationFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E4D1DA22AD700993949 /* ChromaticAberrationFilter.swift */; };
 		FA2F8E531DA23E5500993949 /* PassthroughFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E521DA23E5500993949 /* PassthroughFilter.swift */; };
 		FA2F8E541DA23E5500993949 /* PassthroughFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E521DA23E5500993949 /* PassthroughFilter.swift */; };
+		FA3AAA8B1EE24C5B006028AC /* CameraController+StillOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA8A1EE24C5B006028AC /* CameraController+StillOutput.swift */; };
+		FA3AAA8D1EE24C6E006028AC /* CameraController+Presets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA8C1EE24C6E006028AC /* CameraController+Presets.swift */; };
+		FA3AAA8F1EE24C83006028AC /* CameraController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA8E1EE24C83006028AC /* CameraController+Preview.swift */; };
+		FA3AAA911EE24C8F006028AC /* CameraController+Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA901EE24C8F006028AC /* CameraController+Device.swift */; };
+		FA3AAA921EE24CB9006028AC /* CameraController+StillOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA8A1EE24C5B006028AC /* CameraController+StillOutput.swift */; };
+		FA3AAA931EE24CBB006028AC /* CameraController+StillOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA8A1EE24C5B006028AC /* CameraController+StillOutput.swift */; };
+		FA3AAA951EE24E5E006028AC /* CameraController+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA941EE24E5E006028AC /* CameraController+Debug.swift */; };
+		FA3AAA961EE24E5E006028AC /* CameraController+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA941EE24E5E006028AC /* CameraController+Debug.swift */; };
+		FA3AAA971EE24E5E006028AC /* CameraController+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA941EE24E5E006028AC /* CameraController+Debug.swift */; };
+		FA3AAA981EE24E63006028AC /* CameraController+Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA901EE24C8F006028AC /* CameraController+Device.swift */; };
+		FA3AAA991EE24E64006028AC /* CameraController+Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA901EE24C8F006028AC /* CameraController+Device.swift */; };
+		FA3AAA9A1EE24E67006028AC /* CameraController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA8E1EE24C83006028AC /* CameraController+Preview.swift */; };
+		FA3AAA9B1EE24E67006028AC /* CameraController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA8E1EE24C83006028AC /* CameraController+Preview.swift */; };
+		FA3AAA9C1EE24E6A006028AC /* CameraController+Presets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA8C1EE24C6E006028AC /* CameraController+Presets.swift */; };
+		FA3AAA9D1EE24E6A006028AC /* CameraController+Presets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA8C1EE24C6E006028AC /* CameraController+Presets.swift */; };
+		FA3AAA9F1EE24EA5006028AC /* CameraController+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA9E1EE24EA5006028AC /* CameraController+Session.swift */; };
+		FA3AAAA01EE24EA5006028AC /* CameraController+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA9E1EE24EA5006028AC /* CameraController+Session.swift */; };
+		FA3AAAA11EE24EA5006028AC /* CameraController+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA9E1EE24EA5006028AC /* CameraController+Session.swift */; };
 		FA4021C61DA0AEE800752F3B /* MetalCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4021C51DA0AEE800752F3B /* MetalCameraController.swift */; };
 		FA4021C71DA0AEE800752F3B /* MetalCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4021C51DA0AEE800752F3B /* MetalCameraController.swift */; };
 		FA4BD7A51ED18D0C00D1761C /* EditOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BD7A41ED18D0C00D1761C /* EditOpacity.swift */; };
@@ -450,6 +468,12 @@
 		FA2F8E491DA2296E00993949 /* GaussianBlurFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaussianBlurFilter.swift; sourceTree = "<group>"; };
 		FA2F8E4D1DA22AD700993949 /* ChromaticAberrationFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaticAberrationFilter.swift; sourceTree = "<group>"; };
 		FA2F8E521DA23E5500993949 /* PassthroughFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassthroughFilter.swift; sourceTree = "<group>"; };
+		FA3AAA8A1EE24C5B006028AC /* CameraController+StillOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraController+StillOutput.swift"; sourceTree = "<group>"; };
+		FA3AAA8C1EE24C6E006028AC /* CameraController+Presets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraController+Presets.swift"; sourceTree = "<group>"; };
+		FA3AAA8E1EE24C83006028AC /* CameraController+Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraController+Preview.swift"; sourceTree = "<group>"; };
+		FA3AAA901EE24C8F006028AC /* CameraController+Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraController+Device.swift"; sourceTree = "<group>"; };
+		FA3AAA941EE24E5E006028AC /* CameraController+Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraController+Debug.swift"; sourceTree = "<group>"; };
+		FA3AAA9E1EE24EA5006028AC /* CameraController+Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraController+Session.swift"; sourceTree = "<group>"; };
 		FA4021C51DA0AEE800752F3B /* MetalCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalCameraController.swift; sourceTree = "<group>"; };
 		FA4BD7A41ED18D0C00D1761C /* EditOpacity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditOpacity.swift; sourceTree = "<group>"; };
 		FA4BD7A81ED18F6900D1761C /* RealmMigrator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmMigrator.swift; sourceTree = "<group>"; };
@@ -842,6 +866,8 @@
 		FA2426CB1D9A678800AEE60C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA3AAA891EE24C35006028AC /* Extensions */,
+				FABB16B01D9F822800A8AC6C /* CameraController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1039,6 +1065,19 @@
 				FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */,
 			);
 			path = Shaders;
+			sourceTree = "<group>";
+		};
+		FA3AAA891EE24C35006028AC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA3AAA9E1EE24EA5006028AC /* CameraController+Session.swift */,
+				FA3AAA8A1EE24C5B006028AC /* CameraController+StillOutput.swift */,
+				FA3AAA8C1EE24C6E006028AC /* CameraController+Presets.swift */,
+				FA3AAA8E1EE24C83006028AC /* CameraController+Preview.swift */,
+				FA3AAA901EE24C8F006028AC /* CameraController+Device.swift */,
+				FA3AAA941EE24E5E006028AC /* CameraController+Debug.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FA4BD7A71ED18F3F00D1761C /* Realm */ = {
@@ -1771,7 +1810,6 @@
 		FABB16AF1D9F820100A8AC6C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FABB16B01D9F822800A8AC6C /* CameraController.swift */,
 				FA4021C51DA0AEE800752F3B /* MetalCameraController.swift */,
 			);
 			path = Controllers;
@@ -2367,7 +2405,9 @@
 				FA89D1461EDF67C40012F2F0 /* ShaderType.swift in Sources */,
 				FA2F8E541DA23E5500993949 /* PassthroughFilter.swift in Sources */,
 				FA4DFEDC1D9DBD620068706F /* Passthrough.metal in Sources */,
+				FA3AAA9B1EE24E67006028AC /* CameraController+Preview.swift in Sources */,
 				FA850F351EE1245200B1CDDB /* Array+Extensions.swift in Sources */,
+				FA3AAA921EE24CB9006028AC /* CameraController+StillOutput.swift in Sources */,
 				FA89D1491EDF688A0012F2F0 /* FragmentFunction.swift in Sources */,
 				FA850EEA1EDF76F400B1CDDB /* Sampler.swift in Sources */,
 				FA850EF31EDFB28300B1CDDB /* Variable.swift in Sources */,
@@ -2375,8 +2415,11 @@
 				FA2F8E4F1DA22AD700993949 /* ChromaticAberrationFilter.swift in Sources */,
 				FABB16A61D9F471000A8AC6C /* HUDShaderViewController.swift in Sources */,
 				FAE385491EDE996B006FD2ED /* CameraPreviewViewController.swift in Sources */,
+				FA3AAA961EE24E5E006028AC /* CameraController+Debug.swift in Sources */,
 				FA850F3F1EE1FBD400B1CDDB /* CompositeVariable.swift in Sources */,
 				FA850F2C1EE111AD00B1CDDB /* AssignStatement.swift in Sources */,
+				FA3AAA9D1EE24E6A006028AC /* CameraController+Presets.swift in Sources */,
+				FA3AAAA01EE24EA5006028AC /* CameraController+Session.swift in Sources */,
 				FA89D13C1EDF610D0012F2F0 /* TestShader.swift in Sources */,
 				FA850F441EE208D000B1CDDB /* VertexIn.swift in Sources */,
 				FA850EF01EDF921900B1CDDB /* Member.swift in Sources */,
@@ -2389,6 +2432,7 @@
 				FA4021C71DA0AEE800752F3B /* MetalCameraController.swift in Sources */,
 				FA850EFD1EDFD0BB00B1CDDB /* CallStatement.swift in Sources */,
 				FA4D541A1DB055BB0091184D /* ComputeFilter.swift in Sources */,
+				FA3AAA991EE24E64006028AC /* CameraController+Device.swift in Sources */,
 				FA89D1521EDF71BA0012F2F0 /* Texture2D.swift in Sources */,
 				FABB169F1D9F308C00A8AC6C /* Vertices.swift in Sources */,
 				FA4D54171DB055A00091184D /* FragmentFilter.swift in Sources */,
@@ -2431,6 +2475,7 @@
 				FA78F2921E144E4600D34947 /* DebugBarDelegate.swift in Sources */,
 				FA4D54191DB055BB0091184D /* ComputeFilter.swift in Sources */,
 				FA0462BB1EC3DF88007B74A0 /* Kit.swift in Sources */,
+				FA3AAA911EE24C8F006028AC /* CameraController+Device.swift in Sources */,
 				FAF10D0E1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
 				FA5709A61ECC7172000362C8 /* PhotosPermissionViewController.swift in Sources */,
 				FA8CE4281ECD8AE700788026 /* UIGestureRecognizer+Closure.swift in Sources */,
@@ -2442,6 +2487,7 @@
 				FAF10D181ECAFF1D0008690E /* PermissionsWindow.swift in Sources */,
 				FA4BD7A91ED18F6900D1761C /* RealmMigrator.swift in Sources */,
 				FABB16A21D9F402C00A8AC6C /* TextureCoordinates.swift in Sources */,
+				FA3AAA8D1EE24C6E006028AC /* CameraController+Presets.swift in Sources */,
 				FA78F29A1E15662B00D34947 /* DebugBarView.swift in Sources */,
 				FA2F8E4E1DA22AD700993949 /* ChromaticAberrationFilter.swift in Sources */,
 				FA8AA5411ECC107F0093D317 /* ButtonIndicatorIcon.swift in Sources */,
@@ -2462,6 +2508,7 @@
 				FABB16AD1D9F6DAB00A8AC6C /* ChromaticAberration.metal in Sources */,
 				FAF10D141ECAD30D0008690E /* Ream+Filtering.swift in Sources */,
 				FA2B1E681EC922FD00E44613 /* LayoutConstraint+Modifying.swift in Sources */,
+				FA3AAA8F1EE24C83006028AC /* CameraController+Preview.swift in Sources */,
 				FA2B1E5F1EC817C000E44613 /* InverseMaskButton.swift in Sources */,
 				FA4D54161DB055A00091184D /* FragmentFilter.swift in Sources */,
 				FA8CE4221ECD7E5A00788026 /* Int+Pixels.swift in Sources */,
@@ -2470,6 +2517,7 @@
 				FA2F8E531DA23E5500993949 /* PassthroughFilter.swift in Sources */,
 				FAF10D011ECAA9170008690E /* GroupedPathButton.swift in Sources */,
 				FACFE4931ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */,
+				FA3AAA8B1EE24C5B006028AC /* CameraController+StillOutput.swift in Sources */,
 				FA7724D31ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift in Sources */,
 				FA834BE41D9929710017CCCA /* CaptureButton.swift in Sources */,
 				FA0462B91EC3DF81007B74A0 /* KitManager.swift in Sources */,
@@ -2478,6 +2526,7 @@
 				FA2F8E471DA2293000993949 /* AbstractFilter.swift in Sources */,
 				FA8CE4251ECD7FA700788026 /* UIView+subviews.swift in Sources */,
 				FA0462C51EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift in Sources */,
+				FA3AAA951EE24E5E006028AC /* CameraController+Debug.swift in Sources */,
 				FA5F8CA21ED05B7B00921A61 /* BaseCaptureViewController+Rotation.swift in Sources */,
 				FA2B1EB21EC97E7300E44613 /* CodeIconButton.swift in Sources */,
 				FA0462BF1EC3DFE1007B74A0 /* CameraPositionComponent.swift in Sources */,
@@ -2500,6 +2549,7 @@
 				FAB0AA641EC6C84D008DCD23 /* ComponentEditBarDelegate.swift in Sources */,
 				FA4021C61DA0AEE800752F3B /* MetalCameraController.swift in Sources */,
 				FA2B1E741EC927FB00E44613 /* Views+AutoLayout.swift in Sources */,
+				FA3AAA9F1EE24EA5006028AC /* CameraController+Session.swift in Sources */,
 				FAB0AA5E1EC6A095008DCD23 /* EditPosition.swift in Sources */,
 				FA0462B31EC3CC76007B74A0 /* FrontBackCameraToggle.swift in Sources */,
 				FAF10CFA1ECAA8230008690E /* GroupedPathIcon.swift in Sources */,
@@ -2559,11 +2609,13 @@
 				FA2B1E7A1EC92AF600E44613 /* SimulatorCaptureViewController.swift in Sources */,
 				FA2B1E971EC92B5B00E44613 /* MetalCaptureViewController.swift in Sources */,
 				FA2B1E8B1EC92B5B00E44613 /* CaptureButton.swift in Sources */,
+				FA3AAA931EE24CBB006028AC /* CameraController+StillOutput.swift in Sources */,
 				FA2B1E9B1EC92B5B00E44613 /* MetalCameraController.swift in Sources */,
 				FA2B1E871EC92B5B00E44613 /* Platform.swift in Sources */,
 				FA2B1E851EC92B5B00E44613 /* Renderer.swift in Sources */,
 				FA2B1E921EC92B5B00E44613 /* GaussianBlurFilter.swift in Sources */,
 				FA2B1E841EC92B5B00E44613 /* DebugBarController.swift in Sources */,
+				FA3AAA9C1EE24E6A006028AC /* CameraController+Presets.swift in Sources */,
 				FA2B1E7F1EC92B5B00E44613 /* TextureCoordinates.swift in Sources */,
 				FA2B1E9F1EC92B5B00E44613 /* Component.swift in Sources */,
 				FA2B1E791EC92AEF00E44613 /* BaseCaptureViewController.swift in Sources */,
@@ -2573,11 +2625,13 @@
 				FAF10D0F1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
 				FA8CE4261ECD7FA700788026 /* UIView+subviews.swift in Sources */,
 				FA2B1E881EC92B5B00E44613 /* ChromaticAberration.metal in Sources */,
+				FA3AAAA11EE24EA5006028AC /* CameraController+Session.swift in Sources */,
 				FA5709A31ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift in Sources */,
 				FA2B1E691EC922FD00E44613 /* LayoutConstraint+Modifying.swift in Sources */,
 				FA2B1E8D1EC92B5B00E44613 /* AbstractFilter.swift in Sources */,
 				FA2B1E991EC92B5B00E44613 /* ComponentRealm.swift in Sources */,
 				FA2B1E581EC80E8500E44613 /* FeatureCatalogViewController.swift in Sources */,
+				FA3AAA9A1EE24E67006028AC /* CameraController+Preview.swift in Sources */,
 				FACFE4941ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */,
 				FA2B1E961EC92B5B00E44613 /* EditSize.swift in Sources */,
 				FA5F8CB11ED06A5F00921A61 /* CaptureComponent.swift in Sources */,
@@ -2595,6 +2649,7 @@
 				FA57099F1ECC5F80000362C8 /* PhotosEducationImage.swift in Sources */,
 				FA2B1E901EC92B5B00E44613 /* Vertices.swift in Sources */,
 				FA2B1EA11EC92B5B00E44613 /* EditRounding.swift in Sources */,
+				FA3AAA971EE24E5E006028AC /* CameraController+Debug.swift in Sources */,
 				FA5F8CB41ED0958100921A61 /* KeepUpright.swift in Sources */,
 				FAF10D151ECAD30D0008690E /* Ream+Filtering.swift in Sources */,
 				FA2B1E951EC92B5B00E44613 /* ComponentEditBar.swift in Sources */,
@@ -2629,6 +2684,7 @@
 				FAF10D0C1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift in Sources */,
 				FAF10D191ECAFF1D0008690E /* PermissionsWindow.swift in Sources */,
 				FA8CE4231ECD7E5A00788026 /* Int+Pixels.swift in Sources */,
+				FA3AAA981EE24E63006028AC /* CameraController+Device.swift in Sources */,
 				FA2B1E9A1EC92B5B00E44613 /* ComponentEditBarDelegate.swift in Sources */,
 				FA76F5421ED3C32D00059906 /* PermissionsManager.swift in Sources */,
 				FAF10D021ECAA9170008690E /* GroupedPathButton.swift in Sources */,
