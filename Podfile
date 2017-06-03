@@ -4,5 +4,4 @@ pod 'Fabric'
 pod 'Crashlytics'
 
 target 'Slate'
-target 'Slate Local'
 target 'Feature Catalog'
