@@ -1,4 +1,3 @@
-
 //
 //  Renderer+Buffers.swift
 //  Slate

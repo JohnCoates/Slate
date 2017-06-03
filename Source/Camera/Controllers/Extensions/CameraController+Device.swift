@@ -25,7 +25,6 @@ extension CameraController {
         }
         return AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
     }
-
     
     func switchToNextCamera() {
         guard var devices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo) as? [AVCaptureDevice] else {
