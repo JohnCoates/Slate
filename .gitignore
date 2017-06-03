@@ -64,3 +64,5 @@ fastlane/test_output
 /Slate.xcworkspace
 *.mobileprovision
 *.cer
+/profileBuild
+/swiftProfile.txt
