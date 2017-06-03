@@ -20,9 +20,15 @@ extension Renderer {
     // Metal defines its Normalized Device Coordinate (NDC) system as a 2x2x1 cube with its center a
     // (0, 0, 0.5). The left and bottom for x and y, respectively, of the NDC system are specified as -1.
     // The right and top for x and y, respectively, of the NDC system are specified as +1.
-    class func generateQuad(forDevice device: MTLDevice, inArray vertices: inout [Vertex]) -> MTLBuffer {
+    class func generateQuad(forDevice device: MTLDevice, inArray vertices: inout [Vertex],
+                            inputSize: Size? = nil, targetSize: Size? = nil) -> MTLBuffer {
         vertices.removeAll()
-        vertices += Vertices.quad()
+        if let inputSize = inputSize, let targetSize = targetSize {
+            print("got input size!")
+            vertices += Vertices.quadForAspectFill(input: inputSize, target: targetSize)
+        } else {
+            vertices += Vertices.fullScreenQuad()
+        }
         
         var options: MTLResourceOptions = []
         #if os(macOS)
@@ -70,4 +76,32 @@ extension Renderer {
         textureCoordinatesBuffer.didModifyRange(range)
     }
     #endif
+    
+    func updateVertices(withViewSize viewSize: CGSize) {
+        guard let inputSize = cameraController.inputSize else {
+            print("Couldn't get camera input size!")
+            return
+        }
+        let targetSize = Size(size: viewSize)
+        #if os(iOS)
+            // TODO: Clean this up
+            // Switch width with height because our texture is flipped
+            // Bit silly!
+            let inputSwitched = Size(width: inputSize.height, height: inputSize.width)
+            verticesUpdate = Vertices.quadForAspectFill(input: inputSwitched, target: targetSize)
+        #else
+            verticesUpdate = Vertices.quadForAspectFill(input: inputSize, target: targetSize)
+        #endif
+    }
+    
+    // For iOS buffer updates which have shared storage mode
+    // Resource coherency is only guaranteed at command buffer boundaries.
+    // https://developer.apple.com/reference/metal/mtlstoragemode/1515989-shared
+    func replaceVertexBufferWhileOutsideOfCommandBufferBoundary(newVertices: [Vertex]) {
+        guard newVertices.count == vertices.count else {
+            fatalError("Can't update vertices with different amount of items")
+        }
+        let contents = vertexBuffer.contents()
+        memcpy(contents, newVertices, MemoryLayout<Vertex>.stride * vertices.count)
+    }
 }

@@ -13,14 +13,12 @@ extension CameraController {
     func bestSessionPreset() -> String? {
         let suitablePresets: [String]
         if Platform.isMacOS {
-            inputSize = CGSize(width: 1280, height: 720)
             suitablePresets = [AVCaptureSessionPreset1280x720]
         } else {
             suitablePresets = [
                 AVCaptureSessionPresetiFrame960x540,
                 AVCaptureSessionPreset1280x720,
-                AVCaptureSessionPresetPhoto
-                
+                AVCaptureSessionPresetPhoto   
             ]
         }
         for preset in suitablePresets {

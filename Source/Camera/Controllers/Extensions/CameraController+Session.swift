@@ -13,11 +13,11 @@ extension CameraController {
     func startCapturingVideo() {
         session.beginConfiguration()
         
-        guard let preset = bestSessionPreset() else {
-            fatalError("Couldn't find settable video preset!")
-        }
-        
-        session.sessionPreset = preset
+//        guard let preset = bestSessionPreset() else {
+//            fatalError("Couldn't find settable video preset!")
+//        }
+//        
+//        session.sessionPreset = preset
         
         let camera = bestCamera
         do {
@@ -30,7 +30,8 @@ extension CameraController {
         
         attachPreviewOutput(toSession: session)
         attachStillPhotoOutput(toSession: session)
-        //        setBestPreviewFormat(forDevice: camera)
+        setBestFormat(forDevice: camera)
+        
         session.commitConfiguration()
         
         session.startRunning()

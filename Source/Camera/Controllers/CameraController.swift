@@ -38,7 +38,7 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     // MARK: - Input 
     
-    var inputSize: CGSize = .zero
+    var inputSize: Size?
     
     // MARK: - Video Delegate
     

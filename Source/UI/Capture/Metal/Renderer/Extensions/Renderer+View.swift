@@ -38,6 +38,12 @@ extension Renderer {
         guard let texture = self.texture else {
             return
         }
+        
+        if let verticesUpdate = verticesUpdate {
+            replaceVertexBufferWhileOutsideOfCommandBufferBoundary(newVertices: verticesUpdate)
+            self.verticesUpdate = nil
+        }
+        
         // Our command buffer is a container for the work we want to perform with the GPU.
         let commandBuffer = commandQueue.makeCommandBuffer()
         

@@ -16,12 +16,11 @@ extension Renderer {
 
     #if os(macOS)
     func setAspectRatio(width: Float, height: Float) {
-        let inputSize = cameraController.inputSize
-        guard inputSize != .zero else {
+        guard let inputSize = cameraController.inputSize else {
             print("Missing input aspect ratio")
             return
         }
-        let targetSize = CGSize(width: CGFloat(width), height: CGFloat(height))
+        let targetSize = Size(width: width, height: height)
         
         vertices.removeAll()
         vertices += Vertices.quadForAspectFill(input: inputSize,

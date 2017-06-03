@@ -40,13 +40,16 @@ import AVFoundation
         defaultVertexFunction = shaders.vertexFunction
         defaultFragmentFunction = shaders.fragmentFunction
         
-        vertexBuffer = Renderer.generateQuad(forDevice: device, inArray: &vertices)
-        textureCoordinatesBuffer = Renderer.generate(textureCoordinates: &textureCoordinates, forDevice: device)
         guard let cameraController = MetalCameraController(device: device) else {
             print("Camera controller initialization failed")
             return nil
         }
         self.cameraController = cameraController
+        
+        vertexBuffer = Renderer.generateQuad(forDevice: device,
+                                             inArray: &vertices,
+                                             inputSize: cameraController.inputSize)
+        textureCoordinatesBuffer = Renderer.generate(textureCoordinates: &textureCoordinates, forDevice: device)
         super.init()
         
         do {
@@ -129,6 +132,11 @@ import AVFoundation
     }
     #endif
     
+    // MARK: - Command Buffer
+    
+    var verticesUpdate: [Vertex]?
+    
+    
     // MARK: - Video Rendering
     
     var texture: MTLTexture?
@@ -164,7 +172,7 @@ import AVFoundation
     // MARK: - Metal View Delegate
     
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
-        // respond to resize
+        updateVertices(withViewSize: size)
     }
     
     @objc(drawInMTKView:)

@@ -14,7 +14,7 @@ struct Vertex {
 }
 
 struct Vertices {
-    static func quad() -> [Vertex] {
+    static func fullScreenQuad() -> [Vertex] {
         var vertices = [Vertex]()
         vertices.append(Vertex(position: float4(-1, -1, 0, 1))) // left bottom
         vertices.append(Vertex(position: float4(1, -1, 0, 1))) // right bottom
@@ -28,25 +28,25 @@ struct Vertices {
     static let viewportWidth: Float = 2
     static let viewportHeight: Float = 2
     
-    static func quadForAspectFill(input: CGSize, target: CGSize) -> [Vertex] {
-        let inputRatio: CGFloat = input.width / input.height
-        let targetRatio: CGFloat = target.width / target.height
+    static func quadForAspectFill(input: Size, target: Size) -> [Vertex] {
+        let inputRatio = input.width / input.height
+        let targetRatio = target.width / target.height
         
         if inputRatio > targetRatio {
             let width = input.width * (target.height / input.height)
             
-            return centeredQuadWithViewport(width: Float(width / target.width) * viewportWidth,
+            return centeredQuadWithViewport(width: (width / target.width) * viewportWidth,
                                             height: viewportHeight)
         } else {
             let height = input.height * (target.width / input.width)
             return centeredQuadWithViewport(width: viewportWidth,
-                                            height: Float(height / target.height) * viewportHeight)
+                                            height: (height / target.height) * viewportHeight)
         }
     }
     
-    static func quadForAspectFit(input: CGSize, target: CGSize) -> [Vertex] {
-        let inputRatio: CGFloat = input.width / input.height
-        let targetRatio: CGFloat = target.width / target.width
+    static func quadForAspectFit(input: Size, target: Size) -> [Vertex] {
+        let inputRatio: Float = input.width / input.height
+        let targetRatio: Float = target.width / target.width
         
         if targetRatio > inputRatio {
             let width = input.width * (target.height / input.height)

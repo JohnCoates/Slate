@@ -36,13 +36,4 @@ class PreviewContentView: NSView {
         metalView.frame = bounds
         addSubview(metalView)
     }
-    
-    // MARK: - Resizing
-    
-    override func resizeSubviews(withOldSize oldSize: NSSize) {
-        super.resizeSubviews(withOldSize: oldSize)
-        renderer.setAspectRatio(width: Float(frame.width),
-                                height: Float(frame.height))
-    }
-
 }
