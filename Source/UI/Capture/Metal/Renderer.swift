@@ -64,120 +64,6 @@ import AVFoundation
     
     // MARK: - Startup
     
-    func setUpMetalView() {
-        // MetalPerformanceShaders are a compute framework
-        // Drawable texture is written to, not rendered to
-        view.framebufferOnly = false
-        // Draw loop is managed manually whenever new frame is received
-        view.isPaused = false
-        view.delegate = self
-        view.device = device
-        view.clearColor = MTLClearColorMake(1, 1, 1, 1)
-        view.colorPixelFormat = .bgra8Unorm
-    }
-    
-    class func getDevice() -> MTLDevice {
-        #if os(iOS)
-            if let defaultDevice = MTLCreateSystemDefaultDevice() {
-                return defaultDevice
-            } else {
-                fatalError("Metal is not supported")
-            }
-        #endif
-        
-        #if os(macOS)
-            let devices = MTLCopyAllDevices()
-            switch devices.count {
-            case 0:
-                fatalError("Metal is not supported")
-            case 2:
-                // temporary workaround for bug that gives bad
-                // performance on discrete GPU
-                return devices[1]
-            default:
-                return devices[0]
-            }
-        #endif
-    }
-    
-    // developer.apple.com/library/content/documentation/Miscellaneous/
-    // Conceptual/MetalProgrammingGuide/Render-Ctx/Render-Ctx.html
-    
-    // Metal defines its Normalized Device Coordinate (NDC) system as a 2x2x1 cube with its center a
-    // (0, 0, 0.5). The left and bottom for x and y, respectively, of the NDC system are specified as -1.
-    // The right and top for x and y, respectively, of the NDC system are specified as +1.
-    class func generateQuad(forDevice device: MTLDevice, inArray vertices: inout [Vertex]) -> MTLBuffer {
-        vertices.removeAll()
-        vertices += Vertices.quad()
-        
-        var options: MTLResourceOptions = []
-        #if os(macOS)
-            options = [.storageModeManaged]
-        #endif
-        
-        return device.makeBuffer(bytes: vertices,
-                                 length: MemoryLayout<Vertex>.stride * vertices.count,
-                                 options: options)
-    }
-    
-    class func generate(textureCoordinates coordinates: inout[float2], forDevice device: MTLDevice) -> MTLBuffer {
-        
-        var options: MTLResourceOptions = []
-        #if os(macOS)
-            coordinates += TextureCoordinates.macFlipped()
-            options = [.storageModeManaged]
-        #endif
-        
-        #if os(iOS)
-            coordinates += TextureCoordinates.devicePortrait()
-        #endif
-        
-        return device.makeBuffer(bytes: coordinates,
-                                 length: MemoryLayout<float2>.stride * coordinates.count,
-                                 options: options)
-    }
-    
-    class func getDefaultLibrary(withDevice device: MTLDevice)
-        -> (library: MTLLibrary,
-        vertexFunction: MTLFunction,
-        fragmentFunction: MTLFunction)? {
-        
-        guard let library = device.newDefaultLibrary() else {
-            fatalError("Couldn't find shader libary")
-        }
-        
-        // Retrieve the functions that will comprise our pipeline
-        guard let vertexFunction = library.makeFunction(name: "vertexPassthrough"),
-            let fragmentFunction = library.makeFunction(name: "fragmentPassthroughWithExistingSampler") else {
-                print("Couldn't get shader functions")
-                return nil
-            }
-        
-        return (library: library,
-                vertexFunction: vertexFunction,
-                fragmentFunction: fragmentFunction)
-    }
-    
-    lazy var sampler: MTLSamplerState = Renderer.makeSampler(withDevice: self.device)
-    class func makeSampler(withDevice device: MTLDevice) -> MTLSamplerState {
-        let sampler = MTLSamplerDescriptor()
-        sampler.minFilter = .nearest
-        sampler.magFilter = .nearest
-        sampler.mipFilter = .nearest
-        sampler.maxAnisotropy = 1
-        sampler.sAddressMode = .clampToEdge
-        sampler.tAddressMode = .clampToEdge
-        sampler.rAddressMode = .clampToEdge
-        sampler.normalizedCoordinates = true
-        sampler.lodMinClamp = 0
-        sampler.lodMaxClamp = 2
-        #if os(iOS)
-        sampler.lodAverage = false
-        #endif
-        sampler.label = "slateSampler"
-        return device.makeSamplerState(descriptor: sampler)
-    }
-    
     func buildRenderPipeline(withFragmentFunction passedFragmentFunction: MTLFunction? = nil) throws
         -> MTLRenderPipelineState {
         
@@ -201,39 +87,6 @@ import AVFoundation
     }
     
     // MARK: - Render
-    
-    func render(_ view: MTKView) {
-        guard let currentDrawable = view.currentDrawable, dirtyTexture else {
-            return
-        }
-        
-        dirtyTexture = false
-        
-        guard let texture = self.texture else {
-            return
-        }
-        // Our command buffer is a container for the work we want to perform with the GPU.
-        let commandBuffer = commandQueue.makeCommandBuffer()
-
-        #if METAL_DEVICE
-            if useFilters {
-                let filteredTexture = filterTexture(texture, withCommandBuffer: commandBuffer)
-                renderFullScreen(commandBuffer: commandBuffer,
-                                 drawable: currentDrawable,
-                                 inputTexture: filteredTexture)
-            } else {
-                renderFullScreen(commandBuffer: commandBuffer,
-                                 drawable: currentDrawable,
-                                 inputTexture: texture)
-            }
-        #endif
-        
-        // Tell the system to present the cleared drawable to the screen.
-        commandBuffer.present(currentDrawable)
-        
-        // Now that we're done issuing commands, we commit our buffer so the GPU can get to work.
-        commandBuffer.commit()
-    }
     
     var useFilters = false
     lazy var filter: AbstractFilter = {
@@ -300,51 +153,11 @@ import AVFoundation
         renderEncoder.popDebugGroup()
     }
     
-    // MARK: - Buffer Updates
-    
-    #if os(macOS)
-    func invalidateVertexBuffer() {
-        let contents = vertexBuffer.contents()
-        memcpy(contents, vertices, MemoryLayout<Vertex>.stride * vertices.count)
-        let length = vertexBuffer.length
-        let range = NSRange(location: 0, length: length)
-        vertexBuffer.didModifyRange(range)
-    }
-    
-    func invalidateTextureCoordinatesBuffer() {
-        let contents = textureCoordinatesBuffer.contents()
-        memcpy(contents, textureCoordinates, MemoryLayout<float2>.stride * textureCoordinates.count)
-        let length = textureCoordinatesBuffer.length
-        let range = NSRange(location: 0, length: length)
-        textureCoordinatesBuffer.didModifyRange(range)
-    }
-    #endif
-    
-    // MARK: - Shader Updates
-
-    func updateShader(withLibrary library: MTLLibrary,
-                      shaderFunction functionName: String) {
-        guard let fragmentFunction = library.makeFunction(name: functionName) else {
-            print("Failed to make fragment function: \(functionName)")
-            return
-        }
-        
-        do {
-            let pipeline = try buildRenderPipeline(withFragmentFunction: fragmentFunction)
-            renderPipelineState = pipeline
-            
-        } catch {
-            print("Error updating shader: \(error)")
-        }
-        
-    }
-    
     // MARK: - Camera Controller Handler
     
     var dirtyTexture = false
     func textureHandler(texture: MTLTexture) {
         self.texture = texture
-//        view.draw()
         dirtyTexture = true
     }
     
@@ -356,27 +169,12 @@ import AVFoundation
     
     @objc(drawInMTKView:)
     func draw(in metalView: MTKView) {
-        render(metalView)
+        render(toView: metalView)
     }
     
-    // MARK: - Resizing
+    // MARK: - Texture Sampling
     
-    #if os(macOS)
-    func setAspectRatio(width: Float, height: Float) {
-        let inputSize = cameraController.inputSize
-        guard inputSize != .zero else {
-            print("Missing input aspect ratio")
-            return
-        }
-        let targetSize = CGSize(width: CGFloat(width), height: CGFloat(height))
-        
-        vertices.removeAll()
-        vertices += Vertices.quadForAspectFill(input: inputSize,
-                                               target: targetSize)
-        
-        invalidateVertexBuffer()
-    }
-    #endif
+    lazy var sampler: MTLSamplerState = Renderer.makeSampler(withDevice: self.device)
 }
 
 // MARK: - Callbacks
