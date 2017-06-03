@@ -25,9 +25,42 @@ struct Vertices {
         return vertices
     }
     
-    static func quadForAspectRatio(width: Float, height: Float) -> [Vertex] {
-        var xMin: Float, yMin: Float, xMax: Float, yMax: Float
+    static let viewportWidth: Float = 2
+    static let viewportHeight: Float = 2
+    
+    static func quadForAspectFill(input: CGSize, target: CGSize) -> [Vertex] {
+        let inputRatio: CGFloat = input.width / input.height
+        let targetRatio: CGFloat = target.width / target.height
         
+        if inputRatio > targetRatio {
+            let width = input.width * (target.height / input.height)
+            
+            return centeredQuadWithViewport(width: Float(width / target.width) * viewportWidth,
+                                            height: viewportHeight)
+        } else {
+            let height = input.height * (target.width / input.width)
+            return centeredQuadWithViewport(width: viewportWidth,
+                                            height: Float(height / target.height) * viewportHeight)
+        }
+    }
+    
+    static func quadForAspectFit(input: CGSize, target: CGSize) -> [Vertex] {
+        let inputRatio: CGFloat = input.width / input.height
+        let targetRatio: CGFloat = target.width / target.width
+        
+        if targetRatio > inputRatio {
+            let width = input.width * (target.height / input.height)
+            
+            return centeredQuadWithViewport(width: Float(width / target.width) * viewportWidth,
+                                            height: viewportHeight)
+        } else {
+            let height = input.height * (target.width / input.width)
+            return centeredQuadWithViewport(width: viewportWidth,
+                                            height: Float(height / target.height) * viewportHeight)
+        }
+    }
+    
+    private static func fullWidthAspectRatio(width: Float, height: Float) -> [Vertex] {
         let inputWidth: Float = 720
         let inputHeight: Float = 1080
         let inputRatio: Float = inputWidth / inputHeight
@@ -38,13 +71,15 @@ struct Vertices {
         
         let viewportHeightRatio = inputRatio * targetRatio
         let viewportAspectHeight = viewportHeight * viewportHeightRatio
-//        print("target: \(width),\(height): \(targetRatio)")
-//        print("viewport  ratio: \(viewportHeightRatio)")
-        
-        xMin = 0 - (viewportWidth / 2)
-        yMin = 0 - (viewportAspectHeight / 2)
-        xMax = 0 + (viewportWidth / 2)
-        yMax = 0 + (viewportAspectHeight / 2)
+        return centeredQuadWithViewport(width: viewportWidth, height: viewportAspectHeight)
+    }
+    
+    private static func centeredQuadWithViewport(width: Float, height: Float) -> [Vertex] {
+        let xMin: Float, yMin: Float, xMax: Float, yMax: Float
+        xMin = 0 - (width / 2)
+        yMin = 0 - (height / 2)
+        xMax = 0 + (width / 2)
+        yMax = 0 + (height / 2)
         
         var vertices = [Vertex]()
         vertices.append(Vertex(position: float4(xMin, yMin, 0, 1))) // left bottom

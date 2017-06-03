@@ -88,9 +88,12 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         
         session.startRunning()
     }
+    
+    var inputSize: CGSize = .zero
     func bestSessionPreset() -> String? {
         let suitablePresets: [String]
         if Platform.isMacOS {
+            inputSize = CGSize(width: 1280, height: 720)
             suitablePresets = [AVCaptureSessionPreset1280x720]
         } else {
             suitablePresets = [

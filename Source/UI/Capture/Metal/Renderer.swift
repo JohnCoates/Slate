@@ -363,8 +363,16 @@ import AVFoundation
     
     #if os(macOS)
     func setAspectRatio(width: Float, height: Float) {
+        let inputSize = cameraController.inputSize
+        guard inputSize != .zero else {
+            print("Missing input aspect ratio")
+            return
+        }
+        let targetSize = CGSize(width: CGFloat(width), height: CGFloat(height))
+        
         vertices.removeAll()
-        vertices += Vertices.quadForAspectRatio(width: width, height: height)
+        vertices += Vertices.quadForAspectFill(input: inputSize,
+                                               target: targetSize)
         
         invalidateVertexBuffer()
     }
