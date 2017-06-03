@@ -49,7 +49,7 @@ extension Renderer {
         #endif
         
         #if os(iOS)
-            coordinates += TextureCoordinates.devicePortrait()
+            coordinates += TextureCoordinates.iOSDevicePortrait()
         #endif
         
         return device.makeBuffer(bytes: coordinates,
@@ -84,24 +84,59 @@ extension Renderer {
         }
         let targetSize = Size(size: viewSize)
         #if os(iOS)
-            // TODO: Clean this up
-            // Switch width with height because our texture is flipped
-            // Bit silly!
+            // Switch width with height because camera input is flipped
             let inputSwitched = Size(width: inputSize.height, height: inputSize.width)
             verticesUpdate = Vertices.quadForAspectFill(input: inputSwitched, target: targetSize)
         #else
+//            verticesUpdate = Vertices.quadForAspectFill(input: inputSize, target: targetSize)
             verticesUpdate = Vertices.quadForAspectFill(input: inputSize, target: targetSize)
+            
         #endif
     }
     
+    func updateTextureCoordinates(withViewSize viewSize: CGSize) {
+        guard let inputSize = cameraController.inputSize else {
+            print("Couldn't get camera input size!")
+            return
+        }
+        let targetSize = Size(size: viewSize)
+        #if os(iOS)
+            // Switch width with height because camera input is flipped
+            let inputSwitched = Size(width: inputSize.height, height: inputSize.width)
+            textureCoordinatesUpdate = TextureCoordinates.quadForAspectFill(input: inputSwitched,
+                                                                            target: targetSize)
+        #else
+            textureCoordinatesUpdate = TextureCoordinates.quadForAspectFill(input: inputSize,
+                                                                            target: targetSize)
+        #endif
+    }
+    
+    // MARK: - Command Buffer Boundary Functions
     // For iOS buffer updates which have shared storage mode
     // Resource coherency is only guaranteed at command buffer boundaries.
     // https://developer.apple.com/reference/metal/mtlstoragemode/1515989-shared
-    func replaceVertexBufferWhileOutsideOfCommandBufferBoundary(newVertices: [Vertex]) {
+    
+    func replaceWhileOutsideOfCommandBufferBoundary(vertices newVertices: [Vertex]) {
         guard newVertices.count == vertices.count else {
             fatalError("Can't update vertices with different amount of items")
         }
         let contents = vertexBuffer.contents()
         memcpy(contents, newVertices, MemoryLayout<Vertex>.stride * vertices.count)
+        #if os(macOS)
+            let range = NSRange(location: 0, length: vertexBuffer.length)
+            vertexBuffer.didModifyRange(range)
+        #endif
+    }
+    
+    func replaceWhileOutsideOfCommandBufferBoundary(textureCoordinates newTextureCoordinates: [float2]) {
+        guard newTextureCoordinates.count == textureCoordinates.count else {
+            fatalError("Can't update texture coordinates with different amount of items")
+        }
+        let contents = textureCoordinatesBuffer.contents()
+        memcpy(contents, newTextureCoordinates, MemoryLayout<float2>.stride * textureCoordinates.count)
+        #if os(macOS)
+            let range = NSRange(location: 0, length: textureCoordinatesBuffer.length)
+            textureCoordinatesBuffer.didModifyRange(range)
+        #endif
     }
 }

@@ -39,9 +39,14 @@ extension Renderer {
             return
         }
         
-        if let verticesUpdate = verticesUpdate {
-            replaceVertexBufferWhileOutsideOfCommandBufferBoundary(newVertices: verticesUpdate)
+        if let vertices = verticesUpdate {
+            replaceWhileOutsideOfCommandBufferBoundary(vertices: vertices)
             self.verticesUpdate = nil
+        }
+        
+        if let textureCoordinates = textureCoordinatesUpdate {
+            replaceWhileOutsideOfCommandBufferBoundary(textureCoordinates: textureCoordinates)
+            self.textureCoordinatesUpdate = nil
         }
         
         // Our command buffer is a container for the work we want to perform with the GPU.

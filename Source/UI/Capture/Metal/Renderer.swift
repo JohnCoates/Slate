@@ -135,6 +135,7 @@ import AVFoundation
     // MARK: - Command Buffer
     
     var verticesUpdate: [Vertex]?
+    var textureCoordinatesUpdate: [float2]?
     
     
     // MARK: - Video Rendering
@@ -172,7 +173,7 @@ import AVFoundation
     // MARK: - Metal View Delegate
     
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
-        updateVertices(withViewSize: size)
+        updateTextureCoordinates(withViewSize: size)
     }
     
     @objc(drawInMTKView:)

@@ -17,9 +17,9 @@ extension Renderer {
         sampler.magFilter = .nearest
         sampler.mipFilter = .nearest
         sampler.maxAnisotropy = 1
-        sampler.sAddressMode = .clampToEdge
-        sampler.tAddressMode = .clampToEdge
-        sampler.rAddressMode = .clampToEdge
+        sampler.sAddressMode = .clampToZero
+        sampler.tAddressMode = .clampToZero
+        sampler.rAddressMode = .clampToZero
         sampler.normalizedCoordinates = true
         sampler.lodMinClamp = 0
         sampler.lodMaxClamp = 2
