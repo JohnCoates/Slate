@@ -207,7 +207,6 @@
 		FA5F8CB41ED0958100921A61 /* KeepUpright.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CB21ED0958100921A61 /* KeepUpright.swift */; };
 		FA64774F1EE3981C00A63A22 /* UIBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64774E1EE3981C00A63A22 /* UIBezierPath.swift */; };
 		FA6477521EE3986B00A63A22 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6477511EE3986B00A63A22 /* CGPoint.swift */; };
-		FA6477561EE39E5200A63A22 /* ComponentEditBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805921EC54A0F004351B7 /* ComponentEditBar.swift */; };
 		FA6477571EE39E9500A63A22 /* EditBar+ProgressControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6477541EE39E2100A63A22 /* EditBar+ProgressControls.swift */; };
 		FA6477581EE39E9600A63A22 /* EditBar+ProgressControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6477541EE39E2100A63A22 /* EditBar+ProgressControls.swift */; };
 		FA64775A1EE39EF600A63A22 /* EditBar+InitialState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6477591EE39EF600A63A22 /* EditBar+InitialState.swift */; };
@@ -215,7 +214,6 @@
 		FA64775E1EE39F4000A63A22 /* EditBar+EditBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64775D1EE39F4000A63A22 /* EditBar+EditBorder.swift */; };
 		FA6477601EE39F4000A63A22 /* EditBar+EditBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64775D1EE39F4000A63A22 /* EditBar+EditBorder.swift */; };
 		FA6477621EE39FBD00A63A22 /* EditBar+SettingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6477611EE39FBD00A63A22 /* EditBar+SettingComponent.swift */; };
-		FA6477631EE39FBD00A63A22 /* EditBar+SettingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6477611EE39FBD00A63A22 /* EditBar+SettingComponent.swift */; };
 		FA6477641EE39FBD00A63A22 /* EditBar+SettingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6477611EE39FBD00A63A22 /* EditBar+SettingComponent.swift */; };
 		FA76F5421ED3C32D00059906 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */; };
 		FA76F5461ED48FFC00059906 /* ImageCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76F5451ED48FFC00059906 /* ImageCaptureManager.swift */; };
@@ -2588,7 +2586,6 @@
 				FA3AAAB51EE25E0E006028AC /* Renderer+View.swift in Sources */,
 				FA3AAAB71EE25E14006028AC /* Renderer+Sampling.swift in Sources */,
 				FA89D13E1EDF626A0012F2F0 /* BuildRuntimeShader.swift in Sources */,
-				FA6477631EE39FBD00A63A22 /* EditBar+SettingComponent.swift in Sources */,
 				FA4DFEDB1D9DBD5F0068706F /* Renderer.swift in Sources */,
 				FA4DFED11D9DBD1A0068706F /* AppDelegate.swift in Sources */,
 				FA850EFB1EDFC83A00B1CDDB /* VertexStructs.swift in Sources */,
@@ -2623,7 +2620,6 @@
 				FA850F2A1EE110B300B1CDDB /* VariableOperators.swift in Sources */,
 				FABB169B1D9F14FD00A8AC6C /* FloatPairFormatter.swift in Sources */,
 				FABB16A31D9F402C00A8AC6C /* TextureCoordinates.swift in Sources */,
-				FA6477561EE39E5200A63A22 /* ComponentEditBar.swift in Sources */,
 				FA850EED1EDF90FE00B1CDDB /* Statement.swift in Sources */,
 				FA64774F1EE3981C00A63A22 /* UIBezierPath.swift in Sources */,
 				FA3AAABF1EE25E6E006028AC /* CameraController+Format.swift in Sources */,
