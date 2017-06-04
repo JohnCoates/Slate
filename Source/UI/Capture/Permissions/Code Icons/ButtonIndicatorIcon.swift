@@ -5,6 +5,7 @@
 //  Created by John Coates on 5/16/17.
 //  Copyright © 2017 John Coates. All rights reserved.
 //
+// codebeat:disable[ABC,ARITY,CYCLO,LOC,TOTAL_COMPLEXITY,TOTAL_LOC,TOO_MANY_IVARS]
 
 import UIKit
 
