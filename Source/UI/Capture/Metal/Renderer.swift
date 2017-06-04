@@ -135,8 +135,7 @@ import AVFoundation
     // MARK: - Command Buffer
     
     var verticesUpdate: [Vertex]?
-    var textureCoordinatesUpdate: [float2]?
-    
+    var textureCoordinatesUpdate: [float2]?    
     
     // MARK: - Video Rendering
     
