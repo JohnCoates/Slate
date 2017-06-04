@@ -21,8 +21,8 @@ class ComputeFilter: AbstractFilter {
     
     // MARK: - Thread Groups
     
-    // TODO: check device.maxThreadsPerThreadgroup
-    lazy var threadsPerGroup: MTLSize = MTLSize(width: 22, height: 22, depth: 1)
+    lazy var threadsPerGroup: MTLSize = MTLSize(width: 8, height: 8, depth: 1)
+    
     fileprivate var threadGroups: MTLSize?
     fileprivate var threadTextureSize: MTLSize?
     func threadGroups(forInputTexture inputTexture: MTLTexture) -> MTLSize {

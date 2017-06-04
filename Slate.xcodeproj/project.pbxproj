@@ -215,6 +215,7 @@
 		FA6477601EE39F4000A63A22 /* EditBar+EditBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64775D1EE39F4000A63A22 /* EditBar+EditBorder.swift */; };
 		FA6477621EE39FBD00A63A22 /* EditBar+SettingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6477611EE39FBD00A63A22 /* EditBar+SettingComponent.swift */; };
 		FA6477641EE39FBD00A63A22 /* EditBar+SettingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6477611EE39FBD00A63A22 /* EditBar+SettingComponent.swift */; };
+		FA6477651EE3A30900A63A22 /* ChromaticAberration.metal in Sources */ = {isa = PBXBuildFile; fileRef = FABB16AC1D9F6DAB00A8AC6C /* ChromaticAberration.metal */; };
 		FA76F5421ED3C32D00059906 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */; };
 		FA76F5461ED48FFC00059906 /* ImageCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76F5451ED48FFC00059906 /* ImageCaptureManager.swift */; };
 		FA76F54C1ED4A2C100059906 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA76F54A1ED4A2C100059906 /* Fabric.framework */; };
@@ -2592,6 +2593,7 @@
 				FAE0483E1EE3782800695E0D /* Target.swift in Sources */,
 				FA850F461EE208DB00B1CDDB /* VertexOut.swift in Sources */,
 				FA850F331EE1244100B1CDDB /* String+Extensions.swift in Sources */,
+				FA6477651EE3A30900A63A22 /* ChromaticAberration.metal in Sources */,
 				FA4021C71DA0AEE800752F3B /* MetalCameraController.swift in Sources */,
 				FA850EFD1EDFD0BB00B1CDDB /* CallStatement.swift in Sources */,
 				FA3AAAB81EE25E14006028AC /* Renderer+Buffers.swift in Sources */,
