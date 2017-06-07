@@ -9,99 +9,77 @@
 import UIKit
 
 extension UIView {
-    var left2: Anchor<XAxis> {
+    var left: Anchor<XAxis> {
         return Anchor<XAxis>(target: self, kind: .left)
     }
     
-    var right2: Anchor<XAxis> {
+    var right: Anchor<XAxis> {
         return Anchor<XAxis>(target: self, kind: .right)
     }
     
-    var top2: Anchor<YAxis> {
+    var top: Anchor<YAxis> {
         return Anchor<YAxis>(target: self, kind: .top)
     }
     
-    var bottom2: Anchor<YAxis> {
+    var bottom: Anchor<YAxis> {
         return Anchor<YAxis>(target: self, kind: .bottom)
     }
     
-    var width2: DimensionAnchor {
+    var width: DimensionAnchor {
         return DimensionAnchor(target: self, kind: .width)
     }
     
-    var height2: DimensionAnchor {
+    var height: DimensionAnchor {
         return DimensionAnchor(target: self, kind: .height)
     }
     
-    var centerX2: Anchor<XAxis> {
+    var centerX: Anchor<XAxis> {
         return Anchor<XAxis>(target: self, kind: .centerX)
     }
     
-    var centerY2: Anchor<YAxis> {
+    var centerY: Anchor<YAxis> {
         return Anchor<YAxis>(target: self, kind: .centerY)
     }
     
-    var centerXY2: XYAnchor {
+    var centerXY: XYAnchor {
         return XYAnchor(target: self, kind: .center)
+    }
+    
+    var leading: Anchor<XAxis> {
+        return Anchor<XAxis>(target: self, kind: .leading)
+    }
+    
+    var trailing: Anchor<XAxis> {
+        return Anchor<XAxis>(target: self, kind: .trailing)
+    }
+    
+    var baseline: Anchor<YAxis> {
+        return firstBaseline
+    }
+    
+    var firstBaseline: Anchor<YAxis> {
+        return Anchor<YAxis>(target: self, kind: .firstBaseline)
+    }
+    
+    var lastBaseline: Anchor<YAxis> {
+        return Anchor<YAxis>(target: self, kind: .lastBaseline)
+    }
+    
+    // Margins
+    
+    var leftMargin: Anchor<XAxis> {
+        return Anchor<XAxis>(target: self, kind: .leftMargin)
+    }
+    
+    var rightMargin: Anchor<XAxis> {
+        return Anchor<XAxis>(target: self, kind: .rightMargin)
+    }
+    
+    var topMargin: Anchor<YAxis> {
+        return Anchor<YAxis>(target: self, kind: .topMargin)
     }
     
     var bottomMargin: Anchor<YAxis> {
         return Anchor<YAxis>(target: self, kind: .bottomMargin)
-    }
-    
-    var left: LayoutAnchor<NSLayoutXAxisAnchor> {
-        return LayoutAnchor<NSLayoutXAxisAnchor>(target: self, kind: .left)
-    }
-    
-    var right: LayoutAnchor<NSLayoutXAxisAnchor> {
-        return LayoutAnchor<NSLayoutXAxisAnchor>(target: self, kind: .right)
-    }
-    
-    var top: LayoutAnchor<NSLayoutYAxisAnchor> {
-        return LayoutAnchor<NSLayoutYAxisAnchor>(target: self, kind: .top)
-    }
-    
-    var bottom: LayoutAnchor<NSLayoutYAxisAnchor> {
-        return LayoutAnchor<NSLayoutYAxisAnchor>(target: self, kind: .bottom)
-    }
-    
-    var width: LayoutDimensionAnchor {
-        return LayoutDimensionAnchor(target: self, kind: .width)
-    }
-    
-    var height: LayoutDimensionAnchor {
-        return LayoutDimensionAnchor(target: self, kind: .height)
-    }
-    
-    var centerX: LayoutAnchor<NSLayoutXAxisAnchor> {
-        return LayoutAnchor<NSLayoutXAxisAnchor>(target: self, kind: .centerX)
-    }
-    
-    var centerY: LayoutAnchor<NSLayoutYAxisAnchor> {
-        return LayoutAnchor<NSLayoutYAxisAnchor>(target: self, kind: .centerY)
-    }
-    
-    var leading: LayoutAnchor<NSLayoutXAxisAnchor> {
-        return LayoutAnchor<NSLayoutXAxisAnchor>(target: self, kind: .leading)
-    }
-    
-    var trailing: LayoutAnchor<NSLayoutXAxisAnchor> {
-        return LayoutAnchor<NSLayoutXAxisAnchor>(target: self, kind: .trailing)
-    }
-    
-    var baseline: LayoutAnchor<NSLayoutYAxisAnchor> {
-        return firstBaseline
-    }
-    
-    var firstBaseline: LayoutAnchor<NSLayoutYAxisAnchor> {
-        return LayoutAnchor<NSLayoutYAxisAnchor>(target: self, kind: .firstBaseline)
-    }
-    
-    var lastBaseline: LayoutAnchor<NSLayoutYAxisAnchor> {
-        return LayoutAnchor<NSLayoutYAxisAnchor>(target: self, kind: .lastBaseline)
-    }
-    
-    var centerXY: LayoutXYAnchor {
-        return LayoutXYAnchor(target: self, kind: .center)
     }
 }

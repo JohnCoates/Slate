@@ -19,7 +19,6 @@ class Anchor<Kind> where Kind: AnchorType {
     @discardableResult func pin(to: Anchor<Kind>,
                                 add: CGFloat = 0,
                                 rank: FixedLayoutPriority? = nil) -> NSLayoutConstraint {
-        prepareLeftHandSideForAutoLayout()
         let constraint = NSLayoutConstraint(item: target,
                                             attribute: attribute,
                                             relatedBy: .equal,
@@ -27,14 +26,13 @@ class Anchor<Kind> where Kind: AnchorType {
                                             attribute: to.attribute,
                                             multiplier: 1,
                                             constant: add)
-        constraint.isActive = true
+        configure(constraint: constraint, rank: rank)
         return constraint
     }
     
     @discardableResult func pin(atLeast to: Anchor<Kind>,
                                 add: CGFloat = 0,
                                 rank: FixedLayoutPriority? = nil) -> NSLayoutConstraint {
-        prepareLeftHandSideForAutoLayout()
         let constraint = NSLayoutConstraint(item: target,
                                             attribute: attribute,
                                             relatedBy: .greaterThanOrEqual,
@@ -42,8 +40,16 @@ class Anchor<Kind> where Kind: AnchorType {
                                             attribute: to.attribute,
                                             multiplier: 1,
                                             constant: add)
-        constraint.isActive = true
+        configure(constraint: constraint, rank: rank)
         return constraint
+    }
+    
+    func configure(constraint: NSLayoutConstraint, rank rankMaybe: FixedLayoutPriority?) {
+        prepareLeftHandSideForAutoLayout()
+        if let rank = rankMaybe {
+            constraint.priority = rank.rawValue
+        }
+        constraint.isActive = true
     }
     
     func prepareLeftHandSideForAutoLayout() {
@@ -59,7 +65,6 @@ class Dimension: AnchorType {}
 class DimensionAnchor: Anchor<Dimension> {
     @discardableResult func pin(to: CGFloat,
                                 rank: FixedLayoutPriority? = nil) -> NSLayoutConstraint {
-        prepareLeftHandSideForAutoLayout()
         let constraint = NSLayoutConstraint(item: target,
                                             attribute: attribute,
                                             relatedBy: .equal,
@@ -67,7 +72,7 @@ class DimensionAnchor: Anchor<Dimension> {
                                             attribute: .notAnAttribute,
                                             multiplier: 1,
                                             constant: to)
-        constraint.isActive = true
+        configure(constraint: constraint, rank: rank)
         return constraint
     }
     
@@ -75,7 +80,6 @@ class DimensionAnchor: Anchor<Dimension> {
                                 add: CGFloat = 0,
                                 times: CGFloat,
                                 rank: FixedLayoutPriority? = nil) -> NSLayoutConstraint {
-        prepareLeftHandSideForAutoLayout()
         let constraint = NSLayoutConstraint(item: target,
                                             attribute: attribute,
                                             relatedBy: .equal,
@@ -83,14 +87,12 @@ class DimensionAnchor: Anchor<Dimension> {
                                             attribute: to.attribute,
                                             multiplier: times,
                                             constant: add)
-        constraint.isActive = true
+        configure(constraint: constraint, rank: rank)
         return constraint
     }
     
-    
     @discardableResult func pin(atLeast to: CGFloat,
                                 rank: FixedLayoutPriority? = nil) -> NSLayoutConstraint {
-        prepareLeftHandSideForAutoLayout()
         let constraint = NSLayoutConstraint(item: target,
                                             attribute: attribute,
                                             relatedBy: .greaterThanOrEqual,
@@ -98,7 +100,7 @@ class DimensionAnchor: Anchor<Dimension> {
                                             attribute: .notAnAttribute,
                                             multiplier: 1,
                                             constant: to)
-        constraint.isActive = true
+        configure(constraint: constraint, rank: rank)
         return constraint
     }
 }
@@ -115,11 +117,11 @@ class XYAnchor {
     init(target: UIView, kind: Kind) {
         switch kind {
         case .center:
-            xAnchor = target.centerX2
-            yAnchor = target.centerY2
+            xAnchor = target.centerX
+            yAnchor = target.centerY
         case .position:
-            xAnchor = target.left2
-            yAnchor = target.top2
+            xAnchor = target.left
+            yAnchor = target.top
         }
     }
     

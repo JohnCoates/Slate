@@ -16,26 +16,6 @@ precedencegroup LayoutAssignment {
     higherThan: AssignmentPrecedence
 }
 
-func --> (lhs: LayoutAnchor<NSLayoutXAxisAnchor>, rhs: LayoutAnchor<NSLayoutXAxisAnchor>) {
-    lhs.pin(to: rhs)
-}
-
-func --> (lhs: LayoutAnchor<NSLayoutYAxisAnchor>, rhs: LayoutAnchor<NSLayoutYAxisAnchor>) {
-    lhs.pin(to: rhs)
-}
-
-func --> (lhs: LayoutDimensionAnchor, rhs: LayoutDimensionAnchor) {
-    lhs.pin(to: rhs)
-}
-
-func --> (lhs: LayoutDimensionAnchor, rhs: CGFloat) {
-    lhs.pin(to: rhs)
-}
-
-func --> (lhs: LayoutXYAnchor, rhs: LayoutXYAnchor) {
-    lhs.pin(to: rhs)
-}
-
 func --> (lhs: Anchor<XAxis>, rhs: Anchor<XAxis>) {
     lhs.pin(to: rhs)
 }
@@ -64,27 +44,6 @@ precedencegroup LayoutAtLeastAssignment {
     higherThan: AssignmentPrecedence
 }
 
-func -->+= (lhs: LayoutAnchor<NSLayoutXAxisAnchor>, rhs: LayoutAnchor<NSLayoutXAxisAnchor>) {
-    lhs.pin(atLeast: rhs)
-}
-
-func -->+= (lhs: LayoutAnchor<NSLayoutYAxisAnchor>, rhs: LayoutAnchor<NSLayoutYAxisAnchor>) {
-    lhs.pin(atLeast: rhs)
-}
-
-func -->+= (lhs: LayoutDimensionAnchor, rhs: LayoutDimensionAnchor) {
-    lhs.pin(atLeast: rhs)
-}
-
-func -->+= (lhs: LayoutDimensionAnchor, rhs: CGFloat) {
-    lhs.pin(atLeast: rhs)
-}
-
-func -->+= (lhs: LayoutXYAnchor, rhs: LayoutXYAnchor) {
-    lhs.pin(atLeast: rhs)
-}
-
-//
 func -->+= (lhs: Anchor<XAxis>, rhs: Anchor<XAxis>) {
     lhs.pin(atLeast: rhs)
 }

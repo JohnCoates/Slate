@@ -19,10 +19,6 @@
 		FA0462C71EC4252D007B74A0 /* ComponentItemCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */; };
 		FA0C964F1EE7647300EA6EC8 /* AnchorOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */; };
 		FA0C96501EE7647300EA6EC8 /* AnchorOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */; };
-		FA0C96531EE776A300EA6EC8 /* CoreLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C96521EE776A300EA6EC8 /* CoreLayout.swift */; };
-		FA0C96541EE776A300EA6EC8 /* CoreLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C96521EE776A300EA6EC8 /* CoreLayout.swift */; };
-		FA0C96561EE776C600EA6EC8 /* AnchorProxies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C96551EE776C600EA6EC8 /* AnchorProxies.swift */; };
-		FA0C96571EE776C600EA6EC8 /* AnchorProxies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C96551EE776C600EA6EC8 /* AnchorProxies.swift */; };
 		FA0C96591EE8952800EA6EC8 /* LayoutAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C96581EE8952800EA6EC8 /* LayoutAttribute.swift */; };
 		FA0C965A1EE8952800EA6EC8 /* LayoutAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C96581EE8952800EA6EC8 /* LayoutAttribute.swift */; };
 		FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */; };
@@ -324,8 +320,6 @@
 		FACA79761EE4CFEB0001D468 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79741EE4CFEB0001D468 /* Theme.swift */; };
 		FACA797A1EE66A5B0001D468 /* KitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79791EE66A5B0001D468 /* KitTableViewCell.swift */; };
 		FACA797C1EE66A5B0001D468 /* KitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79791EE66A5B0001D468 /* KitTableViewCell.swift */; };
-		FACA79801EE6712A0001D468 /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA797F1EE6712A0001D468 /* LayoutAnchor.swift */; };
-		FACA79811EE6712A0001D468 /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA797F1EE6712A0001D468 /* LayoutAnchor.swift */; };
 		FACA79841EE671880001D468 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79831EE671880001D468 /* UIView+Anchors.swift */; };
 		FACA79851EE671880001D468 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79831EE671880001D468 /* UIView+Anchors.swift */; };
 		FACC8FD41D98A55400589230 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
@@ -491,8 +485,6 @@
 		FA06348D1ED4ACA800C8FC90 /* Private.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Private.xcconfig; sourceTree = "<group>"; };
 		FA0634961ED4B1C300C8FC90 /* AppStore.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppStore.xcconfig; sourceTree = "<group>"; };
 		FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorOperators.swift; sourceTree = "<group>"; };
-		FA0C96521EE776A300EA6EC8 /* CoreLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLayout.swift; sourceTree = "<group>"; };
-		FA0C96551EE776C600EA6EC8 /* AnchorProxies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorProxies.swift; sourceTree = "<group>"; };
 		FA0C96581EE8952800EA6EC8 /* LayoutAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutAttribute.swift; sourceTree = "<group>"; };
 		FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = GaussianBlur.metal; sourceTree = "<group>"; };
 		FA1805891EC46FAE004351B7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
@@ -660,7 +652,6 @@
 		FACA79701EE4CF9B0001D468 /* KitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitsViewController.swift; sourceTree = "<group>"; };
 		FACA79741EE4CFEB0001D468 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		FACA79791EE66A5B0001D468 /* KitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitTableViewCell.swift; sourceTree = "<group>"; };
-		FACA797F1EE6712A0001D468 /* LayoutAnchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutAnchor.swift; sourceTree = "<group>"; };
 		FACA79831EE671880001D468 /* UIView+Anchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchors.swift"; sourceTree = "<group>"; };
 		FACC8FD31D98A55400589230 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cartography.framework; sourceTree = "<group>"; };
 		FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPermissionViewController.swift; sourceTree = "<group>"; };
@@ -861,14 +852,6 @@
 				FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */,
 			);
 			path = Operators;
-			sourceTree = "<group>";
-		};
-		FA0C96511EE7768E00EA6EC8 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				FA0C96521EE776A300EA6EC8 /* CoreLayout.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		FA18058F1EC54755004351B7 /* Realm */ = {
@@ -2011,7 +1994,6 @@
 		FACA797D1EE66D830001D468 /* DSL */ = {
 			isa = PBXGroup;
 			children = (
-				FA0C96511EE7768E00EA6EC8 /* Protocols */,
 				FA0C964D1EE7645B00EA6EC8 /* Operators */,
 				FACA79821EE671460001D468 /* Extensions */,
 				FACA797E1EE6710D0001D468 /* Anchors */,
@@ -2022,8 +2004,6 @@
 		FACA797E1EE6710D0001D468 /* Anchors */ = {
 			isa = PBXGroup;
 			children = (
-				FACA797F1EE6712A0001D468 /* LayoutAnchor.swift */,
-				FA0C96551EE776C600EA6EC8 /* AnchorProxies.swift */,
 				FA0C96581EE8952800EA6EC8 /* LayoutAttribute.swift */,
 			);
 			path = Anchors;
@@ -2764,7 +2744,6 @@
 				FA0462BB1EC3DF88007B74A0 /* Kit.swift in Sources */,
 				FA3AAA911EE24C8F006028AC /* CameraController+Device.swift in Sources */,
 				FAF10D0E1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
-				FA0C96531EE776A300EA6EC8 /* CoreLayout.swift in Sources */,
 				FA6477571EE39E9500A63A22 /* EditBar+ProgressControls.swift in Sources */,
 				FA5709A61ECC7172000362C8 /* PhotosPermissionViewController.swift in Sources */,
 				FA8CE4281ECD8AE700788026 /* UIGestureRecognizer+Closure.swift in Sources */,
@@ -2821,10 +2800,8 @@
 				FA0462B91EC3DF81007B74A0 /* KitManager.swift in Sources */,
 				FA5F8CA61ED0649200921A61 /* Font+Convenience.swift in Sources */,
 				FA3AAAAC1EE25AC1006028AC /* Renderer+Shaders.swift in Sources */,
-				FA0C96561EE776C600EA6EC8 /* AnchorProxies.swift in Sources */,
 				FA5F8CB31ED0958100921A61 /* KeepUpright.swift in Sources */,
 				FACA797A1EE66A5B0001D468 /* KitTableViewCell.swift in Sources */,
-				FACA79801EE6712A0001D468 /* LayoutAnchor.swift in Sources */,
 				FA2F8E471DA2293000993949 /* AbstractFilter.swift in Sources */,
 				FA8CE4251ECD7FA700788026 /* UIView+subviews.swift in Sources */,
 				FA0462C51EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift in Sources */,
@@ -2917,7 +2894,6 @@
 				FA2B1E9D1EC92B5B00E44613 /* FrontBackCameraToggle.swift in Sources */,
 				FA2B1E7A1EC92AF600E44613 /* SimulatorCaptureViewController.swift in Sources */,
 				FA2B1E971EC92B5B00E44613 /* MetalCaptureViewController.swift in Sources */,
-				FACA79811EE6712A0001D468 /* LayoutAnchor.swift in Sources */,
 				FA2B1E8B1EC92B5B00E44613 /* CaptureButton.swift in Sources */,
 				FA3AAA931EE24CBB006028AC /* CameraController+StillOutput.swift in Sources */,
 				FA3AAAB61EE25E0F006028AC /* Renderer+View.swift in Sources */,
@@ -2982,8 +2958,6 @@
 				FAF10D091ECAD03A0008690E /* BaseCaptureViewController+Debug.swift in Sources */,
 				FA2B1E861EC92B5B00E44613 /* DebugBarItem.swift in Sources */,
 				FA2B1E831EC92B5B00E44613 /* DragGesture.swift in Sources */,
-				FA0C96541EE776A300EA6EC8 /* CoreLayout.swift in Sources */,
-				FA0C96571EE776C600EA6EC8 /* AnchorProxies.swift in Sources */,
 				FA8AA5461ECC13140093D317 /* CanvasIconView.swift in Sources */,
 				FA3AAABA1EE25E15006028AC /* Renderer+Sampling.swift in Sources */,
 				FA2B1EB31EC97E7300E44613 /* CodeIconButton.swift in Sources */,

@@ -63,9 +63,9 @@ class PermissionsEducationViewController: UIViewController {
         dialog.backgroundColor = UIColor.white
         view.addSubview(dialog)
         
-        dialog.centerXY2 --> view.centerXY2
-        dialog.width2 --> 250
-        dialog.height2 -->+= 100
+        dialog.centerXY --> view.centerXY
+        dialog.width --> 250
+        dialog.height -->+= 100
     }
     
     var educationImage: CanvasIcon?
@@ -84,9 +84,9 @@ class PermissionsEducationViewController: UIViewController {
         self.imageView = imageView
         dialog.addSubview(imageView)
         imageView.top.pin(to: dialog.top, add: 23)
-        imageView.centerX2 --> dialog.centerX2
-        imageView.width2 --> educationImageSize.width
-        imageView.height2 --> educationImageSize.height
+        imageView.centerX --> dialog.centerX
+        imageView.width --> educationImageSize.width
+        imageView.height --> educationImageSize.height
         
 //        constrain(imageView) {
 //            let superview = $0.superview!
@@ -111,9 +111,9 @@ class PermissionsEducationViewController: UIViewController {
         explanationLabel.textAlignment = .center
         dialog.addSubview(explanationLabel)
         
-        explanationLabel.width2.pin(to: dialog.width2, times: 0.9)
-        explanationLabel.centerX2 --> dialog.centerX2
-        explanationLabel.top2.pin(to: imageView.bottom2, add: 24)
+        explanationLabel.width.pin(to: dialog.width, times: 0.9)
+        explanationLabel.centerX --> dialog.centerX
+        explanationLabel.top.pin(to: imageView.bottom, add: 24)
         
 //        constrain(explanationLabel) {
 //            let superview = $0.superview!
@@ -149,20 +149,20 @@ class PermissionsEducationViewController: UIViewController {
         
         dialog.addSubview(preview)
         
-        preview.height2 --> cellHeight
-        preview.left2 --> dialog.left2
-        preview.right2 --> dialog.right2
-        preview.top2.pin(to: explanationLabel.bottom2, add: 16)
+        preview.height --> cellHeight
+        preview.left --> dialog.left
+        preview.right --> dialog.right
+        preview.top.pin(to: explanationLabel.bottom, add: 16)
 
         addCellSeparator(kind: .top, toCellView: preview)
         addCellSeparator(kind: .bottom, toCellView: preview)
         
         preview.add(subviews: [label, toggle])
         
-        label.centerY2 --> preview.centerY2
-        toggle.centerY2 --> preview.centerY2
-        label.left2.pin(to: preview.left2, add: 15)
-        toggle.right2.pin(to: preview.right2, add: -15)
+        label.centerY --> preview.centerY
+        toggle.centerY --> preview.centerY
+        label.left.pin(to: preview.left, add: 15)
+        toggle.right.pin(to: preview.right, add: -15)
         
         return preview
     }
@@ -177,14 +177,14 @@ class PermissionsEducationViewController: UIViewController {
         separator.backgroundColor = UIColor(red:0.78, green:0.78, blue:0.80, alpha:1.00)
         cellView.addSubview(separator)
         
-        separator.height2 --> 1.pixelsAsPoints
-        separator.left2 --> cellView.left2
-        separator.right2 --> cellView.right2
+        separator.height --> 1.pixelsAsPoints
+        separator.left --> cellView.left
+        separator.right --> cellView.right
         switch kind {
         case .top:
-            separator.top2 --> cellView.top2
+            separator.top --> cellView.top
         case .bottom:
-            separator.bottom2 --> cellView.bottom2
+            separator.bottom --> cellView.bottom
         }
         
 //        constrain(separator) {
@@ -226,7 +226,7 @@ class PermissionsEducationViewController: UIViewController {
             fatalError("Can't finish setting up buttons")
         }
         
-        superview.bottomMargin -->+= lastButtonReal.bottom2
+        superview.bottomMargin -->+= lastButtonReal.bottom
         
 //        constrain(lastButtonReal) {
 //            let superview = $0.superview!
@@ -246,19 +246,24 @@ class PermissionsEducationViewController: UIViewController {
         label.textColor = dialogButton.textColor
         button.addSubview(label)
         
-        constrain(label) {
-            let superview = $0.superview!
-            $0.center == superview.center
-        }
+        label.centerXY --> button.centerXY
+        
+//        constrain(label) {
+//            let superview = $0.superview!
+//            $0.center == superview.center
+//        }
         
         dialog.addSubview(button)
         
-        constrain(button) {
-            let superview = $0.superview!
-            $0.height == 36
-            $0.width == superview.width * 0.88
-            $0.centerX == superview.centerX
-        }
+        button.height --> 36
+        button.width.pin(to: dialog.width, times: 0.88)
+        button.centerX --> dialog.centerX
+//        constrain(button) {
+//            let superview = $0.superview!
+//            $0.height == 36
+//            $0.width == superview.width * 0.88
+//            $0.centerX == superview.centerX
+//        }
         
         return button
     }
