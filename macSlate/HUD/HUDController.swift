@@ -8,7 +8,6 @@
 
 import Foundation
 import AppKit
-import Cartography
 
 class HUDController: NSWindowController {
     var contentController: NSViewController!

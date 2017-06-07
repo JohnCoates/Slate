@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Cartography
 
 fileprivate typealias LocalClass = BaseCaptureViewController
 extension BaseCaptureViewController {

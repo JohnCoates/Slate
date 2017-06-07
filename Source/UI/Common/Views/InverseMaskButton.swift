@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Cartography
 
 final class InverseMaskButton: CodeIconButton {
     

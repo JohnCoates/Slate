@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Cartography
 import Photos
 
 fileprivate typealias LocalClass = PhotosPermissionViewController

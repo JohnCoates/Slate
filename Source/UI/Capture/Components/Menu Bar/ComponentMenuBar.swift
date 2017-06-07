@@ -6,8 +6,7 @@
 //  Copyright © 2017 John Coates. All rights reserved.
 //
 
-import Foundation
-import Cartography
+import UIKit
 
 final class ComponentMenuBar: UIView,
     UICollectionViewDataSource, ComponentItemCellDelegate {

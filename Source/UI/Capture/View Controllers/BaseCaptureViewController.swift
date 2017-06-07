@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Cartography
 import RealmSwift
 
 #if (arch(i386) || arch(x86_64)) && os(iOS)
