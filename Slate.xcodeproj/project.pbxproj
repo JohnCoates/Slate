@@ -17,6 +17,12 @@
 		FA0462C21EC3E002007B74A0 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C11EC3E002007B74A0 /* Component.swift */; };
 		FA0462C51EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C41EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift */; };
 		FA0462C71EC4252D007B74A0 /* ComponentItemCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */; };
+		FA0C964F1EE7647300EA6EC8 /* AnchorOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */; };
+		FA0C96501EE7647300EA6EC8 /* AnchorOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */; };
+		FA0C96531EE776A300EA6EC8 /* CoreLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C96521EE776A300EA6EC8 /* CoreLayout.swift */; };
+		FA0C96541EE776A300EA6EC8 /* CoreLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C96521EE776A300EA6EC8 /* CoreLayout.swift */; };
+		FA0C96561EE776C600EA6EC8 /* AnchorProxies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C96551EE776C600EA6EC8 /* AnchorProxies.swift */; };
+		FA0C96571EE776C600EA6EC8 /* AnchorProxies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C96551EE776C600EA6EC8 /* AnchorProxies.swift */; };
 		FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */; };
 		FA18058B1EC46FAE004351B7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1805891EC46FAE004351B7 /* Realm.framework */; };
 		FA18058C1EC46FAE004351B7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; };
@@ -310,6 +316,16 @@
 		FABB16B31D9F858800A8AC6C /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BDC1D9920010017CCCA /* Platform.swift */; };
 		FABB16B51D9F886300A8AC6C /* BaseCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */; };
 		FAC9634C1ED3B68700D4DC33 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */; };
+		FACA79711EE4CF9B0001D468 /* KitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79701EE4CF9B0001D468 /* KitsViewController.swift */; };
+		FACA79721EE4CF9B0001D468 /* KitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79701EE4CF9B0001D468 /* KitsViewController.swift */; };
+		FACA79751EE4CFEB0001D468 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79741EE4CFEB0001D468 /* Theme.swift */; };
+		FACA79761EE4CFEB0001D468 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79741EE4CFEB0001D468 /* Theme.swift */; };
+		FACA797A1EE66A5B0001D468 /* KitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79791EE66A5B0001D468 /* KitTableViewCell.swift */; };
+		FACA797C1EE66A5B0001D468 /* KitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79791EE66A5B0001D468 /* KitTableViewCell.swift */; };
+		FACA79801EE6712A0001D468 /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA797F1EE6712A0001D468 /* LayoutAnchor.swift */; };
+		FACA79811EE6712A0001D468 /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA797F1EE6712A0001D468 /* LayoutAnchor.swift */; };
+		FACA79841EE671880001D468 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79831EE671880001D468 /* UIView+Anchors.swift */; };
+		FACA79851EE671880001D468 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79831EE671880001D468 /* UIView+Anchors.swift */; };
 		FACC8FD41D98A55400589230 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
 		FACFE4931ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */; };
 		FACFE4941ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */; };
@@ -472,6 +488,9 @@
 		FA0634891ED4A8F100C8FC90 /* OpenSource.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = OpenSource.xcconfig; sourceTree = "<group>"; };
 		FA06348D1ED4ACA800C8FC90 /* Private.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Private.xcconfig; sourceTree = "<group>"; };
 		FA0634961ED4B1C300C8FC90 /* AppStore.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppStore.xcconfig; sourceTree = "<group>"; };
+		FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorOperators.swift; sourceTree = "<group>"; };
+		FA0C96521EE776A300EA6EC8 /* CoreLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLayout.swift; sourceTree = "<group>"; };
+		FA0C96551EE776C600EA6EC8 /* AnchorProxies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorProxies.swift; sourceTree = "<group>"; };
 		FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = GaussianBlur.metal; sourceTree = "<group>"; };
 		FA1805891EC46FAE004351B7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		FA18058A1EC46FAE004351B7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
@@ -635,6 +654,11 @@
 		FABB16B01D9F822800A8AC6C /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCaptureViewController.swift; sourceTree = "<group>"; };
 		FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
+		FACA79701EE4CF9B0001D468 /* KitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitsViewController.swift; sourceTree = "<group>"; };
+		FACA79741EE4CFEB0001D468 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		FACA79791EE66A5B0001D468 /* KitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitTableViewCell.swift; sourceTree = "<group>"; };
+		FACA797F1EE6712A0001D468 /* LayoutAnchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutAnchor.swift; sourceTree = "<group>"; };
+		FACA79831EE671880001D468 /* UIView+Anchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchors.swift"; sourceTree = "<group>"; };
 		FACC8FD31D98A55400589230 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cartography.framework; sourceTree = "<group>"; };
 		FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPermissionViewController.swift; sourceTree = "<group>"; };
 		FAE0483D1EE3782800695E0D /* Target.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
@@ -828,6 +852,22 @@
 			path = Windows;
 			sourceTree = "<group>";
 		};
+		FA0C964D1EE7645B00EA6EC8 /* Operators */ = {
+			isa = PBXGroup;
+			children = (
+				FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */,
+			);
+			path = Operators;
+			sourceTree = "<group>";
+		};
+		FA0C96511EE7768E00EA6EC8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FA0C96521EE776A300EA6EC8 /* CoreLayout.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		FA18058F1EC54755004351B7 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
@@ -982,6 +1022,7 @@
 		FA2B1E651EC922DA00E44613 /* Auto Layout */ = {
 			isa = PBXGroup;
 			children = (
+				FACA797D1EE66D830001D468 /* DSL */,
 				FA2B1E661EC922ED00E44613 /* Constraints */,
 			);
 			path = "Auto Layout";
@@ -1369,6 +1410,7 @@
 		FA834BDE1D9927B60017CCCA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FACA79731EE4CFC70001D468 /* Theme */,
 				FA2B1E5D1EC817AE00E44613 /* Views */,
 				FA834BDF1D9927CD0017CCCA /* Controls */,
 			);
@@ -1538,6 +1580,7 @@
 				FA78F28B1E144AC600D34947 /* Debug */,
 				FA834BDE1D9927B60017CCCA /* Common */,
 				FA86BE021D98ED5600BC5FB1 /* Capture */,
+				FACA796D1EE4CF350001D468 /* Kits */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1919,6 +1962,75 @@
 				FABB16A81D9F492D00A8AC6C /* HUDShader.metal */,
 			);
 			path = Shaders;
+			sourceTree = "<group>";
+		};
+		FACA796D1EE4CF350001D468 /* Kits */ = {
+			isa = PBXGroup;
+			children = (
+				FACA796E1EE4CF520001D468 /* List */,
+			);
+			path = Kits;
+			sourceTree = "<group>";
+		};
+		FACA796E1EE4CF520001D468 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				FACA79781EE518480001D468 /* Views */,
+				FACA796F1EE4CF800001D468 /* View Controllers */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		FACA796F1EE4CF800001D468 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FACA79701EE4CF9B0001D468 /* KitsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FACA79731EE4CFC70001D468 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				FACA79741EE4CFEB0001D468 /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		FACA79781EE518480001D468 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FACA79791EE66A5B0001D468 /* KitTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FACA797D1EE66D830001D468 /* DSL */ = {
+			isa = PBXGroup;
+			children = (
+				FA0C96511EE7768E00EA6EC8 /* Protocols */,
+				FA0C964D1EE7645B00EA6EC8 /* Operators */,
+				FACA79821EE671460001D468 /* Extensions */,
+				FACA797E1EE6710D0001D468 /* Anchors */,
+			);
+			path = DSL;
+			sourceTree = "<group>";
+		};
+		FACA797E1EE6710D0001D468 /* Anchors */ = {
+			isa = PBXGroup;
+			children = (
+				FACA797F1EE6712A0001D468 /* LayoutAnchor.swift */,
+				FA0C96551EE776C600EA6EC8 /* AnchorProxies.swift */,
+			);
+			path = Anchors;
+			sourceTree = "<group>";
+		};
+		FACA79821EE671460001D468 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FACA79831EE671880001D468 /* UIView+Anchors.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FACC8FD21D98A52500589230 /* Carthage */ = {
@@ -2344,7 +2456,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog-frameworks.sh\"\n";
+			shellScript = "if [ ! -z \"${SKIP_PODS}\" ]\nthen\necho \"Skipping Embed Pods\"\nelse\n\"${SRCROOT}/Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog-frameworks.sh\"\nfi";
 			showEnvVarsInLog = 0;
 		};
 		30A43601DB775A1683E45B04 /* [CP] Copy Pods Resources */ = {
@@ -2389,7 +2501,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "if [ ! -z \"${SKIP_PODS}\" ]\nthen\necho \"Skipping Check Pods\"\nelse\ndiff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\nfi";
 			showEnvVarsInLog = 0;
 		};
 		B70C2C9096055217B1A095D8 /* [CP] Check Pods Manifest.lock */ = {
@@ -2403,8 +2515,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellPath = /bin/bash;
+			shellScript = "if [ ! -z \"${SKIP_PODS}\" ]\nthen\necho \"Skipping Check Pods\"\nelse\ndiff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\nfi";
 			showEnvVarsInLog = 0;
 		};
 		F06FD0C2036AEF6649093ED3 /* [CP] Copy Pods Resources */ = {
@@ -2419,7 +2531,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog-resources.sh\"\n";
+			shellScript = "if [ ! -z \"${SKIP_PODS}\" ]\nthen\necho \"Skipping Copy Pods\"\nelse\n\"${SRCROOT}/Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog-resources.sh\"\nfi";
 			showEnvVarsInLog = 0;
 		};
 		FA2B1EAD1EC932DC00E44613 /* Build Metal Shader Library */ = {
@@ -2448,7 +2560,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "if [ \"${ARCHS}\" == \"x86_64\" ]; then\n    echo \"Clearing simulator permissions\"\n    ruby ${PROJECT_DIR}/Scripts/resetAppPermisionsForSimulators.rb\nfi";
+			shellScript = "if [ \"${ARCHS}\" == \"x86_64\" ]; then\nif [ ! -z \"${SKIP_SIMULATOR_PERMISSIONS_RESET}\" ]\nthen\necho \"Skipping Simulator Permissions Reset\"\nelse\n    echo \"Clearing simulator permissions\"\n    ruby ${PROJECT_DIR}/Scripts/resetAppPermisionsForSimulators.rb\nfi\nfi";
 		};
 		FA5709AB1ECC7B2F000362C8 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2462,7 +2574,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if [ ! -z \"${SKIP_LINT}\" ]\nthen\necho \"Skipping Lint\"\nelse\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\nfi";
 		};
 		FA76F5431ED3C93800059906 /* Integrate Reveal */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2476,7 +2588,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "if [ \"${ARCHS}\" != \"x86_64\" ]; then\n    REVEAL_APP_PATH=$(mdfind kMDItemCFBundleIdentifier=\"com.ittybittyapps.Reveal2\" | head -n 1)\n    BUILD_SCRIPT_PATH=\"${REVEAL_APP_PATH}/Contents/SharedSupport/Scripts/reveal_server_build_phase.sh\"\n    if [ \"${REVEAL_APP_PATH}\" -a -e \"${BUILD_SCRIPT_PATH}\" ]; then\n        \"${BUILD_SCRIPT_PATH}\"\n    else\n        echo \"Reveal Server not loaded: Cannot find a compatible Reveal app.\"\n    fi\nfi";
+			shellScript = "if [ ! -z \"${BUILD_LAYOUT}\" ]\nthen\necho \"Integrating Reveal\"\nREVEAL_APP_PATH=$(mdfind kMDItemCFBundleIdentifier=\"com.ittybittyapps.Reveal2\" | head -n 1)\nBUILD_SCRIPT_PATH=\"${REVEAL_APP_PATH}/Contents/SharedSupport/Scripts/reveal_server_build_phase.sh\"\nif [ \"${REVEAL_APP_PATH}\" -a -e \"${BUILD_SCRIPT_PATH}\" ]; then\n\"${BUILD_SCRIPT_PATH}\"\nelse\necho \"Reveal Server not loaded: Cannot find a compatible Reveal app.\"\nfi\nfi";
 		};
 		FA76F5491ED4A29100059906 /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2648,6 +2760,7 @@
 				FA0462BB1EC3DF88007B74A0 /* Kit.swift in Sources */,
 				FA3AAA911EE24C8F006028AC /* CameraController+Device.swift in Sources */,
 				FAF10D0E1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
+				FA0C96531EE776A300EA6EC8 /* CoreLayout.swift in Sources */,
 				FA6477571EE39E9500A63A22 /* EditBar+ProgressControls.swift in Sources */,
 				FA5709A61ECC7172000362C8 /* PhotosPermissionViewController.swift in Sources */,
 				FA8CE4281ECD8AE700788026 /* UIGestureRecognizer+Closure.swift in Sources */,
@@ -2655,6 +2768,7 @@
 				FA5F8C971ECFE7D000921A61 /* BaseCaptureViewController+Kit.swift in Sources */,
 				FA3AAAA61EE259C0006028AC /* Renderer+View.swift in Sources */,
 				FA2B1E711EC9239F00E44613 /* CheckmarkIcon.swift in Sources */,
+				FA0C964F1EE7647300EA6EC8 /* AnchorOperators.swift in Sources */,
 				FA5709A21ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift in Sources */,
 				FA76F5461ED48FFC00059906 /* ImageCaptureManager.swift in Sources */,
 				FAF10D181ECAFF1D0008690E /* PermissionsWindow.swift in Sources */,
@@ -2663,6 +2777,7 @@
 				FA3AAA8D1EE24C6E006028AC /* CameraController+Presets.swift in Sources */,
 				FA78F29A1E15662B00D34947 /* DebugBarView.swift in Sources */,
 				FA2F8E4E1DA22AD700993949 /* ChromaticAberrationFilter.swift in Sources */,
+				FACA79711EE4CF9B0001D468 /* KitsViewController.swift in Sources */,
 				FA8AA5411ECC107F0093D317 /* ButtonIndicatorIcon.swift in Sources */,
 				FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */,
 				FA1A2C9D1ECC57C60075FA0B /* PermissionsEducationViewController.swift in Sources */,
@@ -2678,6 +2793,7 @@
 				FA2B1E6D1EC9235700E44613 /* PathIcon.swift in Sources */,
 				FA6477621EE39FBD00A63A22 /* EditBar+SettingComponent.swift in Sources */,
 				FAF10CFE1ECAA87C0008690E /* FlipCameraIcon.swift in Sources */,
+				FACA79841EE671880001D468 /* UIView+Anchors.swift in Sources */,
 				FA834BDD1D9920010017CCCA /* Platform.swift in Sources */,
 				FA5F8C9F1ECFF81400921A61 /* UIScreen+Layout.swift in Sources */,
 				FABB16AD1D9F6DAB00A8AC6C /* ChromaticAberration.metal in Sources */,
@@ -2700,7 +2816,10 @@
 				FA0462B91EC3DF81007B74A0 /* KitManager.swift in Sources */,
 				FA5F8CA61ED0649200921A61 /* Font+Convenience.swift in Sources */,
 				FA3AAAAC1EE25AC1006028AC /* Renderer+Shaders.swift in Sources */,
+				FA0C96561EE776C600EA6EC8 /* AnchorProxies.swift in Sources */,
 				FA5F8CB31ED0958100921A61 /* KeepUpright.swift in Sources */,
+				FACA797A1EE66A5B0001D468 /* KitTableViewCell.swift in Sources */,
+				FACA79801EE6712A0001D468 /* LayoutAnchor.swift in Sources */,
 				FA2F8E471DA2293000993949 /* AbstractFilter.swift in Sources */,
 				FA8CE4251ECD7FA700788026 /* UIView+subviews.swift in Sources */,
 				FA0462C51EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift in Sources */,
@@ -2740,6 +2859,7 @@
 				FA0462C21EC3E002007B74A0 /* Component.swift in Sources */,
 				FAADE0D31D9D0C4300AA5729 /* Passthrough.metal in Sources */,
 				FA3AAAB01EE25B8E006028AC /* Renderer+AspectRatio.swift in Sources */,
+				FACA79751EE4CFEB0001D468 /* Theme.swift in Sources */,
 				FA18059F1EC688D9004351B7 /* EditRounding.swift in Sources */,
 				FA3AAAAA1EE25A7C006028AC /* Renderer+Device.swift in Sources */,
 				FA5F8CB01ED06A5F00921A61 /* CaptureComponent.swift in Sources */,
@@ -2792,6 +2912,7 @@
 				FA2B1E9D1EC92B5B00E44613 /* FrontBackCameraToggle.swift in Sources */,
 				FA2B1E7A1EC92AF600E44613 /* SimulatorCaptureViewController.swift in Sources */,
 				FA2B1E971EC92B5B00E44613 /* MetalCaptureViewController.swift in Sources */,
+				FACA79811EE6712A0001D468 /* LayoutAnchor.swift in Sources */,
 				FA2B1E8B1EC92B5B00E44613 /* CaptureButton.swift in Sources */,
 				FA3AAA931EE24CBB006028AC /* CameraController+StillOutput.swift in Sources */,
 				FA3AAAB61EE25E0F006028AC /* Renderer+View.swift in Sources */,
@@ -2819,11 +2940,13 @@
 				FA2B1E581EC80E8500E44613 /* FeatureCatalogViewController.swift in Sources */,
 				FA3AAA9A1EE24E67006028AC /* CameraController+Preview.swift in Sources */,
 				FACFE4941ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */,
+				FACA79721EE4CF9B0001D468 /* KitsViewController.swift in Sources */,
 				FA2B1E961EC92B5B00E44613 /* EditSize.swift in Sources */,
 				FA5F8CB11ED06A5F00921A61 /* CaptureComponent.swift in Sources */,
 				FA2B1EB01EC97CE000E44613 /* DeleteLineIcon.swift in Sources */,
 				FA2B1EA51EC92B5B00E44613 /* CameraRenderView.swift in Sources */,
 				FA2B1E7E1EC92B5B00E44613 /* CircleView.swift in Sources */,
+				FACA79761EE4CFEB0001D468 /* Theme.swift in Sources */,
 				FA2B1E8E1EC92B5B00E44613 /* ComponentMenuBarDelegate.swift in Sources */,
 				FA2B1E981EC92B5B00E44613 /* ComponentMenuBar.swift in Sources */,
 				FA2B1E8C1EC92B5B00E44613 /* KitManager.swift in Sources */,
@@ -2838,6 +2961,7 @@
 				FA3AAABB1EE25E15006028AC /* Renderer+Buffers.swift in Sources */,
 				FA2B1E901EC92B5B00E44613 /* Vertices.swift in Sources */,
 				FA2B1EA11EC92B5B00E44613 /* EditRounding.swift in Sources */,
+				FACA79851EE671880001D468 /* UIView+Anchors.swift in Sources */,
 				FA6477641EE39FBD00A63A22 /* EditBar+SettingComponent.swift in Sources */,
 				FA3AAA971EE24E5E006028AC /* CameraController+Debug.swift in Sources */,
 				FA5F8CB41ED0958100921A61 /* KeepUpright.swift in Sources */,
@@ -2848,9 +2972,12 @@
 				FA2B1E751EC927FB00E44613 /* Views+AutoLayout.swift in Sources */,
 				FA1C23811ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift in Sources */,
 				FA2B1EB61EC9824E00E44613 /* RoundableView.swift in Sources */,
+				FA0C96501EE7647300EA6EC8 /* AnchorOperators.swift in Sources */,
 				FAF10D091ECAD03A0008690E /* BaseCaptureViewController+Debug.swift in Sources */,
 				FA2B1E861EC92B5B00E44613 /* DebugBarItem.swift in Sources */,
 				FA2B1E831EC92B5B00E44613 /* DragGesture.swift in Sources */,
+				FA0C96541EE776A300EA6EC8 /* CoreLayout.swift in Sources */,
+				FA0C96571EE776C600EA6EC8 /* AnchorProxies.swift in Sources */,
 				FA8AA5461ECC13140093D317 /* CanvasIconView.swift in Sources */,
 				FA3AAABA1EE25E15006028AC /* Renderer+Sampling.swift in Sources */,
 				FA2B1EB31EC97E7300E44613 /* CodeIconButton.swift in Sources */,
@@ -2885,6 +3012,7 @@
 				FA7724D41ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift in Sources */,
 				FA2B1E891EC92B5B00E44613 /* FragmentFilter.swift in Sources */,
 				FA2B1EA61EC92B5B00E44613 /* DebugBarItemView.swift in Sources */,
+				FACA797C1EE66A5B0001D468 /* KitTableViewCell.swift in Sources */,
 				FA5F8CA01ECFF81400921A61 /* UIScreen+Layout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

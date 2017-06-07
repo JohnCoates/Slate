@@ -16,8 +16,9 @@ enum FixedLayoutPriority {
     case high
     case ultraHigh
     case required
+    case custom(custom: Float)
     
-    fileprivate var rawValue: UILayoutPriority {
+    var rawValue: UILayoutPriority {
             switch self {
             case .ultraLow:
                 return UILayoutPriorityDefaultLow - 1
@@ -29,6 +30,8 @@ enum FixedLayoutPriority {
                 return UILayoutPriorityDefaultHigh + 1
             case .required:
                 return UILayoutPriorityRequired
+            case .custom(let custom):
+                return custom
             }
     }
 }

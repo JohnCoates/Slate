@@ -113,6 +113,7 @@ class FeatureCatalogViewController: UITableViewController {
     lazy var sections: [Section] = {
         return [
             self.captureScreen(),
+            self.kitsTab(),
             self.buttons()
         ]
     }()
@@ -153,6 +154,15 @@ class FeatureCatalogViewController: UITableViewController {
             ]
         
         return Section(title: "Capture Screen", items: items)
+    }
+    
+    func kitsTab() -> Section {
+        let items: [FeatureCatalogItem] = [
+            FeatureCatalogItem(name: "Kits",
+                               creationBlock: { KitsViewController() })
+        ]
+        
+        return Section(title: "Kits Tab", items: items)
     }
     
     func buttons() -> Section {
