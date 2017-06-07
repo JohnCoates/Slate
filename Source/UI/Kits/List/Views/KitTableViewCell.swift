@@ -30,6 +30,7 @@ final class KitTableViewCell: UITableViewCell {
         contentView.backgroundColor = Theme.Kits.background
         
         contentView.height.pin(to: 86, rank: .high)
+        contentView.translatesAutoresizingMaskIntoConstraints = true
         
         setUpIconView()
         setUpTextStack()
