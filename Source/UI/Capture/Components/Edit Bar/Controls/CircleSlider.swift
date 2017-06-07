@@ -6,8 +6,7 @@
 //  Copyright © 2017 John Coates. All rights reserved.
 //
 
-import Foundation
-import Cartography
+import UIKit
 
 final class CircleSlider: UIView {
     
@@ -114,10 +113,7 @@ final class CircleSlider: UIView {
         valueLabel.textAlignment = .center
         innerCircle.addSubview(valueLabel)
         
-        constrain(valueLabel) {
-            let superview = $0.superview!
-            $0.center == superview.center
-        }
+        valueLabel.centerXY --> innerCircle.centerXY
     }
     
     private func updateLabel() {

@@ -19,8 +19,8 @@
 		FA0462C71EC4252D007B74A0 /* ComponentItemCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */; };
 		FA0C964F1EE7647300EA6EC8 /* AnchorOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */; };
 		FA0C96501EE7647300EA6EC8 /* AnchorOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */; };
-		FA0C96591EE8952800EA6EC8 /* LayoutAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C96581EE8952800EA6EC8 /* LayoutAttribute.swift */; };
-		FA0C965A1EE8952800EA6EC8 /* LayoutAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C96581EE8952800EA6EC8 /* LayoutAttribute.swift */; };
+		FA0C96591EE8952800EA6EC8 /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C96581EE8952800EA6EC8 /* Anchor.swift */; };
+		FA0C965A1EE8952800EA6EC8 /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C96581EE8952800EA6EC8 /* Anchor.swift */; };
 		FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */; };
 		FA18058B1EC46FAE004351B7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1805891EC46FAE004351B7 /* Realm.framework */; };
 		FA18058C1EC46FAE004351B7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; };
@@ -485,7 +485,7 @@
 		FA06348D1ED4ACA800C8FC90 /* Private.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Private.xcconfig; sourceTree = "<group>"; };
 		FA0634961ED4B1C300C8FC90 /* AppStore.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppStore.xcconfig; sourceTree = "<group>"; };
 		FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorOperators.swift; sourceTree = "<group>"; };
-		FA0C96581EE8952800EA6EC8 /* LayoutAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutAttribute.swift; sourceTree = "<group>"; };
+		FA0C96581EE8952800EA6EC8 /* Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
 		FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = GaussianBlur.metal; sourceTree = "<group>"; };
 		FA1805891EC46FAE004351B7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		FA18058A1EC46FAE004351B7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
@@ -2004,7 +2004,7 @@
 		FACA797E1EE6710D0001D468 /* Anchors */ = {
 			isa = PBXGroup;
 			children = (
-				FA0C96581EE8952800EA6EC8 /* LayoutAttribute.swift */,
+				FA0C96581EE8952800EA6EC8 /* Anchor.swift */,
 			);
 			path = Anchors;
 			sourceTree = "<group>";
@@ -2775,7 +2775,7 @@
 				FA78F2941E144E4E00D34947 /* DebugBarItem.swift in Sources */,
 				FA2B1E6D1EC9235700E44613 /* PathIcon.swift in Sources */,
 				FA6477621EE39FBD00A63A22 /* EditBar+SettingComponent.swift in Sources */,
-				FA0C96591EE8952800EA6EC8 /* LayoutAttribute.swift in Sources */,
+				FA0C96591EE8952800EA6EC8 /* Anchor.swift in Sources */,
 				FAF10CFE1ECAA87C0008690E /* FlipCameraIcon.swift in Sources */,
 				FACA79841EE671880001D468 /* UIView+Anchors.swift in Sources */,
 				FA834BDD1D9920010017CCCA /* Platform.swift in Sources */,
@@ -2912,7 +2912,7 @@
 				FAF10D0F1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
 				FA6477601EE39F4000A63A22 /* EditBar+EditBorder.swift in Sources */,
 				FA8CE4261ECD7FA700788026 /* UIView+subviews.swift in Sources */,
-				FA0C965A1EE8952800EA6EC8 /* LayoutAttribute.swift in Sources */,
+				FA0C965A1EE8952800EA6EC8 /* Anchor.swift in Sources */,
 				FA2B1E881EC92B5B00E44613 /* ChromaticAberration.metal in Sources */,
 				FA3AAAA11EE24EA5006028AC /* CameraController+Session.swift in Sources */,
 				FA5709A31ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift in Sources */,

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Cartography
 
 class GroupedPathButton: Button {
     
@@ -49,10 +48,7 @@ class GroupedPathButton: Button {
             if let widthRatio = iconWidthRatio,
                 let widthConstraint = iconProxy.constraintWithAttribute(.width) {
                 NSLayoutConstraint.deactivate([widthConstraint])
-                constrain(iconProxy) {
-                    let superview = $0.superview!
-                    $0.width == superview.width * widthRatio
-                }
+                iconProxy.width.pin(to: contentView.width, times: widthRatio)
             }
         }
     }
@@ -63,16 +59,14 @@ class GroupedPathButton: Button {
         
         let heightRatio = icon.height / icon.width
         
-        constrain(iconProxy) {
-            let superview = $0.superview!
-            $0.center == superview.center
-            if let iconWidthRatio = self.iconWidthRatio {
-                $0.width == superview.width * iconWidthRatio
-            } else {
-                $0.width == 19
-            }
-            $0.height == $0.width * heightRatio
+        iconProxy.centerXY --> contentView.centerXY
+        if let widthRatio = self.iconWidthRatio {
+            iconProxy.width.pin(to: contentView.width, times: widthRatio)
+        } else {
+            iconProxy.width --> 19
         }
+        
+        iconProxy.height.pin(to: iconProxy.width, times: heightRatio)
     }
     
     // MARK: - Icon

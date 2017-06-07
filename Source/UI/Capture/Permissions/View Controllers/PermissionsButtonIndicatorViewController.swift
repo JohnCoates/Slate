@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Cartography
 
 class PermissionsButtonIndicatorViewController: UIViewController {
     
@@ -42,12 +41,12 @@ class PermissionsButtonIndicatorViewController: UIViewController {
         view.addSubview(indicator)
         
         let heightRatio = indicator.icon.height / indicator.icon.width
-        constrain(indicator, okayButtonPlaceholder) { indicator, okayButtonPlaceholder in
-            indicator.centerX == okayButtonPlaceholder.centerX
-            indicatorTopConstraint = indicator.top == (okayButtonPlaceholder.bottom + indicatorDistance)
-            indicator.width == 20
-            indicator.height == indicator.width * heightRatio
-        }
+        
+        indicator.centerX --> okayButtonPlaceholder.centerX
+        indicatorTopConstraint = indicator.top.pin(to: okayButtonPlaceholder.bottom,
+                                                   add: indicatorDistance)
+        indicator.width --> 20
+        indicator.height.pin(to: indicator.width, times: heightRatio)
     }
     
     override func viewWillAppear(_ animated: Bool) {

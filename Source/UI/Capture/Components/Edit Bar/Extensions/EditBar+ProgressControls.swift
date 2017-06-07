@@ -6,8 +6,7 @@
 //  Copyright © 2017 John Coates. All rights reserved.
 //
 
-import Foundation
-import Cartography
+import UIKit
 
 fileprivate typealias LocalClass = ComponentEditBar
 extension ComponentEditBar {
@@ -33,14 +32,10 @@ extension ComponentEditBar {
         addSubview(control)
         controls.append(control)
         
-        constrain(control) {
-            let superview = $0.superview!
-            $0.width == LocalClass.progressControlWidth
-            $0.height == $0.width
-            
-            $0.left >= superview.leftMargin
-            $0.centerY == superview.centerY
-        }
+        control.width --> LocalClass.progressControlWidth
+        control.height --> control.width
+        control.left -->+= leftMargin
+        control.centerY --> centerY
         
         setLeftConstraint(forControl: control)
         addTitleLabel(withText: settings.name, forControl: control)

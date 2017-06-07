@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Cartography
+import UIKit
 
 class DebugBarItemView: UIView {
     
@@ -44,14 +44,11 @@ class DebugBarItemView: UIView {
         setContentCompressionResistancePriority(50, for: .horizontal)
         addSubview(label)
         
-        constrain(label) {
-            let superview = $0.superview!
-            $0.left >= superview.left
-            $0.right <= superview.right
-            $0.top >= superview.top
-            $0.bottom <= superview.bottom
-            $0.center == superview.center ~ 1000
-        }
+        label.left -->+= left
+        label.right -->-= right
+        label.top -->+= top
+        label.bottom -->-= bottom
+        label.centerXY --> centerXY
     }
     
     // MARK: - Setup

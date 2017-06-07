@@ -6,8 +6,7 @@
 //  Copyright © 2016 John Coates. All rights reserved.
 //
 
-import Foundation
-import Cartography
+import UIKit
 
 final class DebugBarView: UIView {
     
@@ -53,13 +52,7 @@ final class DebugBarView: UIView {
         stackView.isLayoutMarginsRelativeArrangement = true
         addSubview(stackView)
         
-        constrain(stackView) {
-            let superview = $0.superview!
-            $0.left == superview.left
-            $0.right == superview.right
-            $0.top == superview.top
-            $0.bottom == superview.bottom
-        }
+        stackView.edges --> edges
     }
     
     // MARK: - Stack View

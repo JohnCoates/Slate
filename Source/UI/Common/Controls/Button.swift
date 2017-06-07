@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Cartography
 
 class Button: UIView {
     
@@ -63,10 +62,7 @@ class Button: UIView {
         contentView.accessibilityIdentifier = "Button:ContentView"
         addSubview(contentView)
         
-        constrain(contentView) {
-            let superview = $0.superview!
-            $0.edges == superview.edges
-        }
+        contentView.edges --> edges
     }
     
     // MARK: - Visualize Touch Response

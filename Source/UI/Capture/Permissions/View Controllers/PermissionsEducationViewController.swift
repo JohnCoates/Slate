@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Cartography
 import AVFoundation
 
 fileprivate typealias LocalClass = PermissionsEducationViewController
@@ -87,14 +86,6 @@ class PermissionsEducationViewController: UIViewController {
         imageView.centerX --> dialog.centerX
         imageView.width --> educationImageSize.width
         imageView.height --> educationImageSize.height
-        
-//        constrain(imageView) {
-//            let superview = $0.superview!
-//            $0.top == superview.top + 23
-//            $0.centerX == superview.centerX
-//            $0.width == educationImageSize.width
-//            $0.height == educationImageSize.height
-//        }
     }
     
     let explanationLabel = UILabel()
@@ -114,16 +105,6 @@ class PermissionsEducationViewController: UIViewController {
         explanationLabel.width.pin(to: dialog.width, times: 0.9)
         explanationLabel.centerX --> dialog.centerX
         explanationLabel.top.pin(to: imageView.bottom, add: 24)
-        
-//        constrain(explanationLabel) {
-//            let superview = $0.superview!
-//            $0.width == superview.width * 0.9
-//            $0.centerX == superview.centerX
-//        }
-        
-//        constrain(explanationLabel, imageView) { explanationLabel, imageView in
-//            explanationLabel.top == imageView.bottom + 24
-//        }
     }
     
     var previewView: UIView?
@@ -186,19 +167,6 @@ class PermissionsEducationViewController: UIViewController {
         case .bottom:
             separator.bottom --> cellView.bottom
         }
-        
-//        constrain(separator) {
-//            let superview = $0.superview!
-//            $0.height == 1.pixelsAsPoints
-//            $0.left == superview.left
-//            $0.right == superview.right
-//            switch kind {
-//            case .top:
-//                $0.top == superview.top
-//            case .bottom:
-//                $0.bottom == superview.bottom
-//            }
-//        }
     }
     
     func setUpButtons() {
@@ -227,11 +195,6 @@ class PermissionsEducationViewController: UIViewController {
         }
         
         superview.bottomMargin -->+= lastButtonReal.bottom
-        
-//        constrain(lastButtonReal) {
-//            let superview = $0.superview!
-//            superview.bottomMargin >= $0.bottom
-//        }
     }
     
     func generateView(forButton dialogButton: DialogButton) -> Button {
@@ -248,22 +211,11 @@ class PermissionsEducationViewController: UIViewController {
         
         label.centerXY --> button.centerXY
         
-//        constrain(label) {
-//            let superview = $0.superview!
-//            $0.center == superview.center
-//        }
-        
         dialog.addSubview(button)
         
         button.height --> 36
         button.width.pin(to: dialog.width, times: 0.88)
         button.centerX --> dialog.centerX
-//        constrain(button) {
-//            let superview = $0.superview!
-//            $0.height == 36
-//            $0.width == superview.width * 0.88
-//            $0.centerX == superview.centerX
-//        }
         
         return button
     }

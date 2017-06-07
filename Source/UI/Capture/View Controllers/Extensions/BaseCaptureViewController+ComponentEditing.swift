@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Cartography
 
 fileprivate typealias LocalClass = BaseCaptureViewController
 extension BaseCaptureViewController: ComponentEditBarDelegate {
@@ -16,20 +15,16 @@ extension BaseCaptureViewController: ComponentEditBarDelegate {
     
     func componentEditBarSetup() {
         view.addSubview(editBar)
-        var verticalConstraint: NSLayoutConstraint!
-        constrain(editBar) {
-            let superview = $0.superview!
-            $0.left == superview.left
-            $0.height == 100
-            $0.width == superview.width
-            $0.top >= superview.top ~ 1000
-            $0.bottom <= superview.bottom ~ 1000
-            verticalConstraint = $0.top == superview.top + 300
-            verticalConstraint ~ 400
-        }
+        editBar.left --> view.left
+        editBar.height --> 100
+        editBar.width --> view.width
+        editBar.top -->+= view.top
+        editBar.bottom -->-= view.bottom
+        editBarVerticalConstraint = editBar.top.pin(to: view.top, add: 300, rank: 400)
+        
         editBar.delegate = self
         editBar.isHidden = true
-        editBarVerticalConstraint = verticalConstraint
+        
         editBarDraggableSetup()
     }
     
@@ -66,14 +61,11 @@ extension BaseCaptureViewController: ComponentEditBarDelegate {
     
     fileprivate func loadComponentEditBar() {
         let editControl = CircleSlider()
-        self.view.addSubview(editControl)
+        view.addSubview(editControl)
         
-        constrain(editControl) {
-            let superview = $0.superview!
-            $0.center == superview.center
-            $0.width == 50
-            $0.height == $0.width
-        }
+        editControl.centerXY --> view.centerXY
+        editControl.width --> 50
+        editControl.height --> editControl.width
     }
     
     func configureEditBar(withTargetComponent target: Component) {

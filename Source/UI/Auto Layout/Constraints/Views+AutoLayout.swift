@@ -10,13 +10,17 @@ import UIKit
 
 // Placed outside of extension because placing it inside is
 // causing syntax highlighting crashes
-enum FixedLayoutPriority {
+enum FixedLayoutPriority: ExpressibleByIntegerLiteral {
     case ultraLow
     case low
     case high
     case ultraHigh
     case required
     case custom(custom: Float)
+    
+    init(integerLiteral value: IntegerLiteralType) {
+        self = .custom(custom: Float(value))
+    }
     
     var rawValue: UILayoutPriority {
             switch self {

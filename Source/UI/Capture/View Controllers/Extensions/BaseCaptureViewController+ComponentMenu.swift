@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Cartography
 
 fileprivate typealias LocalClass = BaseCaptureViewController
 extension BaseCaptureViewController: ComponentMenuBarDelegate {
@@ -17,27 +16,17 @@ extension BaseCaptureViewController: ComponentMenuBarDelegate {
 //        let blurEffect = UIBlurEffect(style: .light)
 //        let visualEffectView = UIVisualEffectView(effect: blurEffect)
 //        menuView.addSubview(visualEffectView)
-//        constrain(visualEffectView) {
-//            let superview = $0.superview!
-//            $0.edges == superview.edges
-//        }
+//        visualEffectView.edges --> menuView.edges
         
         menuView.backgroundColor = UIColor.white.withAlphaComponent(0.7)
         view.addSubview(menuView)
         
-        var verticalConstraint: NSLayoutConstraint!
-        constrain(menuView) {
-            let superview = $0.superview!
-            $0.left == superview.left
-            $0.height == 55
-            $0.width == superview.width
-            $0.top >= superview.top ~ 1000
-            $0.bottom <= superview.bottom ~ 1000
-            verticalConstraint = $0.top == superview.top + 100
-            verticalConstraint ~ 400
-        }
-        
-        menuVerticalConstraint = verticalConstraint
+        menuView.left --> view.left
+        menuView.height --> 55
+        menuView.width --> view.width
+        menuView.top -->+= view.top
+        menuView.bottom -->-= view.bottom
+        menuVerticalConstraint = menuView.top.pin(to: view.top, add: 100, rank: .low)
         menuDraggableSetup()
     }
     

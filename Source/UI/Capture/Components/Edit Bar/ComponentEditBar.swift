@@ -6,8 +6,7 @@
 //  Copyright © 2017 John Coates. All rights reserved.
 //
 
-import Foundation
-import Cartography
+import UIKit
 
 fileprivate typealias LocalClass = ComponentEditBar
 
@@ -45,13 +44,10 @@ class ComponentEditBar: UIView {
         saveButton.setTappedCallback(instance: self, method: Method.saveTapped)
         addSubview(saveButton)
         
-        constrain(saveButton) {
-            let superview = $0.superview!
-            $0.width == 35
-            $0.height == 35
-            $0.top == superview.top + 15
-            $0.right == superview.right - 10
-        }
+        saveButton.width --> 35
+        saveButton.height --> 35
+        saveButton.top.pin(to: top, add: 15)
+        saveButton.right.pin(to: right, add: -10)
     }
     
     let cancelButton = InverseMaskButton(icon: XIcon())
@@ -59,11 +55,9 @@ class ComponentEditBar: UIView {
         cancelButton.setTappedCallback(instance: self, method: Method.cancelTapped)
         addSubview(cancelButton)
         
-        constrain(cancelButton, saveButton) { cancelButton, saveButton in
-            cancelButton.size == saveButton.size
-            cancelButton.top == saveButton.bottom + 2
-            cancelButton.left == saveButton.left
-        }
+        cancelButton.size --> saveButton.size
+        cancelButton.top.pin(to: saveButton.bottom, add: 2)
+        cancelButton.left --> saveButton.left
     }
     
     let titleButton = Button()
@@ -73,16 +67,12 @@ class ComponentEditBar: UIView {
         
         titleButton.setTappedCallback(instance: self, method: Method.titleTapped)
         addSubview(titleButton)
-        constrain(titleButton, titleLabel, titleInteractivityIndicator) {
-            titleButton, titleLabel, titleInteractivityIndicator in
-            let superview = titleButton.superview!
-            
-            titleButton.right >= titleInteractivityIndicator.right
-            titleButton.left == titleLabel.left
-            titleButton.top == superview.top + 6
-            titleButton.height == titleLabel.height
-            titleButton.centerX == superview.centerX
-        }
+        
+        titleButton.right --> titleInteractivityIndicator.right
+        titleButton.left --> titleLabel.left
+        titleButton.top.pin(to: top, add: 6)
+        titleButton.height --> titleLabel.height
+        titleButton.centerX --> centerX
     }
     
     let titleLabel: UILabel = UILabel(frame: .zero)
@@ -91,11 +81,9 @@ class ComponentEditBar: UIView {
         titleLabel.textColor = UIColor.white
         titleButton.addSubview(titleLabel)
         
-        constrain(titleLabel) {
-            let superview = $0.superview!
-            $0.top == superview.top
-            $0.left == superview.left
-        }
+        titleLabel.top --> titleButton.top
+        titleLabel.left --> titleButton.left
+        
         setUpTitleInteractivityIndicator()
     }
     
@@ -103,12 +91,10 @@ class ComponentEditBar: UIView {
     private func setUpTitleInteractivityIndicator() {
         titleButton.addSubview(titleInteractivityIndicator)
         
-        constrain(titleInteractivityIndicator, titleLabel) { titleInteractivityIndicator, titleLabel in
-            titleInteractivityIndicator.left == titleLabel.right + 4
-            titleInteractivityIndicator.centerY == titleLabel.centerY + 1
-            titleInteractivityIndicator.width == 11.5
-            titleInteractivityIndicator.height == 3.5
-        }
+        titleInteractivityIndicator.left.pin(to: titleLabel.right, add: 4)
+        titleInteractivityIndicator.centerY.pin(to: titleLabel.centerY, add: 1)
+        titleInteractivityIndicator.width --> 11.5
+        titleInteractivityIndicator.height --> 3.5
     }
     
     // MARK: - Progress Controls
@@ -127,14 +113,11 @@ class ComponentEditBar: UIView {
         controls.append(control)
         
         let innerCircleWidth = CircleSlider.defaultInnerWidth(withOuterWidth: LocalClass.progressControlWidth)
-        constrain(control) {
-            let superview = $0.superview!
-            $0.width == innerCircleWidth
-            $0.height == $0.width
-            
-            $0.left >= superview.leftMargin
-            $0.centerY == superview.centerY
-        }
+        control.width --> innerCircleWidth
+        control.height --> control.width
+        
+        control.left -->+= leftMargin
+        control.centerY --> centerY
         
         setLeftConstraint(forControl: control)
         addTitleLabel(withText: "Delete", forControl: control)
@@ -144,9 +127,7 @@ class ComponentEditBar: UIView {
     
     func setLeftConstraint(forControl control: UIView) {
         if let lastEditControl = lastEditControl {
-            constrain(control, lastEditControl) { control, lastEditControl in
-                control.left == lastEditControl.right + 20
-            }
+            control.left.pin(to: lastEditControl.right, add: 20)
         }
         lastEditControl = control
     }
@@ -159,11 +140,8 @@ class ComponentEditBar: UIView {
         addSubview(label)
         controls.append(label)
         
-        constrain(control, label) { control, label in
-            let superview = label.superview!
-            label.centerX == control.centerX
-            label.bottom == superview.bottom - 9
-        }
+        label.centerX --> control.centerX
+        label.bottom.pin(to: bottom, add: -9)
     }
     
     // MARK: - Setting Component

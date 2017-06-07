@@ -33,6 +33,10 @@ extension UIView {
         return DimensionAnchor(target: self, kind: .height)
     }
     
+    var size: SizeAnchor {
+        return SizeAnchor(target: self)
+    }
+    
     var centerX: Anchor<XAxis> {
         return Anchor<XAxis>(target: self, kind: .centerX)
     }
@@ -63,6 +67,10 @@ extension UIView {
     
     var lastBaseline: Anchor<YAxis> {
         return Anchor<YAxis>(target: self, kind: .lastBaseline)
+    }
+    
+    var edges: EdgesAnchor {
+        return EdgesAnchor(target: self)
     }
     
     // Margins

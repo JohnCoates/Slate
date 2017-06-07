@@ -8,7 +8,6 @@
 
 import UIKit
 import AVFoundation
-import Cartography
 
 final class SimulatorCaptureViewController: BaseCaptureViewController {
 
@@ -18,10 +17,7 @@ final class SimulatorCaptureViewController: BaseCaptureViewController {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "HannahDeathValley"))
         imageView.contentMode = .scaleAspectFill
         view.insertSubview(imageView, at: 0)
-        constrain(imageView) {
-            let superview = $0.superview!
-            $0.edges == superview.edges
-        }
+        imageView.edges --> view.edges
     }
 
     // MARK: - Capturing

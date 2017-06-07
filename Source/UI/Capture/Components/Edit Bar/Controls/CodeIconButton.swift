@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Cartography
 
 class CodeIconButton: Button {
     
@@ -46,12 +45,9 @@ class CodeIconButton: Button {
         contentView.addSubview(iconProxy)
         
         let heightRatio = icon.height / icon.width
-        constrain(iconProxy) {
-            let superview = $0.superview!
-            $0.center == superview.center
-            $0.width == 19
-            $0.height == $0.width * heightRatio
-        }
+        iconProxy.centerXY --> contentView.centerXY
+        iconProxy.width --> 19
+        iconProxy.height.pin(to: iconProxy.width, times: heightRatio)
     }
     
     // MARK: - Icon

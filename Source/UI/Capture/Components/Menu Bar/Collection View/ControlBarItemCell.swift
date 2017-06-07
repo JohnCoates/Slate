@@ -6,8 +6,7 @@
 //  Copyright © 2017 John Coates. All rights reserved.
 //
 
-import Foundation
-import Cartography
+import UIKit
 
 final class ControlBarItemCell: UICollectionViewCell {
     
@@ -49,12 +48,7 @@ final class ControlBarItemCell: UICollectionViewCell {
             return
         }
         contentView.addSubview(control)
-        constrain(control) {
-            let superview = $0.superview!
-            $0.width == superview.width
-            $0.height == superview.height
-            $0.center == superview.center
-        }
+        control.edges --> contentView.edges
         
         setUpTapAndHoldGesture()
     }

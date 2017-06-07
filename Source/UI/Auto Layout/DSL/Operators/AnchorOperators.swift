@@ -36,7 +36,15 @@ func --> (lhs: XYAnchor, rhs: XYAnchor) {
     lhs.pin(to: rhs)
 }
 
-// MARK: - Greater Or Equal To
+func --> (lhs: SizeAnchor, rhs: SizeAnchor) {
+    lhs.pin(to: rhs)
+}
+
+func --> (lhs: EdgesAnchor, rhs: EdgesAnchor) {
+    lhs.pin(to: rhs)
+}
+
+// MARK: - Greater Than Or Equal To
 
 infix operator -->+=: LayoutAtLeastAssignment
 precedencegroup LayoutAtLeastAssignment {
@@ -62,4 +70,48 @@ func -->+= (lhs: DimensionAnchor, rhs: CGFloat) {
 
 func -->+= (lhs: XYAnchor, rhs: XYAnchor) {
     lhs.pin(atLeast: rhs)
+}
+
+func -->+= (lhs: SizeAnchor, rhs: SizeAnchor) {
+    lhs.pin(atLeast: rhs)
+}
+
+func -->+= (lhs: EdgesAnchor, rhs: EdgesAnchor) {
+    lhs.pin(atLeast: rhs)
+}
+
+// MARK: - Less Than Or Equal To
+
+infix operator -->-=: LayoutAtMostAssignment
+precedencegroup LayoutAtMostAssignment {
+    lowerThan: AdditionPrecedence
+    higherThan: AssignmentPrecedence
+}
+
+func -->-= (lhs: Anchor<XAxis>, rhs: Anchor<XAxis>) {
+    lhs.pin(atMost: rhs)
+}
+
+func -->-= (lhs: Anchor<YAxis>, rhs: Anchor<YAxis>) {
+    lhs.pin(atMost: rhs)
+}
+
+func -->-= (lhs: DimensionAnchor, rhs: DimensionAnchor) {
+    lhs.pin(atMost: rhs)
+}
+
+func -->-= (lhs: DimensionAnchor, rhs: CGFloat) {
+    lhs.pin(atMost: rhs)
+}
+
+func -->-= (lhs: XYAnchor, rhs: XYAnchor) {
+    lhs.pin(atMost: rhs)
+}
+
+func -->-= (lhs: SizeAnchor, rhs: SizeAnchor) {
+    lhs.pin(atMost: rhs)
+}
+
+func -->-= (lhs: EdgesAnchor, rhs: EdgesAnchor) {
+    lhs.pin(atMost: rhs)
 }

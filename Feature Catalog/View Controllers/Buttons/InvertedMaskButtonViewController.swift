@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Cartography
 
 class InvertedMaskButtonViewController: UIViewController {
     
@@ -63,11 +62,9 @@ class InvertedMaskButtonViewController: UIViewController {
         }
         
         view.addSubview(button)
-        constrain(button) {
-            let superview = $0.superview!
-            $0.center == superview.center
-            $0.width == width
-            $0.height == $0.width * heightRatio
-        }
+        
+        button.centerXY --> view.centerXY
+        button.width --> width
+        button.height.pin(to: button.width, times: heightRatio)
     }
 }
