@@ -9,6 +9,46 @@
 import UIKit
 
 extension UIView {
+    var left2: Anchor<XAxis> {
+        return Anchor<XAxis>(target: self, kind: .left)
+    }
+    
+    var right2: Anchor<XAxis> {
+        return Anchor<XAxis>(target: self, kind: .right)
+    }
+    
+    var top2: Anchor<YAxis> {
+        return Anchor<YAxis>(target: self, kind: .top)
+    }
+    
+    var bottom2: Anchor<YAxis> {
+        return Anchor<YAxis>(target: self, kind: .bottom)
+    }
+    
+    var width2: DimensionAnchor {
+        return DimensionAnchor(target: self, kind: .width)
+    }
+    
+    var height2: DimensionAnchor {
+        return DimensionAnchor(target: self, kind: .height)
+    }
+    
+    var centerX2: Anchor<XAxis> {
+        return Anchor<XAxis>(target: self, kind: .centerX)
+    }
+    
+    var centerY2: Anchor<YAxis> {
+        return Anchor<YAxis>(target: self, kind: .centerY)
+    }
+    
+    var centerXY2: XYAnchor {
+        return XYAnchor(target: self, kind: .center)
+    }
+    
+    var bottomMargin: Anchor<YAxis> {
+        return Anchor<YAxis>(target: self, kind: .bottomMargin)
+    }
+    
     var left: LayoutAnchor<NSLayoutXAxisAnchor> {
         return LayoutAnchor<NSLayoutXAxisAnchor>(target: self, kind: .left)
     }
@@ -59,5 +99,9 @@ extension UIView {
     
     var lastBaseline: LayoutAnchor<NSLayoutYAxisAnchor> {
         return LayoutAnchor<NSLayoutYAxisAnchor>(target: self, kind: .lastBaseline)
+    }
+    
+    var centerXY: LayoutXYAnchor {
+        return LayoutXYAnchor(target: self, kind: .center)
     }
 }

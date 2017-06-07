@@ -42,9 +42,9 @@ final class KitTableViewCell: UITableViewCell {
         contentView.addSubview(iconView)
         
         iconView.left.pin(to: contentView.left, add: 7)
-        iconView.centerY == contentView.centerY
-        iconView.width == 50
-        iconView.height == iconView.width
+        iconView.centerY --> contentView.centerY
+        iconView.width --> 50
+        iconView.height --> iconView.width
     }
     
     lazy var textStack: UIStackView = {
@@ -61,7 +61,7 @@ final class KitTableViewCell: UITableViewCell {
         
         contentView.addSubview(textStack)
         textStack.left.pin(to: iconView.right, add: 12)
-        textStack.centerY == contentView.centerY
+        textStack.centerY --> contentView.centerY
         
         setUpTitleLabel()
         setUpAuthorLabel()
@@ -91,6 +91,6 @@ final class KitTableViewCell: UITableViewCell {
         contentView.addSubview(dateLabel)
         
         dateLabel.left.pin(to: authorLabel.right, add: 7)
-        dateLabel.baseline == authorLabel.baseline
+        dateLabel.baseline --> authorLabel.baseline
     }
 }

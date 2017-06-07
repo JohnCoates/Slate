@@ -62,12 +62,10 @@ class PermissionsEducationViewController: UIViewController {
         dialog.rounding = 0.05
         dialog.backgroundColor = UIColor.white
         view.addSubview(dialog)
-        constrain(dialog) {
-            let superview = $0.superview!
-            $0.center == superview.center
-            $0.width == 250
-            $0.height >= 100
-        }
+        
+        dialog.centerXY2 --> view.centerXY2
+        dialog.width2 --> 250
+        dialog.height2 -->+= 100
     }
     
     var educationImage: CanvasIcon?
@@ -85,13 +83,18 @@ class PermissionsEducationViewController: UIViewController {
         let imageView = CanvasIconView(icon: educationImage)
         self.imageView = imageView
         dialog.addSubview(imageView)
-        constrain(imageView) {
-            let superview = $0.superview!
-            $0.top == superview.top + 23
-            $0.centerX == superview.centerX
-            $0.width == educationImageSize.width
-            $0.height == educationImageSize.height
-        }
+        imageView.top.pin(to: dialog.top, add: 23)
+        imageView.centerX2 --> dialog.centerX2
+        imageView.width2 --> educationImageSize.width
+        imageView.height2 --> educationImageSize.height
+        
+//        constrain(imageView) {
+//            let superview = $0.superview!
+//            $0.top == superview.top + 23
+//            $0.centerX == superview.centerX
+//            $0.width == educationImageSize.width
+//            $0.height == educationImageSize.height
+//        }
     }
     
     let explanationLabel = UILabel()
@@ -108,15 +111,19 @@ class PermissionsEducationViewController: UIViewController {
         explanationLabel.textAlignment = .center
         dialog.addSubview(explanationLabel)
         
-        constrain(explanationLabel) {
-            let superview = $0.superview!
-            $0.width == superview.width * 0.9
-            $0.centerX == superview.centerX
-        }
+        explanationLabel.width2.pin(to: dialog.width2, times: 0.9)
+        explanationLabel.centerX2 --> dialog.centerX2
+        explanationLabel.top2.pin(to: imageView.bottom2, add: 24)
         
-        constrain(explanationLabel, imageView) { explanationLabel, imageView in
-            explanationLabel.top == imageView.bottom + 24
-        }
+//        constrain(explanationLabel) {
+//            let superview = $0.superview!
+//            $0.width == superview.width * 0.9
+//            $0.centerX == superview.centerX
+//        }
+        
+//        constrain(explanationLabel, imageView) { explanationLabel, imageView in
+//            explanationLabel.top == imageView.bottom + 24
+//        }
     }
     
     var previewView: UIView?
@@ -141,26 +148,21 @@ class PermissionsEducationViewController: UIViewController {
         preview.backgroundColor = UIColor.white
         
         dialog.addSubview(preview)
-        constrain(preview, explanationLabel) { preview, explanationLabel in
-            let superview = preview.superview!
-            preview.height == cellHeight
-            preview.left == superview.left
-            preview.right == superview.right
-            preview.top == explanationLabel.bottom + 16
-        }
         
+        preview.height2 --> cellHeight
+        preview.left2 --> dialog.left2
+        preview.right2 --> dialog.right2
+        preview.top2.pin(to: explanationLabel.bottom2, add: 16)
+
         addCellSeparator(kind: .top, toCellView: preview)
         addCellSeparator(kind: .bottom, toCellView: preview)
         
         preview.add(subviews: [label, toggle])
-        constrain(label, toggle) {
-            let superview = $0.superview!
-            $0.centerY == superview.centerY
-            $1.centerY == $0.centerY
-            
-            $0.left == superview.left + 15
-            $1.right == superview.right - 15
-        }
+        
+        label.centerY2 --> preview.centerY2
+        toggle.centerY2 --> preview.centerY2
+        label.left2.pin(to: preview.left2, add: 15)
+        toggle.right2.pin(to: preview.right2, add: -15)
         
         return preview
     }
@@ -175,18 +177,28 @@ class PermissionsEducationViewController: UIViewController {
         separator.backgroundColor = UIColor(red:0.78, green:0.78, blue:0.80, alpha:1.00)
         cellView.addSubview(separator)
         
-        constrain(separator) {
-            let superview = $0.superview!
-            $0.height == 1.pixelsAsPoints
-            $0.left == superview.left
-            $0.right == superview.right
-            switch kind {
-            case .top:
-                $0.top == superview.top
-            case .bottom:
-                $0.bottom == superview.bottom
-            }
+        separator.height2 --> 1.pixelsAsPoints
+        separator.left2 --> cellView.left2
+        separator.right2 --> cellView.right2
+        switch kind {
+        case .top:
+            separator.top2 --> cellView.top2
+        case .bottom:
+            separator.bottom2 --> cellView.bottom2
         }
+        
+//        constrain(separator) {
+//            let superview = $0.superview!
+//            $0.height == 1.pixelsAsPoints
+//            $0.left == superview.left
+//            $0.right == superview.right
+//            switch kind {
+//            case .top:
+//                $0.top == superview.top
+//            case .bottom:
+//                $0.bottom == superview.bottom
+//            }
+//        }
     }
     
     func setUpButtons() {
@@ -206,20 +218,20 @@ class PermissionsEducationViewController: UIViewController {
                 aboveView = explanationLabel
                 distanceFromAboveView = 16
             }
-            
-            constrain(button, aboveView) { button, aboveView in
-                button.top == aboveView.bottom + distanceFromAboveView
-            }
+
+            button.top.pin(to: aboveView.bottom, add: distanceFromAboveView)
             lastButton = button
         }
-        guard let lastButtonReal = lastButton else {
-            return
+        guard let lastButtonReal = lastButton, let superview = lastButtonReal.superview else {
+            fatalError("Can't finish setting up buttons")
         }
         
-        constrain(lastButtonReal) {
-            let superview = $0.superview!
-            superview.bottomMargin >= $0.bottom
-        }
+        superview.bottomMargin -->+= lastButtonReal.bottom2
+        
+//        constrain(lastButtonReal) {
+//            let superview = $0.superview!
+//            superview.bottomMargin >= $0.bottom
+//        }
     }
     
     func generateView(forButton dialogButton: DialogButton) -> Button {

@@ -15,15 +15,26 @@ class AnyCoreLayout<L: CoreLayout> {
         self.inner = inner
     }
     
-    func constrain(to: AnyCoreLayout<L>, add: CGFloat,
+    func constrain(to: AnyCoreLayout<L>, add: CGFloat = 0,
                    priority priorityMaybe: FixedLayoutPriority?) -> NSLayoutConstraint {
-        let anchor = inner.constraint(equalTo: to.inner as! NSLayoutAnchor<L.AnchorType>,
+        let constraint = inner.constraint(equalTo: to.inner as! NSLayoutAnchor<L.AnchorType>,
                                       constant: add)
         if let priority = priorityMaybe {
-            anchor.priority = priority.rawValue
+            constraint.priority = priority.rawValue
         }
-        anchor.isActive = true
-        return anchor
+        constraint.isActive = true
+        return constraint
+    }
+    
+    func constrain(atLeast to: AnyCoreLayout<L>, add: CGFloat = 0,
+                   priority priorityMaybe: FixedLayoutPriority?) -> NSLayoutConstraint {
+        let toAnchor = to.inner as! NSLayoutAnchor<L.AnchorType>
+        let constraint = inner.constraint(greaterThanOrEqualTo: toAnchor, constant: add)
+        if let priority = priorityMaybe {
+            constraint.priority = priority.rawValue
+        }
+        constraint.isActive = true
+        return constraint
     }
 }
 
@@ -34,12 +45,35 @@ class AnyCoreDimensionLayout: AnyCoreLayout<NSLayoutDimension> {
         super.init(inner)
     }
     
-    func constrain(to: CGFloat, priority priorityMaybe: FixedLayoutPriority?) -> NSLayoutConstraint {
-        let anchor = innerDimension.constraint(equalToConstant: to)
+    func constrain(to: AnyCoreDimensionLayout, add: CGFloat = 0, times: CGFloat = 1,
+                   priority priorityMaybe: FixedLayoutPriority?) -> NSLayoutConstraint {
+        let constraint = innerDimension.constraint(equalTo: to.innerDimension,
+                                                   multiplier: times, constant: add)
+        
         if let priority = priorityMaybe {
-            anchor.priority = priority.rawValue
+            constraint.priority = priority.rawValue
         }
-        anchor.isActive = true
-        return anchor
+        constraint.isActive = true
+        return constraint
+    }
+    
+    func constrain(to: CGFloat,
+                   priority priorityMaybe: FixedLayoutPriority?) -> NSLayoutConstraint {
+        let constraint = innerDimension.constraint(equalToConstant: to)
+        if let priority = priorityMaybe {
+            constraint.priority = priority.rawValue
+        }
+        constraint.isActive = true
+        return constraint
+    }
+    
+    func constrain(atLeast to: CGFloat,
+                   priority priorityMaybe: FixedLayoutPriority?) -> NSLayoutConstraint {
+        let constraint = innerDimension.constraint(greaterThanOrEqualToConstant: to)
+        if let priority = priorityMaybe {
+            constraint.priority = priority.rawValue
+        }
+        constraint.isActive = true
+        return constraint
     }
 }
