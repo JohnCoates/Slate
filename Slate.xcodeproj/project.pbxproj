@@ -49,8 +49,6 @@
 		FA2B1E5C1EC80EE100E44613 /* InvertedMaskButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E5B1EC80EE100E44613 /* InvertedMaskButtonViewController.swift */; };
 		FA2B1E5F1EC817C000E44613 /* InverseMaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E5E1EC817C000E44613 /* InverseMaskButton.swift */; };
 		FA2B1E601EC817C000E44613 /* InverseMaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E5E1EC817C000E44613 /* InverseMaskButton.swift */; };
-		FA2B1E611EC817D200E44613 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
-		FA2B1E631EC817E700E44613 /* Cartography.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA2B1E681EC922FD00E44613 /* LayoutConstraint+Modifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E671EC922FD00E44613 /* LayoutConstraint+Modifying.swift */; };
 		FA2B1E691EC922FD00E44613 /* LayoutConstraint+Modifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E671EC922FD00E44613 /* LayoutConstraint+Modifying.swift */; };
 		FA2B1E6D1EC9235700E44613 /* PathIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E6C1EC9235700E44613 /* PathIcon.swift */; };
@@ -120,11 +118,8 @@
 		FA2B1EBC1EC9A2B600E44613 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; };
 		FA2B1EBD1EC9A2B600E44613 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1805891EC46FAE004351B7 /* Realm.framework */; };
 		FA2B1EBE1EC9A2B600E44613 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; };
-		FA2B1EBF1EC9A2BA00E44613 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
-		FA2B1EC01EC9A2BB00E44613 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
 		FA2B1EC21EC9B78F00E44613 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA1805891EC46FAE004351B7 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA2B1EC31EC9B78F00E44613 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FA2B1EC41EC9B78F00E44613 /* Cartography.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA2F8E471DA2293000993949 /* AbstractFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E461DA2293000993949 /* AbstractFilter.swift */; };
 		FA2F8E481DA2293000993949 /* AbstractFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E461DA2293000993949 /* AbstractFilter.swift */; };
 		FA2F8E4A1DA2296E00993949 /* GaussianBlurFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E491DA2296E00993949 /* GaussianBlurFilter.swift */; };
@@ -304,8 +299,6 @@
 		FAB0AA6C1EC8083D008DCD23 /* FeatureCatalogAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0AA6B1EC8083D008DCD23 /* FeatureCatalogAppDelegate.swift */; };
 		FAB0AA731EC8083D008DCD23 /* FeatureCatalog.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB0AA721EC8083D008DCD23 /* FeatureCatalog.xcassets */; };
 		FAB0AA761EC8083D008DCD23 /* FeatureCatalogLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB0AA741EC8083D008DCD23 /* FeatureCatalogLaunchScreen.storyboard */; };
-		FABB16911D9E258D00A8AC6C /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABB16901D9E258D00A8AC6C /* Cartography.framework */; };
-		FABB16931D9E259900A8AC6C /* Cartography.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FABB16901D9E258D00A8AC6C /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FABB16981D9F14A100A8AC6C /* HUDTextureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16971D9F14A100A8AC6C /* HUDTextureViewController.swift */; };
 		FABB169B1D9F14FD00A8AC6C /* FloatPairFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB169A1D9F14FD00A8AC6C /* FloatPairFormatter.swift */; };
 		FABB169E1D9F308C00A8AC6C /* Vertices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB169D1D9F308C00A8AC6C /* Vertices.swift */; };
@@ -328,7 +321,6 @@
 		FACA797C1EE66A5B0001D468 /* KitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79791EE66A5B0001D468 /* KitTableViewCell.swift */; };
 		FACA79841EE671880001D468 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79831EE671880001D468 /* UIView+Anchors.swift */; };
 		FACA79851EE671880001D468 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79831EE671880001D468 /* UIView+Anchors.swift */; };
-		FACC8FD41D98A55400589230 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC8FD31D98A55400589230 /* Cartography.framework */; };
 		FACFE4931ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */; };
 		FACFE4941ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */; };
 		FAE0483E1EE3782800695E0D /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE0483D1EE3782800695E0D /* Target.swift */; };
@@ -412,7 +404,6 @@
 			files = (
 				FA2B1EA71EC92DC600E44613 /* Realm.framework in Embed Frameworks */,
 				FA2B1EA81EC92DC600E44613 /* RealmSwift.framework in Embed Frameworks */,
-				FA2B1E631EC817E700E44613 /* Cartography.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,7 +416,6 @@
 			files = (
 				FA2B1EC21EC9B78F00E44613 /* Realm.framework in Embed Frameworks */,
 				FA2B1EC31EC9B78F00E44613 /* RealmSwift.framework in Embed Frameworks */,
-				FA2B1EC41EC9B78F00E44613 /* Cartography.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,7 +426,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FABB16931D9E259900A8AC6C /* Cartography.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -645,7 +634,6 @@
 		FAB0AA721EC8083D008DCD23 /* FeatureCatalog.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FeatureCatalog.xcassets; sourceTree = "<group>"; };
 		FAB0AA751EC8083D008DCD23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FeatureCatalogLaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAB0AA771EC8083D008DCD23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FABB16901D9E258D00A8AC6C /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cartography.framework; sourceTree = "<group>"; };
 		FABB16971D9F14A100A8AC6C /* HUDTextureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDTextureViewController.swift; sourceTree = "<group>"; };
 		FABB169A1D9F14FD00A8AC6C /* FloatPairFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatPairFormatter.swift; sourceTree = "<group>"; };
 		FABB169D1D9F308C00A8AC6C /* Vertices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertices.swift; sourceTree = "<group>"; };
@@ -660,7 +648,6 @@
 		FACA79741EE4CFEB0001D468 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		FACA79791EE66A5B0001D468 /* KitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitTableViewCell.swift; sourceTree = "<group>"; };
 		FACA79831EE671880001D468 /* UIView+Anchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchors.swift"; sourceTree = "<group>"; };
-		FACC8FD31D98A55400589230 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cartography.framework; sourceTree = "<group>"; };
 		FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPermissionViewController.swift; sourceTree = "<group>"; };
 		FAE0483D1EE3782800695E0D /* Target.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 		FAE048401EE3785F00695E0D /* DrawProxyDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawProxyDSL.swift; sourceTree = "<group>"; };
@@ -682,7 +669,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FABB16911D9E258D00A8AC6C /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,7 +688,6 @@
 				FA20FA511E12624C00032AF3 /* MetalKit.framework in Frameworks */,
 				FA18058C1EC46FAE004351B7 /* RealmSwift.framework in Frameworks */,
 				FA76F54F1ED4A2C100059906 /* Crashlytics.framework in Frameworks */,
-				FACC8FD41D98A55400589230 /* Cartography.framework in Frameworks */,
 				6EDF7655229F7620D250358E /* Pods_Slate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -713,7 +698,6 @@
 			files = (
 				FA2B1EBC1EC9A2B600E44613 /* RealmSwift.framework in Frameworks */,
 				FA2B1EBB1EC9A2B600E44613 /* Realm.framework in Frameworks */,
-				FA2B1EBF1EC9A2BA00E44613 /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,7 +707,6 @@
 			files = (
 				FA2B1EBE1EC9A2B600E44613 /* RealmSwift.framework in Frameworks */,
 				FA2B1EBD1EC9A2B600E44613 /* Realm.framework in Frameworks */,
-				FA2B1EC01EC9A2BB00E44613 /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,7 +714,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA2B1E611EC817D200E44613 /* Cartography.framework in Frameworks */,
 				FA76F5511ED4A2C100059906 /* Crashlytics.framework in Frameworks */,
 				FA76F54E1ED4A2C100059906 /* Fabric.framework in Frameworks */,
 				DDEC6891C3F8B7ED1FA2FC94 /* Pods_Feature_Catalog.framework in Frameworks */,
@@ -911,7 +893,6 @@
 			children = (
 				FA1805891EC46FAE004351B7 /* Realm.framework */,
 				FA18058A1EC46FAE004351B7 /* RealmSwift.framework */,
-				FACC8FD31D98A55400589230 /* Cartography.framework */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -1918,7 +1899,6 @@
 		FABB168F1D9E257000A8AC6C /* Mac */ = {
 			isa = PBXGroup;
 			children = (
-				FABB16901D9E258D00A8AC6C /* Cartography.framework */,
 			);
 			path = Mac;
 			sourceTree = "<group>";
@@ -2604,7 +2584,6 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
 			);
 			name = "Copy Carthage Frameworks (fix x86_64 binaries in App Store builds)";
 			outputPaths = (
