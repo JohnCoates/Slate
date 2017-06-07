@@ -6,7 +6,7 @@
 //  Copyright © 2017 John Coates. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics
 
 // MARK: - Assignment
 

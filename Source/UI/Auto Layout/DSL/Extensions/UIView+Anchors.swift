@@ -6,9 +6,13 @@
 //  Copyright © 2017 John Coates. All rights reserved.
 //
 
-import UIKit
+#if os(iOS)
+    import UIKit
+#else
+    import AppKit
+#endif
 
-extension UIView {
+extension View {
     var left: Anchor<XAxis> {
         return Anchor<XAxis>(target: self, kind: .left)
     }
@@ -75,6 +79,7 @@ extension UIView {
     
     // Margins
     
+    #if os(iOS)
     var leftMargin: Anchor<XAxis> {
         return Anchor<XAxis>(target: self, kind: .leftMargin)
     }
@@ -90,4 +95,5 @@ extension UIView {
     var bottomMargin: Anchor<YAxis> {
         return Anchor<YAxis>(target: self, kind: .bottomMargin)
     }
+    #endif
 }

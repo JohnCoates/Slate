@@ -13,8 +13,8 @@ class HUDController: NSWindowController {
     var contentController: NSViewController!
     
     convenience init(renderer: Renderer) {
-//        let contentController = HUDTextureViewController(renderer: renderer)
-        let contentController = HUDShaderViewController(renderer: renderer)
+        let contentController = HUDTextureViewController(renderer: renderer)
+//        let contentController = HUDShaderViewController(renderer: renderer)
         let window = NSPanel(contentViewController: contentController)
         window.styleMask = [window.styleMask, .utilityWindow, .hudWindow]
         window.title = "Metal Settings"

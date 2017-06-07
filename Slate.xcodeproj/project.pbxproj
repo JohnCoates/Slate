@@ -21,6 +21,12 @@
 		FA0C96501EE7647300EA6EC8 /* AnchorOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */; };
 		FA0C96591EE8952800EA6EC8 /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C96581EE8952800EA6EC8 /* Anchor.swift */; };
 		FA0C965A1EE8952800EA6EC8 /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C96581EE8952800EA6EC8 /* Anchor.swift */; };
+		FA0C965B1EE8C2D200EA6EC8 /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C96581EE8952800EA6EC8 /* Anchor.swift */; };
+		FA0C965E1EE8C52900EA6EC8 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C965D1EE8C52900EA6EC8 /* Priority.swift */; };
+		FA0C965F1EE8C52900EA6EC8 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C965D1EE8C52900EA6EC8 /* Priority.swift */; };
+		FA0C96601EE8C52900EA6EC8 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C965D1EE8C52900EA6EC8 /* Priority.swift */; };
+		FA0C96611EE8C5E300EA6EC8 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79831EE671880001D468 /* UIView+Anchors.swift */; };
+		FA0C96621EE8C63300EA6EC8 /* AnchorOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */; };
 		FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */; };
 		FA18058B1EC46FAE004351B7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1805891EC46FAE004351B7 /* Realm.framework */; };
 		FA18058C1EC46FAE004351B7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; };
@@ -486,6 +492,7 @@
 		FA0634961ED4B1C300C8FC90 /* AppStore.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppStore.xcconfig; sourceTree = "<group>"; };
 		FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorOperators.swift; sourceTree = "<group>"; };
 		FA0C96581EE8952800EA6EC8 /* Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
+		FA0C965D1EE8C52900EA6EC8 /* Priority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
 		FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = GaussianBlur.metal; sourceTree = "<group>"; };
 		FA1805891EC46FAE004351B7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		FA18058A1EC46FAE004351B7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
@@ -2005,6 +2012,7 @@
 			isa = PBXGroup;
 			children = (
 				FA0C96581EE8952800EA6EC8 /* Anchor.swift */,
+				FA0C965D1EE8C52900EA6EC8 /* Priority.swift */,
 			);
 			path = Anchors;
 			sourceTree = "<group>";
@@ -2661,6 +2669,7 @@
 				FA4DFEDC1D9DBD620068706F /* Passthrough.metal in Sources */,
 				FA3AAA9B1EE24E67006028AC /* CameraController+Preview.swift in Sources */,
 				FA850F351EE1245200B1CDDB /* Array+Extensions.swift in Sources */,
+				FA0C965B1EE8C2D200EA6EC8 /* Anchor.swift in Sources */,
 				FA3AAA921EE24CB9006028AC /* CameraController+StillOutput.swift in Sources */,
 				FA89D1491EDF688A0012F2F0 /* FragmentFunction.swift in Sources */,
 				FAE048441EE378A500695E0D /* UIColor.swift in Sources */,
@@ -2676,6 +2685,7 @@
 				FA850F2C1EE111AD00B1CDDB /* AssignStatement.swift in Sources */,
 				FA3AAA9D1EE24E6A006028AC /* CameraController+Presets.swift in Sources */,
 				FA3AAAA01EE24EA5006028AC /* CameraController+Session.swift in Sources */,
+				FA0C965F1EE8C52900EA6EC8 /* Priority.swift in Sources */,
 				FA89D13C1EDF610D0012F2F0 /* TestShader.swift in Sources */,
 				FA850F441EE208D000B1CDDB /* VertexIn.swift in Sources */,
 				FA3AAAC41EE25FEB006028AC /* Size.swift in Sources */,
@@ -2710,8 +2720,10 @@
 				FA89D1401EDF639E0012F2F0 /* Struct.swift in Sources */,
 				FA850EF51EDFBCC500B1CDDB /* Argument.swift in Sources */,
 				FA4DFEE01D9DC15E0068706F /* HUDController.swift in Sources */,
+				FA0C96621EE8C63300EA6EC8 /* AnchorOperators.swift in Sources */,
 				FA89D1441EDF64450012F2F0 /* Floats.swift in Sources */,
 				FABB16981D9F14A100A8AC6C /* HUDTextureViewController.swift in Sources */,
+				FA0C96611EE8C5E300EA6EC8 /* UIView+Anchors.swift in Sources */,
 				FA850F301EE11E7B00B1CDDB /* TypedVariable.swift in Sources */,
 				FAA7A9721EE216B0004800AF /* PreviewContentView.swift in Sources */,
 				FA6477521EE3986B00A63A22 /* CGPoint.swift in Sources */,
@@ -2789,6 +2801,7 @@
 				FA8CE4221ECD7E5A00788026 /* Int+Pixels.swift in Sources */,
 				FA8CE42B1ECDA16A00788026 /* PhotosDeniedPermisionViewController.swift in Sources */,
 				FA3AAAAE1EE25B11006028AC /* Renderer+Buffers.swift in Sources */,
+				FA0C965E1EE8C52900EA6EC8 /* Priority.swift in Sources */,
 				FA1C23801ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift in Sources */,
 				FA3AAAA81EE25A36006028AC /* Renderer+Sampling.swift in Sources */,
 				FA2F8E531DA23E5500993949 /* PassthroughFilter.swift in Sources */,
@@ -2990,6 +3003,7 @@
 				FA76F5421ED3C32D00059906 /* PermissionsManager.swift in Sources */,
 				FAF10D021ECAA9170008690E /* GroupedPathButton.swift in Sources */,
 				FA7724D41ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift in Sources */,
+				FA0C96601EE8C52900EA6EC8 /* Priority.swift in Sources */,
 				FA2B1E891EC92B5B00E44613 /* FragmentFilter.swift in Sources */,
 				FA2B1EA61EC92B5B00E44613 /* DebugBarItemView.swift in Sources */,
 				FACA797C1EE66A5B0001D468 /* KitTableViewCell.swift in Sources */,

@@ -8,7 +8,6 @@
 
 import Foundation
 import AppKit
-import Cartography
 
 class HUDTextureViewController: NSViewController, NSTextFieldDelegate {
     
@@ -55,31 +54,24 @@ class HUDTextureViewController: NSViewController, NSTextFieldDelegate {
         vertexFields.append(field)
         view.addSubview(field)
         
-        constrain(field) {
-            let superview = $0.superview!
-            $0.width == 60
-            $0.height == 24
-            
-            if previousField == nil {
-                $0.top == superview.top + 10
-            }
+        field.width --> 60
+        field.height --> 24
+        
+        if previousField == nil {
+            field.top.pin(to: view.top, add: 10)
         }
         
         let label = NSTextField(labelWithString: "vertex \(index)")
         label.textColor = NSColor.white
         view.addSubview(label)
-        constrain(label, field) { label, field in
-            let superview = label.superview!
-            label.left == superview.left + 10
-            field.left >= label.right + 10 ~ LayoutPriority(1000)
-            label.top == field.top
-        }
+        
+        label.left.pin(to: view.left, add: 10)
+        field.left.pin(atLeast: label.right, add: 10)
+        label.top --> field.top
         
         if let previousField = previousField {
-            constrain(field, previousField) { field, previousField in
-                field.left == previousField.left
-                field.top == previousField.bottom + 10
-            }
+            field.left --> previousField.left
+            field.top.pin(to: previousField.bottom, add: 10)
         }
         
         return field

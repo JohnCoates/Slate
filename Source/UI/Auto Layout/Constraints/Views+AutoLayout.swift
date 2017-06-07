@@ -8,38 +8,6 @@
 
 import UIKit
 
-// Placed outside of extension because placing it inside is
-// causing syntax highlighting crashes
-enum FixedLayoutPriority: ExpressibleByIntegerLiteral {
-    case ultraLow
-    case low
-    case high
-    case ultraHigh
-    case required
-    case custom(custom: Float)
-    
-    init(integerLiteral value: IntegerLiteralType) {
-        self = .custom(custom: Float(value))
-    }
-    
-    var rawValue: UILayoutPriority {
-            switch self {
-            case .ultraLow:
-                return UILayoutPriorityDefaultLow - 1
-            case .low:
-                return UILayoutPriorityDefaultLow
-            case .high:
-                return UILayoutPriorityDefaultHigh
-            case .ultraHigh:
-                return UILayoutPriorityDefaultHigh + 1
-            case .required:
-                return UILayoutPriorityRequired
-            case .custom(let custom):
-                return custom
-            }
-    }
-}
-
 extension UIView {
     
     // MARK: - Constraints
@@ -163,11 +131,11 @@ extension UIView {
     
     // MARK: - Content Hugging
     
-    func setHugging(priority: FixedLayoutPriority, axis: UILayoutConstraintAxis) {
+    func setHugging(priority: Priority, axis: UILayoutConstraintAxis) {
         setContentHuggingPriority(priority.rawValue, for: axis)
     }
     
-    func setCompressionResistant(priority: FixedLayoutPriority, axis: UILayoutConstraintAxis) {
+    func setCompressionResistant(priority: Priority, axis: UILayoutConstraintAxis) {
         setContentCompressionResistancePriority(priority.rawValue,
                                                 for: axis)
     }
