@@ -13,3 +13,7 @@ https://github.com/github/swift-style-guide
 
 
 #### [References](./Documentation/References.md)
+
+#### Sponsors
+
+* [PaintCode](https://www.paintcodeapp.com/)
