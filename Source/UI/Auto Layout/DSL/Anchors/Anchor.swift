@@ -113,7 +113,7 @@ class DimensionAnchor: Anchor<Dimension> {
                                             relatedBy: relation,
                                             toItem: to.target,
                                             attribute: to.attribute,
-                                            multiplier: 1,
+                                            multiplier: times,
                                             constant: add)
         configure(constraint: constraint, rank: rank)
         return constraint
@@ -155,8 +155,8 @@ class XYAnchor {
             x = target.left
             y = target.top
         case .bottomRight:
-            x = target.left
-            y = target.top
+            x = target.right
+            y = target.bottom
         }
     }
     
