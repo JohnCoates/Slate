@@ -10,12 +10,12 @@ import Foundation
 
 extension DrawProxyDSL {
     class UIColor {
-        let red: Double
-        let green: Double
-        let blue: Double
-        let alpha: Double
+        let red: Float
+        let green: Float
+        let blue: Float
+        let alpha: Float
         
-        init(red: Double, green: Double, blue: Double, alpha: Double) {
+        init(red: Float, green: Float, blue: Float, alpha: Float) {
             self.red = red
             self.green = green
             self.blue = blue
@@ -23,6 +23,15 @@ extension DrawProxyDSL {
         }
         
         func setFill() {
+            currentFill = color
+        }
+        
+        func setStroke() {
+            currentStroke = color
+        }
+        
+        var color: Path.Color {
+            return Path.Color(red: red, green: green, blue: blue, alpha: alpha)
         }
     }
 }

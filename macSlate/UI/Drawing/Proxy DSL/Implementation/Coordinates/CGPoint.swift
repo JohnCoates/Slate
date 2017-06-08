@@ -13,5 +13,9 @@ extension DrawProxyDSL {
     struct CGPoint {
         let x: Float
         let y: Float
+        
+        var point: Path.Point {
+            return Path.Point(x: self.x, y: self.y)
+        }
     }
 }

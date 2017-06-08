@@ -221,6 +221,7 @@
 		FA6477621EE39FBD00A63A22 /* EditBar+SettingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6477611EE39FBD00A63A22 /* EditBar+SettingComponent.swift */; };
 		FA6477641EE39FBD00A63A22 /* EditBar+SettingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6477611EE39FBD00A63A22 /* EditBar+SettingComponent.swift */; };
 		FA6477651EE3A30900A63A22 /* ChromaticAberration.metal in Sources */ = {isa = PBXBuildFile; fileRef = FABB16AC1D9F6DAB00A8AC6C /* ChromaticAberration.metal */; };
+		FA6E97771EEA070C00A73DFA /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E97761EEA070C00A73DFA /* CGRect.swift */; };
 		FA76F5421ED3C32D00059906 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */; };
 		FA76F5461ED48FFC00059906 /* ImageCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76F5451ED48FFC00059906 /* ImageCaptureManager.swift */; };
 		FA76F54C1ED4A2C100059906 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA76F54A1ED4A2C100059906 /* Fabric.framework */; };
@@ -303,6 +304,20 @@
 		FAB9C2731EE8DFC400C50545 /* KitSettingsIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2711EE8DFC400C50545 /* KitSettingsIcon.swift */; };
 		FAB9C2751EE8E1ED00C50545 /* CanvasIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2741EE8E1ED00C50545 /* CanvasIconButton.swift */; };
 		FAB9C2761EE8E1ED00C50545 /* CanvasIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2741EE8E1ED00C50545 /* CanvasIconButton.swift */; };
+		FAB9C27A1EE8F95E00C50545 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2791EE8F95E00C50545 /* Canvas.swift */; };
+		FAB9C27D1EE8F9D100C50545 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C27C1EE8F9D100C50545 /* Path.swift */; };
+		FAB9C27F1EE8FA0500C50545 /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C27E1EE8FA0500C50545 /* Instructions.swift */; };
+		FAB9C2871EE8FDA600C50545 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2861EE8FDA600C50545 /* main.swift */; };
+		FAB9C28D1EE8FDDB00C50545 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C27C1EE8F9D100C50545 /* Path.swift */; };
+		FAB9C28E1EE8FDE500C50545 /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C27E1EE8FA0500C50545 /* Instructions.swift */; };
+		FAB9C28F1EE8FDE500C50545 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2791EE8F95E00C50545 /* Canvas.swift */; };
+		FAB9C2901EE8FDE500C50545 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6477511EE3986B00A63A22 /* CGPoint.swift */; };
+		FAB9C2911EE8FDE500C50545 /* UIBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64774E1EE3981C00A63A22 /* UIBezierPath.swift */; };
+		FAB9C2921EE8FDE500C50545 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE048431EE378A500695E0D /* UIColor.swift */; };
+		FAB9C2931EE8FDE500C50545 /* DrawProxyDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE048401EE3785F00695E0D /* DrawProxyDSL.swift */; };
+		FAB9C2941EE8FDE500C50545 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE0483D1EE3782800695E0D /* Target.swift */; };
+		FAB9C2971EE90C5300C50545 /* ImageWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2961EE90C5300C50545 /* ImageWriter.swift */; };
+		FAB9C2981EE90DA100C50545 /* ImageWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2961EE90C5300C50545 /* ImageWriter.swift */; };
 		FABB16981D9F14A100A8AC6C /* HUDTextureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16971D9F14A100A8AC6C /* HUDTextureViewController.swift */; };
 		FABB169B1D9F14FD00A8AC6C /* FloatPairFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB169A1D9F14FD00A8AC6C /* FloatPairFormatter.swift */; };
 		FABB169E1D9F308C00A8AC6C /* Vertices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB169D1D9F308C00A8AC6C /* Vertices.swift */; };
@@ -561,6 +576,7 @@
 		FA6477591EE39EF600A63A22 /* EditBar+InitialState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditBar+InitialState.swift"; sourceTree = "<group>"; };
 		FA64775D1EE39F4000A63A22 /* EditBar+EditBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditBar+EditBorder.swift"; sourceTree = "<group>"; };
 		FA6477611EE39FBD00A63A22 /* EditBar+SettingComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditBar+SettingComponent.swift"; sourceTree = "<group>"; };
+		FA6E97761EEA070C00A73DFA /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		FA76F5451ED48FFC00059906 /* ImageCaptureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCaptureManager.swift; sourceTree = "<group>"; };
 		FA76F54A1ED4A2C100059906 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		FA76F54B1ED4A2C100059906 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -640,6 +656,12 @@
 		FAB0AA771EC8083D008DCD23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAB9C2711EE8DFC400C50545 /* KitSettingsIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitSettingsIcon.swift; sourceTree = "<group>"; };
 		FAB9C2741EE8E1ED00C50545 /* CanvasIconButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasIconButton.swift; sourceTree = "<group>"; };
+		FAB9C2791EE8F95E00C50545 /* Canvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		FAB9C27C1EE8F9D100C50545 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		FAB9C27E1EE8FA0500C50545 /* Instructions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
+		FAB9C2841EE8FDA600C50545 /* slateCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = slateCLI; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAB9C2861EE8FDA600C50545 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		FAB9C2961EE90C5300C50545 /* ImageWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageWriter.swift; sourceTree = "<group>"; };
 		FABB16971D9F14A100A8AC6C /* HUDTextureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDTextureViewController.swift; sourceTree = "<group>"; };
 		FABB169A1D9F14FD00A8AC6C /* FloatPairFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatPairFormatter.swift; sourceTree = "<group>"; };
 		FABB169D1D9F308C00A8AC6C /* Vertices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertices.swift; sourceTree = "<group>"; };
@@ -723,6 +745,13 @@
 				FA76F5511ED4A2C100059906 /* Crashlytics.framework in Frameworks */,
 				FA76F54E1ED4A2C100059906 /* Fabric.framework in Frameworks */,
 				DDEC6891C3F8B7ED1FA2FC94 /* Pods_Feature_Catalog.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAB9C2811EE8FDA600C50545 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1206,6 +1235,7 @@
 		FA4DFECF1D9DBD1A0068706F /* macSlate */ = {
 			isa = PBXGroup;
 			children = (
+				FAB9C2851EE8FDA600C50545 /* CLI */,
 				FAE0483A1EE377E500695E0D /* UI */,
 				FA89D13A1EDF60E90012F2F0 /* Shaders */,
 				FAE385461EDE9937006FD2ED /* Camera */,
@@ -1283,6 +1313,7 @@
 			isa = PBXGroup;
 			children = (
 				FA6477511EE3986B00A63A22 /* CGPoint.swift */,
+				FA6E97761EEA070C00A73DFA /* CGRect.swift */,
 			);
 			path = Coordinates;
 			sourceTree = "<group>";
@@ -1755,6 +1786,7 @@
 				FA4DFECE1D9DBD1A0068706F /* macSlate.app */,
 				FAB0AA691EC8083D008DCD23 /* Feature Catalog.app */,
 				FA850F191EE0DB2300B1CDDB /* macTests.xctest */,
+				FAB9C2841EE8FDA600C50545 /* slateCLI */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1911,6 +1943,49 @@
 			path = "Code Icons";
 			sourceTree = "<group>";
 		};
+		FAB9C2771EE8F93200C50545 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FAB9C27B1EE8F9B000C50545 /* Paths */,
+				FAB9C2781EE8F94400C50545 /* Canvas */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FAB9C2781EE8F94400C50545 /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				FAB9C2791EE8F95E00C50545 /* Canvas.swift */,
+			);
+			path = Canvas;
+			sourceTree = "<group>";
+		};
+		FAB9C27B1EE8F9B000C50545 /* Paths */ = {
+			isa = PBXGroup;
+			children = (
+				FAB9C27C1EE8F9D100C50545 /* Path.swift */,
+				FAB9C27E1EE8FA0500C50545 /* Instructions.swift */,
+			);
+			path = Paths;
+			sourceTree = "<group>";
+		};
+		FAB9C2851EE8FDA600C50545 /* CLI */ = {
+			isa = PBXGroup;
+			children = (
+				FAB9C2861EE8FDA600C50545 /* main.swift */,
+			);
+			name = CLI;
+			path = ../slateCLI;
+			sourceTree = "<group>";
+		};
+		FAB9C2951EE90C0B00C50545 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FAB9C2961EE90C5300C50545 /* ImageWriter.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		FABB168F1D9E257000A8AC6C /* Mac */ = {
 			isa = PBXGroup;
 			children = (
@@ -2055,16 +2130,19 @@
 		FAE0483A1EE377E500695E0D /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				FAE0483B1EE377FC00695E0D /* Drawing */,
+				FAE0483B1EE377FC00695E0D /* Code Graphics */,
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
-		FAE0483B1EE377FC00695E0D /* Drawing */ = {
+		FAE0483B1EE377FC00695E0D /* Code Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				FAB9C2951EE90C0B00C50545 /* Data */,
+				FAB9C2771EE8F93200C50545 /* Models */,
 				FAE0483C1EE3780800695E0D /* Proxy DSL */,
 			);
+			name = "Code Graphics";
 			path = Drawing;
 			sourceTree = "<group>";
 		};
@@ -2309,6 +2387,22 @@
 			productReference = FAB0AA691EC8083D008DCD23 /* Feature Catalog.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FAB9C2831EE8FDA600C50545 /* slateCLI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAB9C2881EE8FDA600C50545 /* Build configuration list for PBXNativeTarget "slateCLI" */;
+			buildPhases = (
+				FAB9C2801EE8FDA600C50545 /* Sources */,
+				FAB9C2811EE8FDA600C50545 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = slateCLI;
+			productName = slateCLI;
+			productReference = FAB9C2841EE8FDA600C50545 /* slateCLI */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -2352,6 +2446,11 @@
 						DevelopmentTeam = E6QK4MU6LM;
 						ProvisioningStyle = Automatic;
 					};
+					FAB9C2831EE8FDA600C50545 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = E6QK4MU6LM;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = FA9F89DD1D953C540058C369 /* Build configuration list for PBXProject "Slate" */;
@@ -2373,6 +2472,7 @@
 				FA4DFECD1D9DBD1A0068706F /* macSlate */,
 				FA850F181EE0DB2300B1CDDB /* macTests */,
 				FAB0AA681EC8083D008DCD23 /* Feature Catalog */,
+				FAB9C2831EE8FDA600C50545 /* slateCLI */,
 			);
 		};
 /* End PBXProject section */
@@ -2677,6 +2777,7 @@
 				FAE385491EDE996B006FD2ED /* CameraPreviewViewController.swift in Sources */,
 				FA3AAA961EE24E5E006028AC /* CameraController+Debug.swift in Sources */,
 				FA850F3F1EE1FBD400B1CDDB /* CompositeVariable.swift in Sources */,
+				FAB9C2971EE90C5300C50545 /* ImageWriter.swift in Sources */,
 				FA850F2C1EE111AD00B1CDDB /* AssignStatement.swift in Sources */,
 				FA3AAA9D1EE24E6A006028AC /* CameraController+Presets.swift in Sources */,
 				FA3AAAA01EE24EA5006028AC /* CameraController+Session.swift in Sources */,
@@ -2687,8 +2788,10 @@
 				FA850EF01EDF921900B1CDDB /* Member.swift in Sources */,
 				FA3AAAB51EE25E0E006028AC /* Renderer+View.swift in Sources */,
 				FA3AAAB71EE25E14006028AC /* Renderer+Sampling.swift in Sources */,
+				FAB9C27D1EE8F9D100C50545 /* Path.swift in Sources */,
 				FA89D13E1EDF626A0012F2F0 /* BuildRuntimeShader.swift in Sources */,
 				FA4DFEDB1D9DBD5F0068706F /* Renderer.swift in Sources */,
+				FA6E97771EEA070C00A73DFA /* CGRect.swift in Sources */,
 				FA4DFED11D9DBD1A0068706F /* AppDelegate.swift in Sources */,
 				FA850EFB1EDFC83A00B1CDDB /* VertexStructs.swift in Sources */,
 				FAE0483E1EE3782800695E0D /* Target.swift in Sources */,
@@ -2697,6 +2800,7 @@
 				FA6477651EE3A30900A63A22 /* ChromaticAberration.metal in Sources */,
 				FA4021C71DA0AEE800752F3B /* MetalCameraController.swift in Sources */,
 				FA850EFD1EDFD0BB00B1CDDB /* CallStatement.swift in Sources */,
+				FAB9C27A1EE8F95E00C50545 /* Canvas.swift in Sources */,
 				FA3AAAB81EE25E14006028AC /* Renderer+Buffers.swift in Sources */,
 				FA4D541A1DB055BB0091184D /* ComputeFilter.swift in Sources */,
 				FA3AAA991EE24E64006028AC /* CameraController+Device.swift in Sources */,
@@ -2716,6 +2820,7 @@
 				FA850EF51EDFBCC500B1CDDB /* Argument.swift in Sources */,
 				FA4DFEE01D9DC15E0068706F /* HUDController.swift in Sources */,
 				FA0C96621EE8C63300EA6EC8 /* AnchorOperators.swift in Sources */,
+				FAB9C27F1EE8FA0500C50545 /* Instructions.swift in Sources */,
 				FA89D1441EDF64450012F2F0 /* Floats.swift in Sources */,
 				FABB16981D9F14A100A8AC6C /* HUDTextureViewController.swift in Sources */,
 				FA0C96611EE8C5E300EA6EC8 /* UIView+Anchors.swift in Sources */,
@@ -3007,6 +3112,23 @@
 				FA2B1EA61EC92B5B00E44613 /* DebugBarItemView.swift in Sources */,
 				FACA797C1EE66A5B0001D468 /* KitTableViewCell.swift in Sources */,
 				FA5F8CA01ECFF81400921A61 /* UIScreen+Layout.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAB9C2801EE8FDA600C50545 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAB9C2931EE8FDE500C50545 /* DrawProxyDSL.swift in Sources */,
+				FAB9C28D1EE8FDDB00C50545 /* Path.swift in Sources */,
+				FAB9C2921EE8FDE500C50545 /* UIColor.swift in Sources */,
+				FAB9C2941EE8FDE500C50545 /* Target.swift in Sources */,
+				FAB9C2981EE90DA100C50545 /* ImageWriter.swift in Sources */,
+				FAB9C28E1EE8FDE500C50545 /* Instructions.swift in Sources */,
+				FAB9C2871EE8FDA600C50545 /* main.swift in Sources */,
+				FAB9C2911EE8FDE500C50545 /* UIBezierPath.swift in Sources */,
+				FAB9C2901EE8FDE500C50545 /* CGPoint.swift in Sources */,
+				FAB9C28F1EE8FDE500C50545 /* Canvas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3753,6 +3875,59 @@
 			};
 			name = Release;
 		};
+		FAB9C2891EE8FDA600C50545 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FAB9C28A1EE8FDA600C50545 /* FastDebug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = FastDebug;
+		};
+		FAB9C28B1EE8FDA600C50545 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		FAB9C28C1EE8FDA600C50545 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = AppStore;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -3829,6 +4004,17 @@
 				FA850F4F1EE20C5200B1CDDB /* FastDebug */,
 				FAB0AA7A1EC8083D008DCD23 /* Release */,
 				FA0634951ED4B19500C8FC90 /* AppStore */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAB9C2881EE8FDA600C50545 /* Build configuration list for PBXNativeTarget "slateCLI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAB9C2891EE8FDA600C50545 /* Debug */,
+				FAB9C28A1EE8FDA600C50545 /* FastDebug */,
+				FAB9C28B1EE8FDA600C50545 /* Release */,
+				FAB9C28C1EE8FDA600C50545 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
