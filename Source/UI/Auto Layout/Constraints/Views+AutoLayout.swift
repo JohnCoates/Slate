@@ -32,6 +32,47 @@ extension UIView {
         return constraints
     }
     
+    func constraintsBetween(view: UIView, view2: UIView,
+                            viewAttribute: NSLayoutAttribute) -> [NSLayoutConstraint]? {
+        
+        let allConstraints = self.constraints
+        var constraints = [NSLayoutConstraint]()
+        
+        for constraint in allConstraints {
+            guard let firstItem = constraint.firstItem as? UIView,
+                  let secondItem = constraint.secondItem as? UIView else {
+                    continue
+            }
+            
+            if firstItem != view, firstItem != view2 {
+                continue
+            }
+            if secondItem != view, secondItem != view2 {
+                continue
+            }
+            
+            if firstItem == view, constraint.firstAttribute == viewAttribute {
+                constraints.append(constraint)
+            }
+            else if secondItem == view, constraint.secondAttribute == viewAttribute {
+                constraints.append(constraint)
+            }
+        }
+        
+        if let superview = superview,
+           let rest = superview.constraintsBetween(view: view,
+                                                   view2: view2,
+                                                   viewAttribute: viewAttribute) {
+            constraints += rest
+        }
+        
+        if constraints.count == 0 {
+            return nil
+        }
+        
+        return constraints
+    }
+    
     func constraintsInvolvingView(_ view: UIView,
                                   attribute: NSLayoutAttribute) -> [NSLayoutConstraint]? {
         
@@ -47,6 +88,12 @@ extension UIView {
                 if constraint.secondAttribute == attribute {
                     constraints.append(constraint)
                 }
+            }
+        }
+        
+        if let superview = superview {
+            if let rest = superview.constraintsInvolvingView(view, attribute: attribute) {
+                constraints += rest
             }
         }
         
@@ -107,6 +154,22 @@ extension UIView {
         } else {
             if let superview = superview {
                 return superview.constraintInvolvingView(self, attribute: attribute)
+            } else {
+                return nil
+            }
+        }
+    }
+    
+    func constraintsWithAttribute(_ attribute: NSLayoutAttribute) -> [NSLayoutConstraint]? {
+        let allConstraints = self.constraints
+        let constraints = allConstraints.filter { $0.firstAttribute == attribute || $0.secondAttribute == attribute }
+        
+        
+        if constraints.count > 0 {
+            return constraints
+        } else {
+            if let superview = superview {
+                return superview.constraintsInvolvingView(self, attribute: attribute)
             } else {
                 return nil
             }

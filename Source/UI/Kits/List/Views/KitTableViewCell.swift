@@ -8,6 +8,7 @@
 
 import UIKit
 
+private typealias LocalClass = KitTableViewCell
 final class KitTableViewCell: UITableViewCell {
     
     // MARK: - Init
@@ -34,6 +35,7 @@ final class KitTableViewCell: UITableViewCell {
         
         setUpIconView()
         setUpTextStack()
+        setUpSettingsButton()
     }
     
     let iconView = RoundableView()
@@ -94,4 +96,27 @@ final class KitTableViewCell: UITableViewCell {
         dateLabel.left.pin(to: authorLabel.right, add: 7)
         dateLabel.baseline --> authorLabel.baseline
     }
+    
+    let settingsButton = CanvasIconButton(icon: KitSettingsIcon())
+    private func setUpSettingsButton() {
+        contentView.addSubview(settingsButton)
+        let buttonView = settingsButton.contentView
+        buttonView.right.pin(to: contentView.right, add: -21)
+        buttonView.centerY --> contentView.centerY
+        buttonView.width --> 22
+        buttonView.height --> buttonView.width
+        settingsButton.tapAreaPercentage = 2
+        
+        settingsButton.setTappedCallback(instance: self, method: Method.tapped)
+    }
+    
+    fileprivate func tapped() {
+        print("settings tapped")
+    }
+}
+
+// MARK: - Callbacks
+
+fileprivate struct Method {
+    static let tapped = LocalClass.tapped
 }

@@ -118,6 +118,71 @@ class Button: UIView {
         }
     }
     
+    // MARK: - Tap Area
+    
+    var tapAreaPixels: CGFloat? {
+        didSet {
+            if tapAreaPixels != nil {
+                updateTapAreaPixelConstraints()
+            }
+        }
+    }
+    var tapAreaPercentage: Float? {
+        didSet {
+            if tapAreaPercentage != nil {
+                ensureNoViewSizeConstraints()
+                updateTapAreaPercentageConstraints()
+            }
+        }
+    }
+    
+    private func ensureNoViewSizeConstraints() {
+        let errorMessage = "Error: Used sizing constraint on Button instead of contentView! " +
+        "Add constraint to contentView to be compatible with tap areas"
+        
+        if constraintsWithAttribute(.width) != nil ||
+            constraintsWithAttribute(.height) != nil {
+            fatalError(errorMessage)
+        }
+    }
+    
+    private func resetConstraintsForTapArea() {
+        var remove = [NSLayoutConstraint]()
+        let attributes: [NSLayoutAttribute] = [.top, .left, .right, .bottom, .centerY, .centerX]
+        for attribute in attributes {
+            if let constraints = contentView.constraintsBetween(view: contentView, view2: self,
+                                                                viewAttribute: attribute) {
+                remove += constraints
+            }
+        }
+        
+        NSLayoutConstraint.deactivate(remove)
+    }
+    
+    private func updateTapAreaPixelConstraints() {
+        guard let tapAreaPixels = tapAreaPixels else {
+            fatalError("Tap area pixels missing!")
+        }
+        ensureNoViewSizeConstraints()
+        resetConstraintsForTapArea()
+        
+        width.pin(to: contentView.width, add: tapAreaPixels)
+        height.pin(to: contentView.height, add: tapAreaPixels)
+        contentView.centerXY --> centerXY
+    }
+    
+    private func updateTapAreaPercentageConstraints() {
+        guard let tapAreaPercentage = tapAreaPercentage else {
+            fatalError("Tap area percentage missing!")
+        }
+        ensureNoViewSizeConstraints()
+        resetConstraintsForTapArea()
+        
+        width.pin(to: contentView.width, times: CGFloat(tapAreaPercentage))
+        height.pin(to: contentView.height, times: CGFloat(tapAreaPercentage))
+        contentView.centerXY --> centerXY
+    }
+    
     // MARK: - User Interaction
     
     func tapped(gesture: UITapGestureRecognizer) {

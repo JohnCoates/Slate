@@ -62,7 +62,7 @@ extension View {
     }
     
     var baseline: Anchor<YAxis> {
-        return firstBaseline
+        return lastBaseline
     }
     
     var firstBaseline: Anchor<YAxis> {
@@ -77,9 +77,10 @@ extension View {
         return EdgesAnchor(target: self)
     }
     
-    // Margins
+    // MARK: - Margins, iOS only
     
     #if os(iOS)
+    
     var leftMargin: Anchor<XAxis> {
         return Anchor<XAxis>(target: self, kind: .leftMargin)
     }
@@ -95,5 +96,18 @@ extension View {
     var bottomMargin: Anchor<YAxis> {
         return Anchor<YAxis>(target: self, kind: .bottomMargin)
     }
+    
+    var centerXWithinMargins: Anchor<XAxis> {
+        return Anchor<XAxis>(target: self, kind: .centerXWithinMargins)
+    }
+    
+    var centerYWithinMargins: Anchor<YAxis> {
+        return Anchor<YAxis>(target: self, kind: .centerYWithinMargins)
+    }
+    
+    var centerXYWithinMargins: XYAnchor {
+        return XYAnchor(target: self, kind: .centerWithinMargins)
+    }
+    
     #endif
 }

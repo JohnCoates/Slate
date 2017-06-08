@@ -299,6 +299,10 @@
 		FAB0AA6C1EC8083D008DCD23 /* FeatureCatalogAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0AA6B1EC8083D008DCD23 /* FeatureCatalogAppDelegate.swift */; };
 		FAB0AA731EC8083D008DCD23 /* FeatureCatalog.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB0AA721EC8083D008DCD23 /* FeatureCatalog.xcassets */; };
 		FAB0AA761EC8083D008DCD23 /* FeatureCatalogLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB0AA741EC8083D008DCD23 /* FeatureCatalogLaunchScreen.storyboard */; };
+		FAB9C2721EE8DFC400C50545 /* KitSettingsIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2711EE8DFC400C50545 /* KitSettingsIcon.swift */; };
+		FAB9C2731EE8DFC400C50545 /* KitSettingsIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2711EE8DFC400C50545 /* KitSettingsIcon.swift */; };
+		FAB9C2751EE8E1ED00C50545 /* CanvasIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2741EE8E1ED00C50545 /* CanvasIconButton.swift */; };
+		FAB9C2761EE8E1ED00C50545 /* CanvasIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2741EE8E1ED00C50545 /* CanvasIconButton.swift */; };
 		FABB16981D9F14A100A8AC6C /* HUDTextureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16971D9F14A100A8AC6C /* HUDTextureViewController.swift */; };
 		FABB169B1D9F14FD00A8AC6C /* FloatPairFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB169A1D9F14FD00A8AC6C /* FloatPairFormatter.swift */; };
 		FABB169E1D9F308C00A8AC6C /* Vertices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB169D1D9F308C00A8AC6C /* Vertices.swift */; };
@@ -634,6 +638,8 @@
 		FAB0AA721EC8083D008DCD23 /* FeatureCatalog.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FeatureCatalog.xcassets; sourceTree = "<group>"; };
 		FAB0AA751EC8083D008DCD23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FeatureCatalogLaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAB0AA771EC8083D008DCD23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAB9C2711EE8DFC400C50545 /* KitSettingsIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitSettingsIcon.swift; sourceTree = "<group>"; };
+		FAB9C2741EE8E1ED00C50545 /* CanvasIconButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasIconButton.swift; sourceTree = "<group>"; };
 		FABB16971D9F14A100A8AC6C /* HUDTextureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDTextureViewController.swift; sourceTree = "<group>"; };
 		FABB169A1D9F14FD00A8AC6C /* FloatPairFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatPairFormatter.swift; sourceTree = "<group>"; };
 		FABB169D1D9F308C00A8AC6C /* Vertices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertices.swift; sourceTree = "<group>"; };
@@ -1709,6 +1715,7 @@
 			isa = PBXGroup;
 			children = (
 				FA8AA5441ECC13140093D317 /* CanvasIconView.swift */,
+				FAB9C2741EE8E1ED00C50545 /* CanvasIconButton.swift */,
 			);
 			path = "Code Icon Views";
 			sourceTree = "<group>";
@@ -1896,6 +1903,14 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FAB9C2701EE8DFA400C50545 /* Code Icons */ = {
+			isa = PBXGroup;
+			children = (
+				FAB9C2711EE8DFC400C50545 /* KitSettingsIcon.swift */,
+			);
+			path = "Code Icons";
+			sourceTree = "<group>";
+		};
 		FABB168F1D9E257000A8AC6C /* Mac */ = {
 			isa = PBXGroup;
 			children = (
@@ -1948,6 +1963,7 @@
 		FACA796E1EE4CF520001D468 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				FAB9C2701EE8DFA400C50545 /* Code Icons */,
 				FACA79781EE518480001D468 /* Views */,
 				FACA796F1EE4CF800001D468 /* View Controllers */,
 			);
@@ -2769,6 +2785,7 @@
 				FA0C96591EE8952800EA6EC8 /* Anchor.swift in Sources */,
 				FAF10CFE1ECAA87C0008690E /* FlipCameraIcon.swift in Sources */,
 				FACA79841EE671880001D468 /* UIView+Anchors.swift in Sources */,
+				FAB9C2751EE8E1ED00C50545 /* CanvasIconButton.swift in Sources */,
 				FA834BDD1D9920010017CCCA /* Platform.swift in Sources */,
 				FA5F8C9F1ECFF81400921A61 /* UIScreen+Layout.swift in Sources */,
 				FABB16AD1D9F6DAB00A8AC6C /* ChromaticAberration.metal in Sources */,
@@ -2787,6 +2804,7 @@
 				FAF10D011ECAA9170008690E /* GroupedPathButton.swift in Sources */,
 				FACFE4931ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */,
 				FA3AAA8B1EE24C5B006028AC /* CameraController+StillOutput.swift in Sources */,
+				FAB9C2721EE8DFC400C50545 /* KitSettingsIcon.swift in Sources */,
 				FA7724D31ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift in Sources */,
 				FA834BE41D9929710017CCCA /* CaptureButton.swift in Sources */,
 				FA0462B91EC3DF81007B74A0 /* KitManager.swift in Sources */,
@@ -2899,9 +2917,11 @@
 				FA2B1E9F1EC92B5B00E44613 /* Component.swift in Sources */,
 				FA2B1E791EC92AEF00E44613 /* BaseCaptureViewController.swift in Sources */,
 				FA2B1EA31EC92B5B00E44613 /* Button.swift in Sources */,
+				FAB9C2761EE8E1ED00C50545 /* CanvasIconButton.swift in Sources */,
 				FA5709A71ECC7172000362C8 /* PhotosPermissionViewController.swift in Sources */,
 				FA2B1E591EC80E8500E44613 /* FeatureCatalogItem.swift in Sources */,
 				FAF10D0F1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
+				FAB9C2731EE8DFC400C50545 /* KitSettingsIcon.swift in Sources */,
 				FA6477601EE39F4000A63A22 /* EditBar+EditBorder.swift in Sources */,
 				FA8CE4261ECD7FA700788026 /* UIView+subviews.swift in Sources */,
 				FA0C965A1EE8952800EA6EC8 /* Anchor.swift in Sources */,

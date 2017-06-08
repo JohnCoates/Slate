@@ -145,6 +145,12 @@ class DimensionAnchor: Anchor<Dimension> {
 class XYAnchor {
     enum Kind {
         case center
+        #if os(iOS)
+        case centerWithinMargins
+        #else
+        // used to remove warning in swithc statement from macOS target
+        case unhandled
+        #endif
         case topLeft
         case bottomRight
     }
@@ -163,6 +169,15 @@ class XYAnchor {
         case .bottomRight:
             x = target.right
             y = target.bottom
+        default:
+            #if os(iOS)
+                if kind == .centerWithinMargins {
+                    x = target.centerXWithinMargins
+                    y = target.centerYWithinMargins
+                    break
+                }
+            #endif
+            fatalError("Unhandled XY anchor kind!")
         }
     }
     
