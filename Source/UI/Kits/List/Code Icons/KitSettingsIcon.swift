@@ -5,6 +5,8 @@
 //  Created by John Coates on 6/7/17.
 //  Copyright © 2017 John Coates. All rights reserved.
 //
+// swiftlint:disable line_length
+// codebeat:disable[ABC,ARITY,CYCLO,LOC,TOTAL_COMPLEXITY,TOTAL_LOC,TOO_MANY_IVARS]
 
 import UIKit
 
@@ -52,4 +54,3 @@ struct KitSettingsIcon: CanvasIcon {
 
     }
 }
-

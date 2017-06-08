@@ -53,8 +53,7 @@ extension UIView {
             
             if firstItem == view, constraint.firstAttribute == viewAttribute {
                 constraints.append(constraint)
-            }
-            else if secondItem == view, constraint.secondAttribute == viewAttribute {
+            } else if secondItem == view, constraint.secondAttribute == viewAttribute {
                 constraints.append(constraint)
             }
         }
@@ -162,8 +161,8 @@ extension UIView {
     
     func constraintsWithAttribute(_ attribute: NSLayoutAttribute) -> [NSLayoutConstraint]? {
         let allConstraints = self.constraints
-        let constraints = allConstraints.filter { $0.firstAttribute == attribute || $0.secondAttribute == attribute }
-        
+        let constraints = allConstraints.filter { $0.firstAttribute == attribute ||
+                                                  $0.secondAttribute == attribute }
         
         if constraints.count > 0 {
             return constraints
