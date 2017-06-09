@@ -14,5 +14,5 @@ guard let canvas = DrawProxyDSL.canvas else {
     fatalError("Invalid canvas")
 }
 
-let writer = ImageWriter.init(canvases: [canvas])
+let writer = VectorImage.Writer.init(canvases: [canvas])
 writer.write()
