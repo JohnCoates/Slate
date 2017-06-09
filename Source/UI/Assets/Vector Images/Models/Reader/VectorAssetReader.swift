@@ -130,35 +130,36 @@ class VectorAssetReader {
         
         var instructions: [Path.Instruction] = Array()
         for _ in 0..<count {
-            let type = readUInt8()
+            let rawKind = readUInt8()
+            guard let kind = VectorImage.DataInstruction.Kind(rawValue: rawKind) else {
+                fatalError("Invalid instruction kind: \(rawKind)")
+            }
             let instruction: Path.Instruction
-            switch type {
-            case 0: // move
+            switch kind {
+            case .move:
                 instruction = .move(to: readPoint())
-            case 1: // addLine
+            case .addLine:
                 instruction = .addLine(to: readPoint())
-            case 2: // addCurve
+            case .addCurve:
                 instruction = .addCurve(to: readPoint(),
                                         control1: readPoint(),
                                         control2: readPoint())
-            case 3: // close
+            case .close:
                 instruction = .close
-            case 4: // fill
+            case .fill:
                 instruction = .fill(color: readColor())
-            case 5: // stroke
+            case .stroke:
                 instruction = .stroke(color: readColor())
-            case 6: // setLineWidth
+            case .setLineWidth:
                 instruction = .setLineWidth(to: readIndexFloat())
-            case 7: // usesEvenOddFillRule
+            case .usesEvenOddFillRule:
                 instruction = .usesEvenOddFillRule
-            case 8: // initWith
+            case .initWith:
                 instruction = .initWith(rect: readRect())
-            case 9: // initWith2
+            case .initWith2:
                 instruction = .initWith2(rect: readRect(), cornerRadius: readIndexFloat())
-            case 10: // initWith3
+            case .initWith3:
                 instruction = .initWith3(ovalIn: readRect())
-            default:
-                fatalError("Don't know how to handle instruction: \(type)")
             }
             instructions.append(instruction)
         }

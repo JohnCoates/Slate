@@ -23,30 +23,44 @@ extension VectorImage {
         case initWith2(rect: DataRect, cornerRadiusIndex: UInt16)
         case initWith3(ovalIn: DataRect)
         
+        enum Kind: UInt8 {
+            case move = 0
+            case addLine = 1
+            case addCurve = 2
+            case close = 3
+            case fill = 4
+            case stroke = 5
+            case setLineWidth = 6
+            case usesEvenOddFillRule = 7
+            case initWith = 8
+            case initWith2 = 9
+            case initWith3 = 10
+        }
+        
         var type: UInt8 {
             switch self {
             case .move(_):
-                return 0
+                return Kind.move.rawValue
             case .addLine(_):
-                return 1
+                return Kind.addLine.rawValue
             case .addCurve(_):
-                return 2
+                return Kind.addCurve.rawValue
             case .close:
-                return 3
+                return Kind.close.rawValue
             case .fill(_):
-                return 4
+                return Kind.fill.rawValue
             case .stroke(_):
-                return 5
+                return Kind.stroke.rawValue
             case .setLineWidth(_):
-                return 6
+                return Kind.setLineWidth.rawValue
             case .usesEvenOddFillRule:
-                return 7
+                return Kind.usesEvenOddFillRule.rawValue
             case .initWith(_):
-                return 8
+                return Kind.initWith.rawValue
             case .initWith2(_):
-                return 9
+                return Kind.initWith2.rawValue
             case .initWith3(_):
-                return 10                
+                return Kind.initWith3.rawValue
             }
         }
     }
