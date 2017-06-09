@@ -347,7 +347,6 @@
 		FAB9C2911EE8FDE500C50545 /* UIBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64774E1EE3981C00A63A22 /* UIBezierPath.swift */; };
 		FAB9C2921EE8FDE500C50545 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE048431EE378A500695E0D /* UIColor.swift */; };
 		FAB9C2931EE8FDE500C50545 /* DrawProxyDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE048401EE3785F00695E0D /* DrawProxyDSL.swift */; };
-		FAB9C2941EE8FDE500C50545 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE0483D1EE3782800695E0D /* Target.swift */; };
 		FABB16981D9F14A100A8AC6C /* HUDTextureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16971D9F14A100A8AC6C /* HUDTextureViewController.swift */; };
 		FABB169B1D9F14FD00A8AC6C /* FloatPairFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB169A1D9F14FD00A8AC6C /* FloatPairFormatter.swift */; };
 		FABB169E1D9F308C00A8AC6C /* Vertices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB169D1D9F308C00A8AC6C /* Vertices.swift */; };
@@ -361,6 +360,13 @@
 		FABB16B21D9F822800A8AC6C /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B01D9F822800A8AC6C /* CameraController.swift */; };
 		FABB16B31D9F858800A8AC6C /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BDC1D9920010017CCCA /* Platform.swift */; };
 		FABB16B51D9F886300A8AC6C /* BaseCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */; };
+		FABEABBC1EEA4161005D05B2 /* KitSettingsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEABBB1EEA4161005D05B2 /* KitSettingsImage.swift */; };
+		FABEABC01EEA471A005D05B2 /* CameraPermissionsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEABBF1EEA471A005D05B2 /* CameraPermissionsImage.swift */; };
+		FABEABC41EEA47A6005D05B2 /* GraphicsContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEABC21EEA479F005D05B2 /* GraphicsContext.swift */; };
+		FABEABC51EEA47A9005D05B2 /* GraphicsContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEABC21EEA479F005D05B2 /* GraphicsContext.swift */; };
+		FABEABC61EEB2831005D05B2 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E97761EEA070C00A73DFA /* CGRect.swift */; };
+		FABEABC81EEB2930005D05B2 /* DataRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEABC71EEB2930005D05B2 /* DataRect.swift */; };
+		FABEABC91EEB2930005D05B2 /* DataRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEABC71EEB2930005D05B2 /* DataRect.swift */; };
 		FAC9634C1ED3B68700D4DC33 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */; };
 		FACA79711EE4CF9B0001D468 /* KitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79701EE4CF9B0001D468 /* KitsViewController.swift */; };
 		FACA79721EE4CF9B0001D468 /* KitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79701EE4CF9B0001D468 /* KitsViewController.swift */; };
@@ -372,7 +378,6 @@
 		FACA79851EE671880001D468 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79831EE671880001D468 /* UIView+Anchors.swift */; };
 		FACFE4931ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */; };
 		FACFE4941ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */; };
-		FAE0483E1EE3782800695E0D /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE0483D1EE3782800695E0D /* Target.swift */; };
 		FAE048411EE3785F00695E0D /* DrawProxyDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE048401EE3785F00695E0D /* DrawProxyDSL.swift */; };
 		FAE048441EE378A500695E0D /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE048431EE378A500695E0D /* UIColor.swift */; };
 		FAE385491EDE996B006FD2ED /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE385481EDE996B006FD2ED /* CameraPreviewViewController.swift */; };
@@ -716,13 +721,16 @@
 		FABB16AC1D9F6DAB00A8AC6C /* ChromaticAberration.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ChromaticAberration.metal; sourceTree = "<group>"; };
 		FABB16B01D9F822800A8AC6C /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCaptureViewController.swift; sourceTree = "<group>"; };
+		FABEABBB1EEA4161005D05B2 /* KitSettingsImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitSettingsImage.swift; sourceTree = "<group>"; };
+		FABEABBF1EEA471A005D05B2 /* CameraPermissionsImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPermissionsImage.swift; sourceTree = "<group>"; };
+		FABEABC21EEA479F005D05B2 /* GraphicsContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicsContext.swift; sourceTree = "<group>"; };
+		FABEABC71EEB2930005D05B2 /* DataRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRect.swift; sourceTree = "<group>"; };
 		FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		FACA79701EE4CF9B0001D468 /* KitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitsViewController.swift; sourceTree = "<group>"; };
 		FACA79741EE4CFEB0001D468 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		FACA79791EE66A5B0001D468 /* KitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitTableViewCell.swift; sourceTree = "<group>"; };
 		FACA79831EE671880001D468 /* UIView+Anchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchors.swift"; sourceTree = "<group>"; };
 		FACFE4921ECB056E0052B3FB /* CameraPermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPermissionViewController.swift; sourceTree = "<group>"; };
-		FAE0483D1EE3782800695E0D /* Target.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 		FAE048401EE3785F00695E0D /* DrawProxyDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawProxyDSL.swift; sourceTree = "<group>"; };
 		FAE048431EE378A500695E0D /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		FAE385481EDE996B006FD2ED /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
@@ -1411,6 +1419,7 @@
 				FA6E97961EEA372A00A73DFA /* DataPath.swift */,
 				FA6E97991EEA376300A73DFA /* DataCanvas.swift */,
 				FA6E979C1EEA376D00A73DFA /* DataPoint.swift */,
+				FABEABC71EEB2930005D05B2 /* DataRect.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1959,6 +1968,7 @@
 		FA9F8A161D953F170058C369 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FABEABB81EEA40B0005D05B2 /* Vector Images */,
 				FA9F89EC1D953C540058C369 /* Assets.xcassets */,
 				FA834BE51D9932BC0017CCCA /* Placeholders.xcassets */,
 			);
@@ -2120,6 +2130,47 @@
 			path = Shaders;
 			sourceTree = "<group>";
 		};
+		FABEABB81EEA40B0005D05B2 /* Vector Images */ = {
+			isa = PBXGroup;
+			children = (
+				FABEABBD1EEA46F6005D05B2 /* Camera */,
+				FABEABBA1EEA413F005D05B2 /* Kits */,
+			);
+			path = "Vector Images";
+			sourceTree = "<group>";
+		};
+		FABEABBA1EEA413F005D05B2 /* Kits */ = {
+			isa = PBXGroup;
+			children = (
+				FABEABBB1EEA4161005D05B2 /* KitSettingsImage.swift */,
+			);
+			path = Kits;
+			sourceTree = "<group>";
+		};
+		FABEABBD1EEA46F6005D05B2 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				FABEABBE1EEA4704005D05B2 /* Permissions */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		FABEABBE1EEA4704005D05B2 /* Permissions */ = {
+			isa = PBXGroup;
+			children = (
+				FABEABBF1EEA471A005D05B2 /* CameraPermissionsImage.swift */,
+			);
+			path = Permissions;
+			sourceTree = "<group>";
+		};
+		FABEABC11EEA478B005D05B2 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				FABEABC21EEA479F005D05B2 /* GraphicsContext.swift */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
 		FACA796D1EE4CF350001D468 /* Kits */ = {
 			isa = PBXGroup;
 			children = (
@@ -2242,7 +2293,6 @@
 			isa = PBXGroup;
 			children = (
 				FAE0483F1EE3783F00695E0D /* Implementation */,
-				FAE0483D1EE3782800695E0D /* Target.swift */,
 			);
 			path = "Proxy DSL";
 			sourceTree = "<group>";
@@ -2250,6 +2300,7 @@
 		FAE0483F1EE3783F00695E0D /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
+				FABEABC11EEA478B005D05B2 /* Graphics */,
 				FA6477501EE3984700A63A22 /* Coordinates */,
 				FAE048451EE3791C00695E0D /* Paths */,
 				FAE048421EE3789500695E0D /* Color */,
@@ -2887,13 +2938,13 @@
 				FA6E97A01EEA380900A73DFA /* Writer+Conversions.swift in Sources */,
 				FAB9C27D1EE8F9D100C50545 /* Path.swift in Sources */,
 				FA89D13E1EDF626A0012F2F0 /* BuildRuntimeShader.swift in Sources */,
+				FABEABC81EEB2930005D05B2 /* DataRect.swift in Sources */,
 				FA6E97821EEA356000A73DFA /* VectorImage.swift in Sources */,
 				FA4DFEDB1D9DBD5F0068706F /* Renderer.swift in Sources */,
 				FA6E97771EEA070C00A73DFA /* CGRect.swift in Sources */,
 				FA4DFED11D9DBD1A0068706F /* AppDelegate.swift in Sources */,
 				FA6E979D1EEA376D00A73DFA /* DataPoint.swift in Sources */,
 				FA850EFB1EDFC83A00B1CDDB /* VertexStructs.swift in Sources */,
-				FAE0483E1EE3782800695E0D /* Target.swift in Sources */,
 				FA850F461EE208DB00B1CDDB /* VertexOut.swift in Sources */,
 				FA6E978D1EEA35F000A73DFA /* DataFloat.swift in Sources */,
 				FA850F331EE1244100B1CDDB /* String+Extensions.swift in Sources */,
@@ -2940,6 +2991,7 @@
 				FA3AAABF1EE25E6E006028AC /* CameraController+Format.swift in Sources */,
 				FA3AAAB11EE25E07006028AC /* Renderer+Shaders.swift in Sources */,
 				FA6E97941EEA372400A73DFA /* DataInstruction.swift in Sources */,
+				FABEABC51EEA47A9005D05B2 /* GraphicsContext.swift in Sources */,
 				FA6E97911EEA369100A73DFA /* Writer+Header.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3228,22 +3280,25 @@
 			files = (
 				FA6E97881EEA35A000A73DFA /* Writer.swift in Sources */,
 				FAB9C2931EE8FDE500C50545 /* DrawProxyDSL.swift in Sources */,
+				FABEABC41EEA47A6005D05B2 /* GraphicsContext.swift in Sources */,
 				FAB9C28D1EE8FDDB00C50545 /* Path.swift in Sources */,
 				FAB9C2921EE8FDE500C50545 /* UIColor.swift in Sources */,
 				FA6E97AD1EEA3D6500A73DFA /* Writer+Generators.swift in Sources */,
 				FA6E97B01EEA3DD900A73DFA /* Writer+Utilities.swift in Sources */,
-				FAB9C2941EE8FDE500C50545 /* Target.swift in Sources */,
 				FAB9C28E1EE8FDE500C50545 /* Instructions.swift in Sources */,
 				FAB9C2871EE8FDA600C50545 /* main.swift in Sources */,
 				FA6E979B1EEA376300A73DFA /* DataCanvas.swift in Sources */,
 				FAB9C2911EE8FDE500C50545 /* UIBezierPath.swift in Sources */,
 				FA6E977B1EEA0C1F00A73DFA /* Data+Compression.swift in Sources */,
 				FA6E978B1EEA35CB00A73DFA /* DataColor.swift in Sources */,
+				FABEABBC1EEA4161005D05B2 /* KitSettingsImage.swift in Sources */,
 				FAB9C2901EE8FDE500C50545 /* CGPoint.swift in Sources */,
 				FA6E978E1EEA35F000A73DFA /* DataFloat.swift in Sources */,
+				FABEABC01EEA471A005D05B2 /* CameraPermissionsImage.swift in Sources */,
 				FA6E97831EEA356000A73DFA /* VectorImage.swift in Sources */,
 				FAB9C28F1EE8FDE500C50545 /* Canvas.swift in Sources */,
 				FA6E979E1EEA376D00A73DFA /* DataPoint.swift in Sources */,
+				FABEABC91EEB2930005D05B2 /* DataRect.swift in Sources */,
 				FA6E97951EEA372400A73DFA /* DataInstruction.swift in Sources */,
 				FA6E97981EEA372A00A73DFA /* DataPath.swift in Sources */,
 				FA6E97A11EEA380900A73DFA /* Writer+Conversions.swift in Sources */,
@@ -3251,6 +3306,7 @@
 				FA6E97A41EEA3A5D00A73DFA /* Writer+FileHandling.swift in Sources */,
 				FA6E97A71EEA3CF100A73DFA /* Writer+Data.swift in Sources */,
 				FA6E97921EEA369100A73DFA /* Writer+Header.swift in Sources */,
+				FABEABC61EEB2831005D05B2 /* CGRect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

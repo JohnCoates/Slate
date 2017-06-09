@@ -15,10 +15,16 @@ extension VectorImage.Writer {
         append(uInt16: point.yIndex)
     }
     
+    func append(rect: DataRect) {
+        append(uInt16: rect.xIndex)
+        append(uInt16: rect.yIndex)
+        append(uInt16: rect.widthIndex)
+        append(uInt16: rect.heightIndex)
+    }
+    
     func append(nullTerminatedString string: String) {
         let value = string.cString(using: .utf8)
         let bytes = string.lengthOfBytes(using: .utf8) + 1
-        print("appending string with bytes: \(bytes)")
         data.append(UnsafeBufferPointer(start: value, count: bytes))
     }
     

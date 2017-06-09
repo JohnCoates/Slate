@@ -19,6 +19,10 @@ extension VectorImage {
         case setLineWidth(toFloatIndex: UInt16)
         case usesEvenOddFillRule
         
+        case initWith(rect: DataRect)
+        case initWith2(rect: DataRect, cornerRadiusIndex: UInt16)
+        case initWith3(ovalIn: DataRect)
+        
         var type: UInt8 {
             switch self {
             case .move(_):
@@ -37,7 +41,12 @@ extension VectorImage {
                 return 6
             case .usesEvenOddFillRule:
                 return 7
-                
+            case .initWith(_):
+                return 8
+            case .initWith2(_):
+                return 9
+            case .initWith3(_):
+                return 10                
             }
         }
     }

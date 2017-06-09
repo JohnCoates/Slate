@@ -10,6 +10,10 @@ import Foundation
 
 extension Path {
     enum Instruction {
+        case initWith(rect: Rect)
+        case initWith2(rect: Rect, cornerRadius: Float)
+        case initWith3(ovalIn: Rect)
+        
         case move(to: Point)
         case addLine(to: Point)
         case addCurve(to: Point, control1: Point, control2: Point)
@@ -23,6 +27,10 @@ extension Path {
     struct Point {
         let x: Float
         let y: Float
+    }
+    struct Rect {
+        let origin: Point
+        let size: Point
     }
     
     struct Color: Equatable {

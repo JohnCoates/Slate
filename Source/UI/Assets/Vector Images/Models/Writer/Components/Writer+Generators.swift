@@ -14,6 +14,13 @@ extension VectorImage.Writer {
         var floats = [Float]()
         for instruction in _instructions {
             switch instruction {
+            case .initWith(let rect), .initWith3(let rect):
+                add(point: rect.origin, toFloats: &floats)
+                add(point: rect.size, toFloats: &floats)
+            case .initWith2(let rect, let cornerRadius):
+                add(point: rect.origin, toFloats: &floats)
+                add(point: rect.size, toFloats: &floats)
+                add(floats:[cornerRadius], toFloats: &floats)
             case .move(let to), .addLine(let to):
                 add(point: to, toFloats: &floats)
                 break

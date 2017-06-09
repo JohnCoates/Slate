@@ -16,7 +16,6 @@ extension VectorImage.Writer {
             return DataPath(instructions: instructions)
         }
     }
-
     
     func dataInstruction(fromInstruction instruction: Path.Instruction) -> DataInstruction {
         switch instruction {
@@ -38,6 +37,14 @@ extension VectorImage.Writer {
             return DataInstruction.setLineWidth(toFloatIndex: index(forFloat: to))
         case .usesEvenOddFillRule:
             return DataInstruction.usesEvenOddFillRule
+        
+        case .initWith(let rect):
+            return DataInstruction.initWith(rect: dataRect(fromRect: rect))
+        case .initWith2(let rect, let cornerRadius):
+            return DataInstruction.initWith2(rect: dataRect(fromRect: rect),
+                                            cornerRadiusIndex: index(forFloat: cornerRadius))
+        case .initWith3(let rect):
+            return DataInstruction.initWith3(ovalIn: dataRect(fromRect: rect))
         }
     }
     
@@ -48,7 +55,16 @@ extension VectorImage.Writer {
                 return dataColor
             }
         }
+        
         fatalError("Couldn't find color: \(color)")
+    }
+    
+    func dataRect(fromRect rect: Path.Rect) -> DataRect {
+        return DataRect(xIndex: index(forFloat: rect.origin.x),
+                         yIndex: index(forFloat: rect.origin.y),
+                         widthIndex: index(forFloat: rect.size.x),
+                         heightIndex: index(forFloat: rect.size.y)
+        )
     }
     
     func dataPoint(fromPoint point: Path.Point) -> DataPoint {
@@ -58,9 +74,9 @@ extension VectorImage.Writer {
     
     func color(fromDataColor dataColor: DataColor) -> Path.Color {
         let red = self.floats[Int(dataColor.redIndex)].value
-        let green = self.floats[Int(dataColor.redIndex)].value
-        let blue = self.floats[Int(dataColor.redIndex)].value
-        let alpha = self.floats[Int(dataColor.redIndex)].value
+        let green = self.floats[Int(dataColor.greenIndex)].value
+        let blue = self.floats[Int(dataColor.blueIndex)].value
+        let alpha = self.floats[Int(dataColor.alphaIndex)].value
         
         return Path.Color(red: red, green: green, blue: blue, alpha: alpha)
     }

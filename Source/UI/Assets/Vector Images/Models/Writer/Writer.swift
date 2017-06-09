@@ -14,6 +14,7 @@ extension VectorImage {
         typealias DataColor = VectorImage.DataColor
         typealias DataPath = VectorImage.DataPath
         typealias DataPoint = VectorImage.DataPoint
+        typealias DataRect = VectorImage.DataRect
         typealias DataCanvas = VectorImage.DataCanvas
         typealias DataInstruction = VectorImage.DataInstruction
         typealias Instruction = Path.Instruction

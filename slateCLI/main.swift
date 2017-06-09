@@ -8,11 +8,19 @@
 
 import Foundation
 
-DrawProxyDSL.target()
+let images: [VectorImageAsset] = [
+    DrawProxyDSL.KitSettingsImage(),
+    DrawProxyDSL.CameraPermissionsImage()
+]
 
-guard let canvas = DrawProxyDSL.canvas else {
-    fatalError("Invalid canvas")
+var canvases = [Canvas]()
+for image in images {
+    DrawProxyDSL.pushCanvas(name: image.name, section: image.section,
+                            width: Float(image.width), height: Float(image.height))
+    image.simulateDraw()
+    let canvas = DrawProxyDSL.popCanvas()
+    canvases.append(canvas)
 }
 
-let writer = VectorImage.Writer.init(canvases: [canvas])
+let writer = VectorImage.Writer.init(canvases: canvases)
 writer.write()

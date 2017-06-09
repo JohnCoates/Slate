@@ -86,7 +86,7 @@ extension VectorImage.Writer {
         }
     }
     
-    func add(instructions: [DataInstruction]) {
+    func add(instructions: [VectorImage.DataInstruction]) {
         let max = UInt16.max
         guard instructions.count < Int(max) else {
             fatalError("There are \(instructions.count) instructions, but we can only store \(max)")
@@ -108,6 +108,11 @@ extension VectorImage.Writer {
                 append(uInt16: floatIndex)
             case .close, .usesEvenOddFillRule:
                 break
+            case .initWith(let rect), .initWith3(let rect):
+                append(rect: rect)
+            case .initWith2(let rect, let cornerRadiusIndex):
+                append(rect: rect)
+                append(uInt16: cornerRadiusIndex)
             }
         }
     }

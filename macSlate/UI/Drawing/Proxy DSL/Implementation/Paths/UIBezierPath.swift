@@ -15,8 +15,19 @@ extension DrawProxyDSL {
         init() {
             DrawProxyDSL.canvas!.paths.append(path)
         }
-        init(rect: CGRect) {
-            
+        
+        convenience init(rect: CGRect) {
+            self.init()
+        }
+        
+        convenience init(roundedRect rect: CGRect, cornerRadius: Float) {
+            self.init()
+            path.add(instruction: .initWith2(rect: rect.rect, cornerRadius: cornerRadius))
+        }
+        
+        convenience init(ovalIn rect: CGRect) {
+            self.init()
+            path.add(instruction: .initWith3(ovalIn: rect.rect))
         }
         
         func move(to: CGPoint) {

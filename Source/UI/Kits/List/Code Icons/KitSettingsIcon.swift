@@ -51,6 +51,5 @@ struct KitSettingsIcon: CanvasIcon {
         iconPath.usesEvenOddFillRule = true
         fillColor12.setFill()
         iconPath.fill()
-
     }
 }

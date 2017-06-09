@@ -13,12 +13,20 @@ class DrawProxyDSL {
     static var currentFill: Path.Color?
     static var currentStroke: Path.Color?
     
-    static func openCanvas(name: String, section: String, width: Float, height: Float) {
-        
+    static func pushCanvas(name: String, section: String, width: Float, height: Float) {
         print("starting canvas in section \(section): \(name) - \(width) x \(height)")
         canvas = Canvas(name: name, section: section, width: width, height: height)
     }
     
-    static func closeCanvas() {
+    static func popCanvas() -> Canvas {
+        guard let canvas = canvas else {
+            fatalError("Invalid pop, missing canvas")
+        }
+        DrawProxyDSL.canvas = nil
+        return canvas
+    }
+    
+    static func UIGraphicsGetCurrentContext() -> GraphicsContext? {
+        return GraphicsContext()
     }
 }

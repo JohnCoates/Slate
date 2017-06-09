@@ -6,8 +6,22 @@
 //  Copyright © 2017 John Coates. All rights reserved.
 //
 
-import Foundation
+import CoreGraphics
+
+protocol VectorImageAsset: class {
+    var name: String { get }
+    var section: String { get }
+    var width: CGFloat { get }
+    var height: CGFloat { get }
+    
+    func simulateDraw()
+}
 
 class VectorImage {
-    
+}
+
+extension VectorImageAsset {
+    var identifier: String {
+        return "\(section).\(self.name)"
+    }
 }
