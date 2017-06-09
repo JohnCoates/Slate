@@ -10,21 +10,40 @@ import UIKit
 
 class VectorImagesTableViewController: UITableViewController {
 
+    var sections = [String]()
+    var canvases = [[Canvas]]()
     override func viewDidLoad() {
         super.viewDidLoad()
         let file = URL(fileURLWithPath: "/private/tmp/image.vif")
         do {
             let reader = try VectorAssetReader(file: file)
             reader.read()
+            sections = reader.sections
+            canvases = sections.map({ name -> [Canvas] in
+                var section = [Canvas]()
+                for canvas in reader.canvases {
+                    if canvas.section == name {
+                        section.append(canvas)
+                    }
+                }
+                return section
+            })
         } catch let error {
             print("Error reading vector assets: \(error)")
         }
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        
+        tableView.separatorInset = UIEdgeInsets.zero
+        tableView.layoutMargins = UIEdgeInsets.zero
+        tableView.separatorColor = UIColor.clear
+        
+        tableView.register(VectorImageTableViewCell.self,
+                           forCellReuseIdentifier: cellReuseIdentifier)
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 80
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    let cellReuseIdentifier = "VectorCell"
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -34,24 +53,33 @@ class VectorImagesTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return sections.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return canvases[section].count
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+    
+    override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let untypedCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier,
+                                                 for: indexPath)
 
-        // Configure the cell...
-
-        return cell
+        
+        if let cell = untypedCell as? VectorImageTableViewCell {
+            print("typed cell!")
+            cell.canvas = canvases[indexPath.section][indexPath.row]
+        }
+        
+        return untypedCell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView,
+                            titleForHeaderInSection section: Int) -> String? {
+        return sections[section]
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

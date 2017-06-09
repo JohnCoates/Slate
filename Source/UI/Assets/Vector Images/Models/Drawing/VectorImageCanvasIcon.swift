@@ -1,0 +1,100 @@
+//
+//  VectorImageCanvasIcon.swift
+//  Slate
+//
+//  Created by John Coates on 6/9/17.
+//  Copyright © 2017 John Coates. All rights reserved.
+//
+
+import UIKit
+
+class VectorImageCanvasIcon: CanvasIcon {
+    
+    let canvas: Canvas
+    var width: CGFloat { return CGFloat(self.canvas.width) }
+    var height: CGFloat { return CGFloat(self.canvas.height) }
+    
+    
+    init(canvas: Canvas) {
+        self.canvas = canvas
+    }
+    
+    func drawing() {
+        for path in canvas.paths {
+            draw(path: path)
+        }
+    }
+    
+    func draw(path codePath: Path) {
+        var instructions = codePath.instructions
+        let first = instructions.removeFirst()
+        
+        let path: UIBezierPath
+        switch first {
+        case .initWith(let rect):
+            path = UIBezierPath(rect: rect.cgRect)
+        case .initWith2(let rect, let cornerRadius):
+            path = UIBezierPath(roundedRect: rect.cgRect, cornerRadius: CGFloat(cornerRadius))
+        case .initWith3(let ovalIn):
+            path = UIBezierPath(ovalIn: ovalIn.cgRect)
+        default:
+            path = UIBezierPath()
+            instructions.insert(first, at: 0)
+        }
+        
+        for instruction in instructions {
+            switch instruction {
+            case .move(let to):
+                path.move(to: to.cgPoint)
+            case .addLine(let to):
+                path.addLine(to: to.cgPoint)
+            case .addCurve(let to, let control1, let control2):
+                path.addCurve(to: to.cgPoint,
+                              controlPoint1: control1.cgPoint,
+                              controlPoint2: control2.cgPoint)
+            case .close:
+                path.close()
+            case .fill(let color):
+                let uiColor: UIColor = color.uiColor
+                uiColor.setFill()
+                path.fill()
+            case .stroke(color: let color):
+                let uiColor: UIColor = color.uiColor
+                uiColor.setStroke()
+                path.stroke()
+            case .setLineWidth(let to):
+                path.lineWidth = CGFloat(to)
+            case .usesEvenOddFillRule:
+                path.usesEvenOddFillRule = true
+            case .initWith(_), .initWith2(_), .initWith3(_):
+                fatalError("Unexpected double init")
+            }
+        }
+    }
+}
+
+extension Path.Color {
+    var uiColor: UIColor {
+        return UIColor(red: CGFloat(self.red),
+                       green: CGFloat(self.green),
+                       blue: CGFloat(self.blue),
+                       alpha: CGFloat(self.alpha))
+    }
+}
+
+
+extension Path.Point {
+    var cgPoint: CGPoint {
+        return CGPoint(x: CGFloat(self.x), y: CGFloat(self.y))
+    }
+}
+
+
+extension Path.Rect {
+    var cgRect: CGRect {
+        return CGRect(x: CGFloat(self.origin.x),
+                      y: CGFloat(self.origin.y),
+                      width: CGFloat(self.size.x),
+                      height: CGFloat(self.size.y))
+    }
+}
