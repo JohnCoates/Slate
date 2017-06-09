@@ -114,6 +114,7 @@ class FeatureCatalogViewController: UITableViewController {
         return [
             self.captureScreen(),
             self.kitsTab(),
+            self.vectors(),
             self.buttons()
         ]
     }()
@@ -176,5 +177,14 @@ class FeatureCatalogViewController: UITableViewController {
         ]
         
         return Section(title: "Buttons", items: items)
+    }
+    
+    func vectors() -> Section {
+        let items: [FeatureCatalogItem] = [
+            FeatureCatalogItem(name: "Assets",
+                               creationBlock: { VectorImagesTableViewController() })
+            ]
+        
+        return Section(title: "Vector Images", items: items)
     }
 }

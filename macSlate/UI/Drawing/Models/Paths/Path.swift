@@ -9,8 +9,6 @@
 import Foundation
 
 class Path {
-    var lineWidth: Float?
-    var usesEvenOddFillRule = false
     var instructions = [Instruction]()
     
     func add(instruction: Instruction) {
