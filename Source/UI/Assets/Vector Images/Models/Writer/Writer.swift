@@ -21,8 +21,6 @@ extension VectorImage {
         typealias Color = Path.Color
         typealias Writer = VectorImage.Writer
         
-        static let format: UInt8 = 1
-        
         let _canvases: [Canvas]
         let _instructions: [Instruction]
         
@@ -37,15 +35,40 @@ extension VectorImage {
         }
         
         var data = Data()
-        func write() {
+        func write(toFile: URL, compressed: Bool = false) {
             addHeader()
             addFloats()
             addColors()
             addSections()
             addCanvases()
             
-            writeToFile()
-            writeCompressedToFile()
+            if compressed {
+                writeCompressed(toFile: toFile)
+            } else {
+                write(toFile: toFile)
+            }
+            
+        }
+        
+        // MARK: - File Handling
+        
+        private func write(toFile filePath: URL) {
+            do {
+                try data.write(to: filePath, options: .atomic)
+            } catch let error {
+                print("error: \(error)")
+            }
+        }
+        
+        private func writeCompressed(toFile filePath: URL) {
+            do {
+                let compressed = try data.compress(withAlgorithm: VectorImage.compressionAlgorithm)
+                print("compressed size: \(compressed.count), original: \(data.count)")
+                try compressed.write(to: filePath, options: .atomic)
+            } catch let error {
+                print("Compression error: \(error)")
+            }
+            
         }
     }
 }

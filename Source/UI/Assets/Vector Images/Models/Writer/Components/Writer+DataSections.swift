@@ -11,7 +11,7 @@ import Foundation
 extension VectorImage.Writer {
     
     func addHeader() {
-        append(uInt8: Writer.format)
+        append(uInt8: VectorImage.format)
     }
     
     func addFloats() {
@@ -21,7 +21,6 @@ extension VectorImage.Writer {
         }
         
         append(uInt16: UInt16(floats.count))
-        print("floats: \(floats.count)")
         
         for float in floats {
             var value: Float = float.value
@@ -64,12 +63,12 @@ extension VectorImage.Writer {
         append(uInt16: UInt16(canvases.count))
         
         for canvas in canvases {
-            print("adding canvas \(canvas.name)")
             append(nullTerminatedString: canvas.name)
             append(uInt16: canvas.sectionIndex)
             append(uInt16: canvas.widthIndex)
             append(uInt16: canvas.heightIndex)
             
+            add(instructions: canvas.instructions)
             add(paths: canvas.paths)
         }
     }
@@ -113,6 +112,14 @@ extension VectorImage.Writer {
             case .initWith2(let rect, let cornerRadiusIndex):
                 append(rect: rect)
                 append(uInt16: cornerRadiusIndex)
+            // Graphics Context
+            case .contextSaveGState, .contextRestoreGState:
+                break
+            case .contextTranslateBy(let xIndex, let yIndex):
+                append(uInt16: xIndex)
+                append(uInt16: yIndex)
+            case .contextRotate(let byIndex):
+                append(uInt16: byIndex)
             }
         }
     }

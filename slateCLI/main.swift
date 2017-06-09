@@ -23,4 +23,5 @@ for image in images {
 }
 
 let writer = VectorImage.Writer.init(canvases: canvases)
-writer.write()
+writer.write(toFile: URL(fileURLWithPath: "/tmp/image.vif"))
+writer.write(toFile: URL(fileURLWithPath: "/tmp/image.cvif"), compressed: true)

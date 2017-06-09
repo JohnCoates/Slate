@@ -9,6 +9,9 @@
 import UIKit
 
 class VectorAssetReader {
+    enum Error: Swift.Error {
+        case wrongFormat(expected: UInt8, fileFormat: UInt8)
+    }
     private typealias DataColor = VectorImage.DataColor
     
     let data: Data
@@ -27,17 +30,20 @@ class VectorAssetReader {
         
         let data = try Data(contentsOf: file)
         if compressed {
-            self.data = try data.decompress(withAlgorithm: .lzma)
+            self.data = try data.decompress(withAlgorithm: VectorImage.compressionAlgorithm)
         } else {
             self.data = data
         }
     }
     
     var readIndex: Int = 0
-    func read() {
+    func read() throws {
         readIndex = 0
+        
         let format = readUInt8()
-        print("vector image format: \(format)")
+        if format != VectorImage.format {
+            throw Error.wrongFormat(expected: VectorImage.format, fileFormat: format)
+        }
         
         readFloats()
         readColors()
@@ -48,7 +54,6 @@ class VectorAssetReader {
     var floats = [Float]()
     func readFloats() {
         let count = readUInt16()
-        print("floats: \(count)")
         var floats = [Float]()
         for _ in 0..<count {
             let float = readFloat()
@@ -61,7 +66,6 @@ class VectorAssetReader {
     private var colors = [DataColor]()
     func readColors() {
         let count = readUInt16()
-        print("colors: \(count)")
         var colors = [DataColor]()
         for index in 0..<count {
             let color = DataColor(redIndex: readUInt16(),
@@ -79,20 +83,17 @@ class VectorAssetReader {
     var sections = [String]()
     func readSections() {
         let count = readUInt16()
-        print("sections: \(count)")
         var sections = [String]()
         for _ in 0..<count {
             let section = readString()
             sections.append(section)
         }
-        print("\(sections)")
         self.sections = sections
     }
     
     var canvases = [Canvas]()
     func readCanvases() {
         let count = readUInt16()
-        print("canvases: \(count)")
         
         var canvases = [Canvas]()
         for _ in 0..<count {
@@ -102,8 +103,8 @@ class VectorAssetReader {
             let width = readIndexFloat()
             let height = readIndexFloat()
             
-            print("canvas \(name): \(section)")
-            var canvas = Canvas(name: name, section: section, width: width, height: height)
+            let canvas = Canvas(name: name, section: section, width: width, height: height)
+            canvas.instructions = readInstructions()
             canvas.paths = readPaths()
             canvases.append(canvas)
         }
@@ -113,7 +114,6 @@ class VectorAssetReader {
     
     func readPaths() -> [Path] {
         let count = readUInt16()
-        print("paths in canvas: \(count)")
         
         var paths = [Path]()
         for _ in 0..<count {
@@ -126,7 +126,6 @@ class VectorAssetReader {
     
     func readInstructions() -> [Path.Instruction] {
         let count = readUInt16()
-        print("instructions in path: \(count)")
         
         var instructions: [Path.Instruction] = Array()
         for _ in 0..<count {
@@ -160,6 +159,15 @@ class VectorAssetReader {
                 instruction = .initWith2(rect: readRect(), cornerRadius: readIndexFloat())
             case .initWith3:
                 instruction = .initWith3(ovalIn: readRect())
+            // Graphics Context
+            case .contextSaveGState:
+                instruction = .contextSaveGState
+            case .contextRestoreGState:
+                instruction = .contextRestoreGState
+            case .contextTranslateBy:
+                instruction = .contextTranslateBy(x: readIndexFloat(), y: readIndexFloat())
+            case .contextRotate:
+                instruction = .contextRotate(by: readIndexFloat())
             }
             instructions.append(instruction)
         }

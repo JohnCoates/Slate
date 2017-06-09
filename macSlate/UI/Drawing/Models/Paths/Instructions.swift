@@ -22,6 +22,12 @@ extension Path {
         case stroke(color: Color)
         case setLineWidth(to: Float)
         case usesEvenOddFillRule
+        
+        // graphics context
+        case contextSaveGState
+        case contextRestoreGState
+        case contextTranslateBy(x: Float, y: Float)
+        case contextRotate(by: Float)
     }
     
     struct Point {

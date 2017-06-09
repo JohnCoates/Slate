@@ -10,11 +10,12 @@ import Foundation
 
 class DrawProxyDSL {
     static var canvas: Canvas?
+    static var currentPath: Path?
     static var currentFill: Path.Color?
     static var currentStroke: Path.Color?
     
     static func pushCanvas(name: String, section: String, width: Float, height: Float) {
-        print("starting canvas in section \(section): \(name) - \(width) x \(height)")
+        print("exporting canvas \(section): \(name) - \(width) x \(height)")
         canvas = Canvas(name: name, section: section, width: width, height: height)
     }
     

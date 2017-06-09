@@ -20,12 +20,51 @@ class VectorImageCanvasIcon: CanvasIcon {
     }
     
     func drawing() {
+        if canvas.instructions.count > 0 {
+            execute(canvasInstructions: canvas.instructions)
+        }
         for path in canvas.paths {
             draw(path: path)
         }
+        _context = nil
     }
     
+    var _context: CGContext?
+    var context: CGContext {
+        if let context = _context {
+            return context
+        } else {
+            guard let context = UIGraphicsGetCurrentContext() else {
+                fatalError("Couldn't get graphics context!")
+            }
+            
+            _context = context
+            return context
+        }
+    }
+    
+    func execute(canvasInstructions: [Path.Instruction]) {
+        for instruction in canvasInstructions {
+            switch instruction {
+            case .contextSaveGState:
+                context.saveGState()
+            case .contextRestoreGState:
+                context.restoreGState()
+            case .contextTranslateBy(let x, let y):
+                context.translateBy(x: CGFloat(x), y: CGFloat(y))
+            case .contextRotate(let by):
+                context.rotate(by: CGFloat(by))
+            case .initWith(_), .initWith2(_), .initWith3(_),
+                 .move(_), .addLine(_), .addCurve(_), .close,
+                 .fill(_), .stroke(_), .setLineWidth(_),
+                 .usesEvenOddFillRule:
+                fatalError("Invalid instruction for canvas")
+            }
+        }
+    }
+
     func draw(path codePath: Path) {
+        
         var instructions = codePath.instructions
         let first = instructions.removeFirst()
         
@@ -41,6 +80,7 @@ class VectorImageCanvasIcon: CanvasIcon {
             path = UIBezierPath()
             instructions.insert(first, at: 0)
         }
+        
         
         for instruction in instructions {
             switch instruction {
@@ -68,6 +108,15 @@ class VectorImageCanvasIcon: CanvasIcon {
                 path.usesEvenOddFillRule = true
             case .initWith(_), .initWith2(_), .initWith3(_):
                 fatalError("Unexpected double init")
+            // Graphics Context
+            case .contextSaveGState:
+                context.saveGState()
+            case .contextRestoreGState:
+                context.restoreGState()
+            case .contextTranslateBy(let x, let y):
+                context.translateBy(x: CGFloat(x), y: CGFloat(y))
+            case .contextRotate(let by):
+                context.rotate(by: CGFloat(by))
             }
         }
     }

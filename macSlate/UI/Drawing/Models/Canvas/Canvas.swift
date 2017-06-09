@@ -8,12 +8,13 @@
 
 import Foundation
 
-struct Canvas {
+class Canvas {
     let name: String
     let section: String
     let width: Float
     let height: Float
     
+    var instructions: [Path.Instruction] = Array()
     var paths = [Path]()
     
     init(name: String, section: String, width: Float, height: Float) {

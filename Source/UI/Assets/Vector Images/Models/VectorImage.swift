@@ -18,6 +18,8 @@ protocol VectorImageAsset: class {
 }
 
 class VectorImage {
+    static let format: UInt8 = 2
+    static let compressionAlgorithm: Compression.Algorithm = .lzma
 }
 
 extension VectorImageAsset {

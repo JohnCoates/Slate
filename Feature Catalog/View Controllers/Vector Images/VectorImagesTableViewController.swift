@@ -14,10 +14,10 @@ class VectorImagesTableViewController: UITableViewController {
     var canvases = [[Canvas]]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        let file = URL(fileURLWithPath: "/private/tmp/image.vif")
+        let file = URL(fileURLWithPath: "/private/tmp/image.cvif")
         do {
             let reader = try VectorAssetReader(file: file)
-            reader.read()
+            try reader.read()
             sections = reader.sections
             canvases = sections.map({ name -> [Canvas] in
                 var section = [Canvas]()
@@ -68,7 +68,6 @@ class VectorImagesTableViewController: UITableViewController {
 
         
         if let cell = untypedCell as? VectorImageTableViewCell {
-            print("typed cell!")
             cell.canvas = canvases[indexPath.section][indexPath.row]
         }
         

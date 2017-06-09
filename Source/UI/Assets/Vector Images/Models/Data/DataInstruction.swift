@@ -23,6 +23,12 @@ extension VectorImage {
         case initWith2(rect: DataRect, cornerRadiusIndex: UInt16)
         case initWith3(ovalIn: DataRect)
         
+        // Graphics Context
+        case contextSaveGState
+        case contextRestoreGState
+        case contextTranslateBy(xIndex: UInt16, yIndex: UInt16)
+        case contextRotate(byIndex: UInt16)
+        
         enum Kind: UInt8 {
             case move = 0
             case addLine = 1
@@ -35,32 +41,48 @@ extension VectorImage {
             case initWith = 8
             case initWith2 = 9
             case initWith3 = 10
+            case contextSaveGState = 11
+            case contextRestoreGState = 12
+            case contextTranslateBy = 13
+            case contextRotate = 14
         }
         
         var type: UInt8 {
+            return kind.rawValue
+        }
+        
+        var kind: Kind {
             switch self {
             case .move(_):
-                return Kind.move.rawValue
+                return .move
             case .addLine(_):
-                return Kind.addLine.rawValue
+                return .addLine
             case .addCurve(_):
-                return Kind.addCurve.rawValue
+                return .addCurve
             case .close:
-                return Kind.close.rawValue
+                return .close
             case .fill(_):
-                return Kind.fill.rawValue
+                return .fill
             case .stroke(_):
-                return Kind.stroke.rawValue
+                return .stroke
             case .setLineWidth(_):
-                return Kind.setLineWidth.rawValue
+                return .setLineWidth
             case .usesEvenOddFillRule:
-                return Kind.usesEvenOddFillRule.rawValue
+                return .usesEvenOddFillRule
             case .initWith(_):
-                return Kind.initWith.rawValue
+                return .initWith
             case .initWith2(_):
-                return Kind.initWith2.rawValue
+                return .initWith2
             case .initWith3(_):
-                return Kind.initWith3.rawValue
+                return .initWith3
+            case .contextSaveGState:
+                return .contextSaveGState
+            case .contextRestoreGState:
+                return .contextRestoreGState
+            case .contextTranslateBy(_):
+                return .contextTranslateBy
+            case .contextRotate(_):
+                return .contextRotate            
             }
         }
     }

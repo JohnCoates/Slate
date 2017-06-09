@@ -13,11 +13,13 @@ extension DrawProxyDSL {
         
         let path = Path()
         init() {
+            DrawProxyDSL.currentPath = path
             DrawProxyDSL.canvas!.paths.append(path)
         }
         
         convenience init(rect: CGRect) {
             self.init()
+            path.add(instruction: .initWith(rect: rect.rect))
         }
         
         convenience init(roundedRect rect: CGRect, cornerRadius: Float) {

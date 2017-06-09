@@ -14,6 +14,7 @@ extension VectorImage {
         let sectionIndex: UInt16
         let widthIndex: UInt16
         let heightIndex: UInt16
+        let instructions: [DataInstruction]
         let paths: [DataPath]
     }
 }

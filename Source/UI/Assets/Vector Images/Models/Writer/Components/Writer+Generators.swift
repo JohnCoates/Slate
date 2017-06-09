@@ -10,9 +10,10 @@ import Foundation
 
 extension VectorImage.Writer {
     
-    func dataFloats() -> [DataFloat] {
+    func dataFloats() -> [VectorImage.DataFloat] {
         var floats = [Float]()
-        for instruction in _instructions {
+        let instructions: [Path.Instruction] = _instructions
+        for instruction in instructions  {
             switch instruction {
             case .initWith(let rect), .initWith3(let rect):
                 add(point: rect.origin, toFloats: &floats)
@@ -34,6 +35,13 @@ extension VectorImage.Writer {
                 add(floats:[to], toFloats: &floats)
             case .close, .usesEvenOddFillRule:
                 break
+            // graphics context
+            case .contextSaveGState, .contextRestoreGState:
+                break
+            case .contextTranslateBy(let x, let y):
+                add(floats:[x, y], toFloats: &floats)
+            case .contextRotate(let by):
+                add(floats:[by], toFloats: &floats)
             }
         }
         
@@ -83,11 +91,13 @@ extension VectorImage.Writer {
         return _canvases.map { canvas -> DataCanvas in
             
             let paths = dataPaths(fromPaths: canvas.paths, floats: floats, colors: colors)
+            let instructions = canvas.instructions.map({ dataInstruction(fromInstruction: $0) })
             
             let dataCanvas = DataCanvas(name: canvas.name,
                                         sectionIndex: sectionIndex(forSection: canvas.section),
                                         widthIndex: index(forFloat: canvas.width),
                                         heightIndex: index(forFloat: canvas.height),
+                                        instructions: instructions,
                                         paths: paths
             )
             
@@ -96,7 +106,7 @@ extension VectorImage.Writer {
     }
 
     
-    static func allInstructions(fromCanvases canvases: [Canvas]) -> [Instruction] {
+    static func allInstructions(fromCanvases canvases: [Canvas]) -> [Path.Instruction] {
         let paths: [Path] = canvases.reduce([Path]()) { list, canvas in
             let newList = list + canvas.paths
             return newList
@@ -105,7 +115,12 @@ extension VectorImage.Writer {
             let newList = list + path.instructions
             return newList
         }
-        return instructions
+        
+        let canvasInstructions = canvases.reduce([Instruction]()) { list, canvas in
+            let newList = list + canvas.instructions
+            return newList
+        }
+        return instructions + canvasInstructions
     }
     
     

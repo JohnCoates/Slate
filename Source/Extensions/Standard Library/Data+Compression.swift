@@ -23,7 +23,7 @@ extension Data {
     
     private func performOperation(kind: Compression.Kind, algorithm: Compression.Algorithm) throws -> Data {
         let scratchSize = compression_encode_scratch_buffer_size(algorithm.rawValue)
-        var destination = Data(count: self.count * 2)
+        var destination = Data(count: self.count * 4)
         
         let sourceBuffer: UnsafePointer<UInt8> = self.withUnsafeBytes { $0 }
         let destinationBuffer: UnsafeMutablePointer<UInt8> = destination.withUnsafeMutableBytes { $0 }

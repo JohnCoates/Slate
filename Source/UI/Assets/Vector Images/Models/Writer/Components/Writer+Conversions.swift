@@ -17,7 +17,7 @@ extension VectorImage.Writer {
         }
     }
     
-    func dataInstruction(fromInstruction instruction: Path.Instruction) -> DataInstruction {
+    func dataInstruction(fromInstruction instruction: Path.Instruction) -> VectorImage.DataInstruction {
         switch instruction {
         case .move(let point):
             return DataInstruction.move(to: dataPoint(fromPoint: point))
@@ -45,6 +45,17 @@ extension VectorImage.Writer {
                                             cornerRadiusIndex: index(forFloat: cornerRadius))
         case .initWith3(let rect):
             return DataInstruction.initWith3(ovalIn: dataRect(fromRect: rect))
+            
+        // Graphics Conext
+        case .contextSaveGState:
+            return VectorImage.DataInstruction.contextSaveGState
+        case .contextRestoreGState:
+            return VectorImage.DataInstruction.contextRestoreGState
+        case .contextTranslateBy(let x, let y):
+            return VectorImage.DataInstruction.contextTranslateBy(xIndex: index(forFloat: x),
+                                                                  yIndex: index(forFloat: y))
+        case .contextRotate(let by):
+            return VectorImage.DataInstruction.contextRotate(byIndex: index(forFloat: by))
         }
     }
     
