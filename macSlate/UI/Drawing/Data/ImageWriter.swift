@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Compression
 
 class ImageWriter {
     static var format: UInt8 = 1
@@ -32,12 +33,27 @@ class ImageWriter {
         addSections()
         addCanvases()
         
+        writeToFile()
+        writeCompressedToFile()
+    }
+    
+    func writeToFile() {
         let writeTo = URL(fileURLWithPath: "/tmp/image.vif")
         do {
             try data.write(to: writeTo, options: .atomic)
         } catch let error {
             print("error: \(error)")
         }
+    }
+    
+    func writeCompressedToFile() {
+        do {
+            let compressed = try data.compress(withAlgorithm: .lzma)
+            print("compressed size: \(compressed.count), original: \(data.count)")
+        } catch let error {
+            print("Compression error: \(error)")
+        }
+        
     }
     
     func addHeader() {

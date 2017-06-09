@@ -222,6 +222,8 @@
 		FA6477641EE39FBD00A63A22 /* EditBar+SettingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6477611EE39FBD00A63A22 /* EditBar+SettingComponent.swift */; };
 		FA6477651EE3A30900A63A22 /* ChromaticAberration.metal in Sources */ = {isa = PBXBuildFile; fileRef = FABB16AC1D9F6DAB00A8AC6C /* ChromaticAberration.metal */; };
 		FA6E97771EEA070C00A73DFA /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E97761EEA070C00A73DFA /* CGRect.swift */; };
+		FA6E977A1EEA0C1600A73DFA /* Data+Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E97791EEA0C1600A73DFA /* Data+Compression.swift */; };
+		FA6E977B1EEA0C1F00A73DFA /* Data+Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E97791EEA0C1600A73DFA /* Data+Compression.swift */; };
 		FA76F5421ED3C32D00059906 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */; };
 		FA76F5461ED48FFC00059906 /* ImageCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76F5451ED48FFC00059906 /* ImageCaptureManager.swift */; };
 		FA76F54C1ED4A2C100059906 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA76F54A1ED4A2C100059906 /* Fabric.framework */; };
@@ -577,6 +579,7 @@
 		FA64775D1EE39F4000A63A22 /* EditBar+EditBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditBar+EditBorder.swift"; sourceTree = "<group>"; };
 		FA6477611EE39FBD00A63A22 /* EditBar+SettingComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditBar+SettingComponent.swift"; sourceTree = "<group>"; };
 		FA6E97761EEA070C00A73DFA /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
+		FA6E97791EEA0C1600A73DFA /* Data+Compression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Compression.swift"; sourceTree = "<group>"; };
 		FA76F5451ED48FFC00059906 /* ImageCaptureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCaptureManager.swift; sourceTree = "<group>"; };
 		FA76F54A1ED4A2C100059906 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		FA76F54B1ED4A2C100059906 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -1545,6 +1548,7 @@
 			children = (
 				FA850F321EE1244100B1CDDB /* String+Extensions.swift */,
 				FA850F341EE1245200B1CDDB /* Array+Extensions.swift */,
+				FA6E97791EEA0C1600A73DFA /* Data+Compression.swift */,
 			);
 			path = "Standard Library";
 			sourceTree = "<group>";
@@ -2785,6 +2789,7 @@
 				FA89D13C1EDF610D0012F2F0 /* TestShader.swift in Sources */,
 				FA850F441EE208D000B1CDDB /* VertexIn.swift in Sources */,
 				FA3AAAC41EE25FEB006028AC /* Size.swift in Sources */,
+				FA6E977A1EEA0C1600A73DFA /* Data+Compression.swift in Sources */,
 				FA850EF01EDF921900B1CDDB /* Member.swift in Sources */,
 				FA3AAAB51EE25E0E006028AC /* Renderer+View.swift in Sources */,
 				FA3AAAB71EE25E14006028AC /* Renderer+Sampling.swift in Sources */,
@@ -3127,6 +3132,7 @@
 				FAB9C28E1EE8FDE500C50545 /* Instructions.swift in Sources */,
 				FAB9C2871EE8FDA600C50545 /* main.swift in Sources */,
 				FAB9C2911EE8FDE500C50545 /* UIBezierPath.swift in Sources */,
+				FA6E977B1EEA0C1F00A73DFA /* Data+Compression.swift in Sources */,
 				FAB9C2901EE8FDE500C50545 /* CGPoint.swift in Sources */,
 				FAB9C28F1EE8FDE500C50545 /* Canvas.swift in Sources */,
 			);
