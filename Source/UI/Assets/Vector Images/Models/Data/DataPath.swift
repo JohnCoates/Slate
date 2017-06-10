@@ -8,8 +8,6 @@
 
 import Foundation
 
-extension VectorImage {
-    struct DataPath {
-        let instructions: [DataInstruction]
-    }
+struct DataPath {
+    let instructions: [DataInstruction]
 }

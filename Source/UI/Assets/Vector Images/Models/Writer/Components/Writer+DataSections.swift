@@ -9,7 +9,7 @@
 
 import Foundation
 
-extension VectorImage.Writer {
+extension VectorAssetWriter {
     
     func addHeader() {
         append(uInt8: VectorImage.format)
@@ -86,7 +86,7 @@ extension VectorImage.Writer {
         }
     }
     
-    func add(instructions: [VectorImage.DataInstruction]) {
+    func add(instructions: [DataInstruction]) {
         let max = UInt16.max
         guard instructions.count < Int(max) else {
             fatalError("There are \(instructions.count) instructions, but we can only store \(max)")

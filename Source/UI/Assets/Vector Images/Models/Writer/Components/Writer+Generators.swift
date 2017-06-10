@@ -9,9 +9,9 @@
 
 import Foundation
 
-extension VectorImage.Writer {
+extension VectorAssetWriter {
     
-    func dataFloats() -> [VectorImage.DataFloat] {
+    func dataFloats() -> [DataFloat] {
         var floats = [Float]()
         let instructions: [Path.Instruction] = _instructions
         for instruction in instructions {
@@ -60,7 +60,7 @@ extension VectorImage.Writer {
     }
     
     func allColors() -> [DataColor] {
-        var colors = [Color]()
+        var colors: [Path.Color] = Array()
         
         for instruction in _instructions {
             switch instruction {
@@ -110,12 +110,12 @@ extension VectorImage.Writer {
             let newList = list + canvas.paths
             return newList
         }
-        let instructions = paths.reduce([Instruction]()) { list, path in
+        let instructions: [Path.Instruction] = paths.reduce(Array()) { list, path in
             let newList = list + path.instructions
             return newList
         }
         
-        let canvasInstructions = canvases.reduce([Instruction]()) { list, canvas in
+        let canvasInstructions: [Path.Instruction] = canvases.reduce(Array()) { list, canvas in
             let newList = list + canvas.instructions
             return newList
         }

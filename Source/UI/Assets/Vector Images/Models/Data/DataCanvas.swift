@@ -8,13 +8,11 @@
 
 import Foundation
 
-extension VectorImage {
-    struct DataCanvas {
-        let name: String
-        let sectionIndex: UInt16
-        let widthIndex: UInt16
-        let heightIndex: UInt16
-        let instructions: [DataInstruction]
-        let paths: [DataPath]
-    }
+struct DataCanvas {
+    let name: String
+    let sectionIndex: UInt16
+    let widthIndex: UInt16
+    let heightIndex: UInt16
+    let instructions: [DataInstruction]
+    let paths: [DataPath]
 }

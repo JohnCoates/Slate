@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension VectorImage.Writer {
+extension VectorAssetWriter {
     
     func sectionIndex(forSection section: String) -> UInt16 {
         guard let index = sections.index(of: section) else {
@@ -29,7 +29,7 @@ extension VectorImage.Writer {
         add(floats: [point.x, point.y], toFloats: &floats)
     }
     
-    func add(color: Color, toFloats floats: inout [Float]) {
+    func add(color: Path.Color, toFloats floats: inout [Float]) {
         add(floats: [color.red, color.green, color.blue, color.alpha], toFloats: &floats)
     }
     

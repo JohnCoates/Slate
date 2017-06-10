@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension VectorImage.Writer {
+extension VectorAssetWriter {
     
     func append(point: DataPoint) {
         append(uInt16: point.xIndex)

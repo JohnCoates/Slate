@@ -110,7 +110,7 @@ func generateImageAssets() {
         canvases.append(canvas)
     }
     
-    let writer = VectorImage.Writer.init(canvases: canvases)
+    let writer = VectorAssetWriter.init(canvases: canvases)
     writer.write(toFile: writeToFile, compressed: true)
 }
 

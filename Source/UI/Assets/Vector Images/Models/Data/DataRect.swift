@@ -8,11 +8,9 @@
 
 import Foundation
 
-extension VectorImage {
-    struct DataRect {
-        let xIndex: UInt16
-        let yIndex: UInt16
-        let widthIndex: UInt16
-        let heightIndex: UInt16
-    }
+struct DataRect {
+    let xIndex: UInt16
+    let yIndex: UInt16
+    let widthIndex: UInt16
+    let heightIndex: UInt16
 }

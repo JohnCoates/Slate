@@ -8,9 +8,7 @@
 
 import Foundation
 
-extension VectorImage {
-    struct DataPoint {
-        let xIndex: UInt16
-        let yIndex: UInt16
-    }
+struct DataPoint {
+    let xIndex: UInt16
+    let yIndex: UInt16
 }

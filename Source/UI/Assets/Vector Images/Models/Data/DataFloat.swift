@@ -8,20 +8,16 @@
 
 import Foundation
 
-extension VectorImage {
-    struct DataFloat: CustomStringConvertible, Equatable {
-        let value: Float
-        let index: UInt16
-        
-        var description: String {
-            return "[DataFloat \(value), index: \(index)]"
-        }
+struct DataFloat: CustomStringConvertible, Equatable {
+    let value: Float
+    let index: UInt16
+    
+    var description: String {
+        return "[DataFloat \(value), index: \(index)]"
     }
 }
 
 // MARK: - Colors
-
-typealias DataFloat = VectorImage.DataFloat
 
 func == (lhs: DataFloat, rhs: DataFloat) -> Bool {
     return lhs.value == rhs.value

@@ -9,7 +9,7 @@
 
 import Foundation
 
-extension VectorImage.Writer {
+extension VectorAssetWriter {
 
     func dataPaths(fromPaths path: [Path], floats: [DataFloat], colors: [DataColor]) -> [DataPath] {
         return path.map { path -> DataPath in
@@ -18,7 +18,7 @@ extension VectorImage.Writer {
         }
     }
     
-    func dataInstruction(fromInstruction instruction: Path.Instruction) -> VectorImage.DataInstruction {
+    func dataInstruction(fromInstruction instruction: Path.Instruction) -> DataInstruction {
         switch instruction {
         case .move(let point):
             return DataInstruction.move(to: dataPoint(fromPoint: point))
@@ -49,18 +49,18 @@ extension VectorImage.Writer {
             
         // Graphics Conext
         case .contextSaveGState:
-            return VectorImage.DataInstruction.contextSaveGState
+            return DataInstruction.contextSaveGState
         case .contextRestoreGState:
-            return VectorImage.DataInstruction.contextRestoreGState
+            return DataInstruction.contextRestoreGState
         case .contextTranslateBy(let x, let y):
-            return VectorImage.DataInstruction.contextTranslateBy(xIndex: index(forFloat: x),
+            return DataInstruction.contextTranslateBy(xIndex: index(forFloat: x),
                                                                   yIndex: index(forFloat: y))
         case .contextRotate(let by):
-            return VectorImage.DataInstruction.contextRotate(byIndex: index(forFloat: by))
+            return DataInstruction.contextRotate(byIndex: index(forFloat: by))
         }
     }
     
-    func dataColor(fromColor color: Color) -> DataColor {
+    func dataColor(fromColor color: Path.Color) -> DataColor {
         for dataColor in self.colors {
             let realColor = self.color(fromDataColor: dataColor)
             if realColor == color {

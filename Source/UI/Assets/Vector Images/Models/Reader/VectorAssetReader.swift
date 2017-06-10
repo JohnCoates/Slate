@@ -13,7 +13,6 @@ class VectorAssetReader {
     enum Error: Swift.Error {
         case wrongFormat(expected: UInt8, fileFormat: UInt8)
     }
-    private typealias DataColor = VectorImage.DataColor
     
     let data: Data
     
@@ -130,7 +129,7 @@ class VectorAssetReader {
         var instructions: [Path.Instruction] = Array()
         for _ in 0..<count {
             let rawKind = readUInt8()
-            guard let kind = VectorImage.DataInstruction.Kind(rawValue: rawKind) else {
+            guard let kind = DataInstruction.Kind(rawValue: rawKind) else {
                 fatalError("Invalid instruction kind: \(rawKind)")
             }
             let instruction: Path.Instruction
