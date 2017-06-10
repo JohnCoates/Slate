@@ -29,19 +29,20 @@ class VectorImageCanvasIcon: CanvasIcon {
         for path in canvas.paths {
             draw(path: path)
         }
-        _context = nil
+        ephemeralContext = nil
     }
     
-    var _context: CGContext?
+    var ephemeralContext: CGContext?
+    
     var context: CGContext {
-        if let context = _context {
+        if let context = ephemeralContext {
             return context
         } else {
             guard let context = UIGraphicsGetCurrentContext() else {
                 fatalError("Couldn't get graphics context!")
             }
             
-            _context = context
+            ephemeralContext = context
             return context
         }
     }
@@ -121,6 +122,7 @@ class VectorImageCanvasIcon: CanvasIcon {
             }
         }
     }
+    
 }
 
 extension Path.Color {

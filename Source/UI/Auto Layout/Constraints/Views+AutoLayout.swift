@@ -161,8 +161,7 @@ extension UIView {
     
     func constraintsWithAttribute(_ attribute: NSLayoutAttribute) -> [NSLayoutConstraint]? {
         let allConstraints = self.constraints
-        let constraints = allConstraints.filter { $0.firstAttribute == attribute ||
-                                                  $0.secondAttribute == attribute }
+        let constraints = allConstraints.filter { $0.firstAttribute == attribute || $0.secondAttribute == attribute }
         
         if constraints.count > 0 {
             return constraints
@@ -207,6 +206,7 @@ extension UIView {
 // MARK: - Table View
 
 extension UITableView {
+    
     // Set the tableHeaderView so that the required height can be determined, update the header's frame and set it again
     func setAutoLayout(tableHeaderView header: UIView) {
         self.tableHeaderView = header
@@ -230,4 +230,5 @@ extension UITableView {
         view.frame = frame
         self.tableFooterView = view
     }
+    
 }

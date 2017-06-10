@@ -36,11 +36,13 @@ extension DrawProxyDSL {
             path.add(instruction: .move(to: to.point))
             
         }
+        
         func addCurve(to: CGPoint, controlPoint1: CGPoint, controlPoint2: CGPoint) {
             path.add(instruction: .addCurve(to: to.point,
                                             control1: controlPoint1.point,
                                             control2: controlPoint2.point))
         }
+        
         func addLine(to: CGPoint) {
             path.add(instruction: .addLine(to: to.point))
         }

@@ -9,6 +9,7 @@
 import UIKit
 
 extension ComponentEditBar {
+    
     func set(target: Component) {
         clearInitialState()
         
@@ -50,4 +51,5 @@ extension ComponentEditBar {
         
         addDeleteControl()
     }
+    
 }

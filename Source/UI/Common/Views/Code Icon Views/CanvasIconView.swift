@@ -35,4 +35,5 @@ class CanvasIconView: UIView {
         
         icon.draw(toTargetFrame: rect, contentMode: canvasContentMode)
     }
+    
 }

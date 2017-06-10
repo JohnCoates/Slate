@@ -11,9 +11,9 @@ import UIKit
 
 class Theme {
     struct Kits {
-        static let background = UIColor(red:0.11, green:0.12, blue:0.15, alpha:1.00)
+        static let background = UIColor(red: 0.11, green: 0.12, blue: 0.15, alpha: 1.00)
         static let text = UIColor.white
-        static let dateText = UIColor(red:0.59, green:0.64, blue:0.71, alpha:1.00)
+        static let dateText = UIColor(red: 0.59, green: 0.64, blue: 0.71, alpha: 1.00)
         static let cellTitle: UIFont = {
             return UIFont.system(14, weight: .medium)
         }()

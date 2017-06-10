@@ -19,6 +19,7 @@ class AbstractFilter {
     // MARK: - Textures
     
     fileprivate var outputTexture: MTLTexture?
+    
     func outputTexture(forInputTexture inputTexture: MTLTexture) -> MTLTexture {
         if let outputTexture = outputTexture {
             if outputTexture.width == inputTexture.width, outputTexture.height == inputTexture.height {
@@ -43,4 +44,5 @@ class AbstractFilter {
                 inputTexture: MTLTexture) -> MTLTexture {
         fatalError("Filter \(self) must implement filter(withCommandBuffer:inputTexture:)")
     }
+    
 }

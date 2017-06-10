@@ -27,8 +27,8 @@ class CodeIconButton: Button {
     
     override func initialSetup() {
         super.initialSetup()
-        contentView.backgroundColor = UIColor(red:0.93, green:0.93,
-                                              blue:0.93, alpha:0.59)
+        contentView.backgroundColor = UIColor(red: 0.93, green: 0.93,
+                                              blue: 0.93, alpha: 0.59)
         setUpIconProxy()
         setUpShape()
     }
@@ -39,6 +39,7 @@ class CodeIconButton: Button {
     }
     
     let iconProxy = UIView(frame: .zero)
+    
     func setUpIconProxy() {
         iconProxy.isHidden = true
         contentView.addSubview(iconProxy)
@@ -81,4 +82,5 @@ class CodeIconButton: Button {
     func handlePathLayout(forFrame frame: CGRect) {
         updatePath(withFrame: frame)
     }
+    
 }

@@ -10,6 +10,7 @@ import Foundation
 import AppKit
 
 class FloatPairFormatter: Formatter {
+    
     override func string(for obj: Any?) -> String? {
         if obj == nil {
             return nil
@@ -20,12 +21,14 @@ class FloatPairFormatter: Formatter {
         
         return string
     }
+    
     override func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?,
                                  for string: String,
                                  errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
         obj?.pointee = string as NSString
         return true
     }
+    
     override func isPartialStringValid(_ partialStringPtr: AutoreleasingUnsafeMutablePointer<NSString>,
                                        proposedSelectedRange proposedSelRangePtr: NSRangePointer?,
                                        originalString origString: String,
@@ -60,4 +63,5 @@ class FloatPairFormatter: Formatter {
         
         return true
     }
+    
 }

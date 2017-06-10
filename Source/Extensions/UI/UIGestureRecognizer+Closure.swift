@@ -63,7 +63,7 @@ fileprivate class GestureTarget: UIView {
     }
     
     func cleanUpContainers() {
-        containers = containers.filter({ $0.gesture != nil })
+        containers = containers.filter { $0.gesture != nil }
     }
     
     @objc func target(gesture: UIGestureRecognizer) {
@@ -79,4 +79,5 @@ fileprivate class GestureTarget: UIView {
             }
         }
     }
+    
 }

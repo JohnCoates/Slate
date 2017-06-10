@@ -34,6 +34,7 @@ class PermissionsButtonIndicatorViewController: UIViewController {
     let indicator = CanvasIconView(icon: ButtonIndicatorIcon())
     var indicatorTopConstraint: NSLayoutConstraint?
     let indicatorDistance: CGFloat = 12
+    
     func setUpViews() {
         okayButtonPlaceholder.frame = okayButtonFrame
         okayButtonPlaceholder.isHidden = true
@@ -62,6 +63,7 @@ class PermissionsButtonIndicatorViewController: UIViewController {
         animate = true
         startAnimating()
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         animate = false
     }
@@ -112,4 +114,5 @@ class PermissionsButtonIndicatorViewController: UIViewController {
             self.animatePullback(delay: 1)
         }
     }
+    
 }

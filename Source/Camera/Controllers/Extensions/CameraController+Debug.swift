@@ -10,6 +10,7 @@ import Foundation
 import AVFoundation
 
 extension CameraController {
+    
     func printAvailableFormatTypes(forDataOutput dataOutput: AVCaptureVideoDataOutput) {
         #if os(iOS)
             return
@@ -31,4 +32,5 @@ extension CameraController {
             }
         #endif
     }
+    
 }

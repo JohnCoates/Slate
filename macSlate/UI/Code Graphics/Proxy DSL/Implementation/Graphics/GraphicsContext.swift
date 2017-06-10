@@ -10,6 +10,7 @@ import Foundation
 
 extension DrawProxyDSL {
     class GraphicsContext {
+        
         func add(instruction: Path.Instruction) {
             if let path = DrawProxyDSL.currentPath {
                 path.add(instruction: instruction)
@@ -19,10 +20,12 @@ extension DrawProxyDSL {
                 fatalError("Can't add graphics context command!")
             }
         }
+        
         func saveGState() {
             add(instruction: .contextSaveGState)
             
         }
+        
         func restoreGState() {
             add(instruction: .contextRestoreGState)
         }
@@ -33,7 +36,8 @@ extension DrawProxyDSL {
     
         func rotate(by: CGFloat) {
             add(instruction: .contextRotate(by: Float(by)))
-        }    
+        }
+        
     }
 }
 

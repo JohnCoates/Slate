@@ -76,6 +76,7 @@ func imageAssetsFilePath() -> URL {
     
     return generatedDirectory.appendingPathComponent(ImageFile.coreAssets.rawValue)
 }
+
 func generateImageAssets() {
     let writeToFile = imageAssetsFilePath()
     

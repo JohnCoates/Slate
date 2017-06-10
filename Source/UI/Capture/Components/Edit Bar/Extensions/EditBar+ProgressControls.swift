@@ -19,6 +19,7 @@ extension ComponentEditBar {
     }
     
     static let progressControlWidth: CGFloat = 50
+    
     func addProgressControl(settings: ComponentEditBar.ProgressSettings,
                             initialValue: Float,
                             valueHandler: @escaping CircleSlider.ValueChangedCallback) {
@@ -73,4 +74,5 @@ extension ComponentEditBar {
                            initialValue: target.opacity * 100,
                            valueHandler: { target.opacity = $0 / 100 })
     }
+    
 }

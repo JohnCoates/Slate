@@ -25,4 +25,5 @@ class RoundableView: UIView {
             layer.cornerRadius = (frame.width / 2) * CGFloat(rounding)
         }
     }
+    
 }

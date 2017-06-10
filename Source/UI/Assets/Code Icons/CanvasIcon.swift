@@ -17,6 +17,7 @@ protocol CanvasIcon {
 }
 
 extension CanvasIcon {
+    
     func draw(toTargetFrame targetFrame: CGRect, contentMode: CanvasIconContentMode) {
         let context = contextSetUp(targetFrame: targetFrame, contentMode: contentMode)
         drawing()
@@ -39,6 +40,7 @@ extension CanvasIcon {
     func tearDown(context: CGContext) {
         context.restoreGState()
     }
+    
 }
 
 enum CanvasIconContentMode: Int {
@@ -92,4 +94,5 @@ enum CanvasIconContentMode: Int {
         result.origin.y = target.minY + (target.height - result.height) / 2
         return result
     }
+    
 }

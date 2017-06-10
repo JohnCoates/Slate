@@ -67,4 +67,5 @@ class InvertedMaskButtonViewController: UIViewController {
         button.width --> width
         button.height.pin(to: button.width, times: heightRatio)
     }
+    
 }

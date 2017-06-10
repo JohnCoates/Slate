@@ -13,7 +13,7 @@ extension VectorAssetWriter {
     
     func dataFloats() -> [DataFloat] {
         var floats = [Float]()
-        let instructions: [Path.Instruction] = _instructions
+        let instructions: [Path.Instruction] = sourceInstructions
         for instruction in instructions {
             switch instruction {
             case .initWith(let rect), .initWith3(let rect):
@@ -22,7 +22,7 @@ extension VectorAssetWriter {
             case .initWith2(let rect, let cornerRadius):
                 add(point: rect.origin, toFloats: &floats)
                 add(point: rect.size, toFloats: &floats)
-                add(floats:[cornerRadius], toFloats: &floats)
+                add(floats: [cornerRadius], toFloats: &floats)
             case .move(let to), .addLine(let to):
                 add(point: to, toFloats: &floats)
                 break
@@ -33,21 +33,21 @@ extension VectorAssetWriter {
             case .fill(let color), .stroke(let color):
                 add(color: color, toFloats: &floats)
             case .setLineWidth(let to):
-                add(floats:[to], toFloats: &floats)
+                add(floats: [to], toFloats: &floats)
             case .close, .usesEvenOddFillRule:
                 break
             // graphics context
             case .contextSaveGState, .contextRestoreGState:
                 break
             case .contextTranslateBy(let x, let y):
-                add(floats:[x, y], toFloats: &floats)
+                add(floats: [x, y], toFloats: &floats)
             case .contextRotate(let by):
-                add(floats:[by], toFloats: &floats)
+                add(floats: [by], toFloats: &floats)
             }
         }
         
-        for canvas in _canvases {
-            add(floats:[canvas.width, canvas.height], toFloats: &floats)
+        for canvas in sourceCanvases {
+            add(floats: [canvas.width, canvas.height], toFloats: &floats)
         }
         
         var index: UInt16 = 0
@@ -62,7 +62,7 @@ extension VectorAssetWriter {
     func allColors() -> [DataColor] {
         var colors: [Path.Color] = Array()
         
-        for instruction in _instructions {
+        for instruction in sourceInstructions {
             switch instruction {
             case .fill(let color), .stroke(let color):
                 if !colors.contains(color) {
@@ -88,10 +88,10 @@ extension VectorAssetWriter {
     }
     
     func dataCanvases() -> [DataCanvas] {
-        return _canvases.map { canvas -> DataCanvas in
+        return sourceCanvases.map { canvas -> DataCanvas in
             
             let paths = dataPaths(fromPaths: canvas.paths, floats: floats, colors: colors)
-            let instructions = canvas.instructions.map({ dataInstruction(fromInstruction: $0) })
+            let instructions = canvas.instructions.map { dataInstruction(fromInstruction: $0) }
             
             let dataCanvas = DataCanvas(name: canvas.name,
                                         sectionIndex: sectionIndex(forSection: canvas.section),
@@ -124,7 +124,7 @@ extension VectorAssetWriter {
     
     func allSections() -> [String] {
         var sections = [String]()
-        for canvas in _canvases {
+        for canvas in sourceCanvases {
             if !sections.contains(canvas.section) {
                 sections.append(canvas.section)
             }
@@ -132,4 +132,5 @@ extension VectorAssetWriter {
         
         return sections
     }
+    
 }

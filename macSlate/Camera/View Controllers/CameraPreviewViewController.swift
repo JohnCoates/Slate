@@ -24,4 +24,5 @@ class CameraPreviewViewController: NSViewController {
         
         hudController.showWindow(nil)
     }
+    
 }

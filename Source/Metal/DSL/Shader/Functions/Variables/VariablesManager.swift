@@ -28,7 +28,7 @@ extension RuntimeShader {
             return Texture2D(name: name)
         }
         
-        func type(name: String, type: Struct, qualifier: Type.Qualifier) -> Variable {
+        func type(name: String, type: Struct, qualifier: ValueType.Qualifier) -> Variable {
             let variable = Variable(name: name, type: .`struct`)
             variable.function = function
             return variable
@@ -48,7 +48,8 @@ extension RuntimeShader {
 // MARK: - Subscripting
 
 extension RuntimeShader.VariablesManager {
-    subscript (name: String) -> RuntimeShader.Float4 {
+    
+    subscript(name: String) -> RuntimeShader.Float4 {
         get {
             let variable = RuntimeShader.Float4(name: name, type: .float4)
             variable.function = function
@@ -56,4 +57,5 @@ extension RuntimeShader.VariablesManager {
             return variable
         }
     }
+    
 }

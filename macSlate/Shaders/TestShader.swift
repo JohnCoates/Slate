@@ -9,10 +9,11 @@
 import Foundation
 
 extension RuntimeShader {
+    
     static func testRuntimeShaderBuild() {
         let shader = buildRuntimeShader(identifier: "fragmentPassthrough") { shader in
-//            let VertexInType = shader.VertexInType()
-//            let VertexOutType = shader.VertexOutType()
+//            let vertexInType = shader.vertexInType()
+//            let vertexOutType = shader.vertexOutType()
             
             shader.buildFragmentFunction(name: "fragmentPassthrough", returnType: Float4.self) { function in
 //                let arguments = function.arguments
@@ -31,6 +32,7 @@ extension RuntimeShader {
         
         print("runtime shader: \(shader)")
     }
+    
 }
 
 func testRuntimeShaderBuild() {

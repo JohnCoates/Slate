@@ -31,8 +31,8 @@ class ComponentEditBar: UIView {
     // MARK: - Setup
     
     private func initialSetup() {
-        backgroundColor = UIColor(red:0.11, green:0.09,
-                                  blue:0.11, alpha:0.44)
+        backgroundColor = UIColor(red: 0.11, green: 0.09,
+                                  blue: 0.11, alpha: 0.44)
         setUpSaveButton()
         setUpCancelButton()
         addDeleteControl()
@@ -52,6 +52,7 @@ class ComponentEditBar: UIView {
     }
     
     let cancelButton = InverseMaskButtonImage(asset: EditingImage.cancel)
+    
     fileprivate func setUpCancelButton() {
         cancelButton.setTappedCallback(instance: self, method: Method.cancelTapped)
         addSubview(cancelButton)
@@ -62,6 +63,7 @@ class ComponentEditBar: UIView {
     }
     
     let titleButton = Button()
+    
     func setUpTitleButton() {
         setUpTitleLabel()
         setUpTitleInteractivityIndicator()
@@ -77,6 +79,7 @@ class ComponentEditBar: UIView {
     }
     
     let titleLabel: UILabel = UILabel(frame: .zero)
+    
     fileprivate func setUpTitleLabel() {
         titleLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightRegular)
         titleLabel.textColor = UIColor.white
@@ -89,6 +92,7 @@ class ComponentEditBar: UIView {
     }
     
     var titleInteractivityIndicator = CanvasIconView(icon: InteractivityIndicatorIcon())
+    
     private func setUpTitleInteractivityIndicator() {
         titleButton.addSubview(titleInteractivityIndicator)
         
@@ -109,7 +113,8 @@ class ComponentEditBar: UIView {
 //        let control = CodeIconButton(icon: DeleteLineIcon())
         let control = PathsImageButton(asset: EditingImage.delete)
         control.rounding = 1
-        control.contentView.backgroundColor = UIColor(red:0.16, green:0.14, blue:0.17, alpha:1.00)
+        control.contentView.backgroundColor = UIColor(red: 0.16, green: 0.14,
+                                                      blue: 0.17, alpha: 1.00)
         control.setTappedCallback(instance: self, method: Method.deleteTapped)
         addSubview(control)
         controls.append(control)
@@ -228,6 +233,7 @@ class ComponentEditBar: UIView {
         
         return delegate
     }
+    
     func requiredComponent(forFunction function: String) -> Component {
         guard let component = component else {
             fatalError("Missing component required for function: \(function)")

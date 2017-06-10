@@ -17,6 +17,7 @@
 class Anchor<Kind> where Kind: AnchorType {
     let target: View
     let attribute: NSLayoutAttribute
+    
     init(target: View, kind attribute: NSLayoutAttribute) {
         self.target = target
         self.attribute = attribute
@@ -66,14 +67,16 @@ class Anchor<Kind> where Kind: AnchorType {
     func prepareLeftHandSideForAutoLayout() {
         target.translatesAutoresizingMaskIntoConstraints = false
     }
+    
 }
 
-class AnchorType { }
+class AnchorType {}
 class XAxis: AnchorType {}
 class YAxis: AnchorType {}
 class Dimension: AnchorType {}
 
 class DimensionAnchor: Anchor<Dimension> {
+    
     @discardableResult func pin(to: CGFloat,
                                 rank: Priority? = nil) -> NSLayoutConstraint {
         return pin(to: to, relation: .equal, rank: rank)
@@ -137,8 +140,8 @@ class DimensionAnchor: Anchor<Dimension> {
                                             constant: to)
         configure(constraint: constraint, rank: rank)
         return constraint
-        
     }
+    
 }
 
 class XYAnchor {
@@ -206,6 +209,7 @@ class XYAnchor {
         
         return [xConstraint, yConstraint]
     }
+    
 }
 
 class SizeAnchor {
@@ -243,6 +247,7 @@ class SizeAnchor {
         
         return [widthConstraint, heightConstraint]
     }
+    
 }
 
 class EdgesAnchor {
@@ -276,4 +281,5 @@ class EdgesAnchor {
         return topLeft.pin(atMost: to.topLeft, add: add, rank: rank) +
             bottomRight.pin(atMost: to.bottomRight, add: add, rank: rank)
     }
+    
 }

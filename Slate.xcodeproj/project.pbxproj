@@ -571,9 +571,11 @@
 		688C078884E306285B5F2E27 /* Pods_Feature_Catalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Feature_Catalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		866CB97E0921FF46013F02E3 /* Pods_Slate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F964C72096AB2255F99FA63 /* Pods-Feature Catalog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feature Catalog.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog.release.xcconfig"; sourceTree = "<group>"; };
+		C41AB8EF87A7A674E102A8CC /* Pods-Slate.lint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate.lint.xcconfig"; path = "Pods/Target Support Files/Pods-Slate/Pods-Slate.lint.xcconfig"; sourceTree = "<group>"; };
 		C65C3DD7DBBD649D3B2B141A /* Pods-Slate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Slate/Pods-Slate.debug.xcconfig"; sourceTree = "<group>"; };
 		E2BE2BA921BB886A12F73219 /* Pods-Slate Local.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate Local.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Slate Local/Pods-Slate Local.appstore.xcconfig"; sourceTree = "<group>"; };
 		E803F739E995BBB1C38B7A04 /* Pods-Feature Catalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feature Catalog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog.debug.xcconfig"; sourceTree = "<group>"; };
+		E893ECE96899276229D0D247 /* Pods-Feature Catalog.lint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feature Catalog.lint.xcconfig"; path = "Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog.lint.xcconfig"; sourceTree = "<group>"; };
 		EA803CD2EB0BB5389D46E0F6 /* Pods-Slate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Slate/Pods-Slate.release.xcconfig"; sourceTree = "<group>"; };
 		FA0462B21EC3CC76007B74A0 /* FrontBackCameraToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontBackCameraToggle.swift; sourceTree = "<group>"; };
 		FA0462B51EC3CDFA007B74A0 /* ControlBarItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlBarItemCell.swift; sourceTree = "<group>"; };
@@ -888,6 +890,8 @@
 				085C8EBAC1B8561F45FE5DB9 /* Pods-Feature Catalog.fastdebug.xcconfig */,
 				60F4904F4767BF970E0F9859 /* Pods-Slate.fastdebug.xcconfig */,
 				2B2A3C8F82002625FA872283 /* Pods-Slate Local.fastdebug.xcconfig */,
+				E893ECE96899276229D0D247 /* Pods-Feature Catalog.lint.xcconfig */,
+				C41AB8EF87A7A674E102A8CC /* Pods-Slate.lint.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -2595,7 +2599,7 @@
 			buildPhases = (
 				AF267DBC92C6F6E6E0A71DE9 /* [CP] Check Pods Manifest.lock */,
 				FACC8FD81D98AD4500589230 /* Swiftlint */,
-				FAF5AB321EEC6BA100EDED04 /* ShellScript */,
+				FAF5AB321EEC6BA100EDED04 /* Tailor */,
 				FA9F89DE1D953C540058C369 /* Sources */,
 				FA9F89DF1D953C540058C369 /* Frameworks */,
 				FAAE76841EEB88F800CA3416 /* Generate Images */,
@@ -2845,7 +2849,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ ! -z \"${SKIP_PODS}\" ]\nthen\necho \"Skipping Embed Pods\"\nelse\n\"${SRCROOT}/Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog-frameworks.sh\"\nfi";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		30A43601DB775A1683E45B04 /* [CP] Copy Pods Resources */ = {
@@ -2860,7 +2864,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "if [ ! -z \"${SKIP_PODS}\" ]\nthen\necho \"Skipping Copy Pods\"\nelse\n\"${SRCROOT}/Pods/Target Support Files/Pods-Slate/Pods-Slate-resources.sh\"\nfi";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Slate/Pods-Slate-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3878ED78F93436AB1BAD504E /* [CP] Embed Pods Frameworks */ = {
@@ -2875,7 +2879,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "if [ ! -z \"${SKIP_PODS}\" ]\nthen\necho \"Skipping Embed Pods\"\nelse\n\"${SRCROOT}/Pods/Target Support Files/Pods-Slate/Pods-Slate-frameworks.sh\"\nfi";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Slate/Pods-Slate-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AF267DBC92C6F6E6E0A71DE9 /* [CP] Check Pods Manifest.lock */ = {
@@ -2890,7 +2894,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ ! -z \"${SKIP_PODS}\" ]\nthen\necho \"Skipping Check Pods\"\nelse\ndiff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\nfi";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B70C2C9096055217B1A095D8 /* [CP] Check Pods Manifest.lock */ = {
@@ -2905,7 +2909,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "if [ ! -z \"${SKIP_PODS}\" ]\nthen\necho \"Skipping Check Pods\"\nelse\ndiff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\nfi";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F06FD0C2036AEF6649093ED3 /* [CP] Copy Pods Resources */ = {
@@ -2920,7 +2924,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ ! -z \"${SKIP_PODS}\" ]\nthen\necho \"Skipping Copy Pods\"\nelse\n\"${SRCROOT}/Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog-resources.sh\"\nfi";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FA2B1EAD1EC932DC00E44613 /* Build Metal Shader Library */ = {
@@ -3079,13 +3083,14 @@
 			shellPath = /bin/bash;
 			shellScript = "if [ ! -z \"${SKIP_LINT}\" ]\nthen\necho \"Skipping Lint\"\nelse\nif which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\nfi";
 		};
-		FAF5AB321EEC6BA100EDED04 /* ShellScript */ = {
+		FAF5AB321EEC6BA100EDED04 /* Tailor */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = Tailor;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4429,7 +4434,7 @@
 		};
 		FAF5AB2B1EEC6B7200EDED04 /* Lint */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C65C3DD7DBBD649D3B2B141A /* Pods-Slate.debug.xcconfig */;
+			baseConfigurationReference = C41AB8EF87A7A674E102A8CC /* Pods-Slate.lint.xcconfig */;
 			buildSettings = {
 				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -4529,7 +4534,7 @@
 		};
 		FAF5AB301EEC6B7200EDED04 /* Lint */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E803F739E995BBB1C38B7A04 /* Pods-Feature Catalog.debug.xcconfig */;
+			baseConfigurationReference = E893ECE96899276229D0D247 /* Pods-Feature Catalog.lint.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = FeatureCatalogAppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;

@@ -60,6 +60,7 @@ class TestFragmentFunction: XCTestCase {
         XCTAssert(function.contains("\(samplerName).sample(fragmentIn.\(textureCoordinates))"),
                   "Has sampler function call")
     }
+    
 }
 
 private class Constant {
@@ -72,6 +73,7 @@ private class Constant {
 // MARK: - Shader
 
 private extension RuntimeShader {
+    
     static func testFunction() -> FragmentFunction {
         var functionMaybe: RuntimeShader.FragmentFunction?
         _ = buildRuntimeShader(identifier: "fragmentPassthrough") { shader in
@@ -101,6 +103,7 @@ private extension RuntimeShader {
         color == texture.sample(sampler: sampler, coordinates: coordinates)
         function.returnValue = color
     }
+    
 }
 
 private func testFunction() -> RuntimeShader.FragmentFunction {

@@ -22,7 +22,7 @@ class HUDShaderViewController: NSViewController, NSTextViewDelegate {
     // MARK: - View Lifecycle
     
     override func loadView() {
-        view = NSView(frame: NSRect(x: 0, y:0, width: 600, height: 300))
+        view = NSView(frame: NSRect(x: 0, y: 0, width: 600, height: 300))
         interfaceSetup()
     }
     
@@ -34,6 +34,7 @@ class HUDShaderViewController: NSViewController, NSTextViewDelegate {
     
     lazy var shaderScrollview = NSScrollView()
     lazy var shaderField = NSTextView()
+    
     func shaderFieldSetup() {
         view.addSubview(shaderScrollview)
         

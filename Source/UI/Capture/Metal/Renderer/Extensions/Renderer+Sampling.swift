@@ -11,6 +11,7 @@ import Metal
 import MetalKit
 
 extension Renderer {
+    
     class func makeSampler(withDevice device: MTLDevice) -> MTLSamplerState {
         let sampler = MTLSamplerDescriptor()
         sampler.minFilter = .nearest
@@ -29,4 +30,5 @@ extension Renderer {
         sampler.label = "slateSampler"
         return device.makeSamplerState(descriptor: sampler)
     }
+    
 }

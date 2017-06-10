@@ -10,6 +10,7 @@ import Foundation
 import AVFoundation
 
 extension CameraController {
+    
     func startCapturingVideo() {
         session.beginConfiguration()
         
@@ -32,4 +33,5 @@ extension CameraController {
         session.startRunning()
         callAfterSessionRunning?()
     }
+    
 }

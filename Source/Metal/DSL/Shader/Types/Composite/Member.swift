@@ -12,7 +12,7 @@ extension RuntimeShader {
     struct Member {
         let name: String
         let type: ShaderPrimitive.Type
-        var qualifier: Type.Qualifier?
+        var qualifier: ValueType.Qualifier?
         var declaration: String {
             // float2 textureCoordinates [[ user(texturecoord) ]];
             var contents = "\(type.name) \(name)"

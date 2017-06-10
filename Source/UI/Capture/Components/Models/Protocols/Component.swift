@@ -31,6 +31,7 @@ protocol ComponentDelegate: class {
 // MARK: - Defaults
 
 extension Component {
+    
     static func createInstance() -> Component {
         return self.init()
     }
@@ -48,4 +49,5 @@ extension Component {
         
         realmObject.frame = self.frame
     }
+    
 }

@@ -44,8 +44,10 @@ internal enum FontWeight {
 }
 
 extension UIFont {
+    
     /// Returns the system font with specified size, weight
     class func system(_ size: CGFloat, weight: FontWeight) -> UIFont {
         return systemFont(ofSize: size, weight: weight.rawValue)
     }
+    
 }

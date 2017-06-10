@@ -19,6 +19,7 @@ class MetalCameraController: CameraController {
     
     typealias TextureHandler = (MTLTexture) -> Void
     private var textureHandler: TextureHandler?
+    
     func setTextureHandler<T: AnyObject>(instance: T,
                                          method: @escaping (T) -> TextureHandler) {
         textureHandler = {
@@ -55,6 +56,7 @@ class MetalCameraController: CameraController {
     // MARK: - Video Delegate
     
     weak var captureConnection: AVCaptureConnection?
+    
     override func captureOutput(_ captureOutput: AVCaptureOutput!,
                                 didOutputSampleBuffer sampleBuffer: CMSampleBuffer!,
                                 from connection: AVCaptureConnection!) {
@@ -93,4 +95,5 @@ class MetalCameraController: CameraController {
             captureConnection = connection
         #endif
     }
+    
 }

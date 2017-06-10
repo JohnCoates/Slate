@@ -9,16 +9,18 @@
 import Foundation
 
 extension RuntimeShader {
-    func VertexInType() -> Struct {
-        let VertexInType: Struct = defineStruct(name: "VertexIn")
-        VertexInType.addMember(name: "position", type: Float4.self)
-        return VertexInType
+    
+    func vertexInType() -> Struct {
+        let vertexInType: Struct = defineStruct(name: "VertexIn")
+        vertexInType.addMember(name: "position", type: Float4.self)
+        return vertexInType
     }
     
-    func VertexOutType() -> Struct {
-        let VertexOutType: Struct = defineStruct(name: "VertextOut")
-        VertexOutType.addMember(name: "position", type: Float4.self, qualifier: .position)
-        VertexOutType.addMember(name: "textureCoordinates", type: Float2.self, qualifier: .user(name: "texturecoord"))
-        return VertexOutType
+    func vertexOutType() -> Struct {
+        let vertexOutType: Struct = defineStruct(name: "VertextOut")
+        vertexOutType.addMember(name: "position", type: Float4.self, qualifier: .position)
+        vertexOutType.addMember(name: "textureCoordinates", type: Float2.self, qualifier: .user(name: "texturecoord"))
+        return vertexOutType
     }
+    
 }

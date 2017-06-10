@@ -34,6 +34,7 @@ final class DebugWindow: UIWindow {
     private lazy var tapGesture: UITapGestureRecognizer = {
         return UITapGestureRecognizer(target: self, action: .activationTap)
     }()
+    
     private func setUpTapGesture() {
         isUserInteractionEnabled = true
         addGestureRecognizer(tapGesture)
@@ -55,6 +56,7 @@ final class DebugWindow: UIWindow {
         
         DebugBarController.sharedInstance.toggleActivation()
     }
+    
 }
 
 // MARK: - Selector Extension

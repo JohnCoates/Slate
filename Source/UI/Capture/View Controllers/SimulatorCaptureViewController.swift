@@ -25,4 +25,5 @@ final class SimulatorCaptureViewController: BaseCaptureViewController {
     override func capture() {
         print("simulator capture tapped")
     }
+    
 }

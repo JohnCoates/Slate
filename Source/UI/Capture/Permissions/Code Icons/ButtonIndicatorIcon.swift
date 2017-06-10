@@ -25,5 +25,5 @@ struct ButtonIndicatorIcon: CanvasIcon {
         iconPath.lineJoinStyle = .round
         iconPath.stroke()
     }
+    
 }
-

@@ -12,6 +12,7 @@ class VectorImagesTableViewController: UITableViewController {
 
     var sections = [String]()
     var canvases = [[Canvas]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,13 +24,13 @@ class VectorImagesTableViewController: UITableViewController {
             let reader = try VectorAssetReader(file: file)
             try reader.read()
             sections = reader.sections
-            canvases = sections.map({ name -> [Canvas] in
+            canvases = sections.map { name -> [Canvas] in
                 var section = [Canvas]()
                 for canvas in reader.canvases where canvas.section == name {
                     section.append(canvas)
                 }
                 return section
-            })
+            }
         } catch let error {
             print("Error reading vector assets: \(error)")
         }
@@ -78,4 +79,5 @@ class VectorImagesTableViewController: UITableViewController {
                             titleForHeaderInSection section: Int) -> String? {
         return sections[section]
     }
+    
 }

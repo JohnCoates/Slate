@@ -52,6 +52,7 @@ class ComponentRealm: Object {
         
         instance.frame = frame
     }
+    
 }
 
 // MARK: - Union Class
@@ -105,4 +106,5 @@ class ComponentUnionRealm: Object {
             return typed.instance()
         }
     }
+    
 }

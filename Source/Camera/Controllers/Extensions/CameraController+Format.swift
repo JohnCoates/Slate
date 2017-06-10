@@ -12,7 +12,7 @@ import AVFoundation
 extension CameraController {
     
     func setBestFormat(forDevice device: AVCaptureDevice,
-                       callAfterSessionRunning: inout (() -> Void)? ) {
+                       callAfterSessionRunning: inout (() -> Void)?) {
         guard let formats = device.formats as? [AVCaptureDeviceFormat] else {
             print("Couldn't get formats for device: \(device)")
             return

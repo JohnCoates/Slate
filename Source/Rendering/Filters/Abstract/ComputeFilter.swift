@@ -25,6 +25,7 @@ class ComputeFilter: AbstractFilter {
     
     fileprivate var threadGroups: MTLSize?
     fileprivate var threadTextureSize: MTLSize?
+    
     func threadGroups(forInputTexture inputTexture: MTLTexture) -> MTLSize {
         if let threadGroups = threadGroups, let threadTextureSize = threadTextureSize {
             if threadTextureSize.width == inputTexture.width,
@@ -41,4 +42,5 @@ class ComputeFilter: AbstractFilter {
                                     depth: inputTexture.depth)
         return groups
     }
+    
 }

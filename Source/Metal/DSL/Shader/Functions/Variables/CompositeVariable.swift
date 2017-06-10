@@ -10,6 +10,7 @@ import Foundation
 
 extension RuntimeShader {
     class CompositeVariable: Variable {
+        
         class func add(toShader shader: RuntimeShader) -> ShaderType {
             fatalError("Subclass must override this method")
         }
@@ -23,14 +24,15 @@ extension RuntimeShader {
 // MARK: - Subscripting
 
 extension RuntimeShader.CompositeVariable {
-    subscript (name: String) -> RuntimeShader.Float4 {
+    
+    subscript(name: String) -> RuntimeShader.Float4 {
         let variable = RuntimeShader.CompositeMemberVariable(composite: self,
                                                              member: name,
                                                              type: .float4)
         return RuntimeShader.Float4(inner: variable)
     }
     
-    subscript (name: String) -> RuntimeShader.Float2 {
+    subscript(name: String) -> RuntimeShader.Float2 {
         let variable = RuntimeShader.CompositeMemberVariable(composite: self,
                                                              member: name,
                                                              type: .float2)

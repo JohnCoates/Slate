@@ -14,6 +14,7 @@ struct Vertex {
 }
 
 struct Vertices {
+    
     static func fullScreenQuad() -> [Vertex] {
         var vertices = [Vertex]()
         vertices.append(Vertex(position: float4(-1, -1, 0, 1))) // left bottom
@@ -90,4 +91,5 @@ struct Vertices {
         vertices.append(Vertex(position: float4(xMax, yMax, 0, 1))) // right top
         return vertices
     }
+    
 }

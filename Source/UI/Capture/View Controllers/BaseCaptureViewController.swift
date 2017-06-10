@@ -194,9 +194,10 @@ class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate, 
             loadComponents()
         }
     }
+    
     func denied(permission: Permission) {
-        
     }
+    
 }
 
 // MARK: - Callbacks

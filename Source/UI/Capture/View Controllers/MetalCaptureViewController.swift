@@ -19,6 +19,7 @@ final class MetalCaptureViewController: BaseCaptureViewController, AVCapturePhot
     
     lazy var metalView = MTKView()
     var renderer: Renderer?
+    
     override func cameraSetup() {
         view.insertSubview(metalView, at: 0)
         metalView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

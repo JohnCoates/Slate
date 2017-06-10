@@ -9,8 +9,9 @@
 import Foundation
 
 class VectorAssetWriter {
-    let _canvases: [Canvas]
-    let _instructions: [Path.Instruction]
+    
+    let sourceCanvases: [Canvas]
+    let sourceInstructions: [Path.Instruction]
     
     lazy var floats: [DataFloat] = self.dataFloats()
     lazy var colors: [DataColor] = self.allColors()
@@ -18,11 +19,12 @@ class VectorAssetWriter {
     lazy var canvases: [DataCanvas] = self.dataCanvases()
     
     init(canvases: [Canvas]) {
-        _canvases = canvases
-        _instructions = VectorAssetWriter.allInstructions(fromCanvases: canvases)
+        sourceCanvases = canvases
+        sourceInstructions = VectorAssetWriter.allInstructions(fromCanvases: canvases)
     }
     
     var data = Data()
+    
     func write(toFile: URL, compressed: Bool = false) {
         addHeader()
         addFloats()
@@ -56,6 +58,6 @@ class VectorAssetWriter {
         } catch let error {
             print("Compression error: \(error)")
         }
-        
     }
+    
 }

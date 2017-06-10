@@ -11,6 +11,7 @@ import RealmSwift
 
 class RealmMigrator {
     static let currentVersion: UInt64 = 3
+    
     class func migrate() {
         let config = Realm.Configuration(schemaVersion: currentVersion,
                                          migrationBlock: { migration, oldVersion in
@@ -45,10 +46,12 @@ class RealmMigrator {
 // MARK: - Utility Extension
 
 extension RealmSwift.Migration {
+    
     func addProperty<T>(toClass realmClass: RealmSwift.Object.Type,
                         key: String, defaultValue value: T) {
         enumerateObjects(ofType: realmClass.className()) { oldObject, newObject in
             newObject?[key] = value
         }
     }
+    
 }

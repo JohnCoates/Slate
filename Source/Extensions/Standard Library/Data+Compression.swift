@@ -53,6 +53,7 @@ extension Data {
         destination.removeSubrange(bytes..<destination.count)
         return destination
     }
+    
 }
 
 struct Compression {

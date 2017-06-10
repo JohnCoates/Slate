@@ -34,14 +34,14 @@ class CameraDeniedPermisionViewController: PermissionsEducationViewController {
         var cameraRoll = DialogButton()
         cameraRoll.text = "Open Settings"
         cameraRoll.textColor = .white
-        cameraRoll.backgroundColor = UIColor(red:0.28, green:0.39, blue:0.43, alpha:1.00)
+        cameraRoll.backgroundColor = UIColor(red: 0.28, green: 0.39, blue: 0.43, alpha: 1.00)
         cameraRoll.tappedHandler = {[unowned self] in self.openSettings()}
         buttons.append(cameraRoll)
         
         var later = DialogButton()
         later.text = "Later"
         later.textColor = .white
-        later.backgroundColor = UIColor(red:0.56, green:0.56, blue:0.56, alpha:1.00)
+        later.backgroundColor = UIColor(red: 0.56, green: 0.56, blue: 0.56, alpha: 1.00)
         later.tappedHandler = {[unowned self] in self.tappedLater()}
         
         buttons.append(later)
@@ -99,6 +99,6 @@ class CameraDeniedPermisionViewController: PermissionsEducationViewController {
         case .denied, .restricted:
             return
         }
-
     }
+    
 }

@@ -31,7 +31,7 @@ extension RuntimeShader {
             }
             var argumentsSeparatedByCommas = ""
             if let arguments = arguments {
-                let referenceValues = arguments.map({$0.referenceValue})
+                let referenceValues = arguments.map {$0.referenceValue}
                 argumentsSeparatedByCommas = referenceValues.joined(separator: ", ")
             }
             return "\(functionPrefix)\(name)(\(argumentsSeparatedByCommas))"

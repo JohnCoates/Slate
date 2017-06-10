@@ -25,4 +25,5 @@ class TestCustomStruct: XCTestCase {
     
     func testDeclaration() {
     }
+    
 }

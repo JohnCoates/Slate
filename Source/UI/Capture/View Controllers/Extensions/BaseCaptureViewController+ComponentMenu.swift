@@ -76,4 +76,5 @@ extension BaseCaptureViewController: ComponentMenuBarDelegate {
         
         configureAdded(component: componentInstance)
     }
+    
 }

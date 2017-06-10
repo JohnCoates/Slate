@@ -9,6 +9,7 @@
 import UIKit
 
 extension NSLayoutConstraint {
+    
     @discardableResult
     func setMultiplier(_ newMultiplier: CGFloat) -> NSLayoutConstraint {
         let newConstraint = NSLayoutConstraint(item: firstItem,
@@ -29,4 +30,5 @@ extension NSLayoutConstraint {
         NSLayoutConstraint.activate([newConstraint])
         return newConstraint
     }
+    
 }

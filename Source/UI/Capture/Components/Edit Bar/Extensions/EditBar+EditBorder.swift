@@ -10,10 +10,11 @@ import Foundation
 import UIKit
 
 extension ComponentEditBar {
+    
     func addEditBorder(forView view: UIView) {
         let target = borderView(forView: view)
-        target.layer.borderColor = UIColor(red:0.13, green:0.55,
-                                           blue:0.78, alpha:1.00).cgColor
+        target.layer.borderColor = UIColor(red: 0.13, green: 0.55,
+                                           blue: 0.78, alpha: 1.00).cgColor
         target.layer.borderWidth = 3
     }
     

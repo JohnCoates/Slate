@@ -37,6 +37,7 @@ class DebugBarItemView: UIView {
     }
     
     let label = UILabel()
+    
     private func setUpLabel() {
         label.adjustsFontSizeToFitWidth = true
         label.text = item.title
@@ -56,6 +57,7 @@ class DebugBarItemView: UIView {
     private lazy var tapGesture: UITapGestureRecognizer = {
         return UITapGestureRecognizer(target: self, action: .tapped)
     }()
+    
     private func setUpTapGesture() {
         isUserInteractionEnabled = true
         addGestureRecognizer(tapGesture)

@@ -69,4 +69,5 @@ extension BaseCaptureViewController {
         let newRotationZ = currentRotationZ + (opposingAngle * -1) + closestRotationWorkaround
         view.layer.setValue(newRotationZ, forKeyPath: "transform.rotation.z")
     }
+    
 }

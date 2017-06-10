@@ -55,17 +55,22 @@ class VectorImagesManager {
         
         return canvas
     }
+    
 }
 
 extension Canvas {
+    
     static func from(asset: ImageAsset) -> Canvas {
         return VectorImagesManager.shared.requiredCanvas(fromAsset: asset)
     }
+    
 }
 
 extension VectorImageCanvasIcon {
+    
     static func from(asset: ImageAsset) -> VectorImageCanvasIcon {
         let canvas = Canvas.from(asset: asset)
         return VectorImageCanvasIcon(canvas: canvas)
     }
+    
 }

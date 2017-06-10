@@ -36,4 +36,5 @@ class CanvasIconButton: Button {
         let canvasContentMode = CanvasIconContentMode.from(contentMode: contentMode)
         icon.draw(toTargetFrame: contentView.frame, contentMode: canvasContentMode)
     }
+    
 }

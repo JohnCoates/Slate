@@ -47,6 +47,7 @@ class CaptureComponent: Component, EditRounding, EditSize, EditPosition, EditOpa
         view.rounding = defaultRounding
         return view
     }
+    
     static func createView() -> UIView {
         return createTypedView()
     }
@@ -56,6 +57,7 @@ class CaptureComponent: Component, EditRounding, EditSize, EditPosition, EditOpa
         configureWithStandardProperties(realmObject: object)
         return object
     }
+    
 }
 
 // MARK: - Realm Object
@@ -72,4 +74,5 @@ class CaptureComponentRealm: ComponentRealm, EditRounding, EditOpacity {
         
         return instance
     }
+    
 }

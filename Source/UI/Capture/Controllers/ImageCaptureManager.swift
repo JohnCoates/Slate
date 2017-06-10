@@ -28,6 +28,7 @@ class ImageCaptureManager: PermissionsManagerDelegate {
     }()
     
     private var imageDataWaitingForPermissionToSave: Data?
+    
     private func captured(imageData: Data) {
         if permissionsManager.hasPermission(for: .photos) {
             saveToPhotoLibrary(imageData: imageData)
@@ -76,4 +77,5 @@ class ImageCaptureManager: PermissionsManagerDelegate {
             return
         }
     }
+    
 }

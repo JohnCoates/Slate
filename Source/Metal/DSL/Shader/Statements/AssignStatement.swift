@@ -12,6 +12,7 @@ extension RuntimeShader {
     class AssignStatement: Statement {
         let lhs: Variable
         let rhs: Variable
+        
         init(lhs: Variable, rhs: Variable) {
             self.lhs = lhs
             self.rhs = rhs
@@ -25,5 +26,6 @@ extension RuntimeShader {
             
             return "\(lhs.referenceValue) = \(rhs.referenceValue)"
         }
+        
     }
 }

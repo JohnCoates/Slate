@@ -31,7 +31,7 @@ extension RuntimeShader {
             return variable
         }
         
-        func type(name: String, type: CompositeVariable.Type, qualifier: Type.Qualifier) -> Variable {
+        func type(name: String, type: CompositeVariable.Type, qualifier: ValueType.Qualifier) -> Variable {
             guard let shader = function?.shader else {
                 fatalError("Missing shader")
             }
@@ -42,7 +42,7 @@ extension RuntimeShader {
             return variable
         }
         
-        func typed<T: CompositeVariable>(name: String, type: T.Type, qualifier: Type.Qualifier) -> T {
+        func typed<T: CompositeVariable>(name: String, type: T.Type, qualifier: ValueType.Qualifier) -> T {
             guard let shader = function?.shader else {
                 fatalError("Missing shader")
             }

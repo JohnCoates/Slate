@@ -10,6 +10,7 @@ import Foundation
 import Metal
 
 class GaussianBlurFilter: FragmentFilter {
+    
     override func filter(withCommandBuffer commandBuffer: MTLCommandBuffer,
                          inputTexture: MTLTexture) -> MTLTexture {
         if renderPipelineState == nil {
@@ -20,4 +21,5 @@ class GaussianBlurFilter: FragmentFilter {
         
         return renderToOutputTexture(commandBuffer: commandBuffer, inputTexture: inputTexture)
     }
+    
 }

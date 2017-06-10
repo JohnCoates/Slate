@@ -22,6 +22,7 @@ class DebugBarController: NSObject {
     // MARK: - Activation
     
     var activated = false
+    
     func toggleActivation() {
         guard !activated else {
             activated = false
@@ -60,6 +61,7 @@ class DebugBarController: NSObject {
     }
     
     fileprivate var dragLastTranslationY: CGFloat?
+    
     func barDragged(gesture: UIPanGestureRecognizer) {
         if gesture.state == .began || gesture.state == .ended || gesture.state == .cancelled {
             dragLastTranslationY = nil

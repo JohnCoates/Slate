@@ -20,7 +20,8 @@ extension RuntimeShader {
         }
         
         var members = [Member]()
-        func addMember(name: String, type: ShaderPrimitive.Type, qualifier: Type.Qualifier? = nil) {
+        
+        func addMember(name: String, type: ShaderPrimitive.Type, qualifier: ValueType.Qualifier? = nil) {
             let member = Member(name: name, type: type, qualifier: qualifier)
             members.append(member)
         }
@@ -40,13 +41,14 @@ extension RuntimeShader {
 // MARK: - Subscripting
 
 extension RuntimeShader.Struct {
-    subscript (name: String) -> RuntimeShader.Float4 {
+    
+    subscript(name: String) -> RuntimeShader.Float4 {
         get {
             return RuntimeShader.Float4(name: name, type: .float4)
         }
     }
     
-    subscript (name: String) -> RuntimeShader.Float2 {
+    subscript(name: String) -> RuntimeShader.Float2 {
         get {
             return RuntimeShader.Float2(name: name, type: .float2)
         }
@@ -56,6 +58,7 @@ extension RuntimeShader.Struct {
 // MARK: - Extension
 
 extension RuntimeShader {
+    
     func defineStruct(name: String) -> Struct {
         let item = Struct(name: name)
         structs.append(item)
@@ -65,4 +68,5 @@ extension RuntimeShader {
     func add(struct item: Struct) {
         structs.append(item)
     }
+    
 }

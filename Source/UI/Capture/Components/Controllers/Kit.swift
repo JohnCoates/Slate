@@ -57,6 +57,7 @@ class Kit {
             return 0
         }
     }
+    
 }
 
 class KitRealm: Object {
@@ -67,11 +68,12 @@ class KitRealm: Object {
     func instance() -> Kit {
         let kit = Kit()
         kit.name = name
-        kit.components = components.map({$0.instance()})
+        kit.components = components.map {$0.instance()}
         return kit
     }
     
     override static func primaryKey() -> String? {
         return "key"
     }
+    
 }

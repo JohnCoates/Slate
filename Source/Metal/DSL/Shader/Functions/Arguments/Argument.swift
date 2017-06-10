@@ -15,8 +15,8 @@ extension RuntimeShader {
         
         let name: String
         let type: ShaderType
-        var qualifier: Type.Qualifier
-        init(name: String, type: ShaderType, qualifier: Type.Qualifier) {
+        var qualifier: ValueType.Qualifier
+        init(name: String, type: ShaderType, qualifier: ValueType.Qualifier) {
             self.name = name
             self.type = type
             self.qualifier = qualifier

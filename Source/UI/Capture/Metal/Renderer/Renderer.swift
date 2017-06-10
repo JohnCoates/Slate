@@ -110,6 +110,7 @@ import AVFoundation
     }
     
     #if METAL_DEVICE
+    
     func renderFullScreen(commandBuffer: MTLCommandBuffer,
                           drawable: CAMetalDrawable,
                           inputTexture texture: MTLTexture) {
@@ -130,6 +131,7 @@ import AVFoundation
         // We are finished with this render command encoder, so end it.
         renderEncoder.endEncoding()
     }
+    
     #endif
     
     // MARK: - Command Buffer
@@ -140,6 +142,7 @@ import AVFoundation
     // MARK: - Video Rendering
     
     var texture: MTLTexture?
+    
     func renderTextureQuad(renderEncoder: MTLRenderCommandEncoder,
                            view: MTKView,
                            identifier: String,
@@ -151,7 +154,7 @@ import AVFoundation
         
         // Bind the buffer containing the array of vertex structures so we can
         // read it in our vertex shader.
-        renderEncoder.setVertexBuffer(vertexBuffer, offset:0, at:0)
+        renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, at: 0)
         renderEncoder.setVertexBuffer(textureCoordinatesBuffer, offset: 0, at: 1)
         renderEncoder.setFragmentTexture(texture, at: 0)
         renderEncoder.drawPrimitives(type: .triangle,
@@ -164,6 +167,7 @@ import AVFoundation
     // MARK: - Camera Controller Handler
     
     var dirtyTexture = false
+    
     func textureHandler(texture: MTLTexture) {
         self.texture = texture
         dirtyTexture = true

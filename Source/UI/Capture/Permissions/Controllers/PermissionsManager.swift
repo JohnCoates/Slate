@@ -33,9 +33,11 @@ final class PermissionsManager {
     }()
     
     weak var delegate: PermissionsManagerDelegate?
+    
     init(delegate: PermissionsManagerDelegate? = nil) {
         self.delegate = delegate
     }
+    
     func hasPermission(for permission: Permission) -> Bool {
         switch permission {
         case .camera:
@@ -70,4 +72,5 @@ final class PermissionsManager {
             PermissionsWindow.show(kind: .photos, animated: true, delegate: delegate)
         }
     }
+    
 }

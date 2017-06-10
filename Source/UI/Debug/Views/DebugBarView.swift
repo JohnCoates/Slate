@@ -41,6 +41,7 @@ final class DebugBarView: UIView {
     }
     
     let stackView = UIStackView()
+    
     private func setUpStackView() {
         stackView.axis = .horizontal
         stackView.distribution = .fillProportionally
@@ -58,7 +59,7 @@ final class DebugBarView: UIView {
     // MARK: - Stack View
     
     func refreshStackItems() {
-        itemViews = items.map({DebugBarItemView(item:$0)})
+        itemViews = items.map { DebugBarItemView(item: $0) }
         
         for view in stackView.arrangedSubviews {
             stackView.removeArrangedSubview(view)

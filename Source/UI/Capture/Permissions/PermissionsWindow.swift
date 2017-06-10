@@ -78,6 +78,7 @@ class PermissionsWindow: UIWindow {
     // MARK: - Setup
     
     let contentView = UIView()
+    
     func initialSetup() {
         windowLevel = UIWindowLevelAlert + 1
         backgroundColor = UIColor.black.withAlphaComponent(0.5)

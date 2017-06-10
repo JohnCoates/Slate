@@ -50,6 +50,7 @@ EditRounding, EditSize, EditPosition, KeepUpright {
         object.rawPosition = position.rawValue
         return object
     }
+    
 }
 
 // MARK: - Realm Object
@@ -71,4 +72,5 @@ class CameraPositionComponentRealm: ComponentRealm, EditRounding {
         
         return instance
     }
+    
 }

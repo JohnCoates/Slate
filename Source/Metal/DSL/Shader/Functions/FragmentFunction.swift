@@ -38,6 +38,7 @@ extension RuntimeShader {
         var returnValue: Variable?
         
         lazy var statements = [Statement]()
+        
         func add(statement: Statement) {
             statements.append(statement)
         }
@@ -65,7 +66,9 @@ extension RuntimeShader {
 // MARK: - Extension
 
 extension RuntimeShader {
+    
     typealias FragmentClosure = (FragmentFunction) -> Void
+    
     @discardableResult func buildFragmentFunction(name: String, returnType: ShaderPrimitive.Type,
                                                   build: FragmentClosure) -> FragmentFunction {
         let function = FragmentFunction(name: name, returnType: returnType, shader: self)
@@ -73,4 +76,5 @@ extension RuntimeShader {
         build(function)
         return function
     }
+    
 }

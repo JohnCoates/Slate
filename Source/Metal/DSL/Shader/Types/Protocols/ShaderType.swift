@@ -14,7 +14,7 @@ protocol ShaderType: class {
 }
 
 extension RuntimeShader {
-    class `Type` {
+    class ValueType {
         enum Qualifier {
             case stageIn
             case position

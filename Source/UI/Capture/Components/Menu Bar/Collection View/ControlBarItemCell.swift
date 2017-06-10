@@ -40,6 +40,7 @@ final class ControlBarItemCell: UICollectionViewCell {
             setUpControl()
         }
     }
+    
     private func initialSetup() {
     }
     
@@ -67,6 +68,7 @@ final class ControlBarItemCell: UICollectionViewCell {
     
     fileprivate var lastLocation: CGPoint?
     fileprivate var startFrame: CGRect?
+    
     func longPressed(gesture: UILongPressGestureRecognizer) {
         guard let control = control else {
             return
@@ -181,6 +183,7 @@ final class ControlBarItemCell: UICollectionViewCell {
                       atFrame: control.bounds,
                       fromView: control)
     }
+    
 }
 
 // MARK: - Selector Extension

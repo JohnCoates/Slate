@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 extension Realm {
+    
     func filter<ParentType: Object>(parentType: ParentType.Type,
                                     subclasses: [ParentType.Type],
                                     predicate: NSPredicate) -> [ParentType] {
@@ -17,4 +18,5 @@ extension Realm {
             return Array(self.objects(classType).filter(predicate))
         }
     }
+    
 }

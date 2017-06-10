@@ -35,4 +35,5 @@ struct InteractivityIndicatorIcon: CanvasIcon {
         fillColor12.setFill()
         iconPath.fill()
     }
+    
 }

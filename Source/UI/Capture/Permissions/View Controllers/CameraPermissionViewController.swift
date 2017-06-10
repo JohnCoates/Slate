@@ -27,14 +27,14 @@ class CameraPermissionViewController: PermissionsEducationViewController {
         var cameraRoll = DialogButton()
         cameraRoll.text = "Give Slate access"
         cameraRoll.textColor = .white
-        cameraRoll.backgroundColor = UIColor(red:0.18, green:0.71, blue:0.93, alpha:1.00)
+        cameraRoll.backgroundColor = UIColor(red: 0.18, green: 0.71, blue: 0.93, alpha: 1.00)
         cameraRoll.tappedHandler = {[unowned self] in self.tappedCameraAccess()}
         buttons.append(cameraRoll)
         
         var appOnly = DialogButton()
         appOnly.text = "Later"
         appOnly.textColor = .white
-        appOnly.backgroundColor = UIColor(red:0.56, green:0.56, blue:0.56, alpha:1.00)
+        appOnly.backgroundColor = UIColor(red: 0.56, green: 0.56, blue: 0.56, alpha: 1.00)
         appOnly.tappedHandler = {[unowned self] in self.tappedLater()}
         buttons.append(appOnly)
     }
@@ -86,4 +86,5 @@ class CameraPermissionViewController: PermissionsEducationViewController {
     func tappedLater() {
         PermissionsWindow.dismiss()
     }
+    
 }

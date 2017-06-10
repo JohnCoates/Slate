@@ -39,9 +39,10 @@ final class KitTableViewCell: UITableViewCell {
     }
     
     let iconView = RoundableView()
+    
     private func setUpIconView() {
         iconView.rounding = 0.4
-        iconView.backgroundColor = UIColor(red:0.11, green:0.51, blue:1.00, alpha:1.00)
+        iconView.backgroundColor = UIColor(red: 0.11, green: 0.51, blue: 1.00, alpha: 1.00)
         contentView.addSubview(iconView)
         
         iconView.left.pin(to: contentView.left, add: 7)
@@ -72,6 +73,7 @@ final class KitTableViewCell: UITableViewCell {
     }
     
     let titleLabel = UILabel()
+    
     private func setUpTitleLabel() {
         titleLabel.text = "Portraits"
         titleLabel.textColor = Theme.Kits.text
@@ -79,6 +81,7 @@ final class KitTableViewCell: UITableViewCell {
     }
     
     let authorLabel = UILabel()
+    
     private func setUpAuthorLabel() {
         authorLabel.text = "@JohnCoates"
         authorLabel.textColor = Theme.Kits.text
@@ -86,6 +89,7 @@ final class KitTableViewCell: UITableViewCell {
     }
     
     let dateLabel = UILabel()
+    
     private func setUpDateLabel() {
         dateLabel.text = "June 6, 2017"
         dateLabel.textColor = Theme.Kits.dateText
@@ -98,6 +102,7 @@ final class KitTableViewCell: UITableViewCell {
     }
     
     let settingsButton = CanvasIconButton(icon: KitSettingsIcon())
+    
     private func setUpSettingsButton() {
         contentView.addSubview(settingsButton)
         let buttonView = settingsButton.contentView
@@ -113,6 +118,7 @@ final class KitTableViewCell: UITableViewCell {
     fileprivate func tapped() {
         print("settings tapped")
     }
+    
 }
 
 // MARK: - Callbacks

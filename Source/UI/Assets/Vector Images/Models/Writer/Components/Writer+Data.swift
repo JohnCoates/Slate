@@ -37,4 +37,5 @@ extension VectorAssetWriter {
         var value = constValue
         data.append(UnsafeBufferPointer(start: &value, count: 1))
     }
+    
 }

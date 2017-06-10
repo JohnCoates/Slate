@@ -76,4 +76,5 @@ struct TextureCoordinates {
         coordinates.append(float2(0, 0))
         return coordinates
     }
+    
 }

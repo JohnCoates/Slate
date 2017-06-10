@@ -71,4 +71,5 @@ extension Renderer {
         // Now that we're done issuing commands, we commit our buffer so the GPU can get to work.
         commandBuffer.commit()
     }
+    
 }

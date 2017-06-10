@@ -10,6 +10,7 @@
 import Foundation
 
 typealias RuntimeShaderBuild = (RuntimeShader) -> Void
+
 func buildRuntimeShader(identifier: String, build: RuntimeShaderBuild) -> RuntimeShader {
     let shader = RuntimeShader(identifier: identifier)
     build(shader)

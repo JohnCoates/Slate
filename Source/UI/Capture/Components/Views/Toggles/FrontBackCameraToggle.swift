@@ -24,4 +24,5 @@ final class FrontBackCameraToggle: InverseMaskButtonImage {
         contentView.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         rounding = 1
     }
+    
 }

@@ -12,7 +12,8 @@
 import Foundation
 import MetalKit
 
-final class ChromaticAberrationFragmentFilter: FragmentFilter {    
+final class ChromaticAberrationFragmentFilter: FragmentFilter {
+    
     override func filter(withCommandBuffer commandBuffer: MTLCommandBuffer,
                          inputTexture: MTLTexture) -> MTLTexture {
         if renderPipelineState == nil {
@@ -23,11 +24,13 @@ final class ChromaticAberrationFragmentFilter: FragmentFilter {
 
         return renderToOutputTexture(commandBuffer: commandBuffer, inputTexture: inputTexture)
     }
+    
 }
 
 final class ChromaticAberrationFilter: ComputeFilter {
     
     var pipelineState: MTLComputePipelineState!
+    
     override func buildPipeline() {
         let shaderName = "chromaticAberrationCompute"
         guard let library = device.newDefaultLibrary() else {
@@ -61,4 +64,5 @@ final class ChromaticAberrationFilter: ComputeFilter {
         computeEncoder.endEncoding()
         return outputTexture
     }
+    
 }

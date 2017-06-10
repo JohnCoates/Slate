@@ -18,6 +18,7 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     typealias CaptureHandler = (CVImageBuffer) -> Void
     private var captureHandler: CaptureHandler?
+    
     func setCaptureHandler<T: AnyObject>(instance: T,
                                          method: @escaping (T) -> CaptureHandler) {
         captureHandler = {

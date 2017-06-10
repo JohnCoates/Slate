@@ -37,6 +37,7 @@ class VectorAssetReader {
     }
     
     var readIndex: Int = 0
+    
     func read() throws {
         readIndex = 0
         
@@ -52,6 +53,7 @@ class VectorAssetReader {
     }
     
     var floats = [Float]()
+    
     func readFloats() {
         let count = readUInt16()
         var floats = [Float]()
@@ -64,6 +66,7 @@ class VectorAssetReader {
     }
     
     private var colors = [DataColor]()
+    
     func readColors() {
         let count = readUInt16()
         var colors = [DataColor]()
@@ -80,6 +83,7 @@ class VectorAssetReader {
     }    
     
     var sections = [String]()
+    
     func readSections() {
         let count = readUInt16()
         var sections = [String]()
@@ -91,6 +95,7 @@ class VectorAssetReader {
     }
     
     var canvases = [Canvas]()
+    
     func readCanvases() {
         let count = readUInt16()
         
@@ -198,6 +203,7 @@ class VectorAssetReader {
         let size = Path.Point(x: width, y: height)
         return Path.Rect(origin: origin, size: size)
     }
+    
     func readPoint() -> Path.Point {
         let xIndex = Int(readUInt16())
         let yIndex = Int(readUInt16())
@@ -237,4 +243,5 @@ class VectorAssetReader {
         readIndex += size
         return value
     }
+    
 }

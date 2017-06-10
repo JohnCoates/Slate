@@ -10,6 +10,7 @@ import Foundation
 import AVFoundation
 
 extension CameraController {
+    
     func bestSessionPreset() -> String? {
         let suitablePresets: [String]
         if Platform.isMacOS {

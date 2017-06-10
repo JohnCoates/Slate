@@ -17,6 +17,7 @@ class AVPreviewCaptureViewController: BaseCaptureViewController {
     
     lazy var cameraController = CameraController()
     lazy var session = AVCaptureSession()
+    
     override func cameraSetup() {
         session.beginConfiguration()
         session.sessionPreset = AVCaptureSessionPresetPhoto
@@ -43,6 +44,6 @@ class AVPreviewCaptureViewController: BaseCaptureViewController {
         
         session.commitConfiguration()
         session.startRunning()
-        
     }
+    
 }

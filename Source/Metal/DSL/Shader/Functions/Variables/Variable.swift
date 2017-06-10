@@ -59,19 +59,3 @@ extension RuntimeShader {
         case sampler
     }
 }
-
-// MARK: - Subscripting
-
-//extension RuntimeShader.Variable {
-//    subscript (name: String) -> RuntimeShader.Float4 {
-//        get {
-//            guard type == .struct else {
-//                fatalError("Only structs are subscriptable")
-//            }
-//            let variable = RuntimeShader.CompositeMemberVariable(composite: self,
-//                                                                 member: name,
-//                                                                 type: .float4)
-//            return RuntimeShader.Float4(inner: variable)
-//        }
-//    }
-//}

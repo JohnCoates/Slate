@@ -22,7 +22,7 @@ class HUDTextureViewController: NSViewController, NSTextFieldDelegate {
     // MARK: - View Lifecycle
     
     override func loadView() {
-        view = NSView(frame: NSRect(x: 0, y:0, width: 600, height: 300))
+        view = NSView(frame: NSRect(x: 0, y: 0, width: 600, height: 300))
         interfaceSetup()
     }
     
@@ -33,6 +33,7 @@ class HUDTextureViewController: NSViewController, NSTextFieldDelegate {
     }
     
     var vertexFields = [NSTextField]()
+    
     func vertexFieldsSetup() {
         var previousField: NSTextField?
         let count = renderer.vertices.count
@@ -122,4 +123,5 @@ class HUDTextureViewController: NSViewController, NSTextFieldDelegate {
         renderer.textureCoordinates[index].y = y
         renderer.invalidateTextureCoordinatesBuffer()
     }
+    
 }

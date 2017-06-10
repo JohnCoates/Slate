@@ -17,4 +17,5 @@ class CaptureButton: Button {
         contentView.backgroundColor = UIColor.white
         accessibilityIdentifier = "CaptureButton"
     }
+    
 }

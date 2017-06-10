@@ -13,7 +13,7 @@ extension VectorAssetWriter {
 
     func dataPaths(fromPaths path: [Path], floats: [DataFloat], colors: [DataColor]) -> [DataPath] {
         return path.map { path -> DataPath in
-            let instructions = path.instructions.map({ dataInstruction(fromInstruction: $0) })
+            let instructions = path.instructions.map { dataInstruction(fromInstruction: $0) }
             return DataPath(instructions: instructions)
         }
     }
@@ -92,4 +92,5 @@ extension VectorAssetWriter {
         
         return Path.Color(red: red, green: green, blue: blue, alpha: alpha)
     }
+    
 }

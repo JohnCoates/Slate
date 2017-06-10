@@ -15,6 +15,7 @@ extension Renderer {
     // MARK: - Resizing
 
     #if os(macOS)
+    
     func setAspectRatio(width: Float, height: Float) {
         guard let inputSize = cameraController.inputSize else {
             print("Missing input aspect ratio")
@@ -28,5 +29,6 @@ extension Renderer {
         
         invalidateVertexBuffer()
     }
+    
     #endif
 }

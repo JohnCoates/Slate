@@ -43,4 +43,5 @@ extension CameraController {
         
         session.addOutput(dataOutput)
     }
+    
 }

@@ -15,10 +15,10 @@ struct KitSettingsIcon: CanvasIcon {
     let height: CGFloat = 44
     
     func drawing() {
-        //// Color Declarations
+        //  Color Declarations
         let fillColor12 = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)
         
-        //// icon Drawing
+        // icon Drawing
         let iconPath = UIBezierPath()
         iconPath.move(to: CGPoint(x: 40.47, y: 40.63))
         iconPath.addCurve(to: CGPoint(x: 37.87, y: 40.63), controlPoint1: CGPoint(x: 39.75, y: 41.33), controlPoint2: CGPoint(x: 38.58, y: 41.33))
@@ -52,4 +52,5 @@ struct KitSettingsIcon: CanvasIcon {
         fillColor12.setFill()
         iconPath.fill()
     }
+    
 }

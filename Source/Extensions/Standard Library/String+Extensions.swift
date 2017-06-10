@@ -9,7 +9,9 @@
 import Foundation
 
 extension Array where Element: CustomStringConvertible {
+    
     func customJoined(separator: String = ",") -> String {
-        return self.map({$0.description}).joined(separator: separator)
+        return self.map {$0.description}.joined(separator: separator)
     }
+    
 }

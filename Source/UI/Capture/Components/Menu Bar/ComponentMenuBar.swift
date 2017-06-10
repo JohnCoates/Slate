@@ -103,4 +103,5 @@ final class ComponentMenuBar: UIView,
     func add(component: Component.Type, atFrame frame: CGRect, fromView view: UIView) {
         self.delegate?.add(component: component, atFrame: frame, fromView: view)
     }
+    
 }

@@ -49,6 +49,7 @@ class Button: UIView {
     }
     
     private var tapGesture: UITapGestureRecognizer!
+    
     private func setUpTapGesture() {
         tapGesture = UITapGestureRecognizer(target: self, action: .tapped)
         addGestureRecognizer(tapGesture)
@@ -198,6 +199,7 @@ class Button: UIView {
         super.layoutSubviews()
         contentView.layoutIfNeeded()
     }
+    
 }
 
 // MARK: - Selector Extension

@@ -23,6 +23,7 @@ class FragmentFilter: AbstractFilter {
     }
     
     var renderPipelineState: MTLRenderPipelineState!
+    
     func buildRenderPipeline(label: String,
                              vertexFunction vertexFunctionName: String,
                              fragmentFunction fragmentFunctionName: String) {
@@ -71,7 +72,7 @@ class FragmentFilter: AbstractFilter {
         
         // Bind the buffer containing the array of vertex structures so we can
         // read it in our vertex shader.
-        renderEncoder.setVertexBuffer(vertexBuffer, offset:0, at:0)
+        renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, at: 0)
         renderEncoder.setVertexBuffer(textureCoordinatesBuffer, offset: 0, at: 1)
         renderEncoder.setFragmentTexture(inputTexture, at: 0)
         renderEncoder.drawPrimitives(type: .triangle,
@@ -84,4 +85,5 @@ class FragmentFilter: AbstractFilter {
         renderEncoder.endEncoding()
         return outputTexture
     }
+    
 }

@@ -22,6 +22,7 @@ class FeatureCatalogViewController: UITableViewController {
     // MARK: - Setup
     
     let cellIdentifier = "cellIdentifier"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +30,7 @@ class FeatureCatalogViewController: UITableViewController {
     }
     
     var hasAppeared = false
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if hasAppeared {
@@ -134,23 +136,29 @@ class FeatureCatalogViewController: UITableViewController {
                                 // trigger view load
                                 _ = vc.view
                                 vc.editBar.isHidden = false
-                                return vc }),
+                                return vc
+            }),
             FeatureCatalogItem(name: "Camera Permission",
                                actionBlock: { PermissionsWindow.show(kind: .camera,
-                                                                     animated: true) }),
+                                                                     animated: true)
+            }),
             FeatureCatalogItem(name: "Camera Denied Permission",
                                actionBlock: { PermissionsWindow.show(kind: .cameraDenied,
-                                                                     animated: true) }),
+                                                                     animated: true)
+            }),
             FeatureCatalogItem(name: "Photos Permission",
                                actionBlock: { PermissionsWindow.show(kind: .photos,
-                                                                     animated: true) }),
+                                                                     animated: true)
+            }),
             FeatureCatalogItem(name: "Photos Denied Permission",
                                actionBlock: { PermissionsWindow.show(kind: .photosDenied,
-                                                                     animated: true) }),
+                                                                     animated: true)
+            }),
             FeatureCatalogItem(name: "Permissions Button Indicator",
                                creationBlock: {
                                 let frame = CGRect(x: 160.5, y: 321.5, width: 134.5, height: 44)
-                                return PermissionsButtonIndicatorViewController(buttonFrame: frame) }),
+                                return PermissionsButtonIndicatorViewController(buttonFrame: frame)
+            }),
             FeatureCatalogItem(name: "AV Preview", creationBlock: { AVPreviewCaptureViewController() })
             ]
         
@@ -187,4 +195,5 @@ class FeatureCatalogViewController: UITableViewController {
         
         return Section(title: "Vector Images", items: items)
     }
+    
 }
