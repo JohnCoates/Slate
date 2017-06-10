@@ -642,7 +642,7 @@
 		FA3AAAAF1EE25B8E006028AC /* Renderer+AspectRatio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Renderer+AspectRatio.swift"; sourceTree = "<group>"; };
 		FA3AAABD1EE25E6E006028AC /* CameraController+Format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraController+Format.swift"; sourceTree = "<group>"; };
 		FA3AAAC21EE25FEB006028AC /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
-		FA4021C51DA0AEE800752F3B /* MetalCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MetalCameraController.swift; path = ../../UI/Capture/Metal/Controllers/MetalCameraController.swift; sourceTree = "<group>"; };
+		FA4021C51DA0AEE800752F3B /* MetalCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalCameraController.swift; sourceTree = "<group>"; };
 		FA4BD7A41ED18D0C00D1761C /* EditOpacity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditOpacity.swift; sourceTree = "<group>"; };
 		FA4BD7A81ED18F6900D1761C /* RealmMigrator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmMigrator.swift; sourceTree = "<group>"; };
 		FA4D54151DB055A00091184D /* FragmentFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FragmentFilter.swift; sourceTree = "<group>"; };
@@ -753,7 +753,7 @@
 		FA9F8A051D953C540058C369 /* SlateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlateUITests.swift; sourceTree = "<group>"; };
 		FA9F8A071D953C540058C369 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAA7A9711EE216B0004800AF /* PreviewContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewContentView.swift; sourceTree = "<group>"; };
-		FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Renderer.swift; path = Source/UI/Capture/Metal/Renderer.swift; sourceTree = SOURCE_ROOT; };
+		FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Passthrough.metal; sourceTree = "<group>"; };
 		FAAE763A1EEB2F0500CA3416 /* VectorAssetReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorAssetReader.swift; sourceTree = "<group>"; };
 		FAAE764C1EEB371100CA3416 /* VectorImagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorImagesTableViewController.swift; sourceTree = "<group>"; };
@@ -2207,8 +2207,7 @@
 			children = (
 				FAB9C2791EE8F95E00C50545 /* Canvas.swift */,
 			);
-			name = Canvas;
-			path = ../../../../../macSlate/UI/Drawing/Models/Canvas;
+			path = Canvas;
 			sourceTree = "<group>";
 		};
 		FAB9C27B1EE8F9B000C50545 /* Paths */ = {
@@ -2217,8 +2216,7 @@
 				FAB9C27C1EE8F9D100C50545 /* Path.swift */,
 				FAB9C27E1EE8FA0500C50545 /* Instructions.swift */,
 			);
-			name = Paths;
-			path = ../../../../../macSlate/UI/Drawing/Models/Paths;
+			path = Paths;
 			sourceTree = "<group>";
 		};
 		FAB9C2851EE8FDA600C50545 /* CLI */ = {
@@ -2227,8 +2225,7 @@
 				FAAE765E1EEB62CD00CA3416 /* Bridging */,
 				FAB9C2861EE8FDA600C50545 /* main.swift */,
 			);
-			name = CLI;
-			path = ../slateCLI;
+			path = CLI;
 			sourceTree = "<group>";
 		};
 		FABB168F1D9E257000A8AC6C /* Mac */ = {
@@ -2429,8 +2426,7 @@
 				FAB9C2771EE8F93200C50545 /* Models */,
 				FAE0483C1EE3780800695E0D /* Proxy DSL */,
 			);
-			name = "Code Graphics";
-			path = Drawing;
+			path = "Code Graphics";
 			sourceTree = "<group>";
 		};
 		FAE0483C1EE3780800695E0D /* Proxy DSL */ = {
@@ -4292,7 +4288,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/slateCLI/Bridging/CLIBridging.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/macSlate/CLI/Bridging/CLIBridging.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -4313,7 +4309,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/slateCLI/Bridging/CLIBridging.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/macSlate/CLI/Bridging/CLIBridging.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -4334,7 +4330,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/slateCLI/Bridging/CLIBridging.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/macSlate/CLI/Bridging/CLIBridging.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -4354,7 +4350,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/slateCLI/Bridging/CLIBridging.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/macSlate/CLI/Bridging/CLIBridging.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = AppStore;
