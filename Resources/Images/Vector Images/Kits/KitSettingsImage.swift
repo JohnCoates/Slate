@@ -11,8 +11,9 @@ import Foundation
 extension DrawProxyDSL {
     class KitSettingsImage: VectorImageAsset {
         
-        let name = "Settings"
-        let section = "Kit"
+        let asset = KitImage.settings
+        lazy var name: String = self.asset.rawValue
+        lazy var section: String = self.asset.section
         
         let width: CGFloat = 44
         let height: CGFloat = 44

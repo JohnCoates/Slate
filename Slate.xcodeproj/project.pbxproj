@@ -343,6 +343,11 @@
 		FAAE76501EEB3A0300CA3416 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2791EE8F95E00C50545 /* Canvas.swift */; };
 		FAAE76531EEB407F00CA3416 /* VectorImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE76521EEB407F00CA3416 /* VectorImageTableViewCell.swift */; };
 		FAAE76591EEB41FB00CA3416 /* VectorImageCanvasIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE76581EEB41FB00CA3416 /* VectorImageCanvasIcon.swift */; };
+		FAAE765C1EEB5FDD00CA3416 /* VectorAssetsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE765B1EEB5FDD00CA3416 /* VectorAssetsList.swift */; };
+		FAAE765D1EEB613600CA3416 /* VectorAssetsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE765B1EEB5FDD00CA3416 /* VectorAssetsList.swift */; };
+		FAAE76621EEB631C00CA3416 /* BuildPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE76611EEB631C00CA3416 /* BuildPaths.m */; };
+		FAAE76671EEB6F7D00CA3416 /* slateCLI in CopyFiles */ = {isa = PBXBuildFile; fileRef = FAB9C2841EE8FDA600C50545 /* slateCLI */; };
+		FAAE766B1EEB701900CA3416 /* coreAssets.cvif in Resources */ = {isa = PBXBuildFile; fileRef = FAAE766A1EEB700F00CA3416 /* coreAssets.cvif */; };
 		FAB0AA5E1EC6A095008DCD23 /* EditPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0AA5D1EC6A095008DCD23 /* EditPosition.swift */; };
 		FAB0AA621EC6A1B8008DCD23 /* DragGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0AA611EC6A1B8008DCD23 /* DragGesture.swift */; };
 		FAB0AA641EC6C84D008DCD23 /* ComponentEditBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0AA631EC6C84D008DCD23 /* ComponentEditBarDelegate.swift */; };
@@ -464,6 +469,13 @@
 			remoteGlobalIDString = FA9F89E11D953C540058C369;
 			remoteInfo = Slate;
 		};
+		FAAE76631EEB6C4000CA3416 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA9F89DA1D953C540058C369 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAB9C2831EE8FDA600C50545;
+			remoteInfo = slateCLI;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -489,6 +501,16 @@
 				FA2B1EC31EC9B78F00E44613 /* RealmSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAAE76651EEB6F4500CA3416 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "${PROJECT_DIR}/Scripts";
+			dstSubfolderSpec = 0;
+			files = (
+				FAAE76671EEB6F7D00CA3416 /* slateCLI in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FABB16941D9E259900A8AC6C /* Embed Frameworks */ = {
@@ -718,6 +740,11 @@
 		FAAE764C1EEB371100CA3416 /* VectorImagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorImagesTableViewController.swift; sourceTree = "<group>"; };
 		FAAE76521EEB407F00CA3416 /* VectorImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorImageTableViewCell.swift; sourceTree = "<group>"; };
 		FAAE76581EEB41FB00CA3416 /* VectorImageCanvasIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorImageCanvasIcon.swift; sourceTree = "<group>"; };
+		FAAE765B1EEB5FDD00CA3416 /* VectorAssetsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorAssetsList.swift; sourceTree = "<group>"; };
+		FAAE765F1EEB62F500CA3416 /* CLIBridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLIBridging.h; sourceTree = "<group>"; };
+		FAAE76601EEB631C00CA3416 /* BuildPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildPaths.h; sourceTree = "<group>"; };
+		FAAE76611EEB631C00CA3416 /* BuildPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildPaths.m; sourceTree = "<group>"; };
+		FAAE766A1EEB700F00CA3416 /* coreAssets.cvif */ = {isa = PBXFileReference; lastKnownFileType = file; path = coreAssets.cvif; sourceTree = "<group>"; };
 		FAB0AA5D1EC6A095008DCD23 /* EditPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPosition.swift; sourceTree = "<group>"; };
 		FAB0AA611EC6A1B8008DCD23 /* DragGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragGesture.swift; sourceTree = "<group>"; };
 		FAB0AA631EC6C84D008DCD23 /* ComponentEditBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentEditBarDelegate.swift; sourceTree = "<group>"; };
@@ -1992,6 +2019,7 @@
 		FA9F8A161D953F170058C369 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FAAE76691EEB6FFB00CA3416 /* Generated */,
 				FABEABB81EEA40B0005D05B2 /* Vector Images */,
 				FA9F89EC1D953C540058C369 /* Assets.xcassets */,
 				FA834BE51D9932BC0017CCCA /* Placeholders.xcassets */,
@@ -2062,6 +2090,24 @@
 				FAAE76581EEB41FB00CA3416 /* VectorImageCanvasIcon.swift */,
 			);
 			path = Drawing;
+			sourceTree = "<group>";
+		};
+		FAAE765E1EEB62CD00CA3416 /* Bridging */ = {
+			isa = PBXGroup;
+			children = (
+				FAAE765F1EEB62F500CA3416 /* CLIBridging.h */,
+				FAAE76601EEB631C00CA3416 /* BuildPaths.h */,
+				FAAE76611EEB631C00CA3416 /* BuildPaths.m */,
+			);
+			path = Bridging;
+			sourceTree = "<group>";
+		};
+		FAAE76691EEB6FFB00CA3416 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				FAAE766A1EEB700F00CA3416 /* coreAssets.cvif */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		FAB0AA601EC6A18A008DCD23 /* Gestures */ = {
@@ -2148,6 +2194,7 @@
 		FAB9C2851EE8FDA600C50545 /* CLI */ = {
 			isa = PBXGroup;
 			children = (
+				FAAE765E1EEB62CD00CA3416 /* Bridging */,
 				FAB9C2861EE8FDA600C50545 /* main.swift */,
 			);
 			name = CLI;
@@ -2200,6 +2247,7 @@
 			children = (
 				FABEABBD1EEA46F6005D05B2 /* Camera */,
 				FABEABBA1EEA413F005D05B2 /* Kits */,
+				FAAE765B1EEB5FDD00CA3416 /* VectorAssetsList.swift */,
 			);
 			path = "Vector Images";
 			sourceTree = "<group>";
@@ -2577,6 +2625,7 @@
 				FA5709AB1ECC7B2F000362C8 /* Swiftlint */,
 				FAB0AA651EC8083D008DCD23 /* Sources */,
 				FAB0AA661EC8083D008DCD23 /* Frameworks */,
+				FAAE76681EEB6F8D00CA3416 /* Generate Images */,
 				FAB0AA671EC8083D008DCD23 /* Resources */,
 				FA2B1E641EC817E700E44613 /* Embed Frameworks */,
 				FA2B1EAD1EC932DC00E44613 /* Build Metal Shader Library */,
@@ -2589,6 +2638,7 @@
 				FA2B1EAC1EC9328700E44613 /* PBXBuildRule */,
 			);
 			dependencies = (
+				FAAE76641EEB6C4000CA3416 /* PBXTargetDependency */,
 			);
 			name = "Feature Catalog";
 			productName = "Feature Catalog";
@@ -2601,6 +2651,7 @@
 			buildPhases = (
 				FAB9C2801EE8FDA600C50545 /* Sources */,
 				FAB9C2811EE8FDA600C50545 /* Frameworks */,
+				FAAE76651EEB6F4500CA3416 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -2657,6 +2708,7 @@
 					FAB9C2831EE8FDA600C50545 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = E6QK4MU6LM;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2730,6 +2782,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAE766B1EEB701900CA3416 /* coreAssets.cvif in Resources */,
 				FAB0AA761EC8083D008DCD23 /* FeatureCatalogLaunchScreen.storyboard in Resources */,
 				FA2B1EAA1EC92DED00E44613 /* Assets.xcassets in Resources */,
 				FAB0AA731EC8083D008DCD23 /* FeatureCatalog.xcassets in Resources */,
@@ -2943,6 +2996,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "${PROJECT_DIR}/Scripts/buildShaderLibrary.sh";
+		};
+		FAAE76681EEB6F8D00CA3416 /* Generate Images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PROJECT_DIR}/Scripts/slateCLI --generateImageAssets";
 		};
 		FACC8FD81D98AD4500589230 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3223,6 +3290,7 @@
 				FA3AAAC51EE25FEB006028AC /* Size.swift in Sources */,
 				FA2B1EA41EC92B5B00E44613 /* CameraController.swift in Sources */,
 				FA2B1E721EC9239F00E44613 /* CheckmarkIcon.swift in Sources */,
+				FAAE765C1EEB5FDD00CA3416 /* VectorAssetsList.swift in Sources */,
 				FA5709AA1ECC732A000362C8 /* CameraEducationImage.swift in Sources */,
 				FA2B1E811EC92B5B00E44613 /* ChromaticAberrationFilter.swift in Sources */,
 				FA2B1EA21EC92B5B00E44613 /* CircleSlider.swift in Sources */,
@@ -3385,7 +3453,9 @@
 				FA6E97981EEA372A00A73DFA /* DataPath.swift in Sources */,
 				FA6E97A11EEA380900A73DFA /* Writer+Conversions.swift in Sources */,
 				FA6E97AA1EEA3D3100A73DFA /* Writer+DataSections.swift in Sources */,
+				FAAE765D1EEB613600CA3416 /* VectorAssetsList.swift in Sources */,
 				FA6E97A41EEA3A5D00A73DFA /* Writer+FileHandling.swift in Sources */,
+				FAAE76621EEB631C00CA3416 /* BuildPaths.m in Sources */,
 				FA6E97A71EEA3CF100A73DFA /* Writer+Data.swift in Sources */,
 				FA6E97921EEA369100A73DFA /* Writer+Header.swift in Sources */,
 				FABEABC61EEB2831005D05B2 /* CGRect.swift in Sources */,
@@ -3409,6 +3479,11 @@
 			isa = PBXTargetDependency;
 			target = FA9F89E11D953C540058C369 /* Slate */;
 			targetProxy = FA9F8A021D953C540058C369 /* PBXContainerItemProxy */;
+		};
+		FAAE76641EEB6C4000CA3416 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAB9C2831EE8FDA600C50545 /* slateCLI */;
+			targetProxy = FAAE76631EEB6C4000CA3416 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -4139,12 +4214,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CFLAGS = (
+					"-DOBJECTS_DIRECTORY=\"\\\"${OBJECT_FILE_DIR_normal}\\\"\"",
+					"-DPROJECT_DIRECTORY=\"\\\"${PROJECT_DIR}\\\"\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/slateCLI/Bridging/CLIBridging.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -4153,11 +4236,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CFLAGS = (
+					"-DOBJECTS_DIRECTORY=\"\\\"${OBJECT_FILE_DIR_normal}\\\"\"",
+					"-DPROJECT_DIRECTORY=\"\\\"${PROJECT_DIR}\\\"\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/slateCLI/Bridging/CLIBridging.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = FastDebug;
@@ -4166,11 +4257,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CFLAGS = (
+					"-DOBJECTS_DIRECTORY=\"\\\"${OBJECT_FILE_DIR_normal}\\\"\"",
+					"-DPROJECT_DIRECTORY=\"\\\"${PROJECT_DIR}\\\"\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/slateCLI/Bridging/CLIBridging.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -4179,11 +4277,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CFLAGS = (
+					"-DOBJECTS_DIRECTORY=\"\\\"${OBJECT_FILE_DIR_normal}\\\"\"",
+					"-DPROJECT_DIRECTORY=\"\\\"${PROJECT_DIR}\\\"\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/slateCLI/Bridging/CLIBridging.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = AppStore;

@@ -14,7 +14,11 @@ class VectorImagesTableViewController: UITableViewController {
     var canvases = [[Canvas]]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        let file = URL(fileURLWithPath: "/private/tmp/image.cvif")
+        
+        let filename = ImageFiles.coreAssetFile.rawValue
+        guard let file = Bundle.main.url(forResource: filename, withExtension: "") else {
+            fatalError("Couldn't find core assets file!")
+        }
         do {
             let reader = try VectorAssetReader(file: file)
             try reader.read()

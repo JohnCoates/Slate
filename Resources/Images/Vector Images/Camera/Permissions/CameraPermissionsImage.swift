@@ -11,8 +11,10 @@ import Foundation
 extension DrawProxyDSL {
     class CameraPermissionsImage: VectorImageAsset {
 
-        let name = "Camera"
-        let section = "Permissions"
+        let asset = PermissionsImage.camera
+        
+        lazy var name: String = self.asset.rawValue
+        lazy var section: String = self.asset.section
         
         let width: CGFloat = 167
         let height: CGFloat = 204

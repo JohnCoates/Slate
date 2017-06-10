@@ -67,3 +67,4 @@ fastlane/test_output
 /profileBuild
 /swiftProfile.txt
 /Benchmarks
+/Scripts/slateCLI
