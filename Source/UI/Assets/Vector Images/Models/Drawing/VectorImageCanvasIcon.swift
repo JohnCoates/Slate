@@ -13,7 +13,9 @@ class VectorImageCanvasIcon: CanvasIcon {
     let canvas: Canvas
     var width: CGFloat { return CGFloat(self.canvas.width) }
     var height: CGFloat { return CGFloat(self.canvas.height) }
-    
+    var size: CGSize {
+        return CGSize(width: self.width, height: self.height)
+    }
     
     init(canvas: Canvas) {
         self.canvas = canvas

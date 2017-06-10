@@ -75,7 +75,7 @@ func imageAssetsFilePath() -> URL {
         
     }
     
-    return generatedDirectory.appendingPathComponent(ImageFiles.coreAssetFile.rawValue)
+    return generatedDirectory.appendingPathComponent(ImageFile.coreAssets.rawValue)
 }
 func generateImageAssets() {
     let writeToFile = imageAssetsFilePath()
@@ -98,7 +98,8 @@ func generateImageAssets() {
     
     let images: [VectorImageAsset] = [
         DrawProxyDSL.KitSettingsImage(),
-        DrawProxyDSL.CameraPermissionsImage()
+        DrawProxyDSL.CameraPermissionsImage(),
+        DrawProxyDSL.PhotosPermissionsImage()
     ]
     
     var canvases = [Canvas]()

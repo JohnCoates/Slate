@@ -20,8 +20,9 @@ class CameraDeniedPermisionViewController: PermissionsEducationViewController {
     override func configureEducation() {
         configureButtons()
         
-        educationImage = CameraEducationImage()
-        educationImageSize = CGSize(width: 84, height: 102)
+        let image = VectorImageCanvasIcon.from(asset: PermissionsImage.camera)
+        educationImage = image
+        educationImageSize = image.size
         
         explanation = "Slate needs access to your camera to be able to take photos. " +
         "You'll need to open Settings to allow access."

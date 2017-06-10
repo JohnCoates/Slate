@@ -24,4 +24,8 @@ class Canvas {
         self.width = width
         self.height = height
     }
+    
+    lazy var identifier: String = {
+        return "\(self.section).\(self.name)"
+    }()
 }

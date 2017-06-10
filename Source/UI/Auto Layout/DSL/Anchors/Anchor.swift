@@ -5,7 +5,6 @@
 //  Created by John Coates on 6/7/17.
 //  Copyright © 2017 John Coates. All rights reserved.
 //
-// swiftlint:disable identifier_name
 
 #if os(iOS)
     import UIKit

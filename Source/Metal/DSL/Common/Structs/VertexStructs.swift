@@ -5,7 +5,6 @@
 //  Created by John Coates on 5/31/17.
 //  Copyright © 2017 John Coates. All rights reserved.
 //
-// swiftlint:disable identifier_name
 
 import Foundation
 

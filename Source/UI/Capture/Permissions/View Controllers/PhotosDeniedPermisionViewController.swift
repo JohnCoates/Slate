@@ -15,7 +15,7 @@ class PhotosDeniedPermisionViewController: PermissionsEducationViewController {
     override func configureEducation() {
         configureButtons()
         
-        educationImage = PhotosEducationImage()
+        educationImage = VectorImageCanvasIcon.from(asset: PermissionsImage.photos)
         educationImageSize = CGSize(width: 118, height: 102)
         
         explanation = "Slate needs access to your Photos to be able to save photos." +

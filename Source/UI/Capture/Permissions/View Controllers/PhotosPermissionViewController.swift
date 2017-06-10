@@ -17,7 +17,7 @@ class PhotosPermissionViewController: PermissionsEducationViewController {
     override func configureEducation() {
         configureButtons()
         
-        educationImage = PhotosEducationImage()
+        educationImage = VectorImageCanvasIcon.from(asset: PermissionsImage.photos)
         educationImageSize = CGSize(width: 118, height: 102)
         
         explanation =  "Would you like your photos saved to the Camera Roll, " +

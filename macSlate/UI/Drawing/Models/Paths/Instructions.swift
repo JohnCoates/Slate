@@ -29,22 +29,6 @@ extension Path {
         case contextTranslateBy(x: Float, y: Float)
         case contextRotate(by: Float)
     }
-    
-    struct Point {
-        let x: Float
-        let y: Float
-    }
-    struct Rect {
-        let origin: Point
-        let size: Point
-    }
-    
-    struct Color: Equatable {
-        let red: Float
-        let green: Float
-        let blue: Float
-        let alpha: Float
-    }
 }
 
 func == (lhs: Path.Color, rhs: Path.Color) -> Bool {

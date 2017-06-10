@@ -5,6 +5,7 @@
 //  Created by John Coates on 6/8/17.
 //  Copyright © 2017 John Coates. All rights reserved.
 //
+// codebeat:disable[ABC,ARITY,CYCLO,LOC,TOTAL_COMPLEXITY,TOTAL_LOC,TOO_MANY_IVARS]
 
 import Foundation
 
@@ -12,12 +13,11 @@ extension DrawProxyDSL {
     class CameraPermissionsImage: VectorImageAsset {
 
         let asset = PermissionsImage.camera
+        let width: CGFloat = 167
+        let height: CGFloat = 204
         
         lazy var name: String = self.asset.rawValue
         lazy var section: String = self.asset.section
-        
-        let width: CGFloat = 167
-        let height: CGFloat = 204
         
         func simulateDraw() {
             //// General Declarations

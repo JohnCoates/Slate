@@ -2,15 +2,17 @@ disabled_rules:
    - trailing_whitespace
    - unused_closure_parameter
    - closure_parameter_position
+   - identifier_name
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Carthage
   - Pods
   - Source/UI/Capture/Code Icons
   - Source/UI/Capture/Permissions/Code Icons
+  - Resources/Images/Vector Images
 variable_name:
   min_length:
     warning: 2
-    error: 2
+    error: 2  
 type_name:
     min_length: 2
     max_length:

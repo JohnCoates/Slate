@@ -14,4 +14,20 @@ class Path {
     func add(instruction: Instruction) {
         instructions.append(instruction)
     }
+    
+    struct Point {
+        let x: Float
+        let y: Float
+    }
+    struct Rect {
+        let origin: Point
+        let size: Point
+    }
+    
+    struct Color: Equatable {
+        let red: Float
+        let green: Float
+        let blue: Float
+        let alpha: Float
+    }
 }
