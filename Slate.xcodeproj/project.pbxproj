@@ -804,6 +804,7 @@
 		FAF5AB211EEBCB4B00EDED04 /* SwitchCameraImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCameraImage.swift; sourceTree = "<group>"; };
 		FAF5AB231EEBCD5B00EDED04 /* EditingDeleteImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingDeleteImage.swift; sourceTree = "<group>"; };
 		FAF5AB251EEBCDFE00EDED04 /* PathsImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathsImageButton.swift; path = "Resources/Images/Vector Images/Editing/PathsImageButton.swift"; sourceTree = SOURCE_ROOT; };
+		FAF5AB291EEC6B5600EDED04 /* Lint.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Lint.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -973,6 +974,7 @@
 				FA06348D1ED4ACA800C8FC90 /* Private.xcconfig */,
 				FA0634961ED4B1C300C8FC90 /* AppStore.xcconfig */,
 				FA850F501EE20C7800B1CDDB /* FastDebug.xcconfig */,
+				FAF5AB291EEC6B5600EDED04 /* Lint.xcconfig */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -2593,6 +2595,7 @@
 			buildPhases = (
 				AF267DBC92C6F6E6E0A71DE9 /* [CP] Check Pods Manifest.lock */,
 				FACC8FD81D98AD4500589230 /* Swiftlint */,
+				FAF5AB321EEC6BA100EDED04 /* ShellScript */,
 				FA9F89DE1D953C540058C369 /* Sources */,
 				FA9F89DF1D953C540058C369 /* Frameworks */,
 				FAAE76841EEB88F800CA3416 /* Generate Images */,
@@ -3075,6 +3078,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
 			shellScript = "if [ ! -z \"${SKIP_LINT}\" ]\nthen\necho \"Skipping Lint\"\nelse\nif which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\nfi";
+		};
+		FAF5AB321EEC6BA100EDED04 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ ! -z \"${LINT_TAILOR}\" ]\nthen\nif which tailor >/dev/null; then\ntailor\nelse\necho \"warning: Tailor not installed, download from https://github.com/sleekbyte/tailor\"\nfi\nelse\necho \"Skipping Lint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -4355,6 +4371,205 @@
 			};
 			name = AppStore;
 		};
+		FAF5AB2A1EEC6B7200EDED04 /* Lint */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAF5AB291EEC6B5600EDED04 /* Lint.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "";
+				"OTHER_SWIFT_FLAGS[sdk=iphoneos*]" = "-DMETAL_DEVICE";
+				"OTHER_SWIFT_FLAGS[sdk=iphonesimulator*]" = "-DIOS_SIMULATOR";
+				"OTHER_SWIFT_FLAGS[sdk=macosx*]" = "-DMETAL_DEVICE";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Lint;
+		};
+		FAF5AB2B1EEC6B7200EDED04 /* Lint */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C65C3DD7DBBD649D3B2B141A /* Pods-Slate.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Resources/Required/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.camera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Headers/Bridging/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Lint;
+		};
+		FAF5AB2C1EEC6B7200EDED04 /* Lint */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Tests/Unit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Slate.app/Slate";
+			};
+			name = Lint;
+		};
+		FAF5AB2D1EEC6B7200EDED04 /* Lint */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Tests/UI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Slate;
+			};
+			name = Lint;
+		};
+		FAF5AB2E1EEC6B7200EDED04 /* Lint */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = MacAppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = macSlate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.macSlate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Lint;
+		};
+		FAF5AB2F1EEC6B7200EDED04 /* Lint */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				INFOPLIST_FILE = Tests/Unit/Mac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.slate.macTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/macSlate.app/Contents/MacOS/macSlate";
+			};
+			name = Lint;
+		};
+		FAF5AB301EEC6B7200EDED04 /* Lint */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E803F739E995BBB1C38B7A04 /* Pods-Feature Catalog.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = FeatureCatalogAppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "Feature Catalog/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.johncoates.slate.Feature-Catalog";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Lint;
+		};
+		FAF5AB311EEC6B7200EDED04 /* Lint */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = E6QK4MU6LM;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CFLAGS = (
+					"-DOBJECTS_DIRECTORY=\"\\\"${OBJECT_FILE_DIR_normal}\\\"\"",
+					"-DPROJECT_DIRECTORY=\"\\\"${PROJECT_DIR}\\\"\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/macSlate/CLI/Bridging/CLIBridging.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Lint;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -4362,6 +4577,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA4DFED81D9DBD1A0068706F /* Debug */,
+				FAF5AB2E1EEC6B7200EDED04 /* Lint */,
 				FA850F4D1EE20C5200B1CDDB /* FastDebug */,
 				FA4DFED91D9DBD1A0068706F /* Release */,
 				FA0634941ED4B19500C8FC90 /* AppStore */,
@@ -4373,6 +4589,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA850F211EE0DB2300B1CDDB /* Debug */,
+				FAF5AB2F1EEC6B7200EDED04 /* Lint */,
 				FA850F4E1EE20C5200B1CDDB /* FastDebug */,
 				FA850F221EE0DB2300B1CDDB /* Release */,
 				FA850F231EE0DB2300B1CDDB /* AppStore */,
@@ -4384,6 +4601,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA9F8A081D953C540058C369 /* Debug */,
+				FAF5AB2A1EEC6B7200EDED04 /* Lint */,
 				FA850F481EE20C5200B1CDDB /* FastDebug */,
 				FA9F8A091D953C540058C369 /* Release */,
 				FA06348F1ED4B19500C8FC90 /* AppStore */,
@@ -4395,6 +4613,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA9F8A0B1D953C540058C369 /* Debug */,
+				FAF5AB2B1EEC6B7200EDED04 /* Lint */,
 				FA850F491EE20C5200B1CDDB /* FastDebug */,
 				FA9F8A0C1D953C540058C369 /* Release */,
 				FA0634901ED4B19500C8FC90 /* AppStore */,
@@ -4406,6 +4625,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA9F8A0E1D953C540058C369 /* Debug */,
+				FAF5AB2C1EEC6B7200EDED04 /* Lint */,
 				FA850F4B1EE20C5200B1CDDB /* FastDebug */,
 				FA9F8A0F1D953C540058C369 /* Release */,
 				FA0634921ED4B19500C8FC90 /* AppStore */,
@@ -4417,6 +4637,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA9F8A111D953C540058C369 /* Debug */,
+				FAF5AB2D1EEC6B7200EDED04 /* Lint */,
 				FA850F4C1EE20C5200B1CDDB /* FastDebug */,
 				FA9F8A121D953C540058C369 /* Release */,
 				FA0634931ED4B19500C8FC90 /* AppStore */,
@@ -4428,6 +4649,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FAB0AA791EC8083D008DCD23 /* Debug */,
+				FAF5AB301EEC6B7200EDED04 /* Lint */,
 				FA850F4F1EE20C5200B1CDDB /* FastDebug */,
 				FAB0AA7A1EC8083D008DCD23 /* Release */,
 				FA0634951ED4B19500C8FC90 /* AppStore */,
@@ -4439,6 +4661,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FAB9C2891EE8FDA600C50545 /* Debug */,
+				FAF5AB311EEC6B7200EDED04 /* Lint */,
 				FAB9C28A1EE8FDA600C50545 /* FastDebug */,
 				FAB9C28B1EE8FDA600C50545 /* Release */,
 				FAB9C28C1EE8FDA600C50545 /* AppStore */,

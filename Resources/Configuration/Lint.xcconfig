@@ -1,0 +1,9 @@
+//
+//  Lint.xcconfig
+//  Slate
+//
+//  Created by John Coates on 6/10/17.
+//  Copyright © 2017 John Coates. All rights reserved.
+//
+
+LINT_TAILOR = YES
