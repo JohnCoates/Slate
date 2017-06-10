@@ -25,10 +25,8 @@ class VectorImagesTableViewController: UITableViewController {
             sections = reader.sections
             canvases = sections.map({ name -> [Canvas] in
                 var section = [Canvas]()
-                for canvas in reader.canvases {
-                    if canvas.section == name {
-                        section.append(canvas)
-                    }
+                for canvas in reader.canvases where canvas.section == name {
+                    section.append(canvas)
                 }
                 return section
             })

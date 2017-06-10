@@ -5,6 +5,7 @@
 //  Created by John Coates on 6/8/17.
 //  Copyright © 2017 John Coates. All rights reserved.
 //
+// swiftlint:disable cyclomatic_complexity
 
 import Foundation
 
@@ -13,7 +14,7 @@ extension VectorImage.Writer {
     func dataFloats() -> [VectorImage.DataFloat] {
         var floats = [Float]()
         let instructions: [Path.Instruction] = _instructions
-        for instruction in instructions  {
+        for instruction in instructions {
             switch instruction {
             case .initWith(let rect), .initWith3(let rect):
                 add(point: rect.origin, toFloats: &floats)
@@ -57,7 +58,6 @@ extension VectorImage.Writer {
         }
         return dataFloats
     }
-
     
     func allColors() -> [DataColor] {
         var colors = [Color]()
@@ -104,7 +104,6 @@ extension VectorImage.Writer {
             return dataCanvas
         }
     }
-
     
     static func allInstructions(fromCanvases canvases: [Canvas]) -> [Path.Instruction] {
         let paths: [Path] = canvases.reduce([Path]()) { list, canvas in
@@ -121,8 +120,7 @@ extension VectorImage.Writer {
             return newList
         }
         return instructions + canvasInstructions
-    }
-    
+    }    
     
     func allSections() -> [String] {
         var sections = [String]()

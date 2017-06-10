@@ -1,4 +1,3 @@
-
 //
 //  Writer+Utilities.swift
 //  Slate

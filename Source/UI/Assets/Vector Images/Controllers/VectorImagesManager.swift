@@ -42,8 +42,7 @@ class VectorImagesManager {
         }
         
         return true
-    }
-    
+    }    
     
     fileprivate func requiredCanvas(fromAsset asset: ImageAsset) -> Canvas {
         if !ingestIfNecessary(file: asset.file) {

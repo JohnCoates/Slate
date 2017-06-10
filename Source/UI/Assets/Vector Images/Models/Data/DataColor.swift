@@ -14,8 +14,6 @@ extension VectorImage {
         let greenIndex: UInt16
         let blueIndex: UInt16
         let alphaIndex: UInt16
-        let index: UInt16
-        
-        
+        let index: UInt16        
     }
 }

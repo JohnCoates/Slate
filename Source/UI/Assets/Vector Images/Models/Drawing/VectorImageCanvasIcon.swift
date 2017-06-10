@@ -5,6 +5,7 @@
 //  Created by John Coates on 6/9/17.
 //  Copyright © 2017 John Coates. All rights reserved.
 //
+// swiftlint:disable function_body_length cyclomatic_complexity
 
 import UIKit
 
@@ -66,7 +67,6 @@ class VectorImageCanvasIcon: CanvasIcon {
     }
 
     func draw(path codePath: Path) {
-        
         var instructions = codePath.instructions
         let first = instructions.removeFirst()
         
@@ -82,7 +82,6 @@ class VectorImageCanvasIcon: CanvasIcon {
             path = UIBezierPath()
             instructions.insert(first, at: 0)
         }
-        
         
         for instruction in instructions {
             switch instruction {
@@ -133,13 +132,11 @@ extension Path.Color {
     }
 }
 
-
 extension Path.Point {
     var cgPoint: CGPoint {
         return CGPoint(x: CGFloat(self.x), y: CGFloat(self.y))
     }
 }
-
 
 extension Path.Rect {
     var cgRect: CGRect {

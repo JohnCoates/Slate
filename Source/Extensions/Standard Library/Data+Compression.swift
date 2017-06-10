@@ -34,8 +34,7 @@ extension Data {
             bytes = compression_encode_buffer(destinationBuffer, destination.count,
                                               sourceBuffer, self.count,
                                               scratchBuffer, algorithm.rawValue)
-        }
-        else {
+        } else {
             bytes = compression_decode_buffer(destinationBuffer, destination.count,
                                               sourceBuffer, self.count,
                                               scratchBuffer, algorithm.rawValue)

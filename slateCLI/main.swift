@@ -68,8 +68,7 @@ func imageAssetsFilePath() -> URL {
         do {
             try fileManager.createDirectory(at: generatedDirectory,
                                             withIntermediateDirectories: false, attributes: nil)
-        }
-        catch let error {
+        } catch let error {
             fatalError("Couldn't create generated images diretory: \(generatedDirectory.path): \(error)")
         }
         

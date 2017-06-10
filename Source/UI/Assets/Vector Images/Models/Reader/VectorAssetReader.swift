@@ -5,6 +5,7 @@
 //  Created by John Coates on 6/9/17.
 //  Copyright © 2017 John Coates. All rights reserved.
 //
+// swiftlint:disable cyclomatic_complexity function_body_length
 
 import UIKit
 
@@ -77,8 +78,7 @@ class VectorAssetReader {
         }
         
         self.colors = colors
-    }
-    
+    }    
     
     var sections = [String]()
     func readSections() {
@@ -208,7 +208,7 @@ class VectorAssetReader {
     func readString() -> String {
         let startIndex = readIndex
         var endIndex = readIndex
-        while (readUInt8() != 0) {
+        while readUInt8() != 0 {
             endIndex = readIndex
             continue
         }
