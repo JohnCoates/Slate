@@ -18,6 +18,11 @@ class VectorImageCanvasIcon: CanvasIcon {
         return CGSize(width: self.width, height: self.height)
     }
     
+    convenience init(asset: ImageAsset) {
+        let canvas = Canvas.from(asset: asset)
+        self.init(canvas: canvas)
+    }
+    
     init(canvas: Canvas) {
         self.canvas = canvas
     }

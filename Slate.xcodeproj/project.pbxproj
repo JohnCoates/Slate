@@ -360,8 +360,6 @@
 		FAB0AA6C1EC8083D008DCD23 /* FeatureCatalogAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0AA6B1EC8083D008DCD23 /* FeatureCatalogAppDelegate.swift */; };
 		FAB0AA731EC8083D008DCD23 /* FeatureCatalog.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB0AA721EC8083D008DCD23 /* FeatureCatalog.xcassets */; };
 		FAB0AA761EC8083D008DCD23 /* FeatureCatalogLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB0AA741EC8083D008DCD23 /* FeatureCatalogLaunchScreen.storyboard */; };
-		FAB9C2721EE8DFC400C50545 /* KitSettingsIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2711EE8DFC400C50545 /* KitSettingsIcon.swift */; };
-		FAB9C2731EE8DFC400C50545 /* KitSettingsIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2711EE8DFC400C50545 /* KitSettingsIcon.swift */; };
 		FAB9C2751EE8E1ED00C50545 /* CanvasIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2741EE8E1ED00C50545 /* CanvasIconButton.swift */; };
 		FAB9C2761EE8E1ED00C50545 /* CanvasIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2741EE8E1ED00C50545 /* CanvasIconButton.swift */; };
 		FAB9C27A1EE8F95E00C50545 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2791EE8F95E00C50545 /* Canvas.swift */; };
@@ -765,7 +763,6 @@
 		FAB0AA721EC8083D008DCD23 /* FeatureCatalog.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FeatureCatalog.xcassets; sourceTree = "<group>"; };
 		FAB0AA751EC8083D008DCD23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FeatureCatalogLaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAB0AA771EC8083D008DCD23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FAB9C2711EE8DFC400C50545 /* KitSettingsIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitSettingsIcon.swift; sourceTree = "<group>"; };
 		FAB9C2741EE8E1ED00C50545 /* CanvasIconButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasIconButton.swift; sourceTree = "<group>"; };
 		FAB9C2791EE8F95E00C50545 /* Canvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		FAB9C27C1EE8F9D100C50545 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
@@ -2179,14 +2176,6 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FAB9C2701EE8DFA400C50545 /* Code Icons */ = {
-			isa = PBXGroup;
-			children = (
-				FAB9C2711EE8DFC400C50545 /* KitSettingsIcon.swift */,
-			);
-			path = "Code Icons";
-			sourceTree = "<group>";
-		};
 		FAB9C2771EE8F93200C50545 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -2318,7 +2307,6 @@
 		FACA796E1EE4CF520001D468 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				FAB9C2701EE8DFA400C50545 /* Code Icons */,
 				FACA79781EE518480001D468 /* Views */,
 				FACA796F1EE4CF800001D468 /* View Controllers */,
 			);
@@ -3275,7 +3263,6 @@
 				FA2F8E531DA23E5500993949 /* PassthroughFilter.swift in Sources */,
 				FACFE4931ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */,
 				FA3AAA8B1EE24C5B006028AC /* CameraController+StillOutput.swift in Sources */,
-				FAB9C2721EE8DFC400C50545 /* KitSettingsIcon.swift in Sources */,
 				FA7724D31ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift in Sources */,
 				FA834BE41D9929710017CCCA /* CaptureButton.swift in Sources */,
 				FA0462B91EC3DF81007B74A0 /* KitManager.swift in Sources */,
@@ -3399,7 +3386,6 @@
 				FA5709A71ECC7172000362C8 /* PhotosPermissionViewController.swift in Sources */,
 				FA2B1E591EC80E8500E44613 /* FeatureCatalogItem.swift in Sources */,
 				FAF10D0F1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
-				FAB9C2731EE8DFC400C50545 /* KitSettingsIcon.swift in Sources */,
 				FA6477601EE39F4000A63A22 /* EditBar+EditBorder.swift in Sources */,
 				FA8CE4261ECD7FA700788026 /* UIView+subviews.swift in Sources */,
 				FA0C965A1EE8952800EA6EC8 /* Anchor.swift in Sources */,

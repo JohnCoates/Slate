@@ -101,7 +101,7 @@ final class KitTableViewCell: UITableViewCell {
         dateLabel.baseline --> authorLabel.baseline
     }
     
-    let settingsButton = CanvasIconButton(icon: KitSettingsIcon())
+    let settingsButton = CanvasIconButton(asset: KitImage.settings)
     
     private func setUpSettingsButton() {
         contentView.addSubview(settingsButton)

@@ -13,6 +13,12 @@ class CanvasIconButton: Button {
     // MARK: - Init
     
     let icon: CanvasIcon
+    
+    convenience init(asset: ImageAsset) {
+        let icon = VectorImageCanvasIcon(asset: asset)
+        self.init(icon: icon)
+    }
+    
     init(icon: CanvasIcon) {
         self.icon = icon
         super.init(frame: .zero)
