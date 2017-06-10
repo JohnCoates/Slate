@@ -25,6 +25,20 @@ enum KitImage: String, ImageAsset {
     var file: ImageFile { return .coreAssets }
 }
 
+enum KitComponent: String, ImageAsset {
+    case switchCamera = "SwitchCamera"
+    var section: String { return "Kit.Components" }
+    var file: ImageFile { return .coreAssets }
+}
+
+enum EditingImage: String, ImageAsset {
+    case checkmark = "Checkmark"
+    case cancel = "Cancel"
+    case delete = "Delete"
+    var section: String { return "Editing" }
+    var file: ImageFile { return .coreAssets }
+}
+
 protocol ImageAsset {
     var rawValue: String { get }
     var section: String { get }

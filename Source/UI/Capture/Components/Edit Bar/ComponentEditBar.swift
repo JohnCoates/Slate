@@ -39,7 +39,8 @@ class ComponentEditBar: UIView {
         setUpTitleButton()
     }
     
-    let saveButton = InverseMaskButton(icon: CheckmarkIcon())
+    let saveButton = InverseMaskButtonImage(asset: EditingImage.checkmark)
+    
     fileprivate func setUpSaveButton() {
         saveButton.setTappedCallback(instance: self, method: Method.saveTapped)
         addSubview(saveButton)
@@ -50,7 +51,7 @@ class ComponentEditBar: UIView {
         saveButton.right.pin(to: right, add: -10)
     }
     
-    let cancelButton = InverseMaskButton(icon: XIcon())
+    let cancelButton = InverseMaskButtonImage(asset: EditingImage.cancel)
     fileprivate func setUpCancelButton() {
         cancelButton.setTappedCallback(instance: self, method: Method.cancelTapped)
         addSubview(cancelButton)
@@ -105,7 +106,8 @@ class ComponentEditBar: UIView {
     // MARK: - Delete Control
     
     func addDeleteControl() {
-        let control = CodeIconButton(icon: DeleteLineIcon())
+//        let control = CodeIconButton(icon: DeleteLineIcon())
+        let control = PathsImageButton(asset: EditingImage.delete)
         control.rounding = 1
         control.contentView.backgroundColor = UIColor(red:0.16, green:0.14, blue:0.17, alpha:1.00)
         control.setTappedCallback(instance: self, method: Method.deleteTapped)

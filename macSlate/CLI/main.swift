@@ -95,11 +95,7 @@ func generateImageAssets() {
         }
     }
     
-    let images: [VectorImageAsset] = [
-        DrawProxyDSL.KitSettingsImage(),
-        DrawProxyDSL.CameraPermissionsImage(),
-        DrawProxyDSL.PhotosPermissionsImage()
-    ]
+    let images: [VectorImageAsset] = coreAssets
     
     var canvases = [Canvas]()
     for image in images {

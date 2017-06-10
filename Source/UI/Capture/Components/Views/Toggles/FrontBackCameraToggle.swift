@@ -8,12 +8,12 @@
 
 import UIKit
 
-final class FrontBackCameraToggle: InverseMaskGroupedPathButton {
+final class FrontBackCameraToggle: InverseMaskButtonImage {
     
     // MARK: - Init
     
     convenience init() {
-        self.init(icon: FlippedCameraIcon())
+        self.init(asset: KitComponent.switchCamera)
     }
     
     // MARK: - Setup

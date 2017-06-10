@@ -47,18 +47,12 @@
 		FA2B1E581EC80E8500E44613 /* FeatureCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E561EC80E8500E44613 /* FeatureCatalogViewController.swift */; };
 		FA2B1E591EC80E8500E44613 /* FeatureCatalogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E571EC80E8500E44613 /* FeatureCatalogItem.swift */; };
 		FA2B1E5C1EC80EE100E44613 /* InvertedMaskButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E5B1EC80EE100E44613 /* InvertedMaskButtonViewController.swift */; };
-		FA2B1E5F1EC817C000E44613 /* InverseMaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E5E1EC817C000E44613 /* InverseMaskButton.swift */; };
-		FA2B1E601EC817C000E44613 /* InverseMaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E5E1EC817C000E44613 /* InverseMaskButton.swift */; };
 		FA2B1E681EC922FD00E44613 /* LayoutConstraint+Modifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E671EC922FD00E44613 /* LayoutConstraint+Modifying.swift */; };
 		FA2B1E691EC922FD00E44613 /* LayoutConstraint+Modifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E671EC922FD00E44613 /* LayoutConstraint+Modifying.swift */; };
 		FA2B1E6D1EC9235700E44613 /* PathIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E6C1EC9235700E44613 /* PathIcon.swift */; };
 		FA2B1E6E1EC9235700E44613 /* PathIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E6C1EC9235700E44613 /* PathIcon.swift */; };
-		FA2B1E711EC9239F00E44613 /* CheckmarkIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E701EC9239F00E44613 /* CheckmarkIcon.swift */; };
-		FA2B1E721EC9239F00E44613 /* CheckmarkIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E701EC9239F00E44613 /* CheckmarkIcon.swift */; };
 		FA2B1E741EC927FB00E44613 /* Views+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E731EC927FB00E44613 /* Views+AutoLayout.swift */; };
 		FA2B1E751EC927FB00E44613 /* Views+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E731EC927FB00E44613 /* Views+AutoLayout.swift */; };
-		FA2B1E771EC928A300E44613 /* XIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E761EC928A300E44613 /* XIcon.swift */; };
-		FA2B1E781EC928A300E44613 /* XIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1E761EC928A300E44613 /* XIcon.swift */; };
 		FA2B1E791EC92AEF00E44613 /* BaseCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */; };
 		FA2B1E7A1EC92AF600E44613 /* SimulatorCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86BE041D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift */; };
 		FA2B1E7B1EC92B5B00E44613 /* DebugBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */; };
@@ -261,6 +255,8 @@
 		FA78F2971E14520700D34947 /* DebugWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2961E14520700D34947 /* DebugWindow.swift */; };
 		FA78F29A1E15662B00D34947 /* DebugBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2991E15662B00D34947 /* DebugBarView.swift */; };
 		FA78F29C1E15686C00D34947 /* DebugBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F29B1E15686C00D34947 /* DebugBarItemView.swift */; };
+		FA7EC2B41EEB9DD700686E3C /* InverseMaskImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7EC2B31EEB9DD700686E3C /* InverseMaskImageButton.swift */; };
+		FA7EC2B61EEB9E0300686E3C /* InverseMaskImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7EC2B31EEB9DD700686E3C /* InverseMaskImageButton.swift */; };
 		FA834BDD1D9920010017CCCA /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BDC1D9920010017CCCA /* Platform.swift */; };
 		FA834BE11D9927EB0017CCCA /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BE01D9927EB0017CCCA /* Button.swift */; };
 		FA834BE41D9929710017CCCA /* CaptureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BE31D9929710017CCCA /* CaptureButton.swift */; };
@@ -415,12 +411,6 @@
 		FAE385491EDE996B006FD2ED /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE385481EDE996B006FD2ED /* CameraPreviewViewController.swift */; };
 		FAF10CFA1ECAA8230008690E /* GroupedPathIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */; };
 		FAF10CFB1ECAA8230008690E /* GroupedPathIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */; };
-		FAF10CFE1ECAA87C0008690E /* FlipCameraIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CFD1ECAA87C0008690E /* FlipCameraIcon.swift */; };
-		FAF10CFF1ECAA87C0008690E /* FlipCameraIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CFD1ECAA87C0008690E /* FlipCameraIcon.swift */; };
-		FAF10D011ECAA9170008690E /* GroupedPathButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D001ECAA9170008690E /* GroupedPathButton.swift */; };
-		FAF10D021ECAA9170008690E /* GroupedPathButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D001ECAA9170008690E /* GroupedPathButton.swift */; };
-		FAF10D041ECAAB190008690E /* InverseMaskGroupedPathButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D031ECAAB190008690E /* InverseMaskGroupedPathButton.swift */; };
-		FAF10D051ECAAB190008690E /* InverseMaskGroupedPathButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D031ECAAB190008690E /* InverseMaskGroupedPathButton.swift */; };
 		FAF10D081ECAD03A0008690E /* BaseCaptureViewController+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D071ECAD03A0008690E /* BaseCaptureViewController+Debug.swift */; };
 		FAF10D091ECAD03A0008690E /* BaseCaptureViewController+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D071ECAD03A0008690E /* BaseCaptureViewController+Debug.swift */; };
 		FAF10D0B1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D0A1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift */; };
@@ -431,6 +421,13 @@
 		FAF10D151ECAD30D0008690E /* Ream+Filtering.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D131ECAD30D0008690E /* Ream+Filtering.swift */; };
 		FAF10D181ECAFF1D0008690E /* PermissionsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D171ECAFF1D0008690E /* PermissionsWindow.swift */; };
 		FAF10D191ECAFF1D0008690E /* PermissionsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D171ECAFF1D0008690E /* PermissionsWindow.swift */; };
+		FAF5AB181EEBA07A00EDED04 /* ExportedVectorAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5AB161EEBA07600EDED04 /* ExportedVectorAssets.swift */; };
+		FAF5AB1C1EEBA13300EDED04 /* EditingCheckmarkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5AB1B1EEBA13300EDED04 /* EditingCheckmarkImage.swift */; };
+		FAF5AB1E1EEBC7D300EDED04 /* EditingCancelImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5AB1D1EEBC7D300EDED04 /* EditingCancelImage.swift */; };
+		FAF5AB221EEBCB4B00EDED04 /* SwitchCameraImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5AB211EEBCB4B00EDED04 /* SwitchCameraImage.swift */; };
+		FAF5AB241EEBCD5B00EDED04 /* EditingDeleteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5AB231EEBCD5B00EDED04 /* EditingDeleteImage.swift */; };
+		FAF5AB271EEBCE1F00EDED04 /* PathsImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5AB251EEBCDFE00EDED04 /* PathsImageButton.swift */; };
+		FAF5AB281EEBCE2100EDED04 /* PathsImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5AB251EEBCDFE00EDED04 /* PathsImageButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -611,12 +608,9 @@
 		FA2B1E561EC80E8500E44613 /* FeatureCatalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureCatalogViewController.swift; sourceTree = "<group>"; };
 		FA2B1E571EC80E8500E44613 /* FeatureCatalogItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureCatalogItem.swift; sourceTree = "<group>"; };
 		FA2B1E5B1EC80EE100E44613 /* InvertedMaskButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvertedMaskButtonViewController.swift; sourceTree = "<group>"; };
-		FA2B1E5E1EC817C000E44613 /* InverseMaskButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InverseMaskButton.swift; sourceTree = "<group>"; };
 		FA2B1E671EC922FD00E44613 /* LayoutConstraint+Modifying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LayoutConstraint+Modifying.swift"; sourceTree = "<group>"; };
 		FA2B1E6C1EC9235700E44613 /* PathIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathIcon.swift; sourceTree = "<group>"; };
-		FA2B1E701EC9239F00E44613 /* CheckmarkIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckmarkIcon.swift; sourceTree = "<group>"; };
 		FA2B1E731EC927FB00E44613 /* Views+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Views+AutoLayout.swift"; sourceTree = "<group>"; };
-		FA2B1E761EC928A300E44613 /* XIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XIcon.swift; sourceTree = "<group>"; };
 		FA2B1EAE1EC97CE000E44613 /* DeleteLineIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteLineIcon.swift; sourceTree = "<group>"; };
 		FA2B1EB11EC97E7300E44613 /* CodeIconButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeIconButton.swift; sourceTree = "<group>"; };
 		FA2B1EB41EC9824E00E44613 /* RoundableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundableView.swift; sourceTree = "<group>"; };
@@ -690,6 +684,7 @@
 		FA78F2961E14520700D34947 /* DebugWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugWindow.swift; sourceTree = "<group>"; };
 		FA78F2991E15662B00D34947 /* DebugBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarView.swift; sourceTree = "<group>"; };
 		FA78F29B1E15686C00D34947 /* DebugBarItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarItemView.swift; sourceTree = "<group>"; };
+		FA7EC2B31EEB9DD700686E3C /* InverseMaskImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InverseMaskImageButton.swift; path = "Resources/Images/Vector Images/Camera/Permissions/InverseMaskImageButton.swift"; sourceTree = SOURCE_ROOT; };
 		FA834BDC1D9920010017CCCA /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		FA834BE01D9927EB0017CCCA /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		FA834BE31D9929710017CCCA /* CaptureButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureButton.swift; sourceTree = "<group>"; };
@@ -798,14 +793,17 @@
 		FAE048431EE378A500695E0D /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		FAE385481EDE996B006FD2ED /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
 		FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupedPathIcon.swift; sourceTree = "<group>"; };
-		FAF10CFD1ECAA87C0008690E /* FlipCameraIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipCameraIcon.swift; sourceTree = "<group>"; };
-		FAF10D001ECAA9170008690E /* GroupedPathButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupedPathButton.swift; sourceTree = "<group>"; };
-		FAF10D031ECAAB190008690E /* InverseMaskGroupedPathButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InverseMaskGroupedPathButton.swift; sourceTree = "<group>"; };
 		FAF10D071ECAD03A0008690E /* BaseCaptureViewController+Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseCaptureViewController+Debug.swift"; sourceTree = "<group>"; };
 		FAF10D0A1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseCaptureViewController+ComponentEditing.swift"; sourceTree = "<group>"; };
 		FAF10D0D1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseCaptureViewController+ComponentMenu.swift"; sourceTree = "<group>"; };
 		FAF10D131ECAD30D0008690E /* Ream+Filtering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ream+Filtering.swift"; sourceTree = "<group>"; };
 		FAF10D171ECAFF1D0008690E /* PermissionsWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsWindow.swift; sourceTree = "<group>"; };
+		FAF5AB161EEBA07600EDED04 /* ExportedVectorAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportedVectorAssets.swift; sourceTree = "<group>"; };
+		FAF5AB1B1EEBA13300EDED04 /* EditingCheckmarkImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingCheckmarkImage.swift; sourceTree = "<group>"; };
+		FAF5AB1D1EEBC7D300EDED04 /* EditingCancelImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingCancelImage.swift; sourceTree = "<group>"; };
+		FAF5AB211EEBCB4B00EDED04 /* SwitchCameraImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCameraImage.swift; sourceTree = "<group>"; };
+		FAF5AB231EEBCD5B00EDED04 /* EditingDeleteImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingDeleteImage.swift; sourceTree = "<group>"; };
+		FAF5AB251EEBCDFE00EDED04 /* PathsImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathsImageButton.swift; path = "Resources/Images/Vector Images/Editing/PathsImageButton.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1136,10 +1134,7 @@
 			isa = PBXGroup;
 			children = (
 				FA8AA5431ECC12DF0093D317 /* Code Icon Views */,
-				FA2B1E5E1EC817C000E44613 /* InverseMaskButton.swift */,
 				FA2B1EB41EC9824E00E44613 /* RoundableView.swift */,
-				FAF10D001ECAA9170008690E /* GroupedPathButton.swift */,
-				FAF10D031ECAAB190008690E /* InverseMaskGroupedPathButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1184,9 +1179,6 @@
 		FA2B1E6F1EC9238900E44613 /* Code Icons */ = {
 			isa = PBXGroup;
 			children = (
-				FAF10CFC1ECAA8630008690E /* Toggles */,
-				FA2B1E701EC9239F00E44613 /* CheckmarkIcon.swift */,
-				FA2B1E761EC928A300E44613 /* XIcon.swift */,
 				FA2B1EAE1EC97CE000E44613 /* DeleteLineIcon.swift */,
 			);
 			path = "Code Icons";
@@ -1459,9 +1451,9 @@
 		FA6E97801EEA354D00A73DFA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FAAE76571EEB41E400CA3416 /* Drawing */,
 				FAB9C27B1EE8F9B000C50545 /* Paths */,
 				FAB9C2781EE8F94400C50545 /* Canvas */,
-				FAAE76571EEB41E400CA3416 /* Drawing */,
 				FAAE76391EEB2EDE00CA3416 /* Reader */,
 				FA6E97851EEA358500A73DFA /* Data */,
 				FA6E97841EEA357100A73DFA /* Writer */,
@@ -2094,6 +2086,8 @@
 		FAAE76541EEB413300CA3416 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FA7EC2B31EEB9DD700686E3C /* InverseMaskImageButton.swift */,
+				FAF5AB251EEBCDFE00EDED04 /* PathsImageButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2264,9 +2258,11 @@
 		FABEABB81EEA40B0005D05B2 /* Vector Images */ = {
 			isa = PBXGroup;
 			children = (
+				FAF5AB1A1EEBA0CF00EDED04 /* Editing */,
 				FABEABBD1EEA46F6005D05B2 /* Camera */,
 				FABEABBA1EEA413F005D05B2 /* Kits */,
 				FAAE765B1EEB5FDD00CA3416 /* VectorAssetsList.swift */,
+				FAF5AB161EEBA07600EDED04 /* ExportedVectorAssets.swift */,
 			);
 			path = "Vector Images";
 			sourceTree = "<group>";
@@ -2274,6 +2270,7 @@
 		FABEABBA1EEA413F005D05B2 /* Kits */ = {
 			isa = PBXGroup;
 			children = (
+				FAF5AB1F1EEBCB1A00EDED04 /* Components */,
 				FABEABBB1EEA4161005D05B2 /* KitSettingsImage.swift */,
 			);
 			path = Kits;
@@ -2475,14 +2472,6 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		FAF10CFC1ECAA8630008690E /* Toggles */ = {
-			isa = PBXGroup;
-			children = (
-				FAF10CFD1ECAA87C0008690E /* FlipCameraIcon.swift */,
-			);
-			path = Toggles;
-			sourceTree = "<group>";
-		};
 		FAF10D061ECAD0230008690E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -2530,6 +2519,32 @@
 				FAF10D171ECAFF1D0008690E /* PermissionsWindow.swift */,
 			);
 			path = Permissions;
+			sourceTree = "<group>";
+		};
+		FAF5AB1A1EEBA0CF00EDED04 /* Editing */ = {
+			isa = PBXGroup;
+			children = (
+				FAF5AB1B1EEBA13300EDED04 /* EditingCheckmarkImage.swift */,
+				FAF5AB1D1EEBC7D300EDED04 /* EditingCancelImage.swift */,
+				FAF5AB231EEBCD5B00EDED04 /* EditingDeleteImage.swift */,
+			);
+			path = Editing;
+			sourceTree = "<group>";
+		};
+		FAF5AB1F1EEBCB1A00EDED04 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FAF5AB201EEBCB2900EDED04 /* SwitchCamera */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FAF5AB201EEBCB2900EDED04 /* SwitchCamera */ = {
+			isa = PBXGroup;
+			children = (
+				FAF5AB211EEBCB4B00EDED04 /* SwitchCameraImage.swift */,
+			);
+			path = SwitchCamera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3190,7 +3205,6 @@
 				FA1805981EC54F38004351B7 /* CircleView.swift in Sources */,
 				FA5F8C971ECFE7D000921A61 /* BaseCaptureViewController+Kit.swift in Sources */,
 				FA3AAAA61EE259C0006028AC /* Renderer+View.swift in Sources */,
-				FA2B1E711EC9239F00E44613 /* CheckmarkIcon.swift in Sources */,
 				FA0C964F1EE7647300EA6EC8 /* AnchorOperators.swift in Sources */,
 				FA5709A21ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift in Sources */,
 				FAAE76721EEB881C00CA3416 /* VectorImagesManager.swift in Sources */,
@@ -3206,20 +3220,18 @@
 				FA8AA5411ECC107F0093D317 /* ButtonIndicatorIcon.swift in Sources */,
 				FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */,
 				FA1A2C9D1ECC57C60075FA0B /* PermissionsEducationViewController.swift in Sources */,
-				FAF10D041ECAAB190008690E /* InverseMaskGroupedPathButton.swift in Sources */,
 				FA5651AC1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift in Sources */,
 				FAB0AA621EC6A1B8008DCD23 /* DragGesture.swift in Sources */,
 				FA78F28E1E144C0E00D34947 /* DebugBarController.swift in Sources */,
 				FA3AAABE1EE25E6E006028AC /* CameraController+Format.swift in Sources */,
-				FA2B1E771EC928A300E44613 /* XIcon.swift in Sources */,
 				FAADE0D01D9D0AC200AA5729 /* Renderer.swift in Sources */,
 				FA8AA5481ECC13970093D317 /* CanvasIcon.swift in Sources */,
 				FA78F2941E144E4E00D34947 /* DebugBarItem.swift in Sources */,
 				FA2B1E6D1EC9235700E44613 /* PathIcon.swift in Sources */,
 				FAAE76801EEB88C400CA3416 /* VectorImage.swift in Sources */,
 				FA6477621EE39FBD00A63A22 /* EditBar+SettingComponent.swift in Sources */,
+				FA7EC2B41EEB9DD700686E3C /* InverseMaskImageButton.swift in Sources */,
 				FA0C96591EE8952800EA6EC8 /* Anchor.swift in Sources */,
-				FAF10CFE1ECAA87C0008690E /* FlipCameraIcon.swift in Sources */,
 				FACA79841EE671880001D468 /* UIView+Anchors.swift in Sources */,
 				FAB9C2751EE8E1ED00C50545 /* CanvasIconButton.swift in Sources */,
 				FA834BDD1D9920010017CCCA /* Platform.swift in Sources */,
@@ -3228,7 +3240,6 @@
 				FAF10D141ECAD30D0008690E /* Ream+Filtering.swift in Sources */,
 				FA2B1E681EC922FD00E44613 /* LayoutConstraint+Modifying.swift in Sources */,
 				FA3AAA8F1EE24C83006028AC /* CameraController+Preview.swift in Sources */,
-				FA2B1E5F1EC817C000E44613 /* InverseMaskButton.swift in Sources */,
 				FA4D54161DB055A00091184D /* FragmentFilter.swift in Sources */,
 				FAAE76741EEB881C00CA3416 /* VectorAssetReader.swift in Sources */,
 				FAAE767D1EEB885100CA3416 /* Instructions.swift in Sources */,
@@ -3238,9 +3249,9 @@
 				FA3AAAAE1EE25B11006028AC /* Renderer+Buffers.swift in Sources */,
 				FA0C965E1EE8C52900EA6EC8 /* Priority.swift in Sources */,
 				FA1C23801ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift in Sources */,
+				FAF5AB281EEBCE2100EDED04 /* PathsImageButton.swift in Sources */,
 				FA3AAAA81EE25A36006028AC /* Renderer+Sampling.swift in Sources */,
 				FA2F8E531DA23E5500993949 /* PassthroughFilter.swift in Sources */,
-				FAF10D011ECAA9170008690E /* GroupedPathButton.swift in Sources */,
 				FACFE4931ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */,
 				FA3AAA8B1EE24C5B006028AC /* CameraController+StillOutput.swift in Sources */,
 				FAB9C2721EE8DFC400C50545 /* KitSettingsIcon.swift in Sources */,
@@ -3330,14 +3341,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAF10D051ECAAB190008690E /* InverseMaskGroupedPathButton.swift in Sources */,
 				FA7724CD1ED1A25F00C5C227 /* EditOpacity.swift in Sources */,
-				FAF10CFF1ECAA87C0008690E /* FlipCameraIcon.swift in Sources */,
 				FA8AA5421ECC107F0093D317 /* ButtonIndicatorIcon.swift in Sources */,
 				FAAE766F1EEB741500CA3416 /* VectorImagesManager.swift in Sources */,
 				FA3AAAC51EE25FEB006028AC /* Size.swift in Sources */,
 				FA2B1EA41EC92B5B00E44613 /* CameraController.swift in Sources */,
-				FA2B1E721EC9239F00E44613 /* CheckmarkIcon.swift in Sources */,
 				FAAE765C1EEB5FDD00CA3416 /* VectorAssetsList.swift in Sources */,
 				FA2B1E811EC92B5B00E44613 /* ChromaticAberrationFilter.swift in Sources */,
 				FA2B1EA21EC92B5B00E44613 /* CircleSlider.swift in Sources */,
@@ -3402,7 +3410,6 @@
 				FA8CE4291ECD8AE700788026 /* UIGestureRecognizer+Closure.swift in Sources */,
 				FA3AAAB21EE25E08006028AC /* Renderer+Shaders.swift in Sources */,
 				FA2B1E931EC92B5B00E44613 /* ControlBarItemCell.swift in Sources */,
-				FA2B1E781EC928A300E44613 /* XIcon.swift in Sources */,
 				FA64775C1EE39EF600A63A22 /* EditBar+InitialState.swift in Sources */,
 				FAAE764E1EEB39FA00CA3416 /* Path.swift in Sources */,
 				FA3AAABB1EE25E15006028AC /* Renderer+Buffers.swift in Sources */,
@@ -3443,7 +3450,7 @@
 				FAAE763C1EEB2F2900CA3416 /* DataColor.swift in Sources */,
 				FA5651AF1EDE4C44006B5A19 /* ImageCaptureManager.swift in Sources */,
 				FA2B1E801EC92B5B00E44613 /* DebugBarView.swift in Sources */,
-				FA2B1E601EC817C000E44613 /* InverseMaskButton.swift in Sources */,
+				FAF5AB271EEBCE1F00EDED04 /* PathsImageButton.swift in Sources */,
 				FA2B1E7D1EC92B5B00E44613 /* Kit.swift in Sources */,
 				FAAE76401EEB2F3800CA3416 /* DataPath.swift in Sources */,
 				FA2B1E6E1EC9235700E44613 /* PathIcon.swift in Sources */,
@@ -3458,9 +3465,9 @@
 				FAF10D191ECAFF1D0008690E /* PermissionsWindow.swift in Sources */,
 				FA8CE4231ECD7E5A00788026 /* Int+Pixels.swift in Sources */,
 				FA3AAA981EE24E63006028AC /* CameraController+Device.swift in Sources */,
+				FA7EC2B61EEB9E0300686E3C /* InverseMaskImageButton.swift in Sources */,
 				FA2B1E9A1EC92B5B00E44613 /* ComponentEditBarDelegate.swift in Sources */,
 				FA76F5421ED3C32D00059906 /* PermissionsManager.swift in Sources */,
-				FAF10D021ECAA9170008690E /* GroupedPathButton.swift in Sources */,
 				FA7724D41ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift in Sources */,
 				FA0C96601EE8C52900EA6EC8 /* Priority.swift in Sources */,
 				FA2B1E891EC92B5B00E44613 /* FragmentFilter.swift in Sources */,
@@ -3480,8 +3487,11 @@
 				FAB9C28D1EE8FDDB00C50545 /* Path.swift in Sources */,
 				FAB9C2921EE8FDE500C50545 /* UIColor.swift in Sources */,
 				FA6E97AD1EEA3D6500A73DFA /* Writer+Generators.swift in Sources */,
+				FAF5AB1C1EEBA13300EDED04 /* EditingCheckmarkImage.swift in Sources */,
 				FA6E97B01EEA3DD900A73DFA /* Writer+Utilities.swift in Sources */,
 				FAB9C28E1EE8FDE500C50545 /* Instructions.swift in Sources */,
+				FAF5AB1E1EEBC7D300EDED04 /* EditingCancelImage.swift in Sources */,
+				FAF5AB241EEBCD5B00EDED04 /* EditingDeleteImage.swift in Sources */,
 				FAB9C2871EE8FDA600C50545 /* main.swift in Sources */,
 				FA6E979B1EEA376300A73DFA /* DataCanvas.swift in Sources */,
 				FAB9C2911EE8FDE500C50545 /* UIBezierPath.swift in Sources */,
@@ -3492,6 +3502,7 @@
 				FA6E978E1EEA35F000A73DFA /* DataFloat.swift in Sources */,
 				FABEABC01EEA471A005D05B2 /* CameraPermissionsImage.swift in Sources */,
 				FA6E97831EEA356000A73DFA /* VectorImage.swift in Sources */,
+				FAF5AB181EEBA07A00EDED04 /* ExportedVectorAssets.swift in Sources */,
 				FAB9C28F1EE8FDE500C50545 /* Canvas.swift in Sources */,
 				FA6E979E1EEA376D00A73DFA /* DataPoint.swift in Sources */,
 				FABEABC91EEB2930005D05B2 /* DataRect.swift in Sources */,
@@ -3501,6 +3512,7 @@
 				FA6E97AA1EEA3D3100A73DFA /* Writer+DataSections.swift in Sources */,
 				FAAE765D1EEB613600CA3416 /* VectorAssetsList.swift in Sources */,
 				FAAE76621EEB631C00CA3416 /* BuildPaths.m in Sources */,
+				FAF5AB221EEBCB4B00EDED04 /* SwitchCameraImage.swift in Sources */,
 				FA6E97A71EEA3CF100A73DFA /* Writer+Data.swift in Sources */,
 				FABEABC61EEB2831005D05B2 /* CGRect.swift in Sources */,
 				FAAE76711EEB847A00CA3416 /* PhotosPermissionImage.swift in Sources */,

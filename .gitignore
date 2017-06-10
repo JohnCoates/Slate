@@ -69,3 +69,4 @@ fastlane/test_output
 /Benchmarks
 /Scripts/slateCLI
 /default.profraw
+/Resources/Images/Generated/coreAssets.cvif

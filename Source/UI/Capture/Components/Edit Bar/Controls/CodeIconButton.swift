@@ -17,7 +17,6 @@ class CodeIconButton: Button {
     init(icon: PathIcon) {
         self.icon = icon
         super.init(frame: .zero)
-        initialSetup()
     }
     
     required init?(coder aDecoder: NSCoder) {

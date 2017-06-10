@@ -15,7 +15,7 @@ class InvertedMaskButtonViewController: UIViewController {
     enum Kind {
         case checkmark
         case flipCamera
-        case buttonIndicatr
+        case buttonIndicator
     }
     
     let kind: Kind
@@ -44,14 +44,14 @@ class InvertedMaskButtonViewController: UIViewController {
         
         switch kind {
         case .checkmark:
-            button = InverseMaskButton(icon: CheckmarkIcon())
+            button = InverseMaskButtonImage(asset: EditingImage.checkmark)
             width = 36
             heightRatio = 0.9429
         case .flipCamera:
-            button = InverseMaskGroupedPathButton(icon: FlippedCameraIcon())
+            button = InverseMaskButtonImage(asset: KitComponent.switchCamera)
             width = 36
             heightRatio = 0.9429
-        case .buttonIndicatr:
+        case .buttonIndicator:
             view.backgroundColor = UIColor.white
             let icon = ButtonIndicatorIcon()
             let iconView = CanvasIconView(icon: icon)
