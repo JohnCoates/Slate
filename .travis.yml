@@ -17,7 +17,7 @@ install:
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J 'Slate'
 script:
-- set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace Slate.xcworkspace -scheme Slate  -sdk iphonesimulator -destination 'name=iPhone SE' build test | xcpretty
+- set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace Slate.xcworkspace -scheme Slate -destination 'name=iPhone SE' build test | xcpretty
 notifications:
   webhooks:
     urls:
