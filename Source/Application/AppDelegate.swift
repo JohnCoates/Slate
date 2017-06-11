@@ -7,8 +7,11 @@
 //
 
 import UIKit
+
+#if !SKIP_FABRIC
 import Fabric
 import Crashlytics
+#endif
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
