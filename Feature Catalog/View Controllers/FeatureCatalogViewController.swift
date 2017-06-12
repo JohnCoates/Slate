@@ -116,6 +116,7 @@ class FeatureCatalogViewController: UITableViewController {
         return [
             self.captureScreen(),
             self.kitsTab(),
+            self.database(),
             self.vectors(),
             self.buttons()
         ]
@@ -172,6 +173,15 @@ class FeatureCatalogViewController: UITableViewController {
         ]
         
         return Section(title: "Kits Tab", items: items)
+    }
+    
+    func database() -> Section {
+        let items: [FeatureCatalogItem] = [
+            FeatureCatalogItem(name: "Components",
+                               creationBlock: { ComponentListingsViewController() })
+        ]
+        
+        return Section(title: "Database", items: items)
     }
     
     func buttons() -> Section {

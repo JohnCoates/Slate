@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import CoreData
 
 fileprivate typealias LocalClass = CaptureComponent
 fileprivate typealias LocalView = CaptureButton
@@ -73,6 +74,27 @@ class CaptureComponentRealm: ComponentRealm, EditRounding, EditOpacity {
         configureWithStandardProperies(instance: instance)
         
         return instance
+    }
+    
+}
+
+// MARK: - Core Data
+
+@objc(CaptureComponentCoreData)
+class CaptureComponentCoreData: ComponentCoreData {
+    
+    @NSManaged public var opacity: Float
+    @NSManaged public var rounding: Float
+    
+    override class func constructModelEntity() -> DBEntity {
+        let entity = super.constructModelEntity()
+        
+        entity.addAttribute(name: "opacity", type: .float,
+                            defaultValue: 1)
+        entity.addAttribute(name: "rounding", type: .float,
+                            defaultValue: 0)
+        
+        return entity
     }
     
 }

@@ -48,12 +48,7 @@ class VectorImagesTableViewController: UITableViewController {
     
     let cellReuseIdentifier = "VectorCell"
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
+    // MARK: - Table View Data Source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
