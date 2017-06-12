@@ -123,7 +123,7 @@ class ComponentListingsViewController: UITableViewController {
         
         do {
             try context.save()
-        } let error {
+        } catch let error {
             fatalError("Save failed with error: \(error)")
         }
     }
