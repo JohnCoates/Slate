@@ -81,7 +81,7 @@ class CaptureComponentRealm: ComponentRealm, EditRounding, EditOpacity {
 // MARK: - Core Data
 
 @objc(CaptureComponentCoreData)
-class CaptureComponentCoreData: ComponentCoreData {
+class CaptureComponentCoreData: ComponentCoreData, EditRounding {
     
     @NSManaged public var opacity: Float
     @NSManaged public var rounding: Float
@@ -90,11 +90,22 @@ class CaptureComponentCoreData: ComponentCoreData {
         let entity = super.constructModelEntity()
         
         entity.addAttribute(name: "opacity", type: .float,
-                            defaultValue: 1)
+                            defaultValue: LocalClass.defaultOpacity)
         entity.addAttribute(name: "rounding", type: .float,
-                            defaultValue: 0)
+                            defaultValue: LocalClass.defaultRounding)
         
         return entity
+    }
+    
+    override class var componentType: AnyClass { return CaptureComponent.self }
+}
+
+extension CaptureComponent: ComponentDatabase {
+    
+    func createDatabaseObject(in context: NSManagedObjectContext) -> ComponentCoreData {
+        let dbObject: CaptureComponentCoreData = context.insertObject()
+        configureWithStandardProperties(databaseObject: dbObject)
+        return dbObject
     }
     
 }

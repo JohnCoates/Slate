@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import CoreData
 
 protocol Component: class {
     init()
@@ -22,6 +23,11 @@ protocol Component: class {
     
     static func createInstance() -> Component
     static func createView() -> UIView
+}
+
+protocol ComponentDatabase {
+    func createDatabaseObject(in context: NSManagedObjectContext) -> ComponentCoreData
+    func configureWithStandardProperties(databaseObject: ComponentCoreData)
 }
 
 protocol ComponentDelegate: class {
@@ -48,6 +54,26 @@ extension Component {
         }
         
         realmObject.frame = self.frame
+    }
+    
+}
+
+// MARK: - Core Data
+
+extension ComponentDatabase where Self: Component {
+    
+    func configureWithStandardProperties(databaseObject: ComponentCoreData) {
+        if let component = self as? EditRounding,
+            let dbObject = databaseObject as? EditRounding {
+            dbObject.rounding = component.rounding
+        }
+        
+        if let component = self as? EditOpacity,
+            let dbObject = databaseObject as? EditOpacity {
+            dbObject.opacity = component.opacity
+        }
+        
+        databaseObject.frame = DBRect(rect: self.frame)
     }
     
 }

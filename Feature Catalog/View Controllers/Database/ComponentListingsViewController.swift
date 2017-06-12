@@ -11,7 +11,7 @@ import CoreData
 
 private typealias LocalClass = ComponentListingsViewController
 
-class ComponentListingsViewController: UITableViewController {
+class ComponentListingsViewController: UITableViewController, UIGestureRecognizerDelegate {
 
     typealias ObjectType = CaptureComponentCoreData
     lazy var context = DataManager.context
@@ -27,16 +27,21 @@ class ComponentListingsViewController: UITableViewController {
         
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back",
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back",
                                                                 style: .plain,
-                                                                target: nil, action: nil)
+                                                                target: self,
+                                                                action: .backTapped)
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add",
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add",
                                                                  style: .plain,
                                                                  target: self,
                                                                  action: .addTapped)
         setUpDataSource()
-    }
+        
+        // Enable Swipe back
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+    }    
     
     // MARK: - Table Setup
     
@@ -51,7 +56,6 @@ class ComponentListingsViewController: UITableViewController {
                                                                           sectionNameKeyPath: nil,
                                                                           cacheName: nil)
          dataSource = FetchedResultsDataProvider(tableView: tableView,
-                                                 cellIdentifier: cellReuseIdentifier,
                                                  fetchedResultsController: resultsController,
                                                  delegate: self)
     }
@@ -64,68 +68,27 @@ class ComponentListingsViewController: UITableViewController {
 //        addTapped()
     }
 
-    // MARK: - Table View Data Source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView,
-                            numberOfRowsInSection section: Int) -> Int {
-        
-        return resultsController.fetchedObjects!.count
-    }
-
     let cellReuseIdentifier = "Cell"
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier,
-                                                 for: indexPath)
-        
-        let component: ObjectType = resultsController.fetchedObjects![indexPath.item]
-        cell.textLabel?.text = "component frame: \(component.frame)"
-        return cell
-    }
-    
-    // MARK: - Table View Delegate
-    
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    override func tableView(_ tableView: UITableView,
-                            editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-        return .delete
-    }
-    
-    override func tableView(_ tableView: UITableView,
-                            commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        print("deleting object!")
-        let object = dataSource.object(at: indexPath)
-        object.managedObjectContext?.performChanges {
-            object.managedObjectContext?.delete(object)
-        }
-    }
 
     // MARK: - User Interaction
     
     @objc func addTapped() {
-        print("entity name: \(ObjectType.entityName)")
-        let component = NSEntityDescription.insertNewObject(forEntityName: ObjectType.entityName,
-                                                            into: context)
-        
-        guard let typedComponent = component as? ObjectType else {
-            fatalError("Couldn't cast component: \(component)")
+        context.performChanges {
+            let component: ObjectType
+            component = self.context.insertObject()
+            component.frame = DBRect(rect: .zero)
         }
-        
-        typedComponent.frame = DBRect(rect: .zero)
-        
-        do {
-            try context.save()
-        } catch let error {
-            fatalError("Save failed with error: \(error)")
-        }
+    }
+    
+    @objc func backTapped() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: - Navigation Swipe Back
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+                           shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
     
 }
@@ -134,6 +97,7 @@ class ComponentListingsViewController: UITableViewController {
 
 fileprivate extension Selector {
     static let addTapped = #selector(LocalClass.addTapped)
+    static let backTapped = #selector(LocalClass.backTapped)
 }
 
 // MARK: - Data Source Delegate

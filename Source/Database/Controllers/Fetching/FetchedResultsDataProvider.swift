@@ -22,12 +22,12 @@ NSFetchedResultsControllerDelegate, UITableViewDataSource {
     typealias Object = Delegate.Object
     typealias Cell = Delegate.Cell
     
-    required init(tableView: UITableView, cellIdentifier: String,
+    required init(tableView: UITableView,
                   fetchedResultsController: NSFetchedResultsController<Object>,
                   delegate: Delegate) {
         self.tableView = tableView
         self.fetchedResultsController = fetchedResultsController
-        self.cellIdentifier = cellIdentifier
+        cellIdentifier = String(describing: Cell.self)
         self.delegate = delegate
         super.init()
         fetchedResultsController.delegate = self

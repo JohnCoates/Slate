@@ -3890,7 +3890,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.johncoates.slate.Feature-Catalog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = AppStore;
 		};
@@ -4165,7 +4165,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.johncoates.slate.Feature-Catalog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = FastDebug;
 		};
@@ -4411,7 +4411,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.johncoates.slate.Feature-Catalog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -4432,7 +4432,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.johncoates.slate.Feature-Catalog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -4692,7 +4692,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.johncoates.slate.Feature-Catalog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Lint;
 		};
