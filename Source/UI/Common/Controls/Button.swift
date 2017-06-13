@@ -99,6 +99,8 @@ class Button: UIView, EditOpacity {
     
     // MARK: - Tappable While Invisible
     
+    static let defaultOpacity: Float = 1
+    
     var opacity: Float {
         set {
             contentView.alpha = CGFloat(newValue)

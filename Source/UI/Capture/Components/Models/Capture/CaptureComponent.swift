@@ -66,13 +66,11 @@ class CaptureComponentCoreData: ComponentCoreData, EditRounding, EditOpacity {
     @NSManaged public var opacity: Float
     @NSManaged public var rounding: Float
     
+    static let defaultRounding: Float = LocalClass.defaultRounding
+    static let defaultOpacity: Float = LocalClass.defaultOpacity
+    
     override class func constructModelEntity() -> DBEntity {
         let entity = super.constructModelEntity()
-        
-        entity.addAttribute(name: "opacity", type: .float,
-                            defaultValue: LocalClass.defaultOpacity)
-        entity.addAttribute(name: "rounding", type: .float,
-                            defaultValue: LocalClass.defaultRounding)
         
         return entity
     }

@@ -34,14 +34,21 @@ class ComponentCoreData: NSManagedObject, Managed {
         
         entity.addAttribute(name: "frame", type: .transformable)
         
+        if let rounding = self as? EditRounding.Type {
+            entity.addAttribute(name: "rounding", type: .float,
+                                defaultValue: rounding.defaultRounding)
+        }
+        
+        if let opacity = self as? EditOpacity.Type {
+            entity.addAttribute(name: "opacity", type: .float,
+                                defaultValue: opacity.defaultOpacity)
+        }
+        
         if self == ComponentCoreData.self {
             entity.subentities = [
                 CaptureComponentCoreData.modelEntity,
                 CameraPositionComponentCoreData.modelEntity
             ]
-        }
-        
-        if self == ComponentCoreData.self {
             ephemeralEntity = entity
         }
         return entity

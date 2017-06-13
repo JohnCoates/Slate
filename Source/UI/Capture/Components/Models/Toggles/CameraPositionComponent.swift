@@ -10,9 +10,10 @@ import UIKit
 import CoreData
 
 fileprivate typealias LocalClass = CameraPositionComponent
-fileprivate typealias LocalView = FrontBackCameraToggle
 class CameraPositionComponent: Component,
 EditRounding, EditOpacity, EditSize, EditPosition, KeepUpright {
+    
+    typealias AssociatedView = FrontBackCameraToggle
     
     var coreDataID: NSManagedObjectID?
     
@@ -23,7 +24,8 @@ EditRounding, EditOpacity, EditSize, EditPosition, KeepUpright {
         case back = 1
     }
     
-    var position: Position = .front
+    static let defaultCameraPosition: Position = .front
+    var cameraPosition: Position = LocalClass.defaultCameraPosition
     var frame: CGRect = .zero {
         didSet {
             view.frame = frame
@@ -50,8 +52,8 @@ EditRounding, EditOpacity, EditSize, EditPosition, KeepUpright {
     required init() {
     }
     
-    private static func createTypedView() -> LocalView {
-        let view = LocalView()
+    private static func createTypedView() -> AssociatedView {
+        let view = AssociatedView()
         view.opacity = defaultOpacity
         view.rounding = defaultRounding
         return view
@@ -70,14 +72,16 @@ class CameraPositionComponentCoreData: ComponentCoreData, EditRounding, EditOpac
     
     @NSManaged public var opacity: Float
     @NSManaged public var rounding: Float
+    @NSManaged public var cameraPosition: Int
+    
+    static var defaultRounding: Float = LocalClass.defaultRounding
+    static var defaultOpacity: Float = LocalClass.defaultOpacity
     
     override class func constructModelEntity() -> DBEntity {
         let entity = super.constructModelEntity()
         
-        entity.addAttribute(name: "opacity", type: .float,
-                            defaultValue: LocalClass.defaultOpacity)
-        entity.addAttribute(name: "rounding", type: .float,
-                            defaultValue: LocalClass.defaultRounding)
+        entity.addAttribute(name: "cameraPosition", type: .int16,
+                            defaultValue: LocalClass.defaultCameraPosition.rawValue)
         
         return entity
     }

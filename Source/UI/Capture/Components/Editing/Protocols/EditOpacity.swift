@@ -12,6 +12,8 @@ protocol EditOpacity: class {
     var opacity: Float { get set }
     var minimumOpacity: Float { get }
     var maximumOpacity: Float { get }
+    
+    static var defaultOpacity: Float { get }
 }
 
 // MARK: - Defaults

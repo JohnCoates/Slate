@@ -10,4 +10,5 @@ import Foundation
 
 protocol EditRounding: class {
     var rounding: Float { get set }
+    static var defaultRounding: Float { get }
 }
