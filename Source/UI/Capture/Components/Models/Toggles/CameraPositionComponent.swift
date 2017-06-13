@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 import CoreData
 
 fileprivate typealias LocalClass = CameraPositionComponent
@@ -60,35 +59,6 @@ EditRounding, EditOpacity, EditSize, EditPosition, KeepUpright {
     
     static func createView() -> UIView {
         return createTypedView()
-    }
-    
-    func createRealmObject() -> ComponentRealm {
-        let object = RealmObject()
-        configureWithStandardProperties(realmObject: object)
-        object.rawPosition = position.rawValue
-        return object
-    }
-    
-}
-
-// MARK: - Realm Object
-
-fileprivate typealias RealmObject = CameraPositionComponentRealm
-class CameraPositionComponentRealm: ComponentRealm, EditRounding {
-    dynamic var rawPosition: Int = CameraPositionComponent.Position.front.rawValue
-    
-    dynamic var rounding: Float = LocalClass.defaultRounding
-    
-    override func instance() -> Component {
-        let instance = LocalClass()
-        configureWithStandardProperies(instance: instance)
-        if let position = CameraPositionComponent.Position(rawValue: rawPosition) {
-            instance.position = position
-        } else {
-            fatalError("couldn't cast position: \(rawPosition) to enum")
-        }
-        
-        return instance
     }
     
 }

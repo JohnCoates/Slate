@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 import CoreData
 
 protocol Component: class {
@@ -17,9 +16,6 @@ protocol Component: class {
     var editTitle: String { get }
     var frame: CGRect { get set }
     var view: UIView { get }
-    
-    func createRealmObject() -> ComponentRealm
-    func configureWithStandardProperties(realmObject: ComponentRealm)
     
     static func createInstance() -> Component
     static func createView() -> UIView
@@ -42,20 +38,6 @@ extension Component {
     
     static func createInstance() -> Component {
         return self.init()
-    }
-    
-    func configureWithStandardProperties(realmObject: ComponentRealm) {
-        if let component = self as? EditRounding,
-            let realm = realmObject as? EditRounding {
-            realm.rounding = component.rounding
-        }
-        
-        if let component = self as? EditOpacity,
-            let realm = realmObject as? EditOpacity {
-            realm.opacity = component.opacity
-        }
-        
-        realmObject.frame = self.frame
     }
     
 }

@@ -7,23 +7,9 @@
 //
 
 import Foundation
-import RealmSwift
 import CoreData
 
 class KitManager {
-    static let currentKitRealm: Kit = {
-        guard let realm = try? Realm() else {
-            print("Failed to create realm")
-            return Kit()
-        }
-        
-        let kits: Results<KitRealm> = realm.objects(KitRealm.self)
-        if kits.count == 0 {
-            return Kit()
-        }
-        
-        return kits[0].instance()
-    }()
     
     static let currentKit: Kit = {
         let context = DataManager.context
@@ -44,4 +30,5 @@ class KitManager {
         let kit = results[0].instance()        
         return kit
     }()
+    
 }

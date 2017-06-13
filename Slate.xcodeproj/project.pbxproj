@@ -28,9 +28,6 @@
 		FA0C96611EE8C5E300EA6EC8 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79831EE671880001D468 /* UIView+Anchors.swift */; };
 		FA0C96621EE8C63300EA6EC8 /* AnchorOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */; };
 		FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */; };
-		FA18058B1EC46FAE004351B7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1805891EC46FAE004351B7 /* Realm.framework */; };
-		FA18058C1EC46FAE004351B7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; };
-		FA1805911EC5477A004351B7 /* ComponentRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805901EC5477A004351B7 /* ComponentRealm.swift */; };
 		FA1805931EC54A0F004351B7 /* ComponentEditBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805921EC54A0F004351B7 /* ComponentEditBar.swift */; };
 		FA1805981EC54F38004351B7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805971EC54F38004351B7 /* CircleView.swift */; };
 		FA18059A1EC55466004351B7 /* CircleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805991EC55466004351B7 /* CircleSlider.swift */; };
@@ -85,7 +82,6 @@
 		FA2B1E961EC92B5B00E44613 /* EditSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805A21EC699A4004351B7 /* EditSize.swift */; };
 		FA2B1E971EC92B5B00E44613 /* MetalCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */; };
 		FA2B1E981EC92B5B00E44613 /* ComponentMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29FB481EA49B1F00EB1081 /* ComponentMenuBar.swift */; };
-		FA2B1E991EC92B5B00E44613 /* ComponentRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805901EC5477A004351B7 /* ComponentRealm.swift */; };
 		FA2B1E9A1EC92B5B00E44613 /* ComponentEditBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0AA631EC6C84D008DCD23 /* ComponentEditBarDelegate.swift */; };
 		FA2B1E9B1EC92B5B00E44613 /* MetalCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4021C51DA0AEE800752F3B /* MetalCameraController.swift */; };
 		FA2B1E9C1EC92B5B00E44613 /* EditPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0AA5D1EC6A095008DCD23 /* EditPosition.swift */; };
@@ -98,8 +94,6 @@
 		FA2B1EA41EC92B5B00E44613 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B01D9F822800A8AC6C /* CameraController.swift */; };
 		FA2B1EA51EC92B5B00E44613 /* CameraRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */; };
 		FA2B1EA61EC92B5B00E44613 /* DebugBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F29B1E15686C00D34947 /* DebugBarItemView.swift */; };
-		FA2B1EA71EC92DC600E44613 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA1805891EC46FAE004351B7 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FA2B1EA81EC92DC600E44613 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA2B1EAA1EC92DED00E44613 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9F89EC1D953C540058C369 /* Assets.xcassets */; };
 		FA2B1EAB1EC92DF000E44613 /* Placeholders.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA834BE51D9932BC0017CCCA /* Placeholders.xcassets */; };
 		FA2B1EAF1EC97CE000E44613 /* DeleteLineIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1EAE1EC97CE000E44613 /* DeleteLineIcon.swift */; };
@@ -108,12 +102,6 @@
 		FA2B1EB31EC97E7300E44613 /* CodeIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1EB11EC97E7300E44613 /* CodeIconButton.swift */; };
 		FA2B1EB51EC9824E00E44613 /* RoundableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1EB41EC9824E00E44613 /* RoundableView.swift */; };
 		FA2B1EB61EC9824E00E44613 /* RoundableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B1EB41EC9824E00E44613 /* RoundableView.swift */; };
-		FA2B1EBB1EC9A2B600E44613 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1805891EC46FAE004351B7 /* Realm.framework */; };
-		FA2B1EBC1EC9A2B600E44613 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; };
-		FA2B1EBD1EC9A2B600E44613 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1805891EC46FAE004351B7 /* Realm.framework */; };
-		FA2B1EBE1EC9A2B600E44613 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; };
-		FA2B1EC21EC9B78F00E44613 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA1805891EC46FAE004351B7 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FA2B1EC31EC9B78F00E44613 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA18058A1EC46FAE004351B7 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA2F8E471DA2293000993949 /* AbstractFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E461DA2293000993949 /* AbstractFilter.swift */; };
 		FA2F8E481DA2293000993949 /* AbstractFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E461DA2293000993949 /* AbstractFilter.swift */; };
 		FA2F8E4A1DA2296E00993949 /* GaussianBlurFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E491DA2296E00993949 /* GaussianBlurFilter.swift */; };
@@ -167,8 +155,6 @@
 		FA4021C61DA0AEE800752F3B /* MetalCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4021C51DA0AEE800752F3B /* MetalCameraController.swift */; };
 		FA4021C71DA0AEE800752F3B /* MetalCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4021C51DA0AEE800752F3B /* MetalCameraController.swift */; };
 		FA4BD7A51ED18D0C00D1761C /* EditOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BD7A41ED18D0C00D1761C /* EditOpacity.swift */; };
-		FA4BD7A91ED18F6900D1761C /* RealmMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BD7A81ED18F6900D1761C /* RealmMigrator.swift */; };
-		FA4BD7AA1ED18F6900D1761C /* RealmMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BD7A81ED18F6900D1761C /* RealmMigrator.swift */; };
 		FA4D54161DB055A00091184D /* FragmentFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D54151DB055A00091184D /* FragmentFilter.swift */; };
 		FA4D54171DB055A00091184D /* FragmentFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D54151DB055A00091184D /* FragmentFilter.swift */; };
 		FA4D54191DB055BB0091184D /* ComputeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D54181DB055BB0091184D /* ComputeFilter.swift */; };
@@ -441,8 +427,6 @@
 		FAF10D0C1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D0A1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift */; };
 		FAF10D0E1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D0D1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift */; };
 		FAF10D0F1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D0D1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift */; };
-		FAF10D141ECAD30D0008690E /* Ream+Filtering.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D131ECAD30D0008690E /* Ream+Filtering.swift */; };
-		FAF10D151ECAD30D0008690E /* Ream+Filtering.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D131ECAD30D0008690E /* Ream+Filtering.swift */; };
 		FAF10D181ECAFF1D0008690E /* PermissionsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D171ECAFF1D0008690E /* PermissionsWindow.swift */; };
 		FAF10D191ECAFF1D0008690E /* PermissionsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D171ECAFF1D0008690E /* PermissionsWindow.swift */; };
 		FAF5AB181EEBA07A00EDED04 /* ExportedVectorAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5AB161EEBA07600EDED04 /* ExportedVectorAssets.swift */; };
@@ -523,8 +507,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FA2B1EA71EC92DC600E44613 /* Realm.framework in Embed Frameworks */,
-				FA2B1EA81EC92DC600E44613 /* RealmSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,8 +517,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FA2B1EC21EC9B78F00E44613 /* Realm.framework in Embed Frameworks */,
-				FA2B1EC31EC9B78F00E44613 /* RealmSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -569,16 +549,6 @@
 			files = (
 				FABB16AB1D9F4BF600A8AC6C /* HUDShader.metal in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FACC8FD71D98A5AF00589230 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -616,9 +586,6 @@
 		FA0C96581EE8952800EA6EC8 /* Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
 		FA0C965D1EE8C52900EA6EC8 /* Priority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
 		FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = GaussianBlur.metal; sourceTree = "<group>"; };
-		FA1805891EC46FAE004351B7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
-		FA18058A1EC46FAE004351B7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
-		FA1805901EC5477A004351B7 /* ComponentRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentRealm.swift; sourceTree = "<group>"; };
 		FA1805921EC54A0F004351B7 /* ComponentEditBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentEditBar.swift; sourceTree = "<group>"; };
 		FA1805971EC54F38004351B7 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		FA1805991EC55466004351B7 /* CircleSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleSlider.swift; sourceTree = "<group>"; };
@@ -660,7 +627,6 @@
 		FA3AAAC21EE25FEB006028AC /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		FA4021C51DA0AEE800752F3B /* MetalCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalCameraController.swift; sourceTree = "<group>"; };
 		FA4BD7A41ED18D0C00D1761C /* EditOpacity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditOpacity.swift; sourceTree = "<group>"; };
-		FA4BD7A81ED18F6900D1761C /* RealmMigrator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmMigrator.swift; sourceTree = "<group>"; };
 		FA4D54151DB055A00091184D /* FragmentFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FragmentFilter.swift; sourceTree = "<group>"; };
 		FA4D54181DB055BB0091184D /* ComputeFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComputeFilter.swift; sourceTree = "<group>"; };
 		FA4DFECE1D9DBD1A0068706F /* macSlate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macSlate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -835,7 +801,6 @@
 		FAF10D071ECAD03A0008690E /* BaseCaptureViewController+Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseCaptureViewController+Debug.swift"; sourceTree = "<group>"; };
 		FAF10D0A1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseCaptureViewController+ComponentEditing.swift"; sourceTree = "<group>"; };
 		FAF10D0D1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseCaptureViewController+ComponentMenu.swift"; sourceTree = "<group>"; };
-		FAF10D131ECAD30D0008690E /* Ream+Filtering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ream+Filtering.swift"; sourceTree = "<group>"; };
 		FAF10D171ECAFF1D0008690E /* PermissionsWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsWindow.swift; sourceTree = "<group>"; };
 		FAF5AB161EEBA07600EDED04 /* ExportedVectorAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportedVectorAssets.swift; sourceTree = "<group>"; };
 		FAF5AB1B1EEBA13300EDED04 /* EditingCheckmarkImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingCheckmarkImage.swift; sourceTree = "<group>"; };
@@ -865,10 +830,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA18058B1EC46FAE004351B7 /* Realm.framework in Frameworks */,
 				FA76F54C1ED4A2C100059906 /* Fabric.framework in Frameworks */,
 				FA20FA511E12624C00032AF3 /* MetalKit.framework in Frameworks */,
-				FA18058C1EC46FAE004351B7 /* RealmSwift.framework in Frameworks */,
 				FA76F54F1ED4A2C100059906 /* Crashlytics.framework in Frameworks */,
 				6EDF7655229F7620D250358E /* Pods_Slate.framework in Frameworks */,
 			);
@@ -878,8 +841,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA2B1EBC1EC9A2B600E44613 /* RealmSwift.framework in Frameworks */,
-				FA2B1EBB1EC9A2B600E44613 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -887,8 +848,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA2B1EBE1EC9A2B600E44613 /* RealmSwift.framework in Frameworks */,
-				FA2B1EBD1EC9A2B600E44613 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -975,7 +934,6 @@
 		FA0462BC1EC3DFAB007B74A0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA18058F1EC54755004351B7 /* Realm */,
 				FA0462C01EC3DFEC007B74A0 /* Protocols */,
 				FA0462BD1EC3DFC1007B74A0 /* Toggles */,
 				FA5F8CAE1ED06A4100921A61 /* Capture */,
@@ -1035,14 +993,6 @@
 			path = Operators;
 			sourceTree = "<group>";
 		};
-		FA18058F1EC54755004351B7 /* Realm */ = {
-			isa = PBXGroup;
-			children = (
-				FA1805901EC5477A004351B7 /* ComponentRealm.swift */,
-			);
-			path = Realm;
-			sourceTree = "<group>";
-		};
 		FA18059C1EC688BD004351B7 /* Editing */ = {
 			isa = PBXGroup;
 			children = (
@@ -1083,8 +1033,6 @@
 		FA20FA4F1E1261D600032AF3 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				FA1805891EC46FAE004351B7 /* Realm.framework */,
-				FA18058A1EC46FAE004351B7 /* RealmSwift.framework */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -1374,14 +1322,6 @@
 				FA3AAAC21EE25FEB006028AC /* Size.swift */,
 			);
 			path = Layout;
-			sourceTree = "<group>";
-		};
-		FA4BD7A71ED18F3F00D1761C /* Realm */ = {
-			isa = PBXGroup;
-			children = (
-				FA4BD7A81ED18F6900D1761C /* RealmMigrator.swift */,
-			);
-			path = Realm;
 			sourceTree = "<group>";
 		};
 		FA4DFECF1D9DBD1A0068706F /* macSlate */ = {
@@ -2616,7 +2556,6 @@
 		FAF10D101ECAD2DA0008690E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA4BD7A71ED18F3F00D1761C /* Realm */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2626,17 +2565,8 @@
 			children = (
 				FA850F311EE1242100B1CDDB /* Standard Library */,
 				FA8CE4201ECD7E4600788026 /* UI */,
-				FAF10D121ECAD2F90008690E /* Realm */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		FAF10D121ECAD2F90008690E /* Realm */ = {
-			isa = PBXGroup;
-			children = (
-				FAF10D131ECAD30D0008690E /* Ream+Filtering.swift */,
-			);
-			path = Realm;
 			sourceTree = "<group>";
 		};
 		FAF10D161ECAFEFC0008690E /* Permissions */ = {
@@ -2727,9 +2657,7 @@
 				FA9F89DF1D953C540058C369 /* Frameworks */,
 				FAAE76841EEB88F800CA3416 /* Generate Images */,
 				FA9F89E01D953C540058C369 /* Resources */,
-				FACC8FD71D98A5AF00589230 /* Embed Frameworks */,
 				FAADE0D51D9D1CB200AA5729 /* Build Metal Shader Library */,
-				FA7724D51ED1E35200C5C227 /* Copy Carthage Frameworks (fix x86_64 binaries in App Store builds) */,
 				3878ED78F93436AB1BAD504E /* [CP] Embed Pods Frameworks */,
 				30A43601DB775A1683E45B04 /* [CP] Copy Pods Resources */,
 				FA850F471EE20BA000B1CDDB /* Integrate Reveal */,
@@ -3120,22 +3048,6 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ ! -z \"${FABRIC_API_KEY}\" ]\nthen\n\"${PODS_ROOT}/Fabric/run\" ${FABRIC_API_KEY} ${FABRIC_BUILD_SECRET}\nelse\necho \"Skipping Fabric\"\nfi";
 		};
-		FA7724D51ED1E35200C5C227 /* Copy Carthage Frameworks (fix x86_64 binaries in App Store builds) */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
-			);
-			name = "Copy Carthage Frameworks (fix x86_64 binaries in App Store builds)";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
 		FA850F471EE20BA000B1CDDB /* Integrate Reveal */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3356,7 +3268,6 @@
 				FAAE76721EEB881C00CA3416 /* VectorImagesManager.swift in Sources */,
 				FA76F5461ED48FFC00059906 /* ImageCaptureManager.swift in Sources */,
 				FAF10D181ECAFF1D0008690E /* PermissionsWindow.swift in Sources */,
-				FA4BD7A91ED18F6900D1761C /* RealmMigrator.swift in Sources */,
 				FABB16A21D9F402C00A8AC6C /* TextureCoordinates.swift in Sources */,
 				FA3AAA8D1EE24C6E006028AC /* CameraController+Presets.swift in Sources */,
 				FA78F29A1E15662B00D34947 /* DebugBarView.swift in Sources */,
@@ -3386,7 +3297,6 @@
 				FABB16AD1D9F6DAB00A8AC6C /* ChromaticAberration.metal in Sources */,
 				FAC21B5E1EEE13E0007C17AF /* DBRect.swift in Sources */,
 				FAC4248B1EEF28EE00E2EB26 /* ManagedObjectObserver.swift in Sources */,
-				FAF10D141ECAD30D0008690E /* Ream+Filtering.swift in Sources */,
 				FACF0F371EECCF9D00B0211C /* DeniedPermissionViewController.swift in Sources */,
 				FA2B1E681EC922FD00E44613 /* LayoutConstraint+Modifying.swift in Sources */,
 				FA3AAA8F1EE24C83006028AC /* CameraController+Preview.swift in Sources */,
@@ -3441,7 +3351,6 @@
 				FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */,
 				FA29FB491EA49B1F00EB1081 /* ComponentMenuBar.swift in Sources */,
 				FA4BD7A51ED18D0C00D1761C /* EditOpacity.swift in Sources */,
-				FA1805911EC5477A004351B7 /* ComponentRealm.swift in Sources */,
 				FAB0AA641EC6C84D008DCD23 /* ComponentEditBarDelegate.swift in Sources */,
 				FAAE76751EEB881C00CA3416 /* DataColor.swift in Sources */,
 				FA4021C61DA0AEE800752F3B /* MetalCameraController.swift in Sources */,
@@ -3549,7 +3458,6 @@
 				FAC424901EEF2B2700E2EB26 /* NSManagedObjectContext+Observers.swift in Sources */,
 				FAAE764F1EEB39FE00CA3416 /* Instructions.swift in Sources */,
 				FA2B1E8D1EC92B5B00E44613 /* AbstractFilter.swift in Sources */,
-				FA2B1E991EC92B5B00E44613 /* ComponentRealm.swift in Sources */,
 				FA2B1E581EC80E8500E44613 /* FeatureCatalogViewController.swift in Sources */,
 				FA3AAA9A1EE24E67006028AC /* CameraController+Preview.swift in Sources */,
 				FAAE763F1EEB2F3500CA3416 /* DataCanvas.swift in Sources */,
@@ -3585,7 +3493,6 @@
 				FACF0F401EECDB6C00B0211C /* ComponentModel.swift in Sources */,
 				FA5F8CB41ED0958100921A61 /* KeepUpright.swift in Sources */,
 				FA3AAABC1EE25E15006028AC /* Renderer+AspectRatio.swift in Sources */,
-				FAF10D151ECAD30D0008690E /* Ream+Filtering.swift in Sources */,
 				FAAE763B1EEB2F0500CA3416 /* VectorAssetReader.swift in Sources */,
 				FA2B1E951EC92B5B00E44613 /* ComponentEditBar.swift in Sources */,
 				FA2B1E941EC92B5B00E44613 /* DebugWindow.swift in Sources */,
@@ -3607,7 +3514,6 @@
 				FA5709AE1ECD4A36000362C8 /* CameraDeniedPermisionViewController.swift in Sources */,
 				FA1A2C9E1ECC57C60075FA0B /* PermissionsEducationViewController.swift in Sources */,
 				FA2B1EA01EC92B5B00E44613 /* Passthrough.metal in Sources */,
-				FA4BD7AA1ED18F6900D1761C /* RealmMigrator.swift in Sources */,
 				FA2B1E8A1EC92B5B00E44613 /* PassthroughFilter.swift in Sources */,
 				FA8CE42C1ECDA16A00788026 /* PhotosDeniedPermisionViewController.swift in Sources */,
 				FA6477581EE39E9600A63A22 /* EditBar+ProgressControls.swift in Sources */,
@@ -3808,7 +3714,6 @@
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Resources/Required/Info.plist;
@@ -3827,10 +3732,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Unit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateTests;
@@ -3844,10 +3746,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/UI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateUITests;
@@ -3863,10 +3762,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = MacAppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = macSlate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -3886,7 +3782,6 @@
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Feature Catalog/Supporting Files/Info.plist";
@@ -3904,10 +3799,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = MacAppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = macSlate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -3924,10 +3816,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = MacAppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = macSlate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -4063,7 +3952,6 @@
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Resources/Required/Info.plist;
@@ -4082,10 +3970,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Unit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateTests;
@@ -4099,10 +3984,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/UI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateUITests;
@@ -4118,10 +4000,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = MacAppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = macSlate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -4161,7 +4040,6 @@
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Feature Catalog/Supporting Files/Info.plist";
@@ -4289,7 +4167,6 @@
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Resources/Required/Info.plist;
@@ -4314,7 +4191,6 @@
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Resources/Required/Info.plist;
@@ -4333,10 +4209,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Unit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateTests;
@@ -4351,10 +4224,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Unit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateTests;
@@ -4368,10 +4238,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/UI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateUITests;
@@ -4385,10 +4252,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/UI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateUITests;
@@ -4407,7 +4271,6 @@
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Feature Catalog/Supporting Files/Info.plist";
@@ -4428,7 +4291,6 @@
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Feature Catalog/Supporting Files/Info.plist";
@@ -4590,7 +4452,6 @@
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Resources/Required/Info.plist;
@@ -4609,10 +4470,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Unit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateTests;
@@ -4626,10 +4484,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/UI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateUITests;
@@ -4645,10 +4500,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = MacAppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = macSlate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -4688,7 +4540,6 @@
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Feature Catalog/Supporting Files/Info.plist";

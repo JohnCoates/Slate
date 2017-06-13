@@ -22,8 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #if !SKIP_FABRIC
             Fabric.with([Crashlytics.self])
         #endif
-
-        RealmMigrator.migrate()
         
         let window = DebugWindow(frame: UIScreen.main.bounds)
         window.backgroundColor = UIColor.white

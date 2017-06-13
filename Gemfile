@@ -10,5 +10,4 @@ group :development do
   # gem install sys-proctable --platform darwin
 end
 
-gem 'carthage_cache'
 gem 'xcpretty'

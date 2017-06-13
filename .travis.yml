@@ -4,15 +4,11 @@ osx_image: xcode8.3
 cache:
   bundler: true
   cocoapods: true
-  directories:
-    - Carthage
-    - $HOME/Library/Caches/carthage_cache
 before_install:
 - xcrun swift -version
 #- brew update
 install:
 - bundle install --without development
-- carthage_cache install -b slate-cache || ((travis_wait 30 carthage bootstrap --platform iOS --no-use-binaries) && carthage_cache publish -b slate-cache) #--verbose
 - pod install
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J 'Slate'

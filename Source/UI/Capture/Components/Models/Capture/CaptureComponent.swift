@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 import CoreData
 
 fileprivate typealias LocalClass = CaptureComponent
@@ -55,29 +54,6 @@ EditRounding, EditSize, EditPosition, EditOpacity {
     
     static func createView() -> UIView {
         return createTypedView()
-    }
-    
-    func createRealmObject() -> ComponentRealm {
-        let object = RealmObject()
-        configureWithStandardProperties(realmObject: object)
-        return object
-    }
-    
-}
-
-// MARK: - Realm Object
-
-fileprivate typealias RealmObject = CaptureComponentRealm
-class CaptureComponentRealm: ComponentRealm, EditRounding, EditOpacity {
-    
-    dynamic var rounding: Float = LocalClass.defaultRounding
-    dynamic var opacity: Float = LocalClass.defaultOpacity
-    
-    override func instance() -> Component {
-        let instance = LocalClass()
-        configureWithStandardProperies(instance: instance)
-        
-        return instance
     }
     
 }
