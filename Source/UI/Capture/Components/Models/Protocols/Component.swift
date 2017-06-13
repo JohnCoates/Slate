@@ -25,8 +25,10 @@ protocol Component: class {
     static func createView() -> UIView
 }
 
-protocol ComponentDatabase {
-    func createDatabaseObject(in context: NSManagedObjectContext) -> ComponentCoreData
+protocol ComponentDatabase: class {
+    var coreDataID: NSManagedObjectID? { get set }
+    
+    func databaseObject(in context: NSManagedObjectContext) -> ComponentCoreData
     func configureWithStandardProperties(databaseObject: ComponentCoreData)
 }
 
@@ -71,9 +73,9 @@ extension ComponentDatabase where Self: Component {
         if let component = self as? EditOpacity,
             let dbObject = databaseObject as? EditOpacity {
             dbObject.opacity = component.opacity
-        }
         
-        databaseObject.frame = DBRect(rect: self.frame)
+        }
+        databaseObject.frame = DBRect(rect: frame)
     }
     
 }

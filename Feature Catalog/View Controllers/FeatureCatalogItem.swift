@@ -11,6 +11,12 @@ class FeatureCatalogItem {
     typealias ActionClosure = (Void) -> Void
     
     let name: String
+    var section = "Unknown"
+    
+    var identifier: String {
+        return "\(section).\(name)"
+    }
+    
     var creationBlock: CreationClosure?
     var actionBlock: ActionClosure?
     

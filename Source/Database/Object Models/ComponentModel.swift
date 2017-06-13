@@ -13,28 +13,48 @@ import CoreGraphics
 @objc(ComponentCoreData)
 class ComponentCoreData: NSManagedObject, Managed {
     
-    @NSManaged public var frame: DBRect
+    @NSManaged var frame: DBRect
     
     class var entityName: String { return String(describing: self) }
     class var modelEntity: NSEntityDescription { return constructModelEntity() }
     
-    class var componentType: AnyClass { fatalError("Missing component type") }
+    class var componentNewInstance: Component { fatalError("Missing component type") }
+    
+    // This model entity is used so the same one is used
+    // when this object is referenced by a relationship property
+    private static weak var ephemeralEntity: DBEntity?
     
     class func constructModelEntity() -> DBEntity {
+        if self == ComponentCoreData.self, let ephemeralEntity = ephemeralEntity {
+            return ephemeralEntity
+        }
+        
         let entity = DBEntity(name: entityName,
                               class: self)
         
         entity.addAttribute(name: "frame", type: .transformable)
         
+        if self == ComponentCoreData.self {
+            entity.subentities = [
+                CaptureComponentCoreData.modelEntity,
+                CameraPositionComponentCoreData.modelEntity
+            ]
+        }
+        
+        if self == ComponentCoreData.self {
+            ephemeralEntity = entity
+        }
         return entity
     }
     
     func instance() -> Component {
         let classType = type(of: self)
-        let untypedInstance = classType.init()
-        guard let instance = untypedInstance as? Component else {
-            fatalError("Class \(classType) doesn't conform to Component protocol")
+        let instance = classType.componentNewInstance
+        
+        guard let instanceDatabase = instance as? ComponentDatabase else {
+            fatalError("Can't init an object that doesn't conform to ComponentDatabase")
         }
+        instanceDatabase.coreDataID = objectID
         
         configureWithStandardProperties(instance: instance)
         

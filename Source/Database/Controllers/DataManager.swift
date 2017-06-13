@@ -27,26 +27,25 @@ class DataManager {
             fatalError("Failed to open persistent store at \(storeURL.path): \(error)")
         }
         
-        print("persistent store: \(storeURL.path)")
-        
         let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        
         context.persistentStoreCoordinator = storeCoordinator
         return context
     }
     
     private static var objectModel: NSManagedObjectModel {
         let model = NSManagedObjectModel()
-        model.entities = [
-            ComponentCoreData.modelEntity,
-            CaptureComponentCoreData.modelEntity
-        ]
+        var entities: [NSEntityDescription]
+        let coreDataEntity = ComponentCoreData.modelEntity
+        entities = [ KitCoreData.modelEntity, coreDataEntity]
+        entities += ComponentCoreData.modelEntity.subentities
+        
+        model.entities = entities
         return model
     }
     
     private static func store(name: String) -> URL {
         let directory = URL.documentsDirectory
-        return directory.appendingPathComponent("\(name).coredata")
+        return directory.appendingPathComponent("\(name).db")
     }
     
 }

@@ -19,6 +19,14 @@ extension NSManagedObjectContext {
         return object
     }
     
+    func object<ObjectType: NSManagedObject>(fromID id: NSManagedObjectID) -> ObjectType {
+        guard let object = object(with: id) as? ObjectType else {
+            fatalError("Couldn't derive object from core data ID: \(id)")
+        }
+        
+        return object
+    }
+    
     @discardableResult
     func saveOrRollback() -> Bool {
         do {

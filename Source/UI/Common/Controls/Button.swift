@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Button: UIView {
+class Button: UIView, EditOpacity {
     
     // MARK: - Configuration
     
@@ -99,12 +99,12 @@ class Button: UIView {
     
     // MARK: - Tappable While Invisible
     
-    var opacity: CGFloat {
+    var opacity: Float {
         set {
-            contentView.alpha = newValue
+            contentView.alpha = CGFloat(newValue)
         }
         get {
-            return contentView.alpha
+            return Float(contentView.alpha)
         }
     }
     

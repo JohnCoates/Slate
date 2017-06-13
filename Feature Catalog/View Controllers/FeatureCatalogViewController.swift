@@ -83,7 +83,7 @@ class FeatureCatalogViewController: UITableViewController {
     }
     
     func saveSelection(item: FeatureCatalogItem) {
-        UserDefaults.standard.set(item.name, forKey: "feature")
+        UserDefaults.standard.set(item.identifier, forKey: "feature")
     }
     
     func savedSelection() -> FeatureCatalogItem? {
@@ -92,7 +92,7 @@ class FeatureCatalogViewController: UITableViewController {
         }
         
         for section in sections {
-            for item in section.items where item.name == feature {
+            for item in section.items where item.identifier == feature {
                 return item
             }
         }
@@ -125,6 +125,14 @@ class FeatureCatalogViewController: UITableViewController {
     struct Section {
         let title: String
         let items: [FeatureCatalogItem]
+        
+        init(title: String, items: [FeatureCatalogItem]) {
+            for item in items {
+                item.section = title
+            }
+            self.title = title
+            self.items = items
+        }
     }
     
     func captureScreen() -> Section {
@@ -178,7 +186,9 @@ class FeatureCatalogViewController: UITableViewController {
     func database() -> Section {
         let items: [FeatureCatalogItem] = [
             FeatureCatalogItem(name: "Components",
-                               creationBlock: { ComponentListingsViewController() })
+                               creationBlock: { ComponentListingsViewController() }),
+            FeatureCatalogItem(name: "Kits",
+                               creationBlock: { KitListingsViewController() })
         ]
         
         return Section(title: "Database", items: items)

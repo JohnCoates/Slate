@@ -1,47 +1,45 @@
 //
-//  ComponentListingsViewController.swift
+//  KitListingsViewController.swift
 //  Slate
 //
-//  Created by John Coates on 6/10/17.
+//  Created by John Coates on 6/12/17.
 //  Copyright © 2017 John Coates. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-private typealias LocalClass = ComponentListingsViewController
+private typealias LocalClass = KitListingsViewController
 
-class ComponentListingsViewController: UITableViewController, UIGestureRecognizerDelegate {
+class KitListingsViewController: UITableViewController, UIGestureRecognizerDelegate {
 
-    typealias ObjectType = CaptureComponentCoreData
+    typealias ObjectType = KitCoreData
     lazy var context = DataManager.context
-    
-    // MARK: - View Management
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        title = "Components"
         
+        title = "Kits"
+
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back",
-                                                                style: .plain,
-                                                                target: self,
-                                                                action: .backTapped)
+                                                           style: .plain,
+                                                           target: self,
+                                                           action: .backTapped)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add",
-                                                                 style: .plain,
-                                                                 target: self,
-                                                                 action: .addTapped)
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: .addTapped)
         setUpDataSource()
         
         // Enable Swipe back
         navigationController?.interactivePopGestureRecognizer?.delegate = self
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-    }    
-    
+    }
+
     // MARK: - Table Setup
     
-    var dataSource: FetchedResultsDataProvider<ComponentListingsViewController>!
+    var dataSource: FetchedResultsDataProvider<KitListingsViewController>!
     var resultsController: NSFetchedResultsController<ObjectType>!
     
     private func setUpDataSource() {
@@ -49,31 +47,27 @@ class ComponentListingsViewController: UITableViewController, UIGestureRecognize
         request.returnsObjectsAsFaults = false
         request.fetchBatchSize = 20
         resultsController = NSFetchedResultsController<ObjectType>(fetchRequest: request,
-                                                                          managedObjectContext: self.context,
-                                                                          sectionNameKeyPath: nil,
-                                                                          cacheName: nil)
-         dataSource = FetchedResultsDataProvider(tableView: tableView,
-                                                 fetchedResultsController: resultsController,
-                                                 delegate: self)
+                                                                   managedObjectContext: self.context,
+                                                                   sectionNameKeyPath: nil,
+                                                                   cacheName: nil)
+        dataSource = FetchedResultsDataProvider(tableView: tableView,
+                                                fetchedResultsController: resultsController,
+                                                delegate: self)
     }
-    
-    // MARK: - View Events
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-//        addTapped()
-    }
-
-    let cellReuseIdentifier = "Cell"
 
     // MARK: - User Interaction
     
     @objc func addTapped() {
         context.performChanges {
-            let component: ObjectType
+            let component: CaptureComponentCoreData
             component = self.context.insertObject()
             component.frame = DBRect(rect: .zero)
+            
+            let kit: ObjectType
+            kit = self.context.insertObject()
+            kit.components = Set()
+            kit.components.insert(component)
+            kit.name = "Fun Kit"
         }
     }
     
@@ -99,10 +93,10 @@ fileprivate extension Selector {
 
 // MARK: - Data Source Delegate
 
-extension ComponentListingsViewController: TableViewDataSourceDelegate {
+extension LocalClass: TableViewDataSourceDelegate {
     
     func configure(_ cell: UITableViewCell, for object: ObjectType) {
-        cell.textLabel?.text = "component frame: \(object.frame)"
+        cell.textLabel?.text = "kit: \(object)"
     }
     
 }

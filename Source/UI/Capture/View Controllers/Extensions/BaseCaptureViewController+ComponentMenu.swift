@@ -64,12 +64,12 @@ extension BaseCaptureViewController: ComponentMenuBarDelegate {
     // MARK: - Component Menu Bar Delegate
     
     func add(component: Component.Type,
-             atFrame frame: CGRect, fromView view: UIView) {
+             atFrame frame: CGRect, fromView: UIView) {
         let componentInstance = component.createInstance()
         let componentView = componentInstance.view
-        componentInstance.frame = view.convert(frame, to: self.view)
+        componentInstance.frame = fromView.convert(frame, to: view)
         
-        self.view.insertSubview(componentView, belowSubview: menuView)
+        view.insertSubview(componentView, belowSubview: menuView)
         
         kit.addComponent(component: componentInstance)
         kit.saveKit()

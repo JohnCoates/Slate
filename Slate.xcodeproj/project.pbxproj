@@ -311,6 +311,7 @@
 		FA9F89F01D953C540058C369 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9F89EE1D953C540058C369 /* LaunchScreen.storyboard */; };
 		FA9F89FB1D953C540058C369 /* SlateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F89FA1D953C540058C369 /* SlateTests.swift */; };
 		FA9F8A061D953C540058C369 /* SlateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F8A051D953C540058C369 /* SlateUITests.swift */; };
+		FAA3F5371EEF5689007EB031 /* KitListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3F5361EEF5689007EB031 /* KitListingsViewController.swift */; };
 		FAA7A9721EE216B0004800AF /* PreviewContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7A9711EE216B0004800AF /* PreviewContentView.swift */; };
 		FAADE0D01D9D0AC200AA5729 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */; };
 		FAADE0D31D9D0C4300AA5729 /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */; };
@@ -766,6 +767,7 @@
 		FA9F8A011D953C540058C369 /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9F8A051D953C540058C369 /* SlateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlateUITests.swift; sourceTree = "<group>"; };
 		FA9F8A071D953C540058C369 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAA3F5361EEF5689007EB031 /* KitListingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitListingsViewController.swift; sourceTree = "<group>"; };
 		FAA7A9711EE216B0004800AF /* PreviewContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewContentView.swift; sourceTree = "<group>"; };
 		FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Passthrough.metal; sourceTree = "<group>"; };
@@ -2509,6 +2511,7 @@
 			isa = PBXGroup;
 			children = (
 				FACF0F471EECED8D00B0211C /* ComponentListingsViewController.swift */,
+				FAA3F5361EEF5689007EB031 /* KitListingsViewController.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -3505,6 +3508,7 @@
 				FA2B1EA21EC92B5B00E44613 /* CircleSlider.swift in Sources */,
 				FA3AAAC01EE25E6E006028AC /* CameraController+Format.swift in Sources */,
 				FA2B1E8F1EC92B5B00E44613 /* CameraPositionComponent.swift in Sources */,
+				FAA3F5371EEF5689007EB031 /* KitListingsViewController.swift in Sources */,
 				FAAE76411EEB2F3B00CA3416 /* DataInstruction.swift in Sources */,
 				FA8AA5491ECC13970093D317 /* CanvasIcon.swift in Sources */,
 				FAB0AA6C1EC8083D008DCD23 /* FeatureCatalogAppDelegate.swift in Sources */,

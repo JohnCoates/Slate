@@ -36,4 +36,20 @@ class DBEntity: NSEntityDescription {
         return attribute
     }
     
+    @discardableResult
+    func addRelationship(name: String, entity: NSEntityDescription,
+                         cardinality: CountableClosedRange<Int>) -> NSRelationshipDescription {
+        let relationship = NSRelationshipDescription()
+        relationship.name = name
+        relationship.destinationEntity = entity
+        relationship.deleteRule = .cascadeDeleteRule
+        relationship.isIndexed = false
+        relationship.isOptional = false
+        relationship.minCount = 0
+        relationship.maxCount = 10
+        
+        properties.append(relationship)
+        return relationship
+    }
+    
 }

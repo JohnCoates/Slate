@@ -22,7 +22,7 @@ final class FrontBackCameraToggle: InverseMaskButtonImage {
         iconWidthRatio = 0.65
         super.initialSetup()
         contentView.backgroundColor = UIColor.black.withAlphaComponent(0.7)
-        rounding = 1
+        rounding = CameraPositionComponent.defaultRounding
     }
     
 }
