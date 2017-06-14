@@ -15,6 +15,7 @@ class CaptureComponent: Component,
 EditRounding, EditSize, EditPosition, EditOpacity {
     
     var coreDataID: NSManagedObjectID?
+    weak var dbObject: ComponentCoreData?
     
     var editTitle = "Capture"
     
@@ -82,16 +83,21 @@ extension CaptureComponent: ComponentDatabase {
     
     func newDatabaseObject(in context: NSManagedObjectContext) -> CaptureComponentCoreData {
         let dbObject: CaptureComponentCoreData = context.insertObject()
+        self.dbObject = dbObject
         return dbObject
     }
     
     func databaseObject(in context: NSManagedObjectContext) -> ComponentCoreData {
         let object: CaptureComponentCoreData
         
-        if let coreDataID = coreDataID {
+        if let dbObject = dbObject as? CaptureComponentCoreData {
+            object = dbObject
+        } else if let coreDataID = coreDataID {
             object = context.object(fromID: coreDataID)
+            self.dbObject = object
         } else {
             object = newDatabaseObject(in: context)
+            self.dbObject = object
         }
         
         configureWithStandardProperties(databaseObject: object)

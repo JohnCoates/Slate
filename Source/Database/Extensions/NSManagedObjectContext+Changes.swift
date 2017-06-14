@@ -46,4 +46,13 @@ extension NSManagedObjectContext {
         }
     }
     
+    func performChanges(block: @escaping () -> Void,
+                        afterChanges: @escaping (_ success: Bool) -> Void) {
+        perform {
+            block()
+            let success = self.saveOrRollback()
+            afterChanges(success)
+        }
+    }
+    
 }

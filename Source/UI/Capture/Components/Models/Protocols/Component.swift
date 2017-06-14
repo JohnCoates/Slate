@@ -23,6 +23,7 @@ protocol Component: class {
 
 protocol ComponentDatabase: class {
     var coreDataID: NSManagedObjectID? { get set }
+    weak var dbObject: ComponentCoreData? { get set }
     
     func databaseObject(in context: NSManagedObjectContext) -> ComponentCoreData
     func configureWithStandardProperties(databaseObject: ComponentCoreData)

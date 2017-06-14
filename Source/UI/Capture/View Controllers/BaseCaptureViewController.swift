@@ -148,7 +148,7 @@ class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate, 
     func configureAdded(component: Component) {
         addEditGesture(toComponent: component)
         
-        if let componentView = component.view as? FrontBackCameraToggle {
+        if let componentView = component.view as? SwitchCameraButton {
             componentView.setTappedCallback(instance: self,
                                             method: Method.switchCamera)
         } else if let componentView = component.view as? CaptureButton {

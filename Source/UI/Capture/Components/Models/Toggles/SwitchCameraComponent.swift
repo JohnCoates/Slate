@@ -1,5 +1,5 @@
 //
-//  CameraPositionComponent.swift
+//  SwitchCameraComponent.swift
 //  Slate
 //
 //  Created by John Coates on 5/10/17.
@@ -9,23 +9,17 @@
 import UIKit
 import CoreData
 
-fileprivate typealias LocalClass = CameraPositionComponent
-class CameraPositionComponent: Component,
+fileprivate typealias LocalClass = SwitchCameraComponent
+class SwitchCameraComponent: Component,
 EditRounding, EditOpacity, EditSize, EditPosition, KeepUpright {
     
-    typealias AssociatedView = FrontBackCameraToggle
+    typealias AssociatedView = SwitchCameraButton
     
     var coreDataID: NSManagedObjectID?
+    weak var dbObject: ComponentCoreData?
     
     var editTitle = "Switch Camera"
     
-    enum Position: Int {
-        case front = 0
-        case back = 1
-    }
-    
-    static let defaultCameraPosition: Position = .front
-    var cameraPosition: Position = LocalClass.defaultCameraPosition
     var frame: CGRect = .zero {
         didSet {
             view.frame = frame
@@ -33,7 +27,7 @@ EditRounding, EditOpacity, EditSize, EditPosition, KeepUpright {
     }
     
     var maximumSize: Float = 300
-    var typedView = FrontBackCameraToggle()
+    var typedView = SwitchCameraButton()
     var view: UIView { return typedView }
     static let defaultRounding: Float = 1
     var rounding: Float = LocalClass.defaultRounding {
@@ -72,7 +66,6 @@ class CameraPositionComponentCoreData: ComponentCoreData, EditRounding, EditOpac
     
     @NSManaged public var opacity: Float
     @NSManaged public var rounding: Float
-    @NSManaged public var cameraPosition: Int
     
     static var defaultRounding: Float = LocalClass.defaultRounding
     static var defaultOpacity: Float = LocalClass.defaultOpacity
@@ -80,16 +73,13 @@ class CameraPositionComponentCoreData: ComponentCoreData, EditRounding, EditOpac
     override class func constructModelEntity() -> DBEntity {
         let entity = super.constructModelEntity()
         
-        entity.addAttribute(name: "cameraPosition", type: .int16,
-                            defaultValue: LocalClass.defaultCameraPosition.rawValue)
-        
         return entity
     }
     
-    override class var componentNewInstance: Component { return CameraPositionComponent() }
+    override class var componentNewInstance: Component { return SwitchCameraComponent() }
 }
 
-extension CameraPositionComponent: ComponentDatabase {
+extension SwitchCameraComponent: ComponentDatabase {
     
     func newDatabaseObject(in context: NSManagedObjectContext) -> CameraPositionComponentCoreData {
         let dbObject: CameraPositionComponentCoreData = context.insertObject()
@@ -99,10 +89,14 @@ extension CameraPositionComponent: ComponentDatabase {
     func databaseObject(in context: NSManagedObjectContext) -> ComponentCoreData {
         let object: CameraPositionComponentCoreData
         
-        if let coreDataID = coreDataID {
+        if let dbObject = dbObject as? CameraPositionComponentCoreData {
+            object = dbObject
+        } else if let coreDataID = coreDataID {
             object = context.object(fromID: coreDataID)
+            self.dbObject = object
         } else {
             object = newDatabaseObject(in: context)
+            self.dbObject = object
         }
         
         configureWithStandardProperties(databaseObject: object)

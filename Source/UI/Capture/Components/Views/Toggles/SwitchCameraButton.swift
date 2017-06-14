@@ -1,5 +1,5 @@
 //
-//  FrontBackCameraToggle.swift
+//  SwitchCameraButton.swift
 //  Slate
 //
 //  Created by John Coates on 5/10/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class FrontBackCameraToggle: InverseMaskButtonImage {
+final class SwitchCameraButton: InverseMaskButtonImage {
     
     // MARK: - Init
     
@@ -22,7 +22,7 @@ final class FrontBackCameraToggle: InverseMaskButtonImage {
         iconWidthRatio = 0.65
         super.initialSetup()
         contentView.backgroundColor = UIColor.black.withAlphaComponent(0.7)
-        rounding = CameraPositionComponent.defaultRounding
+        rounding = SwitchCameraComponent.defaultRounding
     }
     
 }

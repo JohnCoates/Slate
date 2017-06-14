@@ -63,7 +63,7 @@ final class ComponentMenuBar: UIView,
     var components: [Component.Type] = {
         return [
             CaptureComponent.self,
-            CameraPositionComponent.self
+            SwitchCameraComponent.self
         ]
     }()
     

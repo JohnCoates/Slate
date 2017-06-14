@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		6EDF7655229F7620D250358E /* Pods_Slate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866CB97E0921FF46013F02E3 /* Pods_Slate.framework */; };
 		DDEC6891C3F8B7ED1FA2FC94 /* Pods_Feature_Catalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 688C078884E306285B5F2E27 /* Pods_Feature_Catalog.framework */; };
-		FA0462B31EC3CC76007B74A0 /* FrontBackCameraToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462B21EC3CC76007B74A0 /* FrontBackCameraToggle.swift */; };
+		FA0462B31EC3CC76007B74A0 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462B21EC3CC76007B74A0 /* SwitchCameraButton.swift */; };
 		FA0462B61EC3CDFA007B74A0 /* ControlBarItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462B51EC3CDFA007B74A0 /* ControlBarItemCell.swift */; };
 		FA0462B91EC3DF81007B74A0 /* KitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462B81EC3DF81007B74A0 /* KitManager.swift */; };
 		FA0462BB1EC3DF88007B74A0 /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462BA1EC3DF88007B74A0 /* Kit.swift */; };
-		FA0462BF1EC3DFE1007B74A0 /* CameraPositionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462BE1EC3DFE1007B74A0 /* CameraPositionComponent.swift */; };
+		FA0462BF1EC3DFE1007B74A0 /* SwitchCameraComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462BE1EC3DFE1007B74A0 /* SwitchCameraComponent.swift */; };
 		FA0462C21EC3E002007B74A0 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C11EC3E002007B74A0 /* Component.swift */; };
 		FA0462C51EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C41EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift */; };
 		FA0462C71EC4252D007B74A0 /* ComponentItemCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */; };
@@ -72,7 +72,7 @@
 		FA2B1E8C1EC92B5B00E44613 /* KitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462B81EC3DF81007B74A0 /* KitManager.swift */; };
 		FA2B1E8D1EC92B5B00E44613 /* AbstractFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E461DA2293000993949 /* AbstractFilter.swift */; };
 		FA2B1E8E1EC92B5B00E44613 /* ComponentMenuBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C41EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift */; };
-		FA2B1E8F1EC92B5B00E44613 /* CameraPositionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462BE1EC3DFE1007B74A0 /* CameraPositionComponent.swift */; };
+		FA2B1E8F1EC92B5B00E44613 /* SwitchCameraComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462BE1EC3DFE1007B74A0 /* SwitchCameraComponent.swift */; };
 		FA2B1E901EC92B5B00E44613 /* Vertices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB169D1D9F308C00A8AC6C /* Vertices.swift */; };
 		FA2B1E911EC92B5B00E44613 /* ComponentItemCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */; };
 		FA2B1E921EC92B5B00E44613 /* GaussianBlurFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E491DA2296E00993949 /* GaussianBlurFilter.swift */; };
@@ -85,7 +85,7 @@
 		FA2B1E9A1EC92B5B00E44613 /* ComponentEditBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0AA631EC6C84D008DCD23 /* ComponentEditBarDelegate.swift */; };
 		FA2B1E9B1EC92B5B00E44613 /* MetalCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4021C51DA0AEE800752F3B /* MetalCameraController.swift */; };
 		FA2B1E9C1EC92B5B00E44613 /* EditPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0AA5D1EC6A095008DCD23 /* EditPosition.swift */; };
-		FA2B1E9D1EC92B5B00E44613 /* FrontBackCameraToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462B21EC3CC76007B74A0 /* FrontBackCameraToggle.swift */; };
+		FA2B1E9D1EC92B5B00E44613 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462B21EC3CC76007B74A0 /* SwitchCameraButton.swift */; };
 		FA2B1E9F1EC92B5B00E44613 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C11EC3E002007B74A0 /* Component.swift */; };
 		FA2B1EA01EC92B5B00E44613 /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */; };
 		FA2B1EA11EC92B5B00E44613 /* EditRounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18059E1EC688D9004351B7 /* EditRounding.swift */; };
@@ -571,11 +571,11 @@
 		E803F739E995BBB1C38B7A04 /* Pods-Feature Catalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feature Catalog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog.debug.xcconfig"; sourceTree = "<group>"; };
 		E893ECE96899276229D0D247 /* Pods-Feature Catalog.lint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feature Catalog.lint.xcconfig"; path = "Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog.lint.xcconfig"; sourceTree = "<group>"; };
 		EA803CD2EB0BB5389D46E0F6 /* Pods-Slate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Slate/Pods-Slate.release.xcconfig"; sourceTree = "<group>"; };
-		FA0462B21EC3CC76007B74A0 /* FrontBackCameraToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontBackCameraToggle.swift; sourceTree = "<group>"; };
+		FA0462B21EC3CC76007B74A0 /* SwitchCameraButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCameraButton.swift; sourceTree = "<group>"; };
 		FA0462B51EC3CDFA007B74A0 /* ControlBarItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlBarItemCell.swift; sourceTree = "<group>"; };
 		FA0462B81EC3DF81007B74A0 /* KitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitManager.swift; sourceTree = "<group>"; };
 		FA0462BA1EC3DF88007B74A0 /* Kit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
-		FA0462BE1EC3DFE1007B74A0 /* CameraPositionComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPositionComponent.swift; sourceTree = "<group>"; };
+		FA0462BE1EC3DFE1007B74A0 /* SwitchCameraComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCameraComponent.swift; sourceTree = "<group>"; };
 		FA0462C11EC3E002007B74A0 /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		FA0462C41EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentMenuBarDelegate.swift; sourceTree = "<group>"; };
 		FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentItemCellDelegate.swift; sourceTree = "<group>"; };
@@ -909,7 +909,7 @@
 		FA0462B11EC3C9F9007B74A0 /* Toggles */ = {
 			isa = PBXGroup;
 			children = (
-				FA0462B21EC3CC76007B74A0 /* FrontBackCameraToggle.swift */,
+				FA0462B21EC3CC76007B74A0 /* SwitchCameraButton.swift */,
 			);
 			path = Toggles;
 			sourceTree = "<group>";
@@ -944,7 +944,7 @@
 		FA0462BD1EC3DFC1007B74A0 /* Toggles */ = {
 			isa = PBXGroup;
 			children = (
-				FA0462BE1EC3DFE1007B74A0 /* CameraPositionComponent.swift */,
+				FA0462BE1EC3DFE1007B74A0 /* SwitchCameraComponent.swift */,
 			);
 			path = Toggles;
 			sourceTree = "<group>";
@@ -3332,7 +3332,7 @@
 				FA5F8CA21ED05B7B00921A61 /* BaseCaptureViewController+Rotation.swift in Sources */,
 				FA2B1EB21EC97E7300E44613 /* CodeIconButton.swift in Sources */,
 				FAAE76811EEB88D300CA3416 /* VectorAssetsList.swift in Sources */,
-				FA0462BF1EC3DFE1007B74A0 /* CameraPositionComponent.swift in Sources */,
+				FA0462BF1EC3DFE1007B74A0 /* SwitchCameraComponent.swift in Sources */,
 				FABB169E1D9F308C00A8AC6C /* Vertices.swift in Sources */,
 				FA5709AD1ECD4A36000362C8 /* CameraDeniedPermisionViewController.swift in Sources */,
 				FABB16B51D9F886300A8AC6C /* BaseCaptureViewController.swift in Sources */,
@@ -3358,7 +3358,7 @@
 				FAC21B651EEE251A007C17AF /* DBAttribute.swift in Sources */,
 				FA3AAA9F1EE24EA5006028AC /* CameraController+Session.swift in Sources */,
 				FAB0AA5E1EC6A095008DCD23 /* EditPosition.swift in Sources */,
-				FA0462B31EC3CC76007B74A0 /* FrontBackCameraToggle.swift in Sources */,
+				FA0462B31EC3CC76007B74A0 /* SwitchCameraButton.swift in Sources */,
 				FAF10CFA1ECAA8230008690E /* GroupedPathIcon.swift in Sources */,
 				FAF10D0B1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift in Sources */,
 				FA86BE051D98ED9400BC5FB1 /* SimulatorCaptureViewController.swift in Sources */,
@@ -3416,13 +3416,13 @@
 				FACF0F481EECED8D00B0211C /* ComponentListingsViewController.swift in Sources */,
 				FA2B1EA21EC92B5B00E44613 /* CircleSlider.swift in Sources */,
 				FA3AAAC01EE25E6E006028AC /* CameraController+Format.swift in Sources */,
-				FA2B1E8F1EC92B5B00E44613 /* CameraPositionComponent.swift in Sources */,
+				FA2B1E8F1EC92B5B00E44613 /* SwitchCameraComponent.swift in Sources */,
 				FAA3F5371EEF5689007EB031 /* KitListingsViewController.swift in Sources */,
 				FAAE76411EEB2F3B00CA3416 /* DataInstruction.swift in Sources */,
 				FA8AA5491ECC13970093D317 /* CanvasIcon.swift in Sources */,
 				FAB0AA6C1EC8083D008DCD23 /* FeatureCatalogAppDelegate.swift in Sources */,
 				FA2B1E7B1EC92B5B00E44613 /* DebugBarDelegate.swift in Sources */,
-				FA2B1E9D1EC92B5B00E44613 /* FrontBackCameraToggle.swift in Sources */,
+				FA2B1E9D1EC92B5B00E44613 /* SwitchCameraButton.swift in Sources */,
 				FA2B1E7A1EC92AF600E44613 /* SimulatorCaptureViewController.swift in Sources */,
 				FA2B1E971EC92B5B00E44613 /* MetalCaptureViewController.swift in Sources */,
 				FA2B1E8B1EC92B5B00E44613 /* CaptureButton.swift in Sources */,
