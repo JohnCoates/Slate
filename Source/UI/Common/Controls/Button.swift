@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Button: UIView, EditOpacity {
+class Button: UIView, EditOpacity, EditRounding {
     
     // MARK: - Configuration
     
@@ -111,6 +111,8 @@ class Button: UIView, EditOpacity {
     }
     
     // MARK: - Roundable
+    
+    static let defaultRounding: Float = 1
     
     var rounding: Float {
         get {

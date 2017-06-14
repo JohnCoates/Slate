@@ -11,11 +11,13 @@ import CoreData
 
 fileprivate typealias LocalClass = CaptureComponent
 fileprivate typealias LocalView = CaptureButton
-class CaptureComponent: Component,
+final class CaptureComponent: Component, GenericComponent,
 EditRounding, EditSize, EditPosition, EditOpacity {
+    typealias CoreDataInstance = CaptureComponentCoreData
+    typealias ViewInstance = CaptureButton
     
     var coreDataID: NSManagedObjectID?
-    weak var dbObject: ComponentCoreData?
+    weak var typedDBObject: CaptureComponentCoreData?
     
     var editTitle = "Capture"
     
@@ -24,39 +26,14 @@ EditRounding, EditSize, EditPosition, EditOpacity {
             view.frame = frame
         }
     }
-
-    var maximumSize: Float = 300
-    private lazy var typedView = LocalClass.createTypedView()
-    var view: UIView { return typedView }
+    
+    lazy var typedView: ViewInstance = LocalClass.createTypedView()
     
     static let defaultRounding: Float = 0.5
-    var rounding: Float = LocalClass.defaultRounding {
-        didSet {
-            typedView.rounding = rounding
-        }
-    }
-    
     static let defaultOpacity: Float = 0.56
-    var opacity: Float = LocalClass.defaultOpacity {
-        didSet {
-            typedView.opacity = opacity
-        }
-    }
     
     required init() {
     }
-    
-    private static func createTypedView() -> LocalView {
-        let view = LocalView()
-        view.opacity = defaultOpacity
-        view.rounding = defaultRounding
-        return view
-    }
-    
-    static func createView() -> UIView {
-        return createTypedView()
-    }
-    
 }
 
 // MARK: - Core Data
@@ -81,27 +58,8 @@ class CaptureComponentCoreData: ComponentCoreData, EditRounding, EditOpacity {
 
 extension CaptureComponent {
     
-    func newDatabaseObject(in context: NSManagedObjectContext) -> CaptureComponentCoreData {
-        let dbObject: CaptureComponentCoreData = context.insertObject()
-        self.dbObject = dbObject
-        return dbObject
-    }
-    
-    func databaseObject(in context: NSManagedObjectContext) -> ComponentCoreData {
-        let object: CaptureComponentCoreData
-        
-        if let dbObject = dbObject as? CaptureComponentCoreData {
-            object = dbObject
-        } else if let coreDataID = coreDataID {
-            object = context.object(fromID: coreDataID)
-            self.dbObject = object
-        } else {
-            object = newDatabaseObject(in: context)
-            self.dbObject = object
-        }
-        
-        configureWithStandardProperties(databaseObject: object)
-        return object
+    func databaseObject(withMutableContext context: NSManagedObjectContext) -> ComponentCoreData {
+        return typedDatabaseObject(withMutableContext: context)
     }
     
 }

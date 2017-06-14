@@ -380,8 +380,8 @@
 		FABEABC61EEB2831005D05B2 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E97761EEA070C00A73DFA /* CGRect.swift */; };
 		FABEABC81EEB2930005D05B2 /* DataRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEABC71EEB2930005D05B2 /* DataRect.swift */; };
 		FABEABC91EEB2930005D05B2 /* DataRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEABC71EEB2930005D05B2 /* DataRect.swift */; };
-		FAC21B5A1EEDEB32007C17AF /* MangedObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21B591EEDEB32007C17AF /* MangedObjectType.swift */; };
-		FAC21B5B1EEDEB32007C17AF /* MangedObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21B591EEDEB32007C17AF /* MangedObjectType.swift */; };
+		FAC21B5A1EEDEB32007C17AF /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21B591EEDEB32007C17AF /* Managed.swift */; };
+		FAC21B5B1EEDEB32007C17AF /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21B591EEDEB32007C17AF /* Managed.swift */; };
 		FAC21B5E1EEE13E0007C17AF /* DBRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21B5D1EEE13E0007C17AF /* DBRect.swift */; };
 		FAC21B5F1EEE13E0007C17AF /* DBRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21B5D1EEE13E0007C17AF /* DBRect.swift */; };
 		FAC21B621EEE1422007C17AF /* DBEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21B611EEE1422007C17AF /* DBEntity.swift */; };
@@ -463,6 +463,13 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
+		FA1272E61EF10EE100100641 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA9F89DA1D953C540058C369 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAB9C2831EE8FDA600C50545;
+			remoteInfo = slateCLI;
+		};
 		FA850F1E1EE0DB2300B1CDDB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FA9F89DA1D953C540058C369 /* Project object */;
@@ -485,13 +492,6 @@
 			remoteInfo = Slate;
 		};
 		FAAE76631EEB6C4000CA3416 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA9F89DA1D953C540058C369 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FAB9C2831EE8FDA600C50545;
-			remoteInfo = slateCLI;
-		};
-		FAAE76821EEB88E800CA3416 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FA9F89DA1D953C540058C369 /* Project object */;
 			proxyType = 1;
@@ -775,7 +775,7 @@
 		FABEABBF1EEA471A005D05B2 /* CameraPermissionsImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPermissionsImage.swift; sourceTree = "<group>"; };
 		FABEABC21EEA479F005D05B2 /* GraphicsContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicsContext.swift; sourceTree = "<group>"; };
 		FABEABC71EEB2930005D05B2 /* DataRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRect.swift; sourceTree = "<group>"; };
-		FAC21B591EEDEB32007C17AF /* MangedObjectType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MangedObjectType.swift; sourceTree = "<group>"; };
+		FAC21B591EEDEB32007C17AF /* Managed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
 		FAC21B5D1EEE13E0007C17AF /* DBRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBRect.swift; sourceTree = "<group>"; };
 		FAC21B611EEE1422007C17AF /* DBEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBEntity.swift; sourceTree = "<group>"; };
 		FAC21B641EEE251A007C17AF /* DBAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBAttribute.swift; sourceTree = "<group>"; };
@@ -2282,7 +2282,7 @@
 		FAC21B581EEDEB1A007C17AF /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				FAC21B591EEDEB32007C17AF /* MangedObjectType.swift */,
+				FAC21B591EEDEB32007C17AF /* Managed.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -2667,7 +2667,7 @@
 				FAADE0D41D9D142E00AA5729 /* PBXBuildRule */,
 			);
 			dependencies = (
-				FAAE76831EEB88E800CA3416 /* PBXTargetDependency */,
+				FA1272E71EF10EE100100641 /* PBXTargetDependency */,
 			);
 			name = Slate;
 			productName = Slate;
@@ -3301,7 +3301,7 @@
 				FA2B1E681EC922FD00E44613 /* LayoutConstraint+Modifying.swift in Sources */,
 				FA3AAA8F1EE24C83006028AC /* CameraController+Preview.swift in Sources */,
 				FA4D54161DB055A00091184D /* FragmentFilter.swift in Sources */,
-				FAC21B5A1EEDEB32007C17AF /* MangedObjectType.swift in Sources */,
+				FAC21B5A1EEDEB32007C17AF /* Managed.swift in Sources */,
 				FAAE76741EEB881C00CA3416 /* VectorAssetReader.swift in Sources */,
 				FAAE767D1EEB885100CA3416 /* Instructions.swift in Sources */,
 				FA8CE4221ECD7E5A00788026 /* Int+Pixels.swift in Sources */,
@@ -3444,7 +3444,7 @@
 				FAAE76531EEB407F00CA3416 /* VectorImageTableViewCell.swift in Sources */,
 				FAB9C2761EE8E1ED00C50545 /* CanvasIconButton.swift in Sources */,
 				FA5709A71ECC7172000362C8 /* PhotosPermissionViewController.swift in Sources */,
-				FAC21B5B1EEDEB32007C17AF /* MangedObjectType.swift in Sources */,
+				FAC21B5B1EEDEB32007C17AF /* Managed.swift in Sources */,
 				FA2B1E591EC80E8500E44613 /* FeatureCatalogItem.swift in Sources */,
 				FAF10D0F1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
 				FA6477601EE39F4000A63A22 /* EditBar+EditBorder.swift in Sources */,
@@ -3596,6 +3596,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FA1272E71EF10EE100100641 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAB9C2831EE8FDA600C50545 /* slateCLI */;
+			targetProxy = FA1272E61EF10EE100100641 /* PBXContainerItemProxy */;
+		};
 		FA850F1F1EE0DB2300B1CDDB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FA4DFECD1D9DBD1A0068706F /* macSlate */;
@@ -3615,11 +3620,6 @@
 			isa = PBXTargetDependency;
 			target = FAB9C2831EE8FDA600C50545 /* slateCLI */;
 			targetProxy = FAAE76631EEB6C4000CA3416 /* PBXContainerItemProxy */;
-		};
-		FAAE76831EEB88E800CA3416 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FAB9C2831EE8FDA600C50545 /* slateCLI */;
-			targetProxy = FAAE76821EEB88E800CA3416 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

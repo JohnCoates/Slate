@@ -61,7 +61,7 @@ extension Kit {
             object.name = self.name
             savedObject = object
             
-            object.components = Set(self.components.map { $0.databaseObject(in: context) })
+            object.components = Set(self.components.map { $0.databaseObject(withMutableContext: context) })
         }, afterChanges: { success in
             guard success, let savedObject = savedObject else {
                 fatalError("Failed to save kit!")
@@ -69,6 +69,11 @@ extension Kit {
             
             self.propogateObjectIDs(fromSavedObject: savedObject)
         })
+    }
+    
+    func saveComponent<T: GenericComponent>(in context: NSManagedObjectContext, component: T) {
+//        let dbObject = component.newDatabaseObject(in: context)
+        
     }
     
     func propogateObjectIDs(fromSavedObject savedObject: KitCoreData) {

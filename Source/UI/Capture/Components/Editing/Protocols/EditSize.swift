@@ -22,7 +22,7 @@ extension EditSize {
     }
     
     var maximumSize: Float {
-        return 200
+        return 300
     }
 }
 
