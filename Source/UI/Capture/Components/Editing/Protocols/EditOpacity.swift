@@ -27,3 +27,17 @@ extension EditOpacity {
         return 1
     }
 }
+
+// MARK: - Component
+
+extension GenericComponent where Self: EditOpacity, ViewInstance: EditOpacity {
+    
+    var opacity: Float {
+        get {
+            return typedView.opacity
+        }
+        set {
+            typedView.opacity = newValue
+        }
+    }
+}
