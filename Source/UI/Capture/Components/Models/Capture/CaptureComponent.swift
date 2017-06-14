@@ -79,7 +79,7 @@ class CaptureComponentCoreData: ComponentCoreData, EditRounding, EditOpacity {
     override class var componentNewInstance: Component { return CaptureComponent() }
 }
 
-extension CaptureComponent: ComponentDatabase {
+extension CaptureComponent {
     
     func newDatabaseObject(in context: NSManagedObjectContext) -> CaptureComponentCoreData {
         let dbObject: CaptureComponentCoreData = context.insertObject()

@@ -79,7 +79,7 @@ class CameraPositionComponentCoreData: ComponentCoreData, EditRounding, EditOpac
     override class var componentNewInstance: Component { return SwitchCameraComponent() }
 }
 
-extension SwitchCameraComponent: ComponentDatabase {
+extension SwitchCameraComponent {
     
     func newDatabaseObject(in context: NSManagedObjectContext) -> CameraPositionComponentCoreData {
         let dbObject: CameraPositionComponentCoreData = context.insertObject()

@@ -19,9 +19,9 @@ protocol Component: class {
     
     static func createInstance() -> Component
     static func createView() -> UIView
-}
-
-protocol ComponentDatabase: class {
+    
+    // Core Data
+    
     var coreDataID: NSManagedObjectID? { get set }
     weak var dbObject: ComponentCoreData? { get set }
     
@@ -45,7 +45,7 @@ extension Component {
 
 // MARK: - Core Data
 
-extension ComponentDatabase where Self: Component {
+extension Component {
     
     func configureWithStandardProperties(databaseObject: ComponentCoreData) {
         if let component = self as? EditRounding,

@@ -58,13 +58,8 @@ class ComponentCoreData: NSManagedObject, Managed {
         let classType = type(of: self)
         let instance = classType.componentNewInstance
         
-        guard let instanceDatabase = instance as? ComponentDatabase else {
-            fatalError("Can't init an object that doesn't conform to ComponentDatabase")
-        }
-        instanceDatabase.coreDataID = objectID
-        
+        instance.coreDataID = objectID
         configureWithStandardProperties(instance: instance)
-        
         return instance
     }
     

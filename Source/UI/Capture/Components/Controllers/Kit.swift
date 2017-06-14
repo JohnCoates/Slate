@@ -61,13 +61,7 @@ extension Kit {
             object.name = self.name
             savedObject = object
             
-            let components: [ComponentDatabase] = self.components.map {
-                guard let dbComponent = $0 as? ComponentDatabase else {
-                    fatalError("Component \($0) doesn't conform to ComponentDatabase")
-                }
-                return dbComponent
-            }
-            object.components = Set(components.map { $0.databaseObject(in: context) })
+            object.components = Set(self.components.map { $0.databaseObject(in: context) })
         }, afterChanges: { success in
             guard success, let savedObject = savedObject else {
                 fatalError("Failed to save kit!")
@@ -85,11 +79,7 @@ extension Kit {
         self.coreDataID = savedObject.objectID
         
         for component in components {
-            guard let dbComponent = component as? ComponentDatabase else {
-                fatalError("Component \(component) doesn't conform to database protocol")
-            }
-            
-            guard let dbObject = dbComponent.dbObject else {
+            guard let dbObject = component.dbObject else {
                 fatalError("Component is missing database object!")
             }
             
@@ -97,7 +87,7 @@ extension Kit {
                 fatalError("Component object ID is unexpectantly temporary")
             }
             
-            dbComponent.coreDataID = dbObject.objectID
+            component.coreDataID = dbObject.objectID
         }
     }
     
