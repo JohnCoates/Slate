@@ -29,13 +29,17 @@ extension VectorAssetWriter {
     }
     
     func append(uInt8 constValue: UInt8) {
-        var value = constValue
-        data.append(UnsafeBufferPointer(start: &value, count: 1))
+        append(value: constValue)
     }
     
     func append(uInt16 constValue: UInt16) {
-        var value = constValue
-        data.append(UnsafeBufferPointer(start: &value, count: 1))
+        append(value: constValue)
+    }
+    
+    func append<DataType>(value constValue: DataType) {
+        var value: DataType = constValue
+        let buffer = UnsafeBufferPointer(start: &value, count: 1)
+        data.append(buffer)
     }
     
 }
