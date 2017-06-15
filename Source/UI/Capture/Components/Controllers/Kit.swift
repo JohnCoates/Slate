@@ -104,15 +104,15 @@ class KitCoreData: NSManagedObject, Managed {
     @NSManaged var components: Set<ComponentCoreData>
     
     class var entityName: String { return String(describing: self) }
-    class var modelEntity: NSEntityDescription { return constructModelEntity() }
     
-    class func constructModelEntity() -> DBEntity {
+    class func modelEntity(version: DataModel.Version, graph: DataModelGraph) -> DBEntity {
         let entity = DBEntity(name: entityName,
                               class: self)
         
+        let componentEntity = graph.getEntity(for: ComponentCoreData.self)
         entity.addAttribute(name: "name", type: .string)
         entity.addRelationship(name: "components",
-                               entity: ComponentCoreData.modelEntity,
+                               entity: componentEntity,
                                cardinality: 0...0)
         
         return entity

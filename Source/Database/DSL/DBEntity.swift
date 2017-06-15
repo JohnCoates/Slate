@@ -9,16 +9,13 @@
 import Foundation
 import CoreData
 
-class DBEntity: NSEntityDescription {
+class DBEntity {
+    
+    let coreType = NSEntityDescription()
     
     init(name: String, class objectClass: NSManagedObject.Type) {
-        super.init()
-        self.name = name
-        self.managedObjectClassName = String(describing: objectClass)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        coreType.name = name
+        coreType.managedObjectClassName = String(describing: objectClass)
     }
     
     @discardableResult
@@ -32,7 +29,7 @@ class DBEntity: NSEntityDescription {
         attribute.isOptional = false
         attribute.defaultValue = defaultValue
         
-        properties.append(attribute)
+        coreType.properties.append(attribute)
         return attribute
     }
     
@@ -48,8 +45,16 @@ class DBEntity: NSEntityDescription {
         relationship.minCount = 0
         relationship.maxCount = 10
         
-        properties.append(relationship)
+        coreType.properties.append(relationship)
         return relationship
     }
     
+    var subentities: [NSEntityDescription] {
+        get {
+            return coreType.subentities
+        }
+        set {
+            coreType.subentities = newValue
+        }
+    }
 }

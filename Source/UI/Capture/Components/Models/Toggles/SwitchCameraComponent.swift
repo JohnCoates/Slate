@@ -51,9 +51,8 @@ class CameraPositionComponentCoreData: ComponentCoreData, EditRounding, EditOpac
     static var defaultRounding: Float = LocalClass.defaultRounding
     static var defaultOpacity: Float = LocalClass.defaultOpacity
     
-    override class func constructModelEntity() -> DBEntity {
-        let entity = super.constructModelEntity()
-        
+    override class func modelEntity(version: DataModel.Version, graph: DataModelGraph) -> DBEntity {
+        let entity = super.modelEntity(version: version, graph: graph)
         return entity
     }
     

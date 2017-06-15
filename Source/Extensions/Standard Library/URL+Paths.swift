@@ -21,4 +21,9 @@ extension URL {
         }
     }
     
+    func appendingPathPostfix(_ string: String) -> URL {
+        let path = self.path
+        return URL(fileURLWithPath: path + string)
+    }
+    
 }

@@ -16,19 +16,10 @@ class ComponentCoreData: NSManagedObject, Managed {
     @NSManaged var frame: DBRect
     
     class var entityName: String { return String(describing: self) }
-    class var modelEntity: NSEntityDescription { return constructModelEntity() }
     
     class var componentNewInstance: Component { fatalError("Missing component type") }
     
-    // This model entity is used so the same one is used
-    // when this object is referenced by a relationship property
-    private static weak var ephemeralEntity: DBEntity?
-    
-    class func constructModelEntity() -> DBEntity {
-        if self == ComponentCoreData.self, let ephemeralEntity = ephemeralEntity {
-            return ephemeralEntity
-        }
-        
+    class func modelEntity(version: DataModel.Version, graph: DataModelGraph) -> DBEntity {
         let entity = DBEntity(name: entityName,
                               class: self)
         
@@ -46,12 +37,20 @@ class ComponentCoreData: NSManagedObject, Managed {
         
         if self == ComponentCoreData.self {
             entity.subentities = [
-                CaptureComponentCoreData.modelEntity,
-                CameraPositionComponentCoreData.modelEntity
+                graph.getEntity(for: CaptureComponentCoreData.self),
+                graph.getEntity(for: CameraPositionComponentCoreData.self)
             ]
-            ephemeralEntity = entity
         }
         return entity
+    }
+    
+    class func entityPolicy(from: DataModel.Version,
+                            to: DataModel.Version) -> NSEntityMigrationPolicy.Type? {
+        if self == ComponentCoreData.self {
+            
+        }
+        
+        return nil
     }
     
     func instance() -> Component {

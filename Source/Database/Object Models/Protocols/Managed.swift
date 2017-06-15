@@ -10,12 +10,20 @@ import Foundation
 import CoreData
 
 protocol Managed: class, NSFetchRequestResult {
-    static var modelEntity: NSEntityDescription { get }
+    
     static var entityName: String { get }
     static var defaultSortDescriptors: [NSSortDescriptor] { get }
+    
+    static func modelEntity(version: DataModel.Version,
+                            graph: DataModelGraph) -> DBEntity
+    
+    static func entityPolicy(from: DataModel.Version,
+                             to: DataModel.Version) -> NSEntityMigrationPolicy.Type?
+    
 }
 
 extension Managed {
+    
     static var defaultSortDescriptors: [NSSortDescriptor] {
         return []
     }
@@ -25,4 +33,10 @@ extension Managed {
         request.sortDescriptors = defaultSortDescriptors
         return request
     }
+    
+    static func entityPolicy(from: DataModel.Version,
+                             to: DataModel.Version) -> NSEntityMigrationPolicy.Type? {
+        return nil
+    }
+    
 }

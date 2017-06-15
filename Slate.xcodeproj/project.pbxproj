@@ -375,6 +375,18 @@
 		FABB16B21D9F822800A8AC6C /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B01D9F822800A8AC6C /* CameraController.swift */; };
 		FABB16B31D9F858800A8AC6C /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BDC1D9920010017CCCA /* Platform.swift */; };
 		FABB16B51D9F886300A8AC6C /* BaseCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */; };
+		FABC39431EF1DED200ECE935 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC39421EF1DED200ECE935 /* DataModel.swift */; };
+		FABC39441EF1DED200ECE935 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC39421EF1DED200ECE935 /* DataModel.swift */; };
+		FABC39471EF1EA5600ECE935 /* DataModelMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC39461EF1EA5600ECE935 /* DataModelMetadata.swift */; };
+		FABC39481EF1EA5600ECE935 /* DataModelMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC39461EF1EA5600ECE935 /* DataModelMetadata.swift */; };
+		FABC394B1EF1FD6400ECE935 /* DataMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC394A1EF1FD6400ECE935 /* DataMigrator.swift */; };
+		FABC394C1EF1FD6400ECE935 /* DataMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC394A1EF1FD6400ECE935 /* DataMigrator.swift */; };
+		FABC394E1EF1FDD800ECE935 /* SingleMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC394D1EF1FDD800ECE935 /* SingleMigration.swift */; };
+		FABC394F1EF1FDD800ECE935 /* SingleMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC394D1EF1FDD800ECE935 /* SingleMigration.swift */; };
+		FABC39511EF2164E00ECE935 /* DataModelGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC39501EF2164E00ECE935 /* DataModelGraph.swift */; };
+		FABC39521EF2164E00ECE935 /* DataModelGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC39501EF2164E00ECE935 /* DataModelGraph.swift */; };
+		FABC39581EF3211B00ECE935 /* EntityMigrationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC39571EF3211B00ECE935 /* EntityMigrationPolicy.swift */; };
+		FABC39591EF3211B00ECE935 /* EntityMigrationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC39571EF3211B00ECE935 /* EntityMigrationPolicy.swift */; };
 		FABEABBC1EEA4161005D05B2 /* KitSettingsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEABBB1EEA4161005D05B2 /* KitSettingsImage.swift */; };
 		FABEABC01EEA471A005D05B2 /* CameraPermissionsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEABBF1EEA471A005D05B2 /* CameraPermissionsImage.swift */; };
 		FABEABC41EEA47A6005D05B2 /* GraphicsContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEABC21EEA479F005D05B2 /* GraphicsContext.swift */; };
@@ -774,6 +786,13 @@
 		FABB16AC1D9F6DAB00A8AC6C /* ChromaticAberration.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ChromaticAberration.metal; sourceTree = "<group>"; };
 		FABB16B01D9F822800A8AC6C /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		FABB16B41D9F886300A8AC6C /* BaseCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCaptureViewController.swift; sourceTree = "<group>"; };
+		FABC39421EF1DED200ECE935 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		FABC39461EF1EA5600ECE935 /* DataModelMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModelMetadata.swift; sourceTree = "<group>"; };
+		FABC394A1EF1FD6400ECE935 /* DataMigrator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMigrator.swift; sourceTree = "<group>"; };
+		FABC394D1EF1FDD800ECE935 /* SingleMigration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleMigration.swift; sourceTree = "<group>"; };
+		FABC39501EF2164E00ECE935 /* DataModelGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModelGraph.swift; sourceTree = "<group>"; };
+		FABC39541EF22FF400ECE935 /* Capture1to2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Capture1to2.swift; sourceTree = "<group>"; };
+		FABC39571EF3211B00ECE935 /* EntityMigrationPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityMigrationPolicy.swift; sourceTree = "<group>"; };
 		FABEABBB1EEA4161005D05B2 /* KitSettingsImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitSettingsImage.swift; sourceTree = "<group>"; };
 		FABEABBF1EEA471A005D05B2 /* CameraPermissionsImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPermissionsImage.swift; sourceTree = "<group>"; };
 		FABEABC21EEA479F005D05B2 /* GraphicsContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicsContext.swift; sourceTree = "<group>"; };
@@ -2237,6 +2256,47 @@
 			path = Shaders;
 			sourceTree = "<group>";
 		};
+		FABC39411EF1DEBD00ECE935 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				FABC39491EF1FD3C00ECE935 /* Migrating */,
+				FABC39451EF1EA2200ECE935 /* Metadata */,
+				FACF0F3D1EECDB4600B0211C /* Object Models */,
+				FABC39421EF1DED200ECE935 /* DataModel.swift */,
+				FABC39501EF2164E00ECE935 /* DataModelGraph.swift */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		FABC39451EF1EA2200ECE935 /* Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				FABC39461EF1EA5600ECE935 /* DataModelMetadata.swift */,
+			);
+			name = Metadata;
+			path = "Data Model/Metadata";
+			sourceTree = "<group>";
+		};
+		FABC39491EF1FD3C00ECE935 /* Migrating */ = {
+			isa = PBXGroup;
+			children = (
+				FABC39531EF22FB500ECE935 /* Entity Policies */,
+				FABC394A1EF1FD6400ECE935 /* DataMigrator.swift */,
+				FABC394D1EF1FDD800ECE935 /* SingleMigration.swift */,
+			);
+			name = Migrating;
+			path = "Data Model/Migrating";
+			sourceTree = "<group>";
+		};
+		FABC39531EF22FB500ECE935 /* Entity Policies */ = {
+			isa = PBXGroup;
+			children = (
+				FABC39541EF22FF400ECE935 /* Capture1to2.swift */,
+				FABC39571EF3211B00ECE935 /* EntityMigrationPolicy.swift */,
+			);
+			path = "Entity Policies";
+			sourceTree = "<group>";
+		};
 		FABEABB81EEA40B0005D05B2 /* Vector Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -2426,7 +2486,7 @@
 				FAC4248D1EEF2B0700E2EB26 /* Extensions */,
 				FAC424891EEF28D000E2EB26 /* Utlities */,
 				FAC21B601EEE1407007C17AF /* DSL */,
-				FACF0F3D1EECDB4600B0211C /* Object Models */,
+				FABC39411EF1DEBD00ECE935 /* Data Model */,
 				FACF0F3A1EECD9B500B0211C /* Controllers */,
 			);
 			path = Database;
@@ -3260,8 +3320,11 @@
 				FA0462BB1EC3DF88007B74A0 /* Kit.swift in Sources */,
 				FA3AAA911EE24C8F006028AC /* CameraController+Device.swift in Sources */,
 				FAF10D0E1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
+				FABC39471EF1EA5600ECE935 /* DataModelMetadata.swift in Sources */,
 				FAC21B691EEE3005007C17AF /* FetchedResultsDataProvider.swift in Sources */,
+				FABC394B1EF1FD6400ECE935 /* DataMigrator.swift in Sources */,
 				FA6477571EE39E9500A63A22 /* EditBar+ProgressControls.swift in Sources */,
+				FABC394E1EF1FDD800ECE935 /* SingleMigration.swift in Sources */,
 				FA5709A61ECC7172000362C8 /* PhotosPermissionViewController.swift in Sources */,
 				FA8CE4281ECD8AE700788026 /* UIGestureRecognizer+Closure.swift in Sources */,
 				FA1805981EC54F38004351B7 /* CircleView.swift in Sources */,
@@ -3289,7 +3352,9 @@
 				FAADE0D01D9D0AC200AA5729 /* Renderer.swift in Sources */,
 				FA8AA5481ECC13970093D317 /* CanvasIcon.swift in Sources */,
 				FA78F2941E144E4E00D34947 /* DebugBarItem.swift in Sources */,
+				FABC39511EF2164E00ECE935 /* DataModelGraph.swift in Sources */,
 				FA2B1E6D1EC9235700E44613 /* PathIcon.swift in Sources */,
+				FABC39581EF3211B00ECE935 /* EntityMigrationPolicy.swift in Sources */,
 				FAAE76801EEB88C400CA3416 /* VectorImage.swift in Sources */,
 				FA6477621EE39FBD00A63A22 /* EditBar+SettingComponent.swift in Sources */,
 				FA7EC2B41EEB9DD700686E3C /* InverseMaskImageButton.swift in Sources */,
@@ -3387,6 +3452,7 @@
 				FABB16B11D9F822800A8AC6C /* CameraController.swift in Sources */,
 				FA2426CE1D9A67E000AEE60C /* CameraRenderView.swift in Sources */,
 				FA78F29C1E15686C00D34947 /* DebugBarItemView.swift in Sources */,
+				FABC39431EF1DED200ECE935 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3450,6 +3516,7 @@
 				FAAE76531EEB407F00CA3416 /* VectorImageTableViewCell.swift in Sources */,
 				FAB9C2761EE8E1ED00C50545 /* CanvasIconButton.swift in Sources */,
 				FA5709A71ECC7172000362C8 /* PhotosPermissionViewController.swift in Sources */,
+				FABC394C1EF1FD6400ECE935 /* DataMigrator.swift in Sources */,
 				FAC21B5B1EEDEB32007C17AF /* Managed.swift in Sources */,
 				FA2B1E591EC80E8500E44613 /* FeatureCatalogItem.swift in Sources */,
 				FAF10D0F1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
@@ -3478,6 +3545,7 @@
 				FACA79761EE4CFEB0001D468 /* Theme.swift in Sources */,
 				FA2B1E8E1EC92B5B00E44613 /* ComponentMenuBarDelegate.swift in Sources */,
 				FA2B1E981EC92B5B00E44613 /* ComponentMenuBar.swift in Sources */,
+				FABC39481EF1EA5600ECE935 /* DataModelMetadata.swift in Sources */,
 				FA2B1E8C1EC92B5B00E44613 /* KitManager.swift in Sources */,
 				FA2B1E821EC92B5B00E44613 /* GaussianBlur.metal in Sources */,
 				FA5F8CA31ED05B7B00921A61 /* BaseCaptureViewController+Rotation.swift in Sources */,
@@ -3500,6 +3568,7 @@
 				FA5F8CB41ED0958100921A61 /* KeepUpright.swift in Sources */,
 				FA3AAABC1EE25E15006028AC /* Renderer+AspectRatio.swift in Sources */,
 				FAAE763B1EEB2F0500CA3416 /* VectorAssetReader.swift in Sources */,
+				FABC39591EF3211B00ECE935 /* EntityMigrationPolicy.swift in Sources */,
 				FA2B1E951EC92B5B00E44613 /* ComponentEditBar.swift in Sources */,
 				FA2B1E941EC92B5B00E44613 /* DebugWindow.swift in Sources */,
 				FAAE76431EEB2F4700CA3416 /* DataFloat.swift in Sources */,
@@ -3510,7 +3579,9 @@
 				FAAE763E1EEB2F3100CA3416 /* DataPoint.swift in Sources */,
 				FA0C96501EE7647300EA6EC8 /* AnchorOperators.swift in Sources */,
 				FACF0F381EECCFA100B0211C /* DeniedPermissionViewController.swift in Sources */,
+				FABC39441EF1DED200ECE935 /* DataModel.swift in Sources */,
 				FAF10D091ECAD03A0008690E /* BaseCaptureViewController+Debug.swift in Sources */,
+				FABC39521EF2164E00ECE935 /* DataModelGraph.swift in Sources */,
 				FA2B1E861EC92B5B00E44613 /* DebugBarItem.swift in Sources */,
 				FA2B1E831EC92B5B00E44613 /* DragGesture.swift in Sources */,
 				FAAE76591EEB41FB00CA3416 /* VectorImageCanvasIcon.swift in Sources */,
@@ -3543,6 +3614,7 @@
 				FAF10D0C1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift in Sources */,
 				FAC424931EEF2F7700E2EB26 /* NSManagedObjectContext+Changes.swift in Sources */,
 				FAF10D191ECAFF1D0008690E /* PermissionsWindow.swift in Sources */,
+				FABC394F1EF1FDD800ECE935 /* SingleMigration.swift in Sources */,
 				FA8CE4231ECD7E5A00788026 /* Int+Pixels.swift in Sources */,
 				FA3AAA981EE24E63006028AC /* CameraController+Device.swift in Sources */,
 				FA7EC2B61EEB9E0300686E3C /* InverseMaskImageButton.swift in Sources */,

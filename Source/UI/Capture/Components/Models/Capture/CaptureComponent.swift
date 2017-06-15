@@ -47,8 +47,8 @@ class CaptureComponentCoreData: ComponentCoreData, EditRounding, EditOpacity {
     static let defaultRounding: Float = LocalClass.defaultRounding
     static let defaultOpacity: Float = LocalClass.defaultOpacity
     
-    override class func constructModelEntity() -> DBEntity {
-        let entity = super.constructModelEntity()
+    override class func modelEntity(version: DataModel.Version, graph: DataModelGraph) -> DBEntity {
+        let entity = super.modelEntity(version: version, graph: graph)
         
         return entity
     }

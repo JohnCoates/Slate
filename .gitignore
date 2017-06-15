@@ -70,3 +70,4 @@ fastlane/test_output
 /Scripts/slateCLI
 /default.profraw
 /Resources/Images/Generated/coreAssets.cvif
+/Scratch
