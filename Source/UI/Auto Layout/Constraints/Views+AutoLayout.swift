@@ -208,27 +208,28 @@ extension UIView {
 extension UITableView {
     
     // Set the tableHeaderView so that the required height can be determined, update the header's frame and set it again
-    func setAutoLayout(tableHeaderView header: UIView) {
-        self.tableHeaderView = header
-        header.setNeedsLayout()
-        header.layoutIfNeeded()
-        let height = header.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
-        var frame = header.frame
-        frame.size.height = height
-        header.frame = frame
-        self.tableHeaderView = header
+    func setAutoLayout(tableHeaderView view: UIView) {
+        self.tableHeaderView = view
+        forceLayout(forView: view)
+        self.tableHeaderView = view
     }
     
     func setAutoLayout(tableFooterView view: UIView) {
         self.tableFooterView = view
+        forceLayout(forView: view)
+        self.tableFooterView = view
+    }
+    
+    private func forceLayout(forView view: UIView) {
+        view.left --> self.left
+        view.right --> self.right
+        
         view.setNeedsLayout()
         view.layoutIfNeeded()
         let height = view.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
         var frame = view.frame
         frame.size.height = height
-        frame.origin = CGPoint.zero
         view.frame = frame
-        self.tableFooterView = view
     }
     
 }

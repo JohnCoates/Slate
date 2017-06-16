@@ -12,7 +12,13 @@ class CanvasIconView: UIView {
     
     // MARK: - Init
 
+    convenience init(asset: ImageAsset) {
+        let icon = VectorImageCanvasIcon(asset: asset)
+        self.init(icon: icon)
+    }
+    
     let icon: CanvasIcon
+    
     init(icon: CanvasIcon) {
         self.icon = icon
         super.init(frame: .zero)

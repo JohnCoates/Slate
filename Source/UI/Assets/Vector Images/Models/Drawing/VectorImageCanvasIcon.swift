@@ -66,7 +66,7 @@ class VectorImageCanvasIcon: CanvasIcon {
             case .initWith(_), .initWith2(_), .initWith3(_),
                  .move(_), .addLine(_), .addCurve(_), .close,
                  .fill(_), .stroke(_), .setLineWidth(_),
-                 .usesEvenOddFillRule:
+                 .usesEvenOddFillRule, .setLineCapStyle(_):
                 fatalError("Invalid instruction for canvas")
             }
         }
@@ -111,6 +111,8 @@ class VectorImageCanvasIcon: CanvasIcon {
                 path.stroke()
             case .setLineWidth(let to):
                 path.lineWidth = CGFloat(to)
+            case .setLineCapStyle(let to):
+                path.lineCapStyle = to.cgLineCap
             case .usesEvenOddFillRule:
                 path.usesEvenOddFillRule = true
             case .initWith(_), .initWith2(_), .initWith3(_):
@@ -151,5 +153,18 @@ extension Path.Rect {
                       y: CGFloat(self.origin.y),
                       width: CGFloat(self.size.x),
                       height: CGFloat(self.size.y))
+    }
+}
+
+extension Path.LineCapStyle {
+    var cgLineCap: CGLineCap {
+        switch self {
+        case .butt:
+            return .butt
+        case .round:
+            return .round
+        case .square:
+            return .square
+        }
     }
 }

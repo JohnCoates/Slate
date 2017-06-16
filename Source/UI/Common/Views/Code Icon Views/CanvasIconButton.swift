@@ -12,15 +12,19 @@ class CanvasIconButton: Button {
     
     // MARK: - Init
     
-    let icon: CanvasIcon
+    var icon: CanvasIcon?
     
     convenience init(asset: ImageAsset) {
         let icon = VectorImageCanvasIcon(asset: asset)
         self.init(icon: icon)
     }
     
-    init(icon: CanvasIcon) {
+    convenience init(icon: CanvasIcon) {
+        self.init()
         self.icon = icon
+    }
+    
+    init() {
         super.init(frame: .zero)
         contentMode = .scaleAspectFit
         initialSetup()
@@ -39,6 +43,10 @@ class CanvasIconButton: Button {
     }
     
     override func draw(_ rect: CGRect) {
+        guard let icon = icon else {
+            return
+        }
+        
         let canvasContentMode = CanvasIconContentMode.from(contentMode: contentMode)
         icon.draw(toTargetFrame: contentView.frame, contentMode: canvasContentMode)
     }

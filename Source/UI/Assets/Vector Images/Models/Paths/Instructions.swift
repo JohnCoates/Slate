@@ -21,6 +21,7 @@ extension Path {
         case fill(color: Color)
         case stroke(color: Color)
         case setLineWidth(to: Float)
+        case setLineCapStyle(to: LineCapStyle)
         case usesEvenOddFillRule
         
         // graphics context

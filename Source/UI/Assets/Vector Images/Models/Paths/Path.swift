@@ -30,4 +30,10 @@ class Path {
         let blue: Float
         let alpha: Float
     }
+    
+    enum LineCapStyle: UInt8 {
+        case butt = 0
+        case round = 1
+        case square = 2
+    }
 }

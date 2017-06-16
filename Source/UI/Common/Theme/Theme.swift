@@ -20,5 +20,7 @@ class Theme {
         static let cellSubtitle: UIFont = {
             return UIFont.system(11, weight: .regular)
         }()
+        
+        static let iconRounding: Float = 0.4
     }
 }

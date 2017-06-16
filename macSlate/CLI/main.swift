@@ -96,7 +96,7 @@ func generateImageAssets() {
         }
     }
     
-    let images: [VectorImageAsset] = coreAssets
+    let images: [VectorImageAsset] = DrawProxyDSL.coreAssets
     
     var canvases = [Canvas]()
     for image in images {

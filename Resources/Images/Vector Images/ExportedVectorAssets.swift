@@ -8,21 +8,30 @@
 
 import Foundation
 
-let coreAssets: [VectorImageAsset] = [
-    
-    // Kit
-    DrawProxyDSL.KitSettingsImage(),
-    
-    // Kit Components
-    DrawProxyDSL.SwitchCameraImage(),
-    
-    // Camera
-    DrawProxyDSL.CameraPermissionsImage(),
-    DrawProxyDSL.PhotosPermissionsImage(),
-    
-    // Editing
-    DrawProxyDSL.EditingCheckmarkImage(),
-    DrawProxyDSL.EditingCancelImage(),
-    DrawProxyDSL.EditingDeleteImage()
-    
-]
+extension DrawProxyDSL {
+    static let coreAssets: [VectorImageAsset] = [
+        
+        // Kit
+        KitSettingsImage(),
+        EditKitDisclosureIndicator(),
+        
+        // Kit Edit Icons
+        EditKitLayoutIcon(),
+        EditKitPhotoIcon(),
+        EditKitVideoIcon(),
+        EditKitPreviewIcon(),
+        
+        // Kit Components
+        SwitchCameraImage(),
+        
+        // Camera
+        CameraPermissionsImage(),
+        PhotosPermissionsImage(),
+        
+        // Editing
+        EditingCheckmarkImage(),
+        EditingCancelImage(),
+        EditingDeleteImage()
+        
+    ]
+}

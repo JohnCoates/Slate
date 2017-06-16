@@ -163,6 +163,8 @@ extension Path {
                 path.stroke()
             case .setLineWidth(let to):
                 path.lineWidth = CGFloat(to)
+            case .setLineCapStyle(let to):
+                path.lineCapStyle = to.cgLineCap
             case .usesEvenOddFillRule:
                 path.usesEvenOddFillRule = true
             case .initWith(_), .initWith2(_), .initWith3(_):

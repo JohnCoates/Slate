@@ -155,6 +155,12 @@ class VectorAssetReader {
                 instruction = .stroke(color: readColor())
             case .setLineWidth:
                 instruction = .setLineWidth(to: readIndexFloat())
+            case .setLineCapStyle:
+                let rawLineCapStyle = readUInt8()
+                guard let lineCapStyle = Path.LineCapStyle(rawValue: rawLineCapStyle) else {
+                    fatalError("Invalid line cap style: \(rawLineCapStyle)")
+                }
+                instruction = .setLineCapStyle(to: lineCapStyle)
             case .usesEvenOddFillRule:
                 instruction = .usesEvenOddFillRule
             case .initWith:

@@ -21,7 +21,17 @@ enum PermissionsImage: String, ImageAsset {
 
 enum KitImage: String, ImageAsset {
     case settings = "Settings"
+    case disclosureIndicator = "DisclosureIndicator"
     var section: String { return "Kit" }
+    var file: ImageFile { return .coreAssets }
+}
+
+enum KitEditImage: String, ImageAsset {
+    case layout = "Layout"
+    case photo = "Photo"
+    case video = "Video"
+    case preview = "Preview"
+    var section: String { return "Kit.Edit" }
     var file: ImageFile { return .coreAssets }
 }
 

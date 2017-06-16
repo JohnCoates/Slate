@@ -80,5 +80,13 @@ extension DrawProxyDSL {
                 }
             }
         }
+        
+        var lineCapStyle: Path.LineCapStyle? {
+            didSet {
+                if let lineCapStyle = lineCapStyle {
+                    path.add(instruction: .setLineCapStyle(to: lineCapStyle))
+                }
+            }
+        }
     }
 }

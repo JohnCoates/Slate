@@ -17,6 +17,7 @@ enum DataInstruction {
     case fill(color: DataColor)
     case stroke(color: DataColor)
     case setLineWidth(toFloatIndex: UInt16)
+    case setLineCapStyle(to: UInt8)
     case usesEvenOddFillRule
     
     case initWith(rect: DataRect)
@@ -45,6 +46,7 @@ enum DataInstruction {
         case contextRestoreGState = 12
         case contextTranslateBy = 13
         case contextRotate = 14
+        case setLineCapStyle = 15
     }
     
     var type: UInt8 {
@@ -82,7 +84,9 @@ enum DataInstruction {
         case .contextTranslateBy(_):
             return .contextTranslateBy
         case .contextRotate(_):
-            return .contextRotate            
+            return .contextRotate
+        case .setLineCapStyle(_):
+            return .setLineCapStyle
         }
     }
 }

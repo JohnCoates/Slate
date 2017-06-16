@@ -36,6 +36,8 @@ extension VectorAssetWriter {
             return DataInstruction.stroke(color: dataColor(fromColor: color))
         case .setLineWidth(let to):
             return DataInstruction.setLineWidth(toFloatIndex: index(forFloat: to))
+        case .setLineCapStyle(let to):
+            return .setLineCapStyle(to: to.rawValue)
         case .usesEvenOddFillRule:
             return DataInstruction.usesEvenOddFillRule
         

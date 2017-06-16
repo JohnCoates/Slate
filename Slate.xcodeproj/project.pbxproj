@@ -188,6 +188,14 @@
 		FA5F8CB11ED06A5F00921A61 /* CaptureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CAF1ED06A5F00921A61 /* CaptureComponent.swift */; };
 		FA5F8CB31ED0958100921A61 /* KeepUpright.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CB21ED0958100921A61 /* KeepUpright.swift */; };
 		FA5F8CB41ED0958100921A61 /* KeepUpright.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F8CB21ED0958100921A61 /* KeepUpright.swift */; };
+		FA60B6831EF338F6003441E1 /* EditKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60B6821EF338F6003441E1 /* EditKitViewController.swift */; };
+		FA60B6841EF338F6003441E1 /* EditKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60B6821EF338F6003441E1 /* EditKitViewController.swift */; };
+		FA60B6871EF3717D003441E1 /* EditKitHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60B6861EF3717D003441E1 /* EditKitHeaderView.swift */; };
+		FA60B6881EF3717D003441E1 /* EditKitHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60B6861EF3717D003441E1 /* EditKitHeaderView.swift */; };
+		FA60B68A1EF373FF003441E1 /* EditKitLinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60B6891EF373FF003441E1 /* EditKitLinkCell.swift */; };
+		FA60B68B1EF373FF003441E1 /* EditKitLinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60B6891EF373FF003441E1 /* EditKitLinkCell.swift */; };
+		FA60B68E1EF37515003441E1 /* UITableView+cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60B68D1EF37515003441E1 /* UITableView+cells.swift */; };
+		FA60B68F1EF37515003441E1 /* UITableView+cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60B68D1EF37515003441E1 /* UITableView+cells.swift */; };
 		FA64774F1EE3981C00A63A22 /* UIBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64774E1EE3981C00A63A22 /* UIBezierPath.swift */; };
 		FA6477521EE3986B00A63A22 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6477511EE3986B00A63A22 /* CGPoint.swift */; };
 		FA6477571EE39E9500A63A22 /* EditBar+ProgressControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6477541EE39E2100A63A22 /* EditBar+ProgressControls.swift */; };
@@ -199,6 +207,11 @@
 		FA6477621EE39FBD00A63A22 /* EditBar+SettingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6477611EE39FBD00A63A22 /* EditBar+SettingComponent.swift */; };
 		FA6477641EE39FBD00A63A22 /* EditBar+SettingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6477611EE39FBD00A63A22 /* EditBar+SettingComponent.swift */; };
 		FA6477651EE3A30900A63A22 /* ChromaticAberration.metal in Sources */ = {isa = PBXBuildFile; fileRef = FABB16AC1D9F6DAB00A8AC6C /* ChromaticAberration.metal */; };
+		FA6C6F501EF37C1E00BE3E4A /* EditKitDisclosureIndicatorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6C6F4E1EF37C0D00BE3E4A /* EditKitDisclosureIndicatorImage.swift */; };
+		FA6C6F531EF3838D00BE3E4A /* EditKitLayoutIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6C6F521EF3838D00BE3E4A /* EditKitLayoutIcon.swift */; };
+		FA6C6F551EF389C000BE3E4A /* EditKitPhotoIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6C6F541EF389C000BE3E4A /* EditKitPhotoIcon.swift */; };
+		FA6C6F571EF38A3400BE3E4A /* EditKitVideoIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6C6F561EF38A3400BE3E4A /* EditKitVideoIcon.swift */; };
+		FA6C6F591EF38D1900BE3E4A /* EditKitPreviewIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6C6F581EF38D1900BE3E4A /* EditKitPreviewIcon.swift */; };
 		FA6E97771EEA070C00A73DFA /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E97761EEA070C00A73DFA /* CGRect.swift */; };
 		FA6E977A1EEA0C1600A73DFA /* Data+Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E97791EEA0C1600A73DFA /* Data+Compression.swift */; };
 		FA6E977B1EEA0C1F00A73DFA /* Data+Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E97791EEA0C1600A73DFA /* Data+Compression.swift */; };
@@ -660,12 +673,21 @@
 		FA5F8CA51ED0649200921A61 /* Font+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+Convenience.swift"; sourceTree = "<group>"; };
 		FA5F8CAF1ED06A5F00921A61 /* CaptureComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureComponent.swift; sourceTree = "<group>"; };
 		FA5F8CB21ED0958100921A61 /* KeepUpright.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeepUpright.swift; sourceTree = "<group>"; };
+		FA60B6821EF338F6003441E1 /* EditKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditKitViewController.swift; sourceTree = "<group>"; };
+		FA60B6861EF3717D003441E1 /* EditKitHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditKitHeaderView.swift; sourceTree = "<group>"; };
+		FA60B6891EF373FF003441E1 /* EditKitLinkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditKitLinkCell.swift; sourceTree = "<group>"; };
+		FA60B68D1EF37515003441E1 /* UITableView+cells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+cells.swift"; sourceTree = "<group>"; };
 		FA64774E1EE3981C00A63A22 /* UIBezierPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBezierPath.swift; sourceTree = "<group>"; };
 		FA6477511EE3986B00A63A22 /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		FA6477541EE39E2100A63A22 /* EditBar+ProgressControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditBar+ProgressControls.swift"; sourceTree = "<group>"; };
 		FA6477591EE39EF600A63A22 /* EditBar+InitialState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditBar+InitialState.swift"; sourceTree = "<group>"; };
 		FA64775D1EE39F4000A63A22 /* EditBar+EditBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditBar+EditBorder.swift"; sourceTree = "<group>"; };
 		FA6477611EE39FBD00A63A22 /* EditBar+SettingComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditBar+SettingComponent.swift"; sourceTree = "<group>"; };
+		FA6C6F4E1EF37C0D00BE3E4A /* EditKitDisclosureIndicatorImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditKitDisclosureIndicatorImage.swift; sourceTree = "<group>"; };
+		FA6C6F521EF3838D00BE3E4A /* EditKitLayoutIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditKitLayoutIcon.swift; sourceTree = "<group>"; };
+		FA6C6F541EF389C000BE3E4A /* EditKitPhotoIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditKitPhotoIcon.swift; sourceTree = "<group>"; };
+		FA6C6F561EF38A3400BE3E4A /* EditKitVideoIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditKitVideoIcon.swift; sourceTree = "<group>"; };
+		FA6C6F581EF38D1900BE3E4A /* EditKitPreviewIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditKitPreviewIcon.swift; sourceTree = "<group>"; };
 		FA6E97761EEA070C00A73DFA /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		FA6E97791EEA0C1600A73DFA /* Data+Compression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Compression.swift"; sourceTree = "<group>"; };
 		FA6E97811EEA356000A73DFA /* VectorImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorImage.swift; sourceTree = "<group>"; };
@@ -734,7 +756,7 @@
 		FA8AA5441ECC13140093D317 /* CanvasIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasIconView.swift; sourceTree = "<group>"; };
 		FA8AA5471ECC13970093D317 /* CanvasIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasIcon.swift; sourceTree = "<group>"; };
 		FA8CE4211ECD7E5A00788026 /* Int+Pixels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Pixels.swift"; sourceTree = "<group>"; };
-		FA8CE4241ECD7FA700788026 /* UIView+subviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+subviews.swift"; sourceTree = "<group>"; };
+		FA8CE4241ECD7FA700788026 /* UIView+subviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+subviews.swift"; path = "../UIView+subviews.swift"; sourceTree = "<group>"; };
 		FA8CE4271ECD8AE700788026 /* UIGestureRecognizer+Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Closure.swift"; sourceTree = "<group>"; };
 		FA8CE42A1ECDA16A00788026 /* PhotosDeniedPermisionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosDeniedPermisionViewController.swift; sourceTree = "<group>"; };
 		FA9F89E21D953C540058C369 /* Slate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1424,6 +1446,41 @@
 			path = Capture;
 			sourceTree = "<group>";
 		};
+		FA60B6801EF338C1003441E1 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				FA60B6851EF3394C003441E1 /* Views */,
+				FA60B6811EF338D1003441E1 /* View Controllers */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		FA60B6811EF338D1003441E1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA60B6821EF338F6003441E1 /* EditKitViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FA60B6851EF3394C003441E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA60B6861EF3717D003441E1 /* EditKitHeaderView.swift */,
+				FA60B6891EF373FF003441E1 /* EditKitLinkCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA60B68C1EF374F7003441E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA8CE4241ECD7FA700788026 /* UIView+subviews.swift */,
+				FA60B68D1EF37515003441E1 /* UITableView+cells.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FA6477501EE3984700A63A22 /* Coordinates */ = {
 			isa = PBXGroup;
 			children = (
@@ -1442,6 +1499,26 @@
 				FA6477611EE39FBD00A63A22 /* EditBar+SettingComponent.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FA6C6F4D1EF37BEC00BE3E4A /* Editing */ = {
+			isa = PBXGroup;
+			children = (
+				FA6C6F511EF3833800BE3E4A /* Icons */,
+				FA6C6F4E1EF37C0D00BE3E4A /* EditKitDisclosureIndicatorImage.swift */,
+			);
+			path = Editing;
+			sourceTree = "<group>";
+		};
+		FA6C6F511EF3833800BE3E4A /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				FA6C6F521EF3838D00BE3E4A /* EditKitLayoutIcon.swift */,
+				FA6C6F541EF389C000BE3E4A /* EditKitPhotoIcon.swift */,
+				FA6C6F561EF38A3400BE3E4A /* EditKitVideoIcon.swift */,
+				FA6C6F581EF38D1900BE3E4A /* EditKitPreviewIcon.swift */,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 		FA6E977F1EEA353500A73DFA /* Vector Images */ = {
@@ -1928,10 +2005,10 @@
 		FA8CE4201ECD7E4600788026 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FA60B68C1EF374F7003441E1 /* Views */,
 				FA5F8CA41ED0647600921A61 /* Fonts */,
 				FA5F8C9D1ECFF7EC00921A61 /* Screen */,
 				FA8CE4211ECD7E5A00788026 /* Int+Pixels.swift */,
-				FA8CE4241ECD7FA700788026 /* UIView+subviews.swift */,
 				FA8CE4271ECD8AE700788026 /* UIGestureRecognizer+Closure.swift */,
 			);
 			path = UI;
@@ -2312,6 +2389,7 @@
 		FABEABBA1EEA413F005D05B2 /* Kits */ = {
 			isa = PBXGroup;
 			children = (
+				FA6C6F4D1EF37BEC00BE3E4A /* Editing */,
 				FAF5AB1F1EEBCB1A00EDED04 /* Components */,
 				FABEABBB1EEA4161005D05B2 /* KitSettingsImage.swift */,
 			);
@@ -2397,6 +2475,7 @@
 		FACA796D1EE4CF350001D468 /* Kits */ = {
 			isa = PBXGroup;
 			children = (
+				FA60B6801EF338C1003441E1 /* Edit */,
 				FACA796E1EE4CF520001D468 /* List */,
 			);
 			path = Kits;
@@ -3320,6 +3399,7 @@
 				FA0462BB1EC3DF88007B74A0 /* Kit.swift in Sources */,
 				FA3AAA911EE24C8F006028AC /* CameraController+Device.swift in Sources */,
 				FAF10D0E1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
+				FA60B6871EF3717D003441E1 /* EditKitHeaderView.swift in Sources */,
 				FABC39471EF1EA5600ECE935 /* DataModelMetadata.swift in Sources */,
 				FAC21B691EEE3005007C17AF /* FetchedResultsDataProvider.swift in Sources */,
 				FABC394B1EF1FD6400ECE935 /* DataMigrator.swift in Sources */,
@@ -3356,11 +3436,13 @@
 				FA2B1E6D1EC9235700E44613 /* PathIcon.swift in Sources */,
 				FABC39581EF3211B00ECE935 /* EntityMigrationPolicy.swift in Sources */,
 				FAAE76801EEB88C400CA3416 /* VectorImage.swift in Sources */,
+				FA60B68E1EF37515003441E1 /* UITableView+cells.swift in Sources */,
 				FA6477621EE39FBD00A63A22 /* EditBar+SettingComponent.swift in Sources */,
 				FA7EC2B41EEB9DD700686E3C /* InverseMaskImageButton.swift in Sources */,
 				FA0C96591EE8952800EA6EC8 /* Anchor.swift in Sources */,
 				FACA79841EE671880001D468 /* UIView+Anchors.swift in Sources */,
 				FAB9C2751EE8E1ED00C50545 /* CanvasIconButton.swift in Sources */,
+				FA60B68A1EF373FF003441E1 /* EditKitLinkCell.swift in Sources */,
 				FA834BDD1D9920010017CCCA /* Platform.swift in Sources */,
 				FA5F8C9F1ECFF81400921A61 /* UIScreen+Layout.swift in Sources */,
 				FABB16AD1D9F6DAB00A8AC6C /* ChromaticAberration.metal in Sources */,
@@ -3393,6 +3475,7 @@
 				FA5F8CB31ED0958100921A61 /* KeepUpright.swift in Sources */,
 				FACA797A1EE66A5B0001D468 /* KitTableViewCell.swift in Sources */,
 				FA2F8E471DA2293000993949 /* AbstractFilter.swift in Sources */,
+				FA60B6831EF338F6003441E1 /* EditKitViewController.swift in Sources */,
 				FAAE767B1EEB881C00CA3416 /* DataRect.swift in Sources */,
 				FA8CE4251ECD7FA700788026 /* UIView+subviews.swift in Sources */,
 				FA0462C51EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift in Sources */,
@@ -3480,6 +3563,7 @@
 				FA7724CD1ED1A25F00C5C227 /* EditOpacity.swift in Sources */,
 				FA8AA5421ECC107F0093D317 /* ButtonIndicatorIcon.swift in Sources */,
 				FAAE766F1EEB741500CA3416 /* VectorImagesManager.swift in Sources */,
+				FA60B6881EF3717D003441E1 /* EditKitHeaderView.swift in Sources */,
 				FA3AAAC51EE25FEB006028AC /* Size.swift in Sources */,
 				FA2B1EA41EC92B5B00E44613 /* CameraController.swift in Sources */,
 				FAAE765C1EEB5FDD00CA3416 /* VectorAssetsList.swift in Sources */,
@@ -3494,6 +3578,7 @@
 				FAB0AA6C1EC8083D008DCD23 /* FeatureCatalogAppDelegate.swift in Sources */,
 				FA2B1E7B1EC92B5B00E44613 /* DebugBarDelegate.swift in Sources */,
 				FA1272EB1EF1C44500100641 /* GenericComponent.swift in Sources */,
+				FA60B68F1EF37515003441E1 /* UITableView+cells.swift in Sources */,
 				FA2B1E9D1EC92B5B00E44613 /* SwitchCameraButton.swift in Sources */,
 				FA2B1E7A1EC92AF600E44613 /* SimulatorCaptureViewController.swift in Sources */,
 				FA2B1E971EC92B5B00E44613 /* MetalCaptureViewController.swift in Sources */,
@@ -3516,6 +3601,7 @@
 				FAAE76531EEB407F00CA3416 /* VectorImageTableViewCell.swift in Sources */,
 				FAB9C2761EE8E1ED00C50545 /* CanvasIconButton.swift in Sources */,
 				FA5709A71ECC7172000362C8 /* PhotosPermissionViewController.swift in Sources */,
+				FA60B6841EF338F6003441E1 /* EditKitViewController.swift in Sources */,
 				FABC394C1EF1FD6400ECE935 /* DataMigrator.swift in Sources */,
 				FAC21B5B1EEDEB32007C17AF /* Managed.swift in Sources */,
 				FA2B1E591EC80E8500E44613 /* FeatureCatalogItem.swift in Sources */,
@@ -3564,6 +3650,7 @@
 				FACA79851EE671880001D468 /* UIView+Anchors.swift in Sources */,
 				FA6477641EE39FBD00A63A22 /* EditBar+SettingComponent.swift in Sources */,
 				FA3AAA971EE24E5E006028AC /* CameraController+Debug.swift in Sources */,
+				FA60B68B1EF373FF003441E1 /* EditKitLinkCell.swift in Sources */,
 				FACF0F401EECDB6C00B0211C /* ComponentModel.swift in Sources */,
 				FA5F8CB41ED0958100921A61 /* KeepUpright.swift in Sources */,
 				FA3AAABC1EE25E15006028AC /* Renderer+AspectRatio.swift in Sources */,
@@ -3637,6 +3724,7 @@
 				FAB9C2931EE8FDE500C50545 /* DrawProxyDSL.swift in Sources */,
 				FABEABC41EEA47A6005D05B2 /* GraphicsContext.swift in Sources */,
 				FAB9C28D1EE8FDDB00C50545 /* Path.swift in Sources */,
+				FA6C6F591EF38D1900BE3E4A /* EditKitPreviewIcon.swift in Sources */,
 				FAB9C2921EE8FDE500C50545 /* UIColor.swift in Sources */,
 				FA6E97AD1EEA3D6500A73DFA /* Writer+Generators.swift in Sources */,
 				FAF5AB1C1EEBA13300EDED04 /* EditingCheckmarkImage.swift in Sources */,
@@ -3644,8 +3732,10 @@
 				FAB9C28E1EE8FDE500C50545 /* Instructions.swift in Sources */,
 				FAF5AB1E1EEBC7D300EDED04 /* EditingCancelImage.swift in Sources */,
 				FAF5AB241EEBCD5B00EDED04 /* EditingDeleteImage.swift in Sources */,
+				FA6C6F501EF37C1E00BE3E4A /* EditKitDisclosureIndicatorImage.swift in Sources */,
 				FAB9C2871EE8FDA600C50545 /* main.swift in Sources */,
 				FA6E979B1EEA376300A73DFA /* DataCanvas.swift in Sources */,
+				FA6C6F551EF389C000BE3E4A /* EditKitPhotoIcon.swift in Sources */,
 				FAB9C2911EE8FDE500C50545 /* UIBezierPath.swift in Sources */,
 				FA6E977B1EEA0C1F00A73DFA /* Data+Compression.swift in Sources */,
 				FA6E978B1EEA35CB00A73DFA /* DataColor.swift in Sources */,
@@ -3661,10 +3751,12 @@
 				FA6E97951EEA372400A73DFA /* DataInstruction.swift in Sources */,
 				FA6E97981EEA372A00A73DFA /* DataPath.swift in Sources */,
 				FA6E97A11EEA380900A73DFA /* Writer+Conversions.swift in Sources */,
+				FA6C6F571EF38A3400BE3E4A /* EditKitVideoIcon.swift in Sources */,
 				FA6E97AA1EEA3D3100A73DFA /* Writer+DataSections.swift in Sources */,
 				FAAE765D1EEB613600CA3416 /* VectorAssetsList.swift in Sources */,
 				FAAE76621EEB631C00CA3416 /* BuildPaths.m in Sources */,
 				FAF5AB221EEBCB4B00EDED04 /* SwitchCameraImage.swift in Sources */,
+				FA6C6F531EF3838D00BE3E4A /* EditKitLayoutIcon.swift in Sources */,
 				FA6E97A71EEA3CF100A73DFA /* Writer+Data.swift in Sources */,
 				FABEABC61EEB2831005D05B2 /* CGRect.swift in Sources */,
 				FAAE76711EEB847A00CA3416 /* PhotosPermissionImage.swift in Sources */,

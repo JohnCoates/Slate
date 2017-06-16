@@ -177,7 +177,9 @@ class FeatureCatalogViewController: UITableViewController {
     func kitsTab() -> Section {
         let items: [FeatureCatalogItem] = [
             FeatureCatalogItem(name: "Kits",
-                               creationBlock: { KitsViewController() })
+                               creationBlock: { KitsViewController() }),
+            FeatureCatalogItem(name: "Edit Kit",
+                               creationBlock: { EditKitViewController(kit: Kit()) })
         ]
         
         return Section(title: "Kits Tab", items: items)

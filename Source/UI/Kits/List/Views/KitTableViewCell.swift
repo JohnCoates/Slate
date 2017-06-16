@@ -41,7 +41,7 @@ final class KitTableViewCell: UITableViewCell {
     let iconView = RoundableView()
     
     private func setUpIconView() {
-        iconView.rounding = 0.4
+        iconView.rounding = Theme.Kits.iconRounding
         iconView.backgroundColor = UIColor(red: 0.11, green: 0.51, blue: 1.00, alpha: 1.00)
         contentView.addSubview(iconView)
         

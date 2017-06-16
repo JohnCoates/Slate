@@ -121,6 +121,8 @@ extension VectorAssetWriter {
                 append(uInt16: yIndex)
             case .contextRotate(let byIndex):
                 append(uInt16: byIndex)
+            case .setLineCapStyle(let to):
+                append(uInt8: to)
             }
         }
     }
