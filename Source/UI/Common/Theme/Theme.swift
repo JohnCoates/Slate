@@ -10,6 +10,37 @@
 import UIKit
 
 class Theme {
+    
+    static func setAppearanceOptions() {
+        let navigationBar = UINavigationBar.appearance()
+        navigationBar.barTintColor = Theme.navigationBarTintColor
+        navigationBar.tintColor = UIColor.white
+        navigationBar.titleTextAttributes = [
+            NSForegroundColorAttributeName: UIColor.white,
+            NSFontAttributeName: UIFont.system(17, weight: .regular)
+        ]
+        navigationBar.isTranslucent = false
+        navigationBar.barStyle = .black
+        
+        // hide the 1px line at the bottom of the nav bar
+        navigationBar.shadowImage = UIImage()
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
+        // hide back button text
+        let navigationBarButton = UIBarButtonItem.appearance(whenContainedInInstancesOf: [UINavigationBar.self])
+        navigationBarButton.setTitleTextAttributes([
+            NSFontAttributeName: UIFont.systemFont(ofSize: 0.1),
+            NSForegroundColorAttributeName: UIColor.clear
+            ],
+                                                   for: UIControlState())
+    }
+    
+    static let navigationBarTintColor = Settings.background
+    
+    struct Settings {
+        static let background = UIColor(red: 0.11, green: 0.12, blue: 0.15, alpha: 1.00)
+    }
+    
     struct Kits {
         static let background = UIColor(red: 0.11, green: 0.12, blue: 0.15, alpha: 1.00)
         static let text = UIColor.white

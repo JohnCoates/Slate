@@ -12,13 +12,19 @@ import CoreGraphics
 struct Size {
     var width: Float
     var height: Float
+    var cgWidth: CGFloat {
+        return CGFloat(width)
+    }
+    var cgHeight: CGFloat {
+        return CGFloat(height)
+    }
     
     init(width: Float, height: Float) {
         self.width = width
         self.height = height
     }
     
-    init(size: CGSize) {
+    init(_ size: CGSize) {
         self.width = Float(size.width)
         self.height = Float(size.height)
     }

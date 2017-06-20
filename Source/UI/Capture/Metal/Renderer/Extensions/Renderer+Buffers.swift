@@ -84,7 +84,7 @@ extension Renderer {
             print("Couldn't get camera input size!")
             return
         }
-        let targetSize = Size(size: viewSize)
+        let targetSize = Size(viewSize)
         #if os(iOS)
             // Switch width with height because camera input is flipped
             let inputSwitched = Size(width: inputSize.height, height: inputSize.width)
@@ -101,7 +101,7 @@ extension Renderer {
             print("Couldn't get camera input size!")
             return
         }
-        let targetSize = Size(size: viewSize)
+        let targetSize = Size(viewSize)
         #if os(iOS)
             // Switch width with height because camera input is flipped
             let inputSwitched = Size(width: inputSize.height, height: inputSize.width)

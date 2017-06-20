@@ -1,5 +1,5 @@
 //
-//  UITableView+cells.swift
+//  UITableView+Cells.swift
 //  Slate
 //
 //  Created by John Coates on 6/15/17.

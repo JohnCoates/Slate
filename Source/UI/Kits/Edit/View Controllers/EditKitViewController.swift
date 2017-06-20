@@ -9,12 +9,29 @@
 import Foundation
 import UIKit
 
-class EditKitViewController: UITableViewController {
+class EditKitViewController: SettingsTableViewController {
     
-    enum Link {
-        case link(name: String)
-        case iconLink(name: String, icon: ImageAsset)
+    enum SettingsGroup {
+        case layout
+        case photoSettings
+        case videoSettings
+        case previewSettings
+        
+        var link: SettingsLink {
+            switch self {
+            case .layout:
+                return .iconLink(name: "Layout", icon: KitEditImage.layout)
+            case .photoSettings:
+                return .iconLink(name: "Photo Settings", icon: KitEditImage.photo)
+            case .videoSettings:
+                return .iconLink(name: "Video Settings", icon: KitEditImage.video)
+            case .previewSettings:
+                return .iconLink(name: "Preview Settings", icon: KitEditImage.preview)
+            }
+        }
     }
+    
+    // MARK: - Init
     
     let kit: Kit
     
@@ -32,17 +49,17 @@ class EditKitViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpTableView()
+        title = "Edit Kit"
     }
     
     // MARK: - Configuration
     
-    lazy var links: [Link] = {
+    lazy var settingsGroups: [SettingsGroup] = {
        return [
-        .iconLink(name: "Layout", icon: KitEditImage.layout),
-        .iconLink(name: "Photo Settings", icon: KitEditImage.photo),
-        .iconLink(name: "Video Settings", icon: KitEditImage.video),
-        .iconLink(name: "Preview Settings", icon: KitEditImage.preview)
+        .layout,
+        .photoSettings,
+        .videoSettings,
+        .previewSettings
         ]
     }()
     
@@ -50,16 +67,9 @@ class EditKitViewController: UITableViewController {
     
     let headerView = EditKitHeaderView()
     
-    func setUpTableView() {
-        tableView.backgroundColor = Theme.Kits.background
-        tableView.separatorInset = UIEdgeInsets.zero
-        tableView.layoutMargins = UIEdgeInsets.zero
-        tableView.separatorColor = UIColor.clear
+    override func setUpTableView() {
+        super.setUpTableView()
         
-        tableView.registerCell(type: EditKitLinkCell.self)
-        
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 80
         tableView.setAutoLayout(tableHeaderView: headerView)
     }
     
@@ -70,13 +80,14 @@ class EditKitViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return links.count
+        return settingsGroups.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: EditKitLinkCell = tableView.dequeueReusableCell(for: indexPath)
-        let link = links[indexPath.item]
-        switch link {
+        let settingsGroup = settingsGroups[indexPath.item]
+        
+        switch settingsGroup.link {
         case .link(let name):
             cell.title = name
         case .iconLink(let name, let icon):
@@ -85,6 +96,20 @@ class EditKitViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    // MARK - Cell Selection
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let settingsGroup = settingsGroups[indexPath.item]
+        
+        switch settingsGroup {
+        case .layout:
+            let viewController = EditKitLayoutViewController(kit: kit)
+            navigationController?.pushViewController(viewController, animated: true)
+        default:
+            break
+        }
     }
     
 }

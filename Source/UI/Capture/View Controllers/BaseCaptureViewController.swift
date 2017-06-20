@@ -17,7 +17,22 @@ import UIKit
 fileprivate typealias LocalClass = BaseCaptureViewController
 class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate, PermissionsManagerDelegate {
     
-    lazy var kit: Kit = { KitManager.currentKit }()
+    let kit: Kit
+    
+    // MARK: - Init
+    
+    convenience init() {
+        self.init(kit: KitManager.currentKit)
+    }
+    
+    required init(kit: Kit) {
+        self.kit = kit
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        Critical.methodNotDefined()
+    }
     
     var permissionsManager: PermissionsManager?
     
@@ -31,8 +46,7 @@ class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate, 
         view.backgroundColor = .black
         controlsSetup()
         
-        let permissionsManager = PermissionsManager()
-        if permissionsManager.hasPermission(for: .camera) {
+        if hasCameraPermissions {
             cameraSetup()
             loadComponents()
         }
@@ -41,16 +55,14 @@ class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate, 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let permissionsManager = PermissionsManager()
-        if permissionsManager.hasPermission(for: .camera) == false {
-            if permissionsManager.hasAvailableRequest(for: .camera) {
-                self.permissionsManager = permissionsManager
-                permissionsManager.delegate = self
-                permissionsManager.requestPermission(for: .camera)
-            } else {
-                PermissionsWindow.show(kind: .cameraDenied, animated: true)
-            }
-        }
+        requestCameraPermissionsIfNecessary()
+    }
+    
+    // MARK: - View Layout Behavior
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        layOutComponents()
     }
     
     // MARK: - View Rotation
@@ -88,7 +100,7 @@ class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate, 
     
     // MARK: - Controls Setup
     
-    fileprivate func controlsSetup() {
+    func controlsSetup() {
         controlMenuSetup()
         componentEditBarSetup()
     }
@@ -137,10 +149,11 @@ class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate, 
     
     func loadComponents() {
         for component in kit.components {
-            component.view.frame = component.frame
             self.view.insertSubview(component.view, belowSubview: menuView)
             configureAdded(component: component)
         }
+        
+        view.setNeedsLayout()
     }
     
     // MARK: - Component Configuring
@@ -155,6 +168,16 @@ class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate, 
             componentView.setTappedCallback(instance: self,
                                             method: Method.capture)
         }
+    }
+    
+    func layOutComponents() {
+        for component in kit.components {
+            performLayout(forComponent: component)
+        }
+    }
+    
+    func performLayout(forComponent component: Component) {
+        component.view.frame = component.frame
     }
     
     // MARK: - Edit Components
@@ -183,6 +206,26 @@ class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate, 
     
     func switchCamera() {
         print("Switch camera!")
+    }
+    
+    // MARK: - Permissions
+    
+    var hasCameraPermissions: Bool {
+        let permissionsManager = PermissionsManager()
+        return permissionsManager.hasPermission(for: .camera)
+    }
+    
+    func requestCameraPermissionsIfNecessary() {
+        let permissionsManager = PermissionsManager()
+        if hasCameraPermissions == false {
+            if permissionsManager.hasAvailableRequest(for: .camera) {
+                self.permissionsManager = permissionsManager
+                permissionsManager.delegate = self
+                permissionsManager.requestPermission(for: .camera)
+            } else {
+                PermissionsWindow.show(kind: .cameraDenied, animated: true)
+            }
+        }
     }
     
     // MARK: - Permissions Manager Delegate

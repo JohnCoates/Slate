@@ -179,7 +179,10 @@ class FeatureCatalogViewController: UITableViewController {
             FeatureCatalogItem(name: "Kits",
                                creationBlock: { KitsViewController() }),
             FeatureCatalogItem(name: "Edit Kit",
-                               creationBlock: { EditKitViewController(kit: Kit()) })
+                               creationBlock: { EditKitViewController(kit: Kit()) }),
+            FeatureCatalogItem(name: "Edit Layout",
+                               creationBlock: { EditKitLayoutViewController(kit: Kit.default()) })
+            
         ]
         
         return Section(title: "Kits Tab", items: items)

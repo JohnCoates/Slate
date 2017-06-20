@@ -6,13 +6,18 @@
 //  Copyright © 2017 John Coates. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 class Kit {
+    
     var name: String = "Default Kit"
     var components = [Component]()
     var coreDataID: NSManagedObjectID?
+    lazy var nativeSize: Size = {
+       return Size(UIScreen.main.bounds.size)
+    }()
+    
     weak var dbObject: KitCoreData?
     
     func addComponent(component: Component) {
