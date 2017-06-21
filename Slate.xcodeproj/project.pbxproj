@@ -169,6 +169,9 @@
 		FA4DFEDB1D9DBD5F0068706F /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */; };
 		FA4DFEDC1D9DBD620068706F /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */; };
 		FA4DFEE01D9DC15E0068706F /* HUDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4DFEDF1D9DC15E0068706F /* HUDController.swift */; };
+		FA50BCC11EF9C2220086E8D9 /* EditSmartLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA50BCC01EF9C2220086E8D9 /* EditSmartLayout.swift */; };
+		FA50BCC21EF9C2220086E8D9 /* EditSmartLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA50BCC01EF9C2220086E8D9 /* EditSmartLayout.swift */; };
+		FA50BCCB1EF9CC8A0086E8D9 /* InteractivityIndicatorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA50BCC71EF9CBDE0086E8D9 /* InteractivityIndicatorImage.swift */; };
 		FA5651AC1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5651AB1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift */; };
 		FA5651AE1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5651AB1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift */; };
 		FA5651AF1EDE4C44006B5A19 /* ImageCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76F5451ED48FFC00059906 /* ImageCaptureManager.swift */; };
@@ -250,8 +253,6 @@
 		FA76F54F1ED4A2C100059906 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA76F54B1ED4A2C100059906 /* Crashlytics.framework */; };
 		FA76F5511ED4A2C100059906 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA76F54B1ED4A2C100059906 /* Crashlytics.framework */; };
 		FA7724CD1ED1A25F00C5C227 /* EditOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BD7A41ED18D0C00D1761C /* EditOpacity.swift */; };
-		FA7724D31ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7724D21ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift */; };
-		FA7724D41ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7724D21ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift */; };
 		FA78F28E1E144C0E00D34947 /* DebugBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F28D1E144C0E00D34947 /* DebugBarController.swift */; };
 		FA78F2921E144E4600D34947 /* DebugBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */; };
 		FA78F2941E144E4E00D34947 /* DebugBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2931E144E4E00D34947 /* DebugBarItem.swift */; };
@@ -609,8 +610,8 @@
 		EA803CD2EB0BB5389D46E0F6 /* Pods-Slate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Slate/Pods-Slate.release.xcconfig"; sourceTree = "<group>"; };
 		FA0462B21EC3CC76007B74A0 /* SwitchCameraButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCameraButton.swift; sourceTree = "<group>"; };
 		FA0462B51EC3CDFA007B74A0 /* ControlBarItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlBarItemCell.swift; sourceTree = "<group>"; };
-		FA0462B81EC3DF81007B74A0 /* KitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KitManager.swift; path = KitManager.swift; sourceTree = "<group>"; };
-		FA0462BA1EC3DF88007B74A0 /* Kit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Kit.swift; path = Kit.swift; sourceTree = "<group>"; };
+		FA0462B81EC3DF81007B74A0 /* KitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitManager.swift; sourceTree = "<group>"; };
+		FA0462BA1EC3DF88007B74A0 /* Kit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
 		FA0462BE1EC3DFE1007B74A0 /* SwitchCameraComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCameraComponent.swift; sourceTree = "<group>"; };
 		FA0462C11EC3E002007B74A0 /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		FA0462C41EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentMenuBarDelegate.swift; sourceTree = "<group>"; };
@@ -673,6 +674,8 @@
 		FA4DFED51D9DBD1A0068706F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FA4DFED71D9DBD1A0068706F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA4DFEDF1D9DC15E0068706F /* HUDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDController.swift; sourceTree = "<group>"; };
+		FA50BCC01EF9C2220086E8D9 /* EditSmartLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSmartLayout.swift; sourceTree = "<group>"; };
+		FA50BCC71EF9CBDE0086E8D9 /* InteractivityIndicatorImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractivityIndicatorImage.swift; sourceTree = "<group>"; };
 		FA5651AB1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPreviewCaptureViewController.swift; sourceTree = "<group>"; };
 		FA5709A11ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsPreferredButtonIndicatorController.swift; sourceTree = "<group>"; };
 		FA5709A51ECC7172000362C8 /* PhotosPermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosPermissionViewController.swift; sourceTree = "<group>"; };
@@ -716,14 +719,13 @@
 		FA76F5451ED48FFC00059906 /* ImageCaptureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCaptureManager.swift; sourceTree = "<group>"; };
 		FA76F54A1ED4A2C100059906 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		FA76F54B1ED4A2C100059906 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		FA7724D21ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractivityIndicatorIcon.swift; sourceTree = "<group>"; };
 		FA78F28D1E144C0E00D34947 /* DebugBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarController.swift; sourceTree = "<group>"; };
 		FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarDelegate.swift; sourceTree = "<group>"; };
 		FA78F2931E144E4E00D34947 /* DebugBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarItem.swift; sourceTree = "<group>"; };
 		FA78F2961E14520700D34947 /* DebugWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugWindow.swift; sourceTree = "<group>"; };
 		FA78F2991E15662B00D34947 /* DebugBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarView.swift; sourceTree = "<group>"; };
 		FA78F29B1E15686C00D34947 /* DebugBarItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugBarItemView.swift; sourceTree = "<group>"; };
-		FA7EC2B31EEB9DD700686E3C /* InverseMaskImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InverseMaskImageButton.swift; path = InverseMaskImageButton.swift; sourceTree = "<group>"; };
+		FA7EC2B31EEB9DD700686E3C /* InverseMaskImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InverseMaskImageButton.swift; sourceTree = "<group>"; };
 		FA834BDC1D9920010017CCCA /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		FA834BE01D9927EB0017CCCA /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		FA834BE31D9929710017CCCA /* CaptureButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureButton.swift; sourceTree = "<group>"; };
@@ -766,7 +768,7 @@
 		FA8AA5441ECC13140093D317 /* CanvasIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasIconView.swift; sourceTree = "<group>"; };
 		FA8AA5471ECC13970093D317 /* CanvasIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasIcon.swift; sourceTree = "<group>"; };
 		FA8CE4211ECD7E5A00788026 /* Int+Pixels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Pixels.swift"; sourceTree = "<group>"; };
-		FA8CE4241ECD7FA700788026 /* UIView+subviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+subviews.swift"; path = "UIView+subviews.swift"; sourceTree = "<group>"; };
+		FA8CE4241ECD7FA700788026 /* UIView+subviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+subviews.swift"; sourceTree = "<group>"; };
 		FA8CE4271ECD8AE700788026 /* UIGestureRecognizer+Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Closure.swift"; sourceTree = "<group>"; };
 		FA8CE42A1ECDA16A00788026 /* PhotosDeniedPermisionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosDeniedPermisionViewController.swift; sourceTree = "<group>"; };
 		FA9F89E21D953C540058C369 /* Slate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -868,7 +870,7 @@
 		FAF5AB1D1EEBC7D300EDED04 /* EditingCancelImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingCancelImage.swift; sourceTree = "<group>"; };
 		FAF5AB211EEBCB4B00EDED04 /* SwitchCameraImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCameraImage.swift; sourceTree = "<group>"; };
 		FAF5AB231EEBCD5B00EDED04 /* EditingDeleteImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingDeleteImage.swift; sourceTree = "<group>"; };
-		FAF5AB251EEBCDFE00EDED04 /* PathsImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathsImageButton.swift; path = PathsImageButton.swift; sourceTree = "<group>"; };
+		FAF5AB251EEBCDFE00EDED04 /* PathsImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathsImageButton.swift; sourceTree = "<group>"; };
 		FAF5AB291EEC6B5600EDED04 /* Lint.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Lint.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1068,6 +1070,7 @@
 				FA1805A21EC699A4004351B7 /* EditSize.swift */,
 				FAB0AA5D1EC6A095008DCD23 /* EditPosition.swift */,
 				FA4BD7A41ED18D0C00D1761C /* EditOpacity.swift */,
+				FA50BCC01EF9C2220086E8D9 /* EditSmartLayout.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1166,7 +1169,6 @@
 			isa = PBXGroup;
 			children = (
 				FA6477531EE39DCD00A63A22 /* Extensions */,
-				FA7724D11ED1BEA300C5C227 /* Code Icons */,
 				FA1805A01EC69740004351B7 /* Controls */,
 				FA0462C31EC3E3D3007B74A0 /* Protocols */,
 				FA1805921EC54A0F004351B7 /* ComponentEditBar.swift */,
@@ -1412,6 +1414,22 @@
 			path = HUD;
 			sourceTree = "<group>";
 		};
+		FA50BCC51EF9CBB00086E8D9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FA50BCC61EF9CBBC0086E8D9 /* Icons */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		FA50BCC61EF9CBBC0086E8D9 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				FA50BCC71EF9CBDE0086E8D9 /* InteractivityIndicatorImage.swift */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
 		FA5709A01ECC62BC000362C8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1622,14 +1640,6 @@
 				FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		FA7724D11ED1BEA300C5C227 /* Code Icons */ = {
-			isa = PBXGroup;
-			children = (
-				FA7724D21ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift */,
-			);
-			path = "Code Icons";
 			sourceTree = "<group>";
 		};
 		FA78F28B1E144AC600D34947 /* Debug */ = {
@@ -2363,7 +2373,6 @@
 				FABC39421EF1DED200ECE935 /* DataModel.swift */,
 				FABC39501EF2164E00ECE935 /* DataModelGraph.swift */,
 			);
-			name = "Data Model";
 			path = "Data Model";
 			sourceTree = "<group>";
 		};
@@ -2372,7 +2381,6 @@
 			children = (
 				FABC39461EF1EA5600ECE935 /* DataModelMetadata.swift */,
 			);
-			name = Metadata;
 			path = Metadata;
 			sourceTree = "<group>";
 		};
@@ -2383,7 +2391,6 @@
 				FABC394A1EF1FD6400ECE935 /* DataMigrator.swift */,
 				FABC394D1EF1FDD800ECE935 /* SingleMigration.swift */,
 			);
-			name = Migrating;
 			path = Migrating;
 			sourceTree = "<group>";
 		};
@@ -2399,6 +2406,7 @@
 		FABEABB81EEA40B0005D05B2 /* Vector Images */ = {
 			isa = PBXGroup;
 			children = (
+				FA50BCC51EF9CBB00086E8D9 /* Common */,
 				FAF5AB1A1EEBA0CF00EDED04 /* Editing */,
 				FABEABBD1EEA46F6005D05B2 /* Camera */,
 				FABEABBA1EEA413F005D05B2 /* Kits */,
@@ -2481,7 +2489,6 @@
 			children = (
 				FAC4248A1EEF28EE00E2EB26 /* ManagedObjectObserver.swift */,
 			);
-			name = Utlities;
 			path = Utlities;
 			sourceTree = "<group>";
 		};
@@ -2681,7 +2688,6 @@
 			children = (
 				FAD5DADC1EF8C92E00239C96 /* Kit+Default.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -2692,7 +2698,6 @@
 				FAD5DADA1EF8C90F00239C96 /* Models */,
 				FA29FB461EA49B0400EB1081 /* Components */,
 			);
-			name = Kits;
 			path = Kits;
 			sourceTree = "<group>";
 		};
@@ -2702,7 +2707,6 @@
 				FAD5DAD81EF8C8E500239C96 /* Extensions */,
 				FA0462BA1EC3DF88007B74A0 /* Kit.swift */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -2711,7 +2715,6 @@
 			children = (
 				FA0462B81EC3DF81007B74A0 /* KitManager.swift */,
 			);
-			name = Controllers;
 			path = Controllers;
 			sourceTree = "<group>";
 		};
@@ -3586,7 +3589,6 @@
 				FA2F8E531DA23E5500993949 /* PassthroughFilter.swift in Sources */,
 				FACFE4931ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */,
 				FA3AAA8B1EE24C5B006028AC /* CameraController+StillOutput.swift in Sources */,
-				FA7724D31ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift in Sources */,
 				FA834BE41D9929710017CCCA /* CaptureButton.swift in Sources */,
 				FA0462B91EC3DF81007B74A0 /* KitManager.swift in Sources */,
 				FA5F8CA61ED0649200921A61 /* Font+Convenience.swift in Sources */,
@@ -3657,6 +3659,7 @@
 				FA834BE11D9927EB0017CCCA /* Button.swift in Sources */,
 				FA2B1EB51EC9824E00E44613 /* RoundableView.swift in Sources */,
 				FAC9634C1ED3B68700D4DC33 /* PermissionsManager.swift in Sources */,
+				FA50BCC11EF9C2220086E8D9 /* EditSmartLayout.swift in Sources */,
 				FABB16B11D9F822800A8AC6C /* CameraController.swift in Sources */,
 				FA2426CE1D9A67E000AEE60C /* CameraRenderView.swift in Sources */,
 				FA78F29C1E15686C00D34947 /* DebugBarItemView.swift in Sources */,
@@ -3762,6 +3765,7 @@
 				FA2B1E8E1EC92B5B00E44613 /* ComponentMenuBarDelegate.swift in Sources */,
 				FA2B1E981EC92B5B00E44613 /* ComponentMenuBar.swift in Sources */,
 				FABC39481EF1EA5600ECE935 /* DataModelMetadata.swift in Sources */,
+				FA50BCC21EF9C2220086E8D9 /* EditSmartLayout.swift in Sources */,
 				FA2B1E8C1EC92B5B00E44613 /* KitManager.swift in Sources */,
 				FA2B1E821EC92B5B00E44613 /* GaussianBlur.metal in Sources */,
 				FA5F8CA31ED05B7B00921A61 /* BaseCaptureViewController+Rotation.swift in Sources */,
@@ -3840,7 +3844,6 @@
 				FA7EC2B61EEB9E0300686E3C /* InverseMaskImageButton.swift in Sources */,
 				FA2B1E9A1EC92B5B00E44613 /* ComponentEditBarDelegate.swift in Sources */,
 				FA76F5421ED3C32D00059906 /* PermissionsManager.swift in Sources */,
-				FA7724D41ED1BEDB00C5C227 /* InteractivityIndicatorIcon.swift in Sources */,
 				FA0C96601EE8C52900EA6EC8 /* Priority.swift in Sources */,
 				FA2B1E891EC92B5B00E44613 /* FragmentFilter.swift in Sources */,
 				FA2B1EA61EC92B5B00E44613 /* DebugBarItemView.swift in Sources */,
@@ -3864,6 +3867,7 @@
 				FA6E97B01EEA3DD900A73DFA /* Writer+Utilities.swift in Sources */,
 				FAB9C28E1EE8FDE500C50545 /* Instructions.swift in Sources */,
 				FAF5AB1E1EEBC7D300EDED04 /* EditingCancelImage.swift in Sources */,
+				FA50BCCB1EF9CC8A0086E8D9 /* InteractivityIndicatorImage.swift in Sources */,
 				FAF5AB241EEBCD5B00EDED04 /* EditingDeleteImage.swift in Sources */,
 				FA6C6F501EF37C1E00BE3E4A /* EditKitDisclosureIndicatorImage.swift in Sources */,
 				FAB9C2871EE8FDA600C50545 /* main.swift in Sources */,

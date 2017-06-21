@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditKitLayoutViewController: SettingsTableViewController {
+class EditKitLayoutViewController: SettingsTableViewController, LayoutPreviewCellDelegate {
 
     private enum Row {
         case preview
@@ -84,6 +84,39 @@ class EditKitLayoutViewController: SettingsTableViewController {
     
     // MARK: - Preview
     
-    lazy var layoutCell: LayoutPreviewCell = LayoutPreviewCell(kit: self.kit)
+    lazy var layoutCell: LayoutPreviewCell = LayoutPreviewCell(kit: self.kit, delegate: self)
+    
+    // MARK: - Layout Preview Cell Delegate
+    
+    func promptUserToSelectPreviewDevice() {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let seven = UIAlertAction(title: DeviceType.seven.rawValue,
+                                  style: .default) { action in
+            self.setPreview(device: .seven)
+        }
+        alertController.addAction(seven)
+        
+        let sevenPlus = UIAlertAction(title: DeviceType.sevenPlus.rawValue,
+                                      style: .default) { action in
+            self.setPreview(device: .sevenPlus)
+        }
+        alertController.addAction(sevenPlus)
+        
+        let se = UIAlertAction(title: DeviceType.se.rawValue,
+                               style: .default) { action in
+            self.setPreview(device: .se)
+        }
+        alertController.addAction(se)
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancel)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func setPreview(device: DeviceType) {
+        layoutCell.device = device
+    }
     
 }

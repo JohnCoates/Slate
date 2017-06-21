@@ -91,7 +91,7 @@ class ComponentEditBar: UIView {
         setUpTitleInteractivityIndicator()
     }
     
-    var titleInteractivityIndicator = CanvasIconView(icon: InteractivityIndicatorIcon())
+    var titleInteractivityIndicator = CanvasIconView(asset: CommonIcon.interactivityIndicator)
     
     private func setUpTitleInteractivityIndicator() {
         titleButton.addSubview(titleInteractivityIndicator)

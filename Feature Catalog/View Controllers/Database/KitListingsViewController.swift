@@ -11,7 +11,7 @@ import CoreData
 
 private typealias LocalClass = KitListingsViewController
 
-class KitListingsViewController: UITableViewController, UIGestureRecognizerDelegate {
+class KitListingsViewController: UITableViewController {
 
     typealias ObjectType = KitCoreData
     lazy var context = DataManager.context
@@ -31,10 +31,6 @@ class KitListingsViewController: UITableViewController, UIGestureRecognizerDeleg
                                                             target: self,
                                                             action: .addTapped)
         setUpDataSource()
-        
-        // Enable Swipe back
-        navigationController?.interactivePopGestureRecognizer?.delegate = self
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
 
     // MARK: - Table Setup
@@ -73,13 +69,6 @@ class KitListingsViewController: UITableViewController, UIGestureRecognizerDeleg
     
     @objc func backTapped() {
         navigationController?.popViewController(animated: true)
-    }
-    
-    // MARK: - Navigation Swipe Back
-    
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
-                           shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
     }
     
 }

@@ -19,10 +19,12 @@ class FeatureCatalogItem {
     
     var creationBlock: CreationClosure?
     var actionBlock: ActionClosure?
+    var hideNavigation = false
     
-    init(name: String,
+    init(name: String, hideNavigation: Bool = false,
          creationBlock: @escaping CreationClosure) {
         self.name = name
+        self.hideNavigation = hideNavigation
         self.creationBlock = creationBlock
     }
     

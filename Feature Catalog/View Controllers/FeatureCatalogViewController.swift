@@ -6,7 +6,7 @@
 
 import UIKit
 
-class FeatureCatalogViewController: UITableViewController {
+class FeatureCatalogViewController: UITableViewController, UIGestureRecognizerDelegate, UINavigationControllerDelegate {
     
     // MARK: - Init
     
@@ -16,7 +16,7 @@ class FeatureCatalogViewController: UITableViewController {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("This class is not NSCoder compliant")
+        Critical.methodNotDefined()
     }
     
     // MARK: - Setup
@@ -33,11 +33,50 @@ class FeatureCatalogViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if hasAppeared {
+        
+        navigationController?.delegate = self
+        
+        guard !hasAppeared else {
             return
         }
+        
         hasAppeared = true
+
         loadSavedSelection()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
+    
+    // MARK: - Navigation Controller Delegate
+    func navigationController(_ navigationController: UINavigationController,
+                              willShow viewController: UIViewController, animated: Bool) {
+        guard let item = shownItem else {
+            return
+        }
+        
+        guard self !== viewController else {
+            return
+        }
+        
+        if item.hideNavigation {
+            navigationController.setNavigationBarHidden(true, animated: animated)
+        }
+    }
+    
+    func navigationController(_ navigationController: UINavigationController,
+                              didShow viewController: UIViewController, animated: Bool) {
+        guard self === viewController else {
+            // Enable Swipe back
+            navigationController.interactivePopGestureRecognizer?.delegate = self
+            navigationController.interactivePopGestureRecognizer?.isEnabled = true
+            return
+        }
+        
+        if navigationController.isNavigationBarHidden {
+            navigationController.setNavigationBarHidden(false, animated: animated)
+        }
     }
     
     // MARK: - Table View Data Source
@@ -102,7 +141,11 @@ class FeatureCatalogViewController: UITableViewController {
     
     // MARK: - Execute Item
     
+    var shownItem: FeatureCatalogItem?
+    
     func execute(item: FeatureCatalogItem) {
+        shownItem = item
+        
         if let viewController = item.creationBlock?() {
             navigationController?.pushViewController(viewController, animated: true)
         } else if let action = item.actionBlock {
@@ -168,7 +211,9 @@ class FeatureCatalogViewController: UITableViewController {
                                 let frame = CGRect(x: 160.5, y: 321.5, width: 134.5, height: 44)
                                 return PermissionsButtonIndicatorViewController(buttonFrame: frame)
             }),
-            FeatureCatalogItem(name: "AV Preview", creationBlock: { AVPreviewCaptureViewController() })
+            FeatureCatalogItem(name: "AV Preview", creationBlock: { AVPreviewCaptureViewController() }),
+            FeatureCatalogItem(name: "Scaled", hideNavigation: true,
+                               creationBlock: { LayoutPreviewCaptureViewController(kit: Kit.default()) })
             ]
         
         return Section(title: "Capture Screen", items: items)
@@ -221,4 +266,10 @@ class FeatureCatalogViewController: UITableViewController {
         return Section(title: "Vector Images", items: items)
     }
     
+    // MARK: - Navigation Swipe Back
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+                           shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
 }

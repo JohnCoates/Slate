@@ -12,7 +12,7 @@ import CoreData
 fileprivate typealias LocalClass = CaptureComponent
 fileprivate typealias LocalView = CaptureButton
 final class CaptureComponent: Component, GenericComponent,
-EditRounding, EditSize, EditPosition, EditOpacity {
+EditRounding, EditSize, EditPosition, EditOpacity, EditSmartLayout {
     typealias CoreDataInstance = CaptureComponentCoreData
     typealias ViewInstance = CaptureButton
     
@@ -26,6 +26,7 @@ EditRounding, EditSize, EditPosition, EditOpacity {
             view.frame = frame
         }
     }
+    var smartPin: SmartPin?
     
     lazy var typedView: ViewInstance = LocalClass.createTypedView()
     

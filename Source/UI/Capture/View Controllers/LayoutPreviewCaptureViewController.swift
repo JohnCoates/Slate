@@ -31,10 +31,38 @@ final class LayoutPreviewCaptureViewController: BaseCaptureViewController {
     
     // MARK: - Lay Out Components
     
+    var componentConstraints = [NSLayoutConstraint]()
+    
+    override func layOutComponents() {
+        if componentConstraints.count > 0 {
+            NSLayoutConstraint.deactivate(componentConstraints)
+            componentConstraints.removeAll()
+        }
+        
+        super.layOutComponents()
+    }
+    
     override func performLayout(forComponent component: Component) {
-//        component.view.frame.origin = CGPoint(x: 0, y: 0)
-//        component.view.frame.size = layoutScale.convert(size: component.frame.size)
-        component.view.frame = layoutScale.convert(rect: component.frame)
+        
+        if let smartLayout = component as? EditSmartLayout,
+            let smartPin = smartLayout.smartPin {
+            let size = layoutScale.convert(rect: component.frame).size
+            performLayout(forView: component.view, withSmartPin: smartPin, size: size)
+        } else {
+            component.view.frame = layoutScale.convert(rect: component.frame)
+        }
+        
+    }
+    
+    func performLayout(forView nativeView: UIView,
+                       withSmartPin smartPin: SmartPin, size: CGSize) {
+        let constraints = smartPin.apply(nativeView: nativeView,
+                                         foreignView: view, scale: layoutScale)
+        let widthConstraint = nativeView.width.pin(to: size.width)
+        let heightConstraint = nativeView.height.pin(to: size.height)
+        
+        componentConstraints += constraints
+        componentConstraints += [widthConstraint, heightConstraint]
     }
     
     // MARK: - Camera Setup

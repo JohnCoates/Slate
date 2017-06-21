@@ -11,7 +11,7 @@ import CoreData
 
 private typealias LocalClass = ComponentListingsViewController
 
-class ComponentListingsViewController: UITableViewController, UIGestureRecognizerDelegate {
+class ComponentListingsViewController: UITableViewController {
 
     typealias ObjectType = CaptureComponentCoreData
     lazy var context = DataManager.context
@@ -33,10 +33,6 @@ class ComponentListingsViewController: UITableViewController, UIGestureRecognize
                                                                  target: self,
                                                                  action: .addTapped)
         setUpDataSource()
-        
-        // Enable Swipe back
-        navigationController?.interactivePopGestureRecognizer?.delegate = self
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }    
     
     // MARK: - Table Setup
@@ -79,15 +75,7 @@ class ComponentListingsViewController: UITableViewController, UIGestureRecognize
     
     @objc func backTapped() {
         navigationController?.popViewController(animated: true)
-    }
-    
-    // MARK: - Navigation Swipe Back
-    
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
-                           shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
-    }
-    
+    }    
 }
 
 // MARK: - Selector Extension

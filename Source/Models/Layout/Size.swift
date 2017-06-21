@@ -33,3 +33,7 @@ struct Size {
         return Size(width: 0, height: 0)
     }
 }
+
+func * (lhs: Size, rhs: Int) -> Size {
+    return Size(width: lhs.width * Float(rhs), height: lhs.height * Float(rhs))
+}

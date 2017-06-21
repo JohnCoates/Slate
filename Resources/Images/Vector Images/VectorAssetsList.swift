@@ -49,6 +49,12 @@ enum EditingImage: String, ImageAsset {
     var file: ImageFile { return .coreAssets }
 }
 
+enum CommonIcon: String, ImageAsset {
+    case interactivityIndicator = "InteractivityIndicator"
+    var section: String { return "Common.Icon" }
+    var file: ImageFile { return .coreAssets }
+}
+
 protocol ImageAsset {
     var rawValue: String { get }
     var section: String { get }

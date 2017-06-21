@@ -35,6 +35,14 @@ class LayoutScale {
         }
     }()
     
+    func convert(x: CGFloat) -> CGFloat {
+        return x * ratio.cgWidth
+    }
+    
+    func convert(y: CGFloat) -> CGFloat {
+        return y * ratio.cgHeight
+    }
+    
     func convert(size: CGSize) -> CGSize {
         return CGSize(width: size.width * ratio.cgWidth,
                       height: size.height * ratio.cgHeight)

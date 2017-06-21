@@ -31,7 +31,9 @@ extension DrawProxyDSL {
         // Editing
         EditingCheckmarkImage(),
         EditingCancelImage(),
-        EditingDeleteImage()
+        EditingDeleteImage(),
         
+        // Common Icons
+        InteractivityIndicatorImage(),
     ]
 }
