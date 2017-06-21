@@ -272,4 +272,5 @@ class FeatureCatalogViewController: UITableViewController, UIGestureRecognizerDe
                            shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
+    
 }

@@ -75,7 +75,8 @@ class ComponentListingsViewController: UITableViewController {
     
     @objc func backTapped() {
         navigationController?.popViewController(animated: true)
-    }    
+    }
+    
 }
 
 // MARK: - Selector Extension

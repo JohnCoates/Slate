@@ -131,6 +131,7 @@ final class LayoutPreviewCell: UITableViewCell {
     lazy var preview: UIView = self.capturePreviewController.view
     
     var previewSizeConstraints = [NSLayoutConstraint]()
+    
     func setUpPreview() {
         contentView.addSubview(preview)
         
@@ -158,8 +159,7 @@ final class LayoutPreviewCell: UITableViewCell {
     var screenHeightToWidthRatio: CGFloat {
         let size = device.pointsSize
         return size.cgHeight / size.cgWidth
-    }
-    
+    }    
     
     // MARK: - Device Changes
     
@@ -173,6 +173,7 @@ final class LayoutPreviewCell: UITableViewCell {
     func titleTapped() {
         delegate?.promptUserToSelectPreviewDevice()
     }
+    
 }
 
 // MARK: - Callbacks

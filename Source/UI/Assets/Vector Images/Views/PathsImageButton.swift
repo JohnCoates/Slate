@@ -30,19 +30,19 @@ class PathsImageButton: Button {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     // MARK: - Setup
     
     override func initialSetup() {
         super.initialSetup()
         rounding = 0.3
-        contentView.backgroundColor = UIColor(red:0.93, green:0.93,
-                                              blue:0.93, alpha:0.59)
+        contentView.backgroundColor = UIColor(red: 0.93, green: 0.93,
+                                              blue: 0.93, alpha: 0.59)
         setUpIconProxy()
         setUpShapes()
     }
     
     var shapes = [CAShapeLayer]()
+    
     func setUpShapes() {
         for _ in 0..<paths.count {
             let shape = CAShapeLayer()
@@ -64,6 +64,7 @@ class PathsImageButton: Button {
     }
     
     let iconProxy = UIView(frame: .zero)
+    
     func setUpIconProxy() {
         iconProxy.isHidden = true
         contentView.addSubview(iconProxy)
@@ -112,4 +113,5 @@ class PathsImageButton: Button {
     func handlePathLayout(forFrame frame: CGRect) {
         updatePaths(withFrame: frame)
     }
+    
 }

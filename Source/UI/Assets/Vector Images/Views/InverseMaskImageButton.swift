@@ -5,6 +5,7 @@
 //  Created by John Coates on 6/9/17.
 //  Copyright © 2017 John Coates. All rights reserved.
 //
+// swiftlint:disable cyclomatic_complexity function_body_length
 
 import UIKit
 
@@ -26,22 +27,22 @@ class InverseMaskButtonImage: Button {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        Critical.methodNotDefined()
     }
-    
     
     // MARK: - Setup
     
     override func initialSetup() {
         super.initialSetup()
         rounding = 0.3
-        contentView.backgroundColor = UIColor(red:0.93, green:0.93,
-                                              blue:0.93, alpha:0.59)
+        contentView.backgroundColor = UIColor(red: 0.93, green: 0.93,
+                                              blue: 0.93, alpha: 0.59)
         setUpIconProxy()
         setUpShape()
     }
     
     let shape = CAShapeLayer()
+    
     func setUpShape() {
         shape.fillRule = kCAFillRuleEvenOdd
         layer.mask = shape
@@ -74,6 +75,7 @@ class InverseMaskButtonImage: Button {
     }
     
     let iconProxy = UIView(frame: .zero)
+    
     func setUpIconProxy() {
         iconProxy.isHidden = true
         contentView.addSubview(iconProxy)
@@ -114,16 +116,19 @@ class InverseMaskButtonImage: Button {
     func handlePathLayout(forFrame frame: CGRect) {
         updateMask(withFrame: frame)
     }
+    
 }
 
 extension Canvas {
     
     func cgPaths() -> [CGPath] {
-        return paths.map({ $0.cgPath() })
+        return paths.map { $0.cgPath() }
     }
+    
 }
 
 extension Path {
+    
     func cgPath() -> CGPath {
         var instructions = self.instructions
         let first = instructions.removeFirst()
@@ -178,5 +183,5 @@ extension Path {
         
         return path.cgPath
     }
+    
 }
-
