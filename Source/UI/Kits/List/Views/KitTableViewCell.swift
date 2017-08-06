@@ -123,6 +123,6 @@ final class KitTableViewCell: UITableViewCell {
 
 // MARK: - Callbacks
 
-fileprivate struct Method {
+private struct Method {
     static let tapped = LocalClass.tapped
 }

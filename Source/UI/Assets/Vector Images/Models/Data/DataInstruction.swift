@@ -55,37 +55,37 @@ enum DataInstruction {
     
     var kind: Kind {
         switch self {
-        case .move(_):
+        case .move:
             return .move
-        case .addLine(_):
+        case .addLine:
             return .addLine
-        case .addCurve(_):
+        case .addCurve:
             return .addCurve
         case .close:
             return .close
-        case .fill(_):
+        case .fill:
             return .fill
-        case .stroke(_):
+        case .stroke:
             return .stroke
-        case .setLineWidth(_):
+        case .setLineWidth:
             return .setLineWidth
         case .usesEvenOddFillRule:
             return .usesEvenOddFillRule
-        case .initWith(_):
+        case .initWith:
             return .initWith
-        case .initWith2(_):
+        case .initWith2:
             return .initWith2
-        case .initWith3(_):
+        case .initWith3:
             return .initWith3
         case .contextSaveGState:
             return .contextSaveGState
         case .contextRestoreGState:
             return .contextRestoreGState
-        case .contextTranslateBy(_):
+        case .contextTranslateBy:
             return .contextTranslateBy
-        case .contextRotate(_):
+        case .contextRotate:
             return .contextRotate
-        case .setLineCapStyle(_):
+        case .setLineCapStyle:
             return .setLineCapStyle
         }
     }

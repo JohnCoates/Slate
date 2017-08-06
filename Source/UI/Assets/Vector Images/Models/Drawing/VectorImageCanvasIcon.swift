@@ -63,10 +63,10 @@ class VectorImageCanvasIcon: CanvasIcon {
                 context.translateBy(x: CGFloat(x), y: CGFloat(y))
             case .contextRotate(let by):
                 context.rotate(by: CGFloat(by))
-            case .initWith(_), .initWith2(_), .initWith3(_),
-                 .move(_), .addLine(_), .addCurve(_), .close,
-                 .fill(_), .stroke(_), .setLineWidth(_),
-                 .usesEvenOddFillRule, .setLineCapStyle(_):
+            case .initWith, .initWith2, .initWith3,
+                 .move, .addLine, .addCurve, .close,
+                 .fill, .stroke, .setLineWidth,
+                 .usesEvenOddFillRule, .setLineCapStyle:
                 fatalError("Invalid instruction for canvas")
             }
         }
@@ -115,7 +115,7 @@ class VectorImageCanvasIcon: CanvasIcon {
                 path.lineCapStyle = to.cgLineCap
             case .usesEvenOddFillRule:
                 path.usesEvenOddFillRule = true
-            case .initWith(_), .initWith2(_), .initWith3(_):
+            case .initWith, .initWith2, .initWith3:
                 fatalError("Unexpected double init")
             // Graphics Context
             case .contextSaveGState:

@@ -34,7 +34,7 @@ extension VectorAssetWriter {
                 add(color: color, toFloats: &floats)
             case .setLineWidth(let to):
                 add(floats: [to], toFloats: &floats)
-            case .close, .usesEvenOddFillRule, .setLineCapStyle(_):
+            case .close, .usesEvenOddFillRule, .setLineCapStyle:
                 break
             // graphics context
             case .contextSaveGState, .contextRestoreGState:

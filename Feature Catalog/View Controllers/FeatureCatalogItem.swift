@@ -7,8 +7,8 @@
 import UIKit
 
 class FeatureCatalogItem {
-    typealias CreationClosure = (Void) -> UIViewController
-    typealias ActionClosure = (Void) -> Void
+    typealias CreationClosure = () -> UIViewController
+    typealias ActionClosure = () -> Void
     
     let name: String
     var section = "Unknown"

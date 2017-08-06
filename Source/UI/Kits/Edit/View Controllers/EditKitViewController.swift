@@ -98,7 +98,7 @@ class EditKitViewController: SettingsTableViewController {
         return cell
     }
     
-    // MARK - Cell Selection
+    // MARK: - Cell Selection
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let settingsGroup = settingsGroups[indexPath.item]

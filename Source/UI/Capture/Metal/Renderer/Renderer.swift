@@ -191,6 +191,6 @@ import AVFoundation
 
 // MARK: - Callbacks
 
-fileprivate struct Method {
+private struct Method {
     static let textureHandler = Renderer.textureHandler
 }

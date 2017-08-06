@@ -246,7 +246,7 @@ class ComponentEditBar: UIView {
 
 // MARK: - Callbacks
 
-fileprivate struct Method {
+private struct Method {
     static let saveTapped = LocalClass.saveTapped
     static let cancelTapped = LocalClass.cancelTapped
     static let deleteTapped = LocalClass.deleteTapped

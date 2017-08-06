@@ -172,11 +172,11 @@ extension Path {
                 path.lineCapStyle = to.cgLineCap
             case .usesEvenOddFillRule:
                 path.usesEvenOddFillRule = true
-            case .initWith(_), .initWith2(_), .initWith3(_):
+            case .initWith, .initWith2, .initWith3:
                 fatalError("Unexpected double init")
             // Graphics Context
             case .contextSaveGState, .contextRestoreGState,
-                 .contextTranslateBy(_), .contextRotate(_):
+                 .contextTranslateBy, .contextRotate:
                 fatalError("Context commands can't be processed into a cgPath")
             }
         }

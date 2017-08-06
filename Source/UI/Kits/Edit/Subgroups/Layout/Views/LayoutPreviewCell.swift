@@ -178,7 +178,8 @@ final class LayoutPreviewCell: UITableViewCell {
 
 // MARK: - Callbacks
 
-fileprivate struct Method {
+private struct Method {
+    
     static let titleTapped = LocalClass.titleTapped
     
 }
