@@ -56,11 +56,11 @@ Carthage/Build
 # screenshots whenever they are needed.
 # For more information about the recommended setup visit:
 # https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Gitignore.md
-
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
+
 /Slate.xcworkspace
 *.mobileprovision
 *.cer
@@ -70,4 +70,7 @@ fastlane/test_output
 /Scripts/slateCLI
 /default.profraw
 /Resources/Images/Generated/coreAssets.cvif
+
+# For Messing Around
 /Scratch
+/Sandbox
