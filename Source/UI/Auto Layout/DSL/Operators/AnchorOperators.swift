@@ -16,15 +16,7 @@ precedencegroup LayoutAssignment {
     higherThan: AssignmentPrecedence
 }
 
-func --> (lhs: Anchor<XAxis>, rhs: Anchor<XAxis>) {
-    lhs.pin(to: rhs)
-}
-
-func --> (lhs: Anchor<YAxis>, rhs: Anchor<YAxis>) {
-    lhs.pin(to: rhs)
-}
-
-func --> (lhs: Anchor<Dimension>, rhs: Anchor<Dimension>) {
+func --> <Kind: AnchorType>(lhs: Anchor<Kind>, rhs: Anchor<Kind>) {
     lhs.pin(to: rhs)
 }
 
@@ -40,8 +32,39 @@ func --> (lhs: SizeAnchor, rhs: SizeAnchor) {
     lhs.pin(to: rhs)
 }
 
+func --> (lhs: SizeAnchor, rhs: CGSize) {
+    lhs.pin(to: rhs)
+}
+
 func --> (lhs: EdgesAnchor, rhs: EdgesAnchor) {
     lhs.pin(to: rhs)
+}
+
+// Views
+
+func --> <Kind: AnchorType>(lhs: Anchor<Kind>, rhs: View) {
+    lhs.pin(to: rhs)
+}
+
+func --> (lhs: XYAnchor, rhs: View) {
+    lhs.pin(to: XYAnchor(target: rhs, kind: lhs.kind))
+}
+
+func --> (lhs: SizeAnchor, rhs: View) {
+    lhs.pin(to: SizeAnchor(target: rhs))
+}
+
+func --> (lhs: EdgesAnchor, rhs: View) {
+    lhs.pin(to: EdgesAnchor(target: rhs))
+}
+
+func --> (lhs: ViewAnchors, rhs: View) {
+    for attribute in lhs.attributes {
+        let left = Anchor<AnchorType>(target: lhs.view, kind: attribute)
+        let right = Anchor<AnchorType>(target: rhs, kind: attribute)
+        
+        left.pin(to: right)
+    }
 }
 
 // MARK: - Greater Than Or Equal To
@@ -52,15 +75,20 @@ precedencegroup LayoutAtLeastAssignment {
     higherThan: AssignmentPrecedence
 }
 
-func -->+= (lhs: Anchor<XAxis>, rhs: Anchor<XAxis>) {
+
+func -->+= <Kind: AnchorType>(lhs: Anchor<Kind>, rhs: Anchor<Kind>) {
     lhs.pin(atLeast: rhs)
 }
 
-func -->+= (lhs: Anchor<YAxis>, rhs: Anchor<YAxis>) {
+func -->+= <Kind: AnchorType>(lhs: Anchor<Kind>, rhs: View) {
     lhs.pin(atLeast: rhs)
 }
 
 func -->+= (lhs: DimensionAnchor, rhs: DimensionAnchor) {
+    lhs.pin(atLeast: rhs)
+}
+
+func -->+= (lhs: DimensionAnchor, rhs: View) {
     lhs.pin(atLeast: rhs)
 }
 
@@ -88,15 +116,19 @@ precedencegroup LayoutAtMostAssignment {
     higherThan: AssignmentPrecedence
 }
 
-func -->-= (lhs: Anchor<XAxis>, rhs: Anchor<XAxis>) {
+func -->-= <Kind: AnchorType>(lhs: Anchor<Kind>, rhs: Anchor<Kind>) {
     lhs.pin(atMost: rhs)
 }
 
-func -->-= (lhs: Anchor<YAxis>, rhs: Anchor<YAxis>) {
+func -->-= <Kind: AnchorType>(lhs: Anchor<Kind>, rhs: View) {
     lhs.pin(atMost: rhs)
 }
 
 func -->-= (lhs: DimensionAnchor, rhs: DimensionAnchor) {
+    lhs.pin(atMost: rhs)
+}
+
+func -->-= (lhs: DimensionAnchor, rhs: View) {
     lhs.pin(atMost: rhs)
 }
 

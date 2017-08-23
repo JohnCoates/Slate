@@ -14,12 +14,53 @@
     typealias View = NSView
 #endif
 
+fileprivate let DSLConstraintIdentifier = "DSLConstraint"
+
+private var storedConstraints: [NSLayoutConstraint]?
+
+/// Returns all constraints constructed in closure, uses a global, not thread-safe.
+/// Run on main thread only!
+func captureConstraints(constructedInClosure closure: () -> Void) -> [NSLayoutConstraint] {
+    assert(Thread.isMainThread)
+    
+    storedConstraints = [NSLayoutConstraint]()
+    closure()
+    
+    guard let stored = storedConstraints else {
+        assertionFailure("storedConstraints unexpectedly nil")
+        return []
+    }
+    
+    storedConstraints = nil
+    return stored
+}
+
+
 class Anchor<Kind> where Kind: AnchorType {
-    let target: View
+    enum TargetType {
+        case view(_: UIView)
+        case layoutSupport(_: UILayoutSupport)
+    }
+    
+    let target: TargetType
+    var innerTarget: Any {
+        switch target {
+        case let .view(view):
+            return view
+        case let .layoutSupport(layoutSupport):
+            return layoutSupport
+        }
+    }
+    
     let attribute: NSLayoutAttribute
     
     init(target: View, kind attribute: NSLayoutAttribute) {
-        self.target = target
+        self.target = .view(target)
+        self.attribute = attribute
+    }
+    
+    init(target: UILayoutSupport, kind attribute: NSLayoutAttribute) {
+        self.target = .layoutSupport(target)
         self.attribute = attribute
     }
     
@@ -29,10 +70,24 @@ class Anchor<Kind> where Kind: AnchorType {
         return pin(to: to, relation: .equal, add: add, rank: rank)
     }
     
+    @discardableResult func pin(to view: View,
+                                add: CGFloat = 0,
+                                rank: Priority? = nil) -> NSLayoutConstraint {
+        let to = Anchor<Kind>(target: view, kind: attribute)
+        return pin(to: to, add: add, rank: rank)
+    }
+    
     @discardableResult func pin(atLeast to: Anchor<Kind>,
                                 add: CGFloat = 0,
                                 rank: Priority? = nil) -> NSLayoutConstraint {
         return pin(to: to, relation: .greaterThanOrEqual, add: add, rank: rank)
+    }
+    
+    @discardableResult func pin(atLeast view: View,
+                                add: CGFloat = 0,
+                                rank: Priority? = nil) -> NSLayoutConstraint {
+        let to = Anchor<Kind>(target: view, kind: attribute)
+        return pin(atLeast: to, add: add, rank: rank)
     }
     
     @discardableResult func pin(atMost to: Anchor<Kind>,
@@ -41,13 +96,21 @@ class Anchor<Kind> where Kind: AnchorType {
         return pin(to: to, relation: .lessThanOrEqual, add: add, rank: rank)
     }
     
+    @discardableResult func pin(atMost view: View,
+                                add: CGFloat = 0,
+                                rank: Priority? = nil) -> NSLayoutConstraint {
+        let to = Anchor<Kind>(target: view, kind: attribute)
+        return pin(atMost: to, add: add, rank: rank)
+    }
+    
     private func pin(to: Anchor<Kind>,
                      relation: NSLayoutRelation, add: CGFloat,
                      rank: Priority?) -> NSLayoutConstraint {
-        let constraint = NSLayoutConstraint(item: target,
+        
+        let constraint = NSLayoutConstraint(item: innerTarget,
                                             attribute: attribute,
                                             relatedBy: relation,
-                                            toItem: to.target,
+                                            toItem: to.innerTarget,
                                             attribute: to.attribute,
                                             multiplier: 1,
                                             constant: add)
@@ -61,11 +124,77 @@ class Anchor<Kind> where Kind: AnchorType {
         if let rank = rankMaybe {
             constraint.priority = rank.rawValue
         }
+        constraint.identifier = DSLConstraintIdentifier
         constraint.isActive = true
+        storedConstraints?.append(constraint)
     }
     
     func prepareLeftHandSideForAutoLayout() {
-        target.translatesAutoresizingMaskIntoConstraints = false
+        if case let .view(view) = target {
+            view.translatesAutoresizingMaskIntoConstraints = false
+        }
+    }
+    
+    // MARK: - Removal
+    
+    @discardableResult
+    func removeExisting() -> Bool {
+        guard case let .view(view) = target else {
+            return false
+        }
+        guard let existingConstraints = existingDSLConstraint(inView: view,
+                                                              target: view,
+                                                              attribute: attribute) else {
+                                                                return false
+        }
+        NSLayoutConstraint.deactivate(existingConstraints)
+        return true
+    }
+    
+    var existing: NSLayoutConstraint? {
+        guard case let .view(view) = target else {
+            return nil
+        }
+        guard let constraints = existingDSLConstraint(inView: view,
+                                                      target: view,
+                                                      attribute: attribute),
+            constraints.count > 0 else {
+                return nil
+        }
+        
+        return constraints.first
+    }
+    
+    /// Returns the first constraints it finds matching the attributes. Keeps going up
+    /// the view hiearchy until it finds at least one.
+    private func existingDSLConstraint(inView view: View,
+                                       target: View,
+                                       attribute: NSLayoutAttribute) -> [NSLayoutConstraint]? {
+        let constraints = view.constraints.filter {
+            guard ($0.firstItem === target && $0.firstAttribute == attribute) ||
+                ($0.secondItem === target  && $0.secondAttribute == attribute) else {
+                    return false
+            }
+            
+            guard $0.identifier == DSLConstraintIdentifier else {
+                return false
+            }
+            
+            return true
+        }
+        
+        if constraints.count > 0 {
+            return constraints
+        }
+        
+        guard let superview = view.superview else {
+            print("Unable to find DSL constraint for attribute: \(attribute)")
+            return nil
+        }
+        
+        return existingDSLConstraint(inView: superview,
+                                     target: target,
+                                     attribute: attribute)
     }
     
 }
@@ -99,11 +228,27 @@ class DimensionAnchor: Anchor<Dimension> {
         return pin(to: to, relation: .equal, add: add, times: times, rank: rank)
     }
     
+    @discardableResult func pin(to view: View,
+                                add: CGFloat = 0,
+                                times: CGFloat,
+                                rank: Priority? = nil) -> NSLayoutConstraint {
+        let to = DimensionAnchor(target: view, kind: attribute)
+        return pin(to: to, add: add, times: times, rank: rank)
+    }
+    
     @discardableResult func pin(atLeast to: DimensionAnchor,
                                 add: CGFloat = 0,
                                 times: CGFloat,
                                 rank: Priority? = nil) -> NSLayoutConstraint {
         return pin(to: to, relation: .greaterThanOrEqual, add: add, times: times, rank: rank)
+    }
+    
+    @discardableResult func pin(atLeast view: View,
+                                add: CGFloat = 0,
+                                times: CGFloat,
+                                rank: Priority? = nil) -> NSLayoutConstraint {
+        let to = DimensionAnchor(target: view, kind: attribute)
+        return pin(atLeast: to, add: add, times: times, rank: rank)
     }
     
     @discardableResult func pin(atMost to: DimensionAnchor,
@@ -113,13 +258,21 @@ class DimensionAnchor: Anchor<Dimension> {
         return pin(to: to, relation: .lessThanOrEqual, add: add, times: times, rank: rank)
     }
     
+    @discardableResult func pin(atMost view: View,
+                                add: CGFloat = 0,
+                                times: CGFloat,
+                                rank: Priority? = nil) -> NSLayoutConstraint {
+        let to = DimensionAnchor(target: view, kind: attribute)
+        return pin(atMost: to, add: add, times: times, rank: rank)
+    }
+    
     private func pin(to: DimensionAnchor,
                      relation: NSLayoutRelation, add: CGFloat, times: CGFloat,
                      rank: Priority?) -> NSLayoutConstraint {
-        let constraint = NSLayoutConstraint(item: target,
+        let constraint = NSLayoutConstraint(item: innerTarget,
                                             attribute: attribute,
                                             relatedBy: relation,
-                                            toItem: to.target,
+                                            toItem: to.innerTarget,
                                             attribute: to.attribute,
                                             multiplier: times,
                                             constant: add)
@@ -131,7 +284,7 @@ class DimensionAnchor: Anchor<Dimension> {
     private func pin(to: CGFloat,
                      relation: NSLayoutRelation,
                      rank: Priority?) -> NSLayoutConstraint {
-        let constraint = NSLayoutConstraint(item: target,
+        let constraint = NSLayoutConstraint(item: innerTarget,
                                             attribute: attribute,
                                             relatedBy: relation,
                                             toItem: nil,
@@ -159,8 +312,11 @@ class XYAnchor {
     
     let x: Anchor<XAxis>
     let y: Anchor<YAxis>
+    let kind: Kind
     
     init(target: View, kind: Kind) {
+        self.kind = kind
+        
         switch kind {
         case .center:
             x = target.centerX
@@ -230,6 +386,15 @@ class SizeAnchor {
         return [widthConstraint, heightConstraint]
     }
     
+    @discardableResult func pin(to: CGSize,
+                                add: CGFloat = 0,
+                                rank: Priority? = nil) -> [NSLayoutConstraint] {
+        let widthConstraint = width.pin(to: to.width + add, rank: rank)
+        let heightConstraint = height.pin(to: to.height + add, rank: rank)
+        
+        return [widthConstraint, heightConstraint]
+    }
+    
     @discardableResult func pin(atLeast to: SizeAnchor,
                                 add: CGFloat = 0,
                                 rank: Priority? = nil) -> [NSLayoutConstraint] {
@@ -265,7 +430,7 @@ class EdgesAnchor {
                                 rank: Priority? = nil) -> [NSLayoutConstraint] {
         
         return topLeft.pin(to: to.topLeft, add: add, rank: rank) +
-               bottomRight.pin(to: to.bottomRight, add: add, rank: rank)
+            bottomRight.pin(to: to.bottomRight, add: add, rank: rank)
     }
     
     @discardableResult func pin(atLeast to: EdgesAnchor,

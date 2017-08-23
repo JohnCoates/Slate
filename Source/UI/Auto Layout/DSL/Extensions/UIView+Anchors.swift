@@ -77,6 +77,10 @@ extension View {
         return EdgesAnchor(target: self)
     }
     
+    var anchors: ViewAnchorGenerator {
+        return ViewAnchorGenerator(view: self)
+    }
+    
     // MARK: - Margins, iOS only
     
     #if os(iOS)
@@ -110,4 +114,30 @@ extension View {
     }
     
     #endif
+}
+
+
+// MARK: - View Anchors
+
+struct ViewAnchorGenerator {
+    let view: View
+    
+    
+    init(view: View) {
+        self.view = view
+    }
+    
+    subscript (attribute: NSLayoutAttribute...) -> ViewAnchors {
+        return ViewAnchors(view: view, attributes: attribute)
+    }
+}
+
+struct ViewAnchors {
+    let view: View
+    let attributes: [NSLayoutAttribute]
+    
+    init(view: View, attributes: [NSLayoutAttribute]) {
+        self.view = view
+        self.attributes = attributes
+    }
 }
