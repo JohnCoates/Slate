@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class EditKitLinkCell: UITableViewCell {
+class EditKitLinkCell: UITableViewCell {
     
     // MARK: - Configuration
     
@@ -39,7 +39,7 @@ final class EditKitLinkCell: UITableViewCell {
     
     // MARK: - Setup
     
-    private func initialSetup() {
+    func initialSetup() {
         selectionStyle = .none
         backgroundColor = Theme.Kits.background
         
@@ -51,7 +51,7 @@ final class EditKitLinkCell: UITableViewCell {
         setUpDisclosureIndicator()
     }
     
-    private let iconView = CanvasIconButton()
+    let iconView = CanvasIconButton()
     
     private func setUpIconView() {
         contentView.addSubview(iconView)
@@ -62,19 +62,26 @@ final class EditKitLinkCell: UITableViewCell {
         iconView.centerY --> contentView.centerY
     }
     
-    private let titleLabel = UILabel()
+    let titleLabel = UILabel()
     
-    private func setUpTitle() {
-        titleLabel.font = UIFont.system(17, weight: .regular)
-        titleLabel.text = "Layout"
-        titleLabel.textColor = UIColor.white
+    func setUpTitle() {
+        configure(titleLabel: titleLabel)
         contentView.addSubview(titleLabel)
         
+        setUpTitleConstraints()
+    }
+    
+    func setUpTitleConstraints() {
         titleLabel.centerY --> iconView.centerY
         titleLabel.left.pin(to: iconView.right, add: 11)
     }
     
-    private let disclosureInidicator = CanvasIconView(asset: KitImage.disclosureIndicator)
+    func configure(titleLabel: UILabel) {
+        titleLabel.font = UIFont.system(17, weight: .regular)
+        titleLabel.textColor = UIColor.white
+    }
+    
+    let disclosureInidicator = CanvasIconView(asset: KitImage.disclosureIndicator)
     
     private func setUpDisclosureIndicator() {
         contentView.addSubview(disclosureInidicator)

@@ -460,6 +460,10 @@
 		FAD5DAE21EF8CB9300239C96 /* LayoutScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5DAE01EF8CB9300239C96 /* LayoutScale.swift */; };
 		FAD5DAE51EF8D34C00239C96 /* SmartPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5DAE41EF8D34C00239C96 /* SmartPin.swift */; };
 		FAD5DAE61EF8D34C00239C96 /* SmartPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5DAE41EF8D34C00239C96 /* SmartPin.swift */; };
+		FADFC6BC1F4D096C0023B92C /* KitPhotoSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFC6BB1F4D096C0023B92C /* KitPhotoSettingsViewController.swift */; };
+		FADFC6BD1F4D096C0023B92C /* KitPhotoSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFC6BB1F4D096C0023B92C /* KitPhotoSettingsViewController.swift */; };
+		FADFC6C01F4D4D9D0023B92C /* EditKitValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFC6BF1F4D4D9D0023B92C /* EditKitValueCell.swift */; };
+		FADFC6C11F4D4D9D0023B92C /* EditKitValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFC6BF1F4D4D9D0023B92C /* EditKitValueCell.swift */; };
 		FAE048411EE3785F00695E0D /* DrawProxyDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE048401EE3785F00695E0D /* DrawProxyDSL.swift */; };
 		FAE048441EE378A500695E0D /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE048431EE378A500695E0D /* UIColor.swift */; };
 		FAE385491EDE996B006FD2ED /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE385481EDE996B006FD2ED /* CameraPreviewViewController.swift */; };
@@ -857,6 +861,8 @@
 		FAD5DADC1EF8C92E00239C96 /* Kit+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Kit+Default.swift"; sourceTree = "<group>"; };
 		FAD5DAE01EF8CB9300239C96 /* LayoutScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutScale.swift; sourceTree = "<group>"; };
 		FAD5DAE41EF8D34C00239C96 /* SmartPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartPin.swift; sourceTree = "<group>"; };
+		FADFC6BB1F4D096C0023B92C /* KitPhotoSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitPhotoSettingsViewController.swift; sourceTree = "<group>"; };
+		FADFC6BF1F4D4D9D0023B92C /* EditKitValueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditKitValueCell.swift; sourceTree = "<group>"; };
 		FAE048401EE3785F00695E0D /* DrawProxyDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawProxyDSL.swift; sourceTree = "<group>"; };
 		FAE048431EE378A500695E0D /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		FAE385481EDE996B006FD2ED /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
@@ -1503,6 +1509,7 @@
 			children = (
 				FA60B6861EF3717D003441E1 /* EditKitHeaderView.swift */,
 				FA60B6891EF373FF003441E1 /* EditKitLinkCell.swift */,
+				FADFC6BF1F4D4D9D0023B92C /* EditKitValueCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2645,6 +2652,7 @@
 		FAD5DAC71EF8AB5600239C96 /* Subgroups */ = {
 			isa = PBXGroup;
 			children = (
+				FADFC6BA1F4D09430023B92C /* Photo Settings */,
 				FAD5DAC81EF8AB8600239C96 /* Layout */,
 			);
 			path = Subgroups;
@@ -2732,6 +2740,22 @@
 				FAD5DAE41EF8D34C00239C96 /* SmartPin.swift */,
 			);
 			path = Layout;
+			sourceTree = "<group>";
+		};
+		FADFC6BA1F4D09430023B92C /* Photo Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FADFC6BE1F4D09710023B92C /* Views */,
+				FADFC6BB1F4D096C0023B92C /* KitPhotoSettingsViewController.swift */,
+			);
+			path = "Photo Settings";
+			sourceTree = "<group>";
+		};
+		FADFC6BE1F4D09710023B92C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		FAE0483A1EE377E500695E0D /* UI */ = {
@@ -3590,6 +3614,7 @@
 				FACFE4931ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */,
 				FA3AAA8B1EE24C5B006028AC /* CameraController+StillOutput.swift in Sources */,
 				FA834BE41D9929710017CCCA /* CaptureButton.swift in Sources */,
+				FADFC6BC1F4D096C0023B92C /* KitPhotoSettingsViewController.swift in Sources */,
 				FA0462B91EC3DF81007B74A0 /* KitManager.swift in Sources */,
 				FA5F8CA61ED0649200921A61 /* Font+Convenience.swift in Sources */,
 				FA3AAAAC1EE25AC1006028AC /* Renderer+Shaders.swift in Sources */,
@@ -3626,6 +3651,7 @@
 				FA1805931EC54A0F004351B7 /* ComponentEditBar.swift in Sources */,
 				FA1805A31EC699A4004351B7 /* EditSize.swift in Sources */,
 				FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */,
+				FADFC6C01F4D4D9D0023B92C /* EditKitValueCell.swift in Sources */,
 				FA29FB491EA49B1F00EB1081 /* ComponentMenuBar.swift in Sources */,
 				FA4BD7A51ED18D0C00D1761C /* EditOpacity.swift in Sources */,
 				FAB0AA641EC6C84D008DCD23 /* ComponentEditBarDelegate.swift in Sources */,
@@ -3727,6 +3753,7 @@
 				FA2B1E791EC92AEF00E44613 /* BaseCaptureViewController.swift in Sources */,
 				FAD5DACB1EF8ABB100239C96 /* EditKitLayoutViewController.swift in Sources */,
 				FAD5DAD01EF8AC0D00239C96 /* SettingsTableViewController.swift in Sources */,
+				FADFC6C11F4D4D9D0023B92C /* EditKitValueCell.swift in Sources */,
 				FA2B1EA31EC92B5B00E44613 /* Button.swift in Sources */,
 				FAAE764D1EEB371100CA3416 /* VectorImagesTableViewController.swift in Sources */,
 				FAAE76531EEB407F00CA3416 /* VectorImageTableViewCell.swift in Sources */,
@@ -3745,6 +3772,7 @@
 				FA3AAAA11EE24EA5006028AC /* CameraController+Session.swift in Sources */,
 				FA5709A31ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift in Sources */,
 				FAAE76421EEB2F3F00CA3416 /* VectorImage.swift in Sources */,
+				FADFC6BD1F4D096C0023B92C /* KitPhotoSettingsViewController.swift in Sources */,
 				FA2B1E691EC922FD00E44613 /* LayoutConstraint+Modifying.swift in Sources */,
 				FAC424901EEF2B2700E2EB26 /* NSManagedObjectContext+Observers.swift in Sources */,
 				FAAE764F1EEB39FE00CA3416 /* Instructions.swift in Sources */,

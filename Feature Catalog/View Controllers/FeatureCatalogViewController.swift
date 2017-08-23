@@ -226,7 +226,10 @@ class FeatureCatalogViewController: UITableViewController, UIGestureRecognizerDe
             FeatureCatalogItem(name: "Edit Kit",
                                creationBlock: { EditKitViewController(kit: Kit()) }),
             FeatureCatalogItem(name: "Edit Layout",
-                               creationBlock: { EditKitLayoutViewController(kit: Kit.default()) })
+                               creationBlock: { EditKitLayoutViewController(kit: Kit.default()) }),
+            FeatureCatalogItem(name: "Photo Settings",
+                               creationBlock: { KitPhotoSettingsViewController(kit: Kit.default()) }),
+            
             
         ]
         
