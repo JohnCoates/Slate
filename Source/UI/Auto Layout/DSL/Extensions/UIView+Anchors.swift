@@ -116,12 +116,10 @@ extension View {
     #endif
 }
 
-
 // MARK: - View Anchors
 
 struct ViewAnchorGenerator {
     let view: View
-    
     
     init(view: View) {
         self.view = view
