@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class EditKitValueCell: EditKitLinkCell {
     
     // MARK: - Configuration
@@ -72,7 +71,7 @@ class EditKitValueCell: EditKitLinkCell {
     
     override func initialSetup() {
         super.initialSetup()
-        contentView.layoutMargins = UIEdgeInsetsMake(12, 12, 12, 12)
+        contentView.layoutMargins = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
         contentView.translatesAutoresizingMaskIntoConstraints = true
         setUpValue()
         setUpOptimalValueLabels()
