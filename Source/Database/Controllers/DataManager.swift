@@ -10,25 +10,42 @@ import Foundation
 import CoreData
 
 class DataManager {
+    enum StoreType {
+        case sqlLite
+        
+        var coreValue: String {
+            switch self {
+            case .sqlLite:
+                return NSSQLiteStoreType
+            }
+        }
+    }
     
-    static let context: NSManagedObjectContext = createContext()
+    static let context: NSManagedObjectContext = createGlobalContext()
     static let storeURL = store(name: "Slate")
-    static let storeType = NSSQLiteStoreType
+    static let storeType = StoreType.sqlLite
     static let storeOptions: [AnyHashable: Any]? = nil
     
     // MARK: - Context Creation
     
-    private static func createContext() -> NSManagedObjectContext {
+    private static func createGlobalContext() -> NSManagedObjectContext {
         migrateIfNecessary()
+        
+        return createContext(storeURL: storeURL, storeType: storeType)
+    }
+    
+    static func createContext(storeURL: URL?,
+                              storeType: StoreType) -> NSManagedObjectContext {
         
         let storeCoordinator = NSPersistentStoreCoordinator(managedObjectModel: DataModel.current.coreType)
         do {
-            try storeCoordinator.addPersistentStore(ofType: storeType,
+            try storeCoordinator.addPersistentStore(ofType: storeType.coreValue,
                                                     configurationName: nil,
                                                     at: storeURL,
                                                     options: storeOptions)
         } catch let error {
-            fatalError("Failed to open persistent store at \(storeURL.path): \(error)")
+            fatalError("Failed to open persistent store type: \(storeType) " +
+                       "at \(String(describing: storeURL)): \(error)")
         }
         
         let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)

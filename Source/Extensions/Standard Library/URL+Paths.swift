@@ -11,9 +11,17 @@ import Foundation
 extension URL {
     
     static var documentsDirectory: URL {
+        return userDirectory(kind: .documentDirectory)
+    }
+    
+    static var temporaryDirectory: URL {
+        return URL(fileURLWithPath: NSTemporaryDirectory())
+    }
+    
+    private static func userDirectory(kind: FileManager.SearchPathDirectory) -> URL {
         let fileManager = FileManager.default
         do {
-            return try fileManager.url(for: .documentDirectory,
+            return try fileManager.url(for: kind,
                                        in: .userDomainMask,
                                        appropriateFor: nil, create: true)
         } catch let error {

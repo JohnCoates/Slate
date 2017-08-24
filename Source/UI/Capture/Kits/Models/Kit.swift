@@ -57,7 +57,9 @@ extension Kit {
         return object
     }
     
-    func saveCoreData(withContext context: NSManagedObjectContext) {
+    typealias SaveCompletion = (Bool) -> Void
+    func saveCoreData(withContext context: NSManagedObjectContext,
+                      completion: SaveCompletion? = nil) {
         var savedObject: KitCoreData?
         
         context.performChanges(block: {
@@ -70,9 +72,11 @@ extension Kit {
         }, afterChanges: { success in
             guard success, let savedObject = savedObject else {
                 fatalError("Failed to save kit!")
+                
             }
             
             self.propogateObjectIDs(fromSavedObject: savedObject)
+            completion?(success)
         })
     }
     

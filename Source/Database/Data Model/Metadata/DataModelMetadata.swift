@@ -55,7 +55,8 @@ class DataModelMetadata {
     
     static func metadata(from store: URL) -> [String: Any] {
         do {
-            let metadata = try NSPersistentStoreCoordinator.metadataForPersistentStore(ofType: DataManager.storeType,
+            let type = DataManager.storeType.coreValue
+            let metadata = try NSPersistentStoreCoordinator.metadataForPersistentStore(ofType: type,
                                                                                        at: store,
                                                                                        options: nil)
             return metadata

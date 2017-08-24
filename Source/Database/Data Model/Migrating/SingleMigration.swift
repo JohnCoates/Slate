@@ -37,11 +37,11 @@ class SingleMigration {
         
         do {
             try manager.migrateStore(from: store,
-                                     sourceType: type,
+                                     sourceType: type.coreValue,
                                      options: options,
                                      with: mappingModel,
                                      toDestinationURL: temporaryStore,
-                                     destinationType: type,
+                                     destinationType: type.coreValue,
                                      destinationOptions: options)
         } catch let error {
             fatalError("Migration failed: \(error)")
