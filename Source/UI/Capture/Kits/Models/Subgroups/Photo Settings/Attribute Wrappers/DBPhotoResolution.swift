@@ -15,7 +15,7 @@ class DBPhotoResolution: NSObject, NSCoding {
     private var size: CGSize?
     private var kind: Int
     
-    init(resolution: PhotoSettings.Resolution) {
+    init(resolution: PhotoResolution) {
         kind = resolution.kind
         
         switch resolution {
@@ -42,8 +42,8 @@ class DBPhotoResolution: NSObject, NSCoding {
         }
     }
     
-    var value: PhotoSettings.Resolution {
-        return PhotoSettings.Resolution(kind: kind, size: size)
+    var value: PhotoResolution {
+        return PhotoResolution(kind: kind, size: size)
     }
     
     override var description: String {

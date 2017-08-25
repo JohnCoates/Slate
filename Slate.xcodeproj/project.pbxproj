@@ -485,6 +485,8 @@
 		FADFC6EC1F4F67C30023B92C /* DBPhotoResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFC6EA1F4F67C30023B92C /* DBPhotoResolution.swift */; };
 		FADFC6F01F50CD260023B92C /* DataModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFC6EF1F50CD260023B92C /* DataModelValidator.swift */; };
 		FADFC6F11F50CD260023B92C /* DataModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFC6EF1F50CD260023B92C /* DataModelValidator.swift */; };
+		FADFC6F41F50D2430023B92C /* PhotoResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFC6F31F50D2430023B92C /* PhotoResolution.swift */; };
+		FADFC6F51F50D2430023B92C /* PhotoResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFC6F31F50D2430023B92C /* PhotoResolution.swift */; };
 		FAE048411EE3785F00695E0D /* DrawProxyDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE048401EE3785F00695E0D /* DrawProxyDSL.swift */; };
 		FAE048441EE378A500695E0D /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE048431EE378A500695E0D /* UIColor.swift */; };
 		FAE385491EDE996B006FD2ED /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE385481EDE996B006FD2ED /* CameraPreviewViewController.swift */; };
@@ -893,8 +895,9 @@
 		FADFC6DE1F4E863F0023B92C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FADFC6E11F4F62180023B92C /* PhotoSettingsPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSettingsPersistence.swift; sourceTree = "<group>"; };
 		FADFC6E61F4F62640023B92C /* TestPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPersistence.swift; sourceTree = "<group>"; };
-		FADFC6EA1F4F67C30023B92C /* DBPhotoResolution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBPhotoResolution.swift; sourceTree = "<group>"; };
+		FADFC6EA1F4F67C30023B92C /* DBPhotoResolution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DBPhotoResolution.swift; path = "../../Attribute Wrappers/DBPhotoResolution.swift"; sourceTree = "<group>"; };
 		FADFC6EF1F50CD260023B92C /* DataModelValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModelValidator.swift; sourceTree = "<group>"; };
+		FADFC6F31F50D2430023B92C /* PhotoResolution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoResolution.swift; sourceTree = "<group>"; };
 		FAE048401EE3785F00695E0D /* DrawProxyDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawProxyDSL.swift; sourceTree = "<group>"; };
 		FAE048431EE378A500695E0D /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		FAE385481EDE996B006FD2ED /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
@@ -2752,7 +2755,6 @@
 			isa = PBXGroup;
 			children = (
 				FADFC6C41F4E70F60023B92C /* Subgroups */,
-				FADFC6C31F4E70EB0023B92C /* Photo Settings */,
 				FAD5DAD81EF8C8E500239C96 /* Extensions */,
 				FA0462BA1EC3DF88007B74A0 /* Kit.swift */,
 			);
@@ -2799,13 +2801,6 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		FADFC6C31F4E70EB0023B92C /* Photo Settings */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Photo Settings";
-			sourceTree = "<group>";
-		};
 		FADFC6C41F4E70F60023B92C /* Subgroups */ = {
 			isa = PBXGroup;
 			children = (
@@ -2844,17 +2839,9 @@
 			isa = PBXGroup;
 			children = (
 				FADFC6C51F4E71220023B92C /* PhotoSettings.swift */,
-				FADFC6E91F4F67990023B92C /* Attribute Wrappers */,
+				FADFC6F21F50D2290023B92C /* Attributes */,
 			);
 			path = "Photo Settings";
-			sourceTree = "<group>";
-		};
-		FADFC6E91F4F67990023B92C /* Attribute Wrappers */ = {
-			isa = PBXGroup;
-			children = (
-				FADFC6EA1F4F67C30023B92C /* DBPhotoResolution.swift */,
-			);
-			path = "Attribute Wrappers";
 			sourceTree = "<group>";
 		};
 		FADFC6EE1F50CD080023B92C /* Validation */ = {
@@ -2863,6 +2850,23 @@
 				FADFC6EF1F50CD260023B92C /* DataModelValidator.swift */,
 			);
 			path = Validation;
+			sourceTree = "<group>";
+		};
+		FADFC6F21F50D2290023B92C /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				FADFC6F61F50D2A00023B92C /* Data Models */,
+				FADFC6F31F50D2430023B92C /* PhotoResolution.swift */,
+			);
+			path = Attributes;
+			sourceTree = "<group>";
+		};
+		FADFC6F61F50D2A00023B92C /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				FADFC6EA1F4F67C30023B92C /* DBPhotoResolution.swift */,
+			);
+			path = "Data Models";
 			sourceTree = "<group>";
 		};
 		FAE0483A1EE377E500695E0D /* UI */ = {
@@ -3704,6 +3708,7 @@
 				FA60B68A1EF373FF003441E1 /* EditKitLinkCell.swift in Sources */,
 				FA834BDD1D9920010017CCCA /* Platform.swift in Sources */,
 				FA5F8C9F1ECFF81400921A61 /* UIScreen+Layout.swift in Sources */,
+				FADFC6F41F50D2430023B92C /* PhotoResolution.swift in Sources */,
 				FABB16AD1D9F6DAB00A8AC6C /* ChromaticAberration.metal in Sources */,
 				FAC21B5E1EEE13E0007C17AF /* DBRect.swift in Sources */,
 				FAD5DAD31EF8B2A400239C96 /* LayoutPreviewCell.swift in Sources */,
@@ -3840,6 +3845,7 @@
 				FAAE766F1EEB741500CA3416 /* VectorImagesManager.swift in Sources */,
 				FA60B6881EF3717D003441E1 /* EditKitHeaderView.swift in Sources */,
 				FA3AAAC51EE25FEB006028AC /* Size.swift in Sources */,
+				FADFC6F51F50D2430023B92C /* PhotoResolution.swift in Sources */,
 				FA2B1EA41EC92B5B00E44613 /* CameraController.swift in Sources */,
 				FAAE765C1EEB5FDD00CA3416 /* VectorAssetsList.swift in Sources */,
 				FADFC6EC1F4F67C30023B92C /* DBPhotoResolution.swift in Sources */,
