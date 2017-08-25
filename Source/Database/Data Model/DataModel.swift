@@ -47,7 +47,7 @@ class DataModel {
                      componentBase]
         entities += componentBase.subentities
         
-        precondition(validate(entities: entities), "Valid entities.")
+        assert(validate(entities: entities), "Valid entities.")
         
         coreType.entities = entities
     }
