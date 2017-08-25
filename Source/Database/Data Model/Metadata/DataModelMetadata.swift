@@ -61,7 +61,7 @@ class DataModelMetadata {
                                                                                        options: nil)
             return metadata
         } catch let error {
-            fatalError("Error getting metadata: \(error)")
+            fatalError("Error getting metadata for \(store.path): \(error)")
         }
     }
     

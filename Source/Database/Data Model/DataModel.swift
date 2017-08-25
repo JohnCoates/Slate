@@ -43,6 +43,7 @@ class DataModel {
         var entities: [NSEntityDescription]
         let componentBase = graph.getEntity(for: ComponentCoreData.self)
         entities = [ graph.getEntity(for: KitCoreData.self),
+                     graph.getEntity(for: PhotoSettingsCoreData.self),
                      componentBase]
         entities += componentBase.subentities
         

@@ -30,6 +30,10 @@ class Kit {
         }
     }
     
+    // MARK: - Settings
+    
+    lazy var photoSettings: PhotoSettings = PhotoSettings()
+    
 }
 
 // MARK: - Core Data
@@ -66,6 +70,8 @@ extension Kit {
             let object = self.databaseObject(in: context)
             self.coreDataID = object.objectID
             object.name = self.name
+            let photoSettings = self.photoSettings
+            object.photoSettings = photoSettings.databaseObject(withMutableContext: context)
             savedObject = object
             
             object.components = Set(self.components.map { $0.databaseObject(withMutableContext: context) })
@@ -111,6 +117,7 @@ extension Kit {
 class KitCoreData: NSManagedObject, Managed {
     @NSManaged var name: String
     @NSManaged var components: Set<ComponentCoreData>
+    @NSManaged var photoSettings: PhotoSettingsCoreData?
     
     class var entityName: String { return String(describing: self) }
     
@@ -119,10 +126,14 @@ class KitCoreData: NSManagedObject, Managed {
                               class: self)
         
         let componentEntity = graph.getEntity(for: ComponentCoreData.self)
+        let photoSettingsEntity = graph.getEntity(for: PhotoSettingsCoreData.self)
         entity.addAttribute(name: "name", type: .string)
+//        entity.addAttribute(name: "photoSettings", type: .objectID)
+        entity.addSingleRelationship(name: "photoSettings",
+                                       entity: photoSettingsEntity)
         entity.addRelationship(name: "components",
                                entity: componentEntity,
-                               cardinality: 0...0)
+                               count: 0...256)
         
         return entity
     }
@@ -132,6 +143,12 @@ class KitCoreData: NSManagedObject, Managed {
         kit.coreDataID = objectID
         kit.name = name
         kit.components = components.map { $0.instance() }
+        if let photoSettings = photoSettings {
+            kit.photoSettings = photoSettings.instance()
+        } else {
+            kit.photoSettings = PhotoSettings()
+        }
+        
         return kit
     }
     

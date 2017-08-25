@@ -35,15 +35,30 @@ class DBEntity {
     
     @discardableResult
     func addRelationship(name: String, entity: NSEntityDescription,
-                         cardinality: CountableClosedRange<Int>) -> NSRelationshipDescription {
+                         count: CountableClosedRange<Int>) -> NSRelationshipDescription {
         let relationship = NSRelationshipDescription()
         relationship.name = name
         relationship.destinationEntity = entity
         relationship.deleteRule = .cascadeDeleteRule
         relationship.isIndexed = false
         relationship.isOptional = false
+        relationship.minCount = count.lowerBound
+        relationship.maxCount = count.upperBound
+        
+        coreType.properties.append(relationship)
+        return relationship
+    }
+    
+    @discardableResult
+    func addSingleRelationship(name: String, entity: NSEntityDescription) -> NSRelationshipDescription {
+        let relationship = NSRelationshipDescription()
+        relationship.name = name
+        relationship.destinationEntity = entity
+        relationship.deleteRule = .cascadeDeleteRule
+        relationship.isIndexed = false
+        relationship.isOptional = true
         relationship.minCount = 0
-        relationship.maxCount = 10
+        relationship.maxCount = 1
         
         coreType.properties.append(relationship)
         return relationship
