@@ -483,6 +483,8 @@
 		FADFC6E71F4F62640023B92C /* TestPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFC6E61F4F62640023B92C /* TestPersistence.swift */; };
 		FADFC6EB1F4F67C30023B92C /* DBPhotoResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFC6EA1F4F67C30023B92C /* DBPhotoResolution.swift */; };
 		FADFC6EC1F4F67C30023B92C /* DBPhotoResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFC6EA1F4F67C30023B92C /* DBPhotoResolution.swift */; };
+		FADFC6F01F50CD260023B92C /* DataModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFC6EF1F50CD260023B92C /* DataModelValidator.swift */; };
+		FADFC6F11F50CD260023B92C /* DataModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFC6EF1F50CD260023B92C /* DataModelValidator.swift */; };
 		FAE048411EE3785F00695E0D /* DrawProxyDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE048401EE3785F00695E0D /* DrawProxyDSL.swift */; };
 		FAE048441EE378A500695E0D /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE048431EE378A500695E0D /* UIColor.swift */; };
 		FAE385491EDE996B006FD2ED /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE385481EDE996B006FD2ED /* CameraPreviewViewController.swift */; };
@@ -892,6 +894,7 @@
 		FADFC6E11F4F62180023B92C /* PhotoSettingsPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSettingsPersistence.swift; sourceTree = "<group>"; };
 		FADFC6E61F4F62640023B92C /* TestPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPersistence.swift; sourceTree = "<group>"; };
 		FADFC6EA1F4F67C30023B92C /* DBPhotoResolution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBPhotoResolution.swift; sourceTree = "<group>"; };
+		FADFC6EF1F50CD260023B92C /* DataModelValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModelValidator.swift; sourceTree = "<group>"; };
 		FAE048401EE3785F00695E0D /* DrawProxyDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawProxyDSL.swift; sourceTree = "<group>"; };
 		FAE048431EE378A500695E0D /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		FAE385481EDE996B006FD2ED /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
@@ -2405,6 +2408,7 @@
 		FABC39411EF1DEBD00ECE935 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				FADFC6EE1F50CD080023B92C /* Validation */,
 				FABC39491EF1FD3C00ECE935 /* Migrating */,
 				FABC39451EF1EA2200ECE935 /* Metadata */,
 				FACF0F3D1EECDB4600B0211C /* Object Models */,
@@ -2851,6 +2855,14 @@
 				FADFC6EA1F4F67C30023B92C /* DBPhotoResolution.swift */,
 			);
 			path = "Attribute Wrappers";
+			sourceTree = "<group>";
+		};
+		FADFC6EE1F50CD080023B92C /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				FADFC6EF1F50CD260023B92C /* DataModelValidator.swift */,
+			);
+			path = Validation;
 			sourceTree = "<group>";
 		};
 		FAE0483A1EE377E500695E0D /* UI */ = {
@@ -3660,6 +3672,7 @@
 				FA5709A21ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift in Sources */,
 				FAAE76721EEB881C00CA3416 /* VectorImagesManager.swift in Sources */,
 				FA76F5461ED48FFC00059906 /* ImageCaptureManager.swift in Sources */,
+				FADFC6F01F50CD260023B92C /* DataModelValidator.swift in Sources */,
 				FAF10D181ECAFF1D0008690E /* PermissionsWindow.swift in Sources */,
 				FABB16A21D9F402C00A8AC6C /* TextureCoordinates.swift in Sources */,
 				FA3AAA8D1EE24C6E006028AC /* CameraController+Presets.swift in Sources */,
@@ -3870,6 +3883,7 @@
 				FA5709A71ECC7172000362C8 /* PhotosPermissionViewController.swift in Sources */,
 				FA60B6841EF338F6003441E1 /* EditKitViewController.swift in Sources */,
 				FABC394C1EF1FD6400ECE935 /* DataMigrator.swift in Sources */,
+				FADFC6F11F50CD260023B92C /* DataModelValidator.swift in Sources */,
 				FAC21B5B1EEDEB32007C17AF /* Managed.swift in Sources */,
 				FA2B1E591EC80E8500E44613 /* FeatureCatalogItem.swift in Sources */,
 				FAF10D0F1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,

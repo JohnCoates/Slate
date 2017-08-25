@@ -47,7 +47,16 @@ class DataModel {
                      componentBase]
         entities += componentBase.subentities
         
+        precondition(validate(entities: entities), "Valid entities.")
+        
         coreType.entities = entities
+    }
+    
+    private func validate(entities: [NSEntityDescription]) -> Bool {
+        let validator = DataModelValidator()
+        
+        return validator.validate(entities: entities,
+                                  graph: graph)
     }
     
     // MARK: - Init

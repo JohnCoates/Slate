@@ -39,4 +39,8 @@ class DataModelGraph {
         fatalError("Graph is missing managed object with entity name: \(entityName)")
     }
     
+    var entityNames: [String] {
+        return entities.map { $0.name! }
+    }
+    
 }
