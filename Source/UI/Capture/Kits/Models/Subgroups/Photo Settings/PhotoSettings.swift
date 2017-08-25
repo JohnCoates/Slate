@@ -46,6 +46,7 @@ class PhotoSettings {
         
         return object
     }
+    
 }
 
 // MARK: - Core Data
@@ -82,4 +83,5 @@ class PhotoSettingsCoreData: NSManagedObject, Managed {
     func configureWithStandardProperties(instance: PhotoSettings) {
         instance.resolution = resolution.value
     }
+    
 }

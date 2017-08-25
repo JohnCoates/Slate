@@ -91,4 +91,5 @@ class KitPhotoSettingsViewController: SettingsTableViewController {
             return cell
         }
     }
+    
 }

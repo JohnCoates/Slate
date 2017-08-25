@@ -125,7 +125,7 @@ struct ViewAnchorGenerator {
         self.view = view
     }
     
-    subscript (attribute: NSLayoutAttribute...) -> ViewAnchors {
+    subscript(attribute: NSLayoutAttribute...) -> ViewAnchors {
         return ViewAnchors(view: view, attributes: attribute)
     }
 }

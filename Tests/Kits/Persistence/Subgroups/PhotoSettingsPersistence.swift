@@ -41,7 +41,7 @@ class PhotoSettingsPersistence: TestPersistence {
         }
     }
     
-    func testSaving2_Load() {
+    func testSaving2Load() {
         let context = DataManager.createContext(storeURL: storeURL,
                                                 storeType: .sqlLite)
         
@@ -73,4 +73,5 @@ class PhotoSettingsPersistence: TestPersistence {
             XCTFail("Missing photo resolution!")
         }
     }
+    
 }

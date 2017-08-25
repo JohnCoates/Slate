@@ -62,6 +62,7 @@ extension Kit {
     }
     
     typealias SaveCompletion = (Bool) -> Void
+    
     func saveCoreData(withContext context: NSManagedObjectContext,
                       completion: SaveCompletion? = nil) {
         var savedObject: KitCoreData?

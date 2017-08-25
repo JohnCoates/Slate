@@ -91,6 +91,7 @@ class EditKitValueCell: EditKitLinkCell {
     }
     
     private let optimalValueTitleLabel = UILabel()
+    
     private func setUpOptimalValueTitle() {
         configure(optimalLabel: optimalValueTitleLabel)
         optimalValueTitleLabel.text = "Optimal Value"
@@ -162,6 +163,7 @@ class EditKitValueCell: EditKitLinkCell {
     }
     
     private var storedConstraints = [NSLayoutConstraint]()
+    
     private func store(constraints: [NSLayoutConstraint]) {
         storedConstraints.append(contentsOf: constraints)
     }
