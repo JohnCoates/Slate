@@ -886,7 +886,7 @@
 		FAD5DAE41EF8D34C00239C96 /* SmartPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartPin.swift; sourceTree = "<group>"; };
 		FADFC6BB1F4D096C0023B92C /* KitPhotoSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitPhotoSettingsViewController.swift; sourceTree = "<group>"; };
 		FADFC6BF1F4D4D9D0023B92C /* EditKitValueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditKitValueCell.swift; sourceTree = "<group>"; };
-		FADFC6C51F4E71220023B92C /* PhotoSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoSettings.swift; path = ../PhotoSettings.swift; sourceTree = "<group>"; };
+		FADFC6C51F4E71220023B92C /* PhotoSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoSettings.swift; path = PhotoSettings.swift; sourceTree = "<group>"; };
 		FADFC6CA1F4E733A0023B92C /* TestKitsPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestKitsPersistence.swift; sourceTree = "<group>"; };
 		FADFC6CE1F4E74A20023B92C /* SizeAnchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeAnchor.swift; sourceTree = "<group>"; };
 		FADFC6D21F4E74D70023B92C /* EdgesAnchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgesAnchor.swift; sourceTree = "<group>"; };
@@ -895,7 +895,7 @@
 		FADFC6DE1F4E863F0023B92C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FADFC6E11F4F62180023B92C /* PhotoSettingsPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSettingsPersistence.swift; sourceTree = "<group>"; };
 		FADFC6E61F4F62640023B92C /* TestPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPersistence.swift; sourceTree = "<group>"; };
-		FADFC6EA1F4F67C30023B92C /* DBPhotoResolution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DBPhotoResolution.swift; path = "../../Attribute Wrappers/DBPhotoResolution.swift"; sourceTree = "<group>"; };
+		FADFC6EA1F4F67C30023B92C /* DBPhotoResolution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DBPhotoResolution.swift; path = DBPhotoResolution.swift; sourceTree = "<group>"; };
 		FADFC6EF1F50CD260023B92C /* DataModelValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModelValidator.swift; sourceTree = "<group>"; };
 		FADFC6F31F50D2430023B92C /* PhotoResolution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoResolution.swift; sourceTree = "<group>"; };
 		FAE048401EE3785F00695E0D /* DrawProxyDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawProxyDSL.swift; sourceTree = "<group>"; };
@@ -2799,6 +2799,7 @@
 			children = (
 			);
 			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FADFC6C41F4E70F60023B92C /* Subgroups */ = {
