@@ -14,6 +14,10 @@ extension UITableView {
         register(type, forCellReuseIdentifier: String(describing: type))
     }
     
+    func registerHeader<HeaderType: UITableViewHeaderFooterView>(type: HeaderType.Type) {
+        register(type, forHeaderFooterViewReuseIdentifier: String(describing: type))
+    }
+    
     func dequeueReusableCell<CellType: UITableViewCell>(for indexPath: IndexPath) -> CellType {
         let identifier = String(describing: CellType.self)
         let untypedCell = dequeueReusableCell(withIdentifier: identifier, for: indexPath)
@@ -27,4 +31,19 @@ extension UITableView {
         return cell
     }
     
+    func reusableHeader<HeaderType: UITableViewHeaderFooterView>() -> HeaderType {
+        let identifier = String(describing: HeaderType.self)
+        guard let untyped = dequeueReusableHeaderFooterView(withIdentifier: identifier) else {
+            fatalError("No header or footer registered for type \(HeaderType.self)")
+        }
+        
+        guard let cell = untyped as? HeaderType else {
+            let error = "Couldn't cast header \(untyped) " +
+            "with identifier \(identifier) as \(HeaderType.self)"
+            fatalError(error)
+        }
+        
+        return cell
+    }
+
 }

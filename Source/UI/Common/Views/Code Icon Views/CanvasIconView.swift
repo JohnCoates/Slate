@@ -17,6 +17,14 @@ class CanvasIconView: UIView {
         self.init(icon: icon)
     }
     
+    var color: UIColor? {
+        didSet {
+            if let vectorIcon = icon as? VectorImageCanvasIcon {
+                vectorIcon.customColor = color
+            }
+        }
+    }
+    
     let icon: CanvasIcon
     
     init(icon: CanvasIcon) {

@@ -117,6 +117,8 @@ class EditKitSettingCell: UITableViewCell {
     
     private func setUpDisclosureIndicator() {
         contentView.addSubview(disclosureIndicator)
+        disclosureIndicator.color = UIColor(red: 0.78, green: 0.78,
+                                            blue: 0.80, alpha: 1.00)
     }
     
     private func setUpDisclosureIndicatorConstraints() {
@@ -154,4 +156,5 @@ class EditKitSettingCell: UITableViewCell {
         
         constructConstraints()
     }
+    
 }

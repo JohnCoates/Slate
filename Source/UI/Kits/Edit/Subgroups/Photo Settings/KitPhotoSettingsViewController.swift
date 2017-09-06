@@ -9,9 +9,10 @@
 import UIKit
 
 class KitPhotoSettingsViewController: SettingsTableViewController {
+    
     private struct Row {
         var title: String
-        var detail: String? = nil
+        var detail: String?
         var disclosure: Bool = false
     }
     
@@ -49,6 +50,15 @@ class KitPhotoSettingsViewController: SettingsTableViewController {
                 return "Frame Rate"
             case .burstSpeed:
                 return "Burst Speed"
+            }
+        }
+        
+        var footer: String? {
+            switch self {
+            case .burstSpeed:
+                return "Value is being overriden by app-wide settings."
+            default:
+                return nil
             }
         }
     }
@@ -108,9 +118,16 @@ class KitPhotoSettingsViewController: SettingsTableViewController {
         return settings[section].rows.count
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView,
+                            titleForHeaderInSection section: Int) -> String? {
         let setting = settings[section]
         return setting.name
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            titleForFooterInSection section: Int) -> String? {
+        let setting = settings[section]
+        return setting.footer
     }
     
     override func tableView(_ tableView: UITableView,
@@ -128,6 +145,24 @@ class KitPhotoSettingsViewController: SettingsTableViewController {
         cell.detail = row.detail
         cell.showDisclosure = row.disclosure
         return cell
+    }
+    
+    // MARK: - Table View Delegate
+    
+    override func tableView(_ tableView: UITableView,
+                            willDisplayHeaderView view: UIView,
+                            forSection section: Int) {
+        if let header = view as? UITableViewHeaderFooterView,
+            let label = header.textLabel {
+            label.textColor = Theme.Kits.headerText
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        if let header = view as? UITableViewHeaderFooterView,
+            let label = header.textLabel {
+            label.textColor = Theme.Kits.headerText
+        }
     }
     
 }

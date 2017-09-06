@@ -50,6 +50,8 @@ class Theme {
         static let seperatorColor = UIColor(red: 0.20, green: 0.22,
                                             blue: 0.27, alpha: 1.00)
         static let text = UIColor.white
+        static let headerText = UIColor(red: 0.83, green: 0.83,
+                                        blue: 0.86, alpha: 1.00)
         static let dateText = UIColor(red: 0.59, green: 0.64,
                                       blue: 0.71, alpha: 1.00)
         static let cellTitle: UIFont = {

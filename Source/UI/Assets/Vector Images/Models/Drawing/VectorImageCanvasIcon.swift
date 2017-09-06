@@ -18,6 +18,8 @@ class VectorImageCanvasIcon: CanvasIcon {
         return CGSize(width: self.width, height: self.height)
     }
     
+    var customColor: UIColor?
+    
     convenience init(asset: ImageAsset) {
         let canvas = Canvas.from(asset: asset)
         self.init(canvas: canvas)
@@ -102,11 +104,11 @@ class VectorImageCanvasIcon: CanvasIcon {
             case .close:
                 path.close()
             case .fill(let color):
-                let uiColor: UIColor = color.uiColor
+                let uiColor = customColor ?? color.uiColor
                 uiColor.setFill()
                 path.fill()
             case .stroke(color: let color):
-                let uiColor: UIColor = color.uiColor
+                let uiColor = customColor ?? color.uiColor
                 uiColor.setStroke()
                 path.stroke()
             case .setLineWidth(let to):
