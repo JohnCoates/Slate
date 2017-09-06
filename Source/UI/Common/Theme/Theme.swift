@@ -38,13 +38,20 @@ class Theme {
     static let navigationBarTintColor = Settings.background
     
     struct Settings {
-        static let background = UIColor(red: 0.11, green: 0.12, blue: 0.15, alpha: 1.00)
+        static let background = UIColor(red: 0.11, green: 0.12,
+                                        blue: 0.15, alpha: 1.00)
     }
     
     struct Kits {
-        static let background = UIColor(red: 0.11, green: 0.12, blue: 0.15, alpha: 1.00)
+        static let background = UIColor(red: 0.11, green: 0.12,
+                                        blue: 0.15, alpha: 1.00)
+        static let cellBackground = UIColor(red: 0.12, green: 0.13,
+                                            blue: 0.17, alpha: 1.00)
+        static let seperatorColor = UIColor(red: 0.20, green: 0.22,
+                                            blue: 0.27, alpha: 1.00)
         static let text = UIColor.white
-        static let dateText = UIColor(red: 0.59, green: 0.64, blue: 0.71, alpha: 1.00)
+        static let dateText = UIColor(red: 0.59, green: 0.64,
+                                      blue: 0.71, alpha: 1.00)
         static let cellTitle: UIFont = {
             return UIFont.system(14, weight: .medium)
         }()
