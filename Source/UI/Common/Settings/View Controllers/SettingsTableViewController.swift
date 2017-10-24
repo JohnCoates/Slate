@@ -13,7 +13,7 @@ enum SettingsLink {
     case iconLink(name: String, icon: ImageAsset)
 }
 
-class SettingsTableViewController: UITableViewController {
+class SettingsTableViewController: UITableViewController, NavigationConvenience {
 
     // MARK: - View Management
     
@@ -21,6 +21,8 @@ class SettingsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         setUpTableView()
+        setUpMinimalistBackButton()
+        tableView.indicatorStyle = .white
     }
     
     func setUpTableView() {
@@ -33,6 +35,7 @@ class SettingsTableViewController: UITableViewController {
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 80
+        tableView.keyboardDismissMode = .interactive
     }
 
     // MARK: - Table View Data Source

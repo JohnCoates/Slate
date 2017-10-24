@@ -25,14 +25,6 @@ class Theme {
         // hide the 1px line at the bottom of the nav bar
         navigationBar.shadowImage = UIImage()
         navigationBar.setBackgroundImage(UIImage(), for: .default)
-        
-        // hide back button text
-        let navigationBarButton = UIBarButtonItem.appearance(whenContainedInInstancesOf: [UINavigationBar.self])
-        navigationBarButton.setTitleTextAttributes([
-            NSFontAttributeName: UIFont.systemFont(ofSize: 0.1),
-            NSForegroundColorAttributeName: UIColor.clear
-            ],
-                                                   for: UIControlState())
     }
     
     static let navigationBarTintColor = Settings.background
@@ -47,7 +39,7 @@ class Theme {
                                         blue: 0.15, alpha: 1.00)
         static let cellBackground = UIColor(red: 0.12, green: 0.13,
                                             blue: 0.17, alpha: 1.00)
-        static let seperatorColor = UIColor(red: 0.20, green: 0.22,
+        static let separatorColor = UIColor(red: 0.20, green: 0.22,
                                             blue: 0.27, alpha: 1.00)
         static let text = UIColor.white
         static let headerText = UIColor(red: 0.83, green: 0.83,

@@ -1,14 +1,14 @@
 //
-//  EditKitSettingCell.swift
+//  EditKitInputCell.swift
 //  Slate
 //
-//  Created by John Coates on 9/6/17.
+//  Created by John Coates on 10/23/17.
 //  Copyright © 2017 John Coates. All rights reserved.
 //
 
 import UIKit
 
-class EditKitSettingCell: UITableViewCell {
+class EditKitInputCell: UITableViewCell {
     
     // MARK: - Configuration
     
@@ -26,19 +26,15 @@ class EditKitSettingCell: UITableViewCell {
         }
     }
     
-    var showDisclosure = true {
+    var value: String? {
         didSet {
-            setNeedsUpdateConstraints()
+            textField.text = value
         }
     }
     
-    var showCheckmark = false {
+    var showDisclosure = true {
         didSet {
-            if showCheckmark {
-                accessoryType = .checkmark
-            } else {
-                accessoryType = .none
-            }
+            setNeedsUpdateConstraints()
         }
     }
     
@@ -50,6 +46,7 @@ class EditKitSettingCell: UITableViewCell {
             setNeedsUpdateConstraints()
         }
     }
+
     
     // MARK: - Init
     
@@ -75,6 +72,7 @@ class EditKitSettingCell: UITableViewCell {
         setUpTitle()
         setUpDisclosureIndicator()
         setUpDetailLabel()
+        setUpTextField()
         
         setNeedsUpdateConstraints()
     }
@@ -120,7 +118,7 @@ class EditKitSettingCell: UITableViewCell {
     
     func configure(titleLabel: UILabel) {
         titleLabel.font = UIFont.system(17, weight: .regular)
-        titleLabel.textColor = UIColor.white
+        titleLabel.textColor = .white
     }
     
     let disclosureIndicator = CanvasIconView(asset: KitImage.disclosureIndicator)
@@ -137,6 +135,20 @@ class EditKitSettingCell: UITableViewCell {
         disclosureIndicator.centerY --> contentView
         disclosureIndicator.right.pin(to: contentView.rightMargin)
     }
+    
+    let textField = TableCellTextField()
+    
+    private func setUpTextField() {
+        textField.backgroundColor = .clear
+        textField.textColor = .white
+        
+        contentView.addSubview(textField)
+        
+        textField.centerY --> contentView
+        textField.left.pin(to: contentView, add: 135)
+        textField.right --> contentView.rightMargin
+    }
+    
     
     // MARK: - Constraints
     

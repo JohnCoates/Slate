@@ -201,6 +201,8 @@
 		FA60B68B1EF373FF003441E1 /* EditKitLinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60B6891EF373FF003441E1 /* EditKitLinkCell.swift */; };
 		FA60B68E1EF37515003441E1 /* UITableView+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60B68D1EF37515003441E1 /* UITableView+Cells.swift */; };
 		FA60B68F1EF37515003441E1 /* UITableView+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60B68D1EF37515003441E1 /* UITableView+Cells.swift */; };
+		FA61B16F1F9EEAD90069B1A6 /* TableCellTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61B16E1F9EEAD90069B1A6 /* TableCellTextField.swift */; };
+		FA61B1701F9EEAD90069B1A6 /* TableCellTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61B16E1F9EEAD90069B1A6 /* TableCellTextField.swift */; };
 		FA64774F1EE3981C00A63A22 /* UIBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64774E1EE3981C00A63A22 /* UIBezierPath.swift */; };
 		FA6477521EE3986B00A63A22 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6477511EE3986B00A63A22 /* CGPoint.swift */; };
 		FA6477571EE39E9500A63A22 /* EditBar+ProgressControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6477541EE39E2100A63A22 /* EditBar+ProgressControls.swift */; };
@@ -246,6 +248,16 @@
 		FA6E97AD1EEA3D6500A73DFA /* Writer+Generators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E97AB1EEA3D6500A73DFA /* Writer+Generators.swift */; };
 		FA6E97AF1EEA3DD900A73DFA /* Writer+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E97AE1EEA3DD900A73DFA /* Writer+Utilities.swift */; };
 		FA6E97B01EEA3DD900A73DFA /* Writer+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E97AE1EEA3DD900A73DFA /* Writer+Utilities.swift */; };
+		FA7648F21F9EA0C700C6DD87 /* ResolutionSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7648F11F9EA0C700C6DD87 /* ResolutionSettingViewController.swift */; };
+		FA7648F31F9EA0C700C6DD87 /* ResolutionSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7648F11F9EA0C700C6DD87 /* ResolutionSettingViewController.swift */; };
+		FA7648F51F9EAA6C00C6DD87 /* EditKitInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7648F41F9EAA6C00C6DD87 /* EditKitInputCell.swift */; };
+		FA7648F61F9EAA6C00C6DD87 /* EditKitInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7648F41F9EAA6C00C6DD87 /* EditKitInputCell.swift */; };
+		FA7648FD1F9EDC0B00C6DD87 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7648FC1F9EDC0B00C6DD87 /* KeyboardHandler.swift */; };
+		FA7648FE1F9EDC0B00C6DD87 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7648FC1F9EDC0B00C6DD87 /* KeyboardHandler.swift */; };
+		FA7649011F9EE1C600C6DD87 /* NavigationViewController+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7649001F9EE1C600C6DD87 /* NavigationViewController+Convenience.swift */; };
+		FA7649021F9EE1C600C6DD87 /* NavigationViewController+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7649001F9EE1C600C6DD87 /* NavigationViewController+Convenience.swift */; };
+		FA7649041F9EE80200C6DD87 /* TextFieldHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7649031F9EE80200C6DD87 /* TextFieldHandler.swift */; };
+		FA7649051F9EE80200C6DD87 /* TextFieldHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7649031F9EE80200C6DD87 /* TextFieldHandler.swift */; };
 		FA76F5421ED3C32D00059906 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */; };
 		FA76F5461ED48FFC00059906 /* ImageCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76F5451ED48FFC00059906 /* ImageCaptureManager.swift */; };
 		FA76F54C1ED4A2C100059906 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA76F54A1ED4A2C100059906 /* Fabric.framework */; };
@@ -719,6 +731,7 @@
 		FA60B6861EF3717D003441E1 /* EditKitHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditKitHeaderView.swift; sourceTree = "<group>"; };
 		FA60B6891EF373FF003441E1 /* EditKitLinkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditKitLinkCell.swift; sourceTree = "<group>"; };
 		FA60B68D1EF37515003441E1 /* UITableView+Cells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Cells.swift"; sourceTree = "<group>"; };
+		FA61B16E1F9EEAD90069B1A6 /* TableCellTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellTextField.swift; sourceTree = "<group>"; };
 		FA64774E1EE3981C00A63A22 /* UIBezierPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBezierPath.swift; sourceTree = "<group>"; };
 		FA6477511EE3986B00A63A22 /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		FA6477541EE39E2100A63A22 /* EditBar+ProgressControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditBar+ProgressControls.swift"; sourceTree = "<group>"; };
@@ -745,6 +758,11 @@
 		FA6E97A81EEA3D3100A73DFA /* Writer+DataSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Writer+DataSections.swift"; sourceTree = "<group>"; };
 		FA6E97AB1EEA3D6500A73DFA /* Writer+Generators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Writer+Generators.swift"; sourceTree = "<group>"; };
 		FA6E97AE1EEA3DD900A73DFA /* Writer+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Writer+Utilities.swift"; sourceTree = "<group>"; };
+		FA7648F11F9EA0C700C6DD87 /* ResolutionSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResolutionSettingViewController.swift; sourceTree = "<group>"; };
+		FA7648F41F9EAA6C00C6DD87 /* EditKitInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditKitInputCell.swift; sourceTree = "<group>"; };
+		FA7648FC1F9EDC0B00C6DD87 /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
+		FA7649001F9EE1C600C6DD87 /* NavigationViewController+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NavigationViewController+Convenience.swift"; sourceTree = "<group>"; };
+		FA7649031F9EE80200C6DD87 /* TextFieldHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldHandler.swift; sourceTree = "<group>"; };
 		FA76F5451ED48FFC00059906 /* ImageCaptureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCaptureManager.swift; sourceTree = "<group>"; };
 		FA76F54A1ED4A2C100059906 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		FA76F54B1ED4A2C100059906 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -1550,6 +1568,7 @@
 				FA60B6891EF373FF003441E1 /* EditKitLinkCell.swift */,
 				FADFC6BF1F4D4D9D0023B92C /* EditKitValueCell.swift */,
 				FAA8FDDA1F5FE4A100847C1A /* EditKitSettingCell.swift */,
+				FA7648F41F9EAA6C00C6DD87 /* EditKitInputCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1559,6 +1578,22 @@
 			children = (
 				FA8CE4241ECD7FA700788026 /* UIView+subviews.swift */,
 				FA60B68D1EF37515003441E1 /* UITableView+Cells.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA61B16C1F9EEAA80069B1A6 /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				FA61B16D1F9EEAC00069B1A6 /* Views */,
+			);
+			path = Tables;
+			sourceTree = "<group>";
+		};
+		FA61B16D1F9EEAC00069B1A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA61B16E1F9EEAD90069B1A6 /* TableCellTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1662,6 +1697,31 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		FA7648F01F9EA09700C6DD87 /* Resolution */ = {
+			isa = PBXGroup;
+			children = (
+				FA7648F11F9EA0C700C6DD87 /* ResolutionSettingViewController.swift */,
+			);
+			path = Resolution;
+			sourceTree = "<group>";
+		};
+		FA7648FB1F9EDBD700C6DD87 /* Responders */ = {
+			isa = PBXGroup;
+			children = (
+				FA7648FC1F9EDC0B00C6DD87 /* KeyboardHandler.swift */,
+				FA7649031F9EE80200C6DD87 /* TextFieldHandler.swift */,
+			);
+			path = Responders;
+			sourceTree = "<group>";
+		};
+		FA7648FF1F9EDEB800C6DD87 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				FA7649001F9EE1C600C6DD87 /* NavigationViewController+Convenience.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		FA76F5441ED48FCB00059906 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1746,6 +1806,7 @@
 		FA834BDE1D9927B60017CCCA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FA61B16C1F9EEAA80069B1A6 /* Tables */,
 				FAD5DACC1EF8ABE200239C96 /* Settings */,
 				FACA79731EE4CFC70001D468 /* Theme */,
 				FA2B1E5D1EC817AE00E44613 /* Views */,
@@ -2083,6 +2144,8 @@
 		FA8CE4201ECD7E4600788026 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FA7648FF1F9EDEB800C6DD87 /* Navigation */,
+				FA7648FB1F9EDBD700C6DD87 /* Responders */,
 				FA60B68C1EF374F7003441E1 /* Views */,
 				FA5F8CA41ED0647600921A61 /* Fonts */,
 				FA5F8C9D1ECFF7EC00921A61 /* Screen */,
@@ -2792,6 +2855,7 @@
 		FADFC6BA1F4D09430023B92C /* Photo Settings */ = {
 			isa = PBXGroup;
 			children = (
+				FA7648F01F9EA09700C6DD87 /* Resolution */,
 				FADFC6BE1F4D09710023B92C /* Views */,
 				FADFC6BB1F4D096C0023B92C /* KitPhotoSettingsViewController.swift */,
 			);
@@ -3673,6 +3737,7 @@
 				FABC394E1EF1FDD800ECE935 /* SingleMigration.swift in Sources */,
 				FA5709A61ECC7172000362C8 /* PhotosPermissionViewController.swift in Sources */,
 				FA8CE4281ECD8AE700788026 /* UIGestureRecognizer+Closure.swift in Sources */,
+				FA7649041F9EE80200C6DD87 /* TextFieldHandler.swift in Sources */,
 				FA1805981EC54F38004351B7 /* CircleView.swift in Sources */,
 				FA5F8C971ECFE7D000921A61 /* BaseCaptureViewController+Kit.swift in Sources */,
 				FA3AAAA61EE259C0006028AC /* Renderer+View.swift in Sources */,
@@ -3687,9 +3752,11 @@
 				FA78F29A1E15662B00D34947 /* DebugBarView.swift in Sources */,
 				FAAE767E1EEB885100CA3416 /* Canvas.swift in Sources */,
 				FA2F8E4E1DA22AD700993949 /* ChromaticAberrationFilter.swift in Sources */,
+				FA7648F21F9EA0C700C6DD87 /* ResolutionSettingViewController.swift in Sources */,
 				FAA8FDDB1F5FE4A100847C1A /* EditKitSettingCell.swift in Sources */,
 				FACA79711EE4CF9B0001D468 /* KitsViewController.swift in Sources */,
 				FA8AA5411ECC107F0093D317 /* ButtonIndicatorIcon.swift in Sources */,
+				FA7648F51F9EAA6C00C6DD87 /* EditKitInputCell.swift in Sources */,
 				FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */,
 				FACF0F3F1EECDB6C00B0211C /* ComponentModel.swift in Sources */,
 				FA1A2C9D1ECC57C60075FA0B /* PermissionsEducationViewController.swift in Sources */,
@@ -3755,6 +3822,7 @@
 				FA3AAA951EE24E5E006028AC /* CameraController+Debug.swift in Sources */,
 				FAD5DAE11EF8CB9300239C96 /* LayoutScale.swift in Sources */,
 				FA5F8CA21ED05B7B00921A61 /* BaseCaptureViewController+Rotation.swift in Sources */,
+				FA7648FD1F9EDC0B00C6DD87 /* KeyboardHandler.swift in Sources */,
 				FA2B1EB21EC97E7300E44613 /* CodeIconButton.swift in Sources */,
 				FAAE76811EEB88D300CA3416 /* VectorAssetsList.swift in Sources */,
 				FA0462BF1EC3DFE1007B74A0 /* SwitchCameraComponent.swift in Sources */,
@@ -3768,6 +3836,7 @@
 				FA0462C71EC4252D007B74A0 /* ComponentItemCellDelegate.swift in Sources */,
 				FA2F8E4A1DA2296E00993949 /* GaussianBlurFilter.swift in Sources */,
 				FADFC6D71F4E75020023B92C /* XYAnchor.swift in Sources */,
+				FA61B16F1F9EEAD90069B1A6 /* TableCellTextField.swift in Sources */,
 				FA0462B61EC3CDFA007B74A0 /* ControlBarItemCell.swift in Sources */,
 				FAC4248F1EEF2B2700E2EB26 /* NSManagedObjectContext+Observers.swift in Sources */,
 				FA64775E1EE39F4000A63A22 /* EditBar+EditBorder.swift in Sources */,
@@ -3797,6 +3866,7 @@
 				FAAE767A1EEB881C00CA3416 /* DataPoint.swift in Sources */,
 				FA9F89E61D953C540058C369 /* AppDelegate.swift in Sources */,
 				FA8AA5451ECC13140093D317 /* CanvasIconView.swift in Sources */,
+				FA7649011F9EE1C600C6DD87 /* NavigationViewController+Convenience.swift in Sources */,
 				FAC424921EEF2F7700E2EB26 /* NSManagedObjectContext+Changes.swift in Sources */,
 				FA0462C21EC3E002007B74A0 /* Component.swift in Sources */,
 				FAADE0D31D9D0C4300AA5729 /* Passthrough.metal in Sources */,
@@ -3848,6 +3918,7 @@
 				FA7724CD1ED1A25F00C5C227 /* EditOpacity.swift in Sources */,
 				FA8AA5421ECC107F0093D317 /* ButtonIndicatorIcon.swift in Sources */,
 				FAAE766F1EEB741500CA3416 /* VectorImagesManager.swift in Sources */,
+				FA7648F61F9EAA6C00C6DD87 /* EditKitInputCell.swift in Sources */,
 				FA60B6881EF3717D003441E1 /* EditKitHeaderView.swift in Sources */,
 				FA3AAAC51EE25FEB006028AC /* Size.swift in Sources */,
 				FADFC6F51F50D2430023B92C /* PhotoResolution.swift in Sources */,
@@ -3902,6 +3973,7 @@
 				FA8CE4261ECD7FA700788026 /* UIView+subviews.swift in Sources */,
 				FA0C965A1EE8952800EA6EC8 /* Anchor.swift in Sources */,
 				FA1325C91EF871EE000E6918 /* Critical.swift in Sources */,
+				FA61B1701F9EEAD90069B1A6 /* TableCellTextField.swift in Sources */,
 				FA2B1E881EC92B5B00E44613 /* ChromaticAberration.metal in Sources */,
 				FA3AAAA11EE24EA5006028AC /* CameraController+Session.swift in Sources */,
 				FA5709A31ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift in Sources */,
@@ -3940,6 +4012,7 @@
 				FA3AAAB21EE25E08006028AC /* Renderer+Shaders.swift in Sources */,
 				FA2B1E931EC92B5B00E44613 /* ControlBarItemCell.swift in Sources */,
 				FA64775C1EE39EF600A63A22 /* EditBar+InitialState.swift in Sources */,
+				FA7649021F9EE1C600C6DD87 /* NavigationViewController+Convenience.swift in Sources */,
 				FAC21B661EEE251A007C17AF /* DBAttribute.swift in Sources */,
 				FAAE764E1EEB39FA00CA3416 /* Path.swift in Sources */,
 				FA3AAABB1EE25E15006028AC /* Renderer+Buffers.swift in Sources */,
@@ -3956,9 +4029,11 @@
 				FA3AAABC1EE25E15006028AC /* Renderer+AspectRatio.swift in Sources */,
 				FAAE763B1EEB2F0500CA3416 /* VectorAssetReader.swift in Sources */,
 				FABC39591EF3211B00ECE935 /* EntityMigrationPolicy.swift in Sources */,
+				FA7649051F9EE80200C6DD87 /* TextFieldHandler.swift in Sources */,
 				FA2B1E951EC92B5B00E44613 /* ComponentEditBar.swift in Sources */,
 				FA2B1E941EC92B5B00E44613 /* DebugWindow.swift in Sources */,
 				FAAE76431EEB2F4700CA3416 /* DataFloat.swift in Sources */,
+				FA7648F31F9EA0C700C6DD87 /* ResolutionSettingViewController.swift in Sources */,
 				FACF0F431EECDECD00B0211C /* URL+Paths.swift in Sources */,
 				FA2B1E751EC927FB00E44613 /* Views+AutoLayout.swift in Sources */,
 				FA1C23811ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift in Sources */,
@@ -4017,6 +4092,7 @@
 				FA2B1EA61EC92B5B00E44613 /* DebugBarItemView.swift in Sources */,
 				FACA797C1EE66A5B0001D468 /* KitTableViewCell.swift in Sources */,
 				FA5F8CA01ECFF81400921A61 /* UIScreen+Layout.swift in Sources */,
+				FA7648FE1F9EDC0B00C6DD87 /* KeyboardHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

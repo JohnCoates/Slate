@@ -53,9 +53,3 @@ class KitsViewController: UITableViewController {
     }
 
 }
-
-// MARK: - Theme
-
-extension Theme.Kits {
-    static let separatorColor = UIColor(red: 0.21, green: 0.23, blue: 0.29, alpha: 1.00)
-}

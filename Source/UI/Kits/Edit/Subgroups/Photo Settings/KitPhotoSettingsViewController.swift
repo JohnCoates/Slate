@@ -95,7 +95,7 @@ class KitPhotoSettingsViewController: SettingsTableViewController {
                                                 bottom: 0, right: 0)
         tableView.layoutMargins = UIEdgeInsets(top: 0, left: 16,
                                                bottom: 0, right: 16)
-        tableView.separatorColor = Theme.Kits.seperatorColor
+        tableView.separatorColor = Theme.Kits.separatorColor
     }
     
     // MARK: - Table View setup
@@ -163,6 +163,11 @@ class KitPhotoSettingsViewController: SettingsTableViewController {
             let label = header.textLabel {
             label.textColor = Theme.Kits.headerText
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = ResolutionSettingViewController(kit: kit)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

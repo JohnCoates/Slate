@@ -6,7 +6,7 @@
 
 import UIKit
 
-class FeatureCatalogViewController: UITableViewController, UIGestureRecognizerDelegate, UINavigationControllerDelegate {
+class FeatureCatalogViewController: UITableViewController, UIGestureRecognizerDelegate, UINavigationControllerDelegate, NavigationConvenience {
     
     // MARK: - Init
     
@@ -25,6 +25,8 @@ class FeatureCatalogViewController: UITableViewController, UIGestureRecognizerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setUpMinimalistBackButton()
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
     }
@@ -228,7 +230,9 @@ class FeatureCatalogViewController: UITableViewController, UIGestureRecognizerDe
             FeatureCatalogItem(name: "Edit Layout",
                                creationBlock: { EditKitLayoutViewController(kit: Kit.default()) }),
             FeatureCatalogItem(name: "Photo Settings",
-                               creationBlock: { KitPhotoSettingsViewController(kit: Kit.default()) })
+                               creationBlock: { KitPhotoSettingsViewController(kit: Kit.default()) }),
+            FeatureCatalogItem(name: "Resolution",
+                               creationBlock: { ResolutionSettingViewController(kit: Kit.default()) })
             
         ]
         
