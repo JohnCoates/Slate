@@ -16,7 +16,7 @@ precedencegroup LayoutAssignment {
     higherThan: AssignmentPrecedence
 }
 
-func --> <Kind: AnchorType>(lhs: Anchor<Kind>, rhs: Anchor<Kind>) {
+func --> <Kind>(lhs: Anchor<Kind>, rhs: Anchor<Kind>) {
     lhs.pin(to: rhs)
 }
 
@@ -42,7 +42,7 @@ func --> (lhs: EdgesAnchor, rhs: EdgesAnchor) {
 
 // Views
 
-func --> <Kind: AnchorType>(lhs: Anchor<Kind>, rhs: View) {
+func --> <Kind>(lhs: Anchor<Kind>, rhs: View) {
     lhs.pin(to: rhs)
 }
 
@@ -75,11 +75,11 @@ precedencegroup LayoutAtLeastAssignment {
     higherThan: AssignmentPrecedence
 }
 
-func -->+= <Kind: AnchorType>(lhs: Anchor<Kind>, rhs: Anchor<Kind>) {
+func -->+= <Kind>(lhs: Anchor<Kind>, rhs: Anchor<Kind>) {
     lhs.pin(atLeast: rhs)
 }
 
-func -->+= <Kind: AnchorType>(lhs: Anchor<Kind>, rhs: View) {
+func -->+= <Kind>(lhs: Anchor<Kind>, rhs: View) {
     lhs.pin(atLeast: rhs)
 }
 
@@ -115,11 +115,11 @@ precedencegroup LayoutAtMostAssignment {
     higherThan: AssignmentPrecedence
 }
 
-func -->-= <Kind: AnchorType>(lhs: Anchor<Kind>, rhs: Anchor<Kind>) {
+func -->-= <Kind>(lhs: Anchor<Kind>, rhs: Anchor<Kind>) {
     lhs.pin(atMost: rhs)
 }
 
-func -->-= <Kind: AnchorType>(lhs: Anchor<Kind>, rhs: View) {
+func -->-= <Kind>(lhs: Anchor<Kind>, rhs: View) {
     lhs.pin(atMost: rhs)
 }
 
