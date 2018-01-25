@@ -23,7 +23,7 @@ protocol GenericComponent: Component {
     func configureWithSpecializedProperties(view: ViewInstance)
 }
 
-extension GenericComponent where Self: Component {
+extension GenericComponent {
     
     func typedDatabaseObject(withMutableContext context: NSManagedObjectContext) -> CoreDataInstance {
         let object: CoreDataInstance

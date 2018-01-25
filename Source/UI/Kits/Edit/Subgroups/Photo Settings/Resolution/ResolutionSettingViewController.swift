@@ -8,10 +8,36 @@
 
 import UIKit
 
+struct TableRow {
+    var title: String
+    
+    var accessory: Accessory = .none
+    
+    enum Accessory {
+        case none
+        case checkmark
+    }
+}
+
+struct Section {
+//    var rows
+}
+
+protocol TableDataSource {
+    
+}
+
 private protocol CellProtocol: class {
     var title: String { get set }
     var showCheckmark: Bool { get set }
     var showDisclosure: Bool { get set }
+    var cellView: UITableViewCell { get }
+}
+
+extension CellProtocol where Self: UITableViewCell {
+    var cellView: UITableViewCell {
+        return self
+    }
 }
 
 extension EditKitSettingCell: CellProtocol { }
@@ -233,7 +259,7 @@ class ResolutionSettingViewController: SettingsTableViewController, UITextFieldD
         cell.title = row.title
         cell.showCheckmark = row.selected
         cell.showDisclosure = false
-        return cell as! UITableViewCell
+        return cell.cellView
     }
     
     private func configure(cellInput input: UITextField, nextKey: Bool) {
