@@ -11,7 +11,7 @@ import CoreData
 import UIKit
 
 protocol TableViewDataSourceDelegate: class {
-    associatedtype Object: NSManagedObject, NSFetchRequestResult, Managed
+    associatedtype Object: NSManagedObject, Managed
     associatedtype Cell: UITableViewCell
     func configure(_ cell: Cell, for object: Object)
 }
