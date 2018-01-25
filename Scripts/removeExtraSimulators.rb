@@ -11,9 +11,10 @@ runtimes = runtimes_output.scan /(.*) \(.*\) \((com.apple[^)]+)\)$/
 devices_output = `xcrun simctl list devices`
 devices = devices_output.scan /\s\s\s\s(.*) \(([^)]+)\) (.*)/
 keep = [
-  "iPhone 7 Plus",
-  "iPhone 7",
-  "iPhone SE"
+  "iPhone 8 Plus",
+  "iPhone 8",
+  "iPhone SE",
+  "iPhone X"
 ]
 kept = [
 ]
