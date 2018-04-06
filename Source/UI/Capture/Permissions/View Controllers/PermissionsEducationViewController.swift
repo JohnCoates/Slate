@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-fileprivate typealias LocalClass = PermissionsEducationViewController
+private typealias LocalClass = PermissionsEducationViewController
 class PermissionsEducationViewController: UIViewController {
     
     weak var delegate: PermissionsManagerDelegate?
@@ -96,7 +96,7 @@ class PermissionsEducationViewController: UIViewController {
         }
         explanationLabel.text = explanation
         explanationLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightRegular)
-        explanationLabel.textColor = UIColor(red:0.22, green:0.22, blue:0.22, alpha:1.00)
+        explanationLabel.textColor = UIColor(red: 0.22, green: 0.22, blue: 0.22, alpha: 1.00)
         explanationLabel.adjustsFontSizeToFitWidth = false
         explanationLabel.numberOfLines = 0
         explanationLabel.textAlignment = .center
@@ -155,7 +155,7 @@ class PermissionsEducationViewController: UIViewController {
     
     func addCellSeparator(kind: CellSeparatorKind, toCellView cellView: UIView) {
         let separator = UIView(frame: .zero)
-        separator.backgroundColor = UIColor(red:0.78, green:0.78, blue:0.80, alpha:1.00)
+        separator.backgroundColor = UIColor(red: 0.78, green: 0.78, blue: 0.80, alpha: 1.00)
         cellView.addSubview(separator)
         
         separator.height --> 1.pixelsAsPoints

@@ -51,12 +51,12 @@ class ImageCaptureManager: PermissionsManagerDelegate {
 //            print("image size: \(image.size)")
             
             PHAssetChangeRequest.creationRequestForAsset(from: image)
-        }) { success, error in
+        }, completionHandler: { success, error in
             if let error = error {
                 print("Error saving image: \(error)")
                 return
             }
-        }
+        })
     }
     
     // MARK: - Permissions Manager

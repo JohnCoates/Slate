@@ -9,8 +9,8 @@
 import UIKit
 import CoreData
 
-fileprivate typealias LocalClass = CaptureComponent
-fileprivate typealias LocalView = CaptureButton
+private typealias LocalClass = CaptureComponent
+private typealias LocalView = CaptureButton
 final class CaptureComponent: Component, GenericComponent,
 EditRounding, EditSize, EditPosition, EditOpacity, EditSmartLayout {
     typealias CoreDataInstance = CaptureComponentCoreData

@@ -6,7 +6,8 @@
 
 import UIKit
 
-class FeatureCatalogViewController: UITableViewController, UIGestureRecognizerDelegate, UINavigationControllerDelegate, NavigationConvenience {
+class FeatureCatalogViewController: UITableViewController, UIGestureRecognizerDelegate,
+UINavigationControllerDelegate, NavigationConvenience {
     
     // MARK: - Init
     

@@ -56,17 +56,7 @@ extension CellProtocol {
 
 class ResolutionSettingViewController: SettingsTableViewController, UITextFieldDelegate, TextFieldHandler {
     
-    private struct Row {
-        enum Style {
-            case radioSelectable
-            case numericInput
-        }
-        
-        enum Dimension: Int {
-            case width
-            case height
-        }
-        
+    fileprivate struct Row {
         var title: String
         var style: Style
         var selected: Bool = false
@@ -108,22 +98,22 @@ class ResolutionSettingViewController: SettingsTableViewController, UITextFieldD
         let settings = kit.photoSettings
         
         switch section {
-            case .resolution:
+        case .resolution:
             
-                var notSet = Row(title: "Default", style: .radioSelectable, resolution: .notSet )
-                var maximium = Row(title: "Maximum", style: .radioSelectable, resolution: .maximum)
-                var custom = Row(title: "Custom", style: .radioSelectable, resolution: .custom(width: 1280, height: 720))
+            var notSet = Row(title: "Default", style: .radioSelectable, resolution: .notSet )
+            var maximium = Row(title: "Maximum", style: .radioSelectable, resolution: .maximum)
+            var custom = Row(title: "Custom", style: .radioSelectable, resolution: .custom(width: 1280, height: 720))
             
-                switch settings.resolution {
-                case .notSet:
-                    notSet.selected = true
-                case .maximum:
-                    maximium.selected = true
-                case .custom(_, _):
-                    custom.selected = true
-                }
+            switch settings.resolution {
+            case .notSet:
+                notSet.selected = true
+            case .maximum:
+                maximium.selected = true
+            case .custom:
+                custom.selected = true
+            }
                 
-                return [notSet, maximium, custom]
+            return [notSet, maximium, custom]
         case .custom:
             guard case let .custom(width, height) = settings.resolution else {
                 return []
@@ -156,7 +146,7 @@ class ResolutionSettingViewController: SettingsTableViewController, UITextFieldD
     
     private var sections: [Section] {
         switch kit.photoSettings.resolution {
-        case .custom(_, _):
+        case .custom:
             return [.resolution, .custom]
         default:
             return [.resolution]
@@ -288,8 +278,6 @@ class ResolutionSettingViewController: SettingsTableViewController, UITextFieldD
             let label = header.textLabel {
             label.textColor = Theme.Kits.headerText
         }
-        
-        
     }
     
     lazy var customSize: CGSize = {
@@ -333,6 +321,20 @@ class ResolutionSettingViewController: SettingsTableViewController, UITextFieldD
         }
         
         return false
+    }
+}
+
+// MARK: - Row Extension
+
+extension ResolutionSettingViewController.Row {
+    enum Style {
+        case radioSelectable
+        case numericInput
+    }
+    
+    enum Dimension: Int {
+        case width
+        case height
     }
 }
 

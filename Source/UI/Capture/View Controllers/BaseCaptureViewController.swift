@@ -14,7 +14,7 @@ import UIKit
     typealias CaptureViewController = MetalCaptureViewController
 #endif
 
-fileprivate typealias LocalClass = BaseCaptureViewController
+private typealias LocalClass = BaseCaptureViewController
 class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate, PermissionsManagerDelegate {
     
     let kit: Kit
@@ -87,9 +87,9 @@ class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate, 
             self.transitionKit(to: size, orientation: orientation)
             
             self.view.layoutIfNeeded()
-        }) { context in
+        }, completion: { context in
             self.rootViewRoundTransformNowThatAnimationFinished()
-        }
+        })
     }
     
     // MARK: - Setup

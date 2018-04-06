@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-fileprivate typealias LocalClass = SwitchCameraComponent
+private typealias LocalClass = SwitchCameraComponent
 class SwitchCameraComponent: Component, GenericComponent,
 EditRounding, EditOpacity, EditSize, EditPosition, KeepUpright {
     typealias CoreDataInstance = CameraPositionComponentCoreData

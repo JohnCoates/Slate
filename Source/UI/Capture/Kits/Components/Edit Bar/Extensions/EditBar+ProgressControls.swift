@@ -8,7 +8,7 @@
 
 import UIKit
 
-fileprivate typealias LocalClass = ComponentEditBar
+private typealias LocalClass = ComponentEditBar
 extension ComponentEditBar {
 
     struct ProgressSettings {

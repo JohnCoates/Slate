@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-fileprivate typealias LocalClass = CameraPermissionViewController
+private typealias LocalClass = CameraPermissionViewController
 class CameraPermissionViewController: PermissionsEducationViewController {
     
     // MARK: - Configuration

@@ -8,7 +8,7 @@
 
 import UIKit
 
-fileprivate typealias LocalClass = PermissionsWindow
+private typealias LocalClass = PermissionsWindow
 class PermissionsWindow: UIWindow {
     
     fileprivate static var currentWindow: LocalClass?

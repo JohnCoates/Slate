@@ -90,9 +90,9 @@ class PermissionsButtonIndicatorViewController: UIViewController {
         UIView.animate(withDuration: 0.2, delay: delay, options: [.curveEaseInOut], animations: {
             indicatorTopConstraint.constant = distance
             self.view.layoutIfNeeded()
-        }) { completed in
+        }, completion: { completed in
             self.animateBounce()
-        }
+        })
     }
     
     func animateBounce() {
@@ -110,9 +110,9 @@ class PermissionsButtonIndicatorViewController: UIViewController {
                        options: .beginFromCurrentState, animations: {
             indicatorTopConstraint.constant = self.indicatorDistance
             self.view.layoutIfNeeded()
-        }) { completed in
+        }, completion: { completed in
             self.animatePullback(delay: 1)
-        }
+        })
     }
     
 }

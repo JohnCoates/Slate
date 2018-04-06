@@ -8,7 +8,7 @@
 
 import UIKit
 
-fileprivate typealias LocalClass = BaseCaptureViewController
+private typealias LocalClass = BaseCaptureViewController
 extension BaseCaptureViewController {
     
     // MARK: - Rotation

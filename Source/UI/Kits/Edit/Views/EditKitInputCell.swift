@@ -46,7 +46,6 @@ class EditKitInputCell: UITableViewCell {
             setNeedsUpdateConstraints()
         }
     }
-
     
     // MARK: - Init
     
@@ -148,7 +147,6 @@ class EditKitInputCell: UITableViewCell {
         textField.left.pin(to: contentView, add: 135)
         textField.right --> contentView.rightMargin
     }
-    
     
     // MARK: - Constraints
     

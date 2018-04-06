@@ -38,8 +38,7 @@ extension TextFieldHandler where Self: UITableViewDataSource {
         
         if let nextTextField = nextTextField(for: indexPath, in: tableView) {
             nextTextField.becomeFirstResponder()
-        }
-        else {
+        } else {
             textField.resignFirstResponder()
         }
         
@@ -79,7 +78,6 @@ extension TextFieldHandler where Self: UITableViewDataSource {
         
         return nil
     }
-    
     
     private func nextIndexPath(for currentIndexPath: IndexPath, in tableView: UITableView) -> IndexPath? {
         let startRow = currentIndexPath.row

@@ -25,7 +25,6 @@ extension VectorAssetWriter {
                 add(floats: [cornerRadius], toFloats: &floats)
             case .move(let to), .addLine(let to):
                 add(point: to, toFloats: &floats)
-                break
             case .addCurve(let to, let control1, let control2):
                 add(point: to, toFloats: &floats)
                 add(point: control1, toFloats: &floats)

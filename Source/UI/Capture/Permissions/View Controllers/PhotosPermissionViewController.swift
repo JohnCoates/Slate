@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-fileprivate typealias LocalClass = PhotosPermissionViewController
+private typealias LocalClass = PhotosPermissionViewController
 class PhotosPermissionViewController: PermissionsEducationViewController {
     
     // MARK: - Configuration

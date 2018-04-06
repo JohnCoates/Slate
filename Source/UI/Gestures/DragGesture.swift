@@ -8,7 +8,7 @@
 
 import UIKit
 
-fileprivate typealias LocalClass = DragGesture
+private typealias LocalClass = DragGesture
 
 @objc class DragGesture: NSObject {
     fileprivate let gesture = UIPanGestureRecognizer.init()

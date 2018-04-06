@@ -39,7 +39,7 @@ class SmartPin {
         
         var offset: CGFloat {
             switch self {
-                case .min(let offset), .max(let offset), .center(let offset):
+            case .min(let offset), .max(let offset), .center(let offset):
                 return offset
                 
             }

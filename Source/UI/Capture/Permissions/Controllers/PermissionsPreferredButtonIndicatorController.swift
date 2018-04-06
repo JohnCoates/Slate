@@ -10,7 +10,7 @@
 
 import UIKit
 
-fileprivate typealias LocalClass = PermissionsPreferredButtonIndicatorController
+private typealias LocalClass = PermissionsPreferredButtonIndicatorController
 class PermissionsPreferredButtonIndicatorController {
     
     // MARK: - Entry Points

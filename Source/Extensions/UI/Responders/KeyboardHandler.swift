@@ -46,10 +46,12 @@ extension KeyboardHandler {
             return
         }
         
+        // swiftlint:disable line_length
         // According to https://developer.apple.com/library/ios/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html
         // we should only use FrameEnd's size information and ignore the origin
         // however, we need to account for the bottom edge of the scroll view
         // not being the bottom edge of the screen
+        // swiftlint:enable line_length
         let yPadding: CGFloat = 10
         let keyboardHeight = keyboardBounds.height + yPadding
         
@@ -82,4 +84,3 @@ extension KeyboardHandler {
         return keyboardBoundsValue.cgRectValue
     }
 }
-

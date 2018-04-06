@@ -61,7 +61,7 @@ final class CircleSlider: UIView {
     
     let innerCircle = CircleView()
     private func initialSetup() {
-        innerCircle.backgroundColor = UIColor(red:0.16, green:0.14, blue:0.17, alpha:1.00)
+        innerCircle.backgroundColor = UIColor(red: 0.16, green: 0.14, blue: 0.17, alpha: 1.00)
         addSubview(innerCircle)
         
         setUpProgressCircle()
@@ -96,7 +96,7 @@ final class CircleSlider: UIView {
     }
     
     private func setUpProgressCircle() {
-        progressCircle.strokeColor = UIColor(red:0.16, green:0.55, blue:0.79, alpha:1.00).cgColor
+        progressCircle.strokeColor = UIColor(red: 0.16, green: 0.55, blue: 0.79, alpha: 1.00).cgColor
         progressCircle.fillColor = UIColor.clear.cgColor
         progressCircle.lineWidth = progressStrokeWidth
         progressCircle.strokeStart = 0

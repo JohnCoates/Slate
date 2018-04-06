@@ -8,7 +8,7 @@
 
 import UIKit
 
-fileprivate typealias LocalClass = ComponentEditBar
+private typealias LocalClass = ComponentEditBar
 
 class ComponentEditBar: UIView {
     weak var delegate: ComponentEditBarDelegate?
