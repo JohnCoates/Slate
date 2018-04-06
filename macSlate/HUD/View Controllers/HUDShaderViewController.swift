@@ -46,7 +46,7 @@ class HUDShaderViewController: NSViewController, NSTextViewDelegate {
         shaderScrollview.frame = frame
         shaderScrollview.borderType = .noBorder
         shaderScrollview.hasVerticalScroller = true
-        shaderScrollview.autoresizingMask = [.viewWidthSizable, .viewHeightSizable]
+        shaderScrollview.autoresizingMask = [.width, .height]
         shaderScrollview.contentView.addSubview(shaderField)
         
         let contentSize = shaderScrollview.contentSize
@@ -58,7 +58,7 @@ class HUDShaderViewController: NSViewController, NSTextViewDelegate {
                                      height: CGFloat.greatestFiniteMagnitude)
         shaderField.isVerticallyResizable = true
         shaderField.isHorizontallyResizable = false
-        shaderField.autoresizingMask = .viewWidthSizable
+        shaderField.autoresizingMask = .width
         shaderField.textContainer?.containerSize = NSSize(width: contentSize.width,
                                                           height: CGFloat.greatestFiniteMagnitude)
         shaderField.textContainer?.widthTracksTextView = true
@@ -87,14 +87,10 @@ class HUDShaderViewController: NSViewController, NSTextViewDelegate {
     // MARK: - Text Field Delegate
     
     func compileShader() {
-        guard let source = shaderField.string else {
-            print("Couldn't get shader field text")
-            return
-        }
+        let source = shaderField.string
         let options = MTLCompileOptions()
         
         do {
-            
             let library = try renderer.device.makeLibrary(source: source,
                                                           options: options)
             let functionNames = library.functionNames

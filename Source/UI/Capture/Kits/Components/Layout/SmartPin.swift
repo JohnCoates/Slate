@@ -15,7 +15,7 @@ class SmartPin {
         case max(offset: CGFloat)
         case center(offset: CGFloat)
 //        case division(base: Int, index: Int, offset: CGFloat)
-        var layoutAttributeX: NSLayoutAttribute {
+        var layoutAttributeX: LayoutAttribute {
             switch self {
             case .min:
                 return .left
@@ -26,7 +26,7 @@ class SmartPin {
             }
         }
         
-        var layoutAttributeY: NSLayoutAttribute {
+        var layoutAttributeY: LayoutAttribute {
             switch self {
             case .min:
                 return .top

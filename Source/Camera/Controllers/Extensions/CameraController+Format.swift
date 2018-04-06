@@ -13,21 +13,16 @@ extension CameraController {
     
     func setBestFormat(forDevice device: AVCaptureDevice,
                        callAfterSessionRunning: inout (() -> Void)?) {
-        guard let formats = device.formats as? [AVCaptureDeviceFormat] else {
-            print("Couldn't get formats for device: \(device)")
-            return
-        }
-        var bestFormat: AVCaptureDeviceFormat?
+        let formats = device.formats
+        var bestFormat: AVCaptureDevice.Format?
         var frameRateRange: AVFrameRateRange?
         let targetFrameRate: Float64 = 30
         var bestWidth: Int32 = 0
         var dimensionsMaybe: CMVideoDimensions?
         
         for format in formats {
-            guard let formatDescription = format.formatDescription,
-                let ranges = format.videoSupportedFrameRateRanges as? [AVFrameRateRange] else {
-                    continue
-            }
+            let formatDescription = format.formatDescription
+            let ranges = format.videoSupportedFrameRateRanges
             let dimensions = CMVideoFormatDescriptionGetDimensions(formatDescription)
             let width = dimensions.width
             for range in ranges {
@@ -72,7 +67,7 @@ extension CameraController {
         }
     }
     
-    func format(withFrameRate: Float64, fromFormats formats: [AVCaptureDeviceFormat]) -> AVCaptureDeviceFormat? {
+    func format(withFrameRate: Float64, fromFormats formats: [AVCaptureDevice.Format]) -> AVCaptureDevice.Format? {
         return nil
     }
     

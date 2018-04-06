@@ -41,8 +41,8 @@ class DebugBarItemView: UIView {
     private func setUpLabel() {
         label.adjustsFontSizeToFitWidth = true
         label.text = item.title
-        label.setContentCompressionResistancePriority(50, for: .horizontal)
-        setContentCompressionResistancePriority(50, for: .horizontal)
+        label.setContentCompressionResistancePriority(LayoutPriority(rawValue: 50), for: .horizontal)
+        setContentCompressionResistancePriority(LayoutPriority(rawValue: 50), for: .horizontal)
         addSubview(label)
         
         label.left -->+= left
@@ -65,7 +65,7 @@ class DebugBarItemView: UIView {
     
     // MARK: - User Interaction
     
-    func tapped(gesture: UITapGestureRecognizer) {
+    @objc func tapped(gesture: UITapGestureRecognizer) {
         guard let tapClosure = item.tapClosure else {
             return
         }

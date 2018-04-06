@@ -11,25 +11,19 @@ import AVFoundation
 
 extension CameraController {
     var bestCamera: AVCaptureDevice {
-        guard let devices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo) else {
-            fatalError("No video devices")
-        }
+        let devices = AVCaptureDevice.devices(for: AVMediaType.video)
         for potentialDevice in devices {
-            guard let device = potentialDevice as? AVCaptureDevice else {
-                continue
-            }
+            let device = potentialDevice
             // prefer my logitech camera
             if device.localizedName.hasPrefix("HD Pro Webcam C920") {
                 return device
             }
         }
-        return AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        return AVCaptureDevice.default(for: AVMediaType.video)!
     }
     
     func switchToNextCamera() {
-        guard var devices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo) as? [AVCaptureDevice] else {
-            fatalError("No video devices")
-        }
+        var devices = AVCaptureDevice.devices(for: AVMediaType.video)
         if devices.count < 2 {
             print("Can't switch to next camera, only \(devices.count) cameras available")
             return

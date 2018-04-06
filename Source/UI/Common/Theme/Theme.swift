@@ -15,8 +15,8 @@ class Theme {
         navigationBar.barTintColor = Theme.navigationBarTintColor
         navigationBar.tintColor = UIColor.white
         navigationBar.titleTextAttributes = [
-            NSForegroundColorAttributeName: UIColor.white,
-            NSFontAttributeName: UIFont.system(17, weight: .regular)
+            NSAttributedStringKey.foregroundColor: UIColor.white,
+            NSAttributedStringKey.font: UIFont.system(17, weight: .regular)
         ]
         navigationBar.isTranslucent = false
         navigationBar.barStyle = .black

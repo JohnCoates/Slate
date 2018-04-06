@@ -32,7 +32,7 @@ extension BaseCaptureViewController: ComponentEditBarDelegate {
         editBar.addGestureRecognizer(editBarDragGesture)
     }
     
-    func editBarDragged(gesture: UIPanGestureRecognizer) {
+    @objc func editBarDragged(gesture: UIPanGestureRecognizer) {
         if gesture.state == .began || gesture.state == .ended || gesture.state == .cancelled {
             editBarLastTranslationY = nil
         }
@@ -146,7 +146,7 @@ extension BaseCaptureViewController: ComponentEditBarDelegate {
         component.view.addGestureRecognizer(gesture)
     }
     
-    func componentEditGesture(gesture: UILongPressGestureRecognizer) {
+    @objc func componentEditGesture(gesture: UILongPressGestureRecognizer) {
         guard let targetView = gesture.view else {
             fatalError("No view associated with gesture!")
         }

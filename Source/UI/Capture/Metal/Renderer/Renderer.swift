@@ -31,7 +31,7 @@ import AVFoundation
         device = Renderer.getDevice()
         
         // Create the command queue to submit work to the GPU
-        commandQueue = device.makeCommandQueue()
+        commandQueue = device.makeCommandQueue()!
         
         guard let shaders = Renderer.getDefaultLibrary(withDevice: device) else {
             print("Unable to build shaders")
@@ -121,8 +121,11 @@ import AVFoundation
         renderPassDescriptor.colorAttachments[0].texture = drawable.texture
     
         // Create a render encoder to clear the screen and draw our objects
-        let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
-        renderEncoder.setFragmentSamplerState(sampler, at: 0)
+        guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+            print("Error: Couldn't create render encoder")
+            return
+        }
+        renderEncoder.setFragmentSamplerState(sampler, index: 0)
         
         renderTextureQuad(renderEncoder: renderEncoder,
                           view: view,
@@ -154,9 +157,9 @@ import AVFoundation
         
         // Bind the buffer containing the array of vertex structures so we can
         // read it in our vertex shader.
-        renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, at: 0)
-        renderEncoder.setVertexBuffer(textureCoordinatesBuffer, offset: 0, at: 1)
-        renderEncoder.setFragmentTexture(texture, at: 0)
+        renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+        renderEncoder.setVertexBuffer(textureCoordinatesBuffer, offset: 0, index: 1)
+        renderEncoder.setFragmentTexture(texture, index: 0)
         renderEncoder.drawPrimitives(type: .triangle,
                                      vertexStart: 0,
                                      vertexCount: 6,

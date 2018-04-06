@@ -8,7 +8,7 @@
 
 import UIKit
 
-#if (arch(i386) || arch(x86_64)) && os(iOS)
+#if targetEnvironment(simulator)
     typealias CaptureViewController = SimulatorCaptureViewController
 #else
     typealias CaptureViewController = MetalCaptureViewController

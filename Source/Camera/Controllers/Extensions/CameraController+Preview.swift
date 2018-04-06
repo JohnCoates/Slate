@@ -35,7 +35,12 @@ extension CameraController {
         if !Platform.isProduction {
             //            printAvailableFormatTypes(forDataOutput: dataOutput)
         }
-        dataOutput.videoSettings = captureVideoSettings
+        
+        if let videoSettings = captureVideoSettings as? [String: Any] {
+            dataOutput.videoSettings = videoSettings
+        } else {
+            print("Error: couldn't cast video settings \(captureVideoSettings) to correct format")
+        }
         
         // Set dispatch to be on the main thread to create the texture in memory
         // and allow Metal to use it for rendering

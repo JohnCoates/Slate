@@ -14,7 +14,6 @@ class HUDController: NSWindowController {
     
     convenience init(renderer: Renderer) {
         let contentController = HUDTextureViewController(renderer: renderer)
-//        let contentController = HUDShaderViewController(renderer: renderer)
         let window = NSPanel(contentViewController: contentController)
         window.styleMask = [window.styleMask, .utilityWindow, .hudWindow]
         window.title = "Metal Settings"
@@ -23,12 +22,12 @@ class HUDController: NSWindowController {
         window.titleVisibility = .visible
         window.hasShadow = true
         window.isRestorable = true
-        window.identifier = "metalHUD"
+        window.identifier = NSUserInterfaceItemIdentifier("metalHUD")
         
         self.init(window: window)
         self.shouldCascadeWindows = false
-        window.setFrameAutosaveName("metalHUD")
-        window.setFrameUsingName("metalHUD")
+        window.setFrameAutosaveName(NSWindow.FrameAutosaveName("metalHUD"))
+        window.setFrameUsingName(NSWindow.FrameAutosaveName("metalHUD"))
         
         self.contentController = contentController
     }

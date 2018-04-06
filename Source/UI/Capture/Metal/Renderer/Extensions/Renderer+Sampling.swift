@@ -28,7 +28,7 @@ extension Renderer {
             sampler.lodAverage = false
         #endif
         sampler.label = "slateSampler"
-        return device.makeSamplerState(descriptor: sampler)
+        return device.makeSamplerState(descriptor: sampler)!
     }
     
 }

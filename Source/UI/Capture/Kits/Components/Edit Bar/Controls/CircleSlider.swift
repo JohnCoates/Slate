@@ -107,7 +107,7 @@ final class CircleSlider: UIView {
     let valueLabel = UILabel(frame: .zero)
     var units: String? = "px"
     private func setUpValueLabel() {
-        valueLabel.font = UIFont.systemFont(ofSize: 11, weight: UIFontWeightRegular)
+        valueLabel.font = UIFont.systemFont(ofSize: 11, weight: UIFont.Weight.regular)
         valueLabel.textColor = UIColor.white
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         valueLabel.numberOfLines = 2
@@ -166,7 +166,7 @@ final class CircleSlider: UIView {
     }
     
     fileprivate var lastTranslation: CGPoint?
-    func pan(gesture: UIPanGestureRecognizer) {
+    @objc func pan(gesture: UIPanGestureRecognizer) {
         if gesture.state == .began || gesture.state == .ended || gesture.state == .cancelled {
             lastTranslation = nil
         }

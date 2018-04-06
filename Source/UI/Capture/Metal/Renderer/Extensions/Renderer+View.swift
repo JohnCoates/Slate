@@ -50,7 +50,10 @@ extension Renderer {
         }
         
         // Our command buffer is a container for the work we want to perform with the GPU.
-        let commandBuffer = commandQueue.makeCommandBuffer()
+        guard let commandBuffer = commandQueue.makeCommandBuffer() else {
+            print("Error: Couldn't make command buffer")
+            return
+        }
         
         #if METAL_DEVICE
             if useFilters {

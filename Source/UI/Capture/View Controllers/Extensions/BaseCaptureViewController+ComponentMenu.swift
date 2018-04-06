@@ -34,7 +34,7 @@ extension BaseCaptureViewController: ComponentMenuBarDelegate {
         menuView.addGestureRecognizer(dragGesture)
     }
     
-    func menuDragged(gesture: UIPanGestureRecognizer) {
+    @objc func menuDragged(gesture: UIPanGestureRecognizer) {
         if gesture.state == .began || gesture.state == .ended || gesture.state == .cancelled {
             menuLastTranslationY = nil
         }

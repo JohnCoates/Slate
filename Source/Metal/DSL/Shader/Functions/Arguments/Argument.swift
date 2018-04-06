@@ -31,7 +31,7 @@ extension RuntimeShader {
             } else if let texture = type as? Texture2D {
                 return texture.argumentDeclaration
             } else {
-                typeReference = type(of: type).name
+                typeReference = Swift.type(of: type).name
             }
             
             return typeReference + " \(name) " + qualifier.declaration

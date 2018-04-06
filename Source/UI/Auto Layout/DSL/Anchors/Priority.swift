@@ -8,10 +8,8 @@
 
 #if os(iOS)
     import UIKit
-    typealias CorePriority = UILayoutPriority
 #else
     import AppKit
-    typealias CorePriority = NSLayoutPriority
 #endif
 
 enum Priority: ExpressibleByIntegerLiteral {
@@ -26,40 +24,20 @@ enum Priority: ExpressibleByIntegerLiteral {
         self = .custom(custom: Float(value))
     }
     
-    var rawValue: CorePriority {
+    var rawValue: LayoutPriority {
         switch self {
         case .ultraLow:
-            #if os(iOS)
-                return UILayoutPriorityDefaultLow - 1
-            #else
-                return NSLayoutPriorityDefaultLow - 1
-            #endif
+                return LayoutPriority.defaultLow - 1
         case .low:
-            #if os(iOS)
-                return UILayoutPriorityDefaultLow
-            #else
-                return NSLayoutPriorityDefaultLow
-            #endif
+                return LayoutPriority.defaultLow
         case .high:
-            #if os(iOS)
-                return UILayoutPriorityDefaultHigh
-            #else
-                return NSLayoutPriorityDefaultHigh
-            #endif
+                return LayoutPriority.defaultHigh
         case .ultraHigh:
-            #if os(iOS)
-                return UILayoutPriorityDefaultHigh + 1
-            #else
-                return NSLayoutPriorityDefaultHigh + 1
-            #endif
+                return LayoutPriority.defaultHigh + 1
         case .required:
-            #if os(iOS)
-                return UILayoutPriorityRequired
-            #else
-                return NSLayoutPriorityRequired
-            #endif
+                return LayoutPriority.required
         case .custom(let custom):
-            return custom
+            return LayoutPriority(rawValue: custom)
         }
     }
 }

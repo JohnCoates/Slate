@@ -33,7 +33,7 @@ final class ChromaticAberrationFilter: ComputeFilter {
     
     override func buildPipeline() {
         let shaderName = "chromaticAberrationCompute"
-        guard let library = device.newDefaultLibrary() else {
+        guard let library = device.makeDefaultLibrary() else {
             return
         }
         
@@ -54,14 +54,14 @@ final class ChromaticAberrationFilter: ComputeFilter {
                          inputTexture: MTLTexture) -> MTLTexture {
         let outputTexture = self.outputTexture(forInputTexture: inputTexture)
         let computeEncoder = commandBuffer.makeComputeCommandEncoder()
-        computeEncoder.setComputePipelineState(pipelineState)
-        computeEncoder.setTexture(inputTexture, at: 0)
-        computeEncoder.setTexture(outputTexture, at: 1)
+        computeEncoder?.setComputePipelineState(pipelineState)
+        computeEncoder?.setTexture(inputTexture, index: 0)
+        computeEncoder?.setTexture(outputTexture, index: 1)
         
         let threadGroups = self.threadGroups(forInputTexture: inputTexture)
-        computeEncoder.dispatchThreadgroups(threadGroups,
+        computeEncoder?.dispatchThreadgroups(threadGroups,
                                             threadsPerThreadgroup: threadsPerGroup)
-        computeEncoder.endEncoding()
+        computeEncoder?.endEncoding()
         return outputTexture
     }
     

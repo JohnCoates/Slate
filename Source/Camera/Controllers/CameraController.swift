@@ -43,9 +43,9 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     // MARK: - Video Delegate
     
-    func captureOutput(_ captureOutput: AVCaptureOutput!,
-                       didOutputSampleBuffer sampleBuffer: CMSampleBuffer!,
-                       from connection: AVCaptureConnection!) {
+    func captureOutput(_ captureOutput: AVCaptureOutput,
+                       didOutput sampleBuffer: CMSampleBuffer,
+                       from connection: AVCaptureConnection) {
         #if METAL_DEVICE
             #if os(iOS)
             let orientation = UIApplication.shared.statusBarOrientation.rawValue

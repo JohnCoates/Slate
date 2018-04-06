@@ -62,7 +62,7 @@ class DebugBarController: NSObject {
     
     fileprivate var dragLastTranslationY: CGFloat?
     
-    func barDragged(gesture: UIPanGestureRecognizer) {
+    @objc func barDragged(gesture: UIPanGestureRecognizer) {
         if gesture.state == .began || gesture.state == .ended || gesture.state == .cancelled {
             dragLastTranslationY = nil
         }

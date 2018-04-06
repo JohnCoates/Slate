@@ -69,7 +69,7 @@ final class ControlBarItemCell: UICollectionViewCell {
     fileprivate var lastLocation: CGPoint?
     fileprivate var startFrame: CGRect?
     
-    func longPressed(gesture: UILongPressGestureRecognizer) {
+    @objc func longPressed(gesture: UILongPressGestureRecognizer) {
         guard let control = control else {
             return
         }

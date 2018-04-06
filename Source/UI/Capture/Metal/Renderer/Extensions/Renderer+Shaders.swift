@@ -19,7 +19,7 @@ extension Renderer {
         vertexFunction: MTLFunction,
         fragmentFunction: MTLFunction)? {
             
-            guard let library = device.newDefaultLibrary() else {
+            guard let library = device.makeDefaultLibrary() else {
                 fatalError("Couldn't find shader libary")
             }
             

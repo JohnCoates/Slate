@@ -27,7 +27,7 @@ class FragmentFilter: AbstractFilter {
     func buildRenderPipeline(label: String,
                              vertexFunction vertexFunctionName: String,
                              fragmentFunction fragmentFunctionName: String) {
-        guard let library = device.newDefaultLibrary() else {
+        guard let library = device.makeDefaultLibrary() else {
             fatalError("Couldn't find shader libary")
         }
         
@@ -65,24 +65,24 @@ class FragmentFilter: AbstractFilter {
         // Create a render encoder to clear the screen and draw our objects
         let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
         
-        renderEncoder.pushDebugGroup("Chromatic Aberration")
+        renderEncoder?.pushDebugGroup("Chromatic Aberration")
         // Set the pipeline state so the GPU knows which vertex and fragment function to invoke.
-        renderEncoder.setRenderPipelineState(renderPipelineState)
-        renderEncoder.setFrontFacing(.counterClockwise)
+        renderEncoder?.setRenderPipelineState(renderPipelineState)
+        renderEncoder?.setFrontFacing(.counterClockwise)
         
         // Bind the buffer containing the array of vertex structures so we can
         // read it in our vertex shader.
-        renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, at: 0)
-        renderEncoder.setVertexBuffer(textureCoordinatesBuffer, offset: 0, at: 1)
-        renderEncoder.setFragmentTexture(inputTexture, at: 0)
-        renderEncoder.drawPrimitives(type: .triangle,
+        renderEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+        renderEncoder?.setVertexBuffer(textureCoordinatesBuffer, offset: 0, index: 1)
+        renderEncoder?.setFragmentTexture(inputTexture, index: 0)
+        renderEncoder?.drawPrimitives(type: .triangle,
                                      vertexStart: 0,
                                      vertexCount: 6,
                                      instanceCount: 1)
-        renderEncoder.popDebugGroup()
+        renderEncoder?.popDebugGroup()
         
         // We are finished with this render command encoder, so end it.
-        renderEncoder.endEncoding()
+        renderEncoder?.endEncoding()
         return outputTexture
     }
     

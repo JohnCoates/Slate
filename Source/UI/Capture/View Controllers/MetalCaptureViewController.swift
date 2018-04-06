@@ -38,17 +38,11 @@ final class MetalCaptureViewController: BaseCaptureViewController, AVCapturePhot
         let stillOutput = renderer.cameraController.stillOutput
     
         var videoConnectionMaybe: AVCaptureConnection?
-        guard let connections = stillOutput.connections as? [AVCaptureConnection] else {
-            print("Error: Couldn't get still output connecitons")
-            return
-        }
+        let connections = stillOutput.connections
         for connection in connections {
-            guard let inputPorts = connection.inputPorts as? [AVCaptureInputPort] else {
-                print("Error: Couldn't read input ports")
-                return
-            }
+            let inputPorts = connection.inputPorts
             
-            for port in inputPorts where port.mediaType == AVMediaTypeVideo {
+            for port in inputPorts where port.mediaType == AVMediaType.video {
                 videoConnectionMaybe = connection
                 break
             }

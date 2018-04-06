@@ -26,7 +26,7 @@ final class PermissionsManager {
     // cache auth status
     
     var cameraStatus: AVAuthorizationStatus = {
-       return AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
+       return AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
     }()
     lazy var photosStatus: PHAuthorizationStatus = {
         return PHPhotoLibrary.authorizationStatus()

@@ -43,7 +43,7 @@ class CameraPermissionViewController: PermissionsEducationViewController {
     
     func requestAccessFromSystem() {
         // Doesn't return on main queue!
-        AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { authorized in
+        AVCaptureDevice.requestAccess(for: AVMediaType.video) { authorized in
             DispatchQueue.main.async {
                 if self.presentedViewController != nil {
                     self.dismiss(animated: false, completion: nil)
@@ -65,7 +65,7 @@ class CameraPermissionViewController: PermissionsEducationViewController {
     // MARK: - User Interaction
     
     func tappedCameraAccess() {
-        let status = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
+        let status = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
         switch status {
         case .notDetermined:
             break

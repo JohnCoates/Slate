@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol ShaderPrimitive: class, ShaderType {
+protocol ShaderPrimitive: ShaderType {
     
 }

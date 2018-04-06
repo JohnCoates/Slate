@@ -43,21 +43,21 @@ class FloatPairFormatter: Formatter {
         let scanner = Scanner(string: string as String)
         
         if !scanner.scanFloat(nil) {
-            NSBeep()
+            __NSBeep()
             return false
         }
         if !scanner.scanString(",", into: nil) {
-            NSBeep()
+            __NSBeep()
             return false
         }
         
         if !scanner.scanFloat(nil) {
-            NSBeep()
+            __NSBeep()
             return false
         }
         
         if !scanner.isAtEnd {
-            NSBeep()
+            __NSBeep()
             return false
         }
         

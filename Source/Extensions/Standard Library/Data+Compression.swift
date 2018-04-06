@@ -40,7 +40,7 @@ extension Data {
                                               scratchBuffer, algorithm.rawValue)
         }
         
-        scratchBuffer.deallocate(capacity: scratchSize)
+        scratchBuffer.deallocate()
         
         if bytes == 0 {
             if kind == .compression {

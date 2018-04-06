@@ -22,23 +22,23 @@ internal enum FontWeight {
     var rawValue: CGFloat {
         switch self {
         case .ultraLight:
-            return UIFontWeightUltraLight
+            return UIFont.Weight.ultraLight.rawValue
         case .thin:
-            return UIFontWeightThin
+            return UIFont.Weight.thin.rawValue
         case .light:
-            return UIFontWeightLight
+            return UIFont.Weight.light.rawValue
         case .regular:
-            return UIFontWeightRegular
+            return UIFont.Weight.regular.rawValue
         case .medium:
-            return UIFontWeightMedium
+            return UIFont.Weight.medium.rawValue
         case .semibold:
-            return UIFontWeightSemibold
+            return UIFont.Weight.semibold.rawValue
         case .bold:
-            return UIFontWeightBold
+            return UIFont.Weight.bold.rawValue
         case .heavy:
-            return UIFontWeightHeavy
+            return UIFont.Weight.heavy.rawValue
         case .black:
-            return UIFontWeightBlack
+            return UIFont.Weight.black.rawValue
         }
     } // rawValue
 }
@@ -47,7 +47,7 @@ extension UIFont {
     
     /// Returns the system font with specified size, weight
     class func system(_ size: CGFloat, weight: FontWeight) -> UIFont {
-        return systemFont(ofSize: size, weight: weight.rawValue)
+        return systemFont(ofSize: size, weight: UIFont.Weight(rawValue: weight.rawValue))
     }
     
 }

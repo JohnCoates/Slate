@@ -17,10 +17,7 @@ extension CameraController {
         #endif
         
         #if os(macOS)
-            guard let formatTypes = dataOutput.availableVideoCVPixelFormatTypes else {
-                print("no available format types!")
-                return
-            }
+            let formatTypes = dataOutput.availableVideoPixelFormatTypes
             
             for formatType in formatTypes {
                 guard let type = formatType as? Int else {

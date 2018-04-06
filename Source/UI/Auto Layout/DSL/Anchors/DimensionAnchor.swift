@@ -75,7 +75,7 @@ class DimensionAnchor: Anchor<Dimension> {
     }
     
     private func pin(to: DimensionAnchor,
-                     relation: NSLayoutRelation, add: CGFloat, times: CGFloat,
+                     relation: LayoutRelation, add: CGFloat, times: CGFloat,
                      rank: Priority?) -> NSLayoutConstraint {
         let constraint = NSLayoutConstraint(item: innerTarget,
                                             attribute: attribute,
@@ -90,7 +90,7 @@ class DimensionAnchor: Anchor<Dimension> {
     }
     
     private func pin(to: CGFloat,
-                     relation: NSLayoutRelation,
+                     relation: LayoutRelation,
                      rank: Priority?) -> NSLayoutConstraint {
         let constraint = NSLayoutConstraint(item: innerTarget,
                                             attribute: attribute,

@@ -35,7 +35,7 @@ class AbstractFilter {
         descriptor.usage = [.shaderRead, .shaderWrite, .renderTarget]
         let texture = device.makeTexture(descriptor: descriptor)
         outputTexture = texture
-        return texture
+        return texture!
     }
     
     // MARK: - Filtering

@@ -57,9 +57,9 @@ class MetalCameraController: CameraController {
     
     weak var captureConnection: AVCaptureConnection?
     
-    override func captureOutput(_ captureOutput: AVCaptureOutput!,
-                                didOutputSampleBuffer sampleBuffer: CMSampleBuffer!,
-                                from connection: AVCaptureConnection!) {
+    override func captureOutput(_ captureOutput: AVCaptureOutput,
+                                didOutput sampleBuffer: CMSampleBuffer,
+                                from connection: AVCaptureConnection) {
         #if METAL_DEVICE
             #if os(iOS)
                 connection.videoOrientation = .portrait

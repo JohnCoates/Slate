@@ -33,7 +33,7 @@ extension UIView {
     }
     
     func constraintsBetween(view: UIView, view2: UIView,
-                            viewAttribute: NSLayoutAttribute) -> [NSLayoutConstraint]? {
+                            viewAttribute: LayoutAttribute) -> [NSLayoutConstraint]? {
         
         let allConstraints = self.constraints
         var constraints = [NSLayoutConstraint]()
@@ -73,7 +73,7 @@ extension UIView {
     }
     
     func constraintsInvolvingView(_ view: UIView,
-                                  attribute: NSLayoutAttribute) -> [NSLayoutConstraint]? {
+                                  attribute: LayoutAttribute) -> [NSLayoutConstraint]? {
         
         let allConstraints = self.constraints
         var constraints = [NSLayoutConstraint]()
@@ -104,7 +104,7 @@ extension UIView {
     }
     
     func constraintInvolvingView(_ view: UIView,
-                                 attribute: NSLayoutAttribute) -> NSLayoutConstraint? {
+                                 attribute: LayoutAttribute) -> NSLayoutConstraint? {
         let allConstraints = self.constraints
         
         for constraint in allConstraints {
@@ -123,8 +123,8 @@ extension UIView {
     }
     
     func constraintInvolvingView(_ view: UIView,
-                                 attribute: NSLayoutAttribute,
-                                 relation: NSLayoutRelation) -> NSLayoutConstraint? {
+                                 attribute: LayoutAttribute,
+                                 relation: LayoutRelation) -> NSLayoutConstraint? {
         let allConstraints = self.constraints
         
         for constraint in allConstraints {
@@ -144,7 +144,7 @@ extension UIView {
         return nil
     }
     
-    func constraintWithAttribute(_ attribute: NSLayoutAttribute) -> NSLayoutConstraint? {
+    func constraintWithAttribute(_ attribute: LayoutAttribute) -> NSLayoutConstraint? {
         let allConstraints = self.constraints
         let index = allConstraints.index { $0.firstAttribute == attribute || $0.secondAttribute == attribute }
         
@@ -159,7 +159,7 @@ extension UIView {
         }
     }
     
-    func constraintsWithAttribute(_ attribute: NSLayoutAttribute) -> [NSLayoutConstraint]? {
+    func constraintsWithAttribute(_ attribute: LayoutAttribute) -> [NSLayoutConstraint]? {
         let allConstraints = self.constraints
         let constraints = allConstraints.filter { $0.firstAttribute == attribute || $0.secondAttribute == attribute }
         
@@ -174,8 +174,8 @@ extension UIView {
         }
     }
     
-    func constraintWithAttribute(_ attribute: NSLayoutAttribute,
-                                 relation: NSLayoutRelation) -> NSLayoutConstraint? {
+    func constraintWithAttribute(_ attribute: LayoutAttribute,
+                                 relation: LayoutRelation) -> NSLayoutConstraint? {
         let allConstraints = self.constraints
         let index = allConstraints.index {
             ($0.firstAttribute == attribute || $0.secondAttribute == attribute) &&

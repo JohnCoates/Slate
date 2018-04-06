@@ -39,7 +39,7 @@ class DataModelMetadata {
         let prefixLength: Int = DataModel.versionPrefix.count
         let startIndex = identifier.index(identifier.startIndex,
                                           offsetBy: prefixLength)
-        let rawVersionString = identifier.substring(from: startIndex)
+        let rawVersionString = identifier[startIndex...]
         guard let rawVersion = Int(rawVersionString) else {
             fatalError("Couldn't convert version \(rawVersionString) to Int")
         }

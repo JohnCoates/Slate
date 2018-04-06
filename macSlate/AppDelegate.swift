@@ -17,9 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
                                                     .resizable],
                                         backing: .buffered, defer: true)
     lazy var viewController: NSViewController = {
-        guard let viewController = CameraPreviewViewController(nibName: nil, bundle: nil) else {
-        fatalError("Couldn't instantiate camera preview VC")
-        }
+        let viewController = CameraPreviewViewController(nibName: nil, bundle: nil)
         return viewController
     }()
     
@@ -27,11 +25,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 //        testRuntimeShaderBuild()
         
         mainWindow.delegate = self
-        mainWindow.identifier = "previewWindow"
+        mainWindow.identifier = NSUserInterfaceItemIdentifier("previewWindow")
         mainWindow.isRestorable = true
         mainWindow.isMovableByWindowBackground = true
         mainWindow.center()
-        mainWindow.setFrameAutosaveName("previewWindow")
+        mainWindow.setFrameAutosaveName(NSWindow.FrameAutosaveName("previewWindow"))
         mainWindow.title = "Preview"
         mainWindow.contentView = viewController.view
         mainWindow.makeKeyAndOrderFront(nil)

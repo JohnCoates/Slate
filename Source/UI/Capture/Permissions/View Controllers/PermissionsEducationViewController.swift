@@ -95,7 +95,7 @@ class PermissionsEducationViewController: UIViewController {
             fatalError("Missing image view, can't lay out explanation")
         }
         explanationLabel.text = explanation
-        explanationLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightRegular)
+        explanationLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.regular)
         explanationLabel.textColor = UIColor(red: 0.22, green: 0.22, blue: 0.22, alpha: 1.00)
         explanationLabel.adjustsFontSizeToFitWidth = false
         explanationLabel.numberOfLines = 0
@@ -118,7 +118,7 @@ class PermissionsEducationViewController: UIViewController {
         
         let label = UILabel(frame: .zero)
         label.text = text
-        label.font = UIFont.systemFont(ofSize: 17, weight: UIFontWeightRegular)
+        label.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.regular)
         label.textColor = .black
         
         let toggle = UISwitch(frame: .zero)
@@ -205,7 +205,7 @@ class PermissionsEducationViewController: UIViewController {
         
         let label = UILabel()
         label.text = dialogButton.text
-        label.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.medium)
         label.textColor = dialogButton.textColor
         button.addSubview(label)
         

@@ -42,7 +42,7 @@ final class DebugWindow: UIWindow {
     
     // MARK: - User Interaction
     
-    func activationTap(gesture: UITapGestureRecognizer) {
+    @objc func activationTap(gesture: UITapGestureRecognizer) {
         let location = gesture.location(in: nil)
         
         let bounds = self.bounds

@@ -20,10 +20,10 @@ class AVPreviewCaptureViewController: BaseCaptureViewController {
     
     override func cameraSetup() {
         session.beginConfiguration()
-        session.sessionPreset = AVCaptureSessionPresetPhoto
-        let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        session.sessionPreset = AVCaptureSession.Preset.photo
+        let device = AVCaptureDevice.default(for: AVMediaType.video)
         do {
-            try session.addInput(AVCaptureDeviceInput(device: device))
+            try session.addInput(AVCaptureDeviceInput(device: device!))
         } catch let error {
             print("error: \(error)")
             return
@@ -35,10 +35,8 @@ class AVPreviewCaptureViewController: BaseCaptureViewController {
         previewView.frame = view.bounds
         view.addSubview(previewView)
         
-        guard let layer = AVCaptureVideoPreviewLayer(session: session) else {
-            fatalError("Failed to create video preview layer instance")
-        }
-        layer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        let layer = AVCaptureVideoPreviewLayer(session: session)
+        layer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         layer.frame = previewView.bounds
         previewView.layer.addSublayer(layer)
         

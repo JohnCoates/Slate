@@ -37,7 +37,7 @@ extension Renderer {
         
         return device.makeBuffer(bytes: vertices,
                                  length: MemoryLayout<Vertex>.stride * vertices.count,
-                                 options: options)
+                                 options: options)!
     }
     
     class func generate(textureCoordinates coordinates: inout[float2], forDevice device: MTLDevice) -> MTLBuffer {
@@ -54,7 +54,7 @@ extension Renderer {
         
         return device.makeBuffer(bytes: coordinates,
                                  length: MemoryLayout<float2>.stride * coordinates.count,
-                                 options: options)
+                                 options: options)!
     }
     
     // MARK: - Buffer Updates
@@ -65,16 +65,14 @@ extension Renderer {
         let contents = vertexBuffer.contents()
         memcpy(contents, vertices, MemoryLayout<Vertex>.stride * vertices.count)
         let length = vertexBuffer.length
-        let range = NSRange(location: 0, length: length)
-        vertexBuffer.didModifyRange(range)
+        vertexBuffer.didModifyRange(0..<length)
     }
     
     func invalidateTextureCoordinatesBuffer() {
         let contents = textureCoordinatesBuffer.contents()
         memcpy(contents, textureCoordinates, MemoryLayout<float2>.stride * textureCoordinates.count)
         let length = textureCoordinatesBuffer.length
-        let range = NSRange(location: 0, length: length)
-        textureCoordinatesBuffer.didModifyRange(range)
+        textureCoordinatesBuffer.didModifyRange(0..<length)
     }
     
     #endif
@@ -125,8 +123,7 @@ extension Renderer {
         let contents = vertexBuffer.contents()
         memcpy(contents, newVertices, MemoryLayout<Vertex>.stride * vertices.count)
         #if os(macOS)
-            let range = NSRange(location: 0, length: vertexBuffer.length)
-            vertexBuffer.didModifyRange(range)
+            vertexBuffer.didModifyRange(0..<vertexBuffer.length)
         #endif
     }
     
@@ -137,8 +134,7 @@ extension Renderer {
         let contents = textureCoordinatesBuffer.contents()
         memcpy(contents, newTextureCoordinates, MemoryLayout<float2>.stride * textureCoordinates.count)
         #if os(macOS)
-            let range = NSRange(location: 0, length: textureCoordinatesBuffer.length)
-            textureCoordinatesBuffer.didModifyRange(range)
+            textureCoordinatesBuffer.didModifyRange(0..<textureCoordinatesBuffer.length)
         #endif
     }
     

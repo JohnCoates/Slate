@@ -153,7 +153,7 @@ class Button: UIView, EditOpacity, EditRounding {
     
     private func resetConstraintsForTapArea() {
         var remove = [NSLayoutConstraint]()
-        let attributes: [NSLayoutAttribute] = [.top, .left, .right, .bottom, .centerY, .centerX]
+        let attributes: [LayoutAttribute] = [.top, .left, .right, .bottom, .centerY, .centerX]
         for attribute in attributes {
             if let constraints = contentView.constraintsBetween(view: contentView, view2: self,
                                                                 viewAttribute: attribute) {
@@ -190,7 +190,7 @@ class Button: UIView, EditOpacity, EditRounding {
     
     // MARK: - User Interaction
     
-    func tapped(gesture: UITapGestureRecognizer) {
+    @objc func tapped(gesture: UITapGestureRecognizer) {
         guard let tapCallback = tapCallback else {
             return
         }

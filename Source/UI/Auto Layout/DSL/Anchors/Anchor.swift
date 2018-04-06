@@ -50,15 +50,15 @@ class Anchor<Kind> where Kind: AnchorType {
         #endif
     }
     
-    let attribute: NSLayoutAttribute
+    let attribute: LayoutAttribute
     
-    init(target: View, kind attribute: NSLayoutAttribute) {
+    init(target: View, kind attribute: LayoutAttribute) {
         self.target = .view(target)
         self.attribute = attribute
     }
     
     #if os(iOS)
-    init(target: UILayoutSupport, kind attribute: NSLayoutAttribute) {
+    init(target: UILayoutSupport, kind attribute: LayoutAttribute) {
         self.target = .layoutSupport(target)
         self.attribute = attribute
     }
@@ -104,7 +104,7 @@ class Anchor<Kind> where Kind: AnchorType {
     }
     
     private func pin(to: Anchor<Kind>,
-                     relation: NSLayoutRelation, add: CGFloat,
+                     relation: LayoutRelation, add: CGFloat,
                      rank: Priority?) -> NSLayoutConstraint {
         
         let constraint = NSLayoutConstraint(item: innerTarget,
@@ -169,7 +169,7 @@ class Anchor<Kind> where Kind: AnchorType {
     /// the view hiearchy until it finds at least one.
     private func existingDSLConstraint(inView view: View,
                                        target: View,
-                                       attribute: NSLayoutAttribute) -> [NSLayoutConstraint]? {
+                                       attribute: LayoutAttribute) -> [NSLayoutConstraint]? {
         let constraints = view.constraints.filter {
             guard ($0.firstItem === target && $0.firstAttribute == attribute) ||
                 ($0.secondItem === target  && $0.secondAttribute == attribute) else {

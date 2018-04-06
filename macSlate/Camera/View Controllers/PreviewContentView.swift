@@ -32,8 +32,8 @@ class PreviewContentView: NSView {
     let metalView = MTKView()
     
     private func initialSetup() {
-        autoresizingMask = [.viewWidthSizable, .viewHeightSizable]
-        metalView.autoresizingMask = [.viewWidthSizable, .viewHeightSizable]
+        autoresizingMask = [.width, .height]
+        metalView.autoresizingMask = [.width, .height]
         metalView.frame = bounds
         addSubview(metalView)
     }

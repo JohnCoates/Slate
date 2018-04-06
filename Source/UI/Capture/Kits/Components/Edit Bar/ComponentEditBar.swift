@@ -81,7 +81,7 @@ class ComponentEditBar: UIView {
     let titleLabel: UILabel = UILabel(frame: .zero)
     
     fileprivate func setUpTitleLabel() {
-        titleLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightRegular)
+        titleLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.regular)
         titleLabel.textColor = UIColor.white
         titleButton.addSubview(titleLabel)
         
@@ -141,7 +141,7 @@ class ComponentEditBar: UIView {
     
     func addTitleLabel(withText text: String, forControl control: UIView) {
         let label = UILabel(frame: .zero)
-        label.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.medium)
         label.textColor = UIColor.white
         label.text = text
         addSubview(label)

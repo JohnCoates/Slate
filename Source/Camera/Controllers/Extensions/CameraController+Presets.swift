@@ -11,15 +11,15 @@ import AVFoundation
 
 extension CameraController {
     
-    func bestSessionPreset() -> String? {
-        let suitablePresets: [String]
+    func bestSessionPreset() -> AVCaptureSession.Preset? {
+        let suitablePresets: [AVCaptureSession.Preset]
         if Platform.isMacOS {
-            suitablePresets = [AVCaptureSessionPreset1280x720]
+            suitablePresets = [AVCaptureSession.Preset.hd1280x720]
         } else {
             suitablePresets = [
-                AVCaptureSessionPresetiFrame960x540,
-                AVCaptureSessionPreset1280x720,
-                AVCaptureSessionPresetPhoto   
+                AVCaptureSession.Preset.iFrame960x540,
+                AVCaptureSession.Preset.hd1280x720,
+                AVCaptureSession.Preset.photo   
             ]
         }
         for preset in suitablePresets {

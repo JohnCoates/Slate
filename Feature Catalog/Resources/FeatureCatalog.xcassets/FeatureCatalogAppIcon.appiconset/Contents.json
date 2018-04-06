@@ -43,6 +43,12 @@
       "idiom" : "iphone",
       "filename" : "AppIcon@180x180.png",
       "scale" : "3x"
+    },
+    {
+      "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "AppIcon-iTunesArtwork.png",
+      "scale" : "1x"
     }
   ],
   "info" : {
