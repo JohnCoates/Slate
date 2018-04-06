@@ -36,7 +36,7 @@ class DataModelMetadata {
     }
     
     private func version(fromIdentifier identifier: String) -> DataModel.Version {
-        let prefixLength: Int = DataModel.versionPrefix.characters.count
+        let prefixLength: Int = DataModel.versionPrefix.count
         let startIndex = identifier.index(identifier.startIndex,
                                           offsetBy: prefixLength)
         let rawVersionString = identifier.substring(from: startIndex)
