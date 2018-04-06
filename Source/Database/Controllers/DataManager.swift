@@ -29,8 +29,10 @@ class DataManager {
     // MARK: - Context Creation
     
     private static func createGlobalContext() -> NSManagedObjectContext {
+        if Platform.isDebug {
+            print("Loading database from \(storeURL.path)")
+        }
         migrateIfNecessary()
-        
         return createContext(storeURL: storeURL, storeType: storeType)
     }
     

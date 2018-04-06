@@ -39,4 +39,9 @@ class Platform {
         #endif
     }
     
+    /// Whether this is a Debug build or not
+    static var isDebug: Bool {
+        return !isProduction
+    }
+    
 }
