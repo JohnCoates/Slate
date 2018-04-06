@@ -14,16 +14,22 @@ class DBRect: NSObject, NSCoding {
     
     let rect: CGRect
     
+    enum CodingKeys: String, CodingKey {
+        case rect
+    }
+    
     init(rect: CGRect) {
         self.rect = rect
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        self.rect = aDecoder.decodeCGRect(forKey: "rect")
+    required init?(coder nsDecoder: NSCoder) {
+        let decoder = nsDecoder.keyed(by: CodingKeys.self)
+        rect = decoder[.rect]
     }
     
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(rect, forKey: "rect")
+    func encode(with nsEncoder: NSCoder) {
+        let encoder = nsEncoder.keyed(by: CodingKeys.self)
+        encoder[.rect] = rect
     }
     
     override var description: String {

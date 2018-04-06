@@ -15,6 +15,11 @@ class DBPhotoResolution: NSObject, NSCoding {
     private var size: CGSize?
     private var kind: Int
     
+    enum CodingKeys: String, CodingKey {
+        case size
+        case kind
+    }
+    
     init(resolution: PhotoResolution) {
         kind = resolution.kind
         
@@ -26,18 +31,21 @@ class DBPhotoResolution: NSObject, NSCoding {
         }
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        kind = aDecoder.decodeInteger(forKey: "kind")
-        if aDecoder.containsValue(forKey: "size") {
-            size = aDecoder.decodeCGSize(forKey: "size")
+    required init?(coder nsDecoder: NSCoder) {
+        let decoder = nsDecoder.keyed(by: CodingKeys.self)
+        kind = decoder[.kind]
+        
+        if decoder.contains(.size) {
+            size = decoder[.size]
         }
     }
     
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(kind, forKey: "kind")
+    func encode(with nsEncoder: NSCoder) {
+        let encoder = nsEncoder.keyed(by: CodingKeys.self)
+        encoder[.kind] = kind
         
         if let size = size {
-            aCoder.encode(size, forKey: "size")
+            encoder[.size] = size
         }
     }
     
