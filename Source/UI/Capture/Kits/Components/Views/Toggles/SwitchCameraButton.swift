@@ -12,7 +12,7 @@ final class SwitchCameraButton: InverseMaskButtonImage {
     
     // MARK: - Init
     
-    convenience init() {
+    @objc convenience init() {
         self.init(asset: KitComponent.switchCamera)
     }
     
