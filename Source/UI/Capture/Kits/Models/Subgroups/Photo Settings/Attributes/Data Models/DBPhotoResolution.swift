@@ -31,11 +31,10 @@ class DBPhotoResolution: NSObject, NSCoding {
         if aDecoder.containsValue(forKey: "size") {
             size = aDecoder.decodeCGSize(forKey: "size")
         }
-        
     }
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(kind)
+        aCoder.encode(kind, forKey: "kind")
         
         if let size = size {
             aCoder.encode(size, forKey: "size")
