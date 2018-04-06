@@ -131,11 +131,11 @@ extension BaseCaptureViewController: ComponentEditBarDelegate {
         editGestures.append(gesture)
         gesture.dragHandler = { difference in
             let transformedDifference = difference.applying(targetView.transform)
-            var center = component.center
-            center.x += transformedDifference.x
-            center.y += transformedDifference.y
+            var origin = component.origin
+            origin.x += transformedDifference.x
+            origin.y += transformedDifference.y
             
-            component.center = center
+            component.origin = origin
         }
     }
     
