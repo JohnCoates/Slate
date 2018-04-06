@@ -131,6 +131,15 @@ class Anchor<Kind> where Kind: AnchorType {
     
     func prepareLeftHandSideForAutoLayout() {
         if case let .view(view) = target {
+            var isCellContentView = false
+            if let superview = view.superview, superview is UITableViewCell {
+                isCellContentView = true
+            }
+            if isCellContentView {
+                print("not preparing: \(view)")
+                return
+            }
+            
             view.translatesAutoresizingMaskIntoConstraints = false
         }
     }
