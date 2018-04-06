@@ -163,23 +163,23 @@ class ComponentEditBar: UIView {
     // MARK: - Save, Cancel
     
     func saveTapped() {
-        let component = requiredComponent(forFunction: #function)
-        let delegate = requiredDelegate(forFunction: #function)
+        let component = requiredComponent()
+        let delegate = requiredDelegate()
         stopEditing()
         delegate.save(component: component)
     }
     
     func cancelTapped() {
-        let component = requiredComponent(forFunction: #function)
-        let delegate = requiredDelegate(forFunction: #function)
+        let component = requiredComponent()
+        let delegate = requiredDelegate()
         resetToInitialState(component: component)
         stopEditing()
         delegate.cancel(editingComponent: component)
     }
     
     func deleteTapped() {
-        let component = requiredComponent(forFunction: #function)
-        let delegate = requiredDelegate(forFunction: #function)
+        let component = requiredComponent()
+        let delegate = requiredDelegate()
         delegate.askUserForDeleteConfirmation(component: component) { didDelete in
             if didDelete {
                 self.stopEditing()
@@ -226,7 +226,7 @@ class ComponentEditBar: UIView {
     
     // MARK: - Guaranteed properties
     
-    func requiredDelegate(forFunction function: String) -> ComponentEditBarDelegate {
+    func requiredDelegate(forFunction function: String = #function) -> ComponentEditBarDelegate {
         guard let delegate = delegate else {
             fatalError("Missing delegate required for function: \(function)")
         }
@@ -234,7 +234,7 @@ class ComponentEditBar: UIView {
         return delegate
     }
     
-    func requiredComponent(forFunction function: String) -> Component {
+    func requiredComponent(forFunction function: String = #function) -> Component {
         guard let component = component else {
             fatalError("Missing component required for function: \(function)")
         }
