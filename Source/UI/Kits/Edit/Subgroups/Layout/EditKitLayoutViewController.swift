@@ -91,6 +91,12 @@ class EditKitLayoutViewController: SettingsTableViewController, LayoutPreviewCel
     func promptUserToSelectPreviewDevice() {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
+        let x = UIAlertAction(title: DeviceType.x.rawValue,
+                                      style: .default) { action in
+                                        self.setPreview(device: .x)
+        }
+        alertController.addAction(x)
+        
         let seven = UIAlertAction(title: DeviceType.seven.rawValue,
                                   style: .default) { action in
             self.setPreview(device: .seven)
@@ -109,6 +115,7 @@ class EditKitLayoutViewController: SettingsTableViewController, LayoutPreviewCel
         }
         alertController.addAction(se)
         
+        
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cancel)
         
@@ -117,6 +124,7 @@ class EditKitLayoutViewController: SettingsTableViewController, LayoutPreviewCel
     
     func setPreview(device: DeviceType) {
         layoutCell.device = device
+        tableView.reloadData()
     }
     
 }

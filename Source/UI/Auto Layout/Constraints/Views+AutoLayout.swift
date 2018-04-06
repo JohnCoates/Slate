@@ -196,9 +196,19 @@ extension UIView {
         setContentHuggingPriority(priority.rawValue, for: axis)
     }
     
+    func setHugging(priorities: Priority) {
+        setHugging(priority: priorities, axis: .horizontal)
+        setHugging(priority: priorities, axis: .vertical)
+    }
+    
     func setCompressionResistant(priority: Priority, axis: UILayoutConstraintAxis) {
         setContentCompressionResistancePriority(priority.rawValue,
                                                 for: axis)
+    }
+    
+    func setCompressionResistance(priorities: Priority) {
+        setCompressionResistant(priority: priorities, axis: .horizontal)
+        setCompressionResistant(priority: priorities, axis: .vertical)
     }
     
 }

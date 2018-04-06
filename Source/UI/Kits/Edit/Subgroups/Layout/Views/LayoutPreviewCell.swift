@@ -15,12 +15,15 @@ protocol LayoutPreviewCellDelegate: class {
 }
 
 enum DeviceType: String {
+    case x = "iPhone X"
     case seven = "iPhone 7"
     case sevenPlus = "iPhone 7 Plus"
     case se = "iPhone SE"
     
     var pointsSize: Size {
         switch self {
+        case .x:
+            return Size(width: 375, height: 812)
         case .seven:
             return Size(width: 375, height: 667)
         case .sevenPlus:
@@ -34,7 +37,7 @@ enum DeviceType: String {
         switch self {
         case .seven, .se:
             return pointsSize * 2
-        case .sevenPlus:
+        case .sevenPlus, .x:
             return pointsSize * 3
         }
     }
@@ -80,7 +83,6 @@ final class LayoutPreviewCell: UITableViewCell {
         selectionStyle = .none
         backgroundColor = Theme.Settings.background
         contentView.bottom.pin(to: preview.bottom, add: 10)
-        contentView.translatesAutoresizingMaskIntoConstraints = true
     }
     
     let titleButton = Button()
@@ -149,9 +151,10 @@ final class LayoutPreviewCell: UITableViewCell {
             previewSizeConstraints.removeAll()
         }
         let widthConstraint = preview.width.pin(to: contentView.width,
-                                                times: 0.6)
+                                                times: 0.6, rank: .high)
         let heightConstraint = preview.height.pin(to: preview.width,
-                                                  times: screenHeightToWidthRatio)
+                                                  times: screenHeightToWidthRatio,
+                                                  rank: .high)
         previewSizeConstraints.append(widthConstraint)
         previewSizeConstraints.append(heightConstraint)
     }

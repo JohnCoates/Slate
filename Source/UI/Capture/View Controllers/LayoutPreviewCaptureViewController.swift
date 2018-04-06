@@ -71,7 +71,9 @@ final class LayoutPreviewCaptureViewController: BaseCaptureViewController {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "HannahDeathValley"))
         imageView.contentMode = .scaleAspectFill
         view.insertSubview(imageView, at: 0)
-        imageView.edges --> view.edges
+        imageView.edges.pin(to: view.edges, rank: .high)
+        imageView.setHugging(priorities: .high)
+        imageView.setCompressionResistance(priorities: .low)
     }
     
     // MARK: - Controls Setup
