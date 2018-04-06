@@ -10,6 +10,7 @@ import UIKit
 
 protocol EditPosition: class {
     var origin: CGPoint { get set }
+    var center: CGPoint { get set }
 }
 
 extension EditPosition where Self: Component {
@@ -19,6 +20,15 @@ extension EditPosition where Self: Component {
         }
         set {
             frame.origin = newValue
+        }
+    }
+    
+    var center: CGPoint {
+        get {
+            return view.center
+        }
+        set {
+            view.center = newValue
         }
     }
 }

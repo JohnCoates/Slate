@@ -126,13 +126,16 @@ extension BaseCaptureViewController: ComponentEditBarDelegate {
             return
         }
         
-        let gesture = DragGesture(withView: targetComponent.view)
+        let targetView = targetComponent.view
+        let gesture = DragGesture(withView: targetView)
         editGestures.append(gesture)
         gesture.dragHandler = { difference in
-            var origin = component.origin
-            origin.x += difference.x
-            origin.y += difference.y
-            component.origin = origin
+            let transformedDifference = difference.applying(targetView.transform)
+            var center = component.center
+            center.x += transformedDifference.x
+            center.y += transformedDifference.y
+            
+            component.center = center
         }
     }
     
@@ -161,7 +164,6 @@ extension BaseCaptureViewController: ComponentEditBarDelegate {
         
         fatalError("Edit gesture failed")
     }
-    
 }
 
 // MARK: - Selector Extension
