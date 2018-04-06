@@ -56,16 +56,17 @@ extension BaseCaptureViewController {
             newBounds.size = CGSize.init(width: targetSize.height, height: targetSize.width)
         }
         
-        self.view.bounds = newBounds
+        view.bounds = newBounds
     }
     
     func rootViewApplyRotationCorrectingTransform(targetTransform: CGAffineTransform) {
-        guard let currentRotationZ = view.layer.value(forKeyPath: "transform.rotation.z") as? Float else {
-            fatalError("Couldn't get rotation.z for root view")
+        guard let currentRotationZ = view.layer.value(forKeyPath: "transform.rotation.z") as? Double else {
+            let layer = view.layer
+            fatalError("Couldn't get rotation.z for root view with layer \(layer)")
         }
-        let opposingAngle = atan2(Float(targetTransform.b), Float(targetTransform.a))
+        let opposingAngle = atan2(Double(targetTransform.b), Double(targetTransform.a))
         // Without this workaround in place, rotations can take the long way to our target rotation
-        let closestRotationWorkaround: Float = 0.0001
+        let closestRotationWorkaround: Double = 0.0001
         let newRotationZ = currentRotationZ + (opposingAngle * -1) + closestRotationWorkaround
         view.layer.setValue(newRotationZ, forKeyPath: "transform.rotation.z")
     }
