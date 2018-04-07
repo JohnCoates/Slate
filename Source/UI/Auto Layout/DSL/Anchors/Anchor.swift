@@ -136,7 +136,6 @@ class Anchor<Kind> where Kind: AnchorType {
                 isCellContentView = true
             }
             if isCellContentView {
-                print("not preparing: \(view)")
                 return
             }
             
