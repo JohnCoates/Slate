@@ -30,7 +30,7 @@ extension BaseCaptureViewController: DebugBarDelegate {
         }
         
         kit.components.removeAll()
-        kit.saveKit()
+        kit.save()
     }
     
 }

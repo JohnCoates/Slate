@@ -10,59 +10,6 @@ import UIKit
 
 class KitPhotoSettingsViewController: SettingsTableViewController {
     
-    private struct Row {
-        var title: String
-        var detail: String?
-        var disclosure: Bool = false
-    }
-    
-    private enum Setting {
-        case resolution
-        case frameRate
-        case burstSpeed
-        
-        var rows: [Row] {
-            switch self {
-            case .resolution:
-                return [
-                    Row(title: "Selected", detail: "Maximum", disclosure: true),
-                    Row(title: "Constrained By", detail: "Frame Rate", disclosure: false),
-                    Row(title: "Device Value", detail: "3130 x 6400", disclosure: false)
-                ]
-            case .frameRate:
-                return [
-                    Row(title: "Selected", detail: "Highest", disclosure: true),
-                    Row(title: "Device Value", detail: "120/sec", disclosure: false)
-                ]
-            case .burstSpeed:
-                return [
-                    Row(title: "Selected", detail: "5/sec", disclosure: true),
-                    Row(title: "Override Value", detail: "2/sec", disclosure: false)
-                ]
-            }
-        }
-        
-        var name: String {
-            switch self {
-            case .resolution:
-                return "Resolution"
-            case .frameRate:
-                return "Frame Rate"
-            case .burstSpeed:
-                return "Burst Speed"
-            }
-        }
-        
-        var footer: String? {
-            switch self {
-            case .burstSpeed:
-                return "Value is being overriden by app-wide settings."
-            default:
-                return nil
-            }
-        }
-    }
-    
     private lazy var settings: [Setting] = {
         return [
             .resolution,
@@ -98,6 +45,13 @@ class KitPhotoSettingsViewController: SettingsTableViewController {
         tableView.separatorColor = Theme.Kits.separatorColor
     }
     
+    // MARK: - View Events
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     // MARK: - Table View setup
     
     override func setUpTableView() {
@@ -115,7 +69,7 @@ class KitPhotoSettingsViewController: SettingsTableViewController {
     
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
-        return settings[section].rows.count
+        return settings[section].rows(forKit: kit).count
     }
     
     override func tableView(_ tableView: UITableView,
@@ -133,7 +87,7 @@ class KitPhotoSettingsViewController: SettingsTableViewController {
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let setting = settings[indexPath.section]
-        let row = setting.rows[indexPath.row]
+        let row = setting.rows(forKit: kit)[indexPath.row]
         
         return cell(forRow: row, indexPath: indexPath)
     }
@@ -166,8 +120,93 @@ class KitPhotoSettingsViewController: SettingsTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = ResolutionSettingViewController(kit: kit)
-        navigationController?.pushViewController(vc, animated: true)
+        let setting = settings[indexPath.section]
+        let row = setting.rows(forKit: kit)[indexPath.row]
+        
+        guard let editableSetting = row.editableSetting else {
+            return
+        }
+        
+        let viewController = editableSetting.editViewController(forKit: kit)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
+}
+
+// MARK: - Value Types
+
+fileprivate extension KitPhotoSettingsViewController {
+    
+    fileprivate struct Row {
+        var title: String
+        var detail: String?
+        var disclosure = false
+        var editableSetting: Setting?
+        
+        init(title: String, detail: String,
+             disclosure: Bool, editableSetting: Setting? = nil) {
+            self.title = title
+            self.detail = detail
+            self.disclosure = disclosure
+            self.editableSetting = editableSetting
+        }
+    }
+    
+    enum Setting {
+        case resolution
+        case frameRate
+        case burstSpeed
+        
+        func rows(forKit kit: Kit) -> [Row] {
+            let selected: String
+            switch self {
+            case .resolution:
+                 selected = kit.photoSettings.resolution.userFacingDescription
+                return [
+                    Row(title: "Selected", detail: selected, disclosure: true, editableSetting: self),
+                    Row(title: "Constrained By", detail: "Frame Rate", disclosure: false),
+                    Row(title: "Device Value", detail: "3130 x 6400", disclosure: false)
+                ]
+            case .frameRate:
+                return [
+                    Row(title: "Selected", detail: "Highest", disclosure: true, editableSetting: self),
+                    Row(title: "Device Value", detail: "120/sec", disclosure: false)
+                ]
+            case .burstSpeed:
+                return [
+                    Row(title: "Selected", detail: "5/sec", disclosure: true, editableSetting: self),
+                    Row(title: "Override Value", detail: "2/sec", disclosure: false)
+                ]
+            }
+        }
+        
+        func editViewController(forKit kit: Kit) -> UIViewController {
+            switch self {
+            case .resolution:
+                return ResolutionSettingViewController(kit: kit)
+            default:
+                fatalError("Edit view controller for \(self) has not been implemented")
+            }
+        }
+        
+        var name: String {
+            switch self {
+            case .resolution:
+                return "Resolution"
+            case .frameRate:
+                return "Frame Rate"
+            case .burstSpeed:
+                return "Burst Speed"
+            }
+        }
+        
+        var footer: String? {
+            switch self {
+            case .burstSpeed:
+                return "Value is being overriden by app-wide settings."
+            default:
+                return nil
+            }
+        }
+    }
 }

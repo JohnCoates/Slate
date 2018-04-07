@@ -72,7 +72,7 @@ extension BaseCaptureViewController: ComponentMenuBarDelegate {
         view.insertSubview(componentView, belowSubview: menuView)
         
         kit.addComponent(component: componentInstance)
-        kit.saveKit()
+        kit.save()
         
         configureAdded(component: componentInstance)
     }

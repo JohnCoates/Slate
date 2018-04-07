@@ -95,8 +95,6 @@ class ResolutionSettingViewController: SettingsTableViewController, UITextFieldD
     // MARK: - Settings Generators
     
     private func rows(forSection section: Section) -> [Row] {
-        let settings = kit.photoSettings
-        
         switch section {
         case .resolution:
             
@@ -104,7 +102,7 @@ class ResolutionSettingViewController: SettingsTableViewController, UITextFieldD
             var maximium = Row(title: "Maximum", style: .radioSelectable, resolution: .maximum)
             var custom = Row(title: "Custom", style: .radioSelectable, resolution: .custom(width: 1280, height: 720))
             
-            switch settings.resolution {
+            switch selectedResolution {
             case .notSet:
                 notSet.selected = true
             case .maximum:
@@ -115,7 +113,7 @@ class ResolutionSettingViewController: SettingsTableViewController, UITextFieldD
                 
             return [notSet, maximium, custom]
         case .custom:
-            guard case let .custom(width, height) = settings.resolution else {
+            guard case let .custom(width, height) = selectedResolution else {
                 return []
             }
             
@@ -145,7 +143,7 @@ class ResolutionSettingViewController: SettingsTableViewController, UITextFieldD
     }
     
     private var sections: [Section] {
-        switch kit.photoSettings.resolution {
+        switch selectedResolution {
         case .custom:
             return [.resolution, .custom]
         default:
@@ -156,9 +154,11 @@ class ResolutionSettingViewController: SettingsTableViewController, UITextFieldD
     
     // MARK: - Init
     
+    var selectedResolution: PhotoResolution
     let kit: Kit
     
     init(kit: Kit) {
+        selectedResolution = kit.photoSettings.resolution
         self.kit = kit
         super.init(style: .grouped)
     }
@@ -221,6 +221,9 @@ class ResolutionSettingViewController: SettingsTableViewController, UITextFieldD
                     section: section, row: row, indexPath: indexPath)
     }
     
+    fileprivate weak var widthInput: UITextField?
+    fileprivate weak var heightInput: UITextField?
+    
     private func cell(forTableView: UITableView,
                       section: Section, row: Row,
                       indexPath: IndexPath) -> UITableViewCell {
@@ -237,8 +240,12 @@ class ResolutionSettingViewController: SettingsTableViewController, UITextFieldD
             case Row.Dimension.width.rawValue:
                 nextKey = true
                 inputCell.value = "\(Int(customSize.width))"
+                widthInput = inputCell.textField
+            case Row.Dimension.height.rawValue:
+                fallthrough
             default:
                 inputCell.value = "\(Int(customSize.height))"
+                heightInput = inputCell.textField
             }
             inputCell.textField.indexPath = indexPath
             inputCell.textField.tableView = tableView
@@ -301,7 +308,7 @@ class ResolutionSettingViewController: SettingsTableViewController, UITextFieldD
     }
     
     private func select(resolution: PhotoResolution) {
-        kit.photoSettings.resolution = resolution
+        selectedResolution = resolution
         clearRowCaches()
         tableView.reloadData()
     }
@@ -309,13 +316,52 @@ class ResolutionSettingViewController: SettingsTableViewController, UITextFieldD
     // MARK: - User Interaction
     
     @objc func saveTapped() {
-        print("save tapped")
+        if case .custom = selectedResolution {
+            kit.photoSettings.resolution = .custom(width: Int(customSize.width),
+                                                   height: Int(customSize.height))
+        } else {
+            kit.photoSettings.resolution = selectedResolution
+        }
+        kit.save()
         navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Text Field Handler
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    @objc func textField(_ textField: UITextField,
+                         shouldChangeCharactersIn nsRange: NSRange,
+                         replacementString string: String) -> Bool {
+        if string.count == 0 {
+            return true
+        }
+        
+        let allowed = CharacterSet.decimalDigits
+        let disallowed = allowed.inverted
+        if string.rangeOfCharacter(from: disallowed) != nil {
+            return false
+        }
+        
+        let text = textField.text ?? ""
+        if let range = Range(nsRange, in: text) {
+            let newText = text.replacingCharacters(in: range, with: string)
+            let value = Int(newText) ?? 0
+            
+            if widthInput == textField {
+                customSize.width = CGFloat(value)
+            } else if heightInput == textField {
+                customSize.height = CGFloat(value)
+            }
+        }
+        
+        
+        return true
+    }
+    
+    @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.text == nil || textField.text?.count == 0 {
+            textField.text = "0"
+        }
+        
         if let cellTextField = textField as? TableCellTextField {
             return handleReturn(forTextField: cellTextField)
         }

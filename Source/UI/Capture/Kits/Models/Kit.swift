@@ -24,7 +24,7 @@ class Kit {
         components.append(component)
     }
     
-    func saveKit() {
+    func save() {
         DispatchQueue.main.async {
             self.saveCoreData(withContext: DataManager.context)
         }

@@ -88,7 +88,7 @@ extension BaseCaptureViewController: ComponentEditBarDelegate {
     func save(component: Component) {
         editGestures.removeAll()
         addEditGesture(toComponent: component)
-        kit.saveKit()
+        kit.save()
     }
     
     func askUserForDeleteConfirmation(component: Component,
@@ -108,7 +108,7 @@ extension BaseCaptureViewController: ComponentEditBarDelegate {
                 fatalError("Couldn't find component to delete: \(component)")
             }
             kit.components.remove(at: index)
-            kit.saveKit()
+            kit.save()
         }
         alertController.addAction(delete)
         

@@ -1056,13 +1056,6 @@
 			path = "Collection View";
 			sourceTree = "<group>";
 		};
-		FA0462B71EC3DE8C007B74A0 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		FA0462BC1EC3DFAB007B74A0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1229,7 +1222,6 @@
 				FA5F8CA91ED0698600921A61 /* Views */,
 				FA18059C1EC688BD004351B7 /* Editing */,
 				FA0462BC1EC3DFAB007B74A0 /* Models */,
-				FA0462B71EC3DE8C007B74A0 /* Controllers */,
 				FA7724CE1ED1BDF500C5C227 /* Menu Bar */,
 				FA29FB471EA49B0F00EB1081 /* Edit Bar */,
 			);
@@ -2857,17 +2849,9 @@
 			isa = PBXGroup;
 			children = (
 				FA7648F01F9EA09700C6DD87 /* Resolution */,
-				FADFC6BE1F4D09710023B92C /* Views */,
 				FADFC6BB1F4D096C0023B92C /* KitPhotoSettingsViewController.swift */,
 			);
 			path = "Photo Settings";
-			sourceTree = "<group>";
-		};
-		FADFC6BE1F4D09710023B92C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		FADFC6C41F4E70F60023B92C /* Subgroups */ = {
