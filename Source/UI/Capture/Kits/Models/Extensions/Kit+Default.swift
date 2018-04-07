@@ -11,9 +11,9 @@ import UIKit
 extension Kit {
     
     static func `default`() -> Kit {
-        let kit = Kit()
-        kit.configureDefaultKit()
-        return kit
+//        let kit = Kit()
+//        kit.configureDefaultKit()
+        return KitManager.currentKit
     }
     
     func configureDefaultKit() {
