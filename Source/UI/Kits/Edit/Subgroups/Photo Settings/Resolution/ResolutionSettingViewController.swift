@@ -8,24 +8,24 @@
 
 import UIKit
 
-struct TableRow {
-    var title: String
-    
-    var accessory: Accessory = .none
-    
-    enum Accessory {
-        case none
-        case checkmark
-    }
-}
+//struct TableRow {
+//    var title: String
+//
+//    var accessory: Accessory = .none
+//
+//    enum Accessory {
+//        case none
+//        case checkmark
+//    }
+//}
 
-struct Section {
-//    var rows
-}
+//struct Section {
+////    var rows
+//}
 
-protocol TableDataSource {
-    
-}
+//protocol TableDataSource {
+//    
+//}
 
 private protocol CellProtocol: class {
     var title: String { get set }

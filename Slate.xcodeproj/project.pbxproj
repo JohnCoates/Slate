@@ -169,6 +169,24 @@
 		FA3AAAC31EE25FEB006028AC /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAAC21EE25FEB006028AC /* Size.swift */; };
 		FA3AAAC41EE25FEB006028AC /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAAC21EE25FEB006028AC /* Size.swift */; };
 		FA3AAAC51EE25FEB006028AC /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAAC21EE25FEB006028AC /* Size.swift */; };
+		FA3E23D02079489C008D5227 /* FrameRateSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E23CF2079489C008D5227 /* FrameRateSettingsViewController.swift */; };
+		FA3E23D12079489C008D5227 /* FrameRateSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E23CF2079489C008D5227 /* FrameRateSettingsViewController.swift */; };
+		FA3E23D6207965BD008D5227 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E23D5207965BD008D5227 /* TableSection.swift */; };
+		FA3E23D7207965BD008D5227 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E23D5207965BD008D5227 /* TableSection.swift */; };
+		FA3E23D9207965D5008D5227 /* TableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E23D8207965D5008D5227 /* TableRow.swift */; };
+		FA3E23DA207965D5008D5227 /* TableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E23D8207965D5008D5227 /* TableRow.swift */; };
+		FA3E23DD207965F2008D5227 /* TableRadioRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E23DC207965F2008D5227 /* TableRadioRow.swift */; };
+		FA3E23DE207965F2008D5227 /* TableRadioRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E23DC207965F2008D5227 /* TableRadioRow.swift */; };
+		FA3E23E020796642008D5227 /* TableInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E23DF20796642008D5227 /* TableInputRow.swift */; };
+		FA3E23E120796642008D5227 /* TableInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E23DF20796642008D5227 /* TableInputRow.swift */; };
+		FA3E23E4207966A0008D5227 /* TableRadioSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E23E3207966A0008D5227 /* TableRadioSection.swift */; };
+		FA3E23E5207966A0008D5227 /* TableRadioSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E23E3207966A0008D5227 /* TableRadioSection.swift */; };
+		FA3E23E9207966E3008D5227 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E23E8207966E3008D5227 /* TableDataSource.swift */; };
+		FA3E23EA207966E3008D5227 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E23E8207966E3008D5227 /* TableDataSource.swift */; };
+		FA3E23ED2079670C008D5227 /* TextFieldFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E23EC2079670C008D5227 /* TextFieldFilter.swift */; };
+		FA3E23EE2079670C008D5227 /* TextFieldFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E23EC2079670C008D5227 /* TextFieldFilter.swift */; };
+		FA3E23F2207967B8008D5227 /* KitSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E23F1207967B8008D5227 /* KitSettingsViewController.swift */; };
+		FA3E23F3207967B8008D5227 /* KitSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E23F1207967B8008D5227 /* KitSettingsViewController.swift */; };
 		FA4021C61DA0AEE800752F3B /* MetalCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4021C51DA0AEE800752F3B /* MetalCameraController.swift */; };
 		FA4021C71DA0AEE800752F3B /* MetalCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4021C51DA0AEE800752F3B /* MetalCameraController.swift */; };
 		FA4BD7A51ED18D0C00D1761C /* EditOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BD7A41ED18D0C00D1761C /* EditOpacity.swift */; };
@@ -727,6 +745,15 @@
 		FA3AAAAF1EE25B8E006028AC /* Renderer+AspectRatio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Renderer+AspectRatio.swift"; sourceTree = "<group>"; };
 		FA3AAABD1EE25E6E006028AC /* CameraController+Format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraController+Format.swift"; sourceTree = "<group>"; };
 		FA3AAAC21EE25FEB006028AC /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		FA3E23CF2079489C008D5227 /* FrameRateSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameRateSettingsViewController.swift; sourceTree = "<group>"; };
+		FA3E23D5207965BD008D5227 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
+		FA3E23D8207965D5008D5227 /* TableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRow.swift; sourceTree = "<group>"; };
+		FA3E23DC207965F2008D5227 /* TableRadioRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRadioRow.swift; sourceTree = "<group>"; };
+		FA3E23DF20796642008D5227 /* TableInputRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableInputRow.swift; sourceTree = "<group>"; };
+		FA3E23E3207966A0008D5227 /* TableRadioSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRadioSection.swift; sourceTree = "<group>"; };
+		FA3E23E8207966E3008D5227 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
+		FA3E23EC2079670C008D5227 /* TextFieldFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldFilter.swift; sourceTree = "<group>"; };
+		FA3E23F1207967B8008D5227 /* KitSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitSettingsViewController.swift; sourceTree = "<group>"; };
 		FA4021C51DA0AEE800752F3B /* MetalCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalCameraController.swift; sourceTree = "<group>"; };
 		FA4BD7A41ED18D0C00D1761C /* EditOpacity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditOpacity.swift; sourceTree = "<group>"; };
 		FA4D54151DB055A00091184D /* FragmentFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FragmentFilter.swift; sourceTree = "<group>"; };
@@ -1137,6 +1164,7 @@
 		FA0C9F8A2078FFBE00534901 /* Frame Rate */ = {
 			isa = PBXGroup;
 			children = (
+				FA3E23CF2079489C008D5227 /* FrameRateSettingsViewController.swift */,
 			);
 			path = "Frame Rate";
 			sourceTree = "<group>";
@@ -1499,6 +1527,75 @@
 			path = Layout;
 			sourceTree = "<group>";
 		};
+		FA3E23D22079657F008D5227 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				FA3E23F020796797008D5227 /* View Controllers */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		FA3E23D320796594008D5227 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA3E23EB20796702008D5227 /* Fields */,
+				FA3E23E6207966AB008D5227 /* Source */,
+				FA3E23E220796692008D5227 /* Sections */,
+				FA3E23DB207965E6008D5227 /* Rows */,
+				FA3E23D5207965BD008D5227 /* TableSection.swift */,
+				FA3E23D8207965D5008D5227 /* TableRow.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FA3E23DB207965E6008D5227 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				FA3E23DC207965F2008D5227 /* TableRadioRow.swift */,
+				FA3E23DF20796642008D5227 /* TableInputRow.swift */,
+			);
+			path = Rows;
+			sourceTree = "<group>";
+		};
+		FA3E23E220796692008D5227 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				FA3E23E3207966A0008D5227 /* TableRadioSection.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		FA3E23E6207966AB008D5227 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		FA3E23E7207966BC008D5227 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FA3E23E8207966E3008D5227 /* TableDataSource.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FA3E23EB20796702008D5227 /* Fields */ = {
+			isa = PBXGroup;
+			children = (
+				FA3E23EC2079670C008D5227 /* TextFieldFilter.swift */,
+			);
+			path = Fields;
+			sourceTree = "<group>";
+		};
+		FA3E23F020796797008D5227 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA3E23F1207967B8008D5227 /* KitSettingsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		FA4DFECF1D9DBD1A0068706F /* macSlate */ = {
 			isa = PBXGroup;
 			children = (
@@ -1634,6 +1731,8 @@
 		FA61B16C1F9EEAA80069B1A6 /* Tables */ = {
 			isa = PBXGroup;
 			children = (
+				FA3E23E7207966BC008D5227 /* Protocols */,
+				FA3E23D320796594008D5227 /* Models */,
 				FA61B16D1F9EEAC00069B1A6 /* Views */,
 			);
 			path = Tables;
@@ -2659,6 +2758,7 @@
 		FACA796D1EE4CF350001D468 /* Kits */ = {
 			isa = PBXGroup;
 			children = (
+				FA3E23D22079657F008D5227 /* Table */,
 				FA60B6801EF338C1003441E1 /* Edit */,
 				FACA796E1EE4CF520001D468 /* List */,
 			);
@@ -3771,6 +3871,7 @@
 				FA5709A61ECC7172000362C8 /* PhotosPermissionViewController.swift in Sources */,
 				FA8CE4281ECD8AE700788026 /* UIGestureRecognizer+Closure.swift in Sources */,
 				FA7649041F9EE80200C6DD87 /* TextFieldHandler.swift in Sources */,
+				FA3E23E020796642008D5227 /* TableInputRow.swift in Sources */,
 				FA1805981EC54F38004351B7 /* CircleView.swift in Sources */,
 				FA5F8C971ECFE7D000921A61 /* BaseCaptureViewController+Kit.swift in Sources */,
 				FA3AAAA61EE259C0006028AC /* Renderer+View.swift in Sources */,
@@ -3791,6 +3892,7 @@
 				FA8AA5411ECC107F0093D317 /* ButtonIndicatorIcon.swift in Sources */,
 				FA7648F51F9EAA6C00C6DD87 /* EditKitInputCell.swift in Sources */,
 				FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */,
+				FA3E23E9207966E3008D5227 /* TableDataSource.swift in Sources */,
 				FACF0F3F1EECDB6C00B0211C /* ComponentModel.swift in Sources */,
 				FA1A2C9D1ECC57C60075FA0B /* PermissionsEducationViewController.swift in Sources */,
 				FA5651AC1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift in Sources */,
@@ -3823,11 +3925,13 @@
 				FA2B1E681EC922FD00E44613 /* LayoutConstraint+Modifying.swift in Sources */,
 				FA3AAA8F1EE24C83006028AC /* CameraController+Preview.swift in Sources */,
 				FA4D54161DB055A00091184D /* FragmentFilter.swift in Sources */,
+				FA3E23DD207965F2008D5227 /* TableRadioRow.swift in Sources */,
 				FAC21B5A1EEDEB32007C17AF /* Managed.swift in Sources */,
 				FADFC6DB1F4E75190023B92C /* DimensionAnchor.swift in Sources */,
 				FAAE76741EEB881C00CA3416 /* VectorAssetReader.swift in Sources */,
 				FAAE767D1EEB885100CA3416 /* Instructions.swift in Sources */,
 				FA8CE4221ECD7E5A00788026 /* Int+Pixels.swift in Sources */,
+				FA3E23D9207965D5008D5227 /* TableRow.swift in Sources */,
 				FAAE76781EEB881C00CA3416 /* DataPath.swift in Sources */,
 				FA8CE42B1ECDA16A00788026 /* PhotosDeniedPermisionViewController.swift in Sources */,
 				FA3AAAAE1EE25B11006028AC /* Renderer+Buffers.swift in Sources */,
@@ -3861,6 +3965,7 @@
 				FA7648FD1F9EDC0B00C6DD87 /* KeyboardHandler.swift in Sources */,
 				FA2B1EB21EC97E7300E44613 /* CodeIconButton.swift in Sources */,
 				FAAE76811EEB88D300CA3416 /* VectorAssetsList.swift in Sources */,
+				FA3E23ED2079670C008D5227 /* TextFieldFilter.swift in Sources */,
 				FA0462BF1EC3DFE1007B74A0 /* SwitchCameraComponent.swift in Sources */,
 				FABB169E1D9F308C00A8AC6C /* Vertices.swift in Sources */,
 				FA5709AD1ECD4A36000362C8 /* CameraDeniedPermisionViewController.swift in Sources */,
@@ -3876,6 +3981,8 @@
 				FA61B16F1F9EEAD90069B1A6 /* TableCellTextField.swift in Sources */,
 				FA0462B61EC3CDFA007B74A0 /* ControlBarItemCell.swift in Sources */,
 				FAC4248F1EEF2B2700E2EB26 /* NSManagedObjectContext+Observers.swift in Sources */,
+				FA3E23E4207966A0008D5227 /* TableRadioSection.swift in Sources */,
+				FA3E23D02079489C008D5227 /* FrameRateSettingsViewController.swift in Sources */,
 				FA64775E1EE39F4000A63A22 /* EditBar+EditBorder.swift in Sources */,
 				FA78F2971E14520700D34947 /* DebugWindow.swift in Sources */,
 				FA2B1EAF1EC97CE000E44613 /* DeleteLineIcon.swift in Sources */,
@@ -3884,6 +3991,7 @@
 				FA1805A31EC699A4004351B7 /* EditSize.swift in Sources */,
 				FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */,
 				FADFC6C01F4D4D9D0023B92C /* EditKitValueCell.swift in Sources */,
+				FA3E23F2207967B8008D5227 /* KitSettingsViewController.swift in Sources */,
 				FA167A7420779AB6007EA3E7 /* ALTypeAliases.swift in Sources */,
 				FA29FB491EA49B1F00EB1081 /* ComponentMenuBar.swift in Sources */,
 				FA4BD7A51ED18D0C00D1761C /* EditOpacity.swift in Sources */,
@@ -3928,6 +4036,7 @@
 				FA2426CE1D9A67E000AEE60C /* CameraRenderView.swift in Sources */,
 				FA78F29C1E15686C00D34947 /* DebugBarItemView.swift in Sources */,
 				FABC39431EF1DED200ECE935 /* DataModel.swift in Sources */,
+				FA3E23D6207965BD008D5227 /* TableSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3956,6 +4065,7 @@
 			files = (
 				FAC21B631EEE1422007C17AF /* DBEntity.swift in Sources */,
 				FA7724CD1ED1A25F00C5C227 /* EditOpacity.swift in Sources */,
+				FA3E23DA207965D5008D5227 /* TableRow.swift in Sources */,
 				FA8AA5421ECC107F0093D317 /* ButtonIndicatorIcon.swift in Sources */,
 				FAAE766F1EEB741500CA3416 /* VectorImagesManager.swift in Sources */,
 				FA7648F61F9EAA6C00C6DD87 /* EditKitInputCell.swift in Sources */,
@@ -3980,6 +4090,7 @@
 				FA1272EB1EF1C44500100641 /* GenericComponent.swift in Sources */,
 				FAD5DAE21EF8CB9300239C96 /* LayoutScale.swift in Sources */,
 				FA60B68F1EF37515003441E1 /* UITableView+Cells.swift in Sources */,
+				FA3E23D7207965BD008D5227 /* TableSection.swift in Sources */,
 				FA2B1E9D1EC92B5B00E44613 /* SwitchCameraButton.swift in Sources */,
 				FA2B1E7A1EC92AF600E44613 /* SimulatorCaptureViewController.swift in Sources */,
 				FA2B1E971EC92B5B00E44613 /* MetalCaptureViewController.swift in Sources */,
@@ -3987,6 +4098,7 @@
 				FA9820872078046300E35E35 /* NSCoder+Extensions.swift in Sources */,
 				FAC21B6A1EEE3005007C17AF /* FetchedResultsDataProvider.swift in Sources */,
 				FA3AAA931EE24CBB006028AC /* CameraController+StillOutput.swift in Sources */,
+				FA3E23E120796642008D5227 /* TableInputRow.swift in Sources */,
 				FA3AAAB61EE25E0F006028AC /* Renderer+View.swift in Sources */,
 				FA2B1E9B1EC92B5B00E44613 /* MetalCameraController.swift in Sources */,
 				FAAE76501EEB3A0300CA3416 /* Canvas.swift in Sources */,
@@ -4054,6 +4166,7 @@
 				FAD5DAE61EF8D34C00239C96 /* SmartPin.swift in Sources */,
 				FAA8FDDC1F5FE4A100847C1A /* EditKitSettingCell.swift in Sources */,
 				FA3AAAB21EE25E08006028AC /* Renderer+Shaders.swift in Sources */,
+				FA3E23EA207966E3008D5227 /* TableDataSource.swift in Sources */,
 				FA2B1E931EC92B5B00E44613 /* ControlBarItemCell.swift in Sources */,
 				FA64775C1EE39EF600A63A22 /* EditBar+InitialState.swift in Sources */,
 				FA7649021F9EE1C600C6DD87 /* NavigationViewController+Convenience.swift in Sources */,
@@ -4109,6 +4222,7 @@
 				FAAE763C1EEB2F2900CA3416 /* DataColor.swift in Sources */,
 				FA5651AF1EDE4C44006B5A19 /* ImageCaptureManager.swift in Sources */,
 				FA2B1E801EC92B5B00E44613 /* DebugBarView.swift in Sources */,
+				FA3E23E5207966A0008D5227 /* TableRadioSection.swift in Sources */,
 				FAF5AB271EEBCE1F00EDED04 /* PathsImageButton.swift in Sources */,
 				FA2B1E7D1EC92B5B00E44613 /* Kit.swift in Sources */,
 				FAC4248C1EEF28EE00E2EB26 /* ManagedObjectObserver.swift in Sources */,
@@ -4131,6 +4245,7 @@
 				FA8CE4231ECD7E5A00788026 /* Int+Pixels.swift in Sources */,
 				FA3AAA981EE24E63006028AC /* CameraController+Device.swift in Sources */,
 				FADFC6D01F4E74A20023B92C /* SizeAnchor.swift in Sources */,
+				FA3E23D12079489C008D5227 /* FrameRateSettingsViewController.swift in Sources */,
 				FA7EC2B61EEB9E0300686E3C /* InverseMaskImageButton.swift in Sources */,
 				FA2B1E9A1EC92B5B00E44613 /* ComponentEditBarDelegate.swift in Sources */,
 				FA76F5421ED3C32D00059906 /* PermissionsManager.swift in Sources */,
@@ -4138,8 +4253,11 @@
 				FA2B1E891EC92B5B00E44613 /* FragmentFilter.swift in Sources */,
 				FA2B1EA61EC92B5B00E44613 /* DebugBarItemView.swift in Sources */,
 				FACA797C1EE66A5B0001D468 /* KitTableViewCell.swift in Sources */,
+				FA3E23F3207967B8008D5227 /* KitSettingsViewController.swift in Sources */,
 				FA5F8CA01ECFF81400921A61 /* UIScreen+Layout.swift in Sources */,
 				FA7648FE1F9EDC0B00C6DD87 /* KeyboardHandler.swift in Sources */,
+				FA3E23DE207965F2008D5227 /* TableRadioRow.swift in Sources */,
+				FA3E23EE2079670C008D5227 /* TextFieldFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

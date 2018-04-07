@@ -233,7 +233,11 @@ UINavigationControllerDelegate, NavigationConvenience {
             FeatureCatalogItem(name: "Photo Settings",
                                creationBlock: { KitPhotoSettingsViewController(kit: Kit.default()) }),
             FeatureCatalogItem(name: "Resolution",
-                               creationBlock: { ResolutionSettingViewController(kit: Kit.default()) })
+                               creationBlock: { ResolutionSettingViewController(kit: Kit.default()) }),
+            FeatureCatalogItem(name: "Frame Rate",
+                               creationBlock: { FrameRateSettingsViewController(kit: Kit.default()) })
+            
+            
             
         ]
         
