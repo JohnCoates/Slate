@@ -29,10 +29,14 @@
 		FA0C96621EE8C63300EA6EC8 /* AnchorOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */; };
 		FA0C9F8E2079015400534901 /* CurrentDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C9F8D2079015400534901 /* CurrentDevice.swift */; };
 		FA0C9F8F2079015400534901 /* CurrentDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C9F8D2079015400534901 /* CurrentDevice.swift */; };
-		FA0C9F922079018F00534901 /* DeviceCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C9F912079018F00534901 /* DeviceCamera.swift */; };
-		FA0C9F932079018F00534901 /* DeviceCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C9F912079018F00534901 /* DeviceCamera.swift */; };
+		FA0C9F922079018F00534901 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C9F912079018F00534901 /* Camera.swift */; };
+		FA0C9F932079018F00534901 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C9F912079018F00534901 /* Camera.swift */; };
 		FA0C9F962079030F00534901 /* Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C9F952079030F00534901 /* Primitives.swift */; };
 		FA0C9F972079030F00534901 /* Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C9F952079030F00534901 /* Primitives.swift */; };
+		FA0C9FA020791F7A00534901 /* DeviceCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C9F9F20791F7A00534901 /* DeviceCamera.swift */; };
+		FA0C9FA120791F7A00534901 /* DeviceCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C9F9F20791F7A00534901 /* DeviceCamera.swift */; };
+		FA0C9FA320791F8500534901 /* SimulatorCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C9FA220791F8500534901 /* SimulatorCamera.swift */; };
+		FA0C9FA420791F8500534901 /* SimulatorCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C9FA220791F8500534901 /* SimulatorCamera.swift */; };
 		FA1272EA1EF1C44500100641 /* GenericComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1272E91EF1C44500100641 /* GenericComponent.swift */; };
 		FA1272EB1EF1C44500100641 /* GenericComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1272E91EF1C44500100641 /* GenericComponent.swift */; };
 		FA1325C81EF871EE000E6918 /* Critical.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1325C71EF871EE000E6918 /* Critical.swift */; };
@@ -676,8 +680,10 @@
 		FA0C96581EE8952800EA6EC8 /* Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
 		FA0C965D1EE8C52900EA6EC8 /* Priority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
 		FA0C9F8D2079015400534901 /* CurrentDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDevice.swift; sourceTree = "<group>"; };
-		FA0C9F912079018F00534901 /* DeviceCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCamera.swift; sourceTree = "<group>"; };
+		FA0C9F912079018F00534901 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		FA0C9F952079030F00534901 /* Primitives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Primitives.swift; sourceTree = "<group>"; };
+		FA0C9F9F20791F7A00534901 /* DeviceCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCamera.swift; sourceTree = "<group>"; };
+		FA0C9FA220791F8500534901 /* SimulatorCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorCamera.swift; sourceTree = "<group>"; };
 		FA1272E91EF1C44500100641 /* GenericComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericComponent.swift; sourceTree = "<group>"; };
 		FA1325C71EF871EE000E6918 /* Critical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Critical.swift; sourceTree = "<group>"; };
 		FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = GaussianBlur.metal; sourceTree = "<group>"; };
@@ -1147,7 +1153,9 @@
 		FA0C9F902079017D00534901 /* Cameras */ = {
 			isa = PBXGroup;
 			children = (
-				FA0C9F912079018F00534901 /* DeviceCamera.swift */,
+				FA0C9F912079018F00534901 /* Camera.swift */,
+				FA0C9F9F20791F7A00534901 /* DeviceCamera.swift */,
+				FA0C9FA220791F8500534901 /* SimulatorCamera.swift */,
 			);
 			path = Cameras;
 			sourceTree = "<group>";
@@ -3827,7 +3835,7 @@
 				FA1C23801ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift in Sources */,
 				FAF5AB281EEBCE2100EDED04 /* PathsImageButton.swift in Sources */,
 				FA3AAAA81EE25A36006028AC /* Renderer+Sampling.swift in Sources */,
-				FA0C9F922079018F00534901 /* DeviceCamera.swift in Sources */,
+				FA0C9F922079018F00534901 /* Camera.swift in Sources */,
 				FA2F8E531DA23E5500993949 /* PassthroughFilter.swift in Sources */,
 				FACFE4931ECB056E0052B3FB /* CameraPermissionViewController.swift in Sources */,
 				FA3AAA8B1EE24C5B006028AC /* CameraController+StillOutput.swift in Sources */,
@@ -3835,6 +3843,7 @@
 				FADFC6BC1F4D096C0023B92C /* KitPhotoSettingsViewController.swift in Sources */,
 				FA0462B91EC3DF81007B74A0 /* KitManager.swift in Sources */,
 				FA5F8CA61ED0649200921A61 /* Font+Convenience.swift in Sources */,
+				FA0C9FA020791F7A00534901 /* DeviceCamera.swift in Sources */,
 				FA3AAAAC1EE25AC1006028AC /* Renderer+Shaders.swift in Sources */,
 				FAAE76771EEB881C00CA3416 /* DataInstruction.swift in Sources */,
 				FA5F8CB31ED0958100921A61 /* KeepUpright.swift in Sources */,
@@ -3914,6 +3923,7 @@
 				FAC9634C1ED3B68700D4DC33 /* PermissionsManager.swift in Sources */,
 				FA50BCC11EF9C2220086E8D9 /* EditSmartLayout.swift in Sources */,
 				FABB16B11D9F822800A8AC6C /* CameraController.swift in Sources */,
+				FA0C9FA320791F8500534901 /* SimulatorCamera.swift in Sources */,
 				FA0C9F962079030F00534901 /* Primitives.swift in Sources */,
 				FA2426CE1D9A67E000AEE60C /* CameraRenderView.swift in Sources */,
 				FA78F29C1E15686C00D34947 /* DebugBarItemView.swift in Sources */,
@@ -4038,6 +4048,7 @@
 				FA2B1E8C1EC92B5B00E44613 /* KitManager.swift in Sources */,
 				FA2B1E821EC92B5B00E44613 /* GaussianBlur.metal in Sources */,
 				FA5F8CA31ED05B7B00921A61 /* BaseCaptureViewController+Rotation.swift in Sources */,
+				FA0C9FA120791F7A00534901 /* DeviceCamera.swift in Sources */,
 				FA8CE4291ECD8AE700788026 /* UIGestureRecognizer+Closure.swift in Sources */,
 				FAC21B5F1EEE13E0007C17AF /* DBRect.swift in Sources */,
 				FAD5DAE61EF8D34C00239C96 /* SmartPin.swift in Sources */,
@@ -4058,7 +4069,7 @@
 				FA3AAA971EE24E5E006028AC /* CameraController+Debug.swift in Sources */,
 				FA60B68B1EF373FF003441E1 /* EditKitLinkCell.swift in Sources */,
 				FACF0F401EECDB6C00B0211C /* ComponentModel.swift in Sources */,
-				FA0C9F932079018F00534901 /* DeviceCamera.swift in Sources */,
+				FA0C9F932079018F00534901 /* Camera.swift in Sources */,
 				FA5F8CB41ED0958100921A61 /* KeepUpright.swift in Sources */,
 				FA3AAABC1EE25E15006028AC /* Renderer+AspectRatio.swift in Sources */,
 				FAAE763B1EEB2F0500CA3416 /* VectorAssetReader.swift in Sources */,
@@ -4104,6 +4115,7 @@
 				FAAE76401EEB2F3800CA3416 /* DataPath.swift in Sources */,
 				FA2B1E6E1EC9235700E44613 /* PathIcon.swift in Sources */,
 				FA5651AE1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift in Sources */,
+				FA0C9FA420791F8500534901 /* SimulatorCamera.swift in Sources */,
 				FA2B1E5C1EC80EE100E44613 /* InvertedMaskButtonViewController.swift in Sources */,
 				FAF10CFB1ECAA8230008690E /* GroupedPathIcon.swift in Sources */,
 				FA2B1E911EC92B5B00E44613 /* ComponentItemCellDelegate.swift in Sources */,

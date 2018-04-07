@@ -18,11 +18,17 @@ class CurrentDevice {
     }
     
     private lazy var cameras: [Camera] = {
+        if Platform.isSimulator {
+            return [
+                SimulatorCamera(position: .back),
+                SimulatorCamera(position: .front)
+            ]
+        }
         let captureDevice = AVCaptureDevice.devices(for: .video)
         var cameras = [Camera]()
         
         for captureDevice in captureDevice {
-            let camera = Camera(device: captureDevice)
+            let camera = DeviceCamera(device: captureDevice)
             cameras.append(camera)
         }
         
