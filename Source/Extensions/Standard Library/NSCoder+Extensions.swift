@@ -1,6 +1,7 @@
 //
-//  NSCoder+Extensions.swift
-//  Created on 4/7/18
+//  NSCoder+Extensions
+//  Created on 4/7/18.
+//  Copyright © 2018 John Coates. All rights reserved.
 //
 
 import Foundation

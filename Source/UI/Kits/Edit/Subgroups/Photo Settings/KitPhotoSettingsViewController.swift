@@ -159,14 +159,25 @@ fileprivate extension KitPhotoSettingsViewController {
         
         func rows(forKit kit: Kit) -> [Row] {
             let selected: String
+            
             switch self {
             case .resolution:
                  selected = kit.photoSettings.resolution.userFacingDescription
-                return [
+                 let cameras = CurrentDevice.cameras
+                 
+                 var rows: [Row] = [
                     Row(title: "Selected", detail: selected, disclosure: true, editableSetting: self),
-                    Row(title: "Constrained By", detail: "Frame Rate", disclosure: false),
-                    Row(title: "Device Value", detail: "3130 x 6400", disclosure: false)
-                ]
+                    Row(title: "Constrained By", detail: "Frame Rate", disclosure: false)
+                 ]
+                
+                 for camera in cameras {
+                    let maximumResolution = camera.maximumResolution
+                    let detail = "\(maximumResolution.width) x \(maximumResolution.height)"
+                    rows.append(Row(title: camera.userFacingName, detail: detail, disclosure: false))
+                }
+                
+                return rows
+                
             case .frameRate:
                 return [
                     Row(title: "Selected", detail: "Highest", disclosure: true, editableSetting: self),

@@ -11,7 +11,7 @@ import AVFoundation
 
 extension CameraController {
     var bestCamera: AVCaptureDevice {
-        let devices = AVCaptureDevice.devices(for: AVMediaType.video)
+        let devices = AVCaptureDevice.devices(for: .video)
         for potentialDevice in devices {
             let device = potentialDevice
             // prefer my logitech camera

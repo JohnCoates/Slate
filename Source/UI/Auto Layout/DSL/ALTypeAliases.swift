@@ -1,6 +1,7 @@
 //
-//  ALTypeAliases.swift
-//  Created on 4/6/18
+//  ALTypeAliases
+//  Created on 4/6/18.
+//  Copyright © 2018 John Coates. All rights reserved.
 //
 
 import Foundation
