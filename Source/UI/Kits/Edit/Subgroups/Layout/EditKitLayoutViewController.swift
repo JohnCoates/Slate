@@ -115,7 +115,6 @@ class EditKitLayoutViewController: SettingsTableViewController, LayoutPreviewCel
         }
         alertController.addAction(se)
         
-        
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cancel)
         

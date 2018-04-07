@@ -353,7 +353,6 @@ class ResolutionSettingViewController: SettingsTableViewController, UITextFieldD
             }
         }
         
-        
         return true
     }
     
