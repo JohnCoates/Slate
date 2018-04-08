@@ -108,7 +108,9 @@ class KitSettingsViewController: SettingsTableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+    override func tableView(_ tableView: UITableView,
+                            willDisplayFooterView view: UIView,
+                            forSection section: Int) {
         if let header = view as? UITableViewHeaderFooterView,
             let label = header.textLabel {
             label.textColor = Theme.Kits.headerText
@@ -117,7 +119,14 @@ class KitSettingsViewController: SettingsTableViewController {
     
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
-        print("selected: \(indexPath)")
+        let section = dataSource.sections[indexPath.section]
+        if let radioSection = section as? RadioTableSection {
+            let index = indexPath.row
+            if radioSection.selectedIndex != index {
+                radioSection.selectedIndex = index
+                tableView.reloadData()
+            }
+        }
     }
     
 }

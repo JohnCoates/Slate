@@ -365,6 +365,12 @@
 		FAA2A6A32079B5C800C43269 /* EditKitSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2A6A12079B5C800C43269 /* EditKitSliderCell.swift */; };
 		FAA2A6A52079B6B300C43269 /* SliderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2A6A42079B6B300C43269 /* SliderRow.swift */; };
 		FAA2A6A62079B6B300C43269 /* SliderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2A6A42079B6B300C43269 /* SliderRow.swift */; };
+		FAA2A6A8207A906700C43269 /* FrameRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2A6A7207A906700C43269 /* FrameRate.swift */; };
+		FAA2A6A9207A906700C43269 /* FrameRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2A6A7207A906700C43269 /* FrameRate.swift */; };
+		FAA2A6AB207A919000C43269 /* DBFrameRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2A6AA207A919000C43269 /* DBFrameRate.swift */; };
+		FAA2A6AC207A919000C43269 /* DBFrameRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2A6AA207A919000C43269 /* DBFrameRate.swift */; };
+		FAA2A6AE207A940700C43269 /* PhotoSettingsAddFrameRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2A6AD207A940700C43269 /* PhotoSettingsAddFrameRate.swift */; };
+		FAA2A6AF207A940700C43269 /* PhotoSettingsAddFrameRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2A6AD207A940700C43269 /* PhotoSettingsAddFrameRate.swift */; };
 		FAA3F5371EEF5689007EB031 /* KitListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3F5361EEF5689007EB031 /* KitListingsViewController.swift */; };
 		FAA7A9721EE216B0004800AF /* PreviewContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7A9711EE216B0004800AF /* PreviewContentView.swift */; };
 		FAA8FDDB1F5FE4A100847C1A /* EditKitSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8FDDA1F5FE4A100847C1A /* EditKitSettingCell.swift */; };
@@ -885,6 +891,9 @@
 		FA9F8A071D953C540058C369 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAA2A6A12079B5C800C43269 /* EditKitSliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditKitSliderCell.swift; sourceTree = "<group>"; };
 		FAA2A6A42079B6B300C43269 /* SliderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderRow.swift; sourceTree = "<group>"; };
+		FAA2A6A7207A906700C43269 /* FrameRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameRate.swift; sourceTree = "<group>"; };
+		FAA2A6AA207A919000C43269 /* DBFrameRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBFrameRate.swift; sourceTree = "<group>"; };
+		FAA2A6AD207A940700C43269 /* PhotoSettingsAddFrameRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSettingsAddFrameRate.swift; sourceTree = "<group>"; };
 		FAA3F5361EEF5689007EB031 /* KitListingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitListingsViewController.swift; sourceTree = "<group>"; };
 		FAA7A9711EE216B0004800AF /* PreviewContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewContentView.swift; sourceTree = "<group>"; };
 		FAA8FDDA1F5FE4A100847C1A /* EditKitSettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditKitSettingCell.swift; sourceTree = "<group>"; };
@@ -2661,6 +2670,7 @@
 			children = (
 				FABC39541EF22FF400ECE935 /* Capture1to2.swift */,
 				FABC39571EF3211B00ECE935 /* EntityMigrationPolicy.swift */,
+				FAA2A6AD207A940700C43269 /* PhotoSettingsAddFrameRate.swift */,
 			);
 			path = "Entity Policies";
 			sourceTree = "<group>";
@@ -3070,6 +3080,7 @@
 			children = (
 				FADFC6F61F50D2A00023B92C /* Data Models */,
 				FADFC6F31F50D2430023B92C /* PhotoResolution.swift */,
+				FAA2A6A7207A906700C43269 /* FrameRate.swift */,
 			);
 			path = Attributes;
 			sourceTree = "<group>";
@@ -3078,6 +3089,7 @@
 			isa = PBXGroup;
 			children = (
 				FADFC6EA1F4F67C30023B92C /* DBPhotoResolution.swift */,
+				FAA2A6AA207A919000C43269 /* DBFrameRate.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -3878,6 +3890,7 @@
 				FABC394E1EF1FDD800ECE935 /* SingleMigration.swift in Sources */,
 				FA5709A61ECC7172000362C8 /* PhotosPermissionViewController.swift in Sources */,
 				FA8CE4281ECD8AE700788026 /* UIGestureRecognizer+Closure.swift in Sources */,
+				FAA2A6AE207A940700C43269 /* PhotoSettingsAddFrameRate.swift in Sources */,
 				FA7649041F9EE80200C6DD87 /* TextFieldHandler.swift in Sources */,
 				FA3E23E020796642008D5227 /* InputRow.swift in Sources */,
 				FA1805981EC54F38004351B7 /* CircleView.swift in Sources */,
@@ -3962,6 +3975,7 @@
 				FACA797A1EE66A5B0001D468 /* KitTableViewCell.swift in Sources */,
 				FAD5DACF1EF8AC0D00239C96 /* SettingsTableViewController.swift in Sources */,
 				FA2F8E471DA2293000993949 /* AbstractFilter.swift in Sources */,
+				FAA2A6AB207A919000C43269 /* DBFrameRate.swift in Sources */,
 				FA60B6831EF338F6003441E1 /* EditKitViewController.swift in Sources */,
 				FAAE767B1EEB881C00CA3416 /* DataRect.swift in Sources */,
 				FA8CE4251ECD7FA700788026 /* UIView+subviews.swift in Sources */,
@@ -4000,6 +4014,7 @@
 				FA1805A31EC699A4004351B7 /* EditSize.swift in Sources */,
 				FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */,
 				FADFC6C01F4D4D9D0023B92C /* EditKitValueCell.swift in Sources */,
+				FAA2A6A8207A906700C43269 /* FrameRate.swift in Sources */,
 				FA3E23F2207967B8008D5227 /* KitSettingsViewController.swift in Sources */,
 				FA167A7420779AB6007EA3E7 /* ALTypeAliases.swift in Sources */,
 				FA29FB491EA49B1F00EB1081 /* ComponentMenuBar.swift in Sources */,
@@ -4134,6 +4149,7 @@
 				FAC21B5B1EEDEB32007C17AF /* Managed.swift in Sources */,
 				FA2B1E591EC80E8500E44613 /* FeatureCatalogItem.swift in Sources */,
 				FAF10D0F1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
+				FAA2A6AF207A940700C43269 /* PhotoSettingsAddFrameRate.swift in Sources */,
 				FA6477601EE39F4000A63A22 /* EditBar+EditBorder.swift in Sources */,
 				FA8CE4261ECD7FA700788026 /* UIView+subviews.swift in Sources */,
 				FA0C965A1EE8952800EA6EC8 /* Anchor.swift in Sources */,
@@ -4178,6 +4194,7 @@
 				FAA8FDDC1F5FE4A100847C1A /* EditKitSettingCell.swift in Sources */,
 				FA3AAAB21EE25E08006028AC /* Renderer+Shaders.swift in Sources */,
 				FA3E23EA207966E3008D5227 /* TableDataSource.swift in Sources */,
+				FAA2A6AC207A919000C43269 /* DBFrameRate.swift in Sources */,
 				FA2B1E931EC92B5B00E44613 /* ControlBarItemCell.swift in Sources */,
 				FA64775C1EE39EF600A63A22 /* EditBar+InitialState.swift in Sources */,
 				FA7649021F9EE1C600C6DD87 /* NavigationViewController+Convenience.swift in Sources */,
@@ -4250,6 +4267,7 @@
 				FA5F8C981ECFE7D000921A61 /* BaseCaptureViewController+Kit.swift in Sources */,
 				FAF10D0C1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift in Sources */,
 				FAC424931EEF2F7700E2EB26 /* NSManagedObjectContext+Changes.swift in Sources */,
+				FAA2A6A9207A906700C43269 /* FrameRate.swift in Sources */,
 				FAD5DAD71EF8C68100239C96 /* LayoutPreviewCaptureViewController.swift in Sources */,
 				FAF10D191ECAFF1D0008690E /* PermissionsWindow.swift in Sources */,
 				FABC394F1EF1FDD800ECE935 /* SingleMigration.swift in Sources */,

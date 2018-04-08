@@ -1,11 +1,54 @@
 //
-//  TableRadioSection
+//  RadioTableSection
 //  Created on 4/8/18.
 //  Copyright © 2018 John Coates. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-struct TableRadioSection {
-    var selectedIndex: Int = 0
+protocol RadioTableSection: class {
+    var selectedIndex: Int { get set }
+}
+
+class GenericRadioTableSection<RadioType>: TableSection, RadioTableSection {
+    var headerTitle: String?
+    var footerTitle: String?
+    var typedRows: [GenericRadioRow<RadioType>]
+    var rows: [TableRow] {
+        return typedRows
+    }
+    var selectedIndex: Int = 0 {
+        didSet {
+            updateRowsWithNewSelectedIndex()
+            selectedValueChanged?(typedRows[selectedIndex].value)
+        }
+    }
+    var selectedValueChanged: ((RadioType) -> Void)?
+    
+    init(headerTitle: String? = nil,
+         footerTitle: String? = nil, rows: [GenericRadioRow<RadioType>] = []) {
+        self.headerTitle = headerTitle
+        self.footerTitle = footerTitle
+        self.typedRows = rows
+    }
+    
+    func configuredCell(dequeueFrom table: UITableView,
+                        indexPath: IndexPath) -> UITableViewCell {
+        let index = indexPath.row
+        let row = typedRows[index]
+        let cell = row.configuredTypedCell(dequeueFrom: table,
+                                           indexPath: indexPath)
+//        cell.section = self
+        return cell
+    }
+    
+    func updateRowsWithNewSelectedIndex() {
+        for (index, row) in typedRows.enumerated() {
+            if selectedIndex == index {
+                row.selected = true
+            } else {
+                row.selected = false
+            }
+        }
+    }
 }

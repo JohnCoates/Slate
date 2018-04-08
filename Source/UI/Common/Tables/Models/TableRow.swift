@@ -17,12 +17,22 @@ protocol TableRow {
 protocol GenericTableRow {
     associatedtype CellType: UITableViewCell
     
+    func configuredTypedCell(dequeueFrom table: UITableView,
+                             indexPath: IndexPath) -> CellType
+    
     func configure(cell: CellType) -> CellType
 }
 
 extension GenericTableRow {
+    
     func configuredCell(dequeueFrom table: UITableView,
                         indexPath: IndexPath) -> UITableViewCell {
+        return configuredTypedCell(dequeueFrom: table,
+                                   indexPath: indexPath)
+    }
+    
+    func configuredTypedCell(dequeueFrom table: UITableView,
+                             indexPath: IndexPath) -> CellType {
         let cell: CellType = table.dequeueReusableCell(for: indexPath)
         return configure(cell: cell)
     }

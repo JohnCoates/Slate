@@ -137,12 +137,11 @@ class EditKitSliderCell: UITableViewCell {
     }
     
     private func setUpSliderConstraints() {
-        slider.sizeToFit()
-        
+        slider.height --> slider.intrinsicContentSize.height
         slider.width.pin(to: contentView, times: 0.8)
         slider.centerX --> contentView
         slider.top.pin(to: contentView.top, add: 52)
-        contentView.bottom.pin(atLeast: slider.bottom, add: 8)
+        contentView.bottom.pin(to: slider, add: 8, rank: .high)
     }
     
     // MARK: - Constraints
@@ -158,7 +157,6 @@ class EditKitSliderCell: UITableViewCell {
         dynamicConstraints = captureConstraints {
             setUpDetailLabelConstraints()
             
-
             detailLabel.right.pin(to: contentView.rightMargin)
         }
     }

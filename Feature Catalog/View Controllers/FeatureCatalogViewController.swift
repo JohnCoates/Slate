@@ -236,9 +236,6 @@ UINavigationControllerDelegate, NavigationConvenience {
                                creationBlock: { ResolutionSettingViewController(kit: Kit.default()) }),
             FeatureCatalogItem(name: "Frame Rate",
                                creationBlock: { FrameRateSettingsViewController(kit: Kit.default()) })
-            
-            
-            
         ]
         
         return Section(title: "Kits Tab", items: items)

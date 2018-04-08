@@ -11,12 +11,6 @@ import CoreGraphics
 import CoreData
 
 class PhotoSettings {
-        
-    enum FrameRate {
-        case custom(rate: Int)
-        case maximum
-        case notSet
-    }
     
     enum BurstSpeed {
         case custom(speed: Int)
@@ -43,6 +37,7 @@ class PhotoSettings {
         }
         coreDataObject = object
         object.resolution = DBPhotoResolution(resolution: resolution)
+        object.frameRate = DBFrameRate(frameRate: frameRate)
         
         return object
     }
@@ -55,6 +50,7 @@ class PhotoSettings {
 class PhotoSettingsCoreData: NSManagedObject, Managed {
     
     @NSManaged var resolution: DBPhotoResolution
+    @NSManaged var frameRate: DBFrameRate
     
     class var entityName: String { return String(describing: self) }
     
@@ -62,12 +58,19 @@ class PhotoSettingsCoreData: NSManagedObject, Managed {
         let entity = DBEntity(name: entityName,
                               class: self)
         entity.addAttribute(name: "resolution", type: .transformable)
+        
+        if version >= .two {
+            entity.addAttribute(name: "frameRate", type: .transformable)
+        }
 
         return entity
     }
     
     class func entityPolicy(from: DataModel.Version,
                             to: DataModel.Version) -> NSEntityMigrationPolicy.Type? {
+        if from == .one, to == .two {
+            return PhotoSettingsAddFrameRate.self
+        }
         return nil
     }
     
@@ -81,6 +84,7 @@ class PhotoSettingsCoreData: NSManagedObject, Managed {
     
     func configureWithStandardProperties(instance: PhotoSettings) {
         instance.resolution = resolution.value
+        instance.frameRate = frameRate.value
     }
     
 }

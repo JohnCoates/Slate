@@ -13,6 +13,7 @@ class DataModel {
     
     enum Version: Int, Comparable {
         case one = 1
+        case two = 2
         
         func nextVersion() -> Version? {
             let nextInt = self.rawValue + 1
@@ -25,7 +26,7 @@ class DataModel {
         
     }
     
-    static let currentVersion: Version = .one
+    static let currentVersion: Version = .two
     
     // MARK: - Convenience 
     
