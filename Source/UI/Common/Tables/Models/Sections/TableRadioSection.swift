@@ -32,16 +32,6 @@ class GenericRadioTableSection<RadioType>: TableSection, RadioTableSection {
         self.typedRows = rows
     }
     
-    func configuredCell(dequeueFrom table: UITableView,
-                        indexPath: IndexPath) -> UITableViewCell {
-        let index = indexPath.row
-        let row = typedRows[index]
-        let cell = row.configuredTypedCell(dequeueFrom: table,
-                                           indexPath: indexPath)
-//        cell.section = self
-        return cell
-    }
-    
     func updateRowsWithNewSelectedIndex() {
         for (index, row) in typedRows.enumerated() {
             if selectedIndex == index {

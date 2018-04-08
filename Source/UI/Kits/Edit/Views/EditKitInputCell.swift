@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditKitInputCell: UITableViewCell {
+class EditKitInputCell: UITableViewCell, UITextFieldDelegate {
     
     // MARK: - Configuration
     
@@ -32,7 +32,7 @@ class EditKitInputCell: UITableViewCell {
         }
     }
     
-    var showDisclosure = true {
+    var showDisclosure = false {
         didSet {
             setNeedsUpdateConstraints()
         }
@@ -46,6 +46,9 @@ class EditKitInputCell: UITableViewCell {
             setNeedsUpdateConstraints()
         }
     }
+    
+    var valueChanged: ((EditKitInputCell, String) -> Void)?
+    var doneEditing: ((EditKitInputCell, String) -> Void)?
     
     // MARK: - Init
     
@@ -140,6 +143,8 @@ class EditKitInputCell: UITableViewCell {
     private func setUpTextField() {
         textField.backgroundColor = .clear
         textField.textColor = .white
+        textField.delegate = self
+        textField.keyboardAppearance = .dark
         
         contentView.addSubview(textField)
         
@@ -175,6 +180,98 @@ class EditKitInputCell: UITableViewCell {
         super.updateConstraints()
         
         constructConstraints()
+    }
+    
+    // MARK: - Text Field Delegate
+    
+    var filter: TextFieldFilter = .noFilter {
+        didSet {
+            configureInputForFilter()
+        }
+    }
+    
+    private func configureInputForFilter() {
+        switch filter {
+        case .numeric:
+            textField.keyboardType = .numbersAndPunctuation
+            textField.autocorrectionType = .no
+        default:
+            break
+        }
+    }
+    
+    @objc func textField(_ textField: UITextField,
+                         shouldChangeCharactersIn nsRange: NSRange,
+                         replacementString string: String) -> Bool {
+        guard let text = textField.text,
+            let range = Range(nsRange, in: text) else {
+                print("Couldn't create range for \(String(describing: textField.text))")
+                return true
+        }
+        
+        let returnValue: Bool
+        let newText = text.replacingCharacters(in: range, with: string)
+        defer {
+            if returnValue {
+                valueChanged?(self, newText)
+            }
+        }
+        if string.count == 0 {
+            returnValue = true
+            return true
+        }
+        
+        switch filter {
+        case .numeric:
+            returnValue = numericFilter(for: textField,
+                                       shouldChangeCharactersIn: range,
+                                       replacementString: string)
+        default:
+            returnValue = true
+            
+        }
+        
+        return true
+    }
+    
+    private func numericFilter(for textField: UITextField,
+                               shouldChangeCharactersIn range: Range<String.Index>,
+                               replacementString: String) -> Bool {
+        
+        let allowed = CharacterSet.decimalDigits
+        let disallowed = allowed.inverted
+        if replacementString.rangeOfCharacter(from: disallowed) != nil {
+            return false
+        }
+        
+        return true
+    }
+    
+    @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        defer {
+            doneEditing?(self, textField.text ?? "")
+        }
+        if case .numeric = filter {
+            if textField.text == nil || textField.text?.count == 0 {
+                textField.text = "0"
+            }
+        }
+        
+        if let cellTextField = textField as? TableCellTextField {
+            if cellTextField.handleReturn() {
+                return true
+            }
+        }
+        
+        return true
+    }
+    
+    // MARK: - Reuse
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        valueChanged = nil
+        doneEditing = nil
     }
     
 }

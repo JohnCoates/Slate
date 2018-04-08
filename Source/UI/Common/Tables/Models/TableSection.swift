@@ -10,9 +10,6 @@ protocol TableSection {
     var headerTitle: String? { get }
     var footerTitle: String? { get }
     var rows: [TableRow] { get }
-    
-    func configuredCell(dequeueFrom table: UITableView,
-                        indexPath: IndexPath) -> UITableViewCell
 }
 
 class BasicTableSection: TableSection {
@@ -25,14 +22,5 @@ class BasicTableSection: TableSection {
         self.headerTitle = headerTitle
         self.footerTitle = footerTitle
         self.rows = rows
-    }
-}
-
-extension TableSection {
-    func configuredCell(dequeueFrom table: UITableView,
-                        indexPath: IndexPath) -> UITableViewCell {
-        let index = indexPath.row
-        let row = rows[index]
-        return row.configuredCell(dequeueFrom: table, indexPath: indexPath)
     }
 }

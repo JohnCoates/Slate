@@ -7,8 +7,8 @@
 import Foundation
 
 struct IntSize {
-    let width: Int
-    let height: Int
+    var width: Int
+    var height: Int
 }
 
 import AVFoundation
