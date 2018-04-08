@@ -24,6 +24,44 @@ class EditKitSliderCell: UITableViewCell {
         }
     }
     
+    var minimum: Float {
+        get {
+            return slider.minimumValue
+        }
+        set {
+            slider.minimumValue = newValue
+        }
+    }
+    
+    var maximum: Float {
+        get {
+            return slider.maximumValue
+        }
+        set {
+            slider.maximumValue = newValue
+        }
+    }
+    
+    var value: Float {
+        get {
+            return slider.value
+        }
+        set {
+            slider.value = newValue
+        }
+    }
+    
+    var continuousUpdates: Bool {
+        get {
+            return slider.isContinuous
+        }
+        set {
+            slider.isContinuous = continuousUpdates
+        }
+    }
+    
+    var valueChanged: ((EditKitSliderCell, Float) -> Void)?
+    
     // MARK: - Init
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -90,6 +128,9 @@ class EditKitSliderCell: UITableViewCell {
         slider.isContinuous = true
         slider.minimumValue = 1
         slider.maximumValue = 100
+        slider.minimumTrackTintColor = UIColor(red: 0.00, green: 0.48, blue: 0.99, alpha: 1.00)
+        slider.addTarget(self, action: #selector(valueChangedEvent),
+                         for: .valueChanged)
         
         contentView.addSubview(slider)
         setUpSliderConstraints()
@@ -101,7 +142,6 @@ class EditKitSliderCell: UITableViewCell {
         slider.width.pin(to: contentView, times: 0.8)
         slider.centerX --> contentView
         slider.top.pin(to: contentView.top, add: 52)
-//        slider.bottom.pin(atLeast: contentView.bottom, add: -8)
         contentView.bottom.pin(atLeast: slider.bottom, add: 8)
     }
     
@@ -129,4 +169,16 @@ class EditKitSliderCell: UITableViewCell {
         constructConstraints()
     }
     
+    // MARK: - Reusing Cells
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        valueChanged = nil
+    }
+    
+    // MARK: - Value Events
+    
+    @objc private func valueChangedEvent() {
+        valueChanged?(self, slider.value)
+    }
 }

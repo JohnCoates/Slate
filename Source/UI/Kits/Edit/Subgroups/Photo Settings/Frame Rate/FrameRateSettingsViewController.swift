@@ -59,8 +59,17 @@ KitSettingsDataSource {
     var customSection: TableSection {
         var rows = [TableRow]()
         let footer = "The higher that you set the frame rate, the more resolution will need to be reduced to keep up. To achieve these higher frame rates make sure you prioritize frame rate over resolution."
-        
-        rows.append(SliderRow(title: "Frames / sec", detail: "120"))
+        let value = 120
+        let valueString = String(value)
+        var row = SliderRow(title: "Frames / sec", detail: valueString)
+        row.minimum = 1
+        row.maximum = 120
+        row.value = Float(value)
+        row.continuousUpdates = true
+        row.valueChanged = { [unowned self] (cell, newValue) in
+            self.valueChanged(cell: cell, newValue: newValue)
+        }
+        rows.append(row)
         return TableSection(headerTitle: "Custom",
                             footerTitle: footer, rows: rows)
     }
@@ -70,5 +79,13 @@ KitSettingsDataSource {
             EditKitSettingCell.self,
             EditKitSliderCell.self
         ]
+    }
+    
+    // MARK: - Slider Value Changes
+    
+    func valueChanged(cell: EditKitSliderCell, newValue: Float) {
+        cell.detail = String(Int(newValue))
+        
+        selectedFrameRate = .custom(rate: Int(newValue))
     }
 }

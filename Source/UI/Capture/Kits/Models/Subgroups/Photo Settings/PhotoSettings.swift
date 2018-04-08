@@ -13,7 +13,7 @@ import CoreData
 class PhotoSettings {
         
     enum FrameRate {
-        case custom(rate: Float)
+        case custom(rate: Int)
         case maximum
         case notSet
     }
@@ -68,7 +68,6 @@ class PhotoSettingsCoreData: NSManagedObject, Managed {
     
     class func entityPolicy(from: DataModel.Version,
                             to: DataModel.Version) -> NSEntityMigrationPolicy.Type? {
-        
         return nil
     }
     
