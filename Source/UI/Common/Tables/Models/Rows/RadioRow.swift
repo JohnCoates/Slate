@@ -1,5 +1,5 @@
 //
-//  TableRadioRow
+//  RadioRow
 //  Created on 4/8/18.
 //  Copyright © 2018 John Coates. All rights reserved.
 //

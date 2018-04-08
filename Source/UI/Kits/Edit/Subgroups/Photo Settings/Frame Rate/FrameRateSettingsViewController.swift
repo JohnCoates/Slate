@@ -26,16 +26,8 @@ KitSettingsDataSource {
     
     // MARK: - View Management
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        print("navigation title: \(navigationTitle)")
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save",
-                                                            style: .plain,
-                                                            target: self,
-                                                            action: .saveTapped)
-    }
+    lazy var rightBarButton: BarButton? = BarButton(title: "Save", target: self,
+                                                    action: #selector(saveTapped))
     
     // MARK: - User Interaction
     
@@ -48,7 +40,7 @@ KitSettingsDataSource {
     // MARK: - Data Source
     
     var sections: [TableSection] {
-        return [frameRateSection]
+        return [frameRateSection, customSection]
     }
     
     var frameRateSection: TableSection {
@@ -64,17 +56,19 @@ KitSettingsDataSource {
                             footerTitle: nil, rows: rows);
     }
     
+    var customSection: TableSection {
+        var rows = [TableRow]()
+        let footer = "The higher that you set the frame rate, the more resolution will need to be reduced to keep up. To achieve these higher frame rates make sure you prioritize frame rate over resolution."
+        
+        rows.append(SliderRow(title: "Frames / sec", detail: "120"))
+        return TableSection(headerTitle: "Custom",
+                            footerTitle: footer, rows: rows)
+    }
+    
     var cellTypes: [UITableViewCell.Type] {
         return [
-            EditKitSettingCell.self
+            EditKitSettingCell.self,
+            EditKitSliderCell.self
         ]
     }
-}
-
-// MARK: - Selector Extension
-
-private typealias LocalClass = FrameRateSettingsViewController
-
-fileprivate extension Selector {
-    static let saveTapped = #selector(LocalClass.saveTapped)
 }

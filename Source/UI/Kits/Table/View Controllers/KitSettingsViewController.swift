@@ -40,6 +40,14 @@ class KitSettingsViewController: SettingsTableViewController {
         tableView.layoutMargins = UIEdgeInsets(top: 0, left: 16,
                                                bottom: 0, right: 16)
         tableView.separatorColor = Theme.Kits.separatorColor
+        
+        if let rightBarButton = dataSource.rightBarButton {
+            let item = UIBarButtonItem(title: rightBarButton.title,
+                                       style: rightBarButton.style,
+                                       target: rightBarButton.target,
+                                       action: rightBarButton.action)
+            navigationItem.rightBarButtonItem = item
+        }
     }
     
     // MARK: - View Events
@@ -122,6 +130,23 @@ protocol KitSettingsDataSource: class {
     var cellTypes: [UITableViewCell.Type] { get }
     
     var sections: [TableSection] { get }
+    
+    var rightBarButton: BarButton? { get }
+}
+
+struct BarButton {
+    var title: String
+    var style: UIBarButtonItemStyle
+    weak var target: AnyObject?
+    var action: Selector?
+    
+    init(title: String, style: UIBarButtonItemStyle = .plain,
+         target: AnyObject?, action: Selector?) {
+        self.title = title
+        self.style = style
+        self.target = target
+        self.action = action
+    }
 }
 
 extension KitSettingsDataSource {
@@ -135,5 +160,9 @@ extension KitSettingsDataSource {
     
     var sections: [TableSection] {
         return []
+    }
+    
+    var rightBarButton: BarButton? {
+        return nil
     }
 }
