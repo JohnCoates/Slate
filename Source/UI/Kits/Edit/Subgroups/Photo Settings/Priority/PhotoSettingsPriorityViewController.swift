@@ -30,10 +30,12 @@ KitSettingsDataSource {
         super.setUpTableView()
         tableView.setEditing(true, animated: false)
     }
+    
     // MARK: - User Interaction
     
     @objc func saveTapped() {
-//        kit.photoSettings.frameRate = selectedFrameRate
+        let priorities = prioritySection.typedRows.map { $0.identifier }
+        kit.photoSettings.priorities.items = priorities
         kit.save()
         navigationController?.popViewController(animated: true)
     }
@@ -42,24 +44,15 @@ KitSettingsDataSource {
     
     lazy var sections: [TableSection] = [prioritySection]
     
-    private enum Setting: String {
-        case resolution = "Resolution"
-        case frameRate = "Frame Rate"
-        case burstSpeed = "Burst Speed"
+    private typealias Priority = PhotoSettingsPriority
+    private lazy var prioritySection: GenericMovableRowsTableSection<Priority> = {
+        var rows = [GenericMovableRow<Priority>]()
         
-        var description: String {
-            return rawValue
+        for item in kit.photoSettings.priorities.items {
+            rows.append(GenericMovableRow(identifier: item))
         }
-    }
-    
-    private lazy var prioritySection: GenericMovableRowsTableSection<Setting> = {
-        var rows = [GenericMovableRow<Setting>]()
         
-        rows.append(GenericMovableRow(identifier: .resolution))
-        rows.append(GenericMovableRow(identifier: .frameRate))
-        rows.append(GenericMovableRow(identifier: .burstSpeed))
-        
-        let section: GenericMovableRowsTableSection<Setting>
+        let section: GenericMovableRowsTableSection<Priority>
         section = GenericMovableRowsTableSection(rows: rows)
         return section
     }()

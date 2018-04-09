@@ -147,11 +147,32 @@ class KitSettingsViewController: SettingsTableViewController {
     override func tableView(_ tableView: UITableView,
                             moveRowAt sourceIndexPath: IndexPath,
                             to destinationIndexPath: IndexPath) {
+        let section = dataSource.sections[sourceIndexPath.section]
+        if let movableRowsSection = section as? MovableRowsTableSection {
+            movableRowsSection.moveRowAt(index: sourceIndexPath.row,
+                                         to: destinationIndexPath.row)
+        }
     }
     override func tableView(_ tableView: UITableView,
                             targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath,
-                            toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
-        return proposedDestinationIndexPath
+                            toProposedIndexPath proposedIndexPath: IndexPath) -> IndexPath {
+        // limit to own section
+        if sourceIndexPath.section != proposedIndexPath.section {
+            return limitProposedMoveToOwnSection(tableView: tableView,
+                                                 sourceIndexPath: sourceIndexPath,
+                                                 proposedIndexPath: proposedIndexPath)
+        }
+        return proposedIndexPath
+    }
+    
+    func limitProposedMoveToOwnSection(tableView: UITableView,
+                                       sourceIndexPath: IndexPath,
+                                       proposedIndexPath: IndexPath) -> IndexPath {
+        var row = 0
+        if sourceIndexPath.section < proposedIndexPath.section {
+            row = tableView.numberOfRows(inSection: sourceIndexPath.section) - 1
+        }
+        return IndexPath(row: row, section: sourceIndexPath.section)
     }
     
     // MARK: - Editing

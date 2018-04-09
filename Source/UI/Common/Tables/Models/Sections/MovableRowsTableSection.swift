@@ -7,6 +7,7 @@
 import Foundation
 
 protocol MovableRowsTableSection: TableSection {
+    func moveRowAt(index from: Int, to: Int)
     
 }
 
@@ -25,5 +26,10 @@ class GenericMovableRowsTableSection<IdentifierType>: MovableRowsTableSection {
         self.headerTitle = headerTitle
         self.footerTitle = footerTitle
         self.typedRows = rows
+    }
+    
+    func moveRowAt(index from: Int, to: Int) {
+        let item = typedRows.remove(at: from)
+        typedRows.insert(item, at: to)
     }
 }

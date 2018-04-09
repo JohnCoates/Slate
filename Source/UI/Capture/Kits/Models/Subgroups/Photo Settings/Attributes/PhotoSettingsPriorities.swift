@@ -32,3 +32,16 @@ struct PhotoSettingsPriorities {
         }
     }
 }
+
+extension PhotoSettingsPriority: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .resolution:
+            return "Resolution"
+        case .frameRate:
+            return "Frame Rate"
+        case .burstSpeed:
+            return "Burst Speed"
+        }
+    }
+}

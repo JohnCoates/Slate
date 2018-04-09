@@ -31,3 +31,9 @@ extension GenericMovableRow where IdentifierType: RawRepresentable, IdentifierTy
         self.init(identifier: identifier, title: identifier.rawValue)
     }
 }
+
+extension GenericMovableRow where IdentifierType: CustomStringConvertible {
+    convenience init(identifier: IdentifierType) {
+        self.init(identifier: identifier, title: identifier.description)
+    }
+}
