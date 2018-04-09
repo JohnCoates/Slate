@@ -30,6 +30,11 @@ class PhotoSettingsPersistence: TestPersistence {
         kit.name = "Photo Settings Kit"
         
         kit.photoSettings.resolution = .custom(width: 1280, height: 720)
+        kit.photoSettings.priorities.items = [
+            .burstSpeed,
+            .resolution,
+            .frameRate
+        ]
         
         let expectation = self.expectation(description: "Save")
         kit.saveCoreData(withContext: context) { success in
@@ -65,10 +70,17 @@ class PhotoSettingsPersistence: TestPersistence {
         let kit = coreDataKit.instance()
         let photoSettings = kit.photoSettings
         let resolution = photoSettings.resolution
+        let priorities = photoSettings.priorities
         
         if case let .custom(width, height) = resolution {
             XCTAssertEqual(width, 1280, "Correct photo resolution width")
             XCTAssertEqual(height, 720, "Correct photo resolution height")
+            XCTAssertEqual(priorities.items[0], .burstSpeed,
+                           "Correct priority order")
+            XCTAssertEqual(priorities.items[1], .resolution,
+                           "Correct priority order")
+            XCTAssertEqual(priorities.items[2], .frameRate,
+                           "Correct priority order")
         } else {
             XCTFail("Missing photo resolution!")
         }

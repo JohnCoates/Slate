@@ -15,7 +15,7 @@ class DBPhotoSettingsPriorities: NSObject, NSCoding {
     }
     
     init(priorities: PhotoSettingsPriorities) {
-        self.priorities = priorities.priorities.map {$0.rawValue}
+        self.priorities = priorities.items.map {$0.rawValue}
     }
     
     required init?(coder nsDecoder: NSCoder) {

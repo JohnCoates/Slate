@@ -13,10 +13,10 @@ enum PhotoSettingsPriority: Int {
 }
 
 struct PhotoSettingsPriorities {
-    var priorities: [PhotoSettingsPriority]
+    var items: [PhotoSettingsPriority]
     
     init() {
-        self.priorities = [
+        self.items = [
             .resolution,
             .frameRate,
             .burstSpeed
@@ -24,7 +24,7 @@ struct PhotoSettingsPriorities {
     }
     
     init(priorities: [Int]) {
-        self.priorities = priorities.map {
+        self.items = priorities.map {
             guard let priority = PhotoSettingsPriority(rawValue: $0) else {
                 fatalError("Couldn't create priority from: \($0)")
             }
