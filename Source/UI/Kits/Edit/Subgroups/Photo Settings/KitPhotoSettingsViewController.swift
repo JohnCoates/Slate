@@ -195,6 +195,8 @@ fileprivate extension KitPhotoSettingsViewController {
             switch self {
             case .resolution:
                 return ResolutionSettingViewController(kit: kit)
+            case .frameRate:
+                return FrameRateSettingsViewController(kit: kit)
             default:
                 fatalError("Edit view controller for \(self) has not been implemented")
             }
