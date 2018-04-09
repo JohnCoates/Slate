@@ -40,6 +40,7 @@ class KitSettingsViewController: SettingsTableViewController {
         tableView.layoutMargins = UIEdgeInsets(top: 0, left: 16,
                                                bottom: 0, right: 16)
         tableView.separatorColor = Theme.Kits.separatorColor
+        tableView.contentInset.bottom = 36
         
         if let rightBarButton = dataSource.rightBarButton {
             let item = UIBarButtonItem(title: rightBarButton.title,
@@ -184,56 +185,6 @@ class KitSettingsViewController: SettingsTableViewController {
     
     override func tableView(_ tableView: UITableView,
                             shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-}
-
-// MARK: - Subclass Protocol
-
-protocol KitSettingsDataSource: class {
-    var navigationTitle: String { get }
-    
-    var cellTypes: [UITableViewCell.Type] { get }
-    
-    var sections: [TableSection] { get }
-    
-    var rightBarButton: BarButton? { get }
-    var startInEditingMode: Bool { get }
-}
-
-struct BarButton {
-    var title: String
-    var style: UIBarButtonItemStyle
-    weak var target: AnyObject?
-    var action: Selector?
-    
-    init(title: String, style: UIBarButtonItemStyle = .plain,
-         target: AnyObject?, action: Selector?) {
-        self.title = title
-        self.style = style
-        self.target = target
-        self.action = action
-    }
-}
-
-extension KitSettingsDataSource {
-    var navigationTitle: String {
-        return "Implement This"
-    }
-    
-    var cellTypes: [UITableViewCell.Type] {
-        return []
-    }
-    
-    var sections: [TableSection] {
-        return []
-    }
-    
-    var rightBarButton: BarButton? {
-        return nil
-    }
-    
-    var startInEditingMode: Bool {
         return false
     }
 }

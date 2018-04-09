@@ -143,6 +143,10 @@
 		FA373E50207ADCDB0092BA67 /* PhotoSettingsAddPriorities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E4E207ADCDB0092BA67 /* PhotoSettingsAddPriorities.swift */; };
 		FA373E52207AE8220092BA67 /* NSManagedObject+Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E51207AE8220092BA67 /* NSManagedObject+Migration.swift */; };
 		FA373E53207AE8220092BA67 /* NSManagedObject+Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E51207AE8220092BA67 /* NSManagedObject+Migration.swift */; };
+		FA373E57207B22AF0092BA67 /* BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E56207B22AF0092BA67 /* BarButton.swift */; };
+		FA373E58207B22AF0092BA67 /* BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E56207B22AF0092BA67 /* BarButton.swift */; };
+		FA373E5B207B22D10092BA67 /* KitSettingsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E5A207B22D10092BA67 /* KitSettingsDataSource.swift */; };
+		FA373E5C207B22D10092BA67 /* KitSettingsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E5A207B22D10092BA67 /* KitSettingsDataSource.swift */; };
 		FA3AAA8B1EE24C5B006028AC /* CameraController+StillOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA8A1EE24C5B006028AC /* CameraController+StillOutput.swift */; };
 		FA3AAA8D1EE24C6E006028AC /* CameraController+Presets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA8C1EE24C6E006028AC /* CameraController+Presets.swift */; };
 		FA3AAA8F1EE24C83006028AC /* CameraController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA8E1EE24C83006028AC /* CameraController+Preview.swift */; };
@@ -765,6 +769,8 @@
 		FA373E4B207ADB270092BA67 /* DBPhotoSettingsPriorities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBPhotoSettingsPriorities.swift; sourceTree = "<group>"; };
 		FA373E4E207ADCDB0092BA67 /* PhotoSettingsAddPriorities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSettingsAddPriorities.swift; sourceTree = "<group>"; };
 		FA373E51207AE8220092BA67 /* NSManagedObject+Migration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Migration.swift"; sourceTree = "<group>"; };
+		FA373E56207B22AF0092BA67 /* BarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButton.swift; sourceTree = "<group>"; };
+		FA373E5A207B22D10092BA67 /* KitSettingsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitSettingsDataSource.swift; sourceTree = "<group>"; };
 		FA3AAA8A1EE24C5B006028AC /* CameraController+StillOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraController+StillOutput.swift"; sourceTree = "<group>"; };
 		FA3AAA8C1EE24C6E006028AC /* CameraController+Presets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraController+Presets.swift"; sourceTree = "<group>"; };
 		FA3AAA8E1EE24C83006028AC /* CameraController+Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraController+Preview.swift"; sourceTree = "<group>"; };
@@ -1522,6 +1528,22 @@
 			path = Priority;
 			sourceTree = "<group>";
 		};
+		FA373E55207B22A00092BA67 /* Value Types */ = {
+			isa = PBXGroup;
+			children = (
+				FA373E56207B22AF0092BA67 /* BarButton.swift */,
+			);
+			path = "Value Types";
+			sourceTree = "<group>";
+		};
+		FA373E59207B22BB0092BA67 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FA373E5A207B22D10092BA67 /* KitSettingsDataSource.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		FA3AAA891EE24C35006028AC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -1577,6 +1599,8 @@
 		FA3E23D22079657F008D5227 /* Table */ = {
 			isa = PBXGroup;
 			children = (
+				FA373E59207B22BB0092BA67 /* Protocols */,
+				FA373E55207B22A00092BA67 /* Value Types */,
 				FA3E23F020796797008D5227 /* View Controllers */,
 			);
 			path = Table;
@@ -4058,6 +4082,8 @@
 				FAAE76791EEB881C00CA3416 /* DataCanvas.swift in Sources */,
 				FA1805931EC54A0F004351B7 /* ComponentEditBar.swift in Sources */,
 				FA1805A31EC699A4004351B7 /* EditSize.swift in Sources */,
+				FA373E57207B22AF0092BA67 /* BarButton.swift in Sources */,
+				FA373E5B207B22D10092BA67 /* KitSettingsDataSource.swift in Sources */,
 				FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */,
 				FADFC6C01F4D4D9D0023B92C /* EditKitValueCell.swift in Sources */,
 				FAA2A6A8207A906700C43269 /* FrameRate.swift in Sources */,
@@ -4215,6 +4241,7 @@
 				FA373E3E207ACAF60092BA67 /* PhotoSettingsPriorityViewController.swift in Sources */,
 				FA2B1E691EC922FD00E44613 /* LayoutConstraint+Modifying.swift in Sources */,
 				FAC424901EEF2B2700E2EB26 /* NSManagedObjectContext+Observers.swift in Sources */,
+				FA373E58207B22AF0092BA67 /* BarButton.swift in Sources */,
 				FAAE764F1EEB39FE00CA3416 /* Instructions.swift in Sources */,
 				FAA2A6A62079B6B300C43269 /* SliderRow.swift in Sources */,
 				FA2B1E8D1EC92B5B00E44613 /* AbstractFilter.swift in Sources */,
@@ -4229,6 +4256,7 @@
 				FAD5DADE1EF8C92E00239C96 /* Kit+Default.swift in Sources */,
 				FA2B1EB01EC97CE000E44613 /* DeleteLineIcon.swift in Sources */,
 				FAAE76441EEB305B00CA3416 /* Data+Compression.swift in Sources */,
+				FA373E5C207B22D10092BA67 /* KitSettingsDataSource.swift in Sources */,
 				FADFC6C71F4E71220023B92C /* PhotoSettings.swift in Sources */,
 				FA2B1EA51EC92B5B00E44613 /* CameraRenderView.swift in Sources */,
 				FA373E41207ACCC70092BA67 /* BasicTableSection.swift in Sources */,
