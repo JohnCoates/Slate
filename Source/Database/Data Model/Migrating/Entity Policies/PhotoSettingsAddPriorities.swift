@@ -1,5 +1,5 @@
 //
-//  PhotoSettingsAddFrameRate
+//  PhotoSettingsAddPriorities
 //  Created on 4/9/18.
 //  Copyright © 2018 John Coates. All rights reserved.
 //
@@ -7,8 +7,8 @@
 import Foundation
 import CoreData
 
-@objc(PhotoSettingsAddFrameRate)
-class PhotoSettingsAddFrameRate: EntityMigrationPolicy {
+@objc(PhotoSettingsAddPriorities)
+class PhotoSettingsAddPriorities: EntityMigrationPolicy {
     
     override func createDestinationInstances(forSource source: NSManagedObject,
                                              in mapping: NSEntityMapping,
@@ -24,10 +24,9 @@ class PhotoSettingsAddFrameRate: EntityMigrationPolicy {
             fatalError("Missing attribute mappings")
         }
         migrate(source: source, destination: destination, attributeMappings: attributeMappings)
-        
         destination.set(object: PhotoSettingsCoreData.self,
-                        value: DBFrameRate(frameRate: .notSet),
-                        forKey: .frameRate)
+                        value: DBPhotoSettingsPriorities(priorities: PhotoSettingsPriorities()),
+                        forKey: .priorities)
         
         manager.associate(sourceInstance: source,
                           withDestinationInstance: destination,

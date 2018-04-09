@@ -127,6 +127,22 @@
 		FA2F8E4F1DA22AD700993949 /* ChromaticAberrationFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E4D1DA22AD700993949 /* ChromaticAberrationFilter.swift */; };
 		FA2F8E531DA23E5500993949 /* PassthroughFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E521DA23E5500993949 /* PassthroughFilter.swift */; };
 		FA2F8E541DA23E5500993949 /* PassthroughFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8E521DA23E5500993949 /* PassthroughFilter.swift */; };
+		FA373E3D207ACAF60092BA67 /* PhotoSettingsPriorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E3C207ACAF60092BA67 /* PhotoSettingsPriorityViewController.swift */; };
+		FA373E3E207ACAF60092BA67 /* PhotoSettingsPriorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E3C207ACAF60092BA67 /* PhotoSettingsPriorityViewController.swift */; };
+		FA373E40207ACCC70092BA67 /* BasicTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E3F207ACCC70092BA67 /* BasicTableSection.swift */; };
+		FA373E41207ACCC70092BA67 /* BasicTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E3F207ACCC70092BA67 /* BasicTableSection.swift */; };
+		FA373E43207ACCEC0092BA67 /* MovableRowsTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E42207ACCEC0092BA67 /* MovableRowsTableSection.swift */; };
+		FA373E44207ACCEC0092BA67 /* MovableRowsTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E42207ACCEC0092BA67 /* MovableRowsTableSection.swift */; };
+		FA373E46207ACEC70092BA67 /* MovableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E45207ACEC70092BA67 /* MovableRow.swift */; };
+		FA373E47207ACEC70092BA67 /* MovableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E45207ACEC70092BA67 /* MovableRow.swift */; };
+		FA373E49207AD7A10092BA67 /* PhotoSettingsPriorities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E48207AD7A10092BA67 /* PhotoSettingsPriorities.swift */; };
+		FA373E4A207AD7A10092BA67 /* PhotoSettingsPriorities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E48207AD7A10092BA67 /* PhotoSettingsPriorities.swift */; };
+		FA373E4C207ADB270092BA67 /* DBPhotoSettingsPriorities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E4B207ADB270092BA67 /* DBPhotoSettingsPriorities.swift */; };
+		FA373E4D207ADB270092BA67 /* DBPhotoSettingsPriorities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E4B207ADB270092BA67 /* DBPhotoSettingsPriorities.swift */; };
+		FA373E4F207ADCDB0092BA67 /* PhotoSettingsAddPriorities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E4E207ADCDB0092BA67 /* PhotoSettingsAddPriorities.swift */; };
+		FA373E50207ADCDB0092BA67 /* PhotoSettingsAddPriorities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E4E207ADCDB0092BA67 /* PhotoSettingsAddPriorities.swift */; };
+		FA373E52207AE8220092BA67 /* NSManagedObject+Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E51207AE8220092BA67 /* NSManagedObject+Migration.swift */; };
+		FA373E53207AE8220092BA67 /* NSManagedObject+Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E51207AE8220092BA67 /* NSManagedObject+Migration.swift */; };
 		FA3AAA8B1EE24C5B006028AC /* CameraController+StillOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA8A1EE24C5B006028AC /* CameraController+StillOutput.swift */; };
 		FA3AAA8D1EE24C6E006028AC /* CameraController+Presets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA8C1EE24C6E006028AC /* CameraController+Presets.swift */; };
 		FA3AAA8F1EE24C83006028AC /* CameraController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA8E1EE24C83006028AC /* CameraController+Preview.swift */; };
@@ -741,6 +757,14 @@
 		FA2F8E491DA2296E00993949 /* GaussianBlurFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaussianBlurFilter.swift; sourceTree = "<group>"; };
 		FA2F8E4D1DA22AD700993949 /* ChromaticAberrationFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaticAberrationFilter.swift; sourceTree = "<group>"; };
 		FA2F8E521DA23E5500993949 /* PassthroughFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassthroughFilter.swift; sourceTree = "<group>"; };
+		FA373E3C207ACAF60092BA67 /* PhotoSettingsPriorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSettingsPriorityViewController.swift; sourceTree = "<group>"; };
+		FA373E3F207ACCC70092BA67 /* BasicTableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTableSection.swift; sourceTree = "<group>"; };
+		FA373E42207ACCEC0092BA67 /* MovableRowsTableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableRowsTableSection.swift; sourceTree = "<group>"; };
+		FA373E45207ACEC70092BA67 /* MovableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableRow.swift; sourceTree = "<group>"; };
+		FA373E48207AD7A10092BA67 /* PhotoSettingsPriorities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSettingsPriorities.swift; sourceTree = "<group>"; };
+		FA373E4B207ADB270092BA67 /* DBPhotoSettingsPriorities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBPhotoSettingsPriorities.swift; sourceTree = "<group>"; };
+		FA373E4E207ADCDB0092BA67 /* PhotoSettingsAddPriorities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSettingsAddPriorities.swift; sourceTree = "<group>"; };
+		FA373E51207AE8220092BA67 /* NSManagedObject+Migration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Migration.swift"; sourceTree = "<group>"; };
 		FA3AAA8A1EE24C5B006028AC /* CameraController+StillOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraController+StillOutput.swift"; sourceTree = "<group>"; };
 		FA3AAA8C1EE24C6E006028AC /* CameraController+Presets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraController+Presets.swift"; sourceTree = "<group>"; };
 		FA3AAA8E1EE24C83006028AC /* CameraController+Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraController+Preview.swift"; sourceTree = "<group>"; };
@@ -1490,6 +1514,14 @@
 			path = Shaders;
 			sourceTree = "<group>";
 		};
+		FA373E3B207ACADA0092BA67 /* Priority */ = {
+			isa = PBXGroup;
+			children = (
+				FA373E3C207ACAF60092BA67 /* PhotoSettingsPriorityViewController.swift */,
+			);
+			path = Priority;
+			sourceTree = "<group>";
+		};
 		FA3AAA891EE24C35006028AC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -1569,6 +1601,7 @@
 				FA3E23DC207965F2008D5227 /* RadioRow.swift */,
 				FA3E23DF20796642008D5227 /* InputRow.swift */,
 				FAA2A6A42079B6B300C43269 /* SliderRow.swift */,
+				FA373E45207ACEC70092BA67 /* MovableRow.swift */,
 			);
 			path = Rows;
 			sourceTree = "<group>";
@@ -1577,6 +1610,8 @@
 			isa = PBXGroup;
 			children = (
 				FA3E23E3207966A0008D5227 /* TableRadioSection.swift */,
+				FA373E42207ACCEC0092BA67 /* MovableRowsTableSection.swift */,
+				FA373E3F207ACCC70092BA67 /* BasicTableSection.swift */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -2671,6 +2706,7 @@
 				FABC39541EF22FF400ECE935 /* Capture1to2.swift */,
 				FABC39571EF3211B00ECE935 /* EntityMigrationPolicy.swift */,
 				FAA2A6AD207A940700C43269 /* PhotoSettingsAddFrameRate.swift */,
+				FA373E4E207ADCDB0092BA67 /* PhotoSettingsAddPriorities.swift */,
 			);
 			path = "Entity Policies";
 			sourceTree = "<group>";
@@ -2769,6 +2805,7 @@
 			children = (
 				FAC4248E1EEF2B2700E2EB26 /* NSManagedObjectContext+Observers.swift */,
 				FAC424911EEF2F7700E2EB26 /* NSManagedObjectContext+Changes.swift */,
+				FA373E51207AE8220092BA67 /* NSManagedObject+Migration.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -3017,6 +3054,7 @@
 		FADFC6BA1F4D09430023B92C /* Photo Settings */ = {
 			isa = PBXGroup;
 			children = (
+				FA373E3B207ACADA0092BA67 /* Priority */,
 				FA0C9F8A2078FFBE00534901 /* Frame Rate */,
 				FA7648F01F9EA09700C6DD87 /* Resolution */,
 				FADFC6BB1F4D096C0023B92C /* KitPhotoSettingsViewController.swift */,
@@ -3081,6 +3119,7 @@
 				FADFC6F61F50D2A00023B92C /* Data Models */,
 				FADFC6F31F50D2430023B92C /* PhotoResolution.swift */,
 				FAA2A6A7207A906700C43269 /* FrameRate.swift */,
+				FA373E48207AD7A10092BA67 /* PhotoSettingsPriorities.swift */,
 			);
 			path = Attributes;
 			sourceTree = "<group>";
@@ -3090,6 +3129,7 @@
 			children = (
 				FADFC6EA1F4F67C30023B92C /* DBPhotoResolution.swift */,
 				FAA2A6AA207A919000C43269 /* DBFrameRate.swift */,
+				FA373E4B207ADB270092BA67 /* DBPhotoSettingsPriorities.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -3932,6 +3972,7 @@
 				FA7EC2B41EEB9DD700686E3C /* InverseMaskImageButton.swift in Sources */,
 				FA0C96591EE8952800EA6EC8 /* Anchor.swift in Sources */,
 				FACA79841EE671880001D468 /* UIView+Anchors.swift in Sources */,
+				FA373E52207AE8220092BA67 /* NSManagedObject+Migration.swift in Sources */,
 				FAB9C2751EE8E1ED00C50545 /* CanvasIconButton.swift in Sources */,
 				FA60B68A1EF373FF003441E1 /* EditKitLinkCell.swift in Sources */,
 				FA834BDD1D9920010017CCCA /* Platform.swift in Sources */,
@@ -3948,6 +3989,7 @@
 				FA4D54161DB055A00091184D /* FragmentFilter.swift in Sources */,
 				FA3E23DD207965F2008D5227 /* RadioRow.swift in Sources */,
 				FAC21B5A1EEDEB32007C17AF /* Managed.swift in Sources */,
+				FA373E46207ACEC70092BA67 /* MovableRow.swift in Sources */,
 				FADFC6DB1F4E75190023B92C /* DimensionAnchor.swift in Sources */,
 				FAAE76741EEB881C00CA3416 /* VectorAssetReader.swift in Sources */,
 				FAAE767D1EEB885100CA3416 /* Instructions.swift in Sources */,
@@ -3967,9 +4009,11 @@
 				FA834BE41D9929710017CCCA /* CaptureButton.swift in Sources */,
 				FADFC6BC1F4D096C0023B92C /* KitPhotoSettingsViewController.swift in Sources */,
 				FA0462B91EC3DF81007B74A0 /* KitManager.swift in Sources */,
+				FA373E3D207ACAF60092BA67 /* PhotoSettingsPriorityViewController.swift in Sources */,
 				FA5F8CA61ED0649200921A61 /* Font+Convenience.swift in Sources */,
 				FA0C9FA020791F7A00534901 /* DeviceCamera.swift in Sources */,
 				FA3AAAAC1EE25AC1006028AC /* Renderer+Shaders.swift in Sources */,
+				FA373E49207AD7A10092BA67 /* PhotoSettingsPriorities.swift in Sources */,
 				FAAE76771EEB881C00CA3416 /* DataInstruction.swift in Sources */,
 				FA5F8CB31ED0958100921A61 /* KeepUpright.swift in Sources */,
 				FACA797A1EE66A5B0001D468 /* KitTableViewCell.swift in Sources */,
@@ -3982,6 +4026,7 @@
 				FA0462C51EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift in Sources */,
 				FAAE76761EEB881C00CA3416 /* DataFloat.swift in Sources */,
 				FA3AAA951EE24E5E006028AC /* CameraController+Debug.swift in Sources */,
+				FA373E4C207ADB270092BA67 /* DBPhotoSettingsPriorities.swift in Sources */,
 				FAD5DAE11EF8CB9300239C96 /* LayoutScale.swift in Sources */,
 				FA5F8CA21ED05B7B00921A61 /* BaseCaptureViewController+Rotation.swift in Sources */,
 				FA7648FD1F9EDC0B00C6DD87 /* KeyboardHandler.swift in Sources */,
@@ -4006,6 +4051,7 @@
 				FA3E23E4207966A0008D5227 /* TableRadioSection.swift in Sources */,
 				FAA2A6A52079B6B300C43269 /* SliderRow.swift in Sources */,
 				FA3E23D02079489C008D5227 /* FrameRateSettingsViewController.swift in Sources */,
+				FA373E43207ACCEC0092BA67 /* MovableRowsTableSection.swift in Sources */,
 				FA64775E1EE39F4000A63A22 /* EditBar+EditBorder.swift in Sources */,
 				FA78F2971E14520700D34947 /* DebugWindow.swift in Sources */,
 				FA2B1EAF1EC97CE000E44613 /* DeleteLineIcon.swift in Sources */,
@@ -4026,6 +4072,7 @@
 				FAC21B651EEE251A007C17AF /* DBAttribute.swift in Sources */,
 				FAA2A6A22079B5C800C43269 /* EditKitSliderCell.swift in Sources */,
 				FA3AAA9F1EE24EA5006028AC /* CameraController+Session.swift in Sources */,
+				FA373E4F207ADCDB0092BA67 /* PhotoSettingsAddPriorities.swift in Sources */,
 				FAB0AA5E1EC6A095008DCD23 /* EditPosition.swift in Sources */,
 				FAD5DACA1EF8ABB100239C96 /* EditKitLayoutViewController.swift in Sources */,
 				FA0462B31EC3CC76007B74A0 /* SwitchCameraButton.swift in Sources */,
@@ -4043,6 +4090,7 @@
 				FAADE0D31D9D0C4300AA5729 /* Passthrough.metal in Sources */,
 				FAC21B621EEE1422007C17AF /* DBEntity.swift in Sources */,
 				FADFC6D31F4E74D70023B92C /* EdgesAnchor.swift in Sources */,
+				FA373E40207ACCC70092BA67 /* BasicTableSection.swift in Sources */,
 				FA3AAAB01EE25B8E006028AC /* Renderer+AspectRatio.swift in Sources */,
 				FACA79751EE4CFEB0001D468 /* Theme.swift in Sources */,
 				FACF0F3C1EECDA7D00B0211C /* DataManager.swift in Sources */,
@@ -4089,6 +4137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAC21B631EEE1422007C17AF /* DBEntity.swift in Sources */,
+				FA373E47207ACEC70092BA67 /* MovableRow.swift in Sources */,
 				FA7724CD1ED1A25F00C5C227 /* EditOpacity.swift in Sources */,
 				FA3E23DA207965D5008D5227 /* TableRow.swift in Sources */,
 				FA8AA5421ECC107F0093D317 /* ButtonIndicatorIcon.swift in Sources */,
@@ -4098,6 +4147,7 @@
 				FA3AAAC51EE25FEB006028AC /* Size.swift in Sources */,
 				FADFC6F51F50D2430023B92C /* PhotoResolution.swift in Sources */,
 				FA2B1EA41EC92B5B00E44613 /* CameraController.swift in Sources */,
+				FA373E50207ADCDB0092BA67 /* PhotoSettingsAddPriorities.swift in Sources */,
 				FAAE765C1EEB5FDD00CA3416 /* VectorAssetsList.swift in Sources */,
 				FADFC6EC1F4F67C30023B92C /* DBPhotoResolution.swift in Sources */,
 				FA2B1E811EC92B5B00E44613 /* ChromaticAberrationFilter.swift in Sources */,
@@ -4128,6 +4178,7 @@
 				FA2B1E9B1EC92B5B00E44613 /* MetalCameraController.swift in Sources */,
 				FAAE76501EEB3A0300CA3416 /* Canvas.swift in Sources */,
 				FA2B1E871EC92B5B00E44613 /* Platform.swift in Sources */,
+				FA373E44207ACCEC0092BA67 /* MovableRowsTableSection.swift in Sources */,
 				FA2B1E851EC92B5B00E44613 /* Renderer.swift in Sources */,
 				FA2B1E921EC92B5B00E44613 /* GaussianBlurFilter.swift in Sources */,
 				FA2B1E841EC92B5B00E44613 /* DebugBarController.swift in Sources */,
@@ -4151,6 +4202,7 @@
 				FAF10D0F1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
 				FAA2A6AF207A940700C43269 /* PhotoSettingsAddFrameRate.swift in Sources */,
 				FA6477601EE39F4000A63A22 /* EditBar+EditBorder.swift in Sources */,
+				FA373E4D207ADB270092BA67 /* DBPhotoSettingsPriorities.swift in Sources */,
 				FA8CE4261ECD7FA700788026 /* UIView+subviews.swift in Sources */,
 				FA0C965A1EE8952800EA6EC8 /* Anchor.swift in Sources */,
 				FA1325C91EF871EE000E6918 /* Critical.swift in Sources */,
@@ -4160,6 +4212,7 @@
 				FA5709A31ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift in Sources */,
 				FAAE76421EEB2F3F00CA3416 /* VectorImage.swift in Sources */,
 				FADFC6BD1F4D096C0023B92C /* KitPhotoSettingsViewController.swift in Sources */,
+				FA373E3E207ACAF60092BA67 /* PhotoSettingsPriorityViewController.swift in Sources */,
 				FA2B1E691EC922FD00E44613 /* LayoutConstraint+Modifying.swift in Sources */,
 				FAC424901EEF2B2700E2EB26 /* NSManagedObjectContext+Observers.swift in Sources */,
 				FAAE764F1EEB39FE00CA3416 /* Instructions.swift in Sources */,
@@ -4178,10 +4231,12 @@
 				FAAE76441EEB305B00CA3416 /* Data+Compression.swift in Sources */,
 				FADFC6C71F4E71220023B92C /* PhotoSettings.swift in Sources */,
 				FA2B1EA51EC92B5B00E44613 /* CameraRenderView.swift in Sources */,
+				FA373E41207ACCC70092BA67 /* BasicTableSection.swift in Sources */,
 				FA2B1E7E1EC92B5B00E44613 /* CircleView.swift in Sources */,
 				FACA79761EE4CFEB0001D468 /* Theme.swift in Sources */,
 				FA2B1E8E1EC92B5B00E44613 /* ComponentMenuBarDelegate.swift in Sources */,
 				FA2B1E981EC92B5B00E44613 /* ComponentMenuBar.swift in Sources */,
+				FA373E53207AE8220092BA67 /* NSManagedObject+Migration.swift in Sources */,
 				FABC39481EF1EA5600ECE935 /* DataModelMetadata.swift in Sources */,
 				FA50BCC21EF9C2220086E8D9 /* EditSmartLayout.swift in Sources */,
 				FA2B1E8C1EC92B5B00E44613 /* KitManager.swift in Sources */,
@@ -4250,6 +4305,7 @@
 				FA3AAAB41EE25E0B006028AC /* Renderer+Device.swift in Sources */,
 				FAAE763C1EEB2F2900CA3416 /* DataColor.swift in Sources */,
 				FA5651AF1EDE4C44006B5A19 /* ImageCaptureManager.swift in Sources */,
+				FA373E4A207AD7A10092BA67 /* PhotoSettingsPriorities.swift in Sources */,
 				FA2B1E801EC92B5B00E44613 /* DebugBarView.swift in Sources */,
 				FA3E23E5207966A0008D5227 /* TableRadioSection.swift in Sources */,
 				FAF5AB271EEBCE1F00EDED04 /* PathsImageButton.swift in Sources */,

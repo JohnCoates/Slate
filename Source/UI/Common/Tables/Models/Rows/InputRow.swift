@@ -53,7 +53,7 @@ class GenericInputRow<IdentifierType>: InputRowBase {
     var doneEditing: ((SelfType, String) -> Void)?
     var valueChanged: ((SelfType, String) -> Void)?
     
-    init(identifier: IdentifierType,  title: String, value: String? = nil) {
+    init(identifier: IdentifierType, title: String, value: String? = nil) {
         self.identifier = identifier
         super.init(title: title, value: value)
     }

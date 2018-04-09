@@ -53,6 +53,7 @@ UINavigationControllerDelegate, NavigationConvenience {
     }
     
     // MARK: - Navigation Controller Delegate
+    
     func navigationController(_ navigationController: UINavigationController,
                               willShow viewController: UIViewController, animated: Bool) {
         guard let item = shownItem else {
@@ -133,8 +134,10 @@ UINavigationControllerDelegate, NavigationConvenience {
             return nil
         }
         
-        for section in sections {
-            for item in section.items where item.identifier == feature {
+        for (sectionIndex, section) in sections.enumerated() {
+            for (row, item) in section.items.enumerated() where item.identifier == feature {
+                let indexPath = IndexPath(row: row, section: sectionIndex)
+                tableView.scrollToRow(at: indexPath, at: .middle, animated: false)
                 return item
             }
         }
@@ -235,7 +238,10 @@ UINavigationControllerDelegate, NavigationConvenience {
             FeatureCatalogItem(name: "Resolution",
                                creationBlock: { ResolutionSettingViewController(kit: Kit.default()) }),
             FeatureCatalogItem(name: "Frame Rate",
-                               creationBlock: { FrameRateSettingsViewController(kit: Kit.default()) })
+                               creationBlock: { FrameRateSettingsViewController(kit: Kit.default()) }),
+            FeatureCatalogItem(name: "Prority Order",
+                               creationBlock: { PhotoSettingsPriorityViewController(kit: Kit.default()) })
+            
         ]
         
         return Section(title: "Kits Tab", items: items)

@@ -21,6 +21,7 @@ class PhotoSettings {
     var resolution: PhotoResolution = .notSet
     var frameRate: FrameRate = .notSet
     var burstSpeed: BurstSpeed = .notSet
+    var priorities: PhotoSettingsPriorities = PhotoSettingsPriorities()
     
     var coreDataID: NSManagedObjectID?
     private var coreDataObject: PhotoSettingsCoreData?
@@ -38,6 +39,7 @@ class PhotoSettings {
         coreDataObject = object
         object.resolution = DBPhotoResolution(resolution: resolution)
         object.frameRate = DBFrameRate(frameRate: frameRate)
+        object.priorities = DBPhotoSettingsPriorities(priorities: priorities)
         
         return object
     }
@@ -47,20 +49,29 @@ class PhotoSettings {
 // MARK: - Core Data
 
 @objc(PhotoSettingsCoreData)
-class PhotoSettingsCoreData: NSManagedObject, Managed {
+class PhotoSettingsCoreData: NSManagedObject, Managed, DBObject {
+    
+    enum CodingKeys: String {
+        case resolution
+        case frameRate
+        case priorities
+    }
     
     @NSManaged var resolution: DBPhotoResolution
     @NSManaged var frameRate: DBFrameRate
+    @NSManaged var priorities: DBPhotoSettingsPriorities
     
     class var entityName: String { return String(describing: self) }
     
     class func modelEntity(version: DataModel.Version, graph: DataModelGraph) -> DBEntity {
-        let entity = DBEntity(name: entityName,
-                              class: self)
-        entity.addAttribute(name: "resolution", type: .transformable)
+        let entity = KeyedDBEntity<PhotoSettingsCoreData>()
+        entity.add(attribute: .resolution, type: .transformable)
         
         if version >= .two {
-            entity.addAttribute(name: "frameRate", type: .transformable)
+            entity.add(attribute: .frameRate, type: .transformable)
+        }
+        if version >= .three {
+            entity.add(attribute: .priorities, type: .transformable)
         }
 
         return entity
@@ -70,6 +81,8 @@ class PhotoSettingsCoreData: NSManagedObject, Managed {
                             to: DataModel.Version) -> NSEntityMigrationPolicy.Type? {
         if from == .one, to == .two {
             return PhotoSettingsAddFrameRate.self
+        } else if from == .two, to == .three {
+            return PhotoSettingsAddPriorities.self
         }
         return nil
     }
@@ -85,6 +98,7 @@ class PhotoSettingsCoreData: NSManagedObject, Managed {
     func configureWithStandardProperties(instance: PhotoSettings) {
         instance.resolution = resolution.value
         instance.frameRate = frameRate.value
+        instance.priorities = priorities.value
     }
     
 }

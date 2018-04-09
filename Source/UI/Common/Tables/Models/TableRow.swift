@@ -7,7 +7,6 @@
 import UIKit
 
 protocol TableRow {
-    var style: TableRowStyle { get }
     var accessory: TableRowAccessory { get }
     
     func configuredCell(dequeueFrom table: UITableView,

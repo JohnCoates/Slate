@@ -9,59 +9,77 @@
 import Foundation
 import CoreData
 
-class DBEntity {
+protocol DBEntity {
+    var coreType: NSEntityDescription { get }
+    var subentities: [NSEntityDescription] { get }
+}
+
+class KeyedDBEntity<Object>: DBEntity where Object: DBObject, Object: NSManagedObject {
     
     let coreType = NSEntityDescription()
     
-    init(name: String, class objectClass: NSManagedObject.Type) {
-        coreType.name = name
-        coreType.managedObjectClassName = String(describing: objectClass)
+    /// Use this if the model has subentities
+    convenience init(subentityCompatible managed: NSManagedObject.Type) {
+        let className = String(describing: managed)
+        self.init(className: className)
+    }
+    
+    convenience init() {
+        let className = String(describing: Object.self)
+        self.init(className: className)
+    }
+    
+    private init(className: String) {
+        coreType.name = className
+        coreType.managedObjectClassName = className
     }
     
     @discardableResult
-    func addAttribute(name: String,
-                      type: DBAttributeType,
-                      defaultValue: Any? = nil) -> NSAttributeDescription {
-        let attribute = NSAttributeDescription()
-        attribute.name = name
-        attribute.attributeType = type.coreType
-        attribute.isIndexed = false
-        attribute.isOptional = false
-        attribute.defaultValue = defaultValue
+    func add(attribute: Object.CodingKeys,
+             type: DBAttributeType,
+             defaultValue: Any? = nil) -> NSAttributeDescription {
+        let description = NSAttributeDescription()
+        description.name = attribute.rawValue
+        description.attributeType = type.coreType
+        description.isIndexed = false
+        description.isOptional = false
+        description.defaultValue = defaultValue
         
-        coreType.properties.append(attribute)
-        return attribute
+        coreType.properties.append(description)
+        return description
     }
     
     @discardableResult
-    func addRelationship(name: String, entity: NSEntityDescription,
-                         count: CountableClosedRange<Int>) -> NSRelationshipDescription {
-        let relationship = NSRelationshipDescription()
-        relationship.name = name
-        relationship.destinationEntity = entity
-        relationship.deleteRule = .cascadeDeleteRule
-        relationship.isIndexed = false
-        relationship.isOptional = false
-        relationship.minCount = count.lowerBound
-        relationship.maxCount = count.upperBound
+    func add(relationship: Object.CodingKeys,
+             entity: NSEntityDescription,
+             count: CountableClosedRange<Int>) -> NSRelationshipDescription {
+        let description = NSRelationshipDescription()
+        description.name = relationship.rawValue
+        description.destinationEntity = entity
+        description.deleteRule = .cascadeDeleteRule
+        description.isIndexed = false
+        description.isOptional = false
+        description.minCount = count.lowerBound
+        description.maxCount = count.upperBound
         
-        coreType.properties.append(relationship)
-        return relationship
+        coreType.properties.append(description)
+        return description
     }
     
     @discardableResult
-    func addSingleRelationship(name: String, entity: NSEntityDescription) -> NSRelationshipDescription {
-        let relationship = NSRelationshipDescription()
-        relationship.name = name
-        relationship.destinationEntity = entity
-        relationship.deleteRule = .cascadeDeleteRule
-        relationship.isIndexed = false
-        relationship.isOptional = true
-        relationship.minCount = 0
-        relationship.maxCount = 1
+    func add(singleRelationship relationship: Object.CodingKeys,
+             entity: NSEntityDescription) -> NSRelationshipDescription {
+        let description = NSRelationshipDescription()
+        description.name = relationship.rawValue
+        description.destinationEntity = entity
+        description.deleteRule = .cascadeDeleteRule
+        description.isIndexed = false
+        description.isOptional = true
+        description.minCount = 0
+        description.maxCount = 1
         
-        coreType.properties.append(relationship)
-        return relationship
+        coreType.properties.append(description)
+        return description
     }
     
     var subentities: [NSEntityDescription] {
@@ -72,4 +90,8 @@ class DBEntity {
             coreType.subentities = newValue
         }
     }
+}
+
+protocol DBObject {
+    associatedtype CodingKeys: RawRepresentable where CodingKeys.RawValue == String
 }

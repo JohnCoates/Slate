@@ -23,6 +23,16 @@ struct CodingKeyCoder<Key> where Key: CodingKey {
             coder[name] = newValue
         }
     }
+    
+    subscript<Kind: Any>(name: Key) -> [Kind] {
+        get {
+            return coder[name]
+        }
+        nonmutating
+        set {
+            coder[name] = newValue
+        }
+    }
 
     subscript(name: Key) -> Bool {
         get {

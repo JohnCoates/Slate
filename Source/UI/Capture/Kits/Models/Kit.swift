@@ -115,26 +115,29 @@ extension Kit {
 }
 
 @objc (KitCoreData)
-class KitCoreData: NSManagedObject, Managed {
+class KitCoreData: NSManagedObject, Managed, DBObject {
     @NSManaged var name: String
     @NSManaged var components: Set<ComponentCoreData>
     @NSManaged var photoSettings: PhotoSettingsCoreData?
     
+    enum CodingKeys: String {
+        case name
+        case photoSettings
+        case components
+    }
+    
     class var entityName: String { return String(describing: self) }
     
     class func modelEntity(version: DataModel.Version, graph: DataModelGraph) -> DBEntity {
-        let entity = DBEntity(name: entityName,
-                              class: self)
+        let entity = KeyedDBEntity<KitCoreData>()
         
         let componentEntity = graph.getEntity(for: ComponentCoreData.self)
         let photoSettingsEntity = graph.getEntity(for: PhotoSettingsCoreData.self)
-        entity.addAttribute(name: "name", type: .string)
-//        entity.addAttribute(name: "photoSettings", type: .objectID)
-        entity.addSingleRelationship(name: "photoSettings",
-                                       entity: photoSettingsEntity)
-        entity.addRelationship(name: "components",
-                               entity: componentEntity,
-                               count: 0...256)
+        entity.add(attribute: .name, type: .string)
+        entity.add(singleRelationship: .photoSettings,
+                   entity: photoSettingsEntity)
+        entity.add(relationship: .components, entity: componentEntity,
+                   count: 0...256)
         
         return entity
     }

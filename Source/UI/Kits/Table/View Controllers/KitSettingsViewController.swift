@@ -48,6 +48,10 @@ class KitSettingsViewController: SettingsTableViewController {
                                        action: rightBarButton.action)
             navigationItem.rightBarButtonItem = item
         }
+        
+        if dataSource.startInEditingMode {
+            tableView.setEditing(true, animated: false)
+        }
     }
     
     // MARK: - View Events
@@ -129,6 +133,38 @@ class KitSettingsViewController: SettingsTableViewController {
         }
     }
     
+    // MARK: - Reordering Table Rows
+    
+    override func tableView(_ tableView: UITableView,
+                            canMoveRowAt indexPath: IndexPath) -> Bool {
+        let section = dataSource.sections[indexPath.section]
+        if section is MovableRowsTableSection {
+            return true
+        }
+        return false
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            moveRowAt sourceIndexPath: IndexPath,
+                            to destinationIndexPath: IndexPath) {
+    }
+    override func tableView(_ tableView: UITableView,
+                            targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath,
+                            toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+        return proposedDestinationIndexPath
+    }
+    
+    // MARK: - Editing
+    
+    override func tableView(_ tableView: UITableView,
+                            editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .none
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
 }
 
 // MARK: - Subclass Protocol
@@ -141,6 +177,7 @@ protocol KitSettingsDataSource: class {
     var sections: [TableSection] { get }
     
     var rightBarButton: BarButton? { get }
+    var startInEditingMode: Bool { get }
 }
 
 struct BarButton {
@@ -173,5 +210,9 @@ extension KitSettingsDataSource {
     
     var rightBarButton: BarButton? {
         return nil
+    }
+    
+    var startInEditingMode: Bool {
+        return false
     }
 }

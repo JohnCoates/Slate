@@ -11,28 +11,32 @@ import CoreData
 import CoreGraphics
 
 @objc(ComponentCoreData)
-class ComponentCoreData: NSManagedObject, Managed {
+class ComponentCoreData: NSManagedObject, Managed, DBObject {
     
     @NSManaged var frame: DBRect
+    
+    enum CodingKeys: String {
+        case frame
+        case rounding
+        case opacity
+    }
     
     class var entityName: String { return String(describing: self) }
     
     class var componentNewInstance: Component { fatalError("Missing component type") }
     
     class func modelEntity(version: DataModel.Version, graph: DataModelGraph) -> DBEntity {
-        let entity = DBEntity(name: entityName,
-                              class: self)
-        
-        entity.addAttribute(name: "frame", type: .transformable)
+        let entity = KeyedDBEntity<ComponentCoreData>(subentityCompatible: self)
+        entity.add(attribute: .frame, type: .transformable)
         
         if let rounding = self as? EditRounding.Type {
-            entity.addAttribute(name: "rounding", type: .float,
-                                defaultValue: rounding.defaultRounding)
+            entity.add(attribute: .rounding, type: .float,
+                       defaultValue: rounding.defaultRounding)
         }
         
         if let opacity = self as? EditOpacity.Type {
-            entity.addAttribute(name: "opacity", type: .float,
-                                defaultValue: opacity.defaultOpacity)
+            entity.add(attribute: .opacity, type: .float,
+                       defaultValue: opacity.defaultOpacity)
         }
         
         if self == ComponentCoreData.self {
