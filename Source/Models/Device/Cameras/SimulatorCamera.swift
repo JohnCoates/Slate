@@ -36,7 +36,21 @@ class SimulatorCamera: Camera {
         }
     }()
     
+    lazy var maximumFrameRate: Int = {
+        switch position {
+        case .back:
+            return 120
+        case .front:
+            return 60
+        }
+    }()
+    
     func highestResolution(forTargetFrameRate targetFrameRate: Int) -> IntSize? {
+        if targetFrameRate >= 120 {
+            return IntSize(width: 1280, height: 720)
+        } else if targetFrameRate >= 60 {
+            return IntSize(width: 1920, height: 1080)
+        }
         
         return maximumResolution
     }

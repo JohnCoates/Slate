@@ -19,11 +19,11 @@ class GenericLinkRow<Identifier>: LinkRow, GenericTableRow {
     var identifier: Identifier
     
     init(title: String,
-         detail: String? = nil,
+         detail: CustomStringConvertible? = nil,
          identifier: Identifier,
          onSelect: ((SelfType) -> Void)? = nil) {
         self.title = title
-        self.detail = detail
+        self.detail = detail?.description
         self.identifier = identifier
         self.onSelect = onSelect
     }

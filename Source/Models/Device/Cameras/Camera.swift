@@ -9,5 +9,7 @@ import Foundation
 protocol Camera {
     var userFacingName: String { get }
     var maximumResolution: IntSize { get }
+    var maximumFrameRate: Int { get }
+
     func highestResolution(forTargetFrameRate targetFrameRate: Int) -> IntSize?
 }

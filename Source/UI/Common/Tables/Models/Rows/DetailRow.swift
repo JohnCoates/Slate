@@ -12,9 +12,9 @@ class DetailRow: TableRow, GenericTableRow {
     var detail: String?
     
     init(title: String,
-         detail: String? = nil) {
+         detail: CustomStringConvertible? = nil) {
         self.title = title
-        self.detail = detail
+        self.detail = detail?.description
     }
     
     func configure(cell: CellType) -> CellType {

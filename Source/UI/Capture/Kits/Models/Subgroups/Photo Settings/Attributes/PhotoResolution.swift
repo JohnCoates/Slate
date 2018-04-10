@@ -9,7 +9,8 @@
 import Foundation
 import CoreGraphics
 
-enum PhotoResolution: CustomDebugStringConvertible {
+enum PhotoResolution: CustomStringConvertible,
+CustomDebugStringConvertible {
     case custom(width: Int, height: Int)
     case maximum
     case notSet
@@ -41,6 +42,10 @@ enum PhotoResolution: CustomDebugStringConvertible {
         }
     }
     
+    var description: String {
+        return userFacingDescription
+    }
+    
     var userFacingDescription: String {
         switch self {
         case let .custom(width, height):
@@ -64,4 +69,23 @@ enum PhotoResolution: CustomDebugStringConvertible {
         }
         return "[PhotoSettings \(value)]"
     }
+}
+
+extension PhotoResolution {
+    
+    func targetting(camera: Camera) -> IntSize {
+        switch self {
+        case .notSet, .maximum:
+            return camera.maximumResolution
+        case let .custom(width, height):
+            let highest = camera.maximumResolution
+            if width > highest.width || height > highest.height {
+                let aspectRatio: Double = Double(height) / Double(width)
+                let bestHeight = Int(Double(highest.width) * aspectRatio)
+                return IntSize(width: highest.width, height: bestHeight)
+            }
+            return IntSize(width: width, height: height)
+        }
+    }
+    
 }

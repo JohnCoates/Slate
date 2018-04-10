@@ -24,9 +24,8 @@ class DeviceCamera: Camera {
     }
     
     lazy var maximumResolution: IntSize = {
-        let formats = device.formats
         var maximumResolution: IntSize = IntSize(width: 0, height: 0)
-        for format in formats {
+        for format in device.formats {
             let formatDescription = format.formatDescription
             let dimensions = CMVideoFormatDescriptionGetDimensions(formatDescription)
             
@@ -38,6 +37,18 @@ class DeviceCamera: Camera {
         }
         
         return maximumResolution
+    }()
+    
+    lazy var maximumFrameRate: Int = {
+        var highestFrameRate = 0
+        let ranges = device.formats.flatMap { $0.videoSupportedFrameRateRanges }
+        let highestMaybe = ranges.max { $0.maxFrameRate > $1.maxFrameRate }
+        
+        guard let highest = highestMaybe else {
+            fatalError("Couldn't get highest frame rate")
+        }
+        
+        return Int(highest.maxFrameRate)
     }()
     
     func highestResolution(forTargetFrameRate targetFrameRate: Int) -> IntSize? {

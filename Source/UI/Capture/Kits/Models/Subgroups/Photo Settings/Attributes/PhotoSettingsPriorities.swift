@@ -16,7 +16,11 @@ struct PhotoSettingsPriorities {
     var items: [PhotoSettingsPriority]
     
     init() {
-        self.items = [
+        self.items = PhotoSettingsPriorities.defaultOrder
+    }
+    
+    private static var defaultOrder: [PhotoSettingsPriority] {
+        return [
             .resolution,
             .frameRate,
             .burstSpeed
@@ -30,6 +34,16 @@ struct PhotoSettingsPriorities {
             }
             return priority
         }
+    }
+    
+    func `is`(priority: PhotoSettingsPriority,
+              higherThan: PhotoSettingsPriority) -> Bool {
+        guard let priorityIndex = items.index(of: priority),
+            let higherThanIndex = items.index(of: higherThan) else {
+            fatalError("Priority missing in comparsion between \(priority) and \(higherThan) in \(items)")
+        }
+        // the lower the index, the higher the priority
+        return priorityIndex < higherThanIndex
     }
 }
 

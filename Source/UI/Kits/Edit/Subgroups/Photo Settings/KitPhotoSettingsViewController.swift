@@ -60,11 +60,16 @@ KitSettingsDataSource, LinkDataSource {
     
     typealias TypedLinkRow = GenericLinkRow<Section>
     
+    lazy var photoSettings = kit.photoSettings
+    
     private func resolutionRows() -> [TableRow] {
         var rows: [TableRow] = []
-        rows.append(TypedLinkRow(title: "Selected", detail: kit.photoSettings.resolution.userFacingDescription,
+        rows.append(TypedLinkRow(title: "Selected",
+                                 detail: photoSettings.resolution,
                                  identifier: .resolution, onSelect: onSelect))
-        rows.append(DetailRow(title: "Constrained By", detail: "Frame Rate"))
+        if let constrainedBy = photoSettings.resolutionConstrained {
+            rows.append(DetailRow(title: "Constrained By", detail: constrainedBy))
+        }
         for camera in cameras {
             rows.append(DetailRow(title: camera.userFacingName,
                                   detail: camera.maximumResolution.description))
@@ -76,7 +81,7 @@ KitSettingsDataSource, LinkDataSource {
     
     private func frameRateRows() -> [TableRow] {
         var rows: [TableRow] = []
-        rows.append(TypedLinkRow(title: "Selected", detail: kit.photoSettings.frameRate.userFacingDescription,
+        rows.append(TypedLinkRow(title: "Selected", detail: photoSettings.frameRate,
                                  identifier: .frameRate, onSelect: onSelect))
         rows.append(DetailRow(title: "Constrained By", detail: "Frame Rate"))
         rows.append(DetailRow(title: "Back Camera", detail: "120/sec"))

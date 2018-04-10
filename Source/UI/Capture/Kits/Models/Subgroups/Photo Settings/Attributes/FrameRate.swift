@@ -6,7 +6,7 @@
 
 import Foundation
 
-enum FrameRate {
+enum FrameRate: CustomStringConvertible {
     case custom(rate: Int)
     case maximum
     case notSet
@@ -38,6 +38,10 @@ enum FrameRate {
         }
     }
     
+    var description: String {
+        return userFacingDescription
+    }
+    
     var userFacingDescription: String {
         switch self {
         case let .custom(rate):
@@ -63,4 +67,17 @@ extension FrameRate: CustomDebugStringConvertible {
         }
         return "[FrameRate \(value)]"
     }
+}
+
+extension FrameRate {
+    
+    func targetting(camera: Camera) -> Int {
+        switch self {
+        case .notSet, .maximum:
+            return camera.maximumFrameRate
+        case let .custom(rate):
+            return min(camera.maximumFrameRate, rate)
+        }
+    }
+    
 }
