@@ -10,7 +10,6 @@ struct SliderRow: TableRow, GenericTableRow {
     typealias CellType = EditKitSliderCell
     var title: String
     var detail: String
-    let style: TableRowStyle = .slider
     var minimum: Float = 1
     var maximum: Float = 100
     var value: Float = 1

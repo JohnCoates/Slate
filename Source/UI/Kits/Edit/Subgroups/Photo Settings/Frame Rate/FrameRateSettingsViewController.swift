@@ -23,7 +23,6 @@ KitSettingsDataSource {
     
     override init(kit: Kit) {
         selectedFrameRate = kit.photoSettings.frameRate
-        print("selected: \(kit.photoSettings.frameRate)")
         super.init(kit: kit)
     }
     
@@ -104,13 +103,6 @@ KitSettingsDataSource {
         rows.append(row)
         return BasicTableSection(headerTitle: "Custom",
                                  footerTitle: footer, rows: rows)
-    }
-    
-    var cellTypes: [UITableViewCell.Type] {
-        return [
-            EditKitSettingCell.self,
-            EditKitSliderCell.self
-        ]
     }
     
     // MARK: - Selection changes

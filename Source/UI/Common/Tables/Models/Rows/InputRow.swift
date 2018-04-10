@@ -12,7 +12,6 @@ class InputRowBase: TableRow, GenericTableRow {
     var title: String
     var value: String?
     var placeholder: String?
-    var style: TableRowStyle = .textField
     var filter: TextFieldFilter = .noFilter
     var returnKey: UIReturnKeyType = .next
     

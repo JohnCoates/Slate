@@ -23,7 +23,11 @@ extension KitSettingsDataSource {
     }
     
     var cellTypes: [UITableViewCell.Type] {
-        return []
+        return [
+            EditKitSettingCell.self,
+            EditKitSliderCell.self,
+            EditKitInputCell.self
+        ]
     }
     
     var sections: [TableSection] {

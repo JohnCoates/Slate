@@ -54,6 +54,12 @@
 		FA1A2C9E1ECC57C60075FA0B /* PermissionsEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A2C9C1ECC57C60075FA0B /* PermissionsEducationViewController.swift */; };
 		FA1C23801ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C237F1ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift */; };
 		FA1C23811ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C237F1ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift */; };
+		FA1CC8F0207C1FAD00B3589E /* LinkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CC8EF207C1FAD00B3589E /* LinkRow.swift */; };
+		FA1CC8F1207C1FAD00B3589E /* LinkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CC8EF207C1FAD00B3589E /* LinkRow.swift */; };
+		FA1CC8F3207C2CC600B3589E /* LinkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CC8F2207C2CC600B3589E /* LinkDataSource.swift */; };
+		FA1CC8F4207C2CC600B3589E /* LinkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CC8F2207C2CC600B3589E /* LinkDataSource.swift */; };
+		FA1CC8F6207C2D7E00B3589E /* DetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CC8F5207C2D7E00B3589E /* DetailRow.swift */; };
+		FA1CC8F7207C2D7E00B3589E /* DetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CC8F5207C2D7E00B3589E /* DetailRow.swift */; };
 		FA20FA511E12624C00032AF3 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA20FA501E12624C00032AF3 /* MetalKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FA2426CE1D9A67E000AEE60C /* CameraRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */; };
 		FA2426D01D9A78B500AEE60C /* MetalCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2426CF1D9A78B500AEE60C /* MetalCaptureViewController.swift */; };
@@ -743,6 +749,9 @@
 		FA1805A21EC699A4004351B7 /* EditSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSize.swift; sourceTree = "<group>"; };
 		FA1A2C9C1ECC57C60075FA0B /* PermissionsEducationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsEducationViewController.swift; sourceTree = "<group>"; };
 		FA1C237F1ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsButtonIndicatorViewController.swift; sourceTree = "<group>"; };
+		FA1CC8EF207C1FAD00B3589E /* LinkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkRow.swift; sourceTree = "<group>"; };
+		FA1CC8F2207C2CC600B3589E /* LinkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDataSource.swift; sourceTree = "<group>"; };
+		FA1CC8F5207C2D7E00B3589E /* DetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRow.swift; sourceTree = "<group>"; };
 		FA20FA501E12624C00032AF3 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		FA20FA551E128CE200032AF3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		FA2426CD1D9A67E000AEE60C /* CameraRenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRenderView.swift; sourceTree = "<group>"; };
@@ -1540,6 +1549,7 @@
 			isa = PBXGroup;
 			children = (
 				FA373E5A207B22D10092BA67 /* KitSettingsDataSource.swift */,
+				FA1CC8F2207C2CC600B3589E /* LinkDataSource.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1626,6 +1636,8 @@
 				FA3E23DF20796642008D5227 /* InputRow.swift */,
 				FAA2A6A42079B6B300C43269 /* SliderRow.swift */,
 				FA373E45207ACEC70092BA67 /* MovableRow.swift */,
+				FA1CC8EF207C1FAD00B3589E /* LinkRow.swift */,
+				FA1CC8F5207C2D7E00B3589E /* DetailRow.swift */,
 			);
 			path = Rows;
 			sourceTree = "<group>";
@@ -3943,11 +3955,13 @@
 				FA4D54191DB055BB0091184D /* ComputeFilter.swift in Sources */,
 				FAAE767F1EEB889F00CA3416 /* VectorImageCanvasIcon.swift in Sources */,
 				FA0462BB1EC3DF88007B74A0 /* Kit.swift in Sources */,
+				FA1CC8F0207C1FAD00B3589E /* LinkRow.swift in Sources */,
 				FA3AAA911EE24C8F006028AC /* CameraController+Device.swift in Sources */,
 				FAF10D0E1ECAD1E80008690E /* BaseCaptureViewController+ComponentMenu.swift in Sources */,
 				FA60B6871EF3717D003441E1 /* EditKitHeaderView.swift in Sources */,
 				FABC39471EF1EA5600ECE935 /* DataModelMetadata.swift in Sources */,
 				FAC21B691EEE3005007C17AF /* FetchedResultsDataProvider.swift in Sources */,
+				FA1CC8F3207C2CC600B3589E /* LinkDataSource.swift in Sources */,
 				FAD5DADD1EF8C92E00239C96 /* Kit+Default.swift in Sources */,
 				FABC394B1EF1FD6400ECE935 /* DataMigrator.swift in Sources */,
 				FA6477571EE39E9500A63A22 /* EditBar+ProgressControls.swift in Sources */,
@@ -3972,6 +3986,7 @@
 				FAAE767E1EEB885100CA3416 /* Canvas.swift in Sources */,
 				FA2F8E4E1DA22AD700993949 /* ChromaticAberrationFilter.swift in Sources */,
 				FA7648F21F9EA0C700C6DD87 /* ResolutionSettingViewController.swift in Sources */,
+				FA1CC8F6207C2D7E00B3589E /* DetailRow.swift in Sources */,
 				FAA8FDDB1F5FE4A100847C1A /* EditKitSettingCell.swift in Sources */,
 				FACA79711EE4CF9B0001D468 /* KitsViewController.swift in Sources */,
 				FA8AA5411ECC107F0093D317 /* ButtonIndicatorIcon.swift in Sources */,
@@ -4236,6 +4251,7 @@
 				FA2B1E881EC92B5B00E44613 /* ChromaticAberration.metal in Sources */,
 				FA3AAAA11EE24EA5006028AC /* CameraController+Session.swift in Sources */,
 				FA5709A31ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift in Sources */,
+				FA1CC8F4207C2CC600B3589E /* LinkDataSource.swift in Sources */,
 				FAAE76421EEB2F3F00CA3416 /* VectorImage.swift in Sources */,
 				FADFC6BD1F4D096C0023B92C /* KitPhotoSettingsViewController.swift in Sources */,
 				FA373E3E207ACAF60092BA67 /* PhotoSettingsPriorityViewController.swift in Sources */,
@@ -4244,6 +4260,7 @@
 				FA373E58207B22AF0092BA67 /* BarButton.swift in Sources */,
 				FAAE764F1EEB39FE00CA3416 /* Instructions.swift in Sources */,
 				FAA2A6A62079B6B300C43269 /* SliderRow.swift in Sources */,
+				FA1CC8F7207C2D7E00B3589E /* DetailRow.swift in Sources */,
 				FA2B1E8D1EC92B5B00E44613 /* AbstractFilter.swift in Sources */,
 				FA2B1E581EC80E8500E44613 /* FeatureCatalogViewController.swift in Sources */,
 				FA3AAA9A1EE24E67006028AC /* CameraController+Preview.swift in Sources */,
@@ -4300,6 +4317,7 @@
 				FABC39591EF3211B00ECE935 /* EntityMigrationPolicy.swift in Sources */,
 				FA7649051F9EE80200C6DD87 /* TextFieldHandler.swift in Sources */,
 				FA2B1E951EC92B5B00E44613 /* ComponentEditBar.swift in Sources */,
+				FA1CC8F1207C1FAD00B3589E /* LinkRow.swift in Sources */,
 				FA2B1E941EC92B5B00E44613 /* DebugWindow.swift in Sources */,
 				FAAE76431EEB2F4700CA3416 /* DataFloat.swift in Sources */,
 				FA7648F31F9EA0C700C6DD87 /* ResolutionSettingViewController.swift in Sources */,

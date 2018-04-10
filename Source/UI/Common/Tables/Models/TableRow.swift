@@ -7,8 +7,6 @@
 import UIKit
 
 protocol TableRow {
-    var accessory: TableRowAccessory { get }
-    
     func configuredCell(dequeueFrom table: UITableView,
                         indexPath: IndexPath) -> UITableViewCell
 }
@@ -38,23 +36,5 @@ extension GenericTableRow {
     
     func configure(cell: CellType) -> CellType {
         return cell
-    }
-}
-
-enum TableRowStyle {
-    case radioSelectable
-    case slider
-    case textField
-}
-
-enum TableRowAccessory {
-    case none
-    case checkmark
-    case disclosureIndicator
-}
-
-extension TableRow {
-    var accessory: TableRowAccessory {
-        return .none
     }
 }

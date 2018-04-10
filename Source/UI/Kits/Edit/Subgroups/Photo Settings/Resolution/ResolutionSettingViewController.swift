@@ -112,13 +112,6 @@ KitSettingsDataSource {
         return row
     }
     
-    var cellTypes: [UITableViewCell.Type] {
-        return [
-            EditKitSettingCell.self,
-            EditKitInputCell.self
-        ]
-    }
-    
     // MARK: - Custom Input
     
     private func valueChanged(row: GenericInputRow<InputKey>,

@@ -9,7 +9,6 @@ import UIKit
 class RadioRow: TableRow, GenericTableRow {
     typealias CellType = EditKitSettingCell
     var title: String
-    var style: TableRowStyle = .radioSelectable
     var selected: Bool = false
     weak var section: RadioTableSection?
     

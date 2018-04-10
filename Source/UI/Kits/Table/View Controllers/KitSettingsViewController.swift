@@ -40,7 +40,6 @@ class KitSettingsViewController: SettingsTableViewController {
         tableView.layoutMargins = UIEdgeInsets(top: 0, left: 16,
                                                bottom: 0, right: 16)
         tableView.separatorColor = Theme.Kits.separatorColor
-        tableView.contentInset.bottom = 36
         
         if let rightBarButton = dataSource.rightBarButton {
             let item = UIBarButtonItem(title: rightBarButton.title,
@@ -59,7 +58,8 @@ class KitSettingsViewController: SettingsTableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        
+        reloadData()
     }
     
     // MARK: - Table View setup
@@ -74,28 +74,30 @@ class KitSettingsViewController: SettingsTableViewController {
     
     // MARK: - Table View Data Source
     
+    lazy var cachedSections = dataSource.sections
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return dataSource.sections.count
+        return cachedSections.count
     }
     
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
-        return dataSource.sections[section].rows.count
+        return cachedSections[section].rows.count
     }
     
     override func tableView(_ tableView: UITableView,
                             titleForHeaderInSection sectionIndex: Int) -> String? {
-        return dataSource.sections[sectionIndex].headerTitle
+        return cachedSections[sectionIndex].headerTitle
     }
     
     override func tableView(_ tableView: UITableView,
                             titleForFooterInSection sectionIndex: Int) -> String? {
-        return dataSource.sections[sectionIndex].footerTitle
+        return cachedSections[sectionIndex].footerTitle
     }
     
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let section = dataSource.sections[indexPath.section]
+        let section = cachedSections[indexPath.section]
         let row = section.rows[indexPath.row]
         
         return row.configuredCell(dequeueFrom: tableView,
@@ -124,21 +126,30 @@ class KitSettingsViewController: SettingsTableViewController {
     
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
-        let section = dataSource.sections[indexPath.section]
+        let section = cachedSections[indexPath.section]
         if let radioSection = section as? RadioTableSection {
             let index = indexPath.row
             if radioSection.selectedIndex != index {
                 radioSection.selectedIndex = index
-                tableView.reloadData()
+                reloadData()
             }
         }
+        
+        if let row = section.rows[indexPath.row] as? LinkRow {
+            row.didSelect()
+        }
+    }
+    
+    func reloadData() {
+        cachedSections = dataSource.sections
+        tableView.reloadData()
     }
     
     // MARK: - Reordering Table Rows
     
     override func tableView(_ tableView: UITableView,
                             canMoveRowAt indexPath: IndexPath) -> Bool {
-        let section = dataSource.sections[indexPath.section]
+        let section = cachedSections[indexPath.section]
         if section is MovableRowsTableSection {
             return true
         }
@@ -148,7 +159,7 @@ class KitSettingsViewController: SettingsTableViewController {
     override func tableView(_ tableView: UITableView,
                             moveRowAt sourceIndexPath: IndexPath,
                             to destinationIndexPath: IndexPath) {
-        let section = dataSource.sections[sourceIndexPath.section]
+        let section = cachedSections[sourceIndexPath.section]
         if let movableRowsSection = section as? MovableRowsTableSection {
             movableRowsSection.moveRowAt(index: sourceIndexPath.row,
                                          to: destinationIndexPath.row)

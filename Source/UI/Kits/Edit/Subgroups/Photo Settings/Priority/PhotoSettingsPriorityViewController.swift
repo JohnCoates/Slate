@@ -9,27 +9,12 @@ import UIKit
 class PhotoSettingsPriorityViewController: KitSettingsViewController,
 KitSettingsDataSource {
     
-    // MARK: - Init
+    // MARK: - Data Source Protocol
     
     var navigationTitle: String = "Priority Order"
     lazy var rightBarButton: BarButton? = BarButton(title: "Save", target: self,
                                                     action: #selector(saveTapped))
     var startInEditingMode = true
-    
-    override init(kit: Kit) {
-        super.init(kit: kit)
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        Critical.methodNotDefined()
-    }
-    
-    // MARK: - Table View setup
-    
-    override func setUpTableView() {
-        super.setUpTableView()
-        tableView.setEditing(true, animated: false)
-    }
     
     // MARK: - User Interaction
     
@@ -56,10 +41,4 @@ KitSettingsDataSource {
         section = GenericMovableRowsTableSection(rows: rows)
         return section
     }()
-    
-    var cellTypes: [UITableViewCell.Type] {
-        return [
-            EditKitSettingCell.self
-        ]
-    }
 }

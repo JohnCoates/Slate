@@ -6,9 +6,14 @@
 
 import Foundation
 
-struct IntSize {
+struct IntSize: CustomStringConvertible {
     var width: Int
     var height: Int
+    
+    var description: String {
+        return "\(width) x \(height)"
+    }
+    
 }
 
 import AVFoundation

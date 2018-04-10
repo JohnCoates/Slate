@@ -241,7 +241,6 @@ UINavigationControllerDelegate, NavigationConvenience {
                                creationBlock: { FrameRateSettingsViewController(kit: Kit.default()) }),
             FeatureCatalogItem(name: "Prority Order",
                                creationBlock: { PhotoSettingsPriorityViewController(kit: Kit.default()) })
-            
         ]
         
         return Section(title: "Kits Tab", items: items)

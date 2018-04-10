@@ -20,8 +20,10 @@ class Theme {
         ]
         navigationBar.isTranslucent = false
         navigationBar.barStyle = .black
-        
-        // hide the 1px line at the bottom of the nav bar
+    }
+    
+    static func hideNavigationBarBottomBorder() {
+        let navigationBar = UINavigationBar.appearance()
         navigationBar.shadowImage = UIImage()
         navigationBar.setBackgroundImage(UIImage(), for: .default)
     }

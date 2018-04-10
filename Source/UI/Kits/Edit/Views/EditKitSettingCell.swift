@@ -152,11 +152,15 @@ class EditKitSettingCell: UITableViewCell {
             setUpDetailLabelConstraints()
             
             if showDisclosure {
+                if disclosureIndicator.superview == nil {
+                    contentView.addSubview(disclosureIndicator)
+                }
                 setUpDisclosureIndicatorConstraints()
                 detailLabel.right.pin(to: disclosureIndicator.left,
                                       add: -9)
             } else {
                 detailLabel.right.pin(to: contentView.rightMargin)
+                disclosureIndicator.removeFromSuperview()
             }
         }
     }
