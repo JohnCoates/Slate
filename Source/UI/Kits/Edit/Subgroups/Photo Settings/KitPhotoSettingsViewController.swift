@@ -62,13 +62,13 @@ KitSettingsDataSource, LinkDataSource {
     
     lazy var photoSettings = kit.photoSettings
     
+    lazy var constraintResolver = photoSettings.constraintsResolver
+    
     private func resolutionRows() -> [TableRow] {
         var rows: [TableRow] = []
         rows.append(TypedLinkRow(title: "Selected",
                                  detail: photoSettings.resolution,
                                  identifier: .resolution, onSelect: onSelect))
-        let constraintResolver = photoSettings.constraintsResolver
-        
         let constraintsMaybe = constraintResolver.resolutionConstraints
         
         if let constraints = constraintsMaybe {
@@ -78,8 +78,7 @@ KitSettingsDataSource, LinkDataSource {
         for camera in cameras {
             let value = constraintResolver.resolution(forCamera: camera,
                                                       afterConstraints: constraintsMaybe)
-            rows.append(DetailRow(title: camera.userFacingName,
-                                  detail: value))
+            rows.append(DetailRow(title: camera, detail: value))
         }
         return rows
     }
@@ -90,9 +89,18 @@ KitSettingsDataSource, LinkDataSource {
         var rows: [TableRow] = []
         rows.append(TypedLinkRow(title: "Selected", detail: photoSettings.frameRate,
                                  identifier: .frameRate, onSelect: onSelect))
-        rows.append(DetailRow(title: "Constrained By", detail: "Frame Rate"))
-        rows.append(DetailRow(title: "Back Camera", detail: "120/sec"))
-        rows.append(DetailRow(title: "Front Camera", detail: "120/sec"))
+        
+        let constraintsMaybe = constraintResolver.frameRateConstraints
+        if let constraints = constraintsMaybe {
+            rows.append(DetailRow(title: "Constrained By", detail: constraints.constrainers))
+        }
+        
+        for camera in cameras {
+            let value = constraintResolver.frameRate(forCamera: camera,
+                                                     afterConstraints: constraintsMaybe)
+            rows.append(DetailRow(title: camera, detail: "\(value)/sec"))
+        }
+        
         return rows
     }
     

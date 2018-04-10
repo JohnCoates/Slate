@@ -49,7 +49,7 @@ class SimulatorCamera: Camera {
         }
     }()
     
-    func highestResolution(forTargetFrameRate targetFrameRate: Int) -> IntSize? {
+    func highestResolution(forFrameRate targetFrameRate: Int) -> IntSize? {
         if targetFrameRate >= 120 {
             return IntSize(width: 1280, height: 720)
         } else if targetFrameRate >= 60 {
@@ -57,5 +57,15 @@ class SimulatorCamera: Camera {
         }
         
         return maximumResolution
+    }
+    
+    func highestFrameRate(forResolution targetResolution: IntSize) -> Int? {
+        if targetResolution.width <= 1280 {
+            return 120
+        } else if targetResolution.width <= 1920 {
+            return 60
+        } else {
+            return 30
+        }
     }
 }

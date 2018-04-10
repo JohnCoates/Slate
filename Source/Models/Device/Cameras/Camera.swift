@@ -11,5 +11,7 @@ protocol Camera: class, CustomStringConvertible {
     var maximumResolution: IntSize { get }
     var maximumFrameRate: Int { get }
 
-    func highestResolution(forTargetFrameRate targetFrameRate: Int) -> IntSize?
+    func highestResolution(forFrameRate targetFrameRate: Int) -> IntSize?
+    
+    func highestFrameRate(forResolution targetResolution: IntSize) -> Int?
 }

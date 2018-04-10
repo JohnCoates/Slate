@@ -26,6 +26,7 @@ class PhotoSettingsConstraintsResolver {
     }
     
     typealias ResolutionConstraint = PhotoSettingsConstraint<IntSize>
+    typealias FrameRateConstraint = PhotoSettingsConstraint<Int>
     
     var resolutionConstraints: [ResolutionConstraint]? {
         if case .notSet = resolution {
@@ -39,6 +40,25 @@ class PhotoSettingsConstraintsResolver {
                 constraints.append(contentsOf: cameraConstraints)
             }
         }
+        guard constraints.count > 0 else {
+            return nil
+        }
+        return constraints
+    }
+    
+    var frameRateConstraints: [FrameRateConstraint]? {
+        if case .notSet = frameRate {
+            return nil
+        }
+        
+        var constraints = [FrameRateConstraint]()
+        for camera in CurrentDevice.cameras {
+            if let cameraConstraints = self.constraints(forFrameRate: frameRate,
+                                                        camera: camera) {
+                constraints.append(contentsOf: cameraConstraints)
+            }
+        }
+        
         guard constraints.count > 0 else {
             return nil
         }
@@ -61,6 +81,24 @@ class PhotoSettingsConstraintsResolver {
         }
         
         return resolution
+    }
+    
+    func frameRate(forCamera camera: Camera,
+                   afterConstraints constraintsMaybe: [FrameRateConstraint]?) -> Int {
+        var frameRate = self.frameRate.targetting(camera: camera)
+        guard let constraints = constraintsMaybe else {
+            return frameRate
+        }
+        
+        for constraint in constraints {
+            guard constraint.camera === camera else {
+                continue
+            }
+            
+            frameRate = constraint.constrainedValue
+        }
+        
+        return frameRate
     }
     
     private func constraints(forResolution resolution: PhotoResolution,
@@ -100,9 +138,46 @@ class PhotoSettingsConstraintsResolver {
         return constraints
     }
     
+    private func constraints(forFrameRate frameRate: FrameRate, camera: Camera) -> [FrameRateConstraint]? {
+        let targetFrameRate = frameRate.targetting(camera: camera)
+        var constraints = [FrameRateConstraint]()
+        
+        var currentBestFrameRate = targetFrameRate
+        for priority in settings.priorities.items {
+            if case .frameRate = priority {
+                continue
+            }
+            
+            guard settings.priorities.is(priority: priority, higherThan: .frameRate) else {
+                continue
+            }
+            
+            let constraintMaybe: FrameRateConstraint?
+            switch priority {
+            case .resolution:
+                constraintMaybe = constraintedByResolution(frameRate: currentBestFrameRate, camera: camera)
+            case .frameRate, .burstSpeed:
+                continue
+            }
+            
+            guard let constraint = constraintMaybe else {
+                continue
+            }
+            
+            currentBestFrameRate = constraint.constrainedValue
+            constraints.append(constraint)
+        }
+        
+        guard constraints.count > 0 else {
+            return nil
+        }
+        
+        return constraints
+    }
+    
     private func constrainedByFrameRate(resolution: IntSize, camera: Camera) -> ResolutionConstraint? {
         let targetFrameRate = frameRate.targetting(camera: camera)
-        guard let bestResolution = camera.highestResolution(forTargetFrameRate: targetFrameRate) else {
+        guard let bestResolution = camera.highestResolution(forFrameRate: targetFrameRate) else {
             return nil
         }
         
@@ -116,9 +191,27 @@ class PhotoSettingsConstraintsResolver {
         
         return nil
     }
+    
+    private func constraintedByResolution(frameRate: Int,
+                                          camera: Camera) -> FrameRateConstraint? {
+        let targetResolution = resolution.targetting(camera: camera)
+        guard let bestFrameRate = camera.highestFrameRate(forResolution: targetResolution) else {
+            return nil
+        }
+        
+        if bestFrameRate < frameRate {
+            return FrameRateConstraint(camera: camera,
+                                       constrained: .frameRate,
+                                       by: .resolution,
+                                       originalValue: frameRate,
+                                       constrainedValue: bestFrameRate)
+        }
+        
+        return nil
+    }
 }
 
-struct PhotoSettingsConstraint<ValueType> {
+struct PhotoSettingsConstraint<ValueType>: Constraint {
     var camera: Camera
     var constrained: PhotoSettingsPriority
     var by: PhotoSettingsPriority
@@ -126,7 +219,12 @@ struct PhotoSettingsConstraint<ValueType> {
     var constrainedValue: ValueType
 }
 
-extension Array where Element == PhotoSettingsConstraint<IntSize> {
+protocol Constraint {
+    associatedtype Kind: CustomStringConvertible
+    var by: Kind { get }
+}
+
+extension Array where Element: Constraint {
     var constrainers: String {
         return self.map { $0.by.description }.unique.joined(separator: ", ")
     }

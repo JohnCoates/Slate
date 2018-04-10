@@ -55,15 +55,13 @@ class DeviceCamera: Camera {
         return Int(highest.maxFrameRate)
     }()
     
-    func highestResolution(forTargetFrameRate targetFrameRate: Int) -> IntSize? {
-        let formats = device.formats
+    func highestResolution(forFrameRate targetFrameRate: Int) -> IntSize? {
         let targetFrameRateFloat: Float64 = Float64(targetFrameRate)
         var maximumResolution: IntSize = IntSize(width: 0, height: 0)
         
-        for format in formats {
-            let formatDescription = format.formatDescription
+        for format in device.formats {
             let ranges = format.videoSupportedFrameRateRanges
-            let dimensions = CMVideoFormatDescriptionGetDimensions(formatDescription)
+            let dimensions = format.highResolutionStillImageDimensions
             
             for range in ranges {
                 guard range.maxFrameRate >= targetFrameRateFloat else {
@@ -76,10 +74,42 @@ class DeviceCamera: Camera {
             }
         }
         
-        if maximumResolution.width == 0 {
+        return discard(value: maximumResolution,
+                       ifZero: maximumResolution.width)
+    }
+    
+    func highestFrameRate(forResolution targetResolution: IntSize) -> Int? {
+        var maximumFrameRate = 0
+        for format in device.formats {
+            let ranges = format.videoSupportedFrameRateRanges
+            let dimensions = format.highResolutionStillImageDimensions
+            guard dimensions.width >= targetResolution.width && dimensions.height >= targetResolution.height else {
+                continue
+            }
+            
+            guard let bestRange = ranges.max(by: { $0.maxFrameRate > $1.maxFrameRate }) else {
+                continue
+            }
+            
+            maximumFrameRate = max(Int(bestRange.maxFrameRate), maximumFrameRate)
+        }
+        
+        return discard(ifZero: maximumFrameRate)
+    }
+    
+    private func discard<T>(value: T, ifZero maybeZero: Int) -> T? {
+        if maybeZero == 0 {
             return nil
         } else {
-            return maximumResolution
+            return value
+        }
+    }
+    
+    private func discard(ifZero value: Int) -> Int? {
+        if value == 0 {
+            return nil
+        } else {
+            return value
         }
     }
     
