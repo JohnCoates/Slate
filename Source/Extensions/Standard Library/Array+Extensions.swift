@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+extension Array where Element: Equatable {
+    var unique: [Element] {
+        var values: [Element] = []
+        for value in self {
+            guard values.contains(value) == false else {
+                continue
+            }
+            values.append(value)
+        }
+        return values
+    }
+}

@@ -23,35 +23,7 @@ class PhotoSettings {
     var burstSpeed: BurstSpeed = .notSet
     var priorities: PhotoSettingsPriorities = PhotoSettingsPriorities()
     
-    var resolutionConstrained: PhotoSettingsPriority? {
-        if case .notSet = resolution {
-            return nil
-        }
-        
-        for camera in CurrentDevice.cameras {
-            if let constrainedBy = resolutionConstrained(forCamera: camera) {
-                return constrainedBy
-            }
-        }
-        
-        return nil
-    }
-    
-    private func resolutionConstrained(forCamera camera: Camera) -> PhotoSettingsPriority? {
-        let targetResolution = resolution.targetting(camera: camera)
-        
-        if priorities.is(priority: .frameRate, higherThan: .resolution) {
-            let targetFrameRate = frameRate.targetting(camera: camera)
-            if let bestResolution = camera.highestResolution(forTargetFrameRate: targetFrameRate) {
-                if bestResolution.width < targetResolution.width || bestResolution.height < targetResolution.height {
-                    return .frameRate
-                }
-            }
-            
-        }
-        
-        return nil
-    }
+    lazy var constraintsResolver = PhotoSettingsConstraintsResolver(settings: self)
     
     var coreDataID: NSManagedObjectID?
     private var coreDataObject: PhotoSettingsCoreData?

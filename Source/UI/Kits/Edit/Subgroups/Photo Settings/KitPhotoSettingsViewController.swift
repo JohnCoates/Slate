@@ -67,12 +67,19 @@ KitSettingsDataSource, LinkDataSource {
         rows.append(TypedLinkRow(title: "Selected",
                                  detail: photoSettings.resolution,
                                  identifier: .resolution, onSelect: onSelect))
-        if let constrainedBy = photoSettings.resolutionConstrained {
-            rows.append(DetailRow(title: "Constrained By", detail: constrainedBy))
+        let constraintResolver = photoSettings.constraintsResolver
+        
+        let constraintsMaybe = constraintResolver.resolutionConstraints
+        
+        if let constraints = constraintsMaybe {
+            rows.append(DetailRow(title: "Constrained By", detail: constraints.constrainers))
         }
+        
         for camera in cameras {
+            let value = constraintResolver.resolution(forCamera: camera,
+                                                      afterConstraints: constraintsMaybe)
             rows.append(DetailRow(title: camera.userFacingName,
-                                  detail: camera.maximumResolution.description))
+                                  detail: value))
         }
         return rows
     }

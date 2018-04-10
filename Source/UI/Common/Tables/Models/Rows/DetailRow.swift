@@ -11,9 +11,9 @@ class DetailRow: TableRow, GenericTableRow {
     var title: String
     var detail: String?
     
-    init(title: String,
+    init(title: CustomStringConvertible,
          detail: CustomStringConvertible? = nil) {
-        self.title = title
+        self.title = title.description
         self.detail = detail?.description
     }
     

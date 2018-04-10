@@ -23,6 +23,10 @@ class DeviceCamera: Camera {
         }
     }
     
+    var description: String {
+        return userFacingName
+    }
+    
     lazy var maximumResolution: IntSize = {
         var maximumResolution: IntSize = IntSize(width: 0, height: 0)
         for format in device.formats {

@@ -43,6 +43,26 @@ class Critical {
         return castValue
     }
     
+    static func unwrap<T>(_ optional: T?,
+                          message messageMaybe: String? = nil,
+                          file: StaticString = #file,
+                          line: UInt = #line,
+                          method: StaticString = #function) -> T {
+        guard let value: T = optional else {
+            var message: String
+            if let errorMessage = messageMaybe {
+                message = errorMessage + " : "
+            } else {
+                message = ""
+            }
+            message += "Unexpectedly found nil while executing critical unwrap " +
+            "in \(method)"
+            fatalError(message, file: file, line: line)
+        }
+        
+        return value
+    }
+    
     static func methodNotDefined(file: StaticString = #file,
                                  line: UInt = #line,
                                  method: StaticString = #function) -> Never {

@@ -27,6 +27,10 @@ class SimulatorCamera: Camera {
         }
     }
     
+    var description: String {
+        return userFacingName
+    }
+    
     lazy var maximumResolution: IntSize = {
         switch position {
         case .back:

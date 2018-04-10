@@ -6,7 +6,7 @@
 
 import Foundation
 
-protocol Camera {
+protocol Camera: class, CustomStringConvertible {
     var userFacingName: String { get }
     var maximumResolution: IntSize { get }
     var maximumFrameRate: Int { get }
