@@ -104,4 +104,5 @@ extension BurstSpeed: PhotoSettingsConstrainable {
         }
         return nil
     }
+    
 }

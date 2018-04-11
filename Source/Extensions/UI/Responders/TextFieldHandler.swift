@@ -33,4 +33,5 @@ extension TextFieldHandler where Self: UITableViewDataSource {
     func handleReturn(forTextField textField: TableCellTextField) -> Bool {
         return textField.handleReturn()
     }
+    
 }

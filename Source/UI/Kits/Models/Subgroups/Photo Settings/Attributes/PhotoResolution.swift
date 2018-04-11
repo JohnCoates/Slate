@@ -108,4 +108,5 @@ extension PhotoResolution: PhotoSettingsConstrainable {
             return nil
         }
     }
+    
 }

@@ -50,14 +50,17 @@ class TestCamera: Camera {
     }()
     
     var highestResolutionForFrameRateClosure: ((Int) -> IntSize?)?
+    
     func highestResolution(forFrameRate targetFrameRate: Int) -> IntSize? {
         let closure = Critical.unwrap(highestResolutionForFrameRateClosure)
         return closure(targetFrameRate)
     }
     
     var highestFrameRateForResolutionClosure: ((IntSize) -> Int?)?
+    
     func highestFrameRate(forResolution targetResolution: IntSize) -> Int? {
         let closure = Critical.unwrap(highestFrameRateForResolutionClosure)
         return closure(targetResolution)
     }
+    
 }

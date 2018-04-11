@@ -95,4 +95,5 @@ class DeviceCamera: Camera {
         
         return discard(ifZero: maximumFrameRate)
     }
+    
 }

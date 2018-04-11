@@ -179,4 +179,5 @@ class EditKitSliderCell: UITableViewCell {
     @objc private func valueChangedEvent() {
         valueChanged?(self, slider.value)
     }
+    
 }

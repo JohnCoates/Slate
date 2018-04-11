@@ -24,4 +24,5 @@ class DetailRow: TableRow, GenericTableRow {
         cell.showDisclosure = false
         return cell
     }
+    
 }

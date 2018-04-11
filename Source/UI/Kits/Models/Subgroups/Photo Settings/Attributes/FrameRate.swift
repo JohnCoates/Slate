@@ -109,4 +109,5 @@ extension FrameRate: PhotoSettingsConstrainable {
         
         return nil
     }
+    
 }

@@ -152,4 +152,5 @@ KitSettingsDataSource, LinkDataSource {
             return PhotoSettingsPriorityViewController(kit: kit)
         }
     }
+    
 }

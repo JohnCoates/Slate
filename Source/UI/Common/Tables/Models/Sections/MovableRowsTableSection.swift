@@ -32,4 +32,5 @@ class GenericMovableRowsTableSection<IdentifierType>: MovableRowsTableSection {
         let item = typedRows.remove(at: from)
         typedRows.insert(item, at: to)
     }
+    
 }

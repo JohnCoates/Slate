@@ -37,4 +37,5 @@ extension GenericTableRow {
     func configure(cell: CellType) -> CellType {
         return cell
     }
+    
 }

@@ -164,6 +164,7 @@ extension BaseCaptureViewController: ComponentEditBarDelegate {
         
         fatalError("Edit gesture failed")
     }
+    
 }
 
 // MARK: - Selector Extension

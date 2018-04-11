@@ -142,4 +142,5 @@ class TestPhotoSettingsConstraints: XCTestCase {
         
         XCTAssertNil(burstSpeedConstraints, "Burst speed should not be constrained")
     }
+    
 }

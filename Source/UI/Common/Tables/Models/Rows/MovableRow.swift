@@ -24,6 +24,7 @@ class GenericMovableRow<IdentifierType>: TableRow, GenericTableRow {
         cell.showsReorderControl = true
         return cell
     }
+    
 }
 
 extension GenericMovableRow where IdentifierType: RawRepresentable, IdentifierType.RawValue == String {

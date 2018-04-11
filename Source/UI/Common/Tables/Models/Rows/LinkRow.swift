@@ -39,4 +39,5 @@ class GenericLinkRow<Identifier>: LinkRow, GenericTableRow {
         cell.showDisclosure = true
         return cell
     }
+    
 }

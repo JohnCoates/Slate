@@ -68,4 +68,5 @@ class SimulatorCamera: Camera {
             return 30
         }
     }
+    
 }

@@ -23,6 +23,7 @@ class RadioRow: TableRow, GenericTableRow {
         cell.showDisclosure = false
         return cell
     }
+    
 }
 
 class GenericRadioRow<RadioType>: RadioRow {

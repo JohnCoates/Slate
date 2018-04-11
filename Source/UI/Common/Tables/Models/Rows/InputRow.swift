@@ -41,6 +41,7 @@ class InputRowBase: TableRow, GenericTableRow {
     func configureCallbacks(forCell cell: CellType) {
         Critical.subclassMustImplementMethod()
     }
+    
 }
 
 class GenericInputRow<IdentifierType>: InputRowBase {
@@ -66,4 +67,5 @@ class GenericInputRow<IdentifierType>: InputRowBase {
             self.doneEditing?(self, value)
         }
     }
+    
 }

@@ -165,6 +165,7 @@ class KitSettingsViewController: SettingsTableViewController {
                                          to: destinationIndexPath.row)
         }
     }
+    
     override func tableView(_ tableView: UITableView,
                             targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath,
                             toProposedIndexPath proposedIndexPath: IndexPath) -> IndexPath {
@@ -198,4 +199,5 @@ class KitSettingsViewController: SettingsTableViewController {
                             shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         return false
     }
+    
 }

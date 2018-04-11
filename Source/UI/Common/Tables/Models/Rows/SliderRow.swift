@@ -31,4 +31,5 @@ struct SliderRow: TableRow, GenericTableRow {
         cell.valueChanged = valueChanged
         return cell
     }
+    
 }
