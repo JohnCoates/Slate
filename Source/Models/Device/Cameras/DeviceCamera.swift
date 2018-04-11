@@ -95,21 +95,4 @@ class DeviceCamera: Camera {
         
         return discard(ifZero: maximumFrameRate)
     }
-    
-    private func discard<T>(value: T, ifZero maybeZero: Int) -> T? {
-        if maybeZero == 0 {
-            return nil
-        } else {
-            return value
-        }
-    }
-    
-    private func discard(ifZero value: Int) -> Int? {
-        if value == 0 {
-            return nil
-        } else {
-            return value
-        }
-    }
-    
 }
