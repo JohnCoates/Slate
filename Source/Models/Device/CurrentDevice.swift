@@ -13,9 +13,7 @@ class CurrentDevice {
     private init() {
     }
     
-    static var cameras: [Camera] {
-        return shared.cameras
-    }
+    static var cameras: [Camera] = shared.cameras
     
     private lazy var cameras: [Camera] = {
         if Platform.isSimulator {
