@@ -94,13 +94,24 @@ extension PhotoResolution: PhotoSettingsConstrainable {
                                                              leader: LeaderType,
                                                              camera: Camera) -> ValueType? {
         
+        if let constraint: ValueConstraint<ValueType> = constrained(value: value, leader: leader, camera: camera) {
+            return constraint.value
+        } else {
+            return nil
+        }
+    }
+    
+    func constrained<LeaderType: PhotoSettingsConstrainable>(value: ValueType,
+                                                             leader: LeaderType,
+                                                             camera: Camera) -> ValueConstraint<ValueType>? {
+        
         switch leader.setting {
         case .frameRate, .burstSpeed:
             let optimalValue: Int = Critical.cast(leader.optimalValue(for: camera))
             
             if let constrainedValue = camera.highestResolution(forFrameRate: optimalValue),
                 constrainedValue < value {
-                return constrainedValue
+                return ValueConstraint(constrainedValue, evaluateNewValue: { $1 < $0 })
             } else {
                 return nil
             }

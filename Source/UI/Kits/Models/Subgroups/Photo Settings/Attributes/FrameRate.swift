@@ -90,18 +90,30 @@ extension FrameRate: PhotoSettingsConstrainable {
                                                              leader: LeaderType,
                                                              camera: Camera) -> ValueType? {
         
+        if let constraint: ValueConstraint<ValueType> = constrained(value: value, leader: leader, camera: camera) {
+            return constraint.value
+        } else {
+            return nil
+        }
+    }
+    
+    func constrained<LeaderType: PhotoSettingsConstrainable>(value: ValueType,
+                                                             leader: LeaderType,
+                                                             camera: Camera) -> ValueConstraint<ValueType>? {
+        
         switch leader.setting {
         case .resolution:
             let optimalValue: IntSize = Critical.cast(leader.optimalValue(for: camera))
             
             if let highestValue = camera.highestFrameRate(forResolution: optimalValue),
                 highestValue < value {
-                return highestValue
+                return ValueConstraint(highestValue, evaluateNewValue: { $1 < $0 })
             }
         case .burstSpeed:
             let optimalValue: Int = Critical.cast(leader.optimalValue(for: camera))
             if optimalValue > value {
-                return min(camera.maximumFrameRate, optimalValue)
+                let constrainedValue = min(camera.maximumFrameRate, optimalValue)
+                return ValueConstraint(constrainedValue, evaluateNewValue: { $1 > $0 })
             }
         case .frameRate:
             break

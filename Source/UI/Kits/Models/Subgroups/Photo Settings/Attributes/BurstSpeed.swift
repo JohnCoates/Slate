@@ -85,19 +85,30 @@ extension BurstSpeed: PhotoSettingsConstrainable {
                                                              leader: LeaderType,
                                                              camera: Camera) -> ValueType? {
         
+        if let constraint: ValueConstraint<ValueType> = constrained(value: value, leader: leader, camera: camera) {
+            return constraint.value
+        } else {
+            return nil
+        }
+    }
+    
+    func constrained<LeaderType: PhotoSettingsConstrainable>(value: ValueType,
+                                                             leader: LeaderType,
+                                                             camera: Camera) -> ValueConstraint<ValueType>? {
+        
         switch leader.setting {
         case .resolution:
             let optimalValue: IntSize = Critical.cast(leader.optimalValue(for: camera))
             
             if let necessaryFrameRate = camera.highestFrameRate(forResolution: optimalValue),
                 necessaryFrameRate < value {
-                return necessaryFrameRate
+                return ValueConstraint(necessaryFrameRate, evaluateNewValue: { $1 < $0 })
             }
         case .frameRate:
             let optimalValue: Int = Critical.cast(leader.optimalValue(for: camera))
             
             if optimalValue < value {
-                return optimalValue
+                return ValueConstraint(optimalValue, evaluateNewValue: { $1 < $0 })
             }
         case .burstSpeed:
             break

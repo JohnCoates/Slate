@@ -143,4 +143,45 @@ class TestPhotoSettingsConstraints: XCTestCase {
         XCTAssertNil(burstSpeedConstraints, "Burst speed should not be constrained")
     }
     
+    func testBurstSpeedDoesntBringFrameRateUp() {
+        let targetResolution = IntSize(width: 1920, height: 1080)
+//        let burstSpeedResolution = IntSize(width: 640, height: 640)
+        let targetBurstSpeed = 120
+        let targetFrameRate = 30
+        let correctFrameRate = 20
+        let photoSettings = PhotoSettings()
+        photoSettings.frameRate = .custom(rate: targetFrameRate)
+        photoSettings.resolution = .maximum
+        photoSettings.burstSpeed = .custom(speed: targetBurstSpeed)
+        
+        photoSettings.priorities.items = [
+            .resolution,
+            .burstSpeed,
+            .frameRate
+        ]
+        
+        let camera = TestCamera(position: .back)
+        camera.highestFrameRateForResolutionClosure = { resolution in
+            if resolution < targetResolution {
+                return targetBurstSpeed
+            } else {
+                return correctFrameRate
+            }
+        }
+        
+        CurrentDevice.cameras = [camera]
+        let resolver = photoSettings.constraintsResolver
+        
+        guard let frameRateConstraints = resolver.constraints2(for: photoSettings.frameRate) else {
+            XCTFail("Frame rate must be constrained")
+            return
+        }
+        XCTAssertEqual(frameRateConstraints.count, 1, "Correct amount of frame rate constraints")
+        let resolvedFrameRate = photoSettings.constraintsResolver.value2(for: photoSettings.frameRate,
+                                                                        camera: camera,
+                                                                        afterConstraints: frameRateConstraints)
+        
+        XCTAssertEqual(resolvedFrameRate, correctFrameRate, "Solved constrained frame rate value correctly.")
+    }
+    
 }
