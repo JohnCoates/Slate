@@ -8,6 +8,19 @@
 
 import Foundation
 
+extension String {
+    var withoutNewLinesAndExtraSpaces: String {
+        var cleaned = self
+        
+        cleaned = cleaned.replacingOccurrences(of: "\n", with: " ")
+        cleaned = cleaned.replacingOccurrences(of: "\t", with: " ")
+        while cleaned.contains("  ") {
+            cleaned = cleaned.replacingOccurrences(of: "  ", with: " ")
+        }
+        return cleaned
+    }
+}
+
 extension Array where Element: CustomStringConvertible {
     
     func customJoined(separator: String = ",") -> String {

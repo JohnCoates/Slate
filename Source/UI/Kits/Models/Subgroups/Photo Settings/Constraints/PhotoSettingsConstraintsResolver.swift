@@ -128,7 +128,7 @@ class PhotoSettingsConstraintsResolver {
             return nil
         }
         
-        if constrainedValue < value {
+        if constrainedValue != value {
             return PhotoSettingsConstraint(camera: camera,
                                            constrained: follower.setting,
                                            by: leader.setting,

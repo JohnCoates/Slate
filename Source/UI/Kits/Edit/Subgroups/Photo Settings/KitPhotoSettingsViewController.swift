@@ -146,10 +146,10 @@ KitSettingsDataSource, LinkDataSource {
             return ResolutionSettingViewController(kit: kit)
         case .frameRate:
             return FrameRateSettingsViewController(kit: kit)
+        case .burstSpeed:
+            return BurstSpeedSettingsViewController(kit: kit)
         case .priorityOrder:
             return PhotoSettingsPriorityViewController(kit: kit)
-        default:
-            Critical.methodNotDefined()
         }
     }
 }

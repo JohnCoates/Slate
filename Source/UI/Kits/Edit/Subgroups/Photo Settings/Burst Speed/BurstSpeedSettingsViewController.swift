@@ -1,28 +1,28 @@
 //
-//  FrameRateSettingsViewController
-//  Created on 4/8/18.
+//  BurstSpeedSettingsViewController
+//  Created on 4/11/18.
 //  Copyright © 2018 John Coates. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class FrameRateSettingsViewController: KitSettingsViewController,
+class BurstSpeedSettingsViewController: KitSettingsViewController,
 KitSettingsDataSource {
     
     // MARK: - Init
     
-    var navigationTitle: String = "Frame Rate"
-    var selectedFrameRate: FrameRate
-    lazy var customFrameRate: Float = {
-        if case .custom(let frameRate) = selectedFrameRate {
-            return Float(frameRate)
+    var navigationTitle: String = "Burst Speed"
+    var selectedValue: BurstSpeed
+    lazy var customValue: Float = {
+        if case .custom(let speed) = selectedValue {
+            return Float(speed)
         } else {
-            return 120
+            return 5
         }
     }()
     
     override init(kit: Kit) {
-        selectedFrameRate = kit.photoSettings.frameRate
+        selectedValue = kit.photoSettings.burstSpeed
         super.init(kit: kit)
     }
     
@@ -38,7 +38,7 @@ KitSettingsDataSource {
     // MARK: - User Interaction
     
     @objc func saveTapped() {
-        kit.photoSettings.frameRate = selectedFrameRate
+        kit.photoSettings.burstSpeed = selectedValue
         kit.save()
         navigationController?.popViewController(animated: true)
     }
@@ -46,27 +46,26 @@ KitSettingsDataSource {
     // MARK: - Data Source
     
     var sections: [TableSection] {
-        var sections: [TableSection] = [frameRateSection]
-        if case .custom = selectedFrameRate {
+        var sections: [TableSection] = [radioSection]
+        if case .custom = selectedValue {
             sections.append(customSection)
         }
         return sections
     }
     
-    lazy var frameRateSection: GenericRadioTableSection<FrameRate> = {
-        var rows = [GenericRadioRow<FrameRate>]()
+    lazy var radioSection: GenericRadioTableSection<BurstSpeed> = {
+        var rows = [GenericRadioRow<BurstSpeed>]()
         
         rows.append(GenericRadioRow(title: "Default",
-                                    value: FrameRate.notSet))
+                                    value: BurstSpeed.notSet))
         rows.append(GenericRadioRow(title: "Maximum",
-                                    value: FrameRate.maximum))
+                                    value: BurstSpeed.maximum))
         rows.append(GenericRadioRow(title: "Custom",
-                                    value: FrameRate.custom(rate: Int(customFrameRate))))
+                                    value: BurstSpeed.custom(speed: Int(customValue))))
         
-        let section: GenericRadioTableSection<FrameRate>
-        section = GenericRadioTableSection(headerTitle: "Frame Rate",
-                                           rows: rows)
-        switch selectedFrameRate {
+        let section: GenericRadioTableSection<BurstSpeed>
+        section = GenericRadioTableSection(rows: rows)
+        switch selectedValue {
         case .notSet:
             section.selectedIndex = 0
         case .maximum:
@@ -84,15 +83,15 @@ KitSettingsDataSource {
     var customSection: TableSection {
         var rows = [TableRow]()
         let footer = """
-                    The higher that you set the frame rate,
-                    the more resolution will need to be reduced to keep up.
-                    To achieve these higher frame rates make sure you prioritize frame rate over
-                    resolution.
+                    The higher that you set the Burst Speed,
+                    the more Resolution will need to be reduced to keep up.
+                    To achieve these higher speeds make sure you prioritize Burst Speed over
+                    Resolution.
                     """.withoutNewLinesAndExtraSpaces
-        let value = customFrameRate
+        let value = customValue
         let valueInt = Int(value)
         let valueString = String(valueInt)
-        var row = SliderRow(title: "Frames / sec", detail: valueString)
+        var row = SliderRow(title: "Photos / sec", detail: valueString)
         row.minimum = 1
         row.maximum = 120
         row.value = value
@@ -107,8 +106,8 @@ KitSettingsDataSource {
     
     // MARK: - Selection changes
     
-    func selected(_ newValue: FrameRate) {
-        selectedFrameRate = newValue
+    func selected(_ newValue: BurstSpeed) {
+        selectedValue = newValue
     }
     
     // MARK: - Slider Value Changes
@@ -117,7 +116,7 @@ KitSettingsDataSource {
         let value = Int(newValue)
         cell.detail = String(value)
         
-        selectedFrameRate = .custom(rate: value)
-        customFrameRate = newValue
+        selectedValue = .custom(speed: value)
+        customValue = newValue
     }
 }
