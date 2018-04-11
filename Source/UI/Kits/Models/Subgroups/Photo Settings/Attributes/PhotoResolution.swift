@@ -97,7 +97,13 @@ extension PhotoResolution: PhotoSettingsConstrainable {
         switch leader.setting {
         case .frameRate, .burstSpeed:
             let optimalValue: Int = Critical.cast(leader.optimalValue(for: camera))
-            return camera.highestResolution(forFrameRate: optimalValue)
+            
+            if let constrainedValue = camera.highestResolution(forFrameRate: optimalValue),
+                constrainedValue < value {
+                return constrainedValue
+            } else {
+                return nil
+            }
         case .resolution:
             return nil
         }
