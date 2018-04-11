@@ -94,13 +94,13 @@ extension PhotoResolution {
     
 }
 
-extension PhotoResolution: PhotoSettingsConstrainable, GenericPhotoSettingsConstrainable {
+extension PhotoResolution: PhotoSettingsConstrainable {
     typealias ValueType = IntSize
     var setting: PhotoSettingsPriority {
         return .resolution
     }
     
-    func constrained<LeaderType: GenericPhotoSettingsConstrainable>(value: ValueType,
+    func constrained<LeaderType: PhotoSettingsConstrainable>(value: ValueType,
                                                                     leader: LeaderType,
                                                                     camera: Camera) -> ValueType? {
         

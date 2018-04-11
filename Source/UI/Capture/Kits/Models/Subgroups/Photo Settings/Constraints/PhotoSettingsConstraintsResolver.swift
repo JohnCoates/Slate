@@ -51,7 +51,7 @@ class PhotoSettingsConstraintsResolver {
         return constraints
     }
     
-    func constraints<Follower: GenericPhotoSettingsConstrainable>(for follower: Follower) -> [PhotoSettingsConstraint<Follower.ValueType>]?  {
+    func constraints<Follower: PhotoSettingsConstrainable>(for follower: Follower) -> [PhotoSettingsConstraint<Follower.ValueType>]?  {
         
         var constraints = [PhotoSettingsConstraint<Follower.ValueType>]()
         for camera in CurrentDevice.cameras {
@@ -174,7 +174,7 @@ class PhotoSettingsConstraintsResolver {
         return constraints
     }
     
-    private func constraints<Follower: GenericPhotoSettingsConstrainable>(for follower: Follower,
+    private func constraints<Follower: PhotoSettingsConstrainable>(for follower: Follower,
                                                                           camera: Camera) -> [PhotoSettingsConstraint<Follower.ValueType>]? {
         typealias FollowerValue = Follower.ValueType
         typealias ConstraintType = PhotoSettingsConstraint<FollowerValue>
@@ -263,8 +263,8 @@ class PhotoSettingsConstraintsResolver {
         return nil
     }
     
-    private func constraint<FollowType: GenericPhotoSettingsConstrainable,
-        LeaderType: GenericPhotoSettingsConstrainable>(value: FollowType.ValueType,
+    private func constraint<FollowType: PhotoSettingsConstrainable,
+        LeaderType: PhotoSettingsConstrainable>(value: FollowType.ValueType,
                                                        camera: Camera,
                                                        follower: FollowType,
                                                        leader: LeaderType)
@@ -320,14 +320,11 @@ class PhotoSettingsConstraintsResolver {
 }
 
 protocol PhotoSettingsConstrainable {
-    var setting: PhotoSettingsPriority { get }
-}
-
-protocol GenericPhotoSettingsConstrainable: PhotoSettingsConstrainable {
     associatedtype ValueType: Comparable
+    var setting: PhotoSettingsPriority { get }
     func optimalValue(for camera: Camera) -> ValueType
     
-    func constrained<LeaderType: GenericPhotoSettingsConstrainable>(value: ValueType,
+    func constrained<LeaderType: PhotoSettingsConstrainable>(value: ValueType,
                                                                     leader: LeaderType,
                                                                     camera: Camera) -> ValueType?
 }

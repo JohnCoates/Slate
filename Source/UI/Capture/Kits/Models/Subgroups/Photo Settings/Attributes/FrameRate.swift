@@ -86,13 +86,13 @@ extension FrameRate {
     
 }
 
-extension FrameRate: PhotoSettingsConstrainable, GenericPhotoSettingsConstrainable {
+extension FrameRate: PhotoSettingsConstrainable {
     typealias ValueType = Int
     var setting: PhotoSettingsPriority {
         return .frameRate
     }
     
-    func constrained<LeaderType: GenericPhotoSettingsConstrainable>(value: ValueType,
+    func constrained<LeaderType: PhotoSettingsConstrainable>(value: ValueType,
                                                                     leader: LeaderType,
                                                                     camera: Camera) -> ValueType? {
         
