@@ -93,14 +93,16 @@ extension FrameRate: PhotoSettingsConstrainable {
         switch leader.setting {
         case .resolution:
             let optimalValue: IntSize = Critical.cast(leader.optimalValue(for: camera))
-            return camera.highestFrameRate(forResolution: optimalValue)
+            
+            if let highestValue = camera.highestFrameRate(forResolution: optimalValue),
+                highestValue < value {
+                return highestValue
+            }
         case .burstSpeed:
             let optimalValue: Int = Critical.cast(leader.optimalValue(for: camera))
-            let ownOptimalValue: Int = Critical.cast(self.optimalValue(for: camera))
-            if optimalValue > ownOptimalValue {
+            if optimalValue > value {
                 return min(camera.maximumFrameRate, optimalValue)
             }
-            
         case .frameRate:
             break
         }

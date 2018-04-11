@@ -3263,8 +3263,8 @@
 				FADFC6F61F50D2A00023B92C /* Data Models */,
 				FADFC6F31F50D2430023B92C /* PhotoResolution.swift */,
 				FAA2A6A7207A906700C43269 /* FrameRate.swift */,
-				FA373E48207AD7A10092BA67 /* PhotoSettingsPriorities.swift */,
 				FA9B342E207DBA220098D2FE /* BurstSpeed.swift */,
+				FA373E48207AD7A10092BA67 /* PhotoSettingsPriorities.swift */,
 			);
 			path = Attributes;
 			sourceTree = "<group>";
