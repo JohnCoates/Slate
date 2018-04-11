@@ -93,8 +93,8 @@ extension FrameRate: PhotoSettingsConstrainable {
     }
     
     func constrained<LeaderType: PhotoSettingsConstrainable>(value: ValueType,
-                                                                    leader: LeaderType,
-                                                                    camera: Camera) -> ValueType? {
+                                                             leader: LeaderType,
+                                                             camera: Camera) -> ValueType? {
         
         switch leader.setting {
         case .resolution:

@@ -33,22 +33,7 @@ class PhotoSettingsConstraintsResolver {
     }
     
     var frameRateConstraints: [FrameRateConstraint]? {
-        if case .notSet = frameRate {
-            return nil
-        }
-        
-        var constraints = [FrameRateConstraint]()
-        for camera in CurrentDevice.cameras {
-            if let cameraConstraints = self.constraints(forFrameRate: frameRate,
-                                                        camera: camera) {
-                constraints.append(contentsOf: cameraConstraints)
-            }
-        }
-        
-        guard constraints.count > 0 else {
-            return nil
-        }
-        return constraints
+        return constraints(for: frameRate)
     }
     
     func constraints<Follower: PhotoSettingsConstrainable>(for follower: Follower) -> [PhotoSettingsConstraint<Follower.ValueType>]?  {
@@ -117,7 +102,10 @@ class PhotoSettingsConstraintsResolver {
             case .frameRate:
                 constraintMaybe = constraint(value: currentBestValue, camera: camera,
                                              follower: follower, leader: frameRate)
-            case .resolution, .burstSpeed:
+            case .resolution:
+                constraintMaybe = constraint(value: currentBestValue, camera: camera,
+                                             follower: follower, leader: resolution)
+            case .burstSpeed:
                 continue
             }
             
@@ -125,43 +113,6 @@ class PhotoSettingsConstraintsResolver {
                 continue
             }
             currentBestValue = constraint.constrainedValue
-            constraints.append(constraint)
-        }
-        
-        guard constraints.count > 0 else {
-            return nil
-        }
-        
-        return constraints
-    }
-    
-    private func constraints(forFrameRate frameRate: FrameRate, camera: Camera) -> [FrameRateConstraint]? {
-        let targetFrameRate = frameRate.targetting(camera: camera)
-        var constraints = [FrameRateConstraint]()
-        
-        var currentBestFrameRate = targetFrameRate
-        for priority in settings.priorities.items {
-            if case .frameRate = priority {
-                continue
-            }
-            
-            guard settings.priorities.is(priority: priority, higherThan: .frameRate) else {
-                continue
-            }
-            
-            let constraintMaybe: FrameRateConstraint?
-            switch priority {
-            case .resolution:
-                constraintMaybe = constraintedByResolution(frameRate: currentBestFrameRate, camera: camera)
-            case .frameRate, .burstSpeed:
-                continue
-            }
-            
-            guard let constraint = constraintMaybe else {
-                continue
-            }
-            
-            currentBestFrameRate = constraint.constrainedValue
             constraints.append(constraint)
         }
         
@@ -187,24 +138,6 @@ class PhotoSettingsConstraintsResolver {
                                            constrained: follower.setting,
                                            by: leader.setting,
                                            originalValue: value, constrainedValue: constrainedValue)
-        }
-        
-        return nil
-    }
-    
-    private func constraintedByResolution(frameRate: Int,
-                                          camera: Camera) -> FrameRateConstraint? {
-        let targetResolution = resolution.targetting(camera: camera)
-        guard let bestFrameRate = camera.highestFrameRate(forResolution: targetResolution) else {
-            return nil
-        }
-        
-        if bestFrameRate < frameRate {
-            return FrameRateConstraint(camera: camera,
-                                       constrained: .frameRate,
-                                       by: .resolution,
-                                       originalValue: frameRate,
-                                       constrainedValue: bestFrameRate)
         }
         
         return nil
