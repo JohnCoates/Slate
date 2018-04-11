@@ -24,3 +24,10 @@ large_tuple:
   warning: 3
   error: 5
 type_body_length: 300
+nesting:
+  type_level:
+    warning: 2
+    error: 3
+  statement_level:
+    warning: 5
+    error: 6

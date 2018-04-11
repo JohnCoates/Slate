@@ -36,7 +36,7 @@ class PhotoSettingsConstraintsResolver {
         return constraints(for: frameRate)
     }
     
-    func constraints<Follower: PhotoSettingsConstrainable>(for follower: Follower) -> [Follower.Constraint]?  {
+    func constraints<Follower: PhotoSettingsConstrainable>(for follower: Follower) -> [Follower.Constraint]? {
         
         var constraints = [PhotoSettingsConstraint<Follower.ValueType>]()
         for camera in CurrentDevice.cameras {
@@ -67,7 +67,7 @@ class PhotoSettingsConstraintsResolver {
     }
     
     private func constraints<Follower: PhotoSettingsConstrainable>(for follower: Follower,
-                                                                          camera: Camera) -> [Follower.Constraint]? {
+                                                                   camera: Camera) -> [Follower.Constraint]? {
         typealias FollowerValue = Follower.ValueType
         typealias Constraint = Follower.Constraint
         let optimalValue = follower.optimalValue(for: camera)
