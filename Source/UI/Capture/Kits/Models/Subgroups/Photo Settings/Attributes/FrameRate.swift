@@ -72,6 +72,10 @@ extension FrameRate: CustomDebugStringConvertible {
 extension FrameRate {
     
     func targetting(camera: Camera) -> Int {
+        return optimalValue(for: camera)
+    }
+    
+    func optimalValue(for camera: Camera) -> Int {
         switch self {
         case .notSet, .maximum:
             return camera.maximumFrameRate
@@ -80,4 +84,24 @@ extension FrameRate {
         }
     }
     
+}
+
+extension FrameRate: PhotoSettingsConstrainable, GenericPhotoSettingsConstrainable {
+    typealias ValueType = Int
+    var setting: PhotoSettingsPriority {
+        return .frameRate
+    }
+    
+    func constrained<LeaderType: GenericPhotoSettingsConstrainable>(value: ValueType,
+                                                                    leader: LeaderType,
+                                                                    camera: Camera) -> ValueType? {
+        
+        switch leader.setting {
+        case .resolution:
+            let optimalValue: IntSize = Critical.cast(leader.optimalValue(for: camera))
+            return camera.highestFrameRate(forResolution: optimalValue)
+        case .burstSpeed, .frameRate:
+            return nil
+        }
+    }
 }

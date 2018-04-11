@@ -74,6 +74,10 @@ CustomDebugStringConvertible {
 extension PhotoResolution {
     
     func targetting(camera: Camera) -> IntSize {
+        return optimalValue(for: camera)
+    }
+    
+    func optimalValue(for camera: Camera) -> IntSize {
         switch self {
         case .notSet, .maximum:
             return camera.maximumResolution
@@ -88,4 +92,24 @@ extension PhotoResolution {
         }
     }
     
+}
+
+extension PhotoResolution: PhotoSettingsConstrainable, GenericPhotoSettingsConstrainable {
+    typealias ValueType = IntSize
+    var setting: PhotoSettingsPriority {
+        return .resolution
+    }
+    
+    func constrained<LeaderType: GenericPhotoSettingsConstrainable>(value: ValueType,
+                                                                    leader: LeaderType,
+                                                                    camera: Camera) -> ValueType? {
+        
+        switch leader.setting {
+        case .frameRate:
+            let optimalValue: Int = Critical.cast(leader.optimalValue(for: camera))
+            return camera.highestResolution(forFrameRate: optimalValue)
+        case .burstSpeed, .resolution:
+            return nil
+        }
+    }
 }

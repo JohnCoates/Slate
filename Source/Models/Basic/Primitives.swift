@@ -6,7 +6,7 @@
 
 import Foundation
 
-struct IntSize: CustomStringConvertible, Equatable {
+struct IntSize: CustomStringConvertible {
     var width: Int
     var height: Int
     
@@ -15,8 +15,16 @@ struct IntSize: CustomStringConvertible, Equatable {
     }
 }
 
+extension IntSize: Equatable {}
+
 func == (lhs: IntSize, rhs: IntSize) -> Bool {
     return lhs.width == rhs.width && lhs.height == rhs.height
+}
+
+extension IntSize: Comparable {}
+
+func < (lhs: IntSize, rhs: IntSize) -> Bool {
+    return lhs.width < rhs.width || lhs.height < rhs.height
 }
 
 import AVFoundation
