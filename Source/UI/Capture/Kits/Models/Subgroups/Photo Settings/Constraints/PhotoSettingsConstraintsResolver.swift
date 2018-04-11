@@ -106,11 +106,11 @@ class PhotoSettingsConstraintsResolver {
     }
     
     private func constraint<Follower: PhotoSettingsConstrainable,
-        Leader: PhotoSettingsConstrainable>(value: Follower.ValueType,
-                                            camera: Camera,
-                                            follower: Follower,
-                                            leader: Leader)
-        -> Follower.Constraint? {
+                            Leader: PhotoSettingsConstrainable>(value: Follower.ValueType,
+                                                                camera: Camera,
+                                                                follower: Follower,
+                                                                leader: Leader)
+                                                                -> Follower.Constraint? {
         guard let constrainedValue = follower.constrained(value: value, leader: leader, camera: camera) else {
             return nil
         }
