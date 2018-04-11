@@ -76,8 +76,9 @@ KitSettingsDataSource, LinkDataSource {
         }
         
         for camera in cameras {
-            let value = constraintResolver.resolution(forCamera: camera,
-                                                      afterConstraints: constraintsMaybe)
+            let value = constraintResolver.value(for: photoSettings.resolution,
+                                                 camera: camera,
+                                                 afterConstraints: constraintsMaybe)
             rows.append(DetailRow(title: camera, detail: value))
         }
         return rows
@@ -96,8 +97,9 @@ KitSettingsDataSource, LinkDataSource {
         }
         
         for camera in cameras {
-            let value = constraintResolver.frameRate(forCamera: camera,
-                                                     afterConstraints: constraintsMaybe)
+            let value = constraintResolver.value(for: photoSettings.frameRate,
+                                                 camera: camera,
+                                                 afterConstraints: constraintsMaybe)
             rows.append(DetailRow(title: camera, detail: "\(value)/sec"))
         }
         

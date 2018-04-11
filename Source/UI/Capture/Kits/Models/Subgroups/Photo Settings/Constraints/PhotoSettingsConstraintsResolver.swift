@@ -36,7 +36,7 @@ class PhotoSettingsConstraintsResolver {
         return constraints(for: frameRate)
     }
     
-    func constraints<Follower: PhotoSettingsConstrainable>(for follower: Follower) -> [PhotoSettingsConstraint<Follower.ValueType>]?  {
+    func constraints<Follower: PhotoSettingsConstrainable>(for follower: Follower) -> [Follower.Constraint]?  {
         
         var constraints = [PhotoSettingsConstraint<Follower.ValueType>]()
         for camera in CurrentDevice.cameras {
@@ -48,48 +48,30 @@ class PhotoSettingsConstraintsResolver {
         return discard(value: constraints, ifZero: constraints.count)
     }
     
-    func resolution(forCamera camera: Camera,
-                    afterConstraints constraintsMaybe: [ResolutionConstraint]?) -> IntSize {
-        var resolution = self.resolution.targetting(camera: camera)
+    func value<Follower: PhotoSettingsConstrainable>(for follower: Follower, camera: Camera,
+                                                     afterConstraints constraintsMaybe: [Follower.Constraint]?)
+        -> Follower.ValueType {
+        var value = follower.optimalValue(for: camera)
         guard let constraints = constraintsMaybe else {
-            return resolution
+            return value
         }
         
         for constraint in constraints {
             guard constraint.camera === camera else {
                 continue
             }
-            
-            resolution = constraint.constrainedValue
+            value = constraint.constrainedValue
         }
         
-        return resolution
-    }
-    
-    func frameRate(forCamera camera: Camera,
-                   afterConstraints constraintsMaybe: [FrameRateConstraint]?) -> Int {
-        var frameRate = self.frameRate.targetting(camera: camera)
-        guard let constraints = constraintsMaybe else {
-            return frameRate
-        }
-        
-        for constraint in constraints {
-            guard constraint.camera === camera else {
-                continue
-            }
-            
-            frameRate = constraint.constrainedValue
-        }
-        
-        return frameRate
+        return value
     }
     
     private func constraints<Follower: PhotoSettingsConstrainable>(for follower: Follower,
-                                                                          camera: Camera) -> [PhotoSettingsConstraint<Follower.ValueType>]? {
+                                                                          camera: Camera) -> [Follower.Constraint]? {
         typealias FollowerValue = Follower.ValueType
-        typealias ConstraintType = PhotoSettingsConstraint<FollowerValue>
+        typealias Constraint = Follower.Constraint
         let optimalValue = follower.optimalValue(for: camera)
-        var constraints = [ConstraintType]()
+        var constraints = [Constraint]()
         
         var currentBestValue = optimalValue
         for priority in settings.priorities.items {
@@ -97,7 +79,7 @@ class PhotoSettingsConstraintsResolver {
                 continue
             }
             
-            let constraintMaybe: ConstraintType?
+            let constraintMaybe: Constraint?
             switch priority {
             case .frameRate:
                 constraintMaybe = constraint(value: currentBestValue, camera: camera,
@@ -123,12 +105,12 @@ class PhotoSettingsConstraintsResolver {
         return constraints
     }
     
-    private func constraint<FollowType: PhotoSettingsConstrainable,
-        LeaderType: PhotoSettingsConstrainable>(value: FollowType.ValueType,
-                                                       camera: Camera,
-                                                       follower: FollowType,
-                                                       leader: LeaderType)
-        -> PhotoSettingsConstraint<FollowType.ValueType>? {
+    private func constraint<Follower: PhotoSettingsConstrainable,
+        Leader: PhotoSettingsConstrainable>(value: Follower.ValueType,
+                                            camera: Camera,
+                                            follower: Follower,
+                                            leader: Leader)
+        -> Follower.Constraint? {
         guard let constrainedValue = follower.constrained(value: value, leader: leader, camera: camera) else {
             return nil
         }
@@ -141,34 +123,5 @@ class PhotoSettingsConstraintsResolver {
         }
         
         return nil
-    }
-}
-
-protocol PhotoSettingsConstrainable {
-    associatedtype ValueType: Comparable
-    var setting: PhotoSettingsPriority { get }
-    func optimalValue(for camera: Camera) -> ValueType
-    
-    func constrained<LeaderType: PhotoSettingsConstrainable>(value: ValueType,
-                                                                    leader: LeaderType,
-                                                                    camera: Camera) -> ValueType?
-}
-
-struct PhotoSettingsConstraint<ValueType>: BaseConstraint {
-    var camera: Camera
-    var constrained: PhotoSettingsPriority
-    var by: PhotoSettingsPriority
-    var originalValue: ValueType
-    var constrainedValue: ValueType
-}
-
-protocol BaseConstraint {
-    associatedtype Kind: CustomStringConvertible
-    var by: Kind { get }
-}
-
-extension Array where Element: BaseConstraint {
-    var constrainers: String {
-        return self.map { $0.by.description }.unique.joined(separator: ", ")
     }
 }
