@@ -15,6 +15,7 @@ class DataModel {
         case one = 1
         case two = 2
         case three = 3
+        case four = 4
         
         func nextVersion() -> Version? {
             let nextInt = self.rawValue + 1
@@ -27,7 +28,7 @@ class DataModel {
         
     }
     
-    static let currentVersion: Version = .three
+    static let currentVersion: Version = .four
     
     // MARK: - Convenience 
     

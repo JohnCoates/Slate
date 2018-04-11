@@ -394,6 +394,12 @@
 		FA9B3428207DAE200098D2FE /* PhotoSettingsConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B3426207DAE200098D2FE /* PhotoSettingsConstraint.swift */; };
 		FA9B342C207DAE3A0098D2FE /* BaseConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B342B207DAE3A0098D2FE /* BaseConstraint.swift */; };
 		FA9B342D207DAE3A0098D2FE /* BaseConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B342B207DAE3A0098D2FE /* BaseConstraint.swift */; };
+		FA9B342F207DBA220098D2FE /* BurstSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B342E207DBA220098D2FE /* BurstSpeed.swift */; };
+		FA9B3430207DBA220098D2FE /* BurstSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B342E207DBA220098D2FE /* BurstSpeed.swift */; };
+		FA9B3432207DC0130098D2FE /* DBBurstSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B3431207DC0130098D2FE /* DBBurstSpeed.swift */; };
+		FA9B3433207DC0130098D2FE /* DBBurstSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B3431207DC0130098D2FE /* DBBurstSpeed.swift */; };
+		FA9B3435207DC0C50098D2FE /* PhotoSettingsAddBurstSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B3434207DC0C50098D2FE /* PhotoSettingsAddBurstSpeed.swift */; };
+		FA9B3436207DC0C50098D2FE /* PhotoSettingsAddBurstSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B3434207DC0C50098D2FE /* PhotoSettingsAddBurstSpeed.swift */; };
 		FA9F89E61D953C540058C369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F89E51D953C540058C369 /* AppDelegate.swift */; };
 		FA9F89ED1D953C540058C369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9F89EC1D953C540058C369 /* Assets.xcassets */; };
 		FA9F89F01D953C540058C369 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9F89EE1D953C540058C369 /* LaunchScreen.storyboard */; };
@@ -934,6 +940,9 @@
 		FA9B3423207DAE140098D2FE /* PhotoSettingsConstrainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSettingsConstrainable.swift; sourceTree = "<group>"; };
 		FA9B3426207DAE200098D2FE /* PhotoSettingsConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSettingsConstraint.swift; sourceTree = "<group>"; };
 		FA9B342B207DAE3A0098D2FE /* BaseConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConstraint.swift; sourceTree = "<group>"; };
+		FA9B342E207DBA220098D2FE /* BurstSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstSpeed.swift; sourceTree = "<group>"; };
+		FA9B3431207DC0130098D2FE /* DBBurstSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBBurstSpeed.swift; sourceTree = "<group>"; };
+		FA9B3434207DC0C50098D2FE /* PhotoSettingsAddBurstSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSettingsAddBurstSpeed.swift; sourceTree = "<group>"; };
 		FA9F89E21D953C540058C369 /* Slate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9F89E51D953C540058C369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA9F89EC1D953C540058C369 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -2811,6 +2820,7 @@
 				FABC39571EF3211B00ECE935 /* EntityMigrationPolicy.swift */,
 				FAA2A6AD207A940700C43269 /* PhotoSettingsAddFrameRate.swift */,
 				FA373E4E207ADCDB0092BA67 /* PhotoSettingsAddPriorities.swift */,
+				FA9B3434207DC0C50098D2FE /* PhotoSettingsAddBurstSpeed.swift */,
 			);
 			path = "Entity Policies";
 			sourceTree = "<group>";
@@ -3226,6 +3236,7 @@
 				FADFC6F31F50D2430023B92C /* PhotoResolution.swift */,
 				FAA2A6A7207A906700C43269 /* FrameRate.swift */,
 				FA373E48207AD7A10092BA67 /* PhotoSettingsPriorities.swift */,
+				FA9B342E207DBA220098D2FE /* BurstSpeed.swift */,
 			);
 			path = Attributes;
 			sourceTree = "<group>";
@@ -3236,6 +3247,7 @@
 				FADFC6EA1F4F67C30023B92C /* DBPhotoResolution.swift */,
 				FAA2A6AA207A919000C43269 /* DBFrameRate.swift */,
 				FA373E4B207ADB270092BA67 /* DBPhotoSettingsPriorities.swift */,
+				FA9B3431207DC0130098D2FE /* DBBurstSpeed.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -4161,6 +4173,7 @@
 				FA0462B61EC3CDFA007B74A0 /* ControlBarItemCell.swift in Sources */,
 				FAC4248F1EEF2B2700E2EB26 /* NSManagedObjectContext+Observers.swift in Sources */,
 				FA3E23E4207966A0008D5227 /* TableRadioSection.swift in Sources */,
+				FA9B3435207DC0C50098D2FE /* PhotoSettingsAddBurstSpeed.swift in Sources */,
 				FAA2A6A52079B6B300C43269 /* SliderRow.swift in Sources */,
 				FA3E23D02079489C008D5227 /* FrameRateSettingsViewController.swift in Sources */,
 				FA373E43207ACCEC0092BA67 /* MovableRowsTableSection.swift in Sources */,
@@ -4201,6 +4214,7 @@
 				FA9F89E61D953C540058C369 /* AppDelegate.swift in Sources */,
 				FA8AA5451ECC13140093D317 /* CanvasIconView.swift in Sources */,
 				FA7649011F9EE1C600C6DD87 /* NavigationViewController+Convenience.swift in Sources */,
+				FA9B342F207DBA220098D2FE /* BurstSpeed.swift in Sources */,
 				FAC424921EEF2F7700E2EB26 /* NSManagedObjectContext+Changes.swift in Sources */,
 				FA0462C21EC3E002007B74A0 /* Component.swift in Sources */,
 				FAADE0D31D9D0C4300AA5729 /* Passthrough.metal in Sources */,
@@ -4212,6 +4226,7 @@
 				FACF0F3C1EECDA7D00B0211C /* DataManager.swift in Sources */,
 				FA18059F1EC688D9004351B7 /* EditRounding.swift in Sources */,
 				FA3AAAAA1EE25A7C006028AC /* Renderer+Device.swift in Sources */,
+				FA9B3432207DC0130098D2FE /* DBBurstSpeed.swift in Sources */,
 				FA5F8CB01ED06A5F00921A61 /* CaptureComponent.swift in Sources */,
 				FA1272EA1EF1C44500100641 /* GenericComponent.swift in Sources */,
 				FA18059A1EC55466004351B7 /* CircleSlider.swift in Sources */,
@@ -4328,6 +4343,7 @@
 				FA1325C91EF871EE000E6918 /* Critical.swift in Sources */,
 				FA61B1701F9EEAD90069B1A6 /* TableCellTextField.swift in Sources */,
 				FA2B1E881EC92B5B00E44613 /* ChromaticAberration.metal in Sources */,
+				FA9B3433207DC0130098D2FE /* DBBurstSpeed.swift in Sources */,
 				FA9B3421207DA66F0098D2FE /* Discard.swift in Sources */,
 				FA3AAAA11EE24EA5006028AC /* CameraController+Session.swift in Sources */,
 				FA5709A31ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift in Sources */,
@@ -4397,6 +4413,7 @@
 				FAAE763B1EEB2F0500CA3416 /* VectorAssetReader.swift in Sources */,
 				FABC39591EF3211B00ECE935 /* EntityMigrationPolicy.swift in Sources */,
 				FA7649051F9EE80200C6DD87 /* TextFieldHandler.swift in Sources */,
+				FA9B3430207DBA220098D2FE /* BurstSpeed.swift in Sources */,
 				FA2B1E951EC92B5B00E44613 /* ComponentEditBar.swift in Sources */,
 				FA1CC8F1207C1FAD00B3589E /* LinkRow.swift in Sources */,
 				FA2B1E941EC92B5B00E44613 /* DebugWindow.swift in Sources */,
@@ -4469,6 +4486,7 @@
 				FA3E23F3207967B8008D5227 /* KitSettingsViewController.swift in Sources */,
 				FA5F8CA01ECFF81400921A61 /* UIScreen+Layout.swift in Sources */,
 				FA7648FE1F9EDC0B00C6DD87 /* KeyboardHandler.swift in Sources */,
+				FA9B3436207DC0C50098D2FE /* PhotoSettingsAddBurstSpeed.swift in Sources */,
 				FA9B342D207DAE3A0098D2FE /* BaseConstraint.swift in Sources */,
 				FA3E23DE207965F2008D5227 /* RadioRow.swift in Sources */,
 				FA3E23EE2079670C008D5227 /* TextFieldFilter.swift in Sources */,

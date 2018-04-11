@@ -9,16 +9,20 @@ import Foundation
 class PhotoSettingsConstraintsResolver {
     
     private weak var _settings: PhotoSettings?
-    var settings: PhotoSettings {
+    private var settings: PhotoSettings {
         return Critical.unwrap(_settings)
     }
     
-    var resolution: PhotoResolution {
+    private var resolution: PhotoResolution {
         return settings.resolution
     }
     
-    var frameRate: FrameRate {
+    private var frameRate: FrameRate {
         return settings.frameRate
+    }
+    
+    private var burstSpeed: BurstSpeed {
+        return settings.burstSpeed
     }
     
     init(settings: PhotoSettings) {
@@ -27,6 +31,7 @@ class PhotoSettingsConstraintsResolver {
     
     typealias ResolutionConstraint = PhotoSettingsConstraint<IntSize>
     typealias FrameRateConstraint = PhotoSettingsConstraint<Int>
+    typealias BurstSpeedConstraint = PhotoSettingsConstraint<Int>
     
     var resolutionConstraints: [ResolutionConstraint]? {
         return constraints(for: resolution)
@@ -34,6 +39,10 @@ class PhotoSettingsConstraintsResolver {
     
     var frameRateConstraints: [FrameRateConstraint]? {
         return constraints(for: frameRate)
+    }
+    
+    var burstSpeedConstraints: [BurstSpeedConstraint]? {
+        return constraints(for: burstSpeed)
     }
     
     func constraints<Follower: PhotoSettingsConstrainable>(for follower: Follower) -> [Follower.Constraint]? {
@@ -88,10 +97,14 @@ class PhotoSettingsConstraintsResolver {
                 constraintMaybe = constraint(value: currentBestValue, camera: camera,
                                              follower: follower, leader: resolution)
             case .burstSpeed:
-                continue
+                constraintMaybe = constraint(value: currentBestValue, camera: camera,
+                                             follower: follower, leader: burstSpeed)
             }
             
             guard let constraint = constraintMaybe else {
+                continue
+            }
+            if currentBestValue == constraint.constrainedValue {
                 continue
             }
             currentBestValue = constraint.constrainedValue

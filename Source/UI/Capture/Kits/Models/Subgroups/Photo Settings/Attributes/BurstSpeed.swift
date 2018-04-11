@@ -1,13 +1,13 @@
 //
-//  FrameRate
-//  Created on 4/9/18.
+//  BurstSpeed
+//  Created on 4/11/18.
 //  Copyright © 2018 John Coates. All rights reserved.
 //
 
 import Foundation
 
-enum FrameRate: CustomStringConvertible {
-    case custom(rate: Int)
+enum BurstSpeed {
+    case custom(speed: Int)
     case maximum
     case notSet
     
@@ -22,30 +22,40 @@ enum FrameRate: CustomStringConvertible {
         }
     }
     
-    init(kind: Int, rate: Int?) {
+    init(kind: Int, speed: Int?) {
         switch kind {
         case 0:
-            guard let rate = rate else {
-                fatalError("Custom rate missing value.")
-            }
-            self = .custom(rate: rate)
+            self = .custom(speed: Critical.unwrap(speed))
         case 1:
             self = .maximum
         case 2:
             self = .notSet
         default:
-            fatalError("Unsupported kind for Frame Rate: \(kind))")
+            Critical.unsupported(value: kind)
         }
     }
-    
-    var description: String {
-        return userFacingDescription
-    }
-    
-    var userFacingDescription: String {
+}
+
+extension BurstSpeed: CustomDebugStringConvertible {
+    var debugDescription: String {
+        var value: String
         switch self {
-        case let .custom(rate):
-            return "\(rate)/sec"
+        case let .custom(speed):
+            value = "custom: \(speed)"
+        case .maximum:
+            value = "maximum"
+        case .notSet:
+            value = "notSet"
+        }
+        return "[\(type(of: self)) \(value)]"
+    }
+}
+
+extension BurstSpeed: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case let .custom(speed):
+            return "\(speed)/sec"
         case .maximum:
             return "Maximum"
         case .notSet:
@@ -54,31 +64,16 @@ enum FrameRate: CustomStringConvertible {
     }
 }
 
-extension FrameRate: CustomDebugStringConvertible {
-    var debugDescription: String {
-        var value: String
-        switch self {
-        case let .custom(rate):
-            value = "custom: \(rate)"
-        case .maximum:
-            value = "maximum"
-        case .notSet:
-            value = "notSet"
-        }
-        return "[FrameRate \(value)]"
-    }
-}
-
-extension FrameRate: PhotoSettingsConstrainable {
+extension BurstSpeed: PhotoSettingsConstrainable {
     typealias ValueType = Int
     var setting: PhotoSettingsPriority {
-        return .frameRate
+        return .burstSpeed
     }
     
     func optimalValue(for camera: Camera) -> Int {
         switch self {
         case .notSet:
-            return min(camera.maximumFrameRate, 60)
+            return 5
         case .maximum:
             return camera.maximumFrameRate
         case let .custom(rate):
@@ -94,17 +89,16 @@ extension FrameRate: PhotoSettingsConstrainable {
         case .resolution:
             let optimalValue: IntSize = Critical.cast(leader.optimalValue(for: camera))
             return camera.highestFrameRate(forResolution: optimalValue)
-        case .burstSpeed:
+        case .frameRate:
             let optimalValue: Int = Critical.cast(leader.optimalValue(for: camera))
             let ownOptimalValue: Int = Critical.cast(self.optimalValue(for: camera))
-            if optimalValue > ownOptimalValue {
-                return min(camera.maximumFrameRate, optimalValue)
-            }
             
-        case .frameRate:
+            if optimalValue < ownOptimalValue {
+                return optimalValue
+            }
+        case .burstSpeed:
             break
         }
-        
         return nil
     }
 }

@@ -29,16 +29,14 @@ CustomDebugStringConvertible {
     init(kind: Int, size: CGSize?) {
         switch kind {
         case 0:
-            guard let size = size else {
-                fatalError("Custom resolution missing size.")
-            }
+            let size = Critical.unwrap(size)
             self = .custom(width: Int(size.width), height: Int(size.height))
         case 1:
             self = .maximum
         case 2:
             self = .notSet
         default:
-            fatalError("Unsupported kind for resolution: \(kind)")
+            Critical.unsupported(value: kind)
         }
     }
     
@@ -67,14 +65,14 @@ CustomDebugStringConvertible {
         case .notSet:
             value = "notSet"
         }
-        return "[PhotoSettings \(value)]"
+        return "[\(type(of: self)) \(value)]"
     }
 }
 
-extension PhotoResolution {
-    
-    func targetting(camera: Camera) -> IntSize {
-        return optimalValue(for: camera)
+extension PhotoResolution: PhotoSettingsConstrainable {
+    typealias ValueType = IntSize
+    var setting: PhotoSettingsPriority {
+        return .resolution
     }
     
     func optimalValue(for camera: Camera) -> IntSize {
@@ -92,23 +90,15 @@ extension PhotoResolution {
         }
     }
     
-}
-
-extension PhotoResolution: PhotoSettingsConstrainable {
-    typealias ValueType = IntSize
-    var setting: PhotoSettingsPriority {
-        return .resolution
-    }
-    
     func constrained<LeaderType: PhotoSettingsConstrainable>(value: ValueType,
                                                              leader: LeaderType,
                                                              camera: Camera) -> ValueType? {
         
         switch leader.setting {
-        case .frameRate:
+        case .frameRate, .burstSpeed:
             let optimalValue: Int = Critical.cast(leader.optimalValue(for: camera))
             return camera.highestResolution(forFrameRate: optimalValue)
-        case .burstSpeed, .resolution:
+        case .resolution:
             return nil
         }
     }

@@ -52,7 +52,8 @@ KitSettingsDataSource, LinkDataSource {
     private func footer(for section: Section) -> String? {
         switch section {
         case .burstSpeed:
-            return "Value is being overriden by app-wide settings."
+//            return "Value is being overriden by app-wide settings."
+            return nil
         default:
             return nil
         }
@@ -108,11 +109,20 @@ KitSettingsDataSource, LinkDataSource {
     
     private func burstSpeedRows() -> [TableRow] {
         var rows: [TableRow] = []
-        rows.append(TypedLinkRow(title: "Selected", detail: "5/sec",
+        rows.append(TypedLinkRow(title: "Selected", detail: photoSettings.burstSpeed,
                                  identifier: .burstSpeed, onSelect: onSelect))
-        rows.append(DetailRow(title: "Override Value", detail: "2/sec"))
-        rows.append(DetailRow(title: "Back Camera", detail: "2/sec"))
-        rows.append(DetailRow(title: "Front Camera", detail: "2/sec"))
+        let constraintsMaybe = constraintResolver.burstSpeedConstraints
+        if let constraints = constraintsMaybe {
+            rows.append(DetailRow(title: "Constrained By", detail: constraints.constrainers))
+        }
+        
+        //        rows.append(DetailRow(title: "Override Value", detail: "2/sec"))
+        for camera in cameras {
+            let value = constraintResolver.value(for: photoSettings.burstSpeed,
+                                                 camera: camera,
+                                                 afterConstraints: constraintsMaybe)
+            rows.append(DetailRow(title: camera, detail: "\(value)/sec"))
+        }
         return rows
     }
  

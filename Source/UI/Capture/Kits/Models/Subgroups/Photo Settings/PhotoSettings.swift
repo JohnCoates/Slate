@@ -11,13 +11,6 @@ import CoreGraphics
 import CoreData
 
 class PhotoSettings {
-    
-    enum BurstSpeed {
-        case custom(speed: Int)
-        case maximum
-        case notSet
-    }
-    
     var resolution: PhotoResolution = .notSet
     var frameRate: FrameRate = .notSet
     var burstSpeed: BurstSpeed = .notSet
@@ -41,6 +34,7 @@ class PhotoSettings {
         coreDataObject = object
         object.resolution = DBPhotoResolution(resolution: resolution)
         object.frameRate = DBFrameRate(frameRate: frameRate)
+        object.burstSpeed = DBBurstSpeed(burstSpeed: burstSpeed)
         object.priorities = DBPhotoSettingsPriorities(priorities: priorities)
         
         return object
@@ -56,11 +50,13 @@ class PhotoSettingsCoreData: NSManagedObject, Managed, DBObject {
     enum CodingKeys: String {
         case resolution
         case frameRate
+        case burstSpeed
         case priorities
     }
     
     @NSManaged var resolution: DBPhotoResolution
     @NSManaged var frameRate: DBFrameRate
+    @NSManaged var burstSpeed: DBBurstSpeed
     @NSManaged var priorities: DBPhotoSettingsPriorities
     
     class var entityName: String { return String(describing: self) }
@@ -75,7 +71,10 @@ class PhotoSettingsCoreData: NSManagedObject, Managed, DBObject {
         if version >= .three {
             entity.add(attribute: .priorities, type: .transformable)
         }
-
+        if version >= .four {
+            entity.add(attribute: .burstSpeed, type: .transformable)
+        }
+        
         return entity
     }
     
@@ -85,7 +84,10 @@ class PhotoSettingsCoreData: NSManagedObject, Managed, DBObject {
             return PhotoSettingsAddFrameRate.self
         } else if from == .two, to == .three {
             return PhotoSettingsAddPriorities.self
+        } else if from == .three, to == .four {
+            return PhotoSettingsAddBurstSpeed.self
         }
+        
         return nil
     }
     
@@ -100,6 +102,7 @@ class PhotoSettingsCoreData: NSManagedObject, Managed, DBObject {
     func configureWithStandardProperties(instance: PhotoSettings) {
         instance.resolution = resolution.value
         instance.frameRate = frameRate.value
+        instance.burstSpeed = burstSpeed.value
         instance.priorities = priorities.value
     }
     

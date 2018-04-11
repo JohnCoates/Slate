@@ -63,6 +63,13 @@ class Critical {
         return value
     }
     
+    static func unsupported(value: Any,
+                            file: StaticString = #file,
+                            line: UInt = #line,
+                            method: StaticString = #function) -> Never {
+        fatalError("Value not supported by \(method): \(value)", file: file, line: line)
+    }
+    
     static func methodNotDefined(file: StaticString = #file,
                                  line: UInt = #line,
                                  method: StaticString = #function) -> Never {

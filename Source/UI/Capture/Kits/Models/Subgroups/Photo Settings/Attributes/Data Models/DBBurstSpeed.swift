@@ -1,27 +1,27 @@
 //
-//  DBFrameRate
-//  Created on 4/9/18.
+//  DBBurstSpeed
+//  Created on 4/11/18.
 //  Copyright © 2018 John Coates. All rights reserved.
 //
 
 import Foundation
 
-@objc(DBFrameRate)
-class DBFrameRate: NSObject, NSCoding {
-    private var rate: Int?
+@objc(DBBurstSpeed)
+class DBBurstSpeed: NSObject, NSCoding {
+    private var speed: Int?
     private var kind: Int
     
     enum CodingKeys: String, CodingKey {
-        case rate
+        case speed
         case kind
     }
     
-    init(frameRate: FrameRate) {
-        kind = frameRate.kind
+    init(burstSpeed: BurstSpeed) {
+        kind = burstSpeed.kind
         
-        switch frameRate {
-        case let .custom(rate):
-            self.rate = rate
+        switch burstSpeed {
+        case let .custom(speed):
+            self.speed = speed
         case .maximum, .notSet:
             break
         }
@@ -31,8 +31,8 @@ class DBFrameRate: NSObject, NSCoding {
         let decoder = nsDecoder.keyed(by: CodingKeys.self)
         kind = decoder[.kind]
         
-        if decoder.contains(.rate) {
-            rate = decoder[.rate]
+        if decoder.contains(.speed) {
+            speed = decoder[.speed]
         }
     }
     
@@ -40,16 +40,16 @@ class DBFrameRate: NSObject, NSCoding {
         let encoder = nsEncoder.keyed(by: CodingKeys.self)
         encoder[.kind] = kind
         
-        if let rate = rate {
-            encoder[.rate] = rate
+        if let speed = speed {
+            encoder[.speed] = speed
         }
     }
     
-    var value: FrameRate {
-        return FrameRate(kind: kind, rate: rate)
+    var value: BurstSpeed {
+        return BurstSpeed(kind: kind, speed: speed)
     }
     
     override var description: String {
-        return "[\(type(of: self)) \(kind) : \(String(describing: rate))]"
+        return "[\(type(of: self)) \(kind) : \(String(describing: speed))]"
     }
 }
