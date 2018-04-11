@@ -2256,7 +2256,6 @@
 		FA86BE021D98ED5600BC5FB1 /* Capture */ = {
 			isa = PBXGroup;
 			children = (
-				FAD5DAD91EF8C8FE00239C96 /* Kits */,
 				FA76F5441ED48FCB00059906 /* Controllers */,
 				FAF10D161ECAFEFC0008690E /* Permissions */,
 				FA2B1E6F1EC9238900E44613 /* Code Icons */,
@@ -2927,6 +2926,9 @@
 		FACA796D1EE4CF350001D468 /* Kits */ = {
 			isa = PBXGroup;
 			children = (
+				FAD5DADB1EF8C91400239C96 /* Controllers */,
+				FAD5DADA1EF8C90F00239C96 /* Models */,
+				FA29FB461EA49B0400EB1081 /* Components */,
 				FA3E23D22079657F008D5227 /* Table */,
 				FA60B6801EF338C1003441E1 /* Edit */,
 				FACA796E1EE4CF520001D468 /* List */,
@@ -3119,16 +3121,6 @@
 				FAD5DADC1EF8C92E00239C96 /* Kit+Default.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		FAD5DAD91EF8C8FE00239C96 /* Kits */ = {
-			isa = PBXGroup;
-			children = (
-				FAD5DADB1EF8C91400239C96 /* Controllers */,
-				FAD5DADA1EF8C90F00239C96 /* Models */,
-				FA29FB461EA49B0400EB1081 /* Components */,
-			);
-			path = Kits;
 			sourceTree = "<group>";
 		};
 		FAD5DADA1EF8C90F00239C96 /* Models */ = {
