@@ -46,9 +46,8 @@ class DeviceCamera: Camera {
     lazy var maximumFrameRate: Int = {
         var highestFrameRate = 0
         let ranges = device.formats.flatMap { $0.videoSupportedFrameRateRanges }
-        let highestMaybe = ranges.max { $0.maxFrameRate > $1.maxFrameRate }
         
-        guard let highest = highestMaybe else {
+        guard let highest = ranges.max(by: { $1.maxFrameRate > $0.maxFrameRate }) else {
             fatalError("Couldn't get highest frame rate")
         }
         
@@ -87,7 +86,7 @@ class DeviceCamera: Camera {
                 continue
             }
             
-            guard let bestRange = ranges.max(by: { $0.maxFrameRate > $1.maxFrameRate }) else {
+            guard let bestRange = ranges.max(by: { $1.maxFrameRate > $0.maxFrameRate }) else {
                 continue
             }
             
