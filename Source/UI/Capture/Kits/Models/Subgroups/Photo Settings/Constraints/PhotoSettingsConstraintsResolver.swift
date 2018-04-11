@@ -329,7 +329,7 @@ protocol PhotoSettingsConstrainable {
                                                                     camera: Camera) -> ValueType?
 }
 
-struct PhotoSettingsConstraint<ValueType>: Constraint {
+struct PhotoSettingsConstraint<ValueType>: BaseConstraint {
     var camera: Camera
     var constrained: PhotoSettingsPriority
     var by: PhotoSettingsPriority
@@ -337,12 +337,12 @@ struct PhotoSettingsConstraint<ValueType>: Constraint {
     var constrainedValue: ValueType
 }
 
-protocol Constraint {
+protocol BaseConstraint {
     associatedtype Kind: CustomStringConvertible
     var by: Kind { get }
 }
 
-extension Array where Element: Constraint {
+extension Array where Element: BaseConstraint {
     var constrainers: String {
         return self.map { $0.by.description }.unique.joined(separator: ", ")
     }
