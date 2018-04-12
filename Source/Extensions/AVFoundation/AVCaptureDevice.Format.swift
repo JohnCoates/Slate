@@ -13,4 +13,3 @@ extension AVCaptureDevice.Format {
         return dimensions.intSize
     }
 }
-

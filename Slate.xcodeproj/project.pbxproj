@@ -429,6 +429,7 @@
 		FAAB69C8207F0D0A00246918 /* ValueConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB69C6207EF13000246918 /* ValueConstraint.swift */; };
 		FAAB69CB207F191D00246918 /* AVCaptureDevice.Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB69CA207F191D00246918 /* AVCaptureDevice.Format.swift */; };
 		FAAB69CC207F191D00246918 /* AVCaptureDevice.Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB69CA207F191D00246918 /* AVCaptureDevice.Format.swift */; };
+		FAAB69CD207F1D5B00246918 /* TestCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B3442207E0BEC0098D2FE /* TestCamera.swift */; };
 		FAADE0D01D9D0AC200AA5729 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */; };
 		FAADE0D31D9D0C4300AA5729 /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */; };
 		FAAE763B1EEB2F0500CA3416 /* VectorAssetReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE763A1EEB2F0500CA3416 /* VectorAssetReader.swift */; };
@@ -4511,6 +4512,7 @@
 				FAC4248C1EEF28EE00E2EB26 /* ManagedObjectObserver.swift in Sources */,
 				FAAE76401EEB2F3800CA3416 /* DataPath.swift in Sources */,
 				FA2B1E6E1EC9235700E44613 /* PathIcon.swift in Sources */,
+				FAAB69CD207F1D5B00246918 /* TestCamera.swift in Sources */,
 				FA5651AE1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift in Sources */,
 				FA0C9FA420791F8500534901 /* SimulatorCamera.swift in Sources */,
 				FA2B1E5C1EC80EE100E44613 /* InvertedMaskButtonViewController.swift in Sources */,

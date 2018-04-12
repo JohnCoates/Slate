@@ -55,7 +55,8 @@ class PhotoSettingsConstraintsResolver {
         return value(for: frameRate, camera: camera)
     }
     
-    private func value<Follower: PhotoSettingsConstrainable>(for follower: Follower, camera: Camera) -> Follower.ValueType {
+    private func value<Follower: PhotoSettingsConstrainable>(for follower: Follower,
+                                                             camera: Camera) -> Follower.ValueType {
         let constraints = self.constraints(for: follower, camera: camera)
         return value(for: follower, camera: camera, afterConstraints: constraints)
     }
