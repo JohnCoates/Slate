@@ -45,7 +45,7 @@ class PhotoSettingsConstraintsResolver {
         
         var constraints = [Follower.Constraint]()
         for camera in CurrentDevice.cameras {
-            if let cameraConstraints = self.constraints2(for: follower, camera: camera) {
+            if let cameraConstraints = self.constraints(for: follower, camera: camera) {
                 constraints.append(contentsOf: cameraConstraints)
             }
         }
@@ -71,7 +71,7 @@ class PhotoSettingsConstraintsResolver {
             return value
     }
     
-    private func constraints2<Follower: PhotoSettingsConstrainable>(for follower: Follower,
+    private func constraints<Follower: PhotoSettingsConstrainable>(for follower: Follower,
                                                                     camera: Camera) -> [Follower.Constraint]? {
         typealias FollowerValue = Follower.ValueType
         typealias Constraint = Follower.Constraint
