@@ -33,7 +33,7 @@ class MetalCameraController: CameraController {
     #if METAL_DEVICE
     let textureCache: CVMetalTextureCache
     #endif
-    init?(device: MTLDevice) {
+    init?(kit: Kit, device: MTLDevice) {
         #if METAL_DEVICE
         var optionalTextureCache: CVMetalTextureCache?
             // https://developer.apple.com/reference/corevideo/cvmetaltexturecache/cache_attributes
@@ -51,6 +51,7 @@ class MetalCameraController: CameraController {
         
         self.textureCache = textureCache
         #endif
+        super.init(kit: kit)
     }    
     
     // MARK: - Video Delegate

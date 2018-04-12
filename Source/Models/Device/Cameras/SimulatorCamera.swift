@@ -8,13 +8,8 @@ import Foundation
 
 class SimulatorCamera: Camera {
     
-    enum Position {
-        case back
-        case front
-    }
-    
-    let position: Position
-    init(position: Position) {
+    let position: CameraPosition
+    init(position: CameraPosition) {
         self.position = position
     }
     

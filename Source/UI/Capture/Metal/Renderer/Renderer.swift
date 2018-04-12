@@ -26,7 +26,7 @@ import AVFoundation
     var defaultFragmentFunction: MTLFunction
     let cameraController: MetalCameraController
     
-    init?(metalView: MTKView) {
+    init?(kit: Kit, metalView: MTKView) {
         view = metalView
         device = Renderer.getDevice()
         
@@ -40,7 +40,7 @@ import AVFoundation
         defaultVertexFunction = shaders.vertexFunction
         defaultFragmentFunction = shaders.fragmentFunction
         
-        guard let cameraController = MetalCameraController(device: device) else {
+        guard let cameraController = MetalCameraController(kit: kit, device: device) else {
             print("Camera controller initialization failed")
             return nil
         }

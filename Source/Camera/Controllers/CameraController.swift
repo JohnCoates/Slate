@@ -29,6 +29,12 @@ class CameraController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     // MARK: - Init / Deinit
     
+    let kit: Kit
+    
+    init(kit: Kit) {
+        self.kit = kit
+    }
+    
     deinit {
         session.stopRunning()
     }

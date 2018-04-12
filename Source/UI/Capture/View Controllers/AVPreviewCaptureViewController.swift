@@ -15,7 +15,7 @@ class AVPreviewCaptureViewController: BaseCaptureViewController {
         super.viewDidLoad()
     }
     
-    lazy var cameraController = CameraController()
+    lazy var cameraController = CameraController(kit: self.kit)
     lazy var session = AVCaptureSession()
     
     override func cameraSetup() {

@@ -14,9 +14,9 @@ extension CameraController {
     func startCapturingVideo() {
         session.beginConfiguration()
         
-        let camera = bestCamera
+        let camera: DeviceCamera = Critical.cast(bestCamera)
         do {
-            let input = try AVCaptureDeviceInput(device: camera)
+            let input = try AVCaptureDeviceInput(device: camera.device)
             session.addInput(input)
         } catch {
             print("Couldn't instantiate device input")
@@ -26,7 +26,7 @@ extension CameraController {
         attachPreviewOutput(toSession: session)
         attachStillPhotoOutput(toSession: session)
         var callAfterSessionRunning: (() -> Void)? = nil
-        setBestFormat(forDevice: camera,
+        setBestFormat(for: camera,
                       callAfterSessionRunning: &callAfterSessionRunning)
         
         session.commitConfiguration()

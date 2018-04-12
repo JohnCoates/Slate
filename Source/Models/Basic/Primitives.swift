@@ -36,3 +36,9 @@ extension IntSize {
         self.init(width: width, height: height)
     }
 }
+
+extension CMVideoDimensions {
+    var intSize: IntSize {
+        return IntSize(width: Int(width), height: Int(height))
+    }
+}

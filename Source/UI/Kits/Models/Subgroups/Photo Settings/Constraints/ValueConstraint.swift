@@ -8,7 +8,7 @@ import Foundation
 
 struct ValueConstraint<Kind: Comparable> {
     let value: Kind
-    
+      
     typealias ValueCheck = ((_ oldValue: Kind, _ newValue: Kind) -> Bool)
     private var valueMeetsConstraintClosure: ValueCheck
     

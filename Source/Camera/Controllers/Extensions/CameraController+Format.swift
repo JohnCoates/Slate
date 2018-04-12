@@ -11,40 +11,14 @@ import AVFoundation
 
 extension CameraController {
     
-    func setBestFormat(forDevice device: AVCaptureDevice,
+    func setBestFormat(for camera: DeviceCamera,
                        callAfterSessionRunning: inout (() -> Void)?) {
-        let formats = device.formats
-        var bestFormat: AVCaptureDevice.Format?
-        var frameRateRange: AVFrameRateRange?
-        let targetFrameRate: Float64 = 30
-        var bestWidth: Int32 = 0
-        var dimensionsMaybe: CMVideoDimensions?
+        let device = camera.device
         
-        for format in formats {
-            let formatDescription = format.formatDescription
-            let ranges = format.videoSupportedFrameRateRanges
-            let dimensions = CMVideoFormatDescriptionGetDimensions(formatDescription)
-            let width = dimensions.width
-            for range in ranges {
-                if width >= bestWidth && range.maxFrameRate >= targetFrameRate {
-                    bestWidth = width
-                    bestFormat = format
-                    frameRateRange = range
-                    dimensionsMaybe = dimensions
-                }
-            }
-        }
+        let format = self.bestFormat(for: camera)
         
-        guard let format = bestFormat,
-            let range = frameRateRange,
-            let dimensions = dimensionsMaybe else {
-            print("Couldn't find best format for device")
-            return
-        }
-        inputSize = Size(width: Float(dimensions.width),
-                         height: Float(dimensions.height))
         if !Platform.isProduction {
-            print("Found format with size: \(dimensions.width)x\(dimensions.height), frame rate: \(range)")
+            print("Found format: \(format.deviceFormat)")
         }
         do {
             /* 
@@ -55,8 +29,9 @@ extension CameraController {
              - Begin capture with the session’s startRunning() method.
              - Unlock the device with the unlockForConfiguration() method.
             */
+            let range = format.range
             try device.lockForConfiguration()
-            device.activeFormat = format
+            device.activeFormat = format.deviceFormat
             device.activeVideoMinFrameDuration = range.minFrameDuration
             device.activeVideoMaxFrameDuration = range.maxFrameDuration
             callAfterSessionRunning = {
@@ -67,8 +42,45 @@ extension CameraController {
         }
     }
     
-    func format(withFrameRate: Float64, fromFormats formats: [AVCaptureDevice.Format]) -> AVCaptureDevice.Format? {
-        return nil
+    private func bestFormat(for camera: DeviceCamera) -> Format {
+        let resolver = kit.photoSettings.constraintsResolver
+        let frameRate = resolver.frameRate(for: camera)
+        let resolution = resolver.resolution(for: camera)
+        
+        let device = camera.device
+        let formats = device.formats
+        var bestFormat: AVCaptureDevice.Format?
+        var frameRateRange: AVFrameRateRange?
+        
+        for format in formats {
+            let ranges = format.videoSupportedFrameRateRanges
+            let dimensions = format.dimensions
+            
+            guard dimensions == resolution else {
+                continue
+            }
+            
+            for range in ranges {
+                guard Int(range.minFrameRate) <= frameRate && Int(range.maxFrameRate) >= frameRate else {
+                    continue
+                }
+                
+                bestFormat = format
+                frameRateRange = range
+            }
+        }
+        
+        guard let format = bestFormat,
+            let range = frameRateRange else {
+                fatalError("Couldn't find best format for device!")
+        }
+        
+        return Format(deviceFormat: format, range: range)
+    }
+    
+    private struct Format {
+        let deviceFormat: AVCaptureDevice.Format
+        let range: AVFrameRateRange
     }
     
 }

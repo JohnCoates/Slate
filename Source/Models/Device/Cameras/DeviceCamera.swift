@@ -15,6 +15,15 @@ class DeviceCamera: Camera {
         self.device = device
     }
     
+    var position: CameraPosition {
+        switch device.position {
+        case .back, .unspecified:
+            return .back
+        case .front:
+            return .front
+        }
+    }
+    
     var userFacingName: String {
         if device.position == .front {
             return "Front Camera"
@@ -60,7 +69,7 @@ class DeviceCamera: Camera {
         
         for format in device.formats {
             let ranges = format.videoSupportedFrameRateRanges
-            let dimensions = format.highResolutionStillImageDimensions
+            let dimensions = format.dimensions
             
             for range in ranges {
                 guard range.maxFrameRate >= targetFrameRateFloat else {
@@ -68,7 +77,7 @@ class DeviceCamera: Camera {
                 }
                 if dimensions.width > maximumResolution.width ||
                     dimensions.height > maximumResolution.height {
-                    maximumResolution = IntSize(dimensions)
+                    maximumResolution = dimensions
                 }
             }
         }
@@ -81,7 +90,7 @@ class DeviceCamera: Camera {
         var maximumFrameRate = 0
         for format in device.formats {
             let ranges = format.videoSupportedFrameRateRanges
-            let dimensions = format.highResolutionStillImageDimensions
+            let dimensions = format.dimensions
             guard dimensions.width >= targetResolution.width && dimensions.height >= targetResolution.height else {
                 continue
             }

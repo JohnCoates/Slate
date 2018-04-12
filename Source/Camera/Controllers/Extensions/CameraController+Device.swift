@@ -10,16 +10,14 @@ import Foundation
 import AVFoundation
 
 extension CameraController {
-    var bestCamera: AVCaptureDevice {
-        let devices = AVCaptureDevice.devices(for: .video)
-        for potentialDevice in devices {
-            let device = potentialDevice
-            // prefer my logitech camera
-            if device.localizedName.hasPrefix("HD Pro Webcam C920") {
-                return device
+    var bestCamera: Camera {
+        for camera in CurrentDevice.cameras {
+            // prefer back camera
+            if case .back = camera.position {
+                return camera
             }
         }
-        return AVCaptureDevice.default(for: AVMediaType.video)!
+        return Critical.unwrap(CurrentDevice.cameras.first)
     }
     
     func switchToNextCamera() {

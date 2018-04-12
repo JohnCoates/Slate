@@ -24,7 +24,7 @@ final class MetalCaptureViewController: BaseCaptureViewController, AVCapturePhot
         view.insertSubview(metalView, at: 0)
         metalView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         metalView.frame = view.bounds
-        renderer = Renderer(metalView: metalView)
+        renderer = Renderer(kit: kit, metalView: metalView)
     }
     
     // MARK: - Capturing

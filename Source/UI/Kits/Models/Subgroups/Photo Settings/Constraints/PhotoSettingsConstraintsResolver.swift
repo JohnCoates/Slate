@@ -8,6 +8,8 @@ import Foundation
 
 class PhotoSettingsConstraintsResolver {
     
+    // MARK: - Convenience
+    
     private weak var _settings: PhotoSettings?
     private var settings: PhotoSettings {
         return Critical.unwrap(_settings)
@@ -25,9 +27,13 @@ class PhotoSettingsConstraintsResolver {
         return settings.burstSpeed
     }
     
+    // MARK: - Init
+    
     init(settings: PhotoSettings) {
         _settings = settings
     }
+    
+    // MARK: - Public
     
     var resolutionConstraints: [PhotoResolution.Constraint]? {
         return constraints(for: resolution)
@@ -39,6 +45,19 @@ class PhotoSettingsConstraintsResolver {
     
     var burstSpeedConstraints: [BurstSpeed.Constraint]? {
         return constraints(for: burstSpeed)
+    }
+    
+    func resolution(for camera: Camera) -> IntSize {
+        return value(for: resolution, camera: camera)
+    }
+    
+    func frameRate(for camera: Camera) -> Int {
+        return value(for: frameRate, camera: camera)
+    }
+    
+    private func value<Follower: PhotoSettingsConstrainable>(for follower: Follower, camera: Camera) -> Follower.ValueType {
+        let constraints = self.constraints(for: follower, camera: camera)
+        return value(for: follower, camera: camera, afterConstraints: constraints)
     }
     
     func constraints<Follower: PhotoSettingsConstrainable>(for follower: Follower) -> [Follower.Constraint]? {
@@ -71,8 +90,10 @@ class PhotoSettingsConstraintsResolver {
             return value
     }
     
+    // MARK: - Private
+    
     private func constraints<Follower: PhotoSettingsConstrainable>(for follower: Follower,
-                                                                    camera: Camera) -> [Follower.Constraint]? {
+                                                                   camera: Camera) -> [Follower.Constraint]? {
         typealias FollowerValue = Follower.ValueType
         typealias Constraint = Follower.Constraint
         let optimalValue = follower.optimalValue(for: camera)
