@@ -39,10 +39,6 @@ enum FrameRate: CustomStringConvertible {
     }
     
     var description: String {
-        return userFacingDescription
-    }
-    
-    var userFacingDescription: String {
         switch self {
         case let .custom(rate):
             return "\(rate)/sec"

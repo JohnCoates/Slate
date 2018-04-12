@@ -41,10 +41,6 @@ CustomDebugStringConvertible {
     }
     
     var description: String {
-        return userFacingDescription
-    }
-    
-    var userFacingDescription: String {
         switch self {
         case let .custom(width, height):
             return "\(width) x \(height)"
