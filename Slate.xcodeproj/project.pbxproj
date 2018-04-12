@@ -425,6 +425,7 @@
 		FAA7A9721EE216B0004800AF /* PreviewContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7A9711EE216B0004800AF /* PreviewContentView.swift */; };
 		FAA8FDDB1F5FE4A100847C1A /* EditKitSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8FDDA1F5FE4A100847C1A /* EditKitSettingCell.swift */; };
 		FAA8FDDC1F5FE4A100847C1A /* EditKitSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8FDDA1F5FE4A100847C1A /* EditKitSettingCell.swift */; };
+		FAAB69C7207EF13000246918 /* ValueConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB69C6207EF13000246918 /* ValueConstraint.swift */; };
 		FAADE0D01D9D0AC200AA5729 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */; };
 		FAADE0D31D9D0C4300AA5729 /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */; };
 		FAAE763B1EEB2F0500CA3416 /* VectorAssetReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE763A1EEB2F0500CA3416 /* VectorAssetReader.swift */; };
@@ -971,6 +972,7 @@
 		FAA3F5361EEF5689007EB031 /* KitListingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitListingsViewController.swift; sourceTree = "<group>"; };
 		FAA7A9711EE216B0004800AF /* PreviewContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewContentView.swift; sourceTree = "<group>"; };
 		FAA8FDDA1F5FE4A100847C1A /* EditKitSettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditKitSettingCell.swift; sourceTree = "<group>"; };
+		FAAB69C6207EF13000246918 /* ValueConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueConstraint.swift; sourceTree = "<group>"; };
 		FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Passthrough.metal; sourceTree = "<group>"; };
 		FAAE763A1EEB2F0500CA3416 /* VectorAssetReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorAssetReader.swift; sourceTree = "<group>"; };
@@ -1329,6 +1331,7 @@
 			children = (
 				FA9B3422207DAE070098D2FE /* Protocols */,
 				FA1CC8F9207C738A00B3589E /* PhotoSettingsConstraintsResolver.swift */,
+				FAAB69C6207EF13000246918 /* ValueConstraint.swift */,
 			);
 			path = Constraints;
 			sourceTree = "<group>";
@@ -4254,6 +4257,7 @@
 				FA373E40207ACCC70092BA67 /* BasicTableSection.swift in Sources */,
 				FA3AAAB01EE25B8E006028AC /* Renderer+AspectRatio.swift in Sources */,
 				FACA79751EE4CFEB0001D468 /* Theme.swift in Sources */,
+				FAAB69C7207EF13000246918 /* ValueConstraint.swift in Sources */,
 				FACF0F3C1EECDA7D00B0211C /* DataManager.swift in Sources */,
 				FA18059F1EC688D9004351B7 /* EditRounding.swift in Sources */,
 				FA3AAAAA1EE25A7C006028AC /* Renderer+Device.swift in Sources */,
