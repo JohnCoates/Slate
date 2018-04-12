@@ -24,16 +24,12 @@ class DeviceCamera: Camera {
         }
     }
     
-    var userFacingName: String {
+    var description: String {
         if device.position == .front {
             return "Front Camera"
         } else {
             return "Back Camera"
         }
-    }
-    
-    var description: String {
-        return userFacingName
     }
     
     lazy var maximumResolution: IntSize = {

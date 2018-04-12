@@ -18,17 +18,13 @@ class TestCamera: Camera {
         self.position = position
     }
     
-    var userFacingName: String {
+    var description: String {
         switch position {
         case .back:
             return "Back Camera"
         case .front:
             return "Front Camera"
         }
-    }
-    
-    var description: String {
-        return userFacingName
     }
     
     lazy var maximumResolution: IntSize = {
