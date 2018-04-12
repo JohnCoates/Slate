@@ -426,6 +426,7 @@
 		FAA8FDDB1F5FE4A100847C1A /* EditKitSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8FDDA1F5FE4A100847C1A /* EditKitSettingCell.swift */; };
 		FAA8FDDC1F5FE4A100847C1A /* EditKitSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8FDDA1F5FE4A100847C1A /* EditKitSettingCell.swift */; };
 		FAAB69C7207EF13000246918 /* ValueConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB69C6207EF13000246918 /* ValueConstraint.swift */; };
+		FAAB69C8207F0D0A00246918 /* ValueConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB69C6207EF13000246918 /* ValueConstraint.swift */; };
 		FAADE0D01D9D0AC200AA5729 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */; };
 		FAADE0D31D9D0C4300AA5729 /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */; };
 		FAAE763B1EEB2F0500CA3416 /* VectorAssetReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE763A1EEB2F0500CA3416 /* VectorAssetReader.swift */; };
@@ -4455,6 +4456,7 @@
 				FA2B1E951EC92B5B00E44613 /* ComponentEditBar.swift in Sources */,
 				FA1CC8F1207C1FAD00B3589E /* LinkRow.swift in Sources */,
 				FA2B1E941EC92B5B00E44613 /* DebugWindow.swift in Sources */,
+				FAAB69C8207F0D0A00246918 /* ValueConstraint.swift in Sources */,
 				FAAE76431EEB2F4700CA3416 /* DataFloat.swift in Sources */,
 				FA7648F31F9EA0C700C6DD87 /* ResolutionSettingViewController.swift in Sources */,
 				FACF0F431EECDECD00B0211C /* URL+Paths.swift in Sources */,
