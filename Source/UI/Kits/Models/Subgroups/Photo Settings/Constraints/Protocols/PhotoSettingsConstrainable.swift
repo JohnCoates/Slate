@@ -42,6 +42,5 @@ protocol PhotoSettingsConstrainable {
 
 extension PhotoSettingsConstrainable {
     typealias Constraint = PhotoSettingsConstraint<ValueType>
-    typealias Constraint2 = PhotoSettingsConstraint2<ValueType>
     typealias ConstrainedValue = ValueConstraint<ValueType>
 }

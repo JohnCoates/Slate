@@ -6,15 +6,7 @@
 
 import Foundation
 
-struct PhotoSettingsConstraint<ValueType>: BaseConstraint {
-    var camera: Camera
-    var constrained: PhotoSettingsPriority
-    var by: PhotoSettingsPriority
-    var originalValue: ValueType
-    var constrainedValue: ValueType
-}
-
-struct PhotoSettingsConstraint2<ValueType: Comparable>: BaseConstraint {
+struct PhotoSettingsConstraint<ValueType: Comparable>: BaseConstraint {
     var camera: Camera
     var constrained: PhotoSettingsPriority
     var by: PhotoSettingsPriority
