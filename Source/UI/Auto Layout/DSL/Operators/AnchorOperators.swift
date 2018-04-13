@@ -103,8 +103,29 @@ func -->+= (lhs: SizeAnchor, rhs: SizeAnchor) {
     lhs.pin(atLeast: rhs)
 }
 
+func -->+= (lhs: SizeAnchor, rhs: View) {
+    lhs.pin(atLeast: rhs)
+}
+
+func -->+= (lhs: SizeAnchor, rhs: CGSize) {
+    lhs.pin(atLeast: rhs)
+}
+
 func -->+= (lhs: EdgesAnchor, rhs: EdgesAnchor) {
     lhs.pin(atLeast: rhs)
+}
+
+func -->+= (lhs: EdgesAnchor, rhs: View) {
+    lhs.pin(atLeast: rhs)
+}
+
+func -->+= (lhs: LayoutAnchors, rhs: View) {
+    for attribute in lhs.attributes {
+        let left = Anchor<AnchorType>(target: lhs.target, kind: attribute)
+        let right = Anchor<AnchorType>(target: rhs, kind: attribute)
+        
+        left.pin(atLeast: right)
+    }
 }
 
 // MARK: - Less Than Or Equal To
@@ -131,6 +152,10 @@ func -->-= (lhs: DimensionAnchor, rhs: View) {
     lhs.pin(atMost: rhs)
 }
 
+func -->-= (lhs: SizeAnchor, rhs: View) {
+    lhs.pin(atLeast: rhs)
+}
+
 func -->-= (lhs: DimensionAnchor, rhs: CGFloat) {
     lhs.pin(atMost: rhs)
 }
@@ -143,6 +168,23 @@ func -->-= (lhs: SizeAnchor, rhs: SizeAnchor) {
     lhs.pin(atMost: rhs)
 }
 
+func -->-= (lhs: SizeAnchor, rhs: CGSize) {
+    lhs.pin(atMost: rhs)
+}
+
 func -->-= (lhs: EdgesAnchor, rhs: EdgesAnchor) {
     lhs.pin(atMost: rhs)
+}
+
+func -->-= (lhs: EdgesAnchor, rhs: View) {
+    lhs.pin(atMost: rhs)
+}
+
+func -->-= (lhs: LayoutAnchors, rhs: View) {
+    for attribute in lhs.attributes {
+        let left = Anchor<AnchorType>(target: lhs.target, kind: attribute)
+        let right = Anchor<AnchorType>(target: rhs, kind: attribute)
+        
+        left.pin(atMost: right)
+    }
 }

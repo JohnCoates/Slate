@@ -30,6 +30,13 @@ class EdgesAnchor {
             bottomRight.pin(to: to.bottomRight, add: add, rank: rank)
     }
     
+    @discardableResult func pin(to: View,
+                                add: CGFloat = 0,
+                                rank: Priority? = nil) -> [NSLayoutConstraint] {
+        
+        return pin(to: to.edges, add: add, rank: rank)
+    }
+    
     @discardableResult func pin(atLeast to: EdgesAnchor,
                                 add: CGFloat = 0,
                                 rank: Priority? = nil) -> [NSLayoutConstraint] {
@@ -37,11 +44,25 @@ class EdgesAnchor {
             bottomRight.pin(atLeast: to.bottomRight, add: add, rank: rank)
     }
     
+    @discardableResult func pin(atLeast to: View,
+                                add: CGFloat = 0,
+                                rank: Priority? = nil) -> [NSLayoutConstraint] {
+        
+        return pin(atLeast: to.edges, add: add, rank: rank)
+    }
+    
     @discardableResult func pin(atMost to: EdgesAnchor,
                                 add: CGFloat = 0,
                                 rank: Priority? = nil) -> [NSLayoutConstraint] {
         return topLeft.pin(atMost: to.topLeft, add: add, rank: rank) +
             bottomRight.pin(atMost: to.bottomRight, add: add, rank: rank)
+    }
+    
+    @discardableResult func pin(atMost to: View,
+                                add: CGFloat = 0,
+                                rank: Priority? = nil) -> [NSLayoutConstraint] {
+        
+        return pin(atMost: to.edges, add: add, rank: rank)
     }
     
 }
