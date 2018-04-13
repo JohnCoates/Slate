@@ -164,6 +164,7 @@ UINavigationControllerDelegate, NavigationConvenience {
     lazy var sections: [Section] = {
         return [
             self.captureScreen(),
+            self.permissions(),
             self.kitsTab(),
             self.database(),
             self.vectors(),
@@ -196,6 +197,16 @@ UINavigationControllerDelegate, NavigationConvenience {
                                 vc.editBar.isHidden = false
                                 return vc
             }),
+            FeatureCatalogItem(name: "AV Preview", creationBlock: { AVPreviewCaptureViewController() }),
+            FeatureCatalogItem(name: "Scaled", hideNavigation: true,
+                               creationBlock: { LayoutPreviewCaptureViewController(kit: Kit.default()) })
+            ]
+        
+        return Section(title: "Capture Screen", items: items)
+    }
+    
+    func permissions() -> Section {
+        var items: [FeatureCatalogItem] = [
             FeatureCatalogItem(name: "Camera Permission",
                                actionBlock: { PermissionsWindow.show(kind: .camera,
                                                                      animated: true)
@@ -216,13 +227,15 @@ UINavigationControllerDelegate, NavigationConvenience {
                                creationBlock: {
                                 let frame = CGRect(x: 160.5, y: 321.5, width: 134.5, height: 44)
                                 return PermissionsButtonIndicatorViewController(buttonFrame: frame)
-            }),
-            FeatureCatalogItem(name: "AV Preview", creationBlock: { AVPreviewCaptureViewController() }),
-            FeatureCatalogItem(name: "Scaled", hideNavigation: true,
-                               creationBlock: { LayoutPreviewCaptureViewController(kit: Kit.default()) })
-            ]
+            })
+        ]
         
-        return Section(title: "Capture Screen", items: items)
+        if Platform.isSimulator {
+            items.append(FeatureCatalogItem(name: "Clear Permissions",
+                                            actionBlock: { SimulatorPermissionsManager.removePermissions() }))
+        }
+        
+        return Section(title: "Permissions", items: items)
     }
     
     func kitsTab() -> Section {

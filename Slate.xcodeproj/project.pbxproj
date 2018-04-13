@@ -17,6 +17,9 @@
 		FA0462C21EC3E002007B74A0 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C11EC3E002007B74A0 /* Component.swift */; };
 		FA0462C51EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C41EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift */; };
 		FA0462C71EC4252D007B74A0 /* ComponentItemCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */; };
+		FA0882522080AD6200EA7081 /* CameraPermissionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0882512080AD6200EA7081 /* CameraPermissionTests.swift */; };
+		FA0882552080AE0A00EA7081 /* UIViewController+Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0882542080AE0A00EA7081 /* UIViewController+Testing.swift */; };
+		FA0882592080B10C00EA7081 /* SimulatorPermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0882582080B10C00EA7081 /* SimulatorPermissionsManager.swift */; };
 		FA0C964F1EE7647300EA6EC8 /* AnchorOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */; };
 		FA0C96501EE7647300EA6EC8 /* AnchorOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */; };
 		FA0C96591EE8952800EA6EC8 /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C96581EE8952800EA6EC8 /* Anchor.swift */; };
@@ -788,6 +791,9 @@
 		FA0634891ED4A8F100C8FC90 /* OpenSource.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = OpenSource.xcconfig; sourceTree = "<group>"; };
 		FA06348D1ED4ACA800C8FC90 /* Private.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Private.xcconfig; sourceTree = "<group>"; };
 		FA0634961ED4B1C300C8FC90 /* AppStore.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppStore.xcconfig; sourceTree = "<group>"; };
+		FA0882512080AD6200EA7081 /* CameraPermissionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionTests.swift; sourceTree = "<group>"; };
+		FA0882542080AE0A00EA7081 /* UIViewController+Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Testing.swift"; sourceTree = "<group>"; };
+		FA0882582080B10C00EA7081 /* SimulatorPermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorPermissionsManager.swift; sourceTree = "<group>"; };
 		FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorOperators.swift; sourceTree = "<group>"; };
 		FA0C96581EE8952800EA6EC8 /* Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
 		FA0C965D1EE8C52900EA6EC8 /* Priority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
@@ -1286,6 +1292,38 @@
 			children = (
 			);
 			path = Windows;
+			sourceTree = "<group>";
+		};
+		FA08824F2080A98A00EA7081 /* Capture */ = {
+			isa = PBXGroup;
+			children = (
+				FA0882502080A99300EA7081 /* Permissions */,
+			);
+			path = Capture;
+			sourceTree = "<group>";
+		};
+		FA0882502080A99300EA7081 /* Permissions */ = {
+			isa = PBXGroup;
+			children = (
+				FA0882512080AD6200EA7081 /* CameraPermissionTests.swift */,
+			);
+			path = Permissions;
+			sourceTree = "<group>";
+		};
+		FA0882532080ADF600EA7081 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA0882542080AE0A00EA7081 /* UIViewController+Testing.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FA0882572080B0F700EA7081 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FA0882582080B10C00EA7081 /* SimulatorPermissionsManager.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		FA0C964D1EE7645B00EA6EC8 /* Operators */ = {
@@ -2603,6 +2641,7 @@
 		FA9F8A041D953C540058C369 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FA08824F2080A98A00EA7081 /* Capture */,
 				FAB64A362080620B00106268 /* Auto Layout */,
 				FA9F8A051D953C540058C369 /* SlateUITests.swift */,
 				FA9F8A071D953C540058C369 /* Info.plist */,
@@ -2613,6 +2652,7 @@
 		FA9F8A131D953EDF0058C369 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				FA0882532080ADF600EA7081 /* Extensions */,
 				FADFC6C81F4E72710023B92C /* Kits */,
 				FA9F8A041D953C540058C369 /* UI */,
 				FA9F89F91D953C540058C369 /* Unit */,
@@ -2762,6 +2802,7 @@
 		FAB0AA6A1EC8083D008DCD23 /* Feature Catalog */ = {
 			isa = PBXGroup;
 			children = (
+				FA0882572080B0F700EA7081 /* Utilities */,
 				FAB0AA6B1EC8083D008DCD23 /* FeatureCatalogAppDelegate.swift */,
 				FAB0AA7B1EC8087D008DCD23 /* Resources */,
 				FAB0AA7C1EC808CD008DCD23 /* View Controllers */,
@@ -4411,7 +4452,9 @@
 				FAB64A47208082AB00106268 /* AutoLayoutAnchorTests.swift in Sources */,
 				FA9B3441207E0B360098D2FE /* TestPhotoSettingsConstraints.swift in Sources */,
 				FADFC6CD1F4E73EE0023B92C /* TestKitsPersistence.swift in Sources */,
+				FA0882522080AD6200EA7081 /* CameraPermissionTests.swift in Sources */,
 				FADFC6E71F4F62640023B92C /* TestPersistence.swift in Sources */,
+				FA0882552080AE0A00EA7081 /* UIViewController+Testing.swift in Sources */,
 				FADFC6E51F4F621D0023B92C /* PhotoSettingsPersistence.swift in Sources */,
 				FAB64A39208062F000106268 /* AutoLayoutOperatorTests.swift in Sources */,
 				FA9F89FB1D953C540058C369 /* SlateTests.swift in Sources */,
@@ -4513,6 +4556,7 @@
 				FAAB69CC207F191D00246918 /* AVCaptureDevice.Format.swift in Sources */,
 				FA5709A31ECC62E9000362C8 /* PermissionsPreferredButtonIndicatorController.swift in Sources */,
 				FA1CC8F4207C2CC600B3589E /* LinkDataSource.swift in Sources */,
+				FA0882592080B10C00EA7081 /* SimulatorPermissionsManager.swift in Sources */,
 				FAAE76421EEB2F3F00CA3416 /* VectorImage.swift in Sources */,
 				FADFC6BD1F4D096C0023B92C /* KitPhotoSettingsViewController.swift in Sources */,
 				FA373E3E207ACAF60092BA67 /* PhotoSettingsPriorityViewController.swift in Sources */,
