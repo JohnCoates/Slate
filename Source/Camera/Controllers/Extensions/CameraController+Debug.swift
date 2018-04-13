@@ -20,11 +20,7 @@ extension CameraController {
             let formatTypes = dataOutput.availableVideoPixelFormatTypes
             
             for formatType in formatTypes {
-                guard let type = formatType as? Int else {
-                    continue
-                }
-                let intType = UInt32(type)
-                let osType = UTCreateStringForOSType(intType).takeRetainedValue() as String
+                let osType = UTCreateStringForOSType(formatType).takeRetainedValue() as String
                 print("available pixel format type: \(osType)")
             }
         #endif
