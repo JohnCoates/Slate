@@ -53,7 +53,6 @@ class PermissionsPreferredButtonIndicatorController {
         proxyWindow = createProxyWindow(withViewController: presentingController)
         
         let alertController = proxyAlertController()
-        
         presentingController.present(alertController, animated: false, completion: {
             guard let confirmationButton = self.findConfirmationButton(inAlertController: alertController) else {
                 self.tearDownAlertProxy()
@@ -61,25 +60,21 @@ class PermissionsPreferredButtonIndicatorController {
                 return
             }
             let buttonFrame = confirmationButton.convert(confirmationButton.frame, to: targetView)
-            presentingController.dismiss(animated: false, completion: {
-                self.tearDownAlertProxy()
-                completion(buttonFrame)
-            })
+            DispatchQueue.main.async {
+                presentingController.dismiss(animated: false, completion: {
+                    self.tearDownAlertProxy()
+                    completion(buttonFrame)
+                })
+            }
         })
     }
-    
-//    func showOkayButtonIndicator(withOkayButtonFrame buttonFrame: CGRect, after: @escaping ()->Void) {
-//        let indicator = PermissionsButtonIndicatorViewController(buttonFrame: buttonFrame)
-//        present(indicator, animated: false, completion: {
-//            after()
-//        })
-//    }
     
     func createProxyWindow(withViewController viewController: UIViewController) -> UIWindow {
         let window = UIWindow()
         window.rootViewController = viewController
         window.isHidden = false
         window.windowLevel = UIWindowLevelNormal - 1
+        window.alpha = 0
         return window
     }
     
