@@ -42,6 +42,8 @@ extension CameraController {
         }
     }
     
+    #if (iOS)
+    
     private func bestFormat(for camera: DeviceCamera) -> Format {
         let resolver = kit.photoSettings.constraintsResolver
         let frameRate = resolver.frameRate(for: camera)
@@ -77,6 +79,40 @@ extension CameraController {
         
         return Format(deviceFormat: format, range: range)
     }
+    
+    #else
+    
+    private func bestFormat(for camera: DeviceCamera) -> Format {
+        let device = camera.device
+        let formats = device.formats
+        var bestFormat: AVCaptureDevice.Format?
+        var frameRateRange: AVFrameRateRange?
+        let targetFrameRate: Float64 = 30
+        var bestWidth: Int32 = 0
+        
+        for format in formats {
+            let formatDescription = format.formatDescription
+            let ranges = format.videoSupportedFrameRateRanges
+            let dimensions = CMVideoFormatDescriptionGetDimensions(formatDescription)
+            let width = dimensions.width
+            for range in ranges {
+                if width >= bestWidth && range.maxFrameRate >= targetFrameRate {
+                    bestWidth = width
+                    bestFormat = format
+                    frameRateRange = range
+                }
+            }
+        }
+        
+        guard let format = bestFormat,
+            let range = frameRateRange else {
+                fatalError("Couldn't find best format for device")
+        }
+        
+        return Format(deviceFormat: format, range: range)
+    }
+    
+    #endif
     
     private struct Format {
         let deviceFormat: AVCaptureDevice.Format

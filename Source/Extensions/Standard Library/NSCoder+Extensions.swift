@@ -5,7 +5,6 @@
 //
 
 import Foundation
-import UIKit
 
 struct CodingKeyCoder<Key> where Key: CodingKey {
     let coder: NSCoder

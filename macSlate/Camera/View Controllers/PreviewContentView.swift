@@ -28,7 +28,7 @@ class PreviewContentView: NSView {
     
     // MARK: - Setup
     
-    lazy var renderer: Renderer = Renderer(metalView: self.metalView)!
+    lazy var renderer: Renderer = Renderer(kit: Kit(), metalView: self.metalView)!
     let metalView = MTKView()
     
     private func initialSetup() {
