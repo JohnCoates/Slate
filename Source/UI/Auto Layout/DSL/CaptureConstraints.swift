@@ -4,7 +4,11 @@
 //  Copyright © 2018 John Coates. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
+#else
+import AppKit
+#endif
 
 // MARK: - Capturing
 

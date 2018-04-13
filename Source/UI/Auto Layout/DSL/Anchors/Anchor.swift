@@ -7,11 +7,11 @@
 //
 
 #if os(iOS)
-    import UIKit
-    typealias View = UIView
+import UIKit
+typealias View = UIView
 #else
-    import AppKit
-    typealias View = NSView
+import AppKit
+typealias View = NSView
 #endif
 
 private let DSLConstraintIdentifier = "DSLConstraint"
