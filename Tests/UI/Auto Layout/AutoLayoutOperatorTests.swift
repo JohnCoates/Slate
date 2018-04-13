@@ -1,5 +1,5 @@
 //
-//  AutoLayoutDSLTests
+//  AutoLayoutOperatorTests
 //  Created on 4/13/18.
 //  Copyright © 2018 John Coates. All rights reserved.
 //
@@ -11,7 +11,7 @@ import XCTest
     @testable import macSlate
 #endif
 
-class AutoLayoutDSLTests: XCTestCase {
+class AutoLayoutOperatorTests: XCTestCase {
     
     var parentView = UIView()
     var childView = UIView()

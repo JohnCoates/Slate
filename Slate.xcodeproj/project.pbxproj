@@ -500,9 +500,13 @@
 		FAB64A332080591800106268 /* CurrentDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C9F8D2079015400534901 /* CurrentDevice.swift */; };
 		FAB64A342080592B00106268 /* SimulatorCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C9FA220791F8500534901 /* SimulatorCamera.swift */; };
 		FAB64A352080593F00106268 /* Discard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B341F207DA66F0098D2FE /* Discard.swift */; };
-		FAB64A39208062F000106268 /* AutoLayoutDSLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB64A38208062F000106268 /* AutoLayoutDSLTests.swift */; };
+		FAB64A39208062F000106268 /* AutoLayoutOperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB64A38208062F000106268 /* AutoLayoutOperatorTests.swift */; };
 		FAB64A3D20806DCC00106268 /* NSLayoutAttribute+Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB64A3B20806DC200106268 /* NSLayoutAttribute+Debugging.swift */; };
 		FAB64A3E20806DCE00106268 /* NSLayoutAttribute+Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB64A3B20806DC200106268 /* NSLayoutAttribute+Debugging.swift */; };
+		FAB64A402080820F00106268 /* CaptureConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB64A3F2080820F00106268 /* CaptureConstraints.swift */; };
+		FAB64A412080820F00106268 /* CaptureConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB64A3F2080820F00106268 /* CaptureConstraints.swift */; };
+		FAB64A422080820F00106268 /* CaptureConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB64A3F2080820F00106268 /* CaptureConstraints.swift */; };
+		FAB64A47208082AB00106268 /* AutoLayoutAnchorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB64A432080829000106268 /* AutoLayoutAnchorTests.swift */; };
 		FAB9C2751EE8E1ED00C50545 /* CanvasIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2741EE8E1ED00C50545 /* CanvasIconButton.swift */; };
 		FAB9C2761EE8E1ED00C50545 /* CanvasIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2741EE8E1ED00C50545 /* CanvasIconButton.swift */; };
 		FAB9C27A1EE8F95E00C50545 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C2791EE8F95E00C50545 /* Canvas.swift */; };
@@ -1030,8 +1034,10 @@
 		FAB64A21208053D500106268 /* LayoutAnchorGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAnchorGenerator.swift; sourceTree = "<group>"; };
 		FAB64A242080540500106268 /* LayoutAnchors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAnchors.swift; sourceTree = "<group>"; };
 		FAB64A2F208057E300106268 /* MacKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacKit.swift; sourceTree = "<group>"; };
-		FAB64A38208062F000106268 /* AutoLayoutDSLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutDSLTests.swift; sourceTree = "<group>"; };
+		FAB64A38208062F000106268 /* AutoLayoutOperatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutOperatorTests.swift; sourceTree = "<group>"; };
 		FAB64A3B20806DC200106268 /* NSLayoutAttribute+Debugging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutAttribute+Debugging.swift"; sourceTree = "<group>"; };
+		FAB64A3F2080820F00106268 /* CaptureConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureConstraints.swift; sourceTree = "<group>"; };
+		FAB64A432080829000106268 /* AutoLayoutAnchorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutAnchorTests.swift; sourceTree = "<group>"; };
 		FAB9C2741EE8E1ED00C50545 /* CanvasIconButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasIconButton.swift; sourceTree = "<group>"; };
 		FAB9C2791EE8F95E00C50545 /* Canvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		FAB9C27C1EE8F9D100C50545 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
@@ -2821,7 +2827,8 @@
 		FAB64A362080620B00106268 /* Auto Layout */ = {
 			isa = PBXGroup;
 			children = (
-				FAB64A38208062F000106268 /* AutoLayoutDSLTests.swift */,
+				FAB64A38208062F000106268 /* AutoLayoutOperatorTests.swift */,
+				FAB64A432080829000106268 /* AutoLayoutAnchorTests.swift */,
 			);
 			path = "Auto Layout";
 			sourceTree = "<group>";
@@ -3105,6 +3112,7 @@
 				FACA79821EE671460001D468 /* Extensions */,
 				FACA797E1EE6710D0001D468 /* Anchors */,
 				FA167A7320779AB6007EA3E7 /* ALTypeAliases.swift */,
+				FAB64A3F2080820F00106268 /* CaptureConstraints.swift */,
 			);
 			path = DSL;
 			sourceTree = "<group>";
@@ -4094,6 +4102,7 @@
 				FA4DFEDB1D9DBD5F0068706F /* Renderer.swift in Sources */,
 				FA6E97771EEA070C00A73DFA /* CGRect.swift in Sources */,
 				FA4DFED11D9DBD1A0068706F /* AppDelegate.swift in Sources */,
+				FAB64A412080820F00106268 /* CaptureConstraints.swift in Sources */,
 				FADFC6D81F4E75020023B92C /* XYAnchor.swift in Sources */,
 				FA6E979D1EEA376D00A73DFA /* DataPoint.swift in Sources */,
 				FA850EFB1EDFC83A00B1CDDB /* VertexStructs.swift in Sources */,
@@ -4244,6 +4253,7 @@
 				FABB16AD1D9F6DAB00A8AC6C /* ChromaticAberration.metal in Sources */,
 				FAC21B5E1EEE13E0007C17AF /* DBRect.swift in Sources */,
 				FAD5DAD31EF8B2A400239C96 /* LayoutPreviewCell.swift in Sources */,
+				FAB64A402080820F00106268 /* CaptureConstraints.swift in Sources */,
 				FAC4248B1EEF28EE00E2EB26 /* ManagedObjectObserver.swift in Sources */,
 				FACF0F371EECCF9D00B0211C /* DeniedPermissionViewController.swift in Sources */,
 				FA2B1E681EC922FD00E44613 /* LayoutConstraint+Modifying.swift in Sources */,
@@ -4398,11 +4408,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB64A47208082AB00106268 /* AutoLayoutAnchorTests.swift in Sources */,
 				FA9B3441207E0B360098D2FE /* TestPhotoSettingsConstraints.swift in Sources */,
 				FADFC6CD1F4E73EE0023B92C /* TestKitsPersistence.swift in Sources */,
 				FADFC6E71F4F62640023B92C /* TestPersistence.swift in Sources */,
 				FADFC6E51F4F621D0023B92C /* PhotoSettingsPersistence.swift in Sources */,
-				FAB64A39208062F000106268 /* AutoLayoutDSLTests.swift in Sources */,
+				FAB64A39208062F000106268 /* AutoLayoutOperatorTests.swift in Sources */,
 				FA9F89FB1D953C540058C369 /* SlateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4649,6 +4660,7 @@
 				FA5F8CA01ECFF81400921A61 /* UIScreen+Layout.swift in Sources */,
 				FA7648FE1F9EDC0B00C6DD87 /* KeyboardHandler.swift in Sources */,
 				FA9B3436207DC0C50098D2FE /* PhotoSettingsAddBurstSpeed.swift in Sources */,
+				FAB64A422080820F00106268 /* CaptureConstraints.swift in Sources */,
 				FA9B342D207DAE3A0098D2FE /* BaseConstraint.swift in Sources */,
 				FA3E23DE207965F2008D5227 /* RadioRow.swift in Sources */,
 				FA3E23EE2079670C008D5227 /* TextFieldFilter.swift in Sources */,
