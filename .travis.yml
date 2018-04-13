@@ -13,6 +13,7 @@ install:
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J 'Slate'
 script:
+- xcrun simctl boot "iPhone SE"
 - set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace Slate.xcworkspace -scheme Slate -destination 'name=iPhone SE' build build-for-testing | xcpretty
 - set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace Slate.xcworkspace -scheme Slate -destination 'name=iPhone SE' test-without-building | xcpretty
 - set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace Slate.xcworkspace -scheme macSlate build build-for-testing | xcpretty
