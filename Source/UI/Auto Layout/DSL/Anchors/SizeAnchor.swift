@@ -16,7 +16,7 @@ class SizeAnchor {
     let width: DimensionAnchor
     let height: DimensionAnchor
     
-    init(target: View) {
+    init(target: Anchorable) {
         width = target.width
         height = target.height
     }

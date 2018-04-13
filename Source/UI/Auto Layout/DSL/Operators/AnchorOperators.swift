@@ -58,9 +58,9 @@ func --> (lhs: EdgesAnchor, rhs: View) {
     lhs.pin(to: EdgesAnchor(target: rhs))
 }
 
-func --> (lhs: ViewAnchors, rhs: View) {
+func --> (lhs: LayoutAnchors, rhs: View) {
     for attribute in lhs.attributes {
-        let left = Anchor<AnchorType>(target: lhs.view, kind: attribute)
+        let left = Anchor<AnchorType>(target: lhs.target, kind: attribute)
         let right = Anchor<AnchorType>(target: rhs, kind: attribute)
         
         left.pin(to: right)

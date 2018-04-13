@@ -17,7 +17,7 @@ class EdgesAnchor {
     let topLeft: XYAnchor
     let bottomRight: XYAnchor
     
-    init(target: View) {
+    init(target: Anchorable) {
         topLeft = XYAnchor(target: target, kind: .topLeft)
         bottomRight = XYAnchor(target: target, kind: .bottomRight)
     }

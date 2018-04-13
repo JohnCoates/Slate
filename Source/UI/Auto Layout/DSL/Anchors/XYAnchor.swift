@@ -18,7 +18,7 @@ class XYAnchor {
         #if os(iOS)
         case centerWithinMargins
         #else
-        // used to remove warning in swithc statement from macOS target
+        // used to remove warning in switch statement from macOS target
         case unhandled
         #endif
         case topLeft
@@ -28,8 +28,8 @@ class XYAnchor {
     let x: Anchor<XAxis>
     let y: Anchor<YAxis>
     let kind: Kind
-    
-    init(target: View, kind: Kind) {
+
+    init(target: Anchorable, kind: Kind) {
         self.kind = kind
         
         switch kind {
@@ -44,11 +44,11 @@ class XYAnchor {
             y = target.bottom
         default:
             #if os(iOS)
-                if kind == .centerWithinMargins {
-                    x = target.centerXWithinMargins
-                    y = target.centerYWithinMargins
-                    break
-                }
+            if kind == .centerWithinMargins {
+                x = target.centerXWithinMargins
+                y = target.centerYWithinMargins
+                break
+            }
             #endif
             fatalError("Unhandled XY anchor kind!")
         }

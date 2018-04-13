@@ -21,19 +21,21 @@ class XAxis: AnchorType {}
 class YAxis: AnchorType {}
 class Dimension: AnchorType {}
 
+#if os(iOS)
+enum AnchorTarget {
+    case view(_: View)
+    case layoutSupport(_: UILayoutSupport)
+    case layoutGuide(_: UILayoutGuide)
+}
+#else
+enum AnchorTarget {
+    case view(_: View)
+}
+#endif
+
 class Anchor<Kind> where Kind: AnchorType {
-    #if os(iOS)
-    enum TargetType {
-        case view(_: View)
-        case layoutSupport(_: UILayoutSupport)
-    }
-    #else
-    enum TargetType {
-        case view(_: View)
-    }
-    #endif
     
-    let target: TargetType
+    let target: AnchorTarget
     var innerTarget: Any {
         #if os(iOS)
         switch target {
@@ -41,6 +43,8 @@ class Anchor<Kind> where Kind: AnchorType {
             return view
         case let .layoutSupport(layoutSupport):
             return layoutSupport
+        case let .layoutGuide(layoutGuide):
+            return layoutGuide
         }
         #else
         switch target {
@@ -52,17 +56,14 @@ class Anchor<Kind> where Kind: AnchorType {
     
     let attribute: LayoutAttribute
     
-    init(target: View, kind attribute: LayoutAttribute) {
-        self.target = .view(target)
-        self.attribute = attribute
+    convenience init(target: View, kind attribute: LayoutAttribute) {
+        self.init(target: .view(target), kind: attribute)
     }
     
-    #if os(iOS)
-    init(target: UILayoutSupport, kind attribute: LayoutAttribute) {
-        self.target = .layoutSupport(target)
+    init(target: AnchorTarget, kind attribute: LayoutAttribute) {
+        self.target = target
         self.attribute = attribute
     }
-    #endif
     
     @discardableResult func pin(to: Anchor<Kind>,
                                 add: CGFloat = 0,
@@ -131,13 +132,15 @@ class Anchor<Kind> where Kind: AnchorType {
     
     func prepareLeftHandSideForAutoLayout() {
         if case let .view(view) = target {
-            var isCellContentView = false
-            if let superview = view.superview, superview is UITableViewCell {
-                isCellContentView = true
-            }
-            if isCellContentView {
-                return
-            }
+            #if os(iOS)
+                var isCellContentView = false
+                if let superview = view.superview, superview is UITableViewCell {
+                    isCellContentView = true
+                }
+                if isCellContentView {
+                    return
+                }
+            #endif
             
             view.translatesAutoresizingMaskIntoConstraints = false
         }
