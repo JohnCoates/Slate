@@ -168,7 +168,8 @@ UINavigationControllerDelegate, NavigationConvenience {
             self.kitsTab(),
             self.database(),
             self.vectors(),
-            self.buttons()
+            self.buttons(),
+            self.research()
         ]
     }()
     
@@ -290,6 +291,15 @@ UINavigationControllerDelegate, NavigationConvenience {
             ]
         
         return Section(title: "Vector Images", items: items)
+    }
+    
+    func research() -> Section {
+        let items: [FeatureCatalogItem] = [
+            FeatureCatalogItem(name: "Send Motion Data",
+                               creationBlock: { MotionSendViewController() })
+        ]
+        
+        return Section(title: "Research", items: items)
     }
     
     // MARK: - Navigation Swipe Back

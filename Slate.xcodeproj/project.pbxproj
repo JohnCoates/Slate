@@ -20,6 +20,8 @@
 		FA0882522080AD6200EA7081 /* CameraPermissionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0882512080AD6200EA7081 /* CameraPermissionTests.swift */; };
 		FA0882552080AE0A00EA7081 /* UIViewController+Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0882542080AE0A00EA7081 /* UIViewController+Testing.swift */; };
 		FA0882592080B10C00EA7081 /* SimulatorPermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0882582080B10C00EA7081 /* SimulatorPermissionsManager.swift */; };
+		FA08825D2080E88800EA7081 /* RotationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08825C2080E88800EA7081 /* RotationManager.swift */; };
+		FA08825E2080E88800EA7081 /* RotationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08825C2080E88800EA7081 /* RotationManager.swift */; };
 		FA0C964F1EE7647300EA6EC8 /* AnchorOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */; };
 		FA0C96501EE7647300EA6EC8 /* AnchorOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */; };
 		FA0C96591EE8952800EA6EC8 /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C96581EE8952800EA6EC8 /* Anchor.swift */; };
@@ -160,6 +162,8 @@
 		FA373E58207B22AF0092BA67 /* BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E56207B22AF0092BA67 /* BarButton.swift */; };
 		FA373E5B207B22D10092BA67 /* KitSettingsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E5A207B22D10092BA67 /* KitSettingsDataSource.swift */; };
 		FA373E5C207B22D10092BA67 /* KitSettingsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373E5A207B22D10092BA67 /* KitSettingsDataSource.swift */; };
+		FA39249C20832BE300EB929E /* Orientation+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39249B20832BE300EB929E /* Orientation+Convenience.swift */; };
+		FA39249D20832C1200EB929E /* Orientation+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39249B20832BE300EB929E /* Orientation+Convenience.swift */; };
 		FA3AAA8B1EE24C5B006028AC /* CameraController+StillOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA8A1EE24C5B006028AC /* CameraController+StillOutput.swift */; };
 		FA3AAA8D1EE24C6E006028AC /* CameraController+Presets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA8C1EE24C6E006028AC /* CameraController+Presets.swift */; };
 		FA3AAA8F1EE24C83006028AC /* CameraController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AAA8E1EE24C83006028AC /* CameraController+Preview.swift */; };
@@ -652,6 +656,7 @@
 		FAF5AB241EEBCD5B00EDED04 /* EditingDeleteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5AB231EEBCD5B00EDED04 /* EditingDeleteImage.swift */; };
 		FAF5AB271EEBCE1F00EDED04 /* PathsImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5AB251EEBCDFE00EDED04 /* PathsImageButton.swift */; };
 		FAF5AB281EEBCE2100EDED04 /* PathsImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5AB251EEBCDFE00EDED04 /* PathsImageButton.swift */; };
+		FAFFD1FB2082049F000C5B73 /* MotionSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFFD1FA2082049F000C5B73 /* MotionSendViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -794,6 +799,7 @@
 		FA0882512080AD6200EA7081 /* CameraPermissionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionTests.swift; sourceTree = "<group>"; };
 		FA0882542080AE0A00EA7081 /* UIViewController+Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Testing.swift"; sourceTree = "<group>"; };
 		FA0882582080B10C00EA7081 /* SimulatorPermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorPermissionsManager.swift; sourceTree = "<group>"; };
+		FA08825C2080E88800EA7081 /* RotationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationManager.swift; sourceTree = "<group>"; };
 		FA0C964E1EE7647300EA6EC8 /* AnchorOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorOperators.swift; sourceTree = "<group>"; };
 		FA0C96581EE8952800EA6EC8 /* Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
 		FA0C965D1EE8C52900EA6EC8 /* Priority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
@@ -845,6 +851,7 @@
 		FA373E51207AE8220092BA67 /* NSManagedObject+Migration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Migration.swift"; sourceTree = "<group>"; };
 		FA373E56207B22AF0092BA67 /* BarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButton.swift; sourceTree = "<group>"; };
 		FA373E5A207B22D10092BA67 /* KitSettingsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitSettingsDataSource.swift; sourceTree = "<group>"; };
+		FA39249B20832BE300EB929E /* Orientation+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Orientation+Convenience.swift"; sourceTree = "<group>"; };
 		FA3AAA8A1EE24C5B006028AC /* CameraController+StillOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraController+StillOutput.swift"; sourceTree = "<group>"; };
 		FA3AAA8C1EE24C6E006028AC /* CameraController+Presets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraController+Presets.swift"; sourceTree = "<group>"; };
 		FA3AAA8E1EE24C83006028AC /* CameraController+Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraController+Preview.swift"; sourceTree = "<group>"; };
@@ -1125,6 +1132,7 @@
 		FAF5AB231EEBCD5B00EDED04 /* EditingDeleteImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingDeleteImage.swift; sourceTree = "<group>"; };
 		FAF5AB251EEBCDFE00EDED04 /* PathsImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathsImageButton.swift; sourceTree = "<group>"; };
 		FAF5AB291EEC6B5600EDED04 /* Lint.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Lint.xcconfig; sourceTree = "<group>"; };
+		FAFFD1FA2082049F000C5B73 /* MotionSendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionSendViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1324,6 +1332,22 @@
 				FA0882582080B10C00EA7081 /* SimulatorPermissionsManager.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FA08825A2080E86200EA7081 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA08825B2080E87100EA7081 /* Motion */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FA08825B2080E87100EA7081 /* Motion */ = {
+			isa = PBXGroup;
+			children = (
+				FA08825C2080E88800EA7081 /* RotationManager.swift */,
+			);
+			path = Motion;
 			sourceTree = "<group>";
 		};
 		FA0C964D1EE7645B00EA6EC8 /* Operators */ = {
@@ -1683,6 +1707,14 @@
 				FA1CC8F2207C2CC600B3589E /* LinkDataSource.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FA39249A20832BD500EB929E /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				FA39249B20832BE300EB929E /* Orientation+Convenience.swift */,
+			);
+			path = Device;
 			sourceTree = "<group>";
 		};
 		FA3AAA891EE24C35006028AC /* Extensions */ = {
@@ -2506,6 +2538,7 @@
 		FA8CE4201ECD7E4600788026 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FA39249A20832BD500EB929E /* Device */,
 				FA7648FF1F9EDEB800C6DD87 /* Navigation */,
 				FA7648FB1F9EDBD700C6DD87 /* Responders */,
 				FA60B68C1EF374F7003441E1 /* Views */,
@@ -2613,6 +2646,7 @@
 		FA9F89E41D953C540058C369 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				FA08825A2080E86200EA7081 /* Controllers */,
 				FA9B341D207DA6570098D2FE /* Globals */,
 				FACF0F391EECD95C00B0211C /* Database */,
 				FA89D1341EDF5C200012F2F0 /* Metal */,
@@ -2823,6 +2857,7 @@
 		FAB0AA7C1EC808CD008DCD23 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FAFFD1F92082046E000C5B73 /* Research */,
 				FACF0F441EECEC8C00B0211C /* Database */,
 				FAAE76491EEB36D100CA3416 /* Vector Images */,
 				FA2B1E5A1EC80EC800E44613 /* Buttons */,
@@ -3554,6 +3589,14 @@
 				FAF5AB211EEBCB4B00EDED04 /* SwitchCameraImage.swift */,
 			);
 			path = SwitchCamera;
+			sourceTree = "<group>";
+		};
+		FAFFD1F92082046E000C5B73 /* Research */ = {
+			isa = PBXGroup;
+			children = (
+				FAFFD1FA2082049F000C5B73 /* MotionSendViewController.swift */,
+			);
+			path = Research;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -4402,6 +4445,7 @@
 				FAB0AA5E1EC6A095008DCD23 /* EditPosition.swift in Sources */,
 				FAD5DACA1EF8ABB100239C96 /* EditKitLayoutViewController.swift in Sources */,
 				FA0462B31EC3CC76007B74A0 /* SwitchCameraButton.swift in Sources */,
+				FA08825D2080E88800EA7081 /* RotationManager.swift in Sources */,
 				FAD5DAE51EF8D34C00239C96 /* SmartPin.swift in Sources */,
 				FADFC6C61F4E71220023B92C /* PhotoSettings.swift in Sources */,
 				FAB64A252080540500106268 /* LayoutAnchors.swift in Sources */,
@@ -4412,6 +4456,7 @@
 				FAAE767A1EEB881C00CA3416 /* DataPoint.swift in Sources */,
 				FA9F89E61D953C540058C369 /* AppDelegate.swift in Sources */,
 				FA8AA5451ECC13140093D317 /* CanvasIconView.swift in Sources */,
+				FA39249C20832BE300EB929E /* Orientation+Convenience.swift in Sources */,
 				FA7649011F9EE1C600C6DD87 /* NavigationViewController+Convenience.swift in Sources */,
 				FA9B342F207DBA220098D2FE /* BurstSpeed.swift in Sources */,
 				FAC424921EEF2F7700E2EB26 /* NSManagedObjectContext+Changes.swift in Sources */,
@@ -4669,11 +4714,13 @@
 				FAF5AB271EEBCE1F00EDED04 /* PathsImageButton.swift in Sources */,
 				FAB64A1B20804CF200106268 /* UILayoutSupport+Anchors.swift in Sources */,
 				FA2B1E7D1EC92B5B00E44613 /* Kit.swift in Sources */,
+				FA39249D20832C1200EB929E /* Orientation+Convenience.swift in Sources */,
 				FAC4248C1EEF28EE00E2EB26 /* ManagedObjectObserver.swift in Sources */,
 				FAAE76401EEB2F3800CA3416 /* DataPath.swift in Sources */,
 				FAB64A23208053D500106268 /* LayoutAnchorGenerator.swift in Sources */,
 				FA2B1E6E1EC9235700E44613 /* PathIcon.swift in Sources */,
 				FAAB69CD207F1D5B00246918 /* TestCamera.swift in Sources */,
+				FAFFD1FB2082049F000C5B73 /* MotionSendViewController.swift in Sources */,
 				FA5651AE1EDE4AB6006B5A19 /* AVPreviewCaptureViewController.swift in Sources */,
 				FA0C9FA420791F8500534901 /* SimulatorCamera.swift in Sources */,
 				FA2B1E5C1EC80EE100E44613 /* InvertedMaskButtonViewController.swift in Sources */,
@@ -4700,6 +4747,7 @@
 				FA2B1E891EC92B5B00E44613 /* FragmentFilter.swift in Sources */,
 				FA2B1EA61EC92B5B00E44613 /* DebugBarItemView.swift in Sources */,
 				FACA797C1EE66A5B0001D468 /* KitTableViewCell.swift in Sources */,
+				FA08825E2080E88800EA7081 /* RotationManager.swift in Sources */,
 				FA3E23F3207967B8008D5227 /* KitSettingsViewController.swift in Sources */,
 				FA5F8CA01ECFF81400921A61 /* UIScreen+Layout.swift in Sources */,
 				FA7648FE1F9EDC0B00C6DD87 /* KeyboardHandler.swift in Sources */,
