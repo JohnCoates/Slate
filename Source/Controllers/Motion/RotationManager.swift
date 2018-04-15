@@ -15,6 +15,10 @@ final class RotationManager {
     static let shared = RotationManager()
     static var requests: Int = 0
     
+    static var running: Bool {
+        return requests > 0
+    }
+    
     static func beginOrientationEvents() {
         requests += 1
         if requests == 1 {
