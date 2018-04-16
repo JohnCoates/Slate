@@ -171,17 +171,6 @@ NetServiceBrowserDelegate, NetServiceDelegate {
             outputStream = nil
             print("Error: Encountered end of stream")
         }
-        
-        if eventCode == .hasBytesAvailable {
-            guard let inputStream = inputStream else {
-                return
-            }
-            while inputStream.hasBytesAvailable {
-                let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: maxReadLength)
-                inputStream.read(buffer, maxLength: maxReadLength)
-                buffer.deallocate()
-            }
-        }
     }
     
     // MARK: - User Interaction
