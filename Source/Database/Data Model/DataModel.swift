@@ -71,10 +71,6 @@ class DataModel {
         setup()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("This class is not NSCoder compliant")
-    }    
-    
     func setup() {
         setUpEntities()
         setUpVersion()

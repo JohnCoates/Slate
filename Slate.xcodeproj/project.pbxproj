@@ -641,6 +641,8 @@
 		FAE048411EE3785F00695E0D /* DrawProxyDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE048401EE3785F00695E0D /* DrawProxyDSL.swift */; };
 		FAE048441EE378A500695E0D /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE048431EE378A500695E0D /* UIColor.swift */; };
 		FAE385491EDE996B006FD2ED /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE385481EDE996B006FD2ED /* CameraPreviewViewController.swift */; };
+		FAEE0DB920849B2000CEF478 /* Enum+SubscriptByAssociatedValueName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE0DB820849B2000CEF478 /* Enum+SubscriptByAssociatedValueName.swift */; };
+		FAEE0DBA20849B8100CEF478 /* TestPhotoSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE0DB62084704F00CEF478 /* TestPhotoSettingsVC.swift */; };
 		FAF10CFA1ECAA8230008690E /* GroupedPathIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */; };
 		FAF10CFB1ECAA8230008690E /* GroupedPathIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */; };
 		FAF10D081ECAD03A0008690E /* BaseCaptureViewController+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF10D071ECAD03A0008690E /* BaseCaptureViewController+Debug.swift */; };
@@ -1124,6 +1126,8 @@
 		FAE048401EE3785F00695E0D /* DrawProxyDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawProxyDSL.swift; sourceTree = "<group>"; };
 		FAE048431EE378A500695E0D /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		FAE385481EDE996B006FD2ED /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
+		FAEE0DB62084704F00CEF478 /* TestPhotoSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPhotoSettingsVC.swift; sourceTree = "<group>"; };
+		FAEE0DB820849B2000CEF478 /* Enum+SubscriptByAssociatedValueName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum+SubscriptByAssociatedValueName.swift"; sourceTree = "<group>"; };
 		FAF10CF91ECAA8230008690E /* GroupedPathIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupedPathIcon.swift; sourceTree = "<group>"; };
 		FAF10D071ECAD03A0008690E /* BaseCaptureViewController+Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseCaptureViewController+Debug.swift"; sourceTree = "<group>"; };
 		FAF10D0A1ECAD0B50008690E /* BaseCaptureViewController+ComponentEditing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseCaptureViewController+ComponentEditing.swift"; sourceTree = "<group>"; };
@@ -1327,6 +1331,7 @@
 			children = (
 				FA0882542080AE0A00EA7081 /* UIViewController+Testing.swift */,
 				FAB376B620836AE300F58152 /* XCTestCase+TestableFatalError.swift */,
+				FAEE0DB820849B2000CEF478 /* Enum+SubscriptByAssociatedValueName.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2616,6 +2621,7 @@
 			isa = PBXGroup;
 			children = (
 				FA9B3440207E0B360098D2FE /* TestPhotoSettingsConstraints.swift */,
+				FAEE0DB62084704F00CEF478 /* TestPhotoSettingsVC.swift */,
 			);
 			path = "Photo Settings";
 			sourceTree = "<group>";
@@ -4521,8 +4527,10 @@
 				FA9B3441207E0B360098D2FE /* TestPhotoSettingsConstraints.swift in Sources */,
 				FAB376B720836AE300F58152 /* XCTestCase+TestableFatalError.swift in Sources */,
 				FADFC6CD1F4E73EE0023B92C /* TestKitsPersistence.swift in Sources */,
+				FAEE0DBA20849B8100CEF478 /* TestPhotoSettingsVC.swift in Sources */,
 				FAB376B12083632000F58152 /* TestRotationManager.swift in Sources */,
 				FA0882522080AD6200EA7081 /* CameraDeniedPermissionTests.swift in Sources */,
+				FAEE0DB920849B2000CEF478 /* Enum+SubscriptByAssociatedValueName.swift in Sources */,
 				FADFC6E71F4F62640023B92C /* TestPersistence.swift in Sources */,
 				FA0882552080AE0A00EA7081 /* UIViewController+Testing.swift in Sources */,
 				FADFC6E51F4F621D0023B92C /* PhotoSettingsPersistence.swift in Sources */,

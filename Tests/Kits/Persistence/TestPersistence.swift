@@ -23,7 +23,8 @@ class TestPersistence: XCTestCase {
     func deleteExistingStoreIfNecessary() {
         let fileManager = FileManager.default
         if fileManager.fileExists(atPath: storeURL.path) {
-            try? fileManager.removeItem(at: storeURL)
+            // swiftlint:disable:next force_try
+            try! fileManager.removeItem(at: storeURL)
         }
     }
     

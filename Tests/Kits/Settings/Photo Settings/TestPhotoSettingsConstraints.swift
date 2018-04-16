@@ -19,6 +19,7 @@ class TestPhotoSettingsConstraints: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
+        CurrentDevice.cameras = []
     }
     
     func testConstrainedResolution() {

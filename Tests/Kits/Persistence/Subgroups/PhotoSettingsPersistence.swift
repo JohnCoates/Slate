@@ -43,7 +43,7 @@ class PhotoSettingsPersistence: TestPersistence {
         }
         
         waitForExpectations(timeout: 2) { error in
-            XCTAssertNil(error, "No error")
+            XCTAssertNil(error)
         }
     }
     
@@ -54,8 +54,7 @@ class PhotoSettingsPersistence: TestPersistence {
         let fetchRequest = KitCoreData.sortedFetchRequest
         let results: [KitCoreData]
         results = try! context.fetch(fetchRequest)
-        XCTAssert(results.count == 1,
-                  "Wrong Kit count in saved Kits, expected 1, found: \(results.count)")
+        XCTAssert(results.count == 1)
         
         let coreDataKit = results.first!
         
@@ -64,18 +63,15 @@ class PhotoSettingsPersistence: TestPersistence {
         let resolution = photoSettings.resolution
         let priorities = photoSettings.priorities
         
-        if case let .custom(width, height) = resolution {
-            XCTAssertEqual(width, 1280, "Correct photo resolution width")
-            XCTAssertEqual(height, 720, "Correct photo resolution height")
-            XCTAssertEqual(priorities.items[0], .burstSpeed,
-                           "Correct priority order")
-            XCTAssertEqual(priorities.items[1], .resolution,
-                           "Correct priority order")
-            XCTAssertEqual(priorities.items[2], .frameRate,
-                           "Correct priority order")
-        } else {
-            XCTFail("Missing photo resolution!")
-        }
+        let width: Int = resolution["width"]
+        let height: Int = resolution["height"]
+        
+        XCTAssertEqual(width, 1280)
+        XCTAssertEqual(height, 720)
+        XCTAssertEqual(priorities.items[0], .burstSpeed)
+        XCTAssertEqual(priorities.items[1], .resolution)
+        XCTAssertEqual(priorities.items[2], .frameRate)
     }
-    
 }
+
+extension PhotoResolution: SubscriptByAssociatedValueName { }
