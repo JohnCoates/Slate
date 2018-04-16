@@ -50,7 +50,7 @@ class DataManager {
                        "at \(String(describing: storeURL)): \(error)")
         }
         
-        let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         context.persistentStoreCoordinator = storeCoordinator
         return context
     }
