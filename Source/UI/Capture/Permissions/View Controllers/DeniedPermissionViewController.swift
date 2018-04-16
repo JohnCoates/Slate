@@ -41,12 +41,12 @@ class DeniedPermissionViewController: PermissionsEducationViewController {
         previewView = preview
     }
     
+    lazy var application = UIApplication.shared
+    
     func openSettings() {
-        guard let appSettingsURL = URL(string: UIApplicationOpenSettingsURLString) else {
-            fatalError("Couldn't get deep link to app settings")
-        }
+        let appSettingsURL = Critical.unwrap(URL(string: UIApplicationOpenSettingsURLString))
         
-        UIApplication.shared.openURL(appSettingsURL)
+        application.openURL(appSettingsURL)
     }
     
     func tappedLater() {

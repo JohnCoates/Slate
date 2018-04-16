@@ -17,7 +17,7 @@
 		FA0462C21EC3E002007B74A0 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C11EC3E002007B74A0 /* Component.swift */; };
 		FA0462C51EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C41EC3E3ED007B74A0 /* ComponentMenuBarDelegate.swift */; };
 		FA0462C71EC4252D007B74A0 /* ComponentItemCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462C61EC4252D007B74A0 /* ComponentItemCellDelegate.swift */; };
-		FA0882522080AD6200EA7081 /* CameraPermissionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0882512080AD6200EA7081 /* CameraPermissionTests.swift */; };
+		FA0882522080AD6200EA7081 /* CameraDeniedPermissionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0882512080AD6200EA7081 /* CameraDeniedPermissionTests.swift */; };
 		FA0882552080AE0A00EA7081 /* UIViewController+Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0882542080AE0A00EA7081 /* UIViewController+Testing.swift */; };
 		FA0882592080B10C00EA7081 /* SimulatorPermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0882582080B10C00EA7081 /* SimulatorPermissionsManager.swift */; };
 		FA08825D2080E88800EA7081 /* RotationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08825C2080E88800EA7081 /* RotationManager.swift */; };
@@ -798,7 +798,7 @@
 		FA0634891ED4A8F100C8FC90 /* OpenSource.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = OpenSource.xcconfig; sourceTree = "<group>"; };
 		FA06348D1ED4ACA800C8FC90 /* Private.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Private.xcconfig; sourceTree = "<group>"; };
 		FA0634961ED4B1C300C8FC90 /* AppStore.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppStore.xcconfig; sourceTree = "<group>"; };
-		FA0882512080AD6200EA7081 /* CameraPermissionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionTests.swift; sourceTree = "<group>"; };
+		FA0882512080AD6200EA7081 /* CameraDeniedPermissionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraDeniedPermissionTests.swift; sourceTree = "<group>"; };
 		FA0882542080AE0A00EA7081 /* UIViewController+Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Testing.swift"; sourceTree = "<group>"; };
 		FA0882582080B10C00EA7081 /* SimulatorPermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorPermissionsManager.swift; sourceTree = "<group>"; };
 		FA08825C2080E88800EA7081 /* RotationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationManager.swift; sourceTree = "<group>"; };
@@ -1317,7 +1317,7 @@
 		FA0882502080A99300EA7081 /* Permissions */ = {
 			isa = PBXGroup;
 			children = (
-				FA0882512080AD6200EA7081 /* CameraPermissionTests.swift */,
+				FA0882512080AD6200EA7081 /* CameraDeniedPermissionTests.swift */,
 			);
 			path = Permissions;
 			sourceTree = "<group>";
@@ -2690,9 +2690,9 @@
 		FA9F8A131D953EDF0058C369 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				FA0882532080ADF600EA7081 /* Extensions */,
 				FAB376B22083695200F58152 /* Utilities */,
 				FAB376AF2083630E00F58152 /* Controllers */,
-				FA0882532080ADF600EA7081 /* Extensions */,
 				FADFC6C81F4E72710023B92C /* Kits */,
 				FA9F8A041D953C540058C369 /* UI */,
 				FA9F89F91D953C540058C369 /* Unit */,
@@ -4522,7 +4522,7 @@
 				FAB376B720836AE300F58152 /* XCTestCase+TestableFatalError.swift in Sources */,
 				FADFC6CD1F4E73EE0023B92C /* TestKitsPersistence.swift in Sources */,
 				FAB376B12083632000F58152 /* TestRotationManager.swift in Sources */,
-				FA0882522080AD6200EA7081 /* CameraPermissionTests.swift in Sources */,
+				FA0882522080AD6200EA7081 /* CameraDeniedPermissionTests.swift in Sources */,
 				FADFC6E71F4F62640023B92C /* TestPersistence.swift in Sources */,
 				FA0882552080AE0A00EA7081 /* UIViewController+Testing.swift in Sources */,
 				FADFC6E51F4F621D0023B92C /* PhotoSettingsPersistence.swift in Sources */,

@@ -39,18 +39,11 @@ class TestPhotoSettingsConstraints: XCTestCase {
         
         let camera = TestCamera(position: .back)
         camera.highestResolutionForFrameRateClosure = { frameRate in
-            if frameRate == targetFrameRate {
                 return frameRateBestResolution
-            } else {
-                return targetResolution
-            }
         }
         CurrentDevice.cameras = [camera]
         let resolver = photoSettings.constraintsResolver
-        guard let resolutionConstraints = resolver.constraints(for: photoSettings.resolution) else {
-            XCTFail("Resolution must be constrained")
-            return
-        }
+        let resolutionConstraints = resolver.constraints(for: photoSettings.resolution)!
         
         XCTAssertEqual(resolutionConstraints.count, 1, "Correct amount of constraints")
         let resolvedResolution = photoSettings.constraintsResolver.value(for: photoSettings.resolution,
@@ -83,18 +76,13 @@ class TestPhotoSettingsConstraints: XCTestCase {
         camera.highestResolutionForFrameRateClosure = { frameRate in
             if frameRate == targetFrameRate {
                 return frameRateBestResolution
-            } else if frameRate == targetBurstSpeed {
-                return burstSpeedBestResolution
-            } else {
-                return targetResolution
             }
+            return burstSpeedBestResolution
         }
+        
         CurrentDevice.cameras = [camera]
         let resolver = photoSettings.constraintsResolver
-        guard let resolutionConstraints = resolver.constraints(for: photoSettings.resolution) else {
-            XCTFail("Resolution must be constrained")
-            return
-        }
+        let resolutionConstraints = resolver.constraints(for: photoSettings.resolution)!
         
         XCTAssertEqual(resolutionConstraints.count, 1, "Correct amount of resolution constraints")
         let resolvedResolution = photoSettings.constraintsResolver.value(for: photoSettings.resolution,
@@ -103,10 +91,7 @@ class TestPhotoSettingsConstraints: XCTestCase {
         
         XCTAssertEqual(resolvedResolution, burstSpeedBestResolution, "Solved constrained resolution value correctly.")
         
-        guard let frameRateConstraints = resolver.constraints(for: photoSettings.frameRate) else {
-            XCTFail("Frame rate must be constrained")
-            return
-        }
+        let frameRateConstraints = resolver.constraints(for: photoSettings.frameRate)!
         
         XCTAssertEqual(frameRateConstraints.count, 1, "Correct amount of frame rate constraints")
         let resolvedFrameRate = photoSettings.constraintsResolver.value(for: photoSettings.frameRate,
@@ -144,8 +129,6 @@ class TestPhotoSettingsConstraints: XCTestCase {
     }
     
     func testBurstSpeedDoesntBringFrameRateUp() {
-        let targetResolution = IntSize(width: 1920, height: 1080)
-//        let burstSpeedResolution = IntSize(width: 640, height: 640)
         let targetBurstSpeed = 120
         let targetFrameRate = 30
         let correctFrameRate = 20
@@ -162,20 +145,13 @@ class TestPhotoSettingsConstraints: XCTestCase {
         
         let camera = TestCamera(position: .back)
         camera.highestFrameRateForResolutionClosure = { resolution in
-            if resolution < targetResolution {
-                return targetBurstSpeed
-            } else {
                 return correctFrameRate
-            }
         }
         
         CurrentDevice.cameras = [camera]
         let resolver = photoSettings.constraintsResolver
         
-        guard let frameRateConstraints = resolver.constraints(for: photoSettings.frameRate) else {
-            XCTFail("Frame rate must be constrained")
-            return
-        }
+        let frameRateConstraints = resolver.constraints(for: photoSettings.frameRate)!
         XCTAssertEqual(frameRateConstraints.count, 1, "Correct amount of frame rate constraints")
         let resolvedFrameRate = photoSettings.constraintsResolver.value(for: photoSettings.frameRate,
                                                                         camera: camera,
@@ -183,5 +159,4 @@ class TestPhotoSettingsConstraints: XCTestCase {
         
         XCTAssertEqual(resolvedFrameRate, correctFrameRate, "Solved constrained frame rate value correctly.")
     }
-    
 }

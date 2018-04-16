@@ -9,15 +9,20 @@ import XCTest
 
 class TestRotationManager: XCTestCase {
     
-    func testBeginEnd() {
+    func test_running_false_by_default() {
         XCTAssertFalse(RotationManager.running)
         
+    }
+    
+    func test_running_corresponds_to_begin_and_end_calls() {
         RotationManager.beginOrientationEvents()
         XCTAssertTrue(RotationManager.running)
         
         RotationManager.endOrientationEvents()
         XCTAssertFalse(RotationManager.running)
-        
+    }
+    
+    func test_unbalanced_end_causes_fatal_error() {
         expectFatalError {
             RotationManager.endOrientationEvents()
         }

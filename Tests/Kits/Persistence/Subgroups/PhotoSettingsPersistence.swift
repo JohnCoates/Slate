@@ -5,6 +5,7 @@
 //  Created by John Coates on 8/24/17.
 //  Copyright © 2017 John Coates. All rights reserved.
 //
+// swiftlint:disable force_try
 
 import XCTest
 #if os(iOS)
@@ -52,20 +53,11 @@ class PhotoSettingsPersistence: TestPersistence {
         
         let fetchRequest = KitCoreData.sortedFetchRequest
         let results: [KitCoreData]
-        do {
-            results = try context.fetch(fetchRequest)
-            XCTAssert(results.count == 1,
-                      "Wrong Kit count in saved Kits, expected 1, found: \(results.count)")
-            
-        } catch let error {
-            XCTFail("Failed to retrieve saved kit: \(error)")
-            return
-        }
+        results = try! context.fetch(fetchRequest)
+        XCTAssert(results.count == 1,
+                  "Wrong Kit count in saved Kits, expected 1, found: \(results.count)")
         
-        guard let coreDataKit = results.first else {
-            XCTFail("Couldn't get first kit")
-            return
-        }
+        let coreDataKit = results.first!
         
         let kit = coreDataKit.instance()
         let photoSettings = kit.photoSettings
