@@ -14,7 +14,7 @@ final class SimulatorCaptureViewController: BaseCaptureViewController {
     // MARK: - Camera Setup
 
     override func cameraSetup() {
-        let imageView = UIImageView(image: #imageLiteral(resourceName: "HannahDeathValley"))
+        let imageView = UIImageView(image:#imageLiteral(resourceName: "kylie"))
         imageView.contentMode = .scaleAspectFill
         view.insertSubview(imageView, at: 0)
         imageView.edges --> view.edges
