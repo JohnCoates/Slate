@@ -17,6 +17,7 @@ keep = [
   "iPhone X",
   "iPad iOS 9",
   "iPhone 6 iOS 9",
+  "iPad Air"
 ]
 kept = [
 ]
