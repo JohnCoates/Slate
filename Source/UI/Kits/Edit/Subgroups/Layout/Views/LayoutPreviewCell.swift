@@ -89,6 +89,7 @@ final class LayoutPreviewCell: UITableViewCell {
     
     func setUpTitleButton() {
         contentView.addSubview(titleButton)
+        titleButton.isHidden = true
         
         setUpTitleLabel()
         setUpTitleInteractivityIndicator()
