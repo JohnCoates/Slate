@@ -21,9 +21,14 @@ class AVPreviewCaptureViewController: BaseCaptureViewController {
     override func cameraSetup() {
         session.beginConfiguration()
         session.sessionPreset = AVCaptureSession.Preset.photo
-        let device = AVCaptureDevice.default(for: AVMediaType.video)
+        guard let device = AVCaptureDevice.default(for: AVMediaType.video) else {
+            print("Couldn't get ddefault capture device")
+            return
+        }
+        
         do {
-            try session.addInput(AVCaptureDeviceInput(device: device!))
+            let captureDeviceInput = try AVCaptureDeviceInput(device: device)
+            session.addInput(captureDeviceInput)
         } catch let error {
             print("error: \(error)")
             return
