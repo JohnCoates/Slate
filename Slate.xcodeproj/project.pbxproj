@@ -55,6 +55,9 @@
 		FA1805A31EC699A4004351B7 /* EditSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1805A21EC699A4004351B7 /* EditSize.swift */; };
 		FA1A2C9D1ECC57C60075FA0B /* PermissionsEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A2C9C1ECC57C60075FA0B /* PermissionsEducationViewController.swift */; };
 		FA1A2C9E1ECC57C60075FA0B /* PermissionsEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A2C9C1ECC57C60075FA0B /* PermissionsEducationViewController.swift */; };
+		FA1A5108218F8781009C7C7F /* UITheading.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5107218F8781009C7C7F /* UITheading.swift */; };
+		FA1A5109218F8781009C7C7F /* UITheading.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5107218F8781009C7C7F /* UITheading.swift */; };
+		FA1A510A218F8781009C7C7F /* UITheading.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5107218F8781009C7C7F /* UITheading.swift */; };
 		FA1C23801ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C237F1ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift */; };
 		FA1C23811ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C237F1ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift */; };
 		FA1CC8F0207C1FAD00B3589E /* LinkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CC8EF207C1FAD00B3589E /* LinkRow.swift */; };
@@ -799,6 +802,7 @@
 		FA18059E1EC688D9004351B7 /* EditRounding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRounding.swift; sourceTree = "<group>"; };
 		FA1805A21EC699A4004351B7 /* EditSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSize.swift; sourceTree = "<group>"; };
 		FA1A2C9C1ECC57C60075FA0B /* PermissionsEducationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsEducationViewController.swift; sourceTree = "<group>"; };
+		FA1A5107218F8781009C7C7F /* UITheading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITheading.swift; sourceTree = "<group>"; };
 		FA1C237F1ECBDF4800ED1BD1 /* PermissionsButtonIndicatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsButtonIndicatorViewController.swift; sourceTree = "<group>"; };
 		FA1CC8EF207C1FAD00B3589E /* LinkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkRow.swift; sourceTree = "<group>"; };
 		FA1CC8F2207C2CC600B3589E /* LinkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDataSource.swift; sourceTree = "<group>"; };
@@ -1387,6 +1391,14 @@
 				FA1805971EC54F38004351B7 /* CircleView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FA1A5106218F8763009C7C7F /* Threading */ = {
+			isa = PBXGroup;
+			children = (
+				FA1A5107218F8781009C7C7F /* UITheading.swift */,
+			);
+			path = Threading;
 			sourceTree = "<group>";
 		};
 		FA1CC8F8207C736B00B3589E /* Constraints */ = {
@@ -2165,6 +2177,7 @@
 		FA834BDE1D9927B60017CCCA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FA1A5106218F8763009C7C7F /* Threading */,
 				FA61B16C1F9EEAA80069B1A6 /* Tables */,
 				FAD5DACC1EF8ABE200239C96 /* Settings */,
 				FACA79731EE4CFC70001D468 /* Theme */,
@@ -4088,6 +4101,7 @@
 				FA6E97AC1EEA3D6500A73DFA /* Writer+Generators.swift in Sources */,
 				FAB9C27F1EE8FA0500C50545 /* Instructions.swift in Sources */,
 				FA89D1441EDF64450012F2F0 /* Floats.swift in Sources */,
+				FA1A5109218F8781009C7C7F /* UITheading.swift in Sources */,
 				FABB16981D9F14A100A8AC6C /* HUDTextureViewController.swift in Sources */,
 				FA0C96611EE8C5E300EA6EC8 /* UIView+Anchors.swift in Sources */,
 				FA850F301EE11E7B00B1CDDB /* TypedVariable.swift in Sources */,
@@ -4283,6 +4297,7 @@
 				FA9B342C207DAE3A0098D2FE /* BaseConstraint.swift in Sources */,
 				FA2B1EAF1EC97CE000E44613 /* DeleteLineIcon.swift in Sources */,
 				FA9B3439207DC4840098D2FE /* BurstSpeedSettingsViewController.swift in Sources */,
+				FA1A5108218F8781009C7C7F /* UITheading.swift in Sources */,
 				FAAE76791EEB881C00CA3416 /* DataCanvas.swift in Sources */,
 				FA1805931EC54A0F004351B7 /* ComponentEditBar.swift in Sources */,
 				FA1805A31EC699A4004351B7 /* EditSize.swift in Sources */,
@@ -4561,6 +4576,7 @@
 				FA2B1E831EC92B5B00E44613 /* DragGesture.swift in Sources */,
 				FAAE76591EEB41FB00CA3416 /* VectorImageCanvasIcon.swift in Sources */,
 				FA8AA5461ECC13140093D317 /* CanvasIconView.swift in Sources */,
+				FA1A510A218F8781009C7C7F /* UITheading.swift in Sources */,
 				FA3AAABA1EE25E15006028AC /* Renderer+Sampling.swift in Sources */,
 				FA2B1EB31EC97E7300E44613 /* CodeIconButton.swift in Sources */,
 				FA5709AE1ECD4A36000362C8 /* CameraDeniedPermisionViewController.swift in Sources */,

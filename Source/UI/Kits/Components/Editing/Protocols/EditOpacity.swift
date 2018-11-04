@@ -34,10 +34,12 @@ extension GenericComponent where Self: EditOpacity, ViewInstance: EditOpacity {
     
     var opacity: Float {
         get {
-            return typedView.opacity
+            return MainThread.get { typedView.opacity }
         }
         set {
-            typedView.opacity = newValue
+            MainThread.sync {
+                self.typedView.opacity = newValue
+            }
         }
     }
 }
