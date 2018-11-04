@@ -102,11 +102,17 @@ class EditKitViewController: SettingsTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let settingsGroup = settingsGroups[indexPath.item]
-        
+        guard let navigationController = navigationController else {
+            print("Error: Missing navigation controller!")
+            return
+        }
         switch settingsGroup {
         case .layout:
             let viewController = EditKitLayoutViewController(kit: kit)
-            navigationController?.pushViewController(viewController, animated: true)
+            navigationController.pushViewController(viewController, animated: true)
+        case .photoSettings:
+            let viewController = KitPhotoSettingsViewController(kit: kit)
+            navigationController.pushViewController(viewController, animated: true)
         default:
             break
         }
