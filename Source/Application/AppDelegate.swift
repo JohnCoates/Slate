@@ -8,21 +8,12 @@
 
 import UIKit
 
-#if !SKIP_FABRIC
-import Fabric
-import Crashlytics
-#endif
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        #if !SKIP_FABRIC
-            Fabric.with([Crashlytics.self])
-        #endif
-        
         Theme.setAppearanceOptions()
         
         let window = DebugWindow(frame: UIScreen.main.bounds)

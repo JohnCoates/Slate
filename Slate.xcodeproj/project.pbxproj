@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6EDF7655229F7620D250358E /* Pods_Slate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866CB97E0921FF46013F02E3 /* Pods_Slate.framework */; };
-		DDEC6891C3F8B7ED1FA2FC94 /* Pods_Feature_Catalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 688C078884E306285B5F2E27 /* Pods_Feature_Catalog.framework */; };
 		FA0462B31EC3CC76007B74A0 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462B21EC3CC76007B74A0 /* SwitchCameraButton.swift */; };
 		FA0462B61EC3CDFA007B74A0 /* ControlBarItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462B51EC3CDFA007B74A0 /* ControlBarItemCell.swift */; };
 		FA0462B91EC3DF81007B74A0 /* KitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0462B81EC3DF81007B74A0 /* KitManager.swift */; };
@@ -328,10 +326,6 @@
 		FA7649051F9EE80200C6DD87 /* TextFieldHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7649031F9EE80200C6DD87 /* TextFieldHandler.swift */; };
 		FA76F5421ED3C32D00059906 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */; };
 		FA76F5461ED48FFC00059906 /* ImageCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76F5451ED48FFC00059906 /* ImageCaptureManager.swift */; };
-		FA76F54C1ED4A2C100059906 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA76F54A1ED4A2C100059906 /* Fabric.framework */; };
-		FA76F54E1ED4A2C100059906 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA76F54A1ED4A2C100059906 /* Fabric.framework */; };
-		FA76F54F1ED4A2C100059906 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA76F54B1ED4A2C100059906 /* Crashlytics.framework */; };
-		FA76F5511ED4A2C100059906 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA76F54B1ED4A2C100059906 /* Crashlytics.framework */; };
 		FA7724CD1ED1A25F00C5C227 /* EditOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BD7A41ED18D0C00D1761C /* EditOpacity.swift */; };
 		FA78F28E1E144C0E00D34947 /* DebugBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F28D1E144C0E00D34947 /* DebugBarController.swift */; };
 		FA78F2921E144E4600D34947 /* DebugBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78F2911E144E4600D34947 /* DebugBarDelegate.swift */; };
@@ -772,23 +766,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		02961120925EFB47073F137E /* Pods-Slate Local.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate Local.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Slate Local/Pods-Slate Local.debug.xcconfig"; sourceTree = "<group>"; };
-		085C8EBAC1B8561F45FE5DB9 /* Pods-Feature Catalog.fastdebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feature Catalog.fastdebug.xcconfig"; path = "Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog.fastdebug.xcconfig"; sourceTree = "<group>"; };
-		1329C1F06936529741A52443 /* Pods-Slate Local.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate Local.release.xcconfig"; path = "Pods/Target Support Files/Pods-Slate Local/Pods-Slate Local.release.xcconfig"; sourceTree = "<group>"; };
-		1BD8757BC3527BD9562DA2A7 /* Pods_Slate_Local.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slate_Local.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B2A3C8F82002625FA872283 /* Pods-Slate Local.fastdebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate Local.fastdebug.xcconfig"; path = "Pods/Target Support Files/Pods-Slate Local/Pods-Slate Local.fastdebug.xcconfig"; sourceTree = "<group>"; };
-		2C9932AFAAA473C517DC6392 /* Pods-Slate.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Slate/Pods-Slate.appstore.xcconfig"; sourceTree = "<group>"; };
-		2D4649AF9B4CD5DE77617208 /* Pods-Feature Catalog.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feature Catalog.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog.appstore.xcconfig"; sourceTree = "<group>"; };
-		60F4904F4767BF970E0F9859 /* Pods-Slate.fastdebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate.fastdebug.xcconfig"; path = "Pods/Target Support Files/Pods-Slate/Pods-Slate.fastdebug.xcconfig"; sourceTree = "<group>"; };
-		688C078884E306285B5F2E27 /* Pods_Feature_Catalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Feature_Catalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		866CB97E0921FF46013F02E3 /* Pods_Slate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F964C72096AB2255F99FA63 /* Pods-Feature Catalog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feature Catalog.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog.release.xcconfig"; sourceTree = "<group>"; };
-		C41AB8EF87A7A674E102A8CC /* Pods-Slate.lint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate.lint.xcconfig"; path = "Pods/Target Support Files/Pods-Slate/Pods-Slate.lint.xcconfig"; sourceTree = "<group>"; };
-		C65C3DD7DBBD649D3B2B141A /* Pods-Slate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Slate/Pods-Slate.debug.xcconfig"; sourceTree = "<group>"; };
-		E2BE2BA921BB886A12F73219 /* Pods-Slate Local.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate Local.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Slate Local/Pods-Slate Local.appstore.xcconfig"; sourceTree = "<group>"; };
-		E803F739E995BBB1C38B7A04 /* Pods-Feature Catalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feature Catalog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog.debug.xcconfig"; sourceTree = "<group>"; };
-		E893ECE96899276229D0D247 /* Pods-Feature Catalog.lint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feature Catalog.lint.xcconfig"; path = "Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog.lint.xcconfig"; sourceTree = "<group>"; };
-		EA803CD2EB0BB5389D46E0F6 /* Pods-Slate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Slate/Pods-Slate.release.xcconfig"; sourceTree = "<group>"; };
 		FA0462B21EC3CC76007B74A0 /* SwitchCameraButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCameraButton.swift; sourceTree = "<group>"; };
 		FA0462B51EC3CDFA007B74A0 /* ControlBarItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlBarItemCell.swift; sourceTree = "<group>"; };
 		FA0462B81EC3DF81007B74A0 /* KitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitManager.swift; sourceTree = "<group>"; };
@@ -1162,10 +1139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA76F54C1ED4A2C100059906 /* Fabric.framework in Frameworks */,
 				FA20FA511E12624C00032AF3 /* MetalKit.framework in Frameworks */,
-				FA76F54F1ED4A2C100059906 /* Crashlytics.framework in Frameworks */,
-				6EDF7655229F7620D250358E /* Pods_Slate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1187,9 +1161,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA76F5511ED4A2C100059906 /* Crashlytics.framework in Frameworks */,
-				FA76F54E1ED4A2C100059906 /* Fabric.framework in Frameworks */,
-				DDEC6891C3F8B7ED1FA2FC94 /* Pods_Feature_Catalog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1203,27 +1174,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		611A72466D3A5951857E5D13 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E803F739E995BBB1C38B7A04 /* Pods-Feature Catalog.debug.xcconfig */,
-				8F964C72096AB2255F99FA63 /* Pods-Feature Catalog.release.xcconfig */,
-				C65C3DD7DBBD649D3B2B141A /* Pods-Slate.debug.xcconfig */,
-				EA803CD2EB0BB5389D46E0F6 /* Pods-Slate.release.xcconfig */,
-				02961120925EFB47073F137E /* Pods-Slate Local.debug.xcconfig */,
-				1329C1F06936529741A52443 /* Pods-Slate Local.release.xcconfig */,
-				2D4649AF9B4CD5DE77617208 /* Pods-Feature Catalog.appstore.xcconfig */,
-				2C9932AFAAA473C517DC6392 /* Pods-Slate.appstore.xcconfig */,
-				E2BE2BA921BB886A12F73219 /* Pods-Slate Local.appstore.xcconfig */,
-				085C8EBAC1B8561F45FE5DB9 /* Pods-Feature Catalog.fastdebug.xcconfig */,
-				60F4904F4767BF970E0F9859 /* Pods-Slate.fastdebug.xcconfig */,
-				2B2A3C8F82002625FA872283 /* Pods-Slate Local.fastdebug.xcconfig */,
-				E893ECE96899276229D0D247 /* Pods-Feature Catalog.lint.xcconfig */,
-				C41AB8EF87A7A674E102A8CC /* Pods-Slate.lint.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		9EF4533E798C01A4F72A666D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1232,9 +1182,6 @@
 				FA76F54B1ED4A2C100059906 /* Crashlytics.framework */,
 				FA20FA501E12624C00032AF3 /* MetalKit.framework */,
 				FACC8FD21D98A52500589230 /* Carthage */,
-				688C078884E306285B5F2E27 /* Pods_Feature_Catalog.framework */,
-				866CB97E0921FF46013F02E3 /* Pods_Slate.framework */,
-				1BD8757BC3527BD9562DA2A7 /* Pods_Slate_Local.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2636,7 +2583,6 @@
 				FAB0AA6A1EC8083D008DCD23 /* Feature Catalog */,
 				9EF4533E798C01A4F72A666D /* Frameworks */,
 				FA9F89E31D953C540058C369 /* Products */,
-				611A72466D3A5951857E5D13 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -3671,7 +3617,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA9F8A0A1D953C540058C369 /* Build configuration list for PBXNativeTarget "Slate" */;
 			buildPhases = (
-				AF267DBC92C6F6E6E0A71DE9 /* [CP] Check Pods Manifest.lock */,
 				FACC8FD81D98AD4500589230 /* Swiftlint */,
 				FAF5AB321EEC6BA100EDED04 /* Tailor */,
 				FA9F89DE1D953C540058C369 /* Sources */,
@@ -3679,10 +3624,7 @@
 				FAAE76841EEB88F800CA3416 /* Generate Images */,
 				FA9F89E01D953C540058C369 /* Resources */,
 				FAADE0D51D9D1CB200AA5729 /* Build Metal Shader Library */,
-				3878ED78F93436AB1BAD504E /* [CP] Embed Pods Frameworks */,
-				30A43601DB775A1683E45B04 /* [CP] Copy Pods Resources */,
 				FA850F471EE20BA000B1CDDB /* Integrate Reveal */,
-				FA76F5491ED4A29100059906 /* Fabric */,
 			);
 			buildRules = (
 				FAADE0D41D9D142E00AA5729 /* PBXBuildRule */,
@@ -3736,7 +3678,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAB0AA781EC8083D008DCD23 /* Build configuration list for PBXNativeTarget "Feature Catalog" */;
 			buildPhases = (
-				B70C2C9096055217B1A095D8 /* [CP] Check Pods Manifest.lock */,
 				FA5709AB1ECC7B2F000362C8 /* Swiftlint */,
 				FAB0AA651EC8083D008DCD23 /* Sources */,
 				FAB0AA661EC8083D008DCD23 /* Frameworks */,
@@ -3746,8 +3687,6 @@
 				FA2B1EAD1EC932DC00E44613 /* Build Metal Shader Library */,
 				FA5709A41ECC6D37000362C8 /* Clear Simulator Permissions */,
 				FA76F5431ED3C93800059906 /* Integrate Reveal */,
-				229DBBBFBD0F3EEDD172E3AA /* [CP] Embed Pods Frameworks */,
-				F06FD0C2036AEF6649093ED3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 				FA2B1EAC1EC9328700E44613 /* PBXBuildRule */,
@@ -3909,96 +3848,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		229DBBBFBD0F3EEDD172E3AA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		30A43601DB775A1683E45B04 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Slate/Pods-Slate-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3878ED78F93436AB1BAD504E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Slate/Pods-Slate-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AF267DBC92C6F6E6E0A71DE9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B70C2C9096055217B1A095D8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F06FD0C2036AEF6649093ED3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Feature Catalog/Pods-Feature Catalog-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		FA2B1EAD1EC932DC00E44613 /* Build Metal Shader Library */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -4054,20 +3903,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
 			shellScript = "if [ ! -z \"${BUILD_LAYOUT}\" ]\nthen\necho \"Integrating Reveal\"\nREVEAL_APP_PATH=$(mdfind kMDItemCFBundleIdentifier=\"com.ittybittyapps.Reveal2\" | head -n 1)\nBUILD_SCRIPT_PATH=\"${REVEAL_APP_PATH}/Contents/SharedSupport/Scripts/reveal_server_build_phase.sh\"\nif [ \"${REVEAL_APP_PATH}\" -a -e \"${BUILD_SCRIPT_PATH}\" ]; then\n\"${BUILD_SCRIPT_PATH}\"\nelse\necho \"Reveal Server not loaded: Cannot find a compatible Reveal app.\"\nfi\nfi";
-		};
-		FA76F5491ED4A29100059906 /* Fabric */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Fabric;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ ! -z \"${FABRIC_API_KEY}\" ]\nthen\n\"${PODS_ROOT}/Fabric/run\" ${FABRIC_API_KEY} ${FABRIC_BUILD_SECRET}\nelse\necho \"Skipping Fabric\"\nfi";
 		};
 		FA850F471EE20BA000B1CDDB /* Integrate Reveal */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -4954,7 +4789,6 @@
 		};
 		FA0634901ED4B19500C8FC90 /* AppStore */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C9932AFAAA473C517DC6392 /* Pods-Slate.appstore.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -5023,7 +4857,6 @@
 		};
 		FA0634951ED4B19500C8FC90 /* AppStore */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D4649AF9B4CD5DE77617208 /* Pods-Feature Catalog.appstore.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = FeatureCatalogAppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -5199,7 +5032,6 @@
 		};
 		FA850F491EE20C5200B1CDDB /* FastDebug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60F4904F4767BF970E0F9859 /* Pods-Slate.fastdebug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -5288,7 +5120,6 @@
 		};
 		FA850F4F1EE20C5200B1CDDB /* FastDebug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 085C8EBAC1B8561F45FE5DB9 /* Pods-Feature Catalog.fastdebug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = FeatureCatalogAppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -5429,7 +5260,6 @@
 		};
 		FA9F8A0B1D953C540058C369 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C65C3DD7DBBD649D3B2B141A /* Pods-Slate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -5452,7 +5282,6 @@
 		};
 		FA9F8A0C1D953C540058C369 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA803CD2EB0BB5389D46E0F6 /* Pods-Slate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -5533,7 +5362,6 @@
 		};
 		FAB0AA791EC8083D008DCD23 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E803F739E995BBB1C38B7A04 /* Pods-Feature Catalog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = FeatureCatalogAppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -5553,7 +5381,6 @@
 		};
 		FAB0AA7A1EC8083D008DCD23 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F964C72096AB2255F99FA63 /* Pods-Feature Catalog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = FeatureCatalogAppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -5720,7 +5547,6 @@
 		};
 		FAF5AB2B1EEC6B7200EDED04 /* Lint */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C41AB8EF87A7A674E102A8CC /* Pods-Slate.lint.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -5809,7 +5635,6 @@
 		};
 		FAF5AB301EEC6B7200EDED04 /* Lint */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E893ECE96899276229D0D247 /* Pods-Feature Catalog.lint.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = FeatureCatalogAppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
