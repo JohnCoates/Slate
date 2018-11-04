@@ -58,8 +58,8 @@ class EditKitViewController: SettingsTableViewController {
        return [
         .layout,
         .photoSettings,
-        .videoSettings,
-        .previewSettings
+//        .videoSettings,
+//        .previewSettings
         ]
     }()
     
