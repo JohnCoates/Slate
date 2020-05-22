@@ -27,7 +27,7 @@ class InverseMaskButtonImage: Button {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        Critical.methodNotDefined()
+        Critical.unimplemented()
     }
     
     // MARK: - Setup

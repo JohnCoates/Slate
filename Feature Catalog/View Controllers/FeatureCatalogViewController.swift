@@ -17,7 +17,7 @@ UINavigationControllerDelegate, NavigationConvenience {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        Critical.methodNotDefined()
+        Critical.unimplemented()
     }
     
     // MARK: - Setup

@@ -67,11 +67,11 @@ final class LayoutPreviewCell: UITableViewCell {
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        Critical.methodNotDefined()
+        Critical.unimplemented()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        Critical.methodNotDefined()
+        Critical.unimplemented()
     }
     
     // MARK: - Setup

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Critical {
+struct Critical {
     
     static func cast<CastType>(_ valueMaybe: Any?,
                                errorMessage errorMessageMaybe: String? = nil,
@@ -70,10 +70,10 @@ class Critical {
         fatalError("Value not supported by \(method): \(value)", file: file, line: line)
     }
     
-    static func methodNotDefined(file: StaticString = #file,
-                                 line: UInt = #line,
-                                 method: StaticString = #function) -> Never {
-        fatalError("Method not defined: \(method)", file: file, line: line)
+    static func unimplemented(file: StaticString = #file,
+                              line: UInt = #line,
+                              method: StaticString = #function) -> Never {
+        fatalError("Method not implemented: \(method)", file: file, line: line)
     }
     
     static func subclassMustImplementMethod(file: StaticString = #file,

@@ -29,7 +29,7 @@ KitSettingsDataSource {
     }
     
     required init(coder aDecoder: NSCoder) {
-        Critical.methodNotDefined()
+        Critical.unimplemented()
     }
     
     // MARK: - View Management

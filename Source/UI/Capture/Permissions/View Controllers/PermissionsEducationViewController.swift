@@ -44,7 +44,7 @@ class PermissionsEducationViewController: UIViewController {
     
     /// Used by subclasses
     func configureEducation() {
-        fatalError("configureEducation not implemented")
+        Critical.subclassMustImplementMethod()
     }
     
     func setUpViews() {

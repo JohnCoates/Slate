@@ -72,7 +72,7 @@ class PermissionsWindow: UIWindow {
     }
     
     required init(coder aDecoder: NSCoder) {
-        fatalError("coder: not implemented")
+        Critical.unimplemented()
     }
     
     // MARK: - Setup

@@ -31,7 +31,7 @@ class BaseCaptureViewController: UIViewController, UIGestureRecognizerDelegate, 
     }
     
     required init(coder aDecoder: NSCoder) {
-        Critical.methodNotDefined()
+        Critical.unimplemented()
     }
     
     var permissionsManager: PermissionsManager?

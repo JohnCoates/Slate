@@ -23,7 +23,7 @@ final class MetalCaptureViewController: BaseCaptureViewController, AVCapturePhot
     }
     
     required init(coder aDecoder: NSCoder) {
-        Critical.methodNotDefined()
+        Critical.unimplemented()
     }
     
     deinit {

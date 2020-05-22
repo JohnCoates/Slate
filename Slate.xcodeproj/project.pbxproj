@@ -43,7 +43,6 @@
 		FA1272EA1EF1C44500100641 /* GenericComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1272E91EF1C44500100641 /* GenericComponent.swift */; };
 		FA1272EB1EF1C44500100641 /* GenericComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1272E91EF1C44500100641 /* GenericComponent.swift */; };
 		FA1325C81EF871EE000E6918 /* Critical.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1325C71EF871EE000E6918 /* Critical.swift */; };
-		FA1325C91EF871EE000E6918 /* Critical.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1325C71EF871EE000E6918 /* Critical.swift */; };
 		FA167A7420779AB6007EA3E7 /* ALTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA167A7320779AB6007EA3E7 /* ALTypeAliases.swift */; };
 		FA167A7520779AB6007EA3E7 /* ALTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA167A7320779AB6007EA3E7 /* ALTypeAliases.swift */; };
 		FA167A7620779AB6007EA3E7 /* ALTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA167A7320779AB6007EA3E7 /* ALTypeAliases.swift */; };
@@ -502,7 +501,6 @@
 		FAB64A2C2080574900106268 /* TestCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B3442207E0BEC0098D2FE /* TestCamera.swift */; };
 		FAB64A2D2080575800106268 /* Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C9F952079030F00534901 /* Primitives.swift */; };
 		FAB64A30208057E300106268 /* MacKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB64A2F208057E300106268 /* MacKit.swift */; };
-		FAB64A31208057FE00106268 /* Critical.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1325C71EF871EE000E6918 /* Critical.swift */; };
 		FAB64A322080590500106268 /* AVCaptureDevice.Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB69CA207F191D00246918 /* AVCaptureDevice.Format.swift */; };
 		FAB64A332080591800106268 /* CurrentDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C9F8D2079015400534901 /* CurrentDevice.swift */; };
 		FAB64A342080592B00106268 /* SimulatorCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C9FA220791F8500534901 /* SimulatorCamera.swift */; };
@@ -1691,6 +1689,21 @@
 			path = Device;
 			sourceTree = "<group>";
 		};
+		FA3942EC24788A1300BCABA6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FA3942ED24788A2600BCABA6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FA1325C71EF871EE000E6918 /* Critical.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		FA3AAA891EE24C35006028AC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -2304,7 +2317,6 @@
 				FA850F341EE1245200B1CDDB /* Array+Extensions.swift */,
 				FA6E97791EEA0C1600A73DFA /* Data+Compression.swift */,
 				FACF0F411EECDECD00B0211C /* URL+Paths.swift */,
-				FA1325C71EF871EE000E6918 /* Critical.swift */,
 				FA9820842078046300E35E35 /* NSCoder+Extensions.swift */,
 			);
 			path = "Standard Library";
@@ -2596,6 +2608,7 @@
 			children = (
 				FA9F89E41D953C540058C369 /* Source */,
 				FA9F8A141D953EFE0058C369 /* Resources */,
+				FA3942EC24788A1300BCABA6 /* Utilities */,
 				FA9F8A131D953EDF0058C369 /* Tests */,
 				FA4DFECF1D9DBD1A0068706F /* macSlate */,
 				FAB0AA6A1EC8083D008DCD23 /* Feature Catalog */,
@@ -2632,6 +2645,7 @@
 				FA2F8E3E1DA2286F00993949 /* Rendering */,
 				FA2426CA1D9A677800AEE60C /* Camera */,
 				FACE21EE1D98B9C500B088C8 /* Application */,
+				FA3942ED24788A2600BCABA6 /* Utilities */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -4087,7 +4101,6 @@
 				FA850F331EE1244100B1CDDB /* String+Extensions.swift in Sources */,
 				FA6477651EE3A30900A63A22 /* ChromaticAberration.metal in Sources */,
 				FA4021C71DA0AEE800752F3B /* MetalCameraController.swift in Sources */,
-				FAB64A31208057FE00106268 /* Critical.swift in Sources */,
 				FA6E97A91EEA3D3100A73DFA /* Writer+DataSections.swift in Sources */,
 				FA850EFD1EDFD0BB00B1CDDB /* CallStatement.swift in Sources */,
 				FAB9C27A1EE8F95E00C50545 /* Canvas.swift in Sources */,
@@ -4490,7 +4503,6 @@
 				FA373E4D207ADB270092BA67 /* DBPhotoSettingsPriorities.swift in Sources */,
 				FA8CE4261ECD7FA700788026 /* UIView+subviews.swift in Sources */,
 				FA0C965A1EE8952800EA6EC8 /* Anchor.swift in Sources */,
-				FA1325C91EF871EE000E6918 /* Critical.swift in Sources */,
 				FA61B1701F9EEAD90069B1A6 /* TableCellTextField.swift in Sources */,
 				FA2B1E881EC92B5B00E44613 /* ChromaticAberration.metal in Sources */,
 				FA9B3433207DC0130098D2FE /* DBBurstSpeed.swift in Sources */,
