@@ -22,7 +22,7 @@ class MainThread {
         }
     }
     
-    static func sync(execute: () -> ()) {
+    static func sync(execute: () -> Void) {
         if Thread.current.isMainThread {
             execute()
         } else {

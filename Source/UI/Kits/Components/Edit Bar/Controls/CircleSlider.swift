@@ -139,8 +139,8 @@ final class CircleSlider: UIView {
         innerCircle.frame = innerFrame
         innerCircle.center = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
         
-        let center = CGPoint (x: innerFrame.width / 2,
-                              y: innerFrame.height / 2)
+        let center = CGPoint(x: innerFrame.width / 2,
+                             y: innerFrame.height / 2)
         let circleRadius = (innerFrame.width / 2) + (progressStrokeWidth / 2)
         let startAngleFactor: Float = 1.5
         let startAngle: Float = Float.pi * startAngleFactor

@@ -4001,7 +4001,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "if [ ! -z \"${SKIP_LINT}\" ]\nthen\necho \"Skipping Lint\"\nelse\nif which swiftlint >/dev/null; then\n    exit 0\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\nfi\n";
+			shellScript = "if [ ! -z \"${SKIP_LINT}\" ]\nthen\necho \"Skipping Lint\"\nelse\nif which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\nfi\n";
 		};
 		FAF5AB321EEC6BA100EDED04 /* Tailor */ = {
 			isa = PBXShellScriptBuildPhase;

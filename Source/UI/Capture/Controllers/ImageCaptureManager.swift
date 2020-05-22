@@ -9,7 +9,6 @@
 import UIKit
 import Photos
 
-
 class ImageCaptureManager: PermissionsManagerDelegate {
     
     // MARK: - Public Methods

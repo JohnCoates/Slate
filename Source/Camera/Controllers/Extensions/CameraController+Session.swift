@@ -25,7 +25,7 @@ extension CameraController {
         
         attachPreviewOutput(toSession: session)
         attachStillPhotoOutput(toSession: session)
-        var callAfterSessionRunning: (() -> Void)? = nil
+        var callAfterSessionRunning: (() -> Void)?
         setBestFormat(for: camera,
                       callAfterSessionRunning: &callAfterSessionRunning)
         

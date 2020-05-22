@@ -70,7 +70,7 @@ class MetalCameraController: CameraController {
                 return
             }
             
-            var optionalTextureRef: CVMetalTexture? = nil
+            var optionalTextureRef: CVMetalTexture?
             let width = CVPixelBufferGetWidth(imageBuffer)
             let height = CVPixelBufferGetHeight(imageBuffer)
             let textureAttributes: CFDictionary? = nil

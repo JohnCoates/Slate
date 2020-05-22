@@ -43,15 +43,11 @@ extension RuntimeShader {
 extension RuntimeShader.Struct {
     
     subscript(name: String) -> RuntimeShader.Float4 {
-        get {
-            return RuntimeShader.Float4(name: name, type: .float4)
-        }
+        RuntimeShader.Float4(name: name, type: .float4)
     }
     
     subscript(name: String) -> RuntimeShader.SIMD2<Float> {
-        get {
-            return RuntimeShader.SIMD2<Float>(name: name, type: .SIMD2<Float>)
-        }
+        RuntimeShader.SIMD2<Float>(name: name, type: .SIMD2<Float>)
     }
 }
 

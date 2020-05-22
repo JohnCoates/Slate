@@ -4,6 +4,7 @@ disabled_rules:
    - closure_parameter_position
    - identifier_name
    - fallthrough
+   - no_fallthrough_only
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Pods
   - Source/UI/Capture/Code Icons

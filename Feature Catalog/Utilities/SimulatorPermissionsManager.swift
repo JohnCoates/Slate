@@ -36,9 +36,9 @@ struct SimulatorPermissionsManager {
         }
         
         let statement = "DELETE FROM access WHERE client  = '\(bundleIdentifier)'"
-        var errMsg: UnsafeMutablePointer<Int8>? = nil
+        var errMsg: UnsafeMutablePointer<Int8>?
         
-        if (sqlite3_exec(database, statement, nil, nil, &errMsg) != SQLITE_OK) {
+        if sqlite3_exec(database, statement, nil, nil, &errMsg) != SQLITE_OK {
             sqlite3_free(errMsg)
             fatalError("Failed to delete permissions")
         }

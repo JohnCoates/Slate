@@ -57,7 +57,7 @@ class EditKitViewController: SettingsTableViewController {
     lazy var settingsGroups: [SettingsGroup] = {
        return [
         .layout,
-        .photoSettings,
+        .photoSettings
 //        .videoSettings,
 //        .previewSettings
         ]
