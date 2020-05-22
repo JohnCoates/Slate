@@ -22,7 +22,7 @@ class KitsViewController: UITableViewController {
         
         tableView.register(KitTableViewCell.self,
                            forCellReuseIdentifier: cellReuseIdentifier)
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 80
         
         // hide empty table view cells

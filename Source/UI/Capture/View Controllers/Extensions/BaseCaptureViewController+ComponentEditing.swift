@@ -104,7 +104,7 @@ extension BaseCaptureViewController: ComponentEditBarDelegate {
             userConfirmedBlock(true)
             self.editGestures.removeAll()
             component.view.removeFromSuperview()
-            guard let index = kit.components.index(where: {$0 === component}) else {
+            guard let index = kit.components.firstIndex(where: {$0 === component}) else {
                 fatalError("Couldn't find component to delete: \(component)")
             }
             kit.components.remove(at: index)

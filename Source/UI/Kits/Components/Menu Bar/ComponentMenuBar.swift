@@ -54,7 +54,7 @@ final class ComponentMenuBar: UIView,
         super.layoutSubviews()
         
         collectionView.frame = bounds
-        bringSubview(toFront: collectionView)
+        bringSubviewToFront(collectionView)
         
     }
     

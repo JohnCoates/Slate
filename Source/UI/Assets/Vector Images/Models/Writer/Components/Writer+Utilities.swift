@@ -11,14 +11,14 @@ import Foundation
 extension VectorAssetWriter {
     
     func sectionIndex(forSection section: String) -> UInt16 {
-        guard let index = sections.index(of: section) else {
+        guard let index = sections.firstIndex(of: section) else {
             fatalError("Couldn't find section \(section) in sections: \(sections)")
         }
         return UInt16(index)
     }
     
     func index(forFloat float: Float) -> UInt16 {
-        guard let index = floats.index(where: { $0.value == float }) else {
+        guard let index = floats.firstIndex(where: { $0.value == float }) else {
             fatalError("Couldn't find float value: \(float) in \(floats)!")
         }
         let value = floats[index]

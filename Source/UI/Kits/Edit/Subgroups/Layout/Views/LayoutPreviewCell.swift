@@ -66,7 +66,7 @@ final class LayoutPreviewCell: UITableViewCell {
         initialSetup()
     }
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         Critical.methodNotDefined()
     }
     

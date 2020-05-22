@@ -25,7 +25,10 @@ extension VectorAssetWriter {
         
         for float in floats {
             var value: Float = float.value
-            data.append(UnsafeBufferPointer(start: &value, count: 1))
+
+            withUnsafePointer(to: &value) {
+                data.append(UnsafeBufferPointer(start: $0, count: 1))
+            }
         }
     }
     

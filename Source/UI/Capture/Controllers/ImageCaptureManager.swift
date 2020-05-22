@@ -6,8 +6,9 @@
 //  Copyright © 2017 John Coates. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Photos
+
 
 class ImageCaptureManager: PermissionsManagerDelegate {
     

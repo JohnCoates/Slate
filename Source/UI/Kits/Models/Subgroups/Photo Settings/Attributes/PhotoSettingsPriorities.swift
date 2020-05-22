@@ -38,8 +38,8 @@ struct PhotoSettingsPriorities {
     
     func `is`(priority: PhotoSettingsPriority,
               higherThan: PhotoSettingsPriority) -> Bool {
-        guard let priorityIndex = items.index(of: priority),
-            let higherThanIndex = items.index(of: higherThan) else {
+        guard let priorityIndex = items.firstIndex(of: priority),
+            let higherThanIndex = items.firstIndex(of: higherThan) else {
             fatalError("Priority missing in comparsion between \(priority) and \(higherThan) in \(items)")
         }
         // the lower the index, the higher the priority

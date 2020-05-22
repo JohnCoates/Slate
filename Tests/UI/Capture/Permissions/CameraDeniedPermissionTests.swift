@@ -17,7 +17,7 @@ class CameraDeniedPermissionTests: XCTestCase {
         vc.openSettings()
         
         let openedURL = mockApplication.urlOpened!
-        XCTAssertEqual(openedURL.absoluteString, UIApplicationOpenSettingsURLString)
+        XCTAssertEqual(openedURL.absoluteString, UIApplication.openSettingsURLString)
     }
 }
 

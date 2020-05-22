@@ -41,7 +41,7 @@ extension CameraController {
             print("Can't switch to next camera, couldn't find current device as input")
             return
         }
-        guard let currentDeviceIndex = devices.index(of: currentDevice) else {
+        guard let currentDeviceIndex = devices.firstIndex(of: currentDevice) else {
             print("Can't switch to next camera, couldn't find current device in list")
             return
         }

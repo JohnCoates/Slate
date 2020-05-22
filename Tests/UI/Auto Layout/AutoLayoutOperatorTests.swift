@@ -100,7 +100,7 @@ class AutoLayoutOperatorTests: XCTestCase {
     
     // MARK: - Utilities
     
-    func buildSingle(attribute: NSLayoutAttribute,
+    func buildSingle(attribute: NSLayoutConstraint.Attribute,
                      views: [UIView],
                      file: StaticString = #file, line: UInt = #line,
                      generate: (UIView, UIView) -> Void) {
@@ -116,7 +116,7 @@ class AutoLayoutOperatorTests: XCTestCase {
         NSLayoutConstraint.deactivate(constraints)
     }
     
-    func buildSingle(attribute: NSLayoutAttribute,
+    func buildSingle(attribute: NSLayoutConstraint.Attribute,
                      view: UIView,
                      constant: CGFloat,
                      file: StaticString = #file, line: UInt = #line,
@@ -132,7 +132,7 @@ class AutoLayoutOperatorTests: XCTestCase {
         NSLayoutConstraint.deactivate(constraints)
     }
     
-    func buildMultiple(attributes: [NSLayoutAttribute],
+    func buildMultiple(attributes: [NSLayoutConstraint.Attribute],
                        views: [UIView],
                        file: StaticString = #file, line: UInt = #line,
                        generate: (UIView, UIView) -> Void) {
@@ -150,7 +150,7 @@ class AutoLayoutOperatorTests: XCTestCase {
         NSLayoutConstraint.deactivate(constraints)
     }
     
-    func buildMultiple(attributes: [NSLayoutAttribute],
+    func buildMultiple(attributes: [NSLayoutConstraint.Attribute],
                        view: UIView,
                        constants: [CGFloat],
                        file: StaticString = #file, line: UInt = #line,

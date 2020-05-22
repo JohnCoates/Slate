@@ -16,9 +16,9 @@ struct VertexOut {
 
 // passthrough
 
-vertex VertexOut vertexPassthrough(device VertexIn *vertices [[ buffer(0) ]],
-                                   device float2 *textureCoordinates [[ buffer(1) ]],
-                                    uint vertexID [[ vertex_id ]]) {
+vertex VertexOut vertexPassthrough(const device VertexIn *vertices [[ buffer(0) ]],
+                                   const device float2 *textureCoordinates [[ buffer(1) ]],
+                                   uint vertexID [[ vertex_id ]]) {
     VertexOut out;
     out.position = vertices[vertexID].position;
 //    out.textureCoordinates = vertices[vertexId].textureCoordinates;

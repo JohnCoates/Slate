@@ -44,7 +44,7 @@ class InverseMaskButtonImage: Button {
     let shape = CAShapeLayer()
     
     func setUpShape() {
-        shape.fillRule = kCAFillRuleEvenOdd
+        shape.fillRule = CAShapeLayerFillRule.evenOdd
         layer.mask = shape
     }
     

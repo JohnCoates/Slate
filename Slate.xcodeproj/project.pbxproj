@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -44,7 +44,6 @@
 		FA1272EB1EF1C44500100641 /* GenericComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1272E91EF1C44500100641 /* GenericComponent.swift */; };
 		FA1325C81EF871EE000E6918 /* Critical.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1325C71EF871EE000E6918 /* Critical.swift */; };
 		FA1325C91EF871EE000E6918 /* Critical.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1325C71EF871EE000E6918 /* Critical.swift */; };
-		FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = FA13FCA61DB06E6E00FF21A4 /* GaussianBlur.metal */; };
 		FA167A7420779AB6007EA3E7 /* ALTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA167A7320779AB6007EA3E7 /* ALTypeAliases.swift */; };
 		FA167A7520779AB6007EA3E7 /* ALTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA167A7320779AB6007EA3E7 /* ALTypeAliases.swift */; };
 		FA167A7620779AB6007EA3E7 /* ALTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA167A7320779AB6007EA3E7 /* ALTypeAliases.swift */; };
@@ -433,7 +432,6 @@
 		FAAB69CC207F191D00246918 /* AVCaptureDevice.Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB69CA207F191D00246918 /* AVCaptureDevice.Format.swift */; };
 		FAAB69CD207F1D5B00246918 /* TestCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B3442207E0BEC0098D2FE /* TestCamera.swift */; };
 		FAADE0D01D9D0AC200AA5729 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0CF1D9D0AC200AA5729 /* Renderer.swift */; };
-		FAADE0D31D9D0C4300AA5729 /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAADE0D21D9D0C4300AA5729 /* Passthrough.metal */; };
 		FAAE763B1EEB2F0500CA3416 /* VectorAssetReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE763A1EEB2F0500CA3416 /* VectorAssetReader.swift */; };
 		FAAE763C1EEB2F2900CA3416 /* DataColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E97891EEA35CB00A73DFA /* DataColor.swift */; };
 		FAAE763D1EEB2F2E00CA3416 /* DataRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEABC71EEB2930005D05B2 /* DataRect.swift */; };
@@ -534,7 +532,6 @@
 		FABB16A31D9F402C00A8AC6C /* TextureCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16A11D9F402C00A8AC6C /* TextureCoordinates.swift */; };
 		FABB16A61D9F471000A8AC6C /* HUDShaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16A41D9F471000A8AC6C /* HUDShaderViewController.swift */; };
 		FABB16AB1D9F4BF600A8AC6C /* HUDShader.metal in CopyFiles */ = {isa = PBXBuildFile; fileRef = FABB16A81D9F492D00A8AC6C /* HUDShader.metal */; };
-		FABB16AD1D9F6DAB00A8AC6C /* ChromaticAberration.metal in Sources */ = {isa = PBXBuildFile; fileRef = FABB16AC1D9F6DAB00A8AC6C /* ChromaticAberration.metal */; };
 		FABB16B11D9F822800A8AC6C /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B01D9F822800A8AC6C /* CameraController.swift */; };
 		FABB16B21D9F822800A8AC6C /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB16B01D9F822800A8AC6C /* CameraController.swift */; };
 		FABB16B31D9F858800A8AC6C /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834BDC1D9920010017CCCA /* Platform.swift */; };
@@ -574,6 +571,7 @@
 		FAC424901EEF2B2700E2EB26 /* NSManagedObjectContext+Observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4248E1EEF2B2700E2EB26 /* NSManagedObjectContext+Observers.swift */; };
 		FAC424921EEF2F7700E2EB26 /* NSManagedObjectContext+Changes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC424911EEF2F7700E2EB26 /* NSManagedObjectContext+Changes.swift */; };
 		FAC424931EEF2F7700E2EB26 /* NSManagedObjectContext+Changes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC424911EEF2F7700E2EB26 /* NSManagedObjectContext+Changes.swift */; };
+		FAC45990222617520001DB18 /* FeatureCatalogViewController+Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4598F222617520001DB18 /* FeatureCatalogViewController+Sections.swift */; };
 		FAC9634C1ED3B68700D4DC33 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */; };
 		FACA79711EE4CF9B0001D468 /* KitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79701EE4CF9B0001D468 /* KitsViewController.swift */; };
 		FACA79721EE4CF9B0001D468 /* KitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA79701EE4CF9B0001D468 /* KitsViewController.swift */; };
@@ -665,22 +663,39 @@
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.proxy.script;
 			fileType = sourcecode.metal;
+			inputFiles = (
+			);
 			isEditable = 1;
 			outputFiles = (
-				"${TARGET_TEMP_DIR}/Metal/${FILE_BASE}.air",
+				"${TARGET_TEMP_DIR}/Metal/${INPUT_FILE_BASE}.air",
 			);
-			script = "# metal\n${PROJECT_DIR}/Scripts/compileShader.sh";
+			script = "# metal\n${PROJECT_DIR}/Scripts/compileShader.sh\n";
 		};
 		FAADE0D41D9D142E00AA5729 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.proxy.script;
 			fileType = sourcecode.metal;
+			inputFiles = (
+			);
 			isEditable = 1;
 			name = "Compile Metal Source Files";
 			outputFiles = (
-				"${TARGET_TEMP_DIR}/Metal/${FILE_BASE}.air",
+				"${TARGET_TEMP_DIR}/Metal/${INPUT_FILE_BASE}.air",
 			);
-			script = "# metal\n${PROJECT_DIR}/Scripts/compileShader.sh";
+			runOncePerArchitecture = 0;
+			script = "# metal\n${PROJECT_DIR}/Scripts/compileShader.sh\n";
+		};
+		FAC45991222619960001DB18 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = compiled.air;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+				"${TARGET_TEMP_DIR}/Metal/${INPUT_FILE_BASE}.null",
+			);
+			script = "# metallib\n";
 		};
 /* End PBXBuildRule section */
 
@@ -1072,6 +1087,7 @@
 		FAC4248A1EEF28EE00E2EB26 /* ManagedObjectObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectObserver.swift; sourceTree = "<group>"; };
 		FAC4248E1EEF2B2700E2EB26 /* NSManagedObjectContext+Observers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Observers.swift"; sourceTree = "<group>"; };
 		FAC424911EEF2F7700E2EB26 /* NSManagedObjectContext+Changes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Changes.swift"; sourceTree = "<group>"; };
+		FAC4598F222617520001DB18 /* FeatureCatalogViewController+Sections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeatureCatalogViewController+Sections.swift"; sourceTree = "<group>"; };
 		FAC9634B1ED3B68700D4DC33 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		FACA79701EE4CF9B0001D468 /* KitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitsViewController.swift; sourceTree = "<group>"; };
 		FACA79741EE4CFEB0001D468 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -2828,6 +2844,7 @@
 		FAB0AA7C1EC808CD008DCD23 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FAC4598E2226173E0001DB18 /* Sections */,
 				FAFFD1F92082046E000C5B73 /* Research */,
 				FACF0F441EECEC8C00B0211C /* Database */,
 				FAAE76491EEB36D100CA3416 /* Vector Images */,
@@ -3118,6 +3135,14 @@
 				FA373E51207AE8220092BA67 /* NSManagedObject+Migration.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FAC4598E2226173E0001DB18 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				FAC4598F222617520001DB18 /* FeatureCatalogViewController+Sections.swift */,
+			);
+			path = Sections;
 			sourceTree = "<group>";
 		};
 		FACA796D1EE4CF350001D468 /* Kits */ = {
@@ -3702,6 +3727,7 @@
 				FA76F5431ED3C93800059906 /* Integrate Reveal */,
 			);
 			buildRules = (
+				FAC45991222619960001DB18 /* PBXBuildRule */,
 				FA2B1EAC1EC9328700E44613 /* PBXBuildRule */,
 			);
 			dependencies = (
@@ -3752,18 +3778,20 @@
 					FA9F89E11D953C540058C369 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = E6QK4MU6LM;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 					};
 					FA9F89F51D953C540058C369 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = E6QK4MU6LM;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 						TestTargetID = FA9F89E11D953C540058C369;
 					};
 					FA9F8A001D953C540058C369 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = E6QK4MU6LM;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 						TestTargetID = FA9F89E11D953C540058C369;
 					};
@@ -3775,7 +3803,7 @@
 					FAB9C2831EE8FDA600C50545 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = E6QK4MU6LM;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -3785,6 +3813,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -3873,7 +3902,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${PROJECT_DIR}/Scripts/buildShaderLibrary.sh";
+			shellScript = "${PROJECT_DIR}/Scripts/buildShaderLibrary.sh\n";
 		};
 		FA5709A41ECC6D37000362C8 /* Clear Simulator Permissions */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3887,7 +3916,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "if [ \"${ARCHS}\" == \"x86_64\" ]; then\nif [ ! -z \"${SKIP_SIMULATOR_PERMISSIONS_RESET}\" ]\nthen\necho \"Skipping Simulator Permissions Reset\"\nelse\n    echo \"Clearing simulator permissions\"\n    ruby ${PROJECT_DIR}/Scripts/resetAppPermisionsForSimulators.rb\nfi\nfi";
+			shellScript = "if [ \"${ARCHS}\" == \"x86_64\" ]; then\nif [ ! -z \"${SKIP_SIMULATOR_PERMISSIONS_RESET}\" ]\nthen\necho \"Skipping Simulator Permissions Reset\"\nelse\n    echo \"Clearing simulator permissions\"\n    ruby ${PROJECT_DIR}/Scripts/resetAppPermisionsForSimulators.rb\nfi\nfi\n";
 		};
 		FA5709AB1ECC7B2F000362C8 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3901,7 +3930,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ ! -z \"${SKIP_LINT}\" ]\nthen\necho \"Skipping Lint\"\nelse\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\nfi";
+			shellScript = "if [ ! -z \"${SKIP_LINT}\" ]\nthen\necho \"Skipping Lint\"\nelse\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\nfi\n";
 		};
 		FA76F5431ED3C93800059906 /* Integrate Reveal */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3915,7 +3944,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "if [ ! -z \"${BUILD_LAYOUT}\" ]\nthen\necho \"Integrating Reveal\"\nREVEAL_APP_PATH=$(mdfind kMDItemCFBundleIdentifier=\"com.ittybittyapps.Reveal2\" | head -n 1)\nBUILD_SCRIPT_PATH=\"${REVEAL_APP_PATH}/Contents/SharedSupport/Scripts/reveal_server_build_phase.sh\"\nif [ \"${REVEAL_APP_PATH}\" -a -e \"${BUILD_SCRIPT_PATH}\" ]; then\n\"${BUILD_SCRIPT_PATH}\"\nelse\necho \"Reveal Server not loaded: Cannot find a compatible Reveal app.\"\nfi\nfi";
+			shellScript = "if [ ! -z \"${BUILD_LAYOUT}\" ]\nthen\necho \"Integrating Reveal\"\nREVEAL_APP_PATH=$(mdfind kMDItemCFBundleIdentifier=\"com.ittybittyapps.Reveal2\" | head -n 1)\nBUILD_SCRIPT_PATH=\"${REVEAL_APP_PATH}/Contents/SharedSupport/Scripts/reveal_server_build_phase.sh\"\nif [ \"${REVEAL_APP_PATH}\" -a -e \"${BUILD_SCRIPT_PATH}\" ]; then\n\"${BUILD_SCRIPT_PATH}\"\nelse\necho \"Reveal Server not loaded: Cannot find a compatible Reveal app.\"\nfi\nfi\n";
 		};
 		FA850F471EE20BA000B1CDDB /* Integrate Reveal */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3929,7 +3958,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ ! -z \"${BUILD_LAYOUT}\" ]\nthen\necho \"Integrating Reveal\"\n    REVEAL_APP_PATH=$(mdfind kMDItemCFBundleIdentifier=\"com.ittybittyapps.Reveal2\" | head -n 1)\n    BUILD_SCRIPT_PATH=\"${REVEAL_APP_PATH}/Contents/SharedSupport/Scripts/reveal_server_build_phase.sh\"\nif [ \"${REVEAL_APP_PATH}\" -a -e \"${BUILD_SCRIPT_PATH}\" ]; then\n\"${BUILD_SCRIPT_PATH}\"\nelse\necho \"Reveal Server not loaded: Cannot find a compatible Reveal app.\"\nfi\nfi";
+			shellScript = "if [ ! -z \"${BUILD_LAYOUT}\" ]\nthen\necho \"Integrating Reveal\"\n    REVEAL_APP_PATH=$(mdfind kMDItemCFBundleIdentifier=\"com.ittybittyapps.Reveal2\" | head -n 1)\n    BUILD_SCRIPT_PATH=\"${REVEAL_APP_PATH}/Contents/SharedSupport/Scripts/reveal_server_build_phase.sh\"\nif [ \"${REVEAL_APP_PATH}\" -a -e \"${BUILD_SCRIPT_PATH}\" ]; then\n\"${BUILD_SCRIPT_PATH}\"\nelse\necho \"Reveal Server not loaded: Cannot find a compatible Reveal app.\"\nfi\nfi\n";
 		};
 		FAADE0D51D9D1CB200AA5729 /* Build Metal Shader Library */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3943,7 +3972,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${PROJECT_DIR}/Scripts/buildShaderLibrary.sh";
+			shellScript = "#${PROJECT_DIR}/Scripts/buildShaderLibrary.sh\n";
 		};
 		FAAE76681EEB6F8D00CA3416 /* Generate Images */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3971,7 +4000,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${PROJECT_DIR}/Scripts/slateCLI --generateImageAssets";
+			shellScript = "${PROJECT_DIR}/Scripts/slateCLI --generateImageAssets\n";
 		};
 		FACC8FD81D98AD4500589230 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3985,7 +4014,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "if [ ! -z \"${SKIP_LINT}\" ]\nthen\necho \"Skipping Lint\"\nelse\nif which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\nfi";
+			shellScript = "if [ ! -z \"${SKIP_LINT}\" ]\nthen\necho \"Skipping Lint\"\nelse\nif which swiftlint >/dev/null; then\n    exit 0\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\nfi\n";
 		};
 		FAF5AB321EEC6BA100EDED04 /* Tailor */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3999,7 +4028,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ ! -z \"${LINT_TAILOR}\" ]\nthen\nif which tailor >/dev/null; then\ntailor\nelse\necho \"warning: Tailor not installed, download from https://github.com/sleekbyte/tailor\"\nfi\nelse\necho \"Skipping Lint\"\nfi";
+			shellScript = "if [ ! -z \"${LINT_TAILOR}\" ]\nthen\nif which tailor >/dev/null; then\ntailor\nelse\necho \"warning: Tailor not installed, download from https://github.com/sleekbyte/tailor\"\nfi\nelse\necho \"Skipping Lint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -4183,7 +4212,6 @@
 				FACA79711EE4CF9B0001D468 /* KitsViewController.swift in Sources */,
 				FA8AA5411ECC107F0093D317 /* ButtonIndicatorIcon.swift in Sources */,
 				FA7648F51F9EAA6C00C6DD87 /* EditKitInputCell.swift in Sources */,
-				FA13FCA71DB06E6E00FF21A4 /* GaussianBlur.metal in Sources */,
 				FA3E23E9207966E3008D5227 /* TableDataSource.swift in Sources */,
 				FACF0F3F1EECDB6C00B0211C /* ComponentModel.swift in Sources */,
 				FA1A2C9D1ECC57C60075FA0B /* PermissionsEducationViewController.swift in Sources */,
@@ -4211,7 +4239,6 @@
 				FA0C9F8E2079015400534901 /* CurrentDevice.swift in Sources */,
 				FA5F8C9F1ECFF81400921A61 /* UIScreen+Layout.swift in Sources */,
 				FADFC6F41F50D2430023B92C /* PhotoResolution.swift in Sources */,
-				FABB16AD1D9F6DAB00A8AC6C /* ChromaticAberration.metal in Sources */,
 				FAC21B5E1EEE13E0007C17AF /* DBRect.swift in Sources */,
 				FAD5DAD31EF8B2A400239C96 /* LayoutPreviewCell.swift in Sources */,
 				FAB64A402080820F00106268 /* CaptureConstraints.swift in Sources */,
@@ -4340,7 +4367,6 @@
 				FA9B342F207DBA220098D2FE /* BurstSpeed.swift in Sources */,
 				FAC424921EEF2F7700E2EB26 /* NSManagedObjectContext+Changes.swift in Sources */,
 				FA0462C21EC3E002007B74A0 /* Component.swift in Sources */,
-				FAADE0D31D9D0C4300AA5729 /* Passthrough.metal in Sources */,
 				FAC21B621EEE1422007C17AF /* DBEntity.swift in Sources */,
 				FADFC6D31F4E74D70023B92C /* EdgesAnchor.swift in Sources */,
 				FA373E40207ACCC70092BA67 /* BasicTableSection.swift in Sources */,
@@ -4527,6 +4553,7 @@
 				FAA8FDDC1F5FE4A100847C1A /* EditKitSettingCell.swift in Sources */,
 				FA3AAAB21EE25E08006028AC /* Renderer+Shaders.swift in Sources */,
 				FA3E23EA207966E3008D5227 /* TableDataSource.swift in Sources */,
+				FAC45990222617520001DB18 /* FeatureCatalogViewController+Sections.swift in Sources */,
 				FAA2A6AC207A919000C43269 /* DBFrameRate.swift in Sources */,
 				FA9B343A207DC4840098D2FE /* BurstSpeedSettingsViewController.swift in Sources */,
 				FA2B1E931EC92B5B00E44613 /* ControlBarItemCell.swift in Sources */,
@@ -4798,7 +4825,8 @@
 				"OTHER_SWIFT_FLAGS[sdk=iphonesimulator*]" = "-DIOS_SIMULATOR";
 				"OTHER_SWIFT_FLAGS[sdk=macosx*]" = "-DMETAL_DEVICE";
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = AppStore;
@@ -4815,12 +4843,15 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Resources/Required/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Headers/Bridging/Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = AppStore;
@@ -4832,10 +4863,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Unit/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Slate.app/Slate";
 			};
 			name = AppStore;
@@ -4846,10 +4881,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/UI/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Slate;
 			};
 			name = AppStore;
@@ -4862,7 +4901,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = macSlate/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.macSlate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4882,7 +4924,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Feature Catalog/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.johncoates.slate.Feature-Catalog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -4898,7 +4943,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = macSlate/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.macSlate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4915,7 +4963,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = macSlate/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.macSlate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4934,7 +4985,11 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				INFOPLIST_FILE = Tests/Unit/Mac/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.slate.macTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4953,7 +5008,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				INFOPLIST_FILE = Tests/Unit/Mac/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.slate.macTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4972,7 +5031,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				INFOPLIST_FILE = Tests/Unit/Mac/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.slate.macTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5058,12 +5121,15 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Resources/Required/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Headers/Bridging/Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = FastDebug;
@@ -5075,10 +5141,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Unit/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Slate.app/Slate";
 			};
 			name = FastDebug;
@@ -5089,10 +5159,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/UI/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Slate;
 			};
 			name = FastDebug;
@@ -5105,7 +5179,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = macSlate/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.macSlate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5124,7 +5201,11 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				INFOPLIST_FILE = Tests/Unit/Mac/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.slate.macTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5145,7 +5226,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Feature Catalog/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.johncoates.slate.Feature-Catalog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -5269,7 +5353,8 @@
 				"OTHER_SWIFT_FLAGS[sdk=iphonesimulator*]" = "-DIOS_SIMULATOR";
 				"OTHER_SWIFT_FLAGS[sdk=macosx*]" = "-DMETAL_DEVICE";
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -5286,12 +5371,15 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Resources/Required/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Headers/Bridging/Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -5308,12 +5396,15 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Resources/Required/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Headers/Bridging/Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -5325,10 +5416,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Unit/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Slate.app/Slate";
 			};
 			name = Debug;
@@ -5340,10 +5435,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Unit/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Slate.app/Slate";
 			};
 			name = Release;
@@ -5354,10 +5453,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/UI/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Slate;
 			};
 			name = Debug;
@@ -5368,10 +5471,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/UI/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Slate;
 			};
 			name = Release;
@@ -5387,7 +5494,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Feature Catalog/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.johncoates.slate.Feature-Catalog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -5406,7 +5516,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Feature Catalog/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.johncoates.slate.Feature-Catalog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -5422,7 +5535,11 @@
 				CODE_SIGN_IDENTITY = "-";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_CFLAGS = (
 					"-DOBJECTS_DIRECTORY=\"\\\"${OBJECT_FILE_DIR_normal}\\\"\"",
@@ -5432,7 +5549,7 @@
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/macSlate/CLI/Bridging/CLIBridging.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -5443,7 +5560,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_CFLAGS = (
 					"-DOBJECTS_DIRECTORY=\"\\\"${OBJECT_FILE_DIR_normal}\\\"\"",
@@ -5453,7 +5574,7 @@
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/macSlate/CLI/Bridging/CLIBridging.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = FastDebug;
 		};
@@ -5464,7 +5585,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_CFLAGS = (
 					"-DOBJECTS_DIRECTORY=\"\\\"${OBJECT_FILE_DIR_normal}\\\"\"",
@@ -5473,7 +5598,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/macSlate/CLI/Bridging/CLIBridging.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -5484,7 +5609,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_CFLAGS = (
 					"-DOBJECTS_DIRECTORY=\"\\\"${OBJECT_FILE_DIR_normal}\\\"\"",
@@ -5493,7 +5622,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/macSlate/CLI/Bridging/CLIBridging.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = AppStore;
 		};
@@ -5573,12 +5702,15 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Resources/Required/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Headers/Bridging/Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Lint;
@@ -5590,10 +5722,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Unit/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Slate.app/Slate";
 			};
 			name = Lint;
@@ -5604,10 +5740,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/UI/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.SlateUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Slate;
 			};
 			name = Lint;
@@ -5620,7 +5760,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = macSlate/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.macSlate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5639,7 +5782,11 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
 				INFOPLIST_FILE = Tests/Unit/Mac/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncoates.slate.macTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5660,7 +5807,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Feature Catalog/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.johncoates.slate.Feature-Catalog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -5676,7 +5826,11 @@
 				CODE_SIGN_IDENTITY = "-";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = E6QK4MU6LM;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_CFLAGS = (
 					"-DOBJECTS_DIRECTORY=\"\\\"${OBJECT_FILE_DIR_normal}\\\"\"",
@@ -5686,7 +5840,7 @@
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/macSlate/CLI/Bridging/CLIBridging.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Lint;
 		};

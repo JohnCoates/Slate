@@ -106,7 +106,7 @@ NSFetchedResultsControllerDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView,
-                   commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+                   commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         print("deleting object!")
         let object = self.object(at: indexPath)
         object.managedObjectContext?.performChanges {
@@ -153,6 +153,8 @@ NSFetchedResultsControllerDelegate, UITableViewDataSource {
             tableView.moveRow(at: indexPath, to: newIndexPath)
         case .delete:
             tableView.deleteRows(at: [indexPath], with: .automatic)
+        @unknown default:
+            assertionFailure("Error: Uncovered case: \(type)")
         }
     }
     

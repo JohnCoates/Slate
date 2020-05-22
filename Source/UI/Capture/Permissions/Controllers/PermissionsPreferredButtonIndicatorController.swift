@@ -73,7 +73,7 @@ class PermissionsPreferredButtonIndicatorController {
         let window = UIWindow()
         window.rootViewController = viewController
         window.isHidden = false
-        window.windowLevel = UIWindowLevelNormal - 1
+        window.windowLevel = UIWindow.Level.normal - 1
         window.alpha = 0
         return window
     }

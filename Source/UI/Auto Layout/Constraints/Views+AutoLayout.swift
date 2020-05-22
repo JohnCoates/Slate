@@ -146,7 +146,7 @@ extension UIView {
     
     func constraintWithAttribute(_ attribute: LayoutAttribute) -> NSLayoutConstraint? {
         let allConstraints = self.constraints
-        let index = allConstraints.index { $0.firstAttribute == attribute || $0.secondAttribute == attribute }
+        let index = allConstraints.firstIndex { $0.firstAttribute == attribute || $0.secondAttribute == attribute }
         
         if let index = index {
             return allConstraints[index]
@@ -177,7 +177,7 @@ extension UIView {
     func constraintWithAttribute(_ attribute: LayoutAttribute,
                                  relation: LayoutRelation) -> NSLayoutConstraint? {
         let allConstraints = self.constraints
-        let index = allConstraints.index {
+        let index = allConstraints.firstIndex {
             ($0.firstAttribute == attribute || $0.secondAttribute == attribute) &&
                 $0.relation == relation
         }
@@ -192,7 +192,7 @@ extension UIView {
     
     // MARK: - Content Hugging
     
-    func setHugging(priority: Priority, axis: UILayoutConstraintAxis) {
+    func setHugging(priority: Priority, axis: NSLayoutConstraint.Axis) {
         setContentHuggingPriority(priority.rawValue, for: axis)
     }
     
@@ -201,7 +201,7 @@ extension UIView {
         setHugging(priority: priorities, axis: .vertical)
     }
     
-    func setCompressionResistant(priority: Priority, axis: UILayoutConstraintAxis) {
+    func setCompressionResistant(priority: Priority, axis: NSLayoutConstraint.Axis) {
         setContentCompressionResistancePriority(priority.rawValue,
                                                 for: axis)
     }
@@ -236,7 +236,7 @@ extension UITableView {
         
         view.setNeedsLayout()
         view.layoutIfNeeded()
-        let height = view.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+        let height = view.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
         var frame = view.frame
         frame.size.height = height
         view.frame = frame

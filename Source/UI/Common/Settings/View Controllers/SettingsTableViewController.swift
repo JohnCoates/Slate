@@ -33,7 +33,7 @@ class SettingsTableViewController: UITableViewController, NavigationConvenience 
         
         tableView.registerCell(type: EditKitLinkCell.self)
         
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 80
         tableView.keyboardDismissMode = .interactive
     }

@@ -6,7 +6,7 @@
 
 import UIKit
 
-extension NSLayoutAttribute: CustomStringConvertible {
+extension NSLayoutConstraint.Attribute: CustomStringConvertible {
     public var description: String {
         switch self {
         case .left:

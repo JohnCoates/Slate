@@ -26,7 +26,7 @@ class EditKitSliderCell: UITableViewCell {
     
     var minimum: Float {
         get {
-            return slider.minimumValue
+            slider.minimumValue
         }
         set {
             slider.minimumValue = newValue
@@ -35,7 +35,7 @@ class EditKitSliderCell: UITableViewCell {
     
     var maximum: Float {
         get {
-            return slider.maximumValue
+            slider.maximumValue
         }
         set {
             slider.maximumValue = newValue
@@ -44,7 +44,7 @@ class EditKitSliderCell: UITableViewCell {
     
     var value: Float {
         get {
-            return slider.value
+            slider.value
         }
         set {
             slider.value = newValue
@@ -53,10 +53,10 @@ class EditKitSliderCell: UITableViewCell {
     
     var continuousUpdates: Bool {
         get {
-            return slider.isContinuous
+            slider.isContinuous
         }
         set {
-            slider.isContinuous = continuousUpdates
+            slider.isContinuous = newValue
         }
     }
     
@@ -64,7 +64,7 @@ class EditKitSliderCell: UITableViewCell {
     
     // MARK: - Init
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         initialSetup()
     }

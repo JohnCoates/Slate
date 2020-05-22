@@ -43,7 +43,7 @@ class PermissionsWindow: UIWindow {
             return
         }
         
-        let animationOptions: UIViewAnimationOptions = [.curveLinear]
+        let animationOptions: UIView.AnimationOptions = [.curveLinear]
         
         UIView.animate(withDuration: 0.25, delay: 0,
                        options: animationOptions,
@@ -80,7 +80,7 @@ class PermissionsWindow: UIWindow {
     let contentView = UIView()
     
     func initialSetup() {
-        windowLevel = UIWindowLevelAlert + 1
+        windowLevel = UIWindow.Level.alert + 1
         backgroundColor = UIColor.black.withAlphaComponent(0.5)
         rootViewController = createViewController()
     }

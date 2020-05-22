@@ -191,7 +191,7 @@ class KitSettingsViewController: SettingsTableViewController {
     // MARK: - Editing
     
     override func tableView(_ tableView: UITableView,
-                            editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+                            editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .none
     }
     

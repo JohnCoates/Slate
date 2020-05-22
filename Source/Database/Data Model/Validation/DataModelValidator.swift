@@ -19,7 +19,7 @@ class DataModelValidator {
                 fatalError("Name missing for entity: \(entity)")
             }
             
-            guard let index = entityNames.index(of: name) else {
+            guard let index = entityNames.firstIndex(of: name) else {
                 print("Entity \(name) is in entities list but not in the data model grah!")
                 return false
             }

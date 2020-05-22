@@ -21,11 +21,11 @@ extension KeyboardHandler {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self,
                                        selector: #selector(keyboardWillShowNotification),
-                                       name: Notification.Name.UIKeyboardWillShow,
+                                       name: UIResponder.keyboardWillShowNotification,
                                        object: nil)
         notificationCenter.addObserver(self,
                                        selector: #selector(keyboardWillHideNotification),
-                                       name: Notification.Name.UIKeyboardWillHide,
+                                       name: UIResponder.keyboardWillHideNotification,
                                        object: nil)
         
     }
@@ -33,11 +33,11 @@ extension KeyboardHandler {
     func removeKeyboardNotifications() {
         let notificationCenter = NotificationCenter.default
         notificationCenter.removeObserver(self,
-                                          name: Notification.Name.UIKeyboardWillShow,
+                                          name: UIResponder.keyboardWillShowNotification,
                                           object: nil)
         
         notificationCenter.removeObserver(self,
-                                          name: Notification.Name.UIKeyboardWillHide,
+                                          name: UIResponder.keyboardWillHideNotification,
                                           object: nil)
     }
     
@@ -76,7 +76,7 @@ extension KeyboardHandler {
     
     private func keyboardBounds(fromNotification notification: Notification) -> CGRect? {
         guard let userInfo = notification.userInfo,
-            let keyboardBoundsValue = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
+            let keyboardBoundsValue = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
                 return nil
         }
         

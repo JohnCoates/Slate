@@ -8,8 +8,8 @@ import Foundation
 
 #if os(iOS)
     import UIKit
-    typealias LayoutAttribute = NSLayoutAttribute
-    typealias LayoutRelation = NSLayoutRelation
+    typealias LayoutAttribute = NSLayoutConstraint.Attribute
+    typealias LayoutRelation = NSLayoutConstraint.Relation
     typealias LayoutPriority = UILayoutPriority
 #else
     import AppKit

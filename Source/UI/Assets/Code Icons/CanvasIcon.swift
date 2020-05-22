@@ -49,7 +49,7 @@ enum CanvasIconContentMode: Int {
     case stretch /// The content is stretched to match the entire target rectangle.
     case center /// The content is centered in the target rectangle, but it is NOT resized.
     
-    static func from(contentMode: UIViewContentMode) -> CanvasIconContentMode {
+    static func from(contentMode: UIView.ContentMode) -> CanvasIconContentMode {
         switch contentMode {
         case .scaleAspectFit:
             return .aspectFit

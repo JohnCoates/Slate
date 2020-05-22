@@ -44,7 +44,7 @@ class DeniedPermissionViewController: PermissionsEducationViewController {
     lazy var application = UIApplication.shared
     
     func openSettings() {
-        let appSettingsURL = Critical.unwrap(URL(string: UIApplicationOpenSettingsURLString))
+        let appSettingsURL = Critical.unwrap(URL(string: UIApplication.openSettingsURLString))
         
         application.openURL(appSettingsURL)
     }

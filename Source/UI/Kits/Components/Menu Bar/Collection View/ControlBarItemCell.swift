@@ -143,7 +143,7 @@ final class ControlBarItemCell: UICollectionViewCell {
                        delay: 0,
                        usingSpringWithDamping: 0.5,
                        initialSpringVelocity: 3,
-                       options: UIViewAnimationOptions.curveEaseOut, animations: {
+                       options: UIView.AnimationOptions.curveEaseOut, animations: {
             control.transform = CGAffineTransform(scaleX: 1, y: 1)
             control.frame = startFrame
         })
