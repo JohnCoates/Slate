@@ -13,7 +13,7 @@ class FragmentFilter: AbstractFilter {
     var vertexBuffer: MTLBuffer
     var textureCoordinatesBuffer: MTLBuffer
     var vertices = [Vertex]()
-    var textureCoordinates = [float2]()
+    var textureCoordinates = [SIMD2<Float>]()
     
     override init(device: MTLDevice) {
         vertexBuffer = Renderer.generateQuad(forDevice: device, inArray: &vertices)

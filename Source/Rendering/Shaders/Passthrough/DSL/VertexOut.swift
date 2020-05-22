@@ -16,7 +16,7 @@ extension RuntimeShader {
             item.addMember(name: "position",
                            type: Float4.self, qualifier: .position)
             item.addMember(name: "textureCoordinates",
-                           type: Float2.self, qualifier: .user(name: "texturecoord"))
+                           type: SIMD2<Float>.self, qualifier: .user(name: "texturecoord"))
             
             return item
         }
@@ -31,7 +31,7 @@ extension RuntimeShader {
             return self["position"]
         }
         
-        var textureCoordinates: Float2 {
+        var textureCoordinates: SIMD2<Float> {
             return self["textureCoordinates"]
         }
     }

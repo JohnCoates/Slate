@@ -18,7 +18,7 @@ import AVFoundation
     let commandQueue: MTLCommandQueue
     var renderPipelineState: MTLRenderPipelineState!
     var vertices = [Vertex]()
-    var textureCoordinates = [float2]()
+    var textureCoordinates = [SIMD2<Float>]()
     var vertexBuffer: MTLBuffer
     var textureCoordinatesBuffer: MTLBuffer
     
@@ -140,7 +140,7 @@ import AVFoundation
     // MARK: - Command Buffer
     
     var verticesUpdate: [Vertex]?
-    var textureCoordinatesUpdate: [float2]?    
+    var textureCoordinatesUpdate: [SIMD2<Float>]?    
     
     // MARK: - Video Rendering
     

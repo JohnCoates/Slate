@@ -76,6 +76,8 @@ class CameraPermissionViewController: PermissionsEducationViewController {
             print("denied")
             showDeniedCameraScreen()
             return
+        @unknown default:
+            preconditionFailure("Unknown status: \(status)")
         }
         
         PermissionsPreferredButtonIndicatorController.attemptToPresentPreferredButtonIndicator(onViewController: self) {

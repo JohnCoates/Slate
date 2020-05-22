@@ -23,23 +23,36 @@ extension Data {
     
     private func performOperation(kind: Compression.Kind, algorithm: Compression.Algorithm) throws -> Data {
         let scratchSize = compression_encode_scratch_buffer_size(algorithm.rawValue)
-        var destination = Data(count: self.count * 4)
-        
-        let sourceBuffer: UnsafePointer<UInt8> = self.withUnsafeBytes { $0 }
-        let destinationBuffer: UnsafeMutablePointer<UInt8> = destination.withUnsafeMutableBytes { $0 }
+        var destination = Data(count: count * 4)
         let scratchBuffer: UnsafeMutablePointer<UInt8> = UnsafeMutablePointer<UInt8>.allocate(capacity: scratchSize)
         
-        let bytes: Int
-        if kind == .compression {
-            bytes = compression_encode_buffer(destinationBuffer, destination.count,
-                                              sourceBuffer, self.count,
-                                              scratchBuffer, algorithm.rawValue)
-        } else {
-            bytes = compression_decode_buffer(destinationBuffer, destination.count,
-                                              sourceBuffer, self.count,
-                                              scratchBuffer, algorithm.rawValue)
+        var bytes: Int = 0
+        let sourceSize = count
+        let destinationSize = destination.count
+        withUnsafeBytes { sourceBuffer in
+            destination.withUnsafeMutableBytes { (destinationBuffer: UnsafeMutableRawBufferPointer) in
+                guard let sourceRawPointer = sourceBuffer.baseAddress else {
+                    preconditionFailure("sourceBuffer has an invalid base address")
+                }
+                guard let destinationRawPointer = destinationBuffer.baseAddress else {
+                    preconditionFailure("destinationBuffer has an invalid base address")
+                }
+
+                let sourcePointer = sourceRawPointer.assumingMemoryBound(to: UInt8.self)
+                let destinationPointer = destinationRawPointer.assumingMemoryBound(to: UInt8.self)
+
+                if kind == .compression {
+                    bytes = compression_encode_buffer(destinationPointer, destinationSize,
+                                                      sourcePointer, sourceSize,
+                                                      scratchBuffer, algorithm.rawValue)
+                } else {
+                    bytes = compression_decode_buffer(destinationPointer, destinationSize,
+                                                      sourcePointer, sourceSize,
+                                                      scratchBuffer, algorithm.rawValue)
+                }
+            }
         }
-        
+
         scratchBuffer.deallocate()
         
         if bytes == 0 {

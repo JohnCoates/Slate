@@ -15,7 +15,7 @@ extension RuntimeShader {
         var type: DataType
         var typeReference: String {
             switch type {
-            case .float, .float2, .float4, .sampler:
+            case .float, .SIMD2<Float>, .float4, .sampler:
                 return type.rawValue
             case .`struct`:
                 fatalError("Missing struct name")
@@ -53,7 +53,7 @@ extension RuntimeShader {
 extension RuntimeShader {
     enum DataType: String {
         case float
-        case float2
+        case SIMD2<Float>
         case float4
         case `struct`
         case sampler

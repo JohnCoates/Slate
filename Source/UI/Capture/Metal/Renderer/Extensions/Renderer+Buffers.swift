@@ -40,7 +40,7 @@ extension Renderer {
                                  options: options)!
     }
     
-    class func generate(textureCoordinates coordinates: inout[float2], forDevice device: MTLDevice) -> MTLBuffer {
+    class func generate(textureCoordinates coordinates: inout[SIMD2<Float>], forDevice device: MTLDevice) -> MTLBuffer {
         
         var options: MTLResourceOptions = []
         #if os(macOS)
@@ -53,7 +53,7 @@ extension Renderer {
         #endif
         
         return device.makeBuffer(bytes: coordinates,
-                                 length: MemoryLayout<float2>.stride * coordinates.count,
+                                 length: MemoryLayout<SIMD2<Float>>.stride * coordinates.count,
                                  options: options)!
     }
     
@@ -70,7 +70,7 @@ extension Renderer {
     
     func invalidateTextureCoordinatesBuffer() {
         let contents = textureCoordinatesBuffer.contents()
-        memcpy(contents, textureCoordinates, MemoryLayout<float2>.stride * textureCoordinates.count)
+        memcpy(contents, textureCoordinates, MemoryLayout<SIMD2<Float>>.stride * textureCoordinates.count)
         let length = textureCoordinatesBuffer.length
         textureCoordinatesBuffer.didModifyRange(0..<length)
     }
@@ -127,12 +127,12 @@ extension Renderer {
         #endif
     }
     
-    func replaceWhileOutsideOfCommandBufferBoundary(textureCoordinates newTextureCoordinates: [float2]) {
+    func replaceWhileOutsideOfCommandBufferBoundary(textureCoordinates newTextureCoordinates: [SIMD2<Float>]) {
         guard newTextureCoordinates.count == textureCoordinates.count else {
             fatalError("Can't update texture coordinates with different amount of items")
         }
         let contents = textureCoordinatesBuffer.contents()
-        memcpy(contents, newTextureCoordinates, MemoryLayout<float2>.stride * textureCoordinates.count)
+        memcpy(contents, newTextureCoordinates, MemoryLayout<SIMD2<Float>>.stride * textureCoordinates.count)
         #if os(macOS)
             textureCoordinatesBuffer.didModifyRange(0..<textureCoordinatesBuffer.length)
         #endif

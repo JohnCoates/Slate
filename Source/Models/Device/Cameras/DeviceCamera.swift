@@ -21,6 +21,8 @@ class DeviceCamera: Camera {
             return .back
         case .front:
             return .front
+        @unknown default:
+            preconditionFailure("Unknown position: \(device.position)")
         }
     }
     

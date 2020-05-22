@@ -15,7 +15,7 @@ struct TextureCoordinates {
     static let textureWidth: Float = 1
     static let textureHeight: Float = 1
     
-    static func quadForAspectFill(input: Size, target: Size) -> [float2] {
+    static func quadForAspectFill(input: Size, target: Size) -> [SIMD2<Float>] {
         let inputRatio = input.width / input.height
         let targetRatio = target.width / target.height
         
@@ -29,7 +29,7 @@ struct TextureCoordinates {
         }
     }
     
-    static func quadForAspectFit(input: Size, target: Size) -> [float2] {
+    static func quadForAspectFit(input: Size, target: Size) -> [SIMD2<Float>] {
         let inputRatio: Float = input.width / input.height
         let targetRatio: Float = target.width / target.width
         
@@ -42,38 +42,38 @@ struct TextureCoordinates {
         }
     }
     
-    static func centeredQuad(width: Float, height: Float) -> [float2] {
+    static func centeredQuad(width: Float, height: Float) -> [SIMD2<Float>] {
         let xMin: Float, yMin: Float, xMax: Float, yMax: Float
         xMin = 0.5 - (width / 2)
         yMin = 0.5 - (height / 2)
         xMax = 0.5 + (width / 2)
         yMax = 0.5 + (height / 2)
         return [
-            float2(xMin, yMax),
-            float2(xMax, yMax),
-            float2(xMin, yMin),
-            float2(xMax, yMax),
-            float2(xMin, yMin),
-            float2(xMax, yMin)
+            SIMD2<Float>(xMin, yMax),
+            SIMD2<Float>(xMax, yMax),
+            SIMD2<Float>(xMin, yMin),
+            SIMD2<Float>(xMax, yMax),
+            SIMD2<Float>(xMin, yMin),
+            SIMD2<Float>(xMax, yMin)
         ]
     }
     
-    static func iOSDevicePortrait() -> [float2] {
+    static func iOSDevicePortrait() -> [SIMD2<Float>] {
         return centeredQuad(width: textureWidth, height: textureHeight)
     }
     
-    static func macFlipped() -> [float2] {
+    static func macFlipped() -> [SIMD2<Float>] {
         return centeredQuad(width: textureWidth, height: textureHeight)
     }
     
-    static func macHorizontalFlipped() -> [float2] {
-        var coordinates = [float2]()
-        coordinates.append(float2(1, 1))
-        coordinates.append(float2(0, 1))
-        coordinates.append(float2(1, 0))
-        coordinates.append(float2(0, 1))
-        coordinates.append(float2(1, 0))
-        coordinates.append(float2(0, 0))
+    static func macHorizontalFlipped() -> [SIMD2<Float>] {
+        var coordinates = [SIMD2<Float>]()
+        coordinates.append(SIMD2<Float>(1, 1))
+        coordinates.append(SIMD2<Float>(0, 1))
+        coordinates.append(SIMD2<Float>(1, 0))
+        coordinates.append(SIMD2<Float>(0, 1))
+        coordinates.append(SIMD2<Float>(1, 0))
+        coordinates.append(SIMD2<Float>(0, 0))
         return coordinates
     }
     

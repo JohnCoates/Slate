@@ -79,6 +79,8 @@ class PhotosPermissionViewController: PermissionsEducationViewController {
         case .denied, .restricted:
             showDeniedPhotosScreen()
             return
+        @unknown default:
+            preconditionFailure("Unknown case: \(status)")
         }
         
         PermissionsPreferredButtonIndicatorController.attemptToPresentPreferredButtonIndicator(onViewController: self) {

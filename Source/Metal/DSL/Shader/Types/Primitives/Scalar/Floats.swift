@@ -12,8 +12,8 @@ extension RuntimeShader {
     class Float4: TypedVariable, ShaderPrimitive {
         static var name: String = "float4"
     }
-    class Float2: TypedVariable, ShaderPrimitive {
-        static var name: String = "float2"
+    class SIMD2<Float>: TypedVariable, ShaderPrimitive {
+        static var name: String = "SIMD2<Float>"
     }
     class Float: TypedVariable, ShaderPrimitive {
         static var name: String = "float"

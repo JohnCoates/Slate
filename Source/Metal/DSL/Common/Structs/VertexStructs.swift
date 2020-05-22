@@ -19,7 +19,7 @@ extension RuntimeShader {
     func vertexOutType() -> Struct {
         let vertexOutType: Struct = defineStruct(name: "VertextOut")
         vertexOutType.addMember(name: "position", type: Float4.self, qualifier: .position)
-        vertexOutType.addMember(name: "textureCoordinates", type: Float2.self, qualifier: .user(name: "texturecoord"))
+        vertexOutType.addMember(name: "textureCoordinates", type: SIMD2<Float>.self, qualifier: .user(name: "texturecoord"))
         return vertexOutType
     }
     

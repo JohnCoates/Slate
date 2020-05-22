@@ -34,7 +34,7 @@ extension RuntimeShader {
         
         // MARK: - Statements
         
-        func sample(sampler: Sampler, coordinates: Float2) -> Float4 {
+        func sample(sampler: Sampler, coordinates: SIMD2<Float>) -> Float4 {
             let statement = CallStatement(object: sampler,
                                           name: "sample", arguments: [coordinates])
             return Float4(statement: statement, type: .float4)

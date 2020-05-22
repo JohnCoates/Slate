@@ -245,7 +245,11 @@ class VectorAssetReader {
     
     func readValue<T>() -> T {
         let size = MemoryLayout<T>.size
-        let value: T = data.subdata(in: readIndex..<readIndex + size).withUnsafeBytes { $0.pointee }
+        var value: T
+        let subdata = data.subdata(in: readIndex..<readIndex + size)
+        value = subdata.withUnsafeBytes { (bytes: UnsafeRawBufferPointer) in
+            return bytes.load(as: T.self)
+        }
         readIndex += size
         return value
     }

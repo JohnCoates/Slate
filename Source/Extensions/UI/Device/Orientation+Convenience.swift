@@ -34,6 +34,8 @@ extension UIInterfaceOrientation: CustomStringConvertible {
             return "portrait"
         case .unknown:
             return "unknown"
+        @unknown default:
+            preconditionFailure("Unknown orientation: \(self)")
         }
     }
 }

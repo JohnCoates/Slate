@@ -98,7 +98,7 @@ private extension RuntimeShader {
         let fragmentIn: VertexOut = arguments.typed(name: Constant.fragmentInName,
                                                     type: VertexOut.self,
                                                     qualifier: .stageIn)
-        let coordinates: Float2 = fragmentIn.textureCoordinates
+        let coordinates: SIMD2<Float> = fragmentIn.textureCoordinates
         let texture: Texture2D = arguments.texture(name: "texture")
         color == texture.sample(sampler: sampler, coordinates: coordinates)
         function.returnValue = color

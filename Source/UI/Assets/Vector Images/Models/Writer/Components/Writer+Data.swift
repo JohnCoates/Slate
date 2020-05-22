@@ -23,9 +23,12 @@ extension VectorAssetWriter {
     }
     
     func append(nullTerminatedString string: String) {
-        let value = string.cString(using: .utf8)
         let bytes = string.lengthOfBytes(using: .utf8) + 1
-        data.append(UnsafeBufferPointer(start: value, count: bytes))
+        string.withCString { cString in
+            cString.withMemoryRebound(to: UInt8.self, capacity: bytes) { uint8Pointer in
+                data.append(uint8Pointer, count: bytes)
+            }
+        }
     }
     
     func append(uInt8 constValue: UInt8) {
@@ -38,8 +41,10 @@ extension VectorAssetWriter {
     
     func append<DataType>(value constValue: DataType) {
         var value: DataType = constValue
-        let buffer = UnsafeBufferPointer(start: &value, count: 1)
-        data.append(buffer)
+        withUnsafePointer(to: &value) { pointer in
+            let buffer = UnsafeBufferPointer<DataType>(start: pointer, count: 1)
+            data.append(buffer)
+        }
     }
     
 }

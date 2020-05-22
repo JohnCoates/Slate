@@ -32,6 +32,8 @@ extension BaseCaptureViewController {
             transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
         case .unknown:
             return
+        @unknown default:
+            assertionFailure("Unknown case: \(orientation)")
         }
         
         view.transform = transform

@@ -32,10 +32,10 @@ extension RuntimeShader.CompositeVariable {
         return RuntimeShader.Float4(inner: variable)
     }
     
-    subscript(name: String) -> RuntimeShader.Float2 {
+    subscript(name: String) -> RuntimeShader.SIMD2<Float> {
         let variable = RuntimeShader.CompositeMemberVariable(composite: self,
                                                              member: name,
-                                                             type: .float2)
-        return RuntimeShader.Float2(inner: variable)
+                                                             type: .SIMD2<Float>)
+        return RuntimeShader.SIMD2<Float>(inner: variable)
     }
 }

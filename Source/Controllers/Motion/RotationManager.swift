@@ -140,6 +140,8 @@ final class RotationManager {
             } else {
                 return .landscapeRight
             }
+        @unknown default:
+            preconditionFailure("Unknown orientation: \(previous)")
         }
         
         return previous

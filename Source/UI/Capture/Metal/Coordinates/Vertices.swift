@@ -10,19 +10,19 @@ import Foundation
 import MetalKit
 
 struct Vertex {
-    var position: float4
+    var position: SIMD4<Float>
 }
 
 struct Vertices {
     
     static func fullScreenQuad() -> [Vertex] {
         var vertices = [Vertex]()
-        vertices.append(Vertex(position: float4(-1, -1, 0, 1))) // left bottom
-        vertices.append(Vertex(position: float4(1, -1, 0, 1))) // right bottom
-        vertices.append(Vertex(position: float4(-1, 1, 0, 1))) // left top
-        vertices.append(Vertex(position: float4(1, -1, 0, 1))) // right bottom
-        vertices.append(Vertex(position: float4(-1, 1, 0, 1))) // left top
-        vertices.append(Vertex(position: float4(1, 1, 0, 1))) // right top
+        vertices.append(Vertex(position: SIMD4<Float>(-1, -1, 0, 1))) // left bottom
+        vertices.append(Vertex(position: SIMD4<Float>(1, -1, 0, 1))) // right bottom
+        vertices.append(Vertex(position: SIMD4<Float>(-1, 1, 0, 1))) // left top
+        vertices.append(Vertex(position: SIMD4<Float>(1, -1, 0, 1))) // right bottom
+        vertices.append(Vertex(position: SIMD4<Float>(-1, 1, 0, 1))) // left top
+        vertices.append(Vertex(position: SIMD4<Float>(1, 1, 0, 1))) // right top
         return vertices
     }
     
@@ -83,12 +83,12 @@ struct Vertices {
         yMax = 0 + (height / 2)
         
         var vertices = [Vertex]()
-        vertices.append(Vertex(position: float4(xMin, yMin, 0, 1))) // left bottom
-        vertices.append(Vertex(position: float4(xMax, yMin, 0, 1))) // right bottom
-        vertices.append(Vertex(position: float4(xMin, yMax, 0, 1))) // left top
-        vertices.append(Vertex(position: float4(xMax, yMin, 0, 1))) // right bottom
-        vertices.append(Vertex(position: float4(xMin, yMax, 0, 1))) // left top
-        vertices.append(Vertex(position: float4(xMax, yMax, 0, 1))) // right top
+        vertices.append(Vertex(position: SIMD4<Float>(xMin, yMin, 0, 1))) // left bottom
+        vertices.append(Vertex(position: SIMD4<Float>(xMax, yMin, 0, 1))) // right bottom
+        vertices.append(Vertex(position: SIMD4<Float>(xMin, yMax, 0, 1))) // left top
+        vertices.append(Vertex(position: SIMD4<Float>(xMax, yMin, 0, 1))) // right bottom
+        vertices.append(Vertex(position: SIMD4<Float>(xMin, yMax, 0, 1))) // left top
+        vertices.append(Vertex(position: SIMD4<Float>(xMax, yMax, 0, 1))) // right top
         return vertices
     }
     
