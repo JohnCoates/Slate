@@ -7,7 +7,7 @@ GEM
     colored2 (3.1.2)
     colorize (0.8.1)
     equatable (0.5.0)
-    ffi (1.9.18)
+    ffi (1.12.2)
     nanaimo (0.2.3)
     pastel (0.7.1)
       equatable (~> 0.5.0)
