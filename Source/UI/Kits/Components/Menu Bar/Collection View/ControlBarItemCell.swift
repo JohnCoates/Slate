@@ -70,9 +70,7 @@ final class ControlBarItemCell: UICollectionViewCell {
     fileprivate var startFrame: CGRect?
     
     @objc func longPressed(gesture: UILongPressGestureRecognizer) {
-        guard let control = control else {
-            return
-        }
+        guard let control = control else { return }
         if gesture.state == .began || gesture.state == .ended || gesture.state == .cancelled {
             lastLocation = nil
         }
@@ -113,11 +111,12 @@ final class ControlBarItemCell: UICollectionViewCell {
         guard somethingMeetsMiniumChange else {
                 return
         }
-        
-        var frame = control.frame
-        frame.origin.x += difference.x
-        frame.origin.y += difference.y
-        control.frame = frame
+
+        // If the transform property is not the identity transform, the frame property is undefined
+        var center = control.center
+        center.x += difference.x
+        center.y += difference.y
+        control.center = center
     }
     
     func animateControlReturningToMenuBar() {
@@ -144,8 +143,8 @@ final class ControlBarItemCell: UICollectionViewCell {
                        usingSpringWithDamping: 0.5,
                        initialSpringVelocity: 3,
                        options: UIView.AnimationOptions.curveEaseOut, animations: {
-            control.transform = CGAffineTransform(scaleX: 1, y: 1)
-            control.frame = startFrame
+                        control.transform = .identity
+                        control.frame = startFrame
         })
     }
     
